@@ -1,0 +1,17 @@
+{
+  "owner": "alirezarezvani",
+  "slug": "onboarding-cro",
+  "displayName": "onboarding-cro",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1773242637686,
+    "commit": "https://github.com/openclaw/skills/commit/1b1063f10aa25d560b47c4eaf4876a9383ad1e37"
+  },
+  "history": [
+    {
+      "version": "2.1.1",
+      "publishedAt": 1773098140103,
+      "commit": "https://github.com/openclaw/skills/commit/192f1ff3768a849fcfb1e38f7faac147b0ce3c76"
+    }
+  ]
+}

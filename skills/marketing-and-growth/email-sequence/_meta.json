@@ -1,0 +1,11 @@
+{
+  "owner": "alirezarezvani",
+  "slug": "email-sequence",
+  "displayName": "Email Sequence",
+  "latest": {
+    "version": "2.1.1",
+    "publishedAt": 1773084461274,
+    "commit": "https://github.com/openclaw/skills/commit/cefe8fbc56d88ccd34ff401652f91a34a70b714c"
+  },
+  "history": []
+}

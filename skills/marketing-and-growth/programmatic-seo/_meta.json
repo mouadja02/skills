@@ -1,0 +1,17 @@
+{
+  "owner": "alirezarezvani",
+  "slug": "programmatic-seo",
+  "displayName": "programmatic-seo",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1773242655927,
+    "commit": "https://github.com/openclaw/skills/commit/3d980d5a080d8fbe46067f1ae242e49e5ca00803"
+  },
+  "history": [
+    {
+      "version": "2.1.1",
+      "publishedAt": 1773102716862,
+      "commit": "https://github.com/openclaw/skills/commit/c82190256e31ad2a6785e20ae5da806514489d6f"
+    }
+  ]
+}

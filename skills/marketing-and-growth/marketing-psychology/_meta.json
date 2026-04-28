@@ -1,0 +1,17 @@
+{
+  "owner": "alirezarezvani",
+  "slug": "marketing-psychology",
+  "displayName": "marketing-psychology",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1773242631491,
+    "commit": "https://github.com/openclaw/skills/commit/e7e07905b03954b59bc1cbfa63fee91fb56e0614"
+  },
+  "history": [
+    {
+      "version": "2.1.1",
+      "publishedAt": 1773093589321,
+      "commit": "https://github.com/openclaw/skills/commit/d878ded2e2ab7ec4494d5bd5970db3935aaafe43"
+    }
+  ]
+}

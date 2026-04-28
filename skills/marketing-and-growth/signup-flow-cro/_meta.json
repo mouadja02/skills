@@ -1,0 +1,17 @@
+{
+  "owner": "alirezarezvani",
+  "slug": "signup-flow-cro",
+  "displayName": "signup-flow-cro",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1773242671983,
+    "commit": "https://github.com/openclaw/skills/commit/c65fb281a211ae8a84c848bdf920487d0bd8a532"
+  },
+  "history": [
+    {
+      "version": "2.1.1",
+      "publishedAt": 1773107270960,
+      "commit": "https://github.com/openclaw/skills/commit/0c82a2f7747b12cacb2ee90a5d825e2924fefe06"
+    }
+  ]
+}

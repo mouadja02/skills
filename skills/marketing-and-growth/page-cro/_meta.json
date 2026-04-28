@@ -1,0 +1,17 @@
+{
+  "owner": "alirezarezvani",
+  "slug": "page-cro",
+  "displayName": "page-cro",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1773242640534,
+    "commit": "https://github.com/openclaw/skills/commit/d1dfc5dc3e17a98cbd44bd7b8af422c9bcd994fa"
+  },
+  "history": [
+    {
+      "version": "2.1.1",
+      "publishedAt": 1773098143787,
+      "commit": "https://github.com/openclaw/skills/commit/25bbb477a81ca7d77507b873d9a2e20742930243"
+    }
+  ]
+}

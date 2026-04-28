@@ -1,0 +1,17 @@
+{
+  "owner": "alirezarezvani",
+  "slug": "paid-ads",
+  "displayName": "paid-ads",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1773242644122,
+    "commit": "https://github.com/openclaw/skills/commit/2deb53e483f9cd0677798db6340f043a3eeb4a04"
+  },
+  "history": [
+    {
+      "version": "2.1.1",
+      "publishedAt": 1773098147921,
+      "commit": "https://github.com/openclaw/skills/commit/efa578edc4e9e48cfadfe81e743895503af0cc20"
+    }
+  ]
+}
