@@ -1,0 +1,46 @@
+name: Build manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**/SKILL.md"
+      - "scripts/build-manifest.mjs"
+      - ".github/workflows/build-manifest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-manifest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate docs/manifest.{json,tsv} + SKILLS.md
+        run: node scripts/build-manifest.mjs
+
+      - name: Commit changes if any
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          paths="docs/manifest.json docs/manifest.tsv SKILLS.md"
+          if git diff --quiet -- $paths; then
+            echo "No manifest changes."
+            exit 0
+          fi
+          git add $paths
+          git commit -m "chore(manifest): regenerate from SKILL.md frontmatter [skip ci]"
+          git push

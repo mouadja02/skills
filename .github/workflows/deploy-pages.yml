@@ -1,0 +1,62 @@
+name: Deploy Pages
+
+# Builds the manifest, generates per-skill and per-category ZIP archives, and
+# deploys docs/ to GitHub Pages. ZIPs are NOT committed to main; they exist
+# only inside the Pages artifact, keeping the main branch lean.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "docs/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Build manifest (writes docs/manifest.{json,tsv} + SKILLS.md)
+        run: node scripts/build-manifest.mjs
+
+      - name: Build per-skill and per-category ZIPs into docs/zips/
+        run: node scripts/build-zips.mjs
+
+      - name: Report artifact size
+        run: |
+          du -sh docs/zips || true
+          ls -la docs/zips || true
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

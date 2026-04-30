@@ -1,0 +1,34 @@
+# Default: let git auto-detect text vs binary, normalize line endings.
+* text=auto eol=lf
+
+# Shell + bash scripts MUST be LF — bash on Linux/macOS chokes on CRLF.
+*.sh         text eol=lf
+install.sh   text eol=lf
+
+# PowerShell prefers CRLF on Windows but is fine with LF.
+*.ps1        text eol=crlf
+
+# Common config / source as LF for cross-platform consistency.
+*.mjs        text eol=lf
+*.js         text eol=lf
+*.json       text eol=lf
+*.yml        text eol=lf
+*.yaml       text eol=lf
+*.md         text eol=lf
+*.tsv        text eol=lf
+*.html       text eol=lf
+*.css        text eol=lf
+
+# Binary blobs.
+*.png        binary
+*.jpg        binary
+*.jpeg       binary
+*.gif        binary
+*.webp       binary
+*.ico        binary
+*.zip        binary
+*.tar.gz     binary
+*.woff       binary
+*.woff2      binary
+*.ttf        binary
+*.otf        binary

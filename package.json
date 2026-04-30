@@ -1,0 +1,24 @@
+{
+  "name": "@mouadja02/skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A curated library of agent skills for Claude Code and Cursor.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "npm run build:manifest && npm run build:zips",
+    "build:manifest": "node scripts/build-manifest.mjs",
+    "build:zips": "node scripts/build-zips.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mouadja02/skills.git"
+  },
+  "license": "SEE LICENSE IN individual skill folders"
+}

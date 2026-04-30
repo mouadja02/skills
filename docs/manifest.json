@@ -1,0 +1,1991 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-30T12:11:14.613Z",
+  "repo": "mouadja02/skills",
+  "default_branch": "main",
+  "count": 244,
+  "categories": [
+    "ai-agents",
+    "business-and-strategy",
+    "caveman",
+    "context-engineering",
+    "data-and-backend",
+    "design-and-ui",
+    "devops-and-infrastructure",
+    "docs-and-presentations",
+    "engineering-craft",
+    "llm-integrations",
+    "marketing-and-growth",
+    "product-management",
+    "skill-authoring"
+  ],
+  "counts_by_category": {
+    "ai-agents": 53,
+    "business-and-strategy": 60,
+    "caveman": 6,
+    "context-engineering": 6,
+    "data-and-backend": 22,
+    "design-and-ui": 10,
+    "devops-and-infrastructure": 14,
+    "docs-and-presentations": 6,
+    "engineering-craft": 29,
+    "llm-integrations": 5,
+    "marketing-and-growth": 22,
+    "product-management": 9,
+    "skill-authoring": 2
+  },
+  "skills": [
+    {
+      "name": "ai-agent-builder",
+      "category": "ai-agents",
+      "install_path": "ai-agents/ai-agent-builder",
+      "path": "skills/ai-agents/ai-agent-builder",
+      "depth": 2,
+      "description": "Use when designing an agent architecture, building a system where an LLM autonomously executes multi-step tasks, implementing tool calling or function calling, orchestrating multiple specialized subagents, or creating evaluation pipelines for AI outputs. Also use for agentic data engineering pipelines, code generation agents, agent-powered CLI tools, MCP server development, or any system where an AI model calls tools, makes decisions, or loops."
+    },
+    {
+      "name": "auto-memory-pro",
+      "category": "ai-agents",
+      "install_path": "ai-agents/auto-memory-pro",
+      "path": "skills/ai-agents/auto-memory-pro",
+      "depth": 2,
+      "description": "Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Claude has learned about your project, (2) graduating a pattern from notes to enforced rules, (3) turning a debugging solution into a skill, (4) checking memory health and capacity."
+    },
+    {
+      "name": "extract",
+      "category": "ai-agents",
+      "install_path": "ai-agents/auto-memory-pro/skills/extract",
+      "path": "skills/ai-agents/auto-memory-pro/skills/extract",
+      "depth": 4,
+      "description": "Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples."
+    },
+    {
+      "name": "promote",
+      "category": "ai-agents",
+      "install_path": "ai-agents/auto-memory-pro/skills/promote",
+      "path": "skills/ai-agents/auto-memory-pro/skills/promote",
+      "depth": 4,
+      "description": "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement."
+    },
+    {
+      "name": "remember",
+      "category": "ai-agents",
+      "install_path": "ai-agents/auto-memory-pro/skills/remember",
+      "path": "skills/ai-agents/auto-memory-pro/skills/remember",
+      "depth": 4,
+      "description": "Explicitly save important knowledge to auto-memory with timestamp and context. Use when a discovery is too important to rely on auto-capture."
+    },
+    {
+      "name": "review",
+      "category": "ai-agents",
+      "install_path": "ai-agents/auto-memory-pro/skills/review",
+      "path": "skills/ai-agents/auto-memory-pro/skills/review",
+      "depth": 4,
+      "description": "Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics."
+    },
+    {
+      "name": "status",
+      "category": "ai-agents",
+      "install_path": "ai-agents/auto-memory-pro/skills/status",
+      "path": "skills/ai-agents/auto-memory-pro/skills/status",
+      "depth": 4,
+      "description": "Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations."
+    },
+    {
+      "name": "autoresearch-agent",
+      "category": "ai-agents",
+      "install_path": "ai-agents/autoresearch-agent",
+      "path": "skills/ai-agents/autoresearch-agent",
+      "depth": 2,
+      "description": "Autonomous experiment loop that optimizes any file by a measurable metric. Inspired by Karpathy's autoresearch. The agent edits a target file, runs a fixed evaluation, keeps improvements (git commit), discards failures (git reset), and loops indefinitely. Use when: user wants to optimize code speed, reduce bundle/image size, improve test pass rate, optimize prompts, improve content quality (headlines, copy, CTR), or run any measurable improvement loop. Requires: a target file, an evaluation command that outputs a metric, and a git repo."
+    },
+    {
+      "name": "loop",
+      "category": "ai-agents",
+      "install_path": "ai-agents/autoresearch-agent/skills/loop",
+      "path": "skills/ai-agents/autoresearch-agent/skills/loop",
+      "depth": 4,
+      "description": "Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly). Uses CronCreate for scheduling."
+    },
+    {
+      "name": "resume",
+      "category": "ai-agents",
+      "install_path": "ai-agents/autoresearch-agent/skills/resume",
+      "path": "skills/ai-agents/autoresearch-agent/skills/resume",
+      "depth": 4,
+      "description": "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating."
+    },
+    {
+      "name": "run",
+      "category": "ai-agents",
+      "install_path": "ai-agents/autoresearch-agent/skills/run",
+      "path": "skills/ai-agents/autoresearch-agent/skills/run",
+      "depth": 4,
+      "description": "Run a single experiment iteration. Edit the target file, evaluate, keep or discard."
+    },
+    {
+      "name": "setup",
+      "category": "ai-agents",
+      "install_path": "ai-agents/autoresearch-agent/skills/setup",
+      "path": "skills/ai-agents/autoresearch-agent/skills/setup",
+      "depth": 4,
+      "description": "Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator."
+    },
+    {
+      "name": "status",
+      "category": "ai-agents",
+      "install_path": "ai-agents/autoresearch-agent/skills/status",
+      "path": "skills/ai-agents/autoresearch-agent/skills/status",
+      "depth": 4,
+      "description": "Show experiment dashboard with results, active loops, and progress."
+    },
+    {
+      "name": "bdi-mental-states",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bdi-mental-states",
+      "path": "skills/ai-agents/bdi-mental-states",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"model agent mental states\", \"implement BDI architecture\", \"create belief-desire-intention models\", \"transform RDF to beliefs\", \"build cognitive agent\", or mentions BDI ontology, mental state modeling, rational agency, or neuro-symbolic AI integration."
+    },
+    {
+      "name": "bmm-skills",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills",
+      "path": "skills/ai-agents/bmm-skills",
+      "depth": 2,
+      "description": "BMad Method (BMM) — AI-driven agile development framework. Top-level router for the full BMad workflow, organized in 4 phases (Analysis → Planning → Solutioning → Implementation) with 30 sub-skills and 6 named agents (Mary the analyst, Paige the tech writer, John the PM, Sally the UX designer, Winston the architect, Amelia the developer). Use when the user mentions BMad, BMM, BMad Method, \"talk to Mary/Paige/John/Sally/Winston/Amelia\", PRDs, PRFAQs, product briefs, market/domain/technical research, UX design specs, architecture, epics and stories, sprint planning/status, story implementation, code review, retrospectives, or any phase-tagged ask like \"lets create a PRD\", \"implement the next story\", \"run a retrospective\", \"document this project\". Loads no workflow content directly — routes to the right sub-skill folder."
+    },
+    {
+      "name": "bmad-agent-analyst",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/bmad-agent-analyst",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/bmad-agent-analyst",
+      "depth": 4,
+      "description": "Strategic business analyst and requirements expert. Use when the user asks to talk to Mary or requests the business analyst."
+    },
+    {
+      "name": "bmad-agent-tech-writer",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/bmad-agent-tech-writer",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/bmad-agent-tech-writer",
+      "depth": 4,
+      "description": "Technical documentation specialist and knowledge curator. Use when the user asks to talk to Paige or requests the tech writer."
+    },
+    {
+      "name": "bmad-document-project",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/bmad-document-project",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/bmad-document-project",
+      "depth": 4,
+      "description": "Document brownfield projects for AI context. Use when the user says \"document this project\" or \"generate project docs\""
+    },
+    {
+      "name": "bmad-prfaq",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/bmad-prfaq",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/bmad-prfaq",
+      "depth": 4,
+      "description": "Working Backwards PRFAQ challenge to forge product concepts. Use when the user requests to 'create a PRFAQ', 'work backwards', or 'run the PRFAQ challenge'."
+    },
+    {
+      "name": "bmad-product-brief",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/bmad-product-brief",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/bmad-product-brief",
+      "depth": 4,
+      "description": "Create or update product briefs through guided or autonomous discovery. Use when the user requests to create or update a Product Brief."
+    },
+    {
+      "name": "bmad-domain-research",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/research/bmad-domain-research",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/research/bmad-domain-research",
+      "depth": 5,
+      "description": "Conduct domain and industry research. Use when the user says wants to do domain research for a topic or industry"
+    },
+    {
+      "name": "bmad-market-research",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/research/bmad-market-research",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/research/bmad-market-research",
+      "depth": 5,
+      "description": "Conduct market research on competition and customers. Use when the user says they need market research"
+    },
+    {
+      "name": "bmad-technical-research",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/1-analysis/research/bmad-technical-research",
+      "path": "skills/ai-agents/bmm-skills/1-analysis/research/bmad-technical-research",
+      "depth": 5,
+      "description": "Conduct technical research on technologies and architecture. Use when the user says they would like to do or produce a technical research report"
+    },
+    {
+      "name": "bmad-agent-pm",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/2-plan-workflows/bmad-agent-pm",
+      "path": "skills/ai-agents/bmm-skills/2-plan-workflows/bmad-agent-pm",
+      "depth": 4,
+      "description": "Product manager for PRD creation and requirements discovery. Use when the user asks to talk to John or requests the product manager."
+    },
+    {
+      "name": "bmad-agent-ux-designer",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/2-plan-workflows/bmad-agent-ux-designer",
+      "path": "skills/ai-agents/bmm-skills/2-plan-workflows/bmad-agent-ux-designer",
+      "depth": 4,
+      "description": "UX designer and UI specialist. Use when the user asks to talk to Sally or requests the UX designer."
+    },
+    {
+      "name": "bmad-create-prd",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/2-plan-workflows/bmad-create-prd",
+      "path": "skills/ai-agents/bmm-skills/2-plan-workflows/bmad-create-prd",
+      "depth": 4,
+      "description": "Create a PRD from scratch. Use when the user says \"lets create a product requirements document\" or \"I want to create a new PRD\""
+    },
+    {
+      "name": "bmad-create-ux-design",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/2-plan-workflows/bmad-create-ux-design",
+      "path": "skills/ai-agents/bmm-skills/2-plan-workflows/bmad-create-ux-design",
+      "depth": 4,
+      "description": "Plan UX patterns and design specifications. Use when the user says \"lets create UX design\" or \"create UX specifications\" or \"help me plan the UX\""
+    },
+    {
+      "name": "bmad-edit-prd",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/2-plan-workflows/bmad-edit-prd",
+      "path": "skills/ai-agents/bmm-skills/2-plan-workflows/bmad-edit-prd",
+      "depth": 4,
+      "description": "Edit an existing PRD. Use when the user says \"edit this PRD\"."
+    },
+    {
+      "name": "bmad-validate-prd",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/2-plan-workflows/bmad-validate-prd",
+      "path": "skills/ai-agents/bmm-skills/2-plan-workflows/bmad-validate-prd",
+      "depth": 4,
+      "description": "Validate a PRD against standards. Use when the user says \"validate this PRD\" or \"run PRD validation\""
+    },
+    {
+      "name": "bmad-agent-architect",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/3-solutioning/bmad-agent-architect",
+      "path": "skills/ai-agents/bmm-skills/3-solutioning/bmad-agent-architect",
+      "depth": 4,
+      "description": "System architect and technical design leader. Use when the user asks to talk to Winston or requests the architect."
+    },
+    {
+      "name": "bmad-check-implementation-readiness",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/3-solutioning/bmad-check-implementation-readiness",
+      "path": "skills/ai-agents/bmm-skills/3-solutioning/bmad-check-implementation-readiness",
+      "depth": 4,
+      "description": "Validate PRD, UX, Architecture and Epics specs are complete. Use when the user says \"check implementation readiness\"."
+    },
+    {
+      "name": "bmad-create-architecture",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/3-solutioning/bmad-create-architecture",
+      "path": "skills/ai-agents/bmm-skills/3-solutioning/bmad-create-architecture",
+      "depth": 4,
+      "description": "Create architecture solution design decisions for AI agent consistency. Use when the user says \"lets create architecture\" or \"create technical architecture\" or \"create a solution design\""
+    },
+    {
+      "name": "bmad-create-epics-and-stories",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/3-solutioning/bmad-create-epics-and-stories",
+      "path": "skills/ai-agents/bmm-skills/3-solutioning/bmad-create-epics-and-stories",
+      "depth": 4,
+      "description": "Break requirements into epics and user stories. Use when the user says \"create the epics and stories list\""
+    },
+    {
+      "name": "bmad-generate-project-context",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/3-solutioning/bmad-generate-project-context",
+      "path": "skills/ai-agents/bmm-skills/3-solutioning/bmad-generate-project-context",
+      "depth": 4,
+      "description": "Create project-context.md with AI rules. Use when the user says \"generate project context\" or \"create project context\""
+    },
+    {
+      "name": "bmad-agent-dev",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-agent-dev",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-agent-dev",
+      "depth": 4,
+      "description": "Senior software engineer for story execution and code implementation. Use when the user asks to talk to Amelia or requests the developer agent."
+    },
+    {
+      "name": "bmad-checkpoint-preview",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-checkpoint-preview",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-checkpoint-preview",
+      "depth": 4,
+      "description": "LLM-assisted human-in-the-loop review. Make sense of a change, focus attention where it matters, test. Use when the user says \"checkpoint\", \"human review\", or \"walk me through this change\"."
+    },
+    {
+      "name": "bmad-code-review",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-code-review",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-code-review",
+      "depth": 4,
+      "description": "Review code changes adversarially using parallel review layers (Blind Hunter, Edge Case Hunter, Acceptance Auditor) with structured triage into actionable categories. Use when the user says \"run code review\" or \"review this code\""
+    },
+    {
+      "name": "bmad-correct-course",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-correct-course",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-correct-course",
+      "depth": 4,
+      "description": "Manage significant changes during sprint execution. Use when the user says \"correct course\" or \"propose sprint change\""
+    },
+    {
+      "name": "bmad-create-story",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-create-story",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-create-story",
+      "depth": 4,
+      "description": "Creates a dedicated story file with all the context the agent will need to implement it later. Use when the user says \"create the next story\" or \"create story [story identifier]\""
+    },
+    {
+      "name": "bmad-dev-story",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-dev-story",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-dev-story",
+      "depth": 4,
+      "description": "Execute story implementation following a context filled story spec file. Use when the user says \"dev this story [story file]\" or \"implement the next story in the sprint plan\""
+    },
+    {
+      "name": "bmad-qa-generate-e2e-tests",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests",
+      "depth": 4,
+      "description": "Generate end to end automated tests for existing features. Use when the user says \"create qa automated tests for [feature]\""
+    },
+    {
+      "name": "bmad-quick-dev",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-quick-dev",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-quick-dev",
+      "depth": 4,
+      "description": "Implements any user intent, requirement, story, bug fix or change request by producing clean working code artifacts that follow the project''s existing architecture, patterns and conventions. Use when the user wants to build, fix, tweak, refactor, add or modify any code, component or feature."
+    },
+    {
+      "name": "bmad-retrospective",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-retrospective",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-retrospective",
+      "depth": 4,
+      "description": "Post-epic review to extract lessons and assess success. Use when the user says \"run a retrospective\" or \"lets retro the epic [epic]\""
+    },
+    {
+      "name": "bmad-sprint-planning",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-sprint-planning",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-sprint-planning",
+      "depth": 4,
+      "description": "Generate sprint status tracking from epics. Use when the user says \"run sprint planning\" or \"generate sprint plan\""
+    },
+    {
+      "name": "bmad-sprint-status",
+      "category": "ai-agents",
+      "install_path": "ai-agents/bmm-skills/4-implementation/bmad-sprint-status",
+      "path": "skills/ai-agents/bmm-skills/4-implementation/bmad-sprint-status",
+      "depth": 4,
+      "description": "Summarize sprint status and surface risks. Use when the user says \"check sprint status\" or \"show sprint status\""
+    },
+    {
+      "name": "create-agent-tui",
+      "category": "ai-agents",
+      "install_path": "ai-agents/create-agent-tui",
+      "path": "skills/ai-agents/create-agent-tui",
+      "depth": 2,
+      "description": "Scaffolds a complete agent TUI in TypeScript using @openrouter/agent — like create-react-app for terminal agents. Generates a customizable terminal interface with three input styles, four tool display modes, ASCII banners, streaming output, session persistence, and configurable tools. Use when building an agent, creating a TUI, scaffolding an agent project, or building a coding assistant."
+    },
+    {
+      "name": "create-headless-agent",
+      "category": "ai-agents",
+      "install_path": "ai-agents/create-headless-agent",
+      "path": "skills/ai-agents/create-headless-agent",
+      "depth": 2,
+      "description": "Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI. Use when building a headless agent, programmatic agent, CLI tool that uses AI, batch agent, pipeline agent, API agent, agent without a UI, or agent service."
+    },
+    {
+      "name": "hosted-agents",
+      "category": "ai-agents",
+      "install_path": "ai-agents/hosted-agents",
+      "path": "skills/ai-agents/hosted-agents",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"build background agent\", \"create hosted coding agent\", \"set up sandboxed execution\", \"implement multiplayer agent\", or mentions background agents, sandboxed VMs, agent infrastructure, Modal sandboxes, self-spawning agents, or remote coding environments."
+    },
+    {
+      "name": "latent-briefing",
+      "category": "ai-agents",
+      "install_path": "ai-agents/latent-briefing",
+      "path": "skills/ai-agents/latent-briefing",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"share memory between agents\", \"KV cache compaction for multi-agent\", \"orchestrator worker context\", \"latent briefing\", \"reduce worker tokens\", \"cross-agent memory without summarization\", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents."
+    },
+    {
+      "name": "mcp-server-builder",
+      "category": "ai-agents",
+      "install_path": "ai-agents/mcp-server-builder",
+      "path": "skills/ai-agents/mcp-server-builder",
+      "depth": 2,
+      "description": "Build production-grade MCP (Model Context Protocol) servers from API contracts. Use when the user wants to expose a REST API to an LLM agent as MCP tools, scaffold a Python or TypeScript MCP server from OpenAPI, validate MCP tool manifests, or replace brittle browser automation with typed tools."
+    },
+    {
+      "name": "multi-agent-patterns",
+      "category": "ai-agents",
+      "install_path": "ai-agents/multi-agent-patterns",
+      "path": "skills/ai-agents/multi-agent-patterns",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"design multi-agent system\", \"implement supervisor pattern\", \"create swarm architecture\", \"coordinate multiple agents\", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution."
+    },
+    {
+      "name": "senior-prompt-engineer",
+      "category": "ai-agents",
+      "install_path": "ai-agents/senior-prompt-engineer",
+      "path": "skills/ai-agents/senior-prompt-engineer",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"optimize prompts\", \"design prompt templates\", \"evaluate LLM outputs\", \"A/B test prompts\", \"version prompts\", \"build agentic systems\", \"implement RAG\", \"create few-shot examples\", \"analyze token usage\", or \"design AI workflows\". Covers prompt engineering patterns, A/B prompt testing with regression workflows, prompt versioning and governance, LLM evaluation frameworks, agent architectures, and structured output design."
+    },
+    {
+      "name": "tool-design",
+      "category": "ai-agents",
+      "install_path": "ai-agents/tool-design",
+      "path": "skills/ai-agents/tool-design",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"design agent tools\", \"create tool descriptions\", \"reduce tool complexity\", \"implement MCP tools\", or mentions tool consolidation, architectural reduction, tool naming conventions, or agent-tool interfaces."
+    },
+    {
+      "name": "board-deck-builder",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/board-deck-builder",
+      "path": "skills/business-and-strategy/board-deck-builder",
+      "depth": 2,
+      "description": "Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles. Use when preparing board meetings, investor updates, quarterly business reviews, or fundraising narratives. Covers structure, narrative framework, bad news delivery, and common mistakes."
+    },
+    {
+      "name": "board-meeting",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/board-meeting",
+      "path": "skills/business-and-strategy/board-meeting",
+      "depth": 2,
+      "description": "Multi-agent board meeting protocol for strategic decisions. Runs a structured 6-phase deliberation: context loading, independent C-suite contributions (isolated, no cross-pollination), critic analysis, synthesis, founder review, and decision extraction. Use when the user invokes /cs:board, calls a board meeting, or wants structured multi-perspective executive deliberation on a strategic question."
+    },
+    {
+      "name": "c-level-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor",
+      "depth": 2,
+      "description": "Provides strategic business advice by channelling the perspectives of 10 executive roles — CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO, and Executive Mentor — across decisions, trade-offs, and org challenges. Runs multi-role board meetings, routes questions to the right executive voice, and delivers structured recommendations (Bottom Line → What → Why → How to Act → Your Decision). Use when a founder or executive needs business strategy advice, leadership perspective, executive decision support, board-level input, fundraising guidance, product-market fit review, hiring or culture frameworks, risk assessment, or competitive analysis."
+    },
+    {
+      "name": "agent-protocol",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/agent-protocol",
+      "path": "skills/business-and-strategy/c-level-advisor/agent-protocol",
+      "depth": 3,
+      "description": "Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats. Use when C-suite agents need to query each other, coordinate cross-functional analysis, or run board meetings with multiple agent roles."
+    },
+    {
+      "name": "board-deck-builder",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/board-deck-builder",
+      "path": "skills/business-and-strategy/c-level-advisor/board-deck-builder",
+      "depth": 3,
+      "description": "Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles. Use when preparing board meetings, investor updates, quarterly business reviews, or fundraising narratives. Covers structure, narrative framework, bad news delivery, and common mistakes."
+    },
+    {
+      "name": "board-meeting",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/board-meeting",
+      "path": "skills/business-and-strategy/c-level-advisor/board-meeting",
+      "depth": 3,
+      "description": "Multi-agent board meeting protocol for strategic decisions. Runs a structured 6-phase deliberation: context loading, independent C-suite contributions (isolated, no cross-pollination), critic analysis, synthesis, founder review, and decision extraction. Use when the user invokes /cs:board, calls a board meeting, or wants structured multi-perspective executive deliberation on a strategic question."
+    },
+    {
+      "name": "ceo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/ceo-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/ceo-advisor",
+      "depth": 3,
+      "description": "Executive leadership guidance for strategic decision-making, organizational development, and stakeholder management. Use when planning strategy, preparing board presentations, managing investors, developing organizational culture, making executive decisions, fundraising, or when user mentions CEO, strategic planning, board meetings, investor updates, organizational leadership, or executive strategy."
+    },
+    {
+      "name": "cfo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/cfo-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/cfo-advisor",
+      "depth": 3,
+      "description": "Financial leadership for startups and scaling companies. Financial modeling, unit economics, fundraising strategy, cash management, and board financial packages. Use when building financial models, analyzing unit economics, planning fundraising, managing cash runway, preparing board materials, or when user mentions CFO, burn rate, runway, fundraising, unit economics, LTV, CAC, term sheets, or financial strategy."
+    },
+    {
+      "name": "change-management",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/change-management",
+      "path": "skills/business-and-strategy/c-level-advisor/change-management",
+      "depth": 3,
+      "description": "Framework for rolling out organizational changes without chaos. Covers the ADKAR model adapted for startups, communication templates, resistance patterns, and change fatigue management. Handles process changes, org restructures, strategy pivots, and culture changes. Use when announcing a reorg, switching tools, pivoting strategy, killing a product, changing leadership, or when user mentions change management, change rollout, managing resistance, org change, reorg, or pivot communication."
+    },
+    {
+      "name": "chief-of-staff",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/chief-of-staff",
+      "path": "skills/business-and-strategy/c-level-advisor/chief-of-staff",
+      "depth": 3,
+      "description": "C-suite orchestration layer. Routes founder questions to the right advisor role(s), triggers multi-role board meetings for complex decisions, synthesizes outputs, and tracks decisions. Every C-suite interaction starts here. Loads company context automatically."
+    },
+    {
+      "name": "chro-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/chro-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/chro-advisor",
+      "depth": 3,
+      "description": "People leadership for scaling companies. Hiring strategy, compensation design, org structure, culture, and retention. Use when building hiring plans, designing comp frameworks, restructuring teams, managing performance, building culture, or when user mentions CHRO, HR, people strategy, talent, headcount, compensation, org design, retention, or performance management."
+    },
+    {
+      "name": "ciso-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/ciso-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/ciso-advisor",
+      "depth": 3,
+      "description": "Security leadership for growth-stage companies. Risk quantification in dollars, compliance roadmap (SOC 2/ISO 27001/HIPAA/GDPR), security architecture strategy, incident response leadership, and board-level security reporting. Use when building security programs, justifying security budget, selecting compliance frameworks, managing incidents, assessing vendor risk, or when user mentions CISO, security strategy, compliance roadmap, zero trust, or board security reporting."
+    },
+    {
+      "name": "cmo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/cmo-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/cmo-advisor",
+      "depth": 3,
+      "description": "Marketing leadership for scaling companies. Brand positioning, growth model design, marketing budget allocation, and marketing org design. Use when designing brand strategy, selecting growth models (PLG vs sales-led vs community-led), allocating marketing budgets, building marketing teams, or when user mentions CMO, brand strategy, growth model, CAC, LTV, channel mix, or marketing ROI."
+    },
+    {
+      "name": "company-os",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/company-os",
+      "path": "skills/business-and-strategy/c-level-advisor/company-os",
+      "depth": 3,
+      "description": "The meta-framework for how a company runs — the connective tissue between all C-suite roles. Covers operating system selection (EOS, Scaling Up, OKR-native, hybrid), accountability charts, scorecards, meeting pulse, issue resolution, and 90-day rocks. Use when setting up company operations, selecting a management framework, designing meeting rhythms, building accountability systems, implementing OKRs, or when user mentions EOS, Scaling Up, operating system, L10 meetings, rocks, scorecard, accountability chart, or quarterly planning."
+    },
+    {
+      "name": "competitive-intel",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/competitive-intel",
+      "path": "skills/business-and-strategy/c-level-advisor/competitive-intel",
+      "depth": 3,
+      "description": "Systematic competitor tracking that feeds CMO positioning, CRO battlecards, and CPO roadmap decisions. Use when analyzing competitors, building sales battlecards, tracking market moves, positioning against alternatives, or when user mentions competitive intelligence, competitive analysis, competitor research, battlecards, win/loss, or market positioning."
+    },
+    {
+      "name": "context-engine",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/context-engine",
+      "path": "skills/business-and-strategy/c-level-advisor/context-engine",
+      "depth": 3,
+      "description": "Loads and manages company context for all C-suite advisor skills. Reads ~/.claude/company-context.md, detects stale context (>90 days), enriches context during conversations, and enforces privacy/anonymization rules before external API calls."
+    },
+    {
+      "name": "coo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/coo-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/coo-advisor",
+      "depth": 3,
+      "description": "Operations leadership for scaling companies. Process design, OKR execution, operational cadence, and scaling playbooks. Use when designing operations, setting up OKRs, building processes, scaling teams, analyzing bottlenecks, planning operational cadence, or when user mentions COO, operations, process improvement, OKRs, scaling, operational efficiency, or execution."
+    },
+    {
+      "name": "cpo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/cpo-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/cpo-advisor",
+      "depth": 3,
+      "description": "Product leadership for scaling companies. Product vision, portfolio strategy, product-market fit, and product org design. Use when setting product vision, managing a product portfolio, measuring PMF, designing product teams, prioritizing at the portfolio level, reporting to the board on product, or when user mentions CPO, product strategy, product-market fit, product organization, portfolio prioritization, or roadmap strategy."
+    },
+    {
+      "name": "cro-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/cro-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/cro-advisor",
+      "depth": 3,
+      "description": "Revenue leadership for B2B SaaS companies. Revenue forecasting, sales model design, pricing strategy, net revenue retention, and sales team scaling. Use when designing the revenue engine, setting quotas, modeling NRR, evaluating pricing, building board forecasts, or when user mentions CRO, chief revenue officer, revenue strategy, sales model, ARR growth, NRR, expansion revenue, churn, pricing strategy, or sales capacity."
+    },
+    {
+      "name": "cs-onboard",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/cs-onboard",
+      "path": "skills/business-and-strategy/c-level-advisor/cs-onboard",
+      "depth": 3,
+      "description": "Founder onboarding interview that captures company context across 7 dimensions. Invoke with /cs:setup for initial interview or /cs:update for quarterly refresh. Generates ~/.claude/company-context.md used by all C-suite advisor skills."
+    },
+    {
+      "name": "cto-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/cto-advisor",
+      "path": "skills/business-and-strategy/c-level-advisor/cto-advisor",
+      "depth": 3,
+      "description": "Technical leadership guidance for engineering teams, architecture decisions, and technology strategy. Use when assessing technical debt, scaling engineering teams, evaluating technologies, making architecture decisions, establishing engineering metrics, or when user mentions CTO, tech debt, technical debt, team scaling, architecture decisions, technology evaluation, engineering metrics, DORA metrics, or technology strategy."
+    },
+    {
+      "name": "culture-architect",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/culture-architect",
+      "path": "skills/business-and-strategy/c-level-advisor/culture-architect",
+      "depth": 3,
+      "description": "Build, measure, and evolve company culture as operational behavior — not wall posters. Covers mission/vision/values workshops, values-to-behaviors translation, culture code creation, culture health assessment, and cultural rituals by stage. Use when building company values, assessing culture health, designing cultural rituals, creating culture codes, handling culture clashes, or when user mentions culture, values, culture debt, founder culture, or culture code."
+    },
+    {
+      "name": "decision-logger",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/decision-logger",
+      "path": "skills/business-and-strategy/c-level-advisor/decision-logger",
+      "depth": 3,
+      "description": "Two-layer memory architecture for board meeting decisions. Manages raw transcripts (Layer 1) and approved decisions (Layer 2). Use when logging decisions after a board meeting, reviewing past decisions with /cs:decisions, or checking overdue action items with /cs:review. Invoked automatically by the board-meeting skill after Phase 5 founder approval."
+    },
+    {
+      "name": "executive-mentor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/executive-mentor",
+      "path": "skills/business-and-strategy/c-level-advisor/executive-mentor",
+      "depth": 3,
+      "description": "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal board meetings, dissects decisions with no good options, and forces honest post-mortems. Use when you need someone to find the holes before the board does, make a decision you've been avoiding, or understand what actually went wrong."
+    },
+    {
+      "name": "board-prep",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/executive-mentor/skills/board-prep",
+      "path": "skills/business-and-strategy/c-level-advisor/executive-mentor/skills/board-prep",
+      "depth": 5,
+      "description": "/em -board-prep — Board Meeting Preparation"
+    },
+    {
+      "name": "challenge",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/executive-mentor/skills/challenge",
+      "path": "skills/business-and-strategy/c-level-advisor/executive-mentor/skills/challenge",
+      "depth": 5,
+      "description": "/em -challenge — Pre-Mortem Plan Analysis"
+    },
+    {
+      "name": "hard-call",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/executive-mentor/skills/hard-call",
+      "path": "skills/business-and-strategy/c-level-advisor/executive-mentor/skills/hard-call",
+      "depth": 5,
+      "description": "/em -hard-call — Framework for Decisions With No Good Options"
+    },
+    {
+      "name": "postmortem",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/executive-mentor/skills/postmortem",
+      "path": "skills/business-and-strategy/c-level-advisor/executive-mentor/skills/postmortem",
+      "depth": 5,
+      "description": "/em -postmortem — Honest Analysis of What Went Wrong"
+    },
+    {
+      "name": "stress-test",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/executive-mentor/skills/stress-test",
+      "path": "skills/business-and-strategy/c-level-advisor/executive-mentor/skills/stress-test",
+      "depth": 5,
+      "description": "/em -stress-test — Business Assumption Stress Testing"
+    },
+    {
+      "name": "founder-coach",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/founder-coach",
+      "path": "skills/business-and-strategy/c-level-advisor/founder-coach",
+      "depth": 3,
+      "description": "Personal leadership development for founders and first-time CEOs. Covers founder archetype identification, delegation frameworks, energy management, CEO calendar audits, leadership style evolution, blind spot identification, imposter syndrome, founder mental health, and succession planning. Use when a founder feels like the bottleneck, struggles to delegate, is burning out, transitioning from IC to executive, managing a board, or when user mentions founder mode, CEO growth, leadership development, delegation, burnout, or imposter syndrome."
+    },
+    {
+      "name": "internal-narrative",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/internal-narrative",
+      "path": "skills/business-and-strategy/c-level-advisor/internal-narrative",
+      "depth": 3,
+      "description": "Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed for each audience's needs. Use when preparing investor updates, all-hands presentations, board communications, recruiting narratives, crisis communications, or when user mentions company narrative, messaging consistency, storytelling, all-hands, investor update, or crisis communication."
+    },
+    {
+      "name": "intl-expansion",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/intl-expansion",
+      "path": "skills/business-and-strategy/c-level-advisor/intl-expansion",
+      "depth": 3,
+      "description": "International market expansion strategy. Market selection, entry modes, localization, regulatory compliance, and go-to-market by region. Use when expanding to new countries, evaluating international markets, planning localization, or building regional teams."
+    },
+    {
+      "name": "ma-playbook",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/ma-playbook",
+      "path": "skills/business-and-strategy/c-level-advisor/ma-playbook",
+      "depth": 3,
+      "description": "M&A strategy for acquiring companies or being acquired. Due diligence, valuation, integration, and deal structure. Use when evaluating acquisitions, preparing for acquisition, M&A due diligence, integration planning, or deal negotiation."
+    },
+    {
+      "name": "org-health-diagnostic",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/org-health-diagnostic",
+      "path": "skills/business-and-strategy/c-level-advisor/org-health-diagnostic",
+      "depth": 3,
+      "description": "Cross-functional organizational health check combining signals from all C-suite roles. Scores 8 dimensions on a traffic-light scale with drill-down recommendations. Use when assessing overall company health, preparing for board reviews, identifying at-risk functions, or when user mentions org health, health check, or health dashboard."
+    },
+    {
+      "name": "scenario-war-room",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/scenario-war-room",
+      "path": "skills/business-and-strategy/c-level-advisor/scenario-war-room",
+      "depth": 3,
+      "description": "Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all business functions simultaneously. Use when facing complex risk scenarios, strategic decisions with major downside, or when the user asks 'what if X AND Y both happen?'"
+    },
+    {
+      "name": "strategic-alignment",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/c-level-advisor/strategic-alignment",
+      "path": "skills/business-and-strategy/c-level-advisor/strategic-alignment",
+      "depth": 3,
+      "description": "Cascades strategy from boardroom to individual contributor. Detects and fixes misalignment between company goals and team execution. Covers strategy articulation, cascade mapping, orphan goal detection, silo identification, communication gap analysis, and realignment protocols. Use when teams are pulling in different directions, OKRs don't connect, departments optimize locally at company expense, or when user mentions alignment, strategy cascade, silo, conflicting OKRs, or strategy communication."
+    },
+    {
+      "name": "ceo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/ceo-advisor",
+      "path": "skills/business-and-strategy/ceo-advisor",
+      "depth": 2,
+      "description": "Executive leadership guidance for strategic decision-making, organizational development, and stakeholder management. Use when planning strategy, preparing board presentations, managing investors, developing organizational culture, making executive decisions, fundraising, or when user mentions CEO, strategic planning, board meetings, investor updates, organizational leadership, or executive strategy."
+    },
+    {
+      "name": "cfo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/cfo-advisor",
+      "path": "skills/business-and-strategy/cfo-advisor",
+      "depth": 2,
+      "description": "Financial leadership for startups and scaling companies. Financial modeling, unit economics, fundraising strategy, cash management, and board financial packages. Use when building financial models, analyzing unit economics, planning fundraising, managing cash runway, preparing board materials, or when user mentions CFO, burn rate, runway, fundraising, unit economics, LTV, CAC, term sheets, or financial strategy."
+    },
+    {
+      "name": "chief-of-staff",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/chief-of-staff",
+      "path": "skills/business-and-strategy/chief-of-staff",
+      "depth": 2,
+      "description": "C-suite orchestration layer. Routes founder questions to the right advisor role(s), triggers multi-role board meetings for complex decisions, synthesizes outputs, and tracks decisions. Every C-suite interaction starts here. Loads company context automatically."
+    },
+    {
+      "name": "chro-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/chro-advisor",
+      "path": "skills/business-and-strategy/chro-advisor",
+      "depth": 2,
+      "description": "People leadership for scaling companies. Hiring strategy, compensation design, org structure, culture, and retention. Use when building hiring plans, designing comp frameworks, restructuring teams, managing performance, building culture, or when user mentions CHRO, HR, people strategy, talent, headcount, compensation, org design, retention, or performance management."
+    },
+    {
+      "name": "ciso-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/ciso-advisor",
+      "path": "skills/business-and-strategy/ciso-advisor",
+      "depth": 2,
+      "description": "Security leadership for growth-stage companies. Risk quantification in dollars, compliance roadmap (SOC 2/ISO 27001/HIPAA/GDPR), security architecture strategy, incident response leadership, and board-level security reporting. Use when building security programs, justifying security budget, selecting compliance frameworks, managing incidents, assessing vendor risk, or when user mentions CISO, security strategy, compliance roadmap, zero trust, or board security reporting."
+    },
+    {
+      "name": "cmo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/cmo-advisor",
+      "path": "skills/business-and-strategy/cmo-advisor",
+      "depth": 2,
+      "description": "Marketing leadership for scaling companies. Brand positioning, growth model design, marketing budget allocation, and marketing org design. Use when designing brand strategy, selecting growth models (PLG vs sales-led vs community-led), allocating marketing budgets, building marketing teams, or when user mentions CMO, brand strategy, growth model, CAC, LTV, channel mix, or marketing ROI."
+    },
+    {
+      "name": "company-os",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/company-os",
+      "path": "skills/business-and-strategy/company-os",
+      "depth": 2,
+      "description": "The meta-framework for how a company runs — the connective tissue between all C-suite roles. Covers operating system selection (EOS, Scaling Up, OKR-native, hybrid), accountability charts, scorecards, meeting pulse, issue resolution, and 90-day rocks. Use when setting up company operations, selecting a management framework, designing meeting rhythms, building accountability systems, implementing OKRs, or when user mentions EOS, Scaling Up, operating system, L10 meetings, rocks, scorecard, accountability chart, or quarterly planning."
+    },
+    {
+      "name": "context-engine",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/context-engine",
+      "path": "skills/business-and-strategy/context-engine",
+      "depth": 2,
+      "description": "Loads and manages company context for all C-suite advisor skills. Reads ~/.claude/company-context.md, detects stale context (>90 days), enriches context during conversations, and enforces privacy/anonymization rules before external API calls."
+    },
+    {
+      "name": "coo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/coo-advisor",
+      "path": "skills/business-and-strategy/coo-advisor",
+      "depth": 2,
+      "description": "Operations leadership for scaling companies. Process design, OKR execution, operational cadence, and scaling playbooks. Use when designing operations, setting up OKRs, building processes, scaling teams, analyzing bottlenecks, planning operational cadence, or when user mentions COO, operations, process improvement, OKRs, scaling, operational efficiency, or execution."
+    },
+    {
+      "name": "cpo-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/cpo-advisor",
+      "path": "skills/business-and-strategy/cpo-advisor",
+      "depth": 2,
+      "description": "Product leadership for scaling companies. Product vision, portfolio strategy, product-market fit, and product org design. Use when setting product vision, managing a product portfolio, measuring PMF, designing product teams, prioritizing at the portfolio level, reporting to the board on product, or when user mentions CPO, product strategy, product-market fit, product organization, portfolio prioritization, or roadmap strategy."
+    },
+    {
+      "name": "cro-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/cro-advisor",
+      "path": "skills/business-and-strategy/cro-advisor",
+      "depth": 2,
+      "description": "Revenue leadership for B2B SaaS companies. Revenue forecasting, sales model design, pricing strategy, net revenue retention, and sales team scaling. Use when designing the revenue engine, setting quotas, modeling NRR, evaluating pricing, building board forecasts, or when user mentions CRO, chief revenue officer, revenue strategy, sales model, ARR growth, NRR, expansion revenue, churn, pricing strategy, or sales capacity."
+    },
+    {
+      "name": "founder-coach",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/cs-founder-coach",
+      "path": "skills/business-and-strategy/cs-founder-coach",
+      "depth": 2,
+      "description": "Personal leadership development for founders and first-time CEOs. Covers founder archetype identification, delegation frameworks, energy management, CEO calendar audits, leadership style evolution, blind spot identification, imposter syndrome, founder mental health, and succession planning. Use when a founder feels like the bottleneck, struggles to delegate, is burning out, transitioning from IC to executive, managing a board, or when user mentions founder mode, CEO growth, leadership development, delegation, burnout, or imposter syndrome."
+    },
+    {
+      "name": "cs-onboard",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/cs-onboard",
+      "path": "skills/business-and-strategy/cs-onboard",
+      "depth": 2,
+      "description": "Founder onboarding interview that captures company context across 7 dimensions. Invoke with /cs:setup for initial interview or /cs:update for quarterly refresh. Generates ~/.claude/company-context.md used by all C-suite advisor skills."
+    },
+    {
+      "name": "cto-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/cto-advisor",
+      "path": "skills/business-and-strategy/cto-advisor",
+      "depth": 2,
+      "description": "Technical leadership guidance for engineering teams, architecture decisions, and technology strategy. Use when assessing technical debt, scaling engineering teams, evaluating technologies, making architecture decisions, establishing engineering metrics, or when user mentions CTO, tech debt, technical debt, team scaling, architecture decisions, technology evaluation, engineering metrics, DORA metrics, or technology strategy."
+    },
+    {
+      "name": "decision-logger",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/decision-logger",
+      "path": "skills/business-and-strategy/decision-logger",
+      "depth": 2,
+      "description": "Two-layer memory architecture for board meeting decisions. Manages raw transcripts (Layer 1) and approved decisions (Layer 2). Use when logging decisions after a board meeting, reviewing past decisions with /cs:decisions, or checking overdue action items with /cs:review. Invoked automatically by the board-meeting skill after Phase 5 founder approval."
+    },
+    {
+      "name": "executive-mentor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/executive-mentor",
+      "path": "skills/business-and-strategy/executive-mentor",
+      "depth": 2,
+      "description": "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal board meetings, dissects decisions with no good options, and forces honest post-mortems. Use when you need someone to find the holes before the board does, make a decision you've been avoiding, or understand what actually went wrong."
+    },
+    {
+      "name": "board-prep",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/executive-mentor/skills/board-prep",
+      "path": "skills/business-and-strategy/executive-mentor/skills/board-prep",
+      "depth": 4,
+      "description": "/em -board-prep — Board Meeting Preparation"
+    },
+    {
+      "name": "challenge",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/executive-mentor/skills/challenge",
+      "path": "skills/business-and-strategy/executive-mentor/skills/challenge",
+      "depth": 4,
+      "description": "/em -challenge — Pre-Mortem Plan Analysis"
+    },
+    {
+      "name": "hard-call",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/executive-mentor/skills/hard-call",
+      "path": "skills/business-and-strategy/executive-mentor/skills/hard-call",
+      "depth": 4,
+      "description": "/em -hard-call — Framework for Decisions With No Good Options"
+    },
+    {
+      "name": "postmortem",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/executive-mentor/skills/postmortem",
+      "path": "skills/business-and-strategy/executive-mentor/skills/postmortem",
+      "depth": 4,
+      "description": "/em -postmortem — Honest Analysis of What Went Wrong"
+    },
+    {
+      "name": "stress-test",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/executive-mentor/skills/stress-test",
+      "path": "skills/business-and-strategy/executive-mentor/skills/stress-test",
+      "depth": 4,
+      "description": "/em -stress-test — Business Assumption Stress Testing"
+    },
+    {
+      "name": "org-health-diagnostic",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/org-health-diagnostic",
+      "path": "skills/business-and-strategy/org-health-diagnostic",
+      "depth": 2,
+      "description": "Cross-functional organizational health check combining signals from all C-suite roles. Scores 8 dimensions on a traffic-light scale with drill-down recommendations. Use when assessing overall company health, preparing for board reviews, identifying at-risk functions, or when user mentions org health, health check, or health dashboard."
+    },
+    {
+      "name": "saas-metrics-coach",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/saas-metrics-coach",
+      "path": "skills/business-and-strategy/saas-metrics-coach",
+      "depth": 2,
+      "description": "SaaS financial health advisor. Use when a user shares revenue or customer numbers, or mentions ARR, MRR, churn, LTV, CAC, NRR, or asks how their SaaS business is doing."
+    },
+    {
+      "name": "scenario-war-room",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/scenario-war-room",
+      "path": "skills/business-and-strategy/scenario-war-room",
+      "depth": 2,
+      "description": "Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all business functions simultaneously. Use when facing complex risk scenarios, strategic decisions with major downside, or when the user asks 'what if X AND Y both happen?'"
+    },
+    {
+      "name": "caveman",
+      "category": "caveman",
+      "install_path": "caveman/caveman",
+      "path": "skills/caveman/caveman",
+      "depth": 2,
+      "description": "Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says \"caveman mode\", \"talk like caveman\", \"use caveman\", \"less tokens\", \"be brief\", or invokes /caveman. Also auto-triggers when token efficiency is requested."
+    },
+    {
+      "name": "caveman-commit",
+      "category": "caveman",
+      "install_path": "caveman/caveman-commit",
+      "path": "skills/caveman/caveman-commit",
+      "depth": 2,
+      "description": "Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when \"why\" isn't obvious. Use when user says \"write a commit\", \"commit message\", \"generate commit\", \"/commit\", or invokes /caveman-commit. Auto-triggers when staging changes."
+    },
+    {
+      "name": "caveman-compress",
+      "category": "caveman",
+      "install_path": "caveman/caveman-compress",
+      "path": "skills/caveman/caveman-compress",
+      "depth": 2,
+      "description": "Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format to save input tokens. Preserves all technical substance, code, URLs, and structure. Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md. Trigger: /caveman:compress <filepath> or \"compress memory file\""
+    },
+    {
+      "name": "caveman-help",
+      "category": "caveman",
+      "install_path": "caveman/caveman-help",
+      "path": "skills/caveman/caveman-help",
+      "depth": 2,
+      "description": "Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, \"caveman help\", \"what caveman commands\", \"how do I use caveman\"."
+    },
+    {
+      "name": "caveman-review",
+      "category": "caveman",
+      "install_path": "caveman/caveman-review",
+      "path": "skills/caveman/caveman-review",
+      "depth": 2,
+      "description": "Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use when user says \"review this PR\", \"code review\", \"review the diff\", \"/review\", or invokes /caveman-review. Auto-triggers when reviewing pull requests."
+    },
+    {
+      "name": "find-skills",
+      "category": "caveman",
+      "install_path": "caveman/find-skills",
+      "path": "skills/caveman/find-skills",
+      "depth": 2,
+      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
+    },
+    {
+      "name": "context-compression",
+      "category": "context-engineering",
+      "install_path": "context-engineering/context-compression",
+      "path": "skills/context-engineering/context-compression",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"compress context\", \"summarize conversation history\", \"implement compaction\", \"reduce token usage\", or mentions context compression, structured summarization, tokens-per-task optimization, or long-running agent sessions exceeding context limits."
+    },
+    {
+      "name": "context-degradation",
+      "category": "context-engineering",
+      "install_path": "context-engineering/context-degradation",
+      "path": "skills/context-engineering/context-degradation",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"diagnose context problems\", \"fix lost-in-middle issues\", \"debug agent failures\", \"understand context poisoning\", or mentions context degradation, attention patterns, context clash, context confusion, or agent performance degradation. Provides patterns for recognizing and mitigating context failures."
+    },
+    {
+      "name": "context-fundamentals",
+      "category": "context-engineering",
+      "install_path": "context-engineering/context-fundamentals",
+      "path": "skills/context-engineering/context-fundamentals",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"understand context\", \"explain context windows\", \"design agent architecture\", \"debug context issues\", \"optimize context usage\", or discusses context components, attention mechanics, progressive disclosure, or context budgeting. Provides foundational understanding of context engineering for AI agent systems."
+    },
+    {
+      "name": "context-optimization",
+      "category": "context-engineering",
+      "install_path": "context-engineering/context-optimization",
+      "path": "skills/context-engineering/context-optimization",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"optimize context\", \"reduce token costs\", \"improve context efficiency\", \"implement KV-cache optimization\", \"partition context\", or mentions context limits, observation masking, context budgeting, or extending effective context capacity."
+    },
+    {
+      "name": "filesystem-context",
+      "category": "context-engineering",
+      "install_path": "context-engineering/filesystem-context",
+      "path": "skills/context-engineering/filesystem-context",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"offload context to files\", \"implement dynamic context discovery\", \"use filesystem for agent memory\", \"reduce context window bloat\", or mentions file-based context management, tool output persistence, agent scratch pads, or just-in-time context loading."
+    },
+    {
+      "name": "memory-systems",
+      "category": "context-engineering",
+      "install_path": "context-engineering/memory-systems",
+      "path": "skills/context-engineering/memory-systems",
+      "depth": 2,
+      "description": "Guides implementation of agent memory systems, compares production frameworks (Mem0, Zep/Graphiti, Letta, LangMem, Cognee), and designs persistence architectures for cross-session knowledge retention. Use when the user asks to \"implement agent memory\", \"persist state across sessions\", \"build knowledge graph for agents\", \"track entities over time\", \"add long-term memory\", \"choose a memory framework\", or mentions temporal knowledge graphs, vector stores, entity memory, adaptive memory, dynamic memory or memory benchmarks (LoCoMo, LongMemEval)."
+    },
+    {
+      "name": "dbt-expert",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/dbt-expert",
+      "path": "skills/data-and-backend/dbt-expert",
+      "depth": 2,
+      "description": "Use when working in a dbt project or doing any dbt-related work — writing models, schema.yml, sources.yml, tests, macros, snapshots, seeds, or exposures. Also use when designing SQL that will land in a dbt project, generating dbt YAML programmatically, or asking about dbt best practices, incremental strategies, or project structure for Snowflake. If dbt is involved in any way — use this skill."
+    },
+    {
+      "name": "developing-with-streamlit",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit",
+      "path": "skills/data-and-backend/developing-with-streamlit",
+      "depth": 2,
+      "description": "**[REQUIRED]** Use for ALL Streamlit tasks: creating, editing, debugging, beautifying, styling, theming, optimizing, or deploying Streamlit applications. Also required for building custom components (inline or packaged), using st.components.v2, or any HTML/JS/CSS component work. Triggers: streamlit, st., dashboard, app.py, beautify, style, CSS, color, background, theme, button, widget styling, custom component, st.components, packaged component, pyproject.toml, asset_dir, CCv2, HTML/JS component."
+    },
+    {
+      "name": "building-streamlit-chat-ui",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-chat-ui",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-chat-ui",
+      "depth": 4,
+      "description": "Building chat interfaces in Streamlit. Use when creating conversational UIs, chatbots, or AI assistants. Covers st.chat_message, st.chat_input, message history, and streaming responses."
+    },
+    {
+      "name": "building-streamlit-custom-components-v2",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-custom-components-v2",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-custom-components-v2",
+      "depth": 4,
+      "description": "Builds bidirectional Streamlit Custom Components v2 (CCv2) using `st.components.v2.component`. Use when authoring inline HTML/CSS/JS components or packaged components (manifest `asset_dir`, js/css globs), wiring state/trigger callbacks, theming via `--st-*` CSS variables, or bundling with Vite / `component-template` v2."
+    },
+    {
+      "name": "building-streamlit-dashboards",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-dashboards",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-dashboards",
+      "depth": 4,
+      "description": "Building dashboards in Streamlit. Use when creating KPI displays, metric cards, or data-heavy layouts. Covers borders, cards, responsive layouts, and dashboard composition."
+    },
+    {
+      "name": "building-streamlit-multipage-apps",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-multipage-apps",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-multipage-apps",
+      "depth": 4,
+      "description": "Building multi-page Streamlit apps. Use when creating apps with multiple pages, setting up navigation, or managing state across pages."
+    },
+    {
+      "name": "choosing-streamlit-selection-widgets",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
+      "depth": 4,
+      "description": "Choosing the right Streamlit selection widget. Use when deciding between radio buttons, selectbox, segmented control, pills, or other option selection widgets. Helps pick the right widget for the number of options and selection type."
+    },
+    {
+      "name": "connecting-streamlit-to-snowflake",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
+      "depth": 4,
+      "description": "Connecting Streamlit apps to Snowflake. Use when setting up database connections, managing secrets, or querying Snowflake from a Streamlit app."
+    },
+    {
+      "name": "creating-streamlit-themes",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/creating-streamlit-themes",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/creating-streamlit-themes",
+      "depth": 4,
+      "description": "Creating and customizing Streamlit themes. Use when changing app colors, fonts, or appearance, or aligning apps to brand guidelines. Covers config.toml configuration, design principles, and CSS avoidance."
+    },
+    {
+      "name": "displaying-streamlit-data",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/displaying-streamlit-data",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/displaying-streamlit-data",
+      "depth": 4,
+      "description": "Displaying charts, dataframes, and metrics in Streamlit. Use when visualizing data, configuring dataframe columns, or adding sparklines to metrics. Covers native charts, Altair, and column configuration."
+    },
+    {
+      "name": "improving-streamlit-design",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/improving-streamlit-design",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/improving-streamlit-design",
+      "depth": 4,
+      "description": "Improving visual design in Streamlit apps. Use when polishing apps with icons, badges, spacing, or text styling. Covers Material icons, badge syntax, divider alternatives, and text casing conventions."
+    },
+    {
+      "name": "optimizing-streamlit-performance",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/optimizing-streamlit-performance",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/optimizing-streamlit-performance",
+      "depth": 4,
+      "description": "Optimizing Streamlit app performance. Use when apps are slow, rerunning too often, or loading heavy content. Covers caching, fragments, and static vs dynamic widget choices."
+    },
+    {
+      "name": "organizing-streamlit-code",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/organizing-streamlit-code",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/organizing-streamlit-code",
+      "depth": 4,
+      "description": "Organizing Streamlit code for maintainability. Use when structuring apps with separate modules and utilities. Covers separation of concerns, keeping UI code clean, and import patterns."
+    },
+    {
+      "name": "setting-up-streamlit-environment",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/setting-up-streamlit-environment",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/setting-up-streamlit-environment",
+      "depth": 4,
+      "description": "Setting up Python environments for Streamlit apps. Use when creating a new project or managing dependencies. Covers uv for dependency management and running apps."
+    },
+    {
+      "name": "using-streamlit-cli",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-cli",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-cli",
+      "depth": 4,
+      "description": "Documents Streamlit CLI commands for running apps, managing configuration, and diagnostics. Use when starting Streamlit apps, configuring runtime options, or troubleshooting CLI issues."
+    },
+    {
+      "name": "using-streamlit-custom-components",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-custom-components",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-custom-components",
+      "depth": 4,
+      "description": "Using third-party Streamlit custom components. Use when extending Streamlit with community packages. Covers installation, popular custom components, and when to use them."
+    },
+    {
+      "name": "using-streamlit-layouts",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-layouts",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-layouts",
+      "depth": 4,
+      "description": "Structuring Streamlit app layouts. Use when placing content in sidebars, columns, containers, or dialogs. Covers sidebar usage, column limits, horizontal containers, dialogs, and bordered cards."
+    },
+    {
+      "name": "using-streamlit-markdown",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-markdown",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-markdown",
+      "depth": 4,
+      "description": "Covers all Markdown features in Streamlit including GitHub-flavored syntax plus Streamlit extensions like colored text, badges, Material icons, and LaTeX. Use when formatting text, labels, tooltips, or any text-rendering element."
+    },
+    {
+      "name": "using-streamlit-session-state",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-session-state",
+      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-session-state",
+      "depth": 4,
+      "description": "Using st.session_state to manage state across Streamlit reruns. Use when persisting data, handling widget state, implementing callbacks, or debugging state issues. Covers initialization patterns, widget-state association, and common gotchas."
+    },
+    {
+      "name": "etl-to-dbt",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/etl-to-dbt",
+      "path": "skills/data-and-backend/etl-to-dbt",
+      "depth": 2,
+      "description": "Use when converting, migrating, or translating ETL artifacts to dbt — Informatica IICS mappings, PowerCenter workflows, Talend jobs, DataStage pipelines. Also use when analyzing mapping XML/JSON files, extracting transformation logic from ETL metadata, generating dbt models or sources.yml from source qualifiers, or mapping ETL data types to Snowflake types. If the words mapping, IICS, Informatica, infa, PowerCenter, or ETL migration appear — use this skill."
+    },
+    {
+      "name": "python-fastapi-llm",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/python-fastapi-llm",
+      "path": "skills/data-and-backend/python-fastapi-llm",
+      "depth": 2,
+      "description": "Use when building a Python API that integrates LLMs, creating an agent backend with FastAPI, implementing streaming responses, handling file uploads for AI processing, or designing a backend for an AI-powered tool. Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill."
+    },
+    {
+      "name": "snowflake-sql",
+      "category": "data-and-backend",
+      "install_path": "data-and-backend/snowflake-sql",
+      "path": "skills/data-and-backend/snowflake-sql",
+      "depth": 2,
+      "description": "Use when writing or asking about Snowflake SQL, Snowflake DDL, dynamic tables, streams, tasks, stages, file formats, or Snowpark. Also use for Snowflake-specific patterns (QUALIFY, FLATTEN, LATERAL FLATTEN, PARSE_JSON, MATCH_CONDITION), VARIANT/OBJECT/ARRAY types, data vault in Snowflake, clustering keys, time travel, search optimization, or query performance tuning. If the context is Snowflake — use this skill."
+    },
+    {
+      "name": "anass-pro-style",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/anass-pro-style",
+      "path": "skills/design-and-ui/anass-pro-style",
+      "depth": 2,
+      "description": "Build hyper-personalized, narrative-driven, single-file portfolio/pitch websites in the style of anass.pro. Use when the user asks for a \"site like anass.pro\", a one-recipient candidacy/pitch site, a behavioral-engineering landing page, a single-file storytelling portfolio with a pixel-art game hero, custom cursor, typewriter text, procedural Web Audio SFX, scroll-revealed scenes, or a dark purple narrative interface that addresses one named reader. Trigger on phrases like \"personal pitch site\", \"one-page candidacy\", \"narrative portfolio\", \"scrollytelling pitch\", \"pixel-art hero\", \"interactive landing for X\", or any request to recreate / clone / adapt anass.pro."
+    },
+    {
+      "name": "ckm:banner-design",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/banner-design",
+      "path": "skills/design-and-ui/banner-design",
+      "depth": 2,
+      "description": "Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with AI-generated visuals. Actions: design, create, generate banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero, print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro, glassmorphism, 3D, neon, duotone, editorial, collage. Uses ui-ux-pro-max, frontend-design, ai-artist, ai-multimodal skills."
+    },
+    {
+      "name": "ckm:brand",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/brand",
+      "path": "skills/design-and-ui/brand",
+      "depth": 2,
+      "description": "Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides."
+    },
+    {
+      "name": "ckm:design",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/design",
+      "path": "skills/design-and-ui/design",
+      "depth": 2,
+      "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML→screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads."
+    },
+    {
+      "name": "ckm:design-system",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/design-system",
+      "path": "skills/design-and-ui/design-system",
+      "depth": 2,
+      "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations."
+    },
+    {
+      "name": "frontend-design",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/frontend-design",
+      "path": "skills/design-and-ui/frontend-design",
+      "depth": 2,
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
+    },
+    {
+      "name": "impeccable",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/impeccable",
+      "path": "skills/design-and-ui/impeccable",
+      "depth": 2,
+      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks."
+    },
+    {
+      "name": "theme-factory",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/theme-factory",
+      "path": "skills/design-and-ui/theme-factory",
+      "depth": 2,
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly."
+    },
+    {
+      "name": "ckm:ui-styling",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/ui-styling",
+      "path": "skills/design-and-ui/ui-styling",
+      "depth": 2,
+      "description": "Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user interfaces, implementing design systems, creating responsive layouts, adding accessible components (dialogs, dropdowns, forms, tables), customizing themes and colors, implementing dark mode, generating visual designs and posters, or establishing consistent styling patterns across applications."
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/ui-ux-pro-max",
+      "path": "skills/design-and-ui/ui-ux-pro-max",
+      "depth": 2,
+      "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples."
+    },
+    {
+      "name": "aws-solution-architect",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/aws-solution-architect",
+      "path": "skills/devops-and-infrastructure/aws-solution-architect",
+      "depth": 2,
+      "description": "Design AWS architectures for startups using serverless patterns and IaC templates. Use when asked to design serverless architecture, create CloudFormation templates, optimize AWS costs, set up CI/CD pipelines, or migrate to AWS. Covers Lambda, API Gateway, DynamoDB, ECS, Aurora, and cost optimization."
+    },
+    {
+      "name": "ci-cd-pipeline-builder",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/ci-cd-pipeline-builder",
+      "path": "skills/devops-and-infrastructure/ci-cd-pipeline-builder",
+      "depth": 2,
+      "description": "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack. Use when the user wants to set up GitHub Actions, GitLab CI, or any CI/CD workflow with lint/test/build/deploy stages, caching, matrix builds, and environment-aware deployments. Detects language and tooling automatically."
+    },
+    {
+      "name": "database-designer",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/database-designer",
+      "path": "skills/devops-and-infrastructure/database-designer",
+      "depth": 2,
+      "description": "Design and audit relational database schemas. Use when the user asks to design a schema, normalize tables (1NF-BCNF), optimize indexes, plan zero-downtime migrations (expand-contract), generate ERDs, or analyze constraints, naming, and data types. Produces Mermaid diagrams and migration scripts."
+    },
+    {
+      "name": "dependency-auditor",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/dependency-auditor",
+      "path": "skills/devops-and-infrastructure/dependency-auditor",
+      "depth": 2,
+      "description": "Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems. Use when the user mentions CVE scanning, dependency upgrades, transitive dependency risk, license auditing, supply chain security, or wants to know which packages to upgrade or remove."
+    },
+    {
+      "name": "docker-development",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/docker-development",
+      "path": "skills/devops-and-infrastructure/docker-development",
+      "depth": 2,
+      "description": "Docker and container development agent skill and plugin for Dockerfile optimization, docker-compose orchestration, multi-stage builds, and container security hardening. Use when: user wants to optimize a Dockerfile, create or improve docker-compose configurations, implement multi-stage builds, audit container security, reduce image size, or follow container best practices. Covers build performance, layer caching, secret management, and production-ready container patterns."
+    },
+    {
+      "name": "helm-chart-builder",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/helm-chart-builder",
+      "path": "skills/devops-and-infrastructure/helm-chart-builder",
+      "depth": 2,
+      "description": "Helm chart development agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw — chart scaffolding, values design, template patterns, dependency management, security hardening, and chart testing. Use when: user wants to create or improve Helm charts, design values.yaml files, implement template helpers, audit chart security (RBAC, network policies, pod security), manage subcharts, or run helm lint/test."
+    },
+    {
+      "name": "incident-commander",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/incident-commander",
+      "path": "skills/devops-and-infrastructure/incident-commander",
+      "depth": 2,
+      "description": "Run incident response from detection to post-mortem. Use when the user mentions incidents, sev1/sev2 triage, severity classification, timeline reconstruction, on-call, post-incident review (PIR), root-cause analysis, blameless retros, or runbook generation. Provides SRE-grade incident management templates and frameworks."
+    },
+    {
+      "name": "observability-designer",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/observability-designer",
+      "path": "skills/devops-and-infrastructure/observability-designer",
+      "depth": 2,
+      "description": "Design comprehensive observability for production systems. Use when the user asks about SLI/SLO/SLA design, error budgets, golden signals, RED/USE methods, structured logging, distributed tracing, dashboard design, or alert optimization. Covers metrics, logs, and traces across modern observability stacks."
+    },
+    {
+      "name": "saas-scaffolder",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/saas-scaffolder",
+      "path": "skills/devops-and-infrastructure/saas-scaffolder",
+      "depth": 2,
+      "description": "Generates complete, production-ready SaaS project boilerplate including authentication, database schemas, billing integration, API routes, and a working dashboard using Next.js 14+ App Router, TypeScript, Tailwind CSS, shadcn/ui, Drizzle ORM, and Stripe. Use when the user wants to create a new SaaS app, start a subscription-based web project, scaffold a Next.js application, or mentions terms like starter template, boilerplate, new project, or wiring up auth and payments."
+    },
+    {
+      "name": "senior-devops",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/senior-devops",
+      "path": "skills/devops-and-infrastructure/senior-devops",
+      "depth": 2,
+      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring. Use when setting up pipelines, deploying applications, managing infrastructure, implementing monitoring, or optimizing deployment processes."
+    },
+    {
+      "name": "senior-secops",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/senior-secops",
+      "path": "skills/devops-and-infrastructure/senior-secops",
+      "depth": 2,
+      "description": "Senior SecOps engineer skill for application security, vulnerability management, compliance verification, and secure development practices. Runs SAST/DAST scans, generates CVE remediation plans, checks dependency vulnerabilities, creates security policies, enforces secure coding patterns, and automates compliance checks against SOC2, PCI-DSS, HIPAA, and GDPR. Use when conducting a security review or audit, responding to a CVE or security incident, hardening infrastructure, implementing authentication or secrets management, running penetration test prep, checking OWASP Top 10 exposure, or enforcing security controls in CI/CD pipelines."
+    },
+    {
+      "name": "senior-security",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/senior-security",
+      "path": "skills/devops-and-infrastructure/senior-security",
+      "depth": 2,
+      "description": "Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and penetration testing. Includes STRIDE analysis, OWASP guidance, cryptography patterns, and security scanning tools. Use when the user asks about security reviews, threat analysis, vulnerability assessments, secure coding practices, security audits, attack surface analysis, CVE remediation, or security best practices."
+    },
+    {
+      "name": "stripe-integration-expert",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/stripe-integration-expert",
+      "path": "skills/devops-and-infrastructure/stripe-integration-expert",
+      "depth": 2,
+      "description": "Implement production-grade Stripe integrations. Use when the user mentions Stripe, subscriptions, billing, payments, checkout, webhooks, customer portal, usage-based pricing, proration, trials, invoicing, or SaaS billing. Covers Next.js, Express, and Django patterns with idempotent webhook handling."
+    },
+    {
+      "name": "terraform-patterns",
+      "category": "devops-and-infrastructure",
+      "install_path": "devops-and-infrastructure/terraform-patterns",
+      "path": "skills/devops-and-infrastructure/terraform-patterns",
+      "depth": 2,
+      "description": "Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security hardening, policy-as-code with Sentinel/OPA, and CI/CD plan/apply workflows. Use when: user wants to design Terraform modules, manage state backends, review Terraform security, implement multi-region deployments, or follow IaC best practices."
+    },
+    {
+      "name": "pptx",
+      "category": "docs-and-presentations",
+      "install_path": "docs-and-presentations/pptx",
+      "path": "skills/docs-and-presentations/pptx",
+      "depth": 2,
+      "description": "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \\\"deck,\\\" \\\"slides,\\\" \\\"presentation,\\\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill."
+    },
+    {
+      "name": "project-development",
+      "category": "docs-and-presentations",
+      "install_path": "docs-and-presentations/project-development",
+      "path": "skills/docs-and-presentations/project-development",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"start an LLM project\", \"design batch pipeline\", \"evaluate task-model fit\", \"structure agent project\", or mentions pipeline architecture, agent-assisted development, cost estimation, or choosing between LLM and traditional approaches."
+    },
+    {
+      "name": "project-docs",
+      "category": "docs-and-presentations",
+      "install_path": "docs-and-presentations/project-docs",
+      "path": "skills/docs-and-presentations/project-docs",
+      "depth": 2,
+      "description": "Use when asked to produce technical documentation beyond a README — architecture docs, technical design documents, ADRs, API references, data pipeline docs, onboarding guides, integration specs, or AGENTS.md/CLAUDE.md files. Also use when documenting an AI agent system, a data pipeline, or producing technical reference material for a team. If the output is a technical document other than a README — use this skill."
+    },
+    {
+      "name": "readme-writer",
+      "category": "docs-and-presentations",
+      "install_path": "docs-and-presentations/readme-writer",
+      "path": "skills/docs-and-presentations/readme-writer",
+      "depth": 2,
+      "description": "Use when asked to write, generate, update, or improve a README.md, add documentation to a project root, or create an onboarding document for a repository. Also use when the user says \"document this project\", \"write the docs\", or \"create a README\" for a Python tool, FastAPI backend, React app, CLI, dbt project, monorepo, or AI agent system. If the output is a README.md — use this skill."
+    },
+    {
+      "name": "ckm:slides",
+      "category": "docs-and-presentations",
+      "install_path": "docs-and-presentations/slides",
+      "path": "skills/docs-and-presentations/slides",
+      "depth": 2,
+      "description": "Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies."
+    },
+    {
+      "name": "svg-diagrams",
+      "category": "docs-and-presentations",
+      "install_path": "docs-and-presentations/svg-diagrams",
+      "path": "skills/docs-and-presentations/svg-diagrams",
+      "depth": 2,
+      "description": "Use when asked for a diagram, chart, architecture visualization, flow, pipeline map, data model, sequence diagram, or any visual representation of a system or process. Also use when the user wants to visualize agent workflows, ETL pipelines, dbt lineage, API flows, or system integrations. If the words diagram, chart, flow, architecture, visualize, or draw appear in a visual context — use this skill."
+    },
+    {
+      "name": "advanced-evaluation",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/advanced-evaluation",
+      "path": "skills/engineering-craft/advanced-evaluation",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"implement LLM-as-judge\", \"compare model outputs\", \"create evaluation rubrics\", \"mitigate evaluation bias\", or mentions direct scoring, pairwise comparison, position bias, evaluation pipelines, or automated quality assessment."
+    },
+    {
+      "name": "brainstorming",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/brainstorming",
+      "path": "skills/engineering-craft/brainstorming",
+      "depth": 2,
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+    },
+    {
+      "name": "codebase-onboarding",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/codebase-onboarding",
+      "path": "skills/engineering-craft/codebase-onboarding",
+      "depth": 2,
+      "description": "Generate onboarding documentation for an unfamiliar codebase. Use when the user asks to onboard new developers, document an existing project, produce architecture overviews, key-file maps, local setup guides, common-task runbooks, or contribution guidelines. Outputs to Markdown, Notion, or Confluence."
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/dispatching-parallel-agents",
+      "path": "skills/engineering-craft/dispatching-parallel-agents",
+      "depth": 2,
+      "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies"
+    },
+    {
+      "name": "evaluation",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/evaluation",
+      "path": "skills/engineering-craft/evaluation",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"evaluate agent performance\", \"build test framework\", \"measure agent quality\", \"create evaluation rubrics\", or mentions LLM-as-judge, multi-dimensional evaluation, agent testing, or quality gates for agent pipelines."
+    },
+    {
+      "name": "executing-plans",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/executing-plans",
+      "path": "skills/engineering-craft/executing-plans",
+      "depth": 2,
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/finishing-a-development-branch",
+      "path": "skills/engineering-craft/finishing-a-development-branch",
+      "depth": 2,
+      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup"
+    },
+    {
+      "name": "grill-me",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/grill-me",
+      "path": "skills/engineering-craft/grill-me",
+      "depth": 2,
+      "description": "Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions \"grill me\"."
+    },
+    {
+      "name": "karpathy-guidelines",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/karpathy-guidlines",
+      "path": "skills/engineering-craft/karpathy-guidlines",
+      "depth": 2,
+      "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria."
+    },
+    {
+      "name": "receiving-code-review",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/receiving-code-review",
+      "path": "skills/engineering-craft/receiving-code-review",
+      "depth": 2,
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation"
+    },
+    {
+      "name": "requesting-code-review",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/requesting-code-review",
+      "path": "skills/engineering-craft/requesting-code-review",
+      "depth": 2,
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+    },
+    {
+      "name": "senior-architect",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-architect",
+      "path": "skills/engineering-craft/senior-architect",
+      "depth": 2,
+      "description": "This skill should be used when the user asks to \"design system architecture\", \"evaluate microservices vs monolith\", \"create architecture diagrams\", \"analyze dependencies\", \"choose a database\", \"plan for scalability\", \"make technical decisions\", or \"review system design\". Use for architecture decision records (ADRs), tech stack evaluation, system design reviews, dependency analysis, and generating architecture diagrams in Mermaid, PlantUML, or ASCII format."
+    },
+    {
+      "name": "senior-backend",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-backend",
+      "path": "skills/engineering-craft/senior-backend",
+      "depth": 2,
+      "description": "Designs and implements backend systems including REST APIs, microservices, database architectures, authentication flows, and security hardening. Use when the user asks to \"design REST APIs\", \"optimize database queries\", \"implement authentication\", \"build microservices\", \"review backend code\", \"set up GraphQL\", \"handle database migrations\", or \"load test APIs\". Covers Node.js/Express/Fastify development, PostgreSQL optimization, API security, and backend architecture patterns."
+    },
+    {
+      "name": "senior-data-engineer",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-data-engineer",
+      "path": "skills/engineering-craft/senior-data-engineer",
+      "depth": 2,
+      "description": "Data engineering skill for building scalable data pipelines, ETL/ELT systems, and data infrastructure. Expertise in Python, SQL, Spark, Airflow, dbt, Kafka, and modern data stack. Includes data modeling, pipeline orchestration, data quality, and DataOps. Use when designing data architectures, building data pipelines, optimizing data workflows, implementing data governance, or troubleshooting data issues."
+    },
+    {
+      "name": "senior-data-scientist",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-data-scientist",
+      "path": "skills/engineering-craft/senior-data-scientist",
+      "depth": 2,
+      "description": "World-class senior data scientist skill specialising in statistical modeling, experiment design, causal inference, and predictive analytics. Covers A/B testing (sample sizing, two-proportion z-tests, Bonferroni correction), difference-in-differences, feature engineering pipelines (Scikit-learn, XGBoost), cross-validated model evaluation (AUC-ROC, AUC-PR, SHAP), and MLflow experiment tracking — using Python (NumPy, Pandas, Scikit-learn), R, and SQL. Use when designing or analysing controlled experiments, building and evaluating classification or regression models, performing causal analysis on observational data, engineering features for structured tabular datasets, or translating statistical findings into data-driven business decisions."
+    },
+    {
+      "name": "senior-frontend",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-frontend",
+      "path": "skills/engineering-craft/senior-frontend",
+      "depth": 2,
+      "description": "Frontend development skill for React, Next.js, TypeScript, and Tailwind CSS applications. Use when building React components, optimizing Next.js performance, analyzing bundle sizes, scaffolding frontend projects, implementing accessibility, or reviewing frontend code quality."
+    },
+    {
+      "name": "senior-fullstack",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-fullstack",
+      "path": "skills/engineering-craft/senior-fullstack",
+      "depth": 2,
+      "description": "Fullstack development toolkit with project scaffolding for Next.js, FastAPI, MERN, and Django stacks, code quality analysis with security and complexity scoring, and stack selection guidance. Use when the user asks to \"scaffold a new project\", \"create a Next.js app\", \"set up FastAPI with React\", \"analyze code quality\", \"audit my codebase\", \"what stack should I use\", \"generate project boilerplate\", or mentions fullstack development, project setup, or tech stack comparison."
+    },
+    {
+      "name": "senior-ml-engineer",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-ml-engineer",
+      "path": "skills/engineering-craft/senior-ml-engineer",
+      "depth": 2,
+      "description": "ML engineering skill for productionizing models, building MLOps pipelines, and integrating LLMs. Covers model deployment, feature stores, drift monitoring, RAG systems, and cost optimization. Use when the user asks about deploying ML models to production, setting up MLOps infrastructure (MLflow, Kubeflow, Kubernetes, Docker), monitoring model performance or drift, building RAG pipelines, or integrating LLM APIs with retry logic and cost controls. Focused on production and operational concerns rather than model research or initial training."
+    },
+    {
+      "name": "senior-pm",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-pm",
+      "path": "skills/engineering-craft/senior-pm",
+      "depth": 2,
+      "description": "Senior Project Manager for enterprise software, SaaS, and digital transformation projects. Specializes in portfolio management, quantitative risk analysis, resource optimization, stakeholder alignment, and executive reporting. Uses advanced methodologies including EMV analysis, Monte Carlo simulation, WSJF prioritization, and multi-dimensional health scoring. Use when a user needs help with project plans, project status reports, risk assessments, resource allocation, project roadmaps, milestone tracking, team capacity planning, portfolio health reviews, program management, or executive-level project reporting — especially for enterprise-scale initiatives with multiple workstreams, complex dependencies, or multi-million dollar budgets."
+    },
+    {
+      "name": "senior-qa",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/senior-qa",
+      "path": "skills/engineering-craft/senior-qa",
+      "depth": 2,
+      "description": "Generates unit tests, integration tests, and E2E tests for React/Next.js applications. Scans components to create Jest + React Testing Library test stubs, analyzes Istanbul/LCOV coverage reports to surface gaps, scaffolds Playwright test files from Next.js routes, mocks API calls with MSW, creates test fixtures, and configures test runners. Use when the user asks to \"generate tests\", \"write unit tests\", \"analyze test coverage\", \"scaffold E2E tests\", \"set up Playwright\", \"configure Jest\", \"implement testing patterns\", or \"improve test quality\"."
+    },
+    {
+      "name": "subagent-driven-development",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/subagent-driven-development",
+      "path": "skills/engineering-craft/subagent-driven-development",
+      "depth": 2,
+      "description": "Use when executing implementation plans with independent tasks in the current session"
+    },
+    {
+      "name": "systematic-debugging",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/systematic-debugging",
+      "path": "skills/engineering-craft/systematic-debugging",
+      "depth": 2,
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
+    },
+    {
+      "name": "tech-debt-tracker",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/tech-debt-tracker",
+      "path": "skills/engineering-craft/tech-debt-tracker",
+      "depth": 2,
+      "description": "Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans. Use when users mention tech debt, code quality, refactoring priority, debt scoring, cleanup sprints, or code health assessment. Also use for legacy code modernization planning and maintenance cost estimation."
+    },
+    {
+      "name": "tech-stack-evaluator",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/tech-stack-evaluator",
+      "path": "skills/engineering-craft/tech-stack-evaluator",
+      "depth": 2,
+      "description": "Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring. Use when comparing frameworks, evaluating technology stacks, calculating total cost of ownership, assessing migration paths, or analyzing ecosystem viability."
+    },
+    {
+      "name": "test-driven-development",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/test-driven-development",
+      "path": "skills/engineering-craft/test-driven-development",
+      "depth": 2,
+      "description": "Use when implementing any feature or bugfix, before writing implementation code"
+    },
+    {
+      "name": "using-git-worktrees",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/using-git-worktrees",
+      "path": "skills/engineering-craft/using-git-worktrees",
+      "depth": 2,
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
+    },
+    {
+      "name": "using-superpowers",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/using-superpowers",
+      "path": "skills/engineering-craft/using-superpowers",
+      "depth": 2,
+      "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions"
+    },
+    {
+      "name": "verification-before-completion",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/verification-before-completion",
+      "path": "skills/engineering-craft/verification-before-completion",
+      "depth": 2,
+      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always"
+    },
+    {
+      "name": "writing-plans",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/writing-plans",
+      "path": "skills/engineering-craft/writing-plans",
+      "depth": 2,
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code"
+    },
+    {
+      "name": "openrouter-agent-migration",
+      "category": "llm-integrations",
+      "install_path": "llm-integrations/openrouter-agent-migration",
+      "path": "skills/llm-integrations/openrouter-agent-migration",
+      "depth": 2,
+      "description": "Migration guide from @openrouter/sdk to @openrouter/agent for callModel, tool(), stop conditions, and agent features. This skill should be used when code imports callModel, tool(), or stop conditions from @openrouter/sdk and needs to migrate to @openrouter/agent."
+    },
+    {
+      "name": "openrouter-images",
+      "category": "llm-integrations",
+      "install_path": "llm-integrations/openrouter-images",
+      "path": "skills/llm-integrations/openrouter-images",
+      "depth": 2,
+      "description": "Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, transform, or alter an existing image with a text prompt."
+    },
+    {
+      "name": "openrouter-models",
+      "category": "llm-integrations",
+      "install_path": "llm-integrations/openrouter-models",
+      "path": "skills/llm-integrations/openrouter-models",
+      "depth": 2,
+      "description": "Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance. Use when the user asks about available OpenRouter models, model pricing, model context lengths, model capabilities, provider latency or uptime, throughput limits, supported parameters, wants to search/filter/compare models, or find the fastest provider for a model."
+    },
+    {
+      "name": "openrouter-oauth",
+      "category": "llm-integrations",
+      "install_path": "llm-integrations/openrouter-oauth",
+      "path": "skills/llm-integrations/openrouter-oauth",
+      "depth": 2,
+      "description": "Implement \"Sign In with OpenRouter\" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required."
+    },
+    {
+      "name": "openrouter-typescript-sdk",
+      "category": "llm-integrations",
+      "install_path": "llm-integrations/openrouter-typescript-sdk",
+      "path": "skills/llm-integrations/openrouter-typescript-sdk",
+      "depth": 2,
+      "description": "Complete reference for integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern"
+    },
+    {
+      "name": "content-humanizer",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/content-humanizer",
+      "path": "skills/marketing-and-growth/content-humanizer",
+      "depth": 2,
+      "description": "Makes AI-generated content sound genuinely human — not just cleaned up, but alive. Use when content feels robotic, uses too many AI clichés, lacks personality, or reads like it was written by committee. Triggers: 'this sounds like AI', 'make it more human', 'add personality', 'it feels generic', 'sounds robotic', 'fix AI writing', 'inject our voice'. NOT for initial content creation (use content-production). NOT for SEO optimization (use content-production Mode 3)."
+    },
+    {
+      "name": "content-production",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/content-production",
+      "path": "skills/marketing-and-growth/content-production",
+      "depth": 2,
+      "description": "Full content production pipeline — takes a topic from blank page to published-ready piece. Use when you need to execute content: write a blog post, article, or guide end-to-end. Triggers: 'write a post about', 'draft an article', 'create content for', 'help me write', 'I need a blog post'. NOT for content strategy or calendar planning (use content-strategy). NOT for repurposing existing content (use content-repurposing). NOT for social captions only."
+    },
+    {
+      "name": "ad-creative",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/cs-ad-creative",
+      "path": "skills/marketing-and-growth/cs-ad-creative",
+      "depth": 2,
+      "description": "When the user needs to generate, iterate, or scale ad creative for paid advertising. Use when they say 'write ad copy,' 'generate headlines,' 'create ad variations,' 'bulk creative,' 'iterate on ads,' 'ad copy validation,' 'RSA headlines,' 'Meta ad copy,' 'LinkedIn ad,' or 'creative testing.' This is pure creative production — distinct from paid-ads (campaign strategy). Use ad-creative when you need the copy, not the campaign plan."
+    },
+    {
+      "name": "ai-seo",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/cs-ai-seo",
+      "path": "skills/marketing-and-growth/cs-ai-seo",
+      "depth": 2,
+      "description": "Optimize content to get cited by AI search engines — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Copilot. Use when you want your content to appear in AI-generated answers, not just ranked in blue links. Triggers: 'optimize for AI search', 'get cited by ChatGPT', 'AI Overviews', 'Perplexity citations', 'AI SEO', 'generative search', 'LLM visibility', 'GEO' (generative engine optimization). NOT for traditional SEO ranking (use seo-audit). NOT for content creation (use content-production)."
+    },
+    {
+      "name": "cold-email",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/cs-cold-email",
+      "path": "skills/marketing-and-growth/cs-cold-email",
+      "depth": 2,
+      "description": "When the user wants to write, improve, or build a sequence of B2B cold outreach emails to prospects who haven't asked to hear from them. Use when the user mentions 'cold email,' 'cold outreach,' 'prospecting emails,' 'SDR emails,' 'sales emails,' 'first touch email,' 'follow-up sequence,' or 'email prospecting.' Also use when they share an email draft that sounds too sales-y and needs to be humanized. Distinct from email-sequence (lifecycle/nurture to opted-in subscribers) — this is unsolicited outreach to new prospects. NOT for lifecycle emails, newsletters, or drip campaigns (use email-sequence)."
+    },
+    {
+      "name": "copywriting",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/cs-copywriting",
+      "path": "skills/marketing-and-growth/cs-copywriting",
+      "depth": 2,
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \\\"write copy for,\\\" \\\"improve this copy,\\\" \\\"rewrite this page,\\\" \\\"marketing copy,\\\" \\\"headline help,\\\" or \\\"CTA copy.\\\" For email copy, see email-sequence. For popup copy, see popup-cro."
+    },
+    {
+      "name": "pricing-strategy",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/cs-pricing-strategy",
+      "path": "skills/marketing-and-growth/cs-pricing-strategy",
+      "depth": 2,
+      "description": "Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and price increase strategy. Use when building a pricing model from scratch, redesigning existing pricing, planning a price increase, or improving a pricing page. Trigger keywords: pricing tiers, pricing page, price increase, packaging, value metric, per seat pricing, usage-based pricing, freemium, good-better-best, pricing strategy, monetization, pricing page conversion, Van Westendorp. NOT for broader product strategy — use product-strategist for that. NOT for customer success or renewals — use customer-success-manager for expansion revenue."
+    },
+    {
+      "name": "seo-audit",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/cs-seo-audit",
+      "path": "skills/marketing-and-growth/cs-seo-audit",
+      "depth": 2,
+      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup."
+    },
+    {
+      "name": "social-media-manager",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/cs-social-media-manager",
+      "path": "skills/marketing-and-growth/cs-social-media-manager",
+      "depth": 2,
+      "description": "When the user wants to develop social media strategy, plan content calendars, manage community engagement, or grow their social presence across platforms. Also use when the user mentions 'social media strategy,' 'social calendar,' 'community management,' 'social media plan,' 'grow followers,' 'engagement rate,' 'social media audit,' or 'which platforms should I use.' For writing individual social posts, see social-content. For analyzing social performance data, see social-media-analyzer."
+    },
+    {
+      "name": "email-sequence",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/email-sequence",
+      "path": "skills/marketing-and-growth/email-sequence",
+      "depth": 2,
+      "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro."
+    },
+    {
+      "name": "launch-strategy",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/launch-strategy",
+      "path": "skills/marketing-and-growth/launch-strategy",
+      "depth": 2,
+      "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' 'product update,' 'GTM plan,' 'launch checklist,' or 'launch momentum.' This skill covers phased launches, channel strategy, and ongoing launch momentum."
+    },
+    {
+      "name": "marketing-context",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/marketing-context",
+      "path": "skills/marketing-and-growth/marketing-context",
+      "depth": 2,
+      "description": "Create and maintain the marketing context document that all marketing skills read before starting. Use when the user mentions 'marketing context,' 'brand voice,' 'set up context,' 'target audience,' 'ICP,' 'style guide,' 'who is my customer,' 'positioning,' or wants to avoid repeating foundational information across marketing tasks. Run this at the start of any new project before using other marketing skills."
+    },
+    {
+      "name": "marketing-demand-acquisition",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/marketing-demand-acquisition",
+      "path": "skills/marketing-and-growth/marketing-demand-acquisition",
+      "depth": 2,
+      "description": "Creates demand generation campaigns, optimizes paid ad spend across LinkedIn, Google, and Meta, develops SEO strategies, and structures partnership programs for Series A+ startups scaling internationally. Use when planning marketing strategy, growth marketing, advertising campaigns, PPC optimization, lead generation, pipeline generation, or startup marketing budgets. Covers multi-channel acquisition (Google Ads, LinkedIn Ads, Meta Ads), CAC analysis, MQL/SQL workflows, attribution modeling, technical SEO, and co-marketing partnerships for hybrid PLG/Sales-Led motions in EU/US/Canada markets."
+    },
+    {
+      "name": "marketing-ops",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/marketing-ops",
+      "path": "skills/marketing-and-growth/marketing-ops",
+      "depth": 2,
+      "description": "Central router for the marketing skill ecosystem. Use when unsure which marketing skill to use, when orchestrating a multi-skill campaign, or when coordinating across content, SEO, CRO, channels, and analytics. Also use when the user mentions 'marketing help,' 'campaign plan,' 'what should I do next,' 'marketing priorities,' or 'coordinate marketing.'"
+    },
+    {
+      "name": "marketing-psychology",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/marketing-psychology",
+      "path": "skills/marketing-and-growth/marketing-psychology",
+      "depth": 2,
+      "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application."
+    },
+    {
+      "name": "marketing-strategy-pmm",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/marketing-strategy-pmm",
+      "path": "skills/marketing-and-growth/marketing-strategy-pmm",
+      "depth": 2,
+      "description": "Product marketing skill for positioning, GTM strategy, competitive intelligence, and product launches. Use when the user asks about product positioning, go-to-market planning, competitive analysis, target audience definition, ICP definition, market research, launch plans, or sales enablement. Covers April Dunford positioning, ICP definition, competitive battlecards, launch playbooks, and international market entry. Produces deliverables including positioning statements, battlecard documents, launch plans, and go-to-market strategies."
+    },
+    {
+      "name": "onboarding-cro",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/onboarding-cro",
+      "path": "skills/marketing-and-growth/onboarding-cro",
+      "depth": 2,
+      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" or \"new user experience.\" For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence."
+    },
+    {
+      "name": "page-cro",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/page-cro",
+      "path": "skills/marketing-and-growth/page-cro",
+      "depth": 2,
+      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says \"CRO,\" \"conversion rate optimization,\" \"this page isn't converting,\" \"improve conversions,\" or \"why isn't this page working.\" For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro."
+    },
+    {
+      "name": "paid-ads",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/paid-ads",
+      "path": "skills/marketing-and-growth/paid-ads",
+      "depth": 2,
+      "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' 'ad copy,' 'ad creative,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' or 'audience targeting.' This skill covers campaign strategy, ad creation, audience targeting, and optimization."
+    },
+    {
+      "name": "programmatic-seo",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/programmatic-seo",
+      "path": "skills/marketing-and-growth/programmatic-seo",
+      "depth": 2,
+      "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages at scale,\" \"directory pages,\" \"location pages,\" \"[keyword] + [city] pages,\" \"comparison pages,\" \"integration pages,\" or \"building many pages for SEO.\" For auditing existing SEO issues, see seo-audit."
+    },
+    {
+      "name": "signup-flow-cro",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/signup-flow-cro",
+      "path": "skills/marketing-and-growth/signup-flow-cro",
+      "depth": 2,
+      "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" or \"account creation flow.\" For post-signup onboarding, see onboarding-cro. For lead capture forms (not account creation), see form-cro."
+    },
+    {
+      "name": "x-twitter-growth",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/x-twitter-growth",
+      "path": "skills/marketing-and-growth/x-twitter-growth",
+      "depth": 2,
+      "description": "X/Twitter growth engine for building audience, crafting viral content, and analyzing engagement. Use when the user wants to grow on X/Twitter, write tweets or threads, analyze their X profile, research competitors on X, plan a posting strategy, or optimize engagement. Complements social-content (generic multi-platform) with X-specific depth: algorithm mechanics, thread engineering, reply strategy, profile optimization, and competitive intelligence via web search."
+    },
+    {
+      "name": "agile-product-owner",
+      "category": "product-management",
+      "install_path": "product-management/agile-product-owner",
+      "path": "skills/product-management/agile-product-owner",
+      "depth": 2,
+      "description": "Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use for writing user stories, creating acceptance criteria, planning sprints, estimating story points, breaking down epics, or prioritizing backlog."
+    },
+    {
+      "name": "experiment-designer",
+      "category": "product-management",
+      "install_path": "product-management/experiment-designer",
+      "path": "skills/product-management/experiment-designer",
+      "depth": 2,
+      "description": "Use when planning, designing, or interpreting any A/B test, split test, multivariate test, or controlled experiment — for products, features, marketing pages, signup flows, pricing, or copy variants. Covers hypothesis writing, sample-size estimation, ICE prioritization, traffic allocation, statistical-significance analysis, guardrail metrics, and the peeking problem. Triggers on: \"A/B test\", \"split test\", \"experiment\", \"test this change\", \"variant copy\", \"multivariate test\", \"hypothesis\", \"conversion experiment\", \"statistical significance\", \"minimum detectable effect\", \"sample size\"."
+    },
+    {
+      "name": "product-analytics",
+      "category": "product-management",
+      "install_path": "product-management/product-analytics",
+      "path": "skills/product-management/product-analytics",
+      "depth": 2,
+      "description": "Use when defining product KPIs, building metric dashboards, running cohort or retention analysis, or interpreting feature adoption trends across product stages."
+    },
+    {
+      "name": "product-discovery",
+      "category": "product-management",
+      "install_path": "product-management/product-discovery",
+      "path": "skills/product-management/product-discovery",
+      "depth": 2,
+      "description": "Use when validating product opportunities, mapping assumptions, planning discovery sprints, or testing problem-solution fit before committing delivery resources."
+    },
+    {
+      "name": "product-manager-toolkit",
+      "category": "product-management",
+      "install_path": "product-management/product-manager-toolkit",
+      "path": "skills/product-management/product-manager-toolkit",
+      "depth": 2,
+      "description": "Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use for feature prioritization, user research synthesis, requirement documentation, and product strategy development."
+    },
+    {
+      "name": "product-strategist",
+      "category": "product-management",
+      "install_path": "product-management/product-strategist",
+      "path": "skills/product-management/product-strategist",
+      "depth": 2,
+      "description": "Strategic product leadership toolkit for Head of Product covering OKR cascade generation, quarterly planning, competitive landscape analysis, product vision documents, and team scaling proposals. Use when creating quarterly OKR documents, defining product goals or KPIs, building product roadmaps, running competitive analysis, drafting team structure or hiring plans, aligning product strategy across engineering and design, or generating cascaded goal hierarchies from company to team level."
+    },
+    {
+      "name": "roadmap-communicator",
+      "category": "product-management",
+      "install_path": "product-management/roadmap-communicator",
+      "path": "skills/product-management/roadmap-communicator",
+      "depth": 2,
+      "description": "Use when preparing roadmap narratives, release notes, changelogs, or stakeholder updates tailored for executives, engineering teams, and customers."
+    },
+    {
+      "name": "scrum-master",
+      "category": "product-management",
+      "install_path": "product-management/scrum-master",
+      "path": "skills/product-management/scrum-master",
+      "depth": 2,
+      "description": "Advanced Scrum Master skill for data-driven agile team analysis and coaching. Use when the user asks about sprint planning, velocity tracking, retrospectives, standup facilitation, backlog grooming, story points, burndown charts, blocker resolution, or agile team health. Runs Python scripts to analyse sprint JSON exports from Jira or similar tools: velocity_analyzer.py for Monte Carlo sprint forecasting, sprint_health_scorer.py for multi-dimension health scoring, and retrospective_analyzer.py for action-item and theme tracking. Produces confidence-interval forecasts, health grade reports, and improvement-velocity trends for high-performing Scrum teams."
+    },
+    {
+      "name": "ux-researcher-designer",
+      "category": "product-management",
+      "install_path": "product-management/ux-researcher-designer",
+      "path": "skills/product-management/ux-researcher-designer",
+      "depth": 2,
+      "description": "UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user research, persona creation, journey mapping, and design validation."
+    },
+    {
+      "name": "skill-creator",
+      "category": "skill-authoring",
+      "install_path": "skill-authoring/skill-creator",
+      "path": "skills/skill-authoring/skill-creator",
+      "depth": 2,
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+    },
+    {
+      "name": "writing-skills",
+      "category": "skill-authoring",
+      "install_path": "skill-authoring/writing-skills",
+      "path": "skills/skill-authoring/writing-skills",
+      "depth": 2,
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
+    }
+  ]
+}

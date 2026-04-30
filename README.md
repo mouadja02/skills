@@ -1,14 +1,16 @@
 # skills
 
-A curated collection of **149 Agent Skills** for [Claude Code](https://docs.claude.com/en/docs/claude-code) and [Cursor](https://cursor.com), spanning *how to write code well*, *how to build agents*, *how to design UIs*, *how to ship docs and presentations*, *how to integrate LLMs*, *how to advise the C-suite*, *how to run growth marketing*, *how to operate infrastructure*, *how to manage products*, and *how to talk like a token-efficient caveman*.
+A curated collection of **244 Agent Skills** for [Claude Code](https://docs.claude.com/en/docs/claude-code) and [Cursor](https://cursor.com), spanning *how to write code well*, *how to build agents*, *how to design UIs*, *how to ship docs and presentations*, *how to integrate LLMs*, *how to advise the C-suite*, *how to run growth marketing*, *how to operate infrastructure*, *how to manage products*, and *how to talk like a token-efficient caveman*.
 
 > Skills are reusable, model-invocable instruction packages. They auto-load based on the user's request, scoped to a single domain (writing tests, designing logos, querying Snowflake, advising a CEO, designing an experiment, etc.). One folder per skill, one `SKILL.md` per folder.
+
+**Three ways to grab a skill:** one-line installer · `npx degit` · direct `.zip` download from [the browser](https://mouadja02.github.io/skills/).
 
 ---
 
 ## Quick start
 
-Place this repo's `skills/` directory wherever your agent looks for skills:
+Skills go in whichever folder your agent already looks at:
 
 | Client | Path |
 | --- | --- |
@@ -17,38 +19,211 @@ Place this repo's `skills/` directory wherever your agent looks for skills:
 | **Cursor** (project) | `.cursor/skills/` |
 | **Cursor** (user) | `~/.cursor/skills/` |
 
-Both clients **walk the tree recursively**, so the category subfolders below don't affect discovery — they exist purely to make this repo browsable on GitHub.
+Both clients walk the tree recursively, so the category subfolders below don't affect discovery — they exist purely to make this repo browsable on GitHub.
 
-To copy these skills into your own project:
+### Browse and install
+
+Open the searchable index — it gives every skill a copy-paste install command **and a one-click `.zip` download**:
+
+**[mouadja02.github.io/skills](https://mouadja02.github.io/skills/)** *(once Pages is enabled — see [Setup](#setup-github-pages-one-time))*
+
+Or browse the markdown table at [`SKILLS.md`](./SKILLS.md), or the per-category READMEs under [`skills/`](./skills/).
+
+### Install skills (no full clone)
+
+The installer scripts accept three kinds of selector:
+
+| Selector | What it installs | Example |
+| --- | --- | --- |
+| Exact install path | one skill | `engineering-craft/test-driven-development` |
+| Category name | every skill in that category | `engineering-craft` (29 skills) |
+| Glob pattern (quoted) | every install path that matches | `"*bmad*"`, `"ai-agents/*"`, `"*-advisor"` |
+
+`-d` / `-Dest` is required. For single-skill installs, `<dest>` is the skill folder. For category and glob installs, `<dest>` is the parent folder; each matched skill gets its own subfolder underneath. Use `--force` / `-Force` to overwrite existing destinations.
+
+#### Option A — installer scripts (recommended)
+
+**bash / zsh / WSL / Git Bash:**
 
 ```bash
-git clone https://github.com/<your-fork>/skills.git
-cp -r skills/skills/* /path/to/your/project/.claude/skills/
+# one skill
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
+  | bash -s -- engineering-craft/test-driven-development \
+      -d ~/.claude/skills/test-driven-development
+
+# whole category
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
+  | bash -s -- engineering-craft -d ~/.claude/skills/engineering-craft
+
+# glob pattern, flattened by skill name
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
+  | bash -s -- "*bmad*" -d ~/.claude/skills/bmad --flat
+
+# preview what would happen
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
+  | bash -s -- "ai-agents/*" -d ~/.claude/skills/ai --dry-run
+
+# discover what's available
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
+  | bash -s -- --list-categories
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
+  | bash -s -- --help
 ```
 
-Or install one category at a time:
+**PowerShell (Windows / macOS / Linux):**
+
+```powershell
+$content = irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1
+iex $content
+
+# one skill
+Install-Skill engineering-craft/test-driven-development `
+              -Dest $HOME\.claude\skills\test-driven-development
+
+# whole category
+Install-Skill engineering-craft -Dest $HOME\.claude\skills\engineering-craft
+
+# glob pattern, flattened by skill name
+Install-Skill "*bmad*" -Dest $HOME\.claude\skills\bmad -Flat
+
+# preview what would happen
+Install-Skill "ai-agents/*" -Dest $HOME\.claude\skills\ai -DryRun
+
+# discover what's available
+Install-Skill -ListCategories
+Install-Skill -List
+Install-Skill -Help              # full Get-Help output
+```
+
+**Flags (both installers):**
+
+| bash | PowerShell | Purpose |
+| --- | --- | --- |
+| `-d <path>` | `-Dest <path>` | destination (required) |
+| `--branch <name>` | `-Branch <name>` | install from a non-default branch |
+| `--force` | `-Force` | overwrite existing destinations |
+| `--flat` | `-Flat` | glob mode: place each skill at `<dest>/<name>/` instead of preserving install paths (errors on collision) |
+| `--dry-run` | `-DryRun` | resolve selector and print plan only |
+| `--list` | `-List` | list every skill, grouped by category |
+| `--list-categories` | `-ListCategories` | list categories with skill counts |
+| `-h` / `--help` | `-Help` | show usage |
+
+Override the source repo / branch with the `SKILLS_REPO` and `SKILLS_BRANCH` env vars (or `SKILLS_RAW_BASE` and `SKILLS_TARBALL_BASE` to point at a private mirror).
+
+#### Option B — `degit` (requires Node.js, single skill or folder)
 
 ```bash
-cp -r skills/skills/engineering-craft/* /path/to/your/project/.claude/skills/
+# one skill
+npx degit mouadja02/skills/skills/engineering-craft/test-driven-development \
+  ~/.claude/skills/test-driven-development
+
+# whole category
+npx degit mouadja02/skills/skills/engineering-craft \
+  ~/.claude/skills/engineering-craft
 ```
+
+#### Option C — `git sparse-checkout` (git only)
+
+```bash
+git clone --no-checkout --depth 1 --filter=blob:none \
+  https://github.com/mouadja02/skills.git skills-tmp
+cd skills-tmp
+git sparse-checkout init --cone
+git sparse-checkout set skills/engineering-craft/test-driven-development
+git checkout
+mv skills/engineering-craft/test-driven-development \
+  ~/.claude/skills/test-driven-development
+cd .. && rm -rf skills-tmp
+```
+
+#### Option D — direct `.zip` download
+
+Every skill and every category is published as a downloadable `.zip` on the
+Pages site. No tools required — click the **`↓ .zip`** button on any card,
+or grab a stable URL:
+
+```text
+https://mouadja02.github.io/skills/zips/skill/<install-path>.zip
+https://mouadja02.github.io/skills/zips/category/<category>.zip
+```
+
+Examples:
+
+```bash
+curl -LO https://mouadja02.github.io/skills/zips/skill/engineering-craft/test-driven-development.zip
+unzip test-driven-development.zip -d ~/.claude/skills/
+
+curl -LO https://mouadja02.github.io/skills/zips/category/ai-agents.zip
+unzip ai-agents.zip -d ~/.claude/skills/
+```
+
+Each zip unpacks to a single named folder ready to drop into your skills
+directory. A machine-readable index of every zip (URL + size) lives at
+`https://mouadja02.github.io/skills/zips/_summary.json`.
+
+#### Option E — full clone
+
+If you want everything at once:
+
+```bash
+git clone https://github.com/mouadja02/skills.git
+cp -r skills/skills/* ~/.claude/skills/
+```
+
+### Machine-readable index
+
+Every skill's `name`, `description`, `category`, and `install_path` lives in
+[`docs/manifest.json`](./docs/manifest.json) (and a tab-separated
+[`docs/manifest.tsv`](./docs/manifest.tsv) for shell tools). Two ways to
+fetch it:
+
+```bash
+# from a clone:
+node scripts/build-manifest.mjs           # regenerate locally
+
+# from anywhere:
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/docs/manifest.json
+curl -fsSL https://mouadja02.github.io/skills/manifest.json
+```
+
+The CI workflow at
+[`.github/workflows/build-manifest.yml`](./.github/workflows/build-manifest.yml)
+regenerates it on every push that touches a `SKILL.md`.
+
+### Setup: GitHub Pages (one-time)
+
+To publish the searchable index at `https://<user>.github.io/skills/`:
+
+1. **Settings → Pages** → *Source*: **GitHub Actions**.
+2. Push any change to `main`. The
+   [`Deploy Pages`](./.github/workflows/deploy-pages.yml) workflow builds
+   the manifest, generates per-skill and per-category `.zip` archives into
+   `docs/zips/`, then uploads `docs/` as the Pages artifact.
+3. Wait ~1 minute for the first deploy.
+
+`docs/zips/` is `.gitignore`d — the archives only exist inside the Pages
+artifact, so the main branch stays lean.
 
 ---
 
 ## Categories
 
-The 149 skills are grouped into 13 thematic categories. Click any category to see its full per-skill table.
+The 244 skills (counting nested sub-skills as their own installable units)
+are grouped into 13 thematic categories. Click any category to see its full
+per-skill table; counts come from the auto-generated
+[`docs/manifest.json`](./docs/manifest.json).
 
 | Category | Skills | What lives here |
 | --- | --- | --- |
 | [**`skill-authoring/`**](./skills/skill-authoring/) | 2 | Building, editing, and benchmarking the skills themselves. |
 | [**`engineering-craft/`**](./skills/engineering-craft/) | 29 | The disciplined development loop: planning, brainstorming, TDD, debugging, code review, git worktrees, verification — plus senior IC roles (architect, frontend, backend, fullstack, ML, data, QA, PM). |
-| [**`ai-agents/`**](./skills/ai-agents/) | 13 | Designing, scaffolding, and operating AI agents — single and multi-agent, headless and TUI. Includes the **BMad Method** with 30 sub-skills and 6 named personas, the canonical `senior-prompt-engineer` (with A/B testing + versioning), and `mcp-server-builder`. |
+| [**`ai-agents/`**](./skills/ai-agents/) | 53 | Designing, scaffolding, and operating AI agents — single and multi-agent, headless and TUI. Includes the **BMad Method** with 30 sub-skills and 6 named personas, the canonical `senior-prompt-engineer`, and `mcp-server-builder`. |
 | [**`context-engineering/`**](./skills/context-engineering/) | 6 | Context windows, compression, persistence, memory frameworks, lost-in-middle mitigation. |
 | [**`llm-integrations/`**](./skills/llm-integrations/) | 5 | OpenRouter family — TypeScript SDK, model discovery, image generation, OAuth, migration. |
 | [**`design-and-ui/`**](./skills/design-and-ui/) | 10 | Frontend craft, design systems, brand identity, themes, banners, narrative portfolio sites. |
 | [**`docs-and-presentations/`**](./skills/docs-and-presentations/) | 6 | READMEs, technical docs, ADRs, HTML slides, .pptx files, SVG diagrams. |
-| [**`data-and-backend/`**](./skills/data-and-backend/) | 5 | FastAPI + LLM, Snowflake SQL, dbt, ETL-to-dbt migration, Streamlit (with nested sub-skills). |
-| [**`business-and-strategy/`**](./skills/business-and-strategy/) | 22 | The full C-suite — CEO, CFO, CTO, COO, CPO, CMO, CRO, CISO, CHRO advisors plus chief-of-staff routing, board-meeting protocol, company OS, scenario war room, executive mentor. |
+| [**`data-and-backend/`**](./skills/data-and-backend/) | 22 | FastAPI + LLM, Snowflake SQL, dbt, ETL-to-dbt migration, Streamlit (with nested sub-skills for charts, dashboards, theming). |
+| [**`business-and-strategy/`**](./skills/business-and-strategy/) | 60 | The full C-suite — CEO, CFO, CTO, COO, CPO, CMO, CRO, CISO, CHRO advisors plus chief-of-staff routing, board-meeting protocol, company OS, scenario war room, executive mentor. |
 | [**`marketing-and-growth/`**](./skills/marketing-and-growth/) | 22 | A complete marketing operating system — strategy, content, SEO, paid acquisition, copywriting, conversion-rate optimization. |
 | [**`devops-and-infrastructure/`**](./skills/devops-and-infrastructure/) | 14 | CI/CD, Docker, Helm, Terraform, AWS, database design, dependency auditing, incident command, observability, Stripe integration, secops. |
 | [**`product-management/`**](./skills/product-management/) | 9 | PM toolkit, discovery, **canonical `experiment-designer`** (product *and* marketing A/B), agile delivery, UX research, roadmap communication. |
@@ -78,23 +253,59 @@ A handful of skills you might want to load first:
 
 ```
 .
-├── README.md                                  (you are here)
+├── README.md                       (you are here)
+├── CONTRIBUTING.md                 (how to add or edit a skill)
+├── SKILLS.md                       (auto-generated browsable markdown index)
+├── package.json                    (devDeps for scripts/*)
+├── install.sh                      (one-liner installer for bash/zsh)
+├── install.ps1                     (one-liner installer for PowerShell)
+│
+├── scripts/
+│   ├── build-manifest.mjs          (regenerates docs/manifest.{json,tsv} + SKILLS.md)
+│   ├── build-zips.mjs              (generates docs/zips/ for the Pages site)
+│   └── preview.mjs                 (zero-dep static server for docs/)
+│
+├── docs/                           (GitHub Pages site — single source of truth)
+│   ├── index.html
+│   ├── app.js
+│   ├── style.css
+│   ├── manifest.json               (canonical, machine-readable)
+│   ├── manifest.tsv                (canonical, tab-separated for shell tools)
+│   └── zips/                       (.gitignored — generated by deploy workflow)
+│       ├── _summary.json
+│       ├── skill/<install_path>.zip
+│       └── category/<category>.zip
+│
+├── .github/workflows/
+│   ├── build-manifest.yml          (auto-regenerate manifest on SKILL.md changes)
+│   └── deploy-pages.yml            (build + zip + deploy docs/ to Pages)
+│
 └── skills/
-    ├── README.md                              (skills index)
+    ├── README.md                   (skills index)
     │
     ├── skill-authoring/             (2)
     ├── engineering-craft/           (29)
-    ├── ai-agents/                   (13, includes nested bmm-skills/ with 30 sub-skills)
+    ├── ai-agents/                   (53, includes nested bmm-skills/, claude-skills/, cursor-skills/)
     ├── context-engineering/         (6)
     ├── llm-integrations/            (5)
     ├── design-and-ui/               (10)
     ├── docs-and-presentations/      (6)
-    ├── data-and-backend/            (5, includes nested developing-with-streamlit/skills/)
-    ├── business-and-strategy/       (22)
+    ├── data-and-backend/            (22, includes nested developing-with-streamlit/skills/)
+    ├── business-and-strategy/       (60, includes Anthropic exec advisors and BMM business roles)
     ├── marketing-and-growth/        (22)
     ├── devops-and-infrastructure/   (14)
     ├── product-management/          (9)
     └── caveman/                     (6, plus rules/caveman.mdc Cursor rule)
+```
+
+## Local development
+
+```bash
+npm install                  # one-time
+npm run build:manifest       # regenerate docs/manifest.{json,tsv} + SKILLS.md
+npm run build:zips           # generate docs/zips/* (requires manifest first)
+npm run build                # both, in order
+npm run preview              # serve docs/ at http://localhost:4173
 ```
 
 ---
