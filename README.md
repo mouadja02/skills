@@ -1,6 +1,6 @@
 # skills
 
-A curated collection of **253 Agent Skills** for [Claude Code](https://docs.claude.com/en/docs/claude-code) and [Cursor](https://cursor.com), spanning *how to write code well*, *how to build agents*, *how to design UIs*, *how to ship docs and presentations*, *how to integrate LLMs*, *how to advise the C-suite*, *how to run growth marketing*, *how to operate infrastructure*, *how to manage products*, and *how to talk like a token-efficient caveman*.
+A curated collection of **258 Agent Skills** for [Claude Code](https://docs.claude.com/en/docs/claude-code) and [Cursor](https://cursor.com), spanning *how to write code well*, *how to build agents*, *how to design UIs*, *how to ship docs and presentations*, *how to integrate LLMs*, *how to advise the C-suite*, *how to run growth marketing*, *how to operate infrastructure*, *how to manage products*, and *how to talk like a token-efficient caveman*.
 
 > Skills are reusable, model-invocable instruction packages. They auto-load based on the user's request, scoped to a single domain (writing tests, designing logos, querying Snowflake, advising a CEO, designing an experiment, etc.). One folder per skill, one `SKILL.md` per folder.
 
@@ -208,7 +208,7 @@ artifact, so the main branch stays lean.
 
 ## Categories
 
-The 253 skills (counting nested sub-skills as their own installable units)
+The 258 skills (counting nested sub-skills as their own installable units)
 are grouped into 13 thematic categories. Click any category to see its full
 per-skill table; counts come from the auto-generated
 [`docs/manifest.json`](./docs/manifest.json).
@@ -216,8 +216,8 @@ per-skill table; counts come from the auto-generated
 | Category | Skills | What lives here |
 | --- | --- | --- |
 | [**`skill-authoring/`**](./skills/skill-authoring/) | 2 | Building, editing, and benchmarking the skills themselves. |
-| [**`engineering-craft/`**](./skills/engineering-craft/) | 34 | The disciplined development loop: planning, brainstorming, TDD, debugging, code review, git worktrees, verification — plus senior IC roles (architect, frontend, backend, fullstack, ML, data, QA, PM). |
-| [**`ai-agents/`**](./skills/ai-agents/) | 54 | Designing, scaffolding, and operating AI agents — single and multi-agent, headless and TUI. Includes the **BMad Method** with 30 sub-skills and 6 named personas, the canonical `senior-prompt-engineer`, and `mcp-server-builder`. |
+| [**`engineering-craft/`**](./skills/engineering-craft/) | 35 | The disciplined development loop: planning, brainstorming, TDD, debugging, code review, git worktrees, verification — plus senior IC roles (architect, frontend, backend, fullstack, ML, data, QA, PM) and AI-powered code migration. |
+| [**`ai-agents/`**](./skills/ai-agents/) | 58 | Designing, scaffolding, and operating AI agents — single and multi-agent, headless and TUI. Includes the **BMad Method** with 30 sub-skills and 6 named personas, the canonical `senior-prompt-engineer`, `mcp-server-builder`, browser automation, durable workflows, local AI stack, and trading agents. |
 | [**`context-engineering/`**](./skills/context-engineering/) | 6 | Context windows, compression, persistence, memory frameworks, lost-in-middle mitigation. |
 | [**`llm-integrations/`**](./skills/llm-integrations/) | 5 | OpenRouter family — TypeScript SDK, model discovery, image generation, OAuth, migration. |
 | [**`design-and-ui/`**](./skills/design-and-ui/) | 10 | Frontend craft, design systems, brand identity, themes, banners, narrative portfolio sites. |
@@ -284,8 +284,8 @@ A handful of skills you might want to load first:
     ├── README.md                   (skills index)
     │
     ├── skill-authoring/             (2)
-    ├── engineering-craft/           (34)
-    ├── ai-agents/                   (54, includes nested bmm-skills/, claude-skills/, cursor-skills/)
+    ├── engineering-craft/           (35)
+    ├── ai-agents/                   (58, includes nested bmm-skills/, claude-skills/, cursor-skills/)
     ├── context-engineering/         (6)
     ├── llm-integrations/            (5)
     ├── design-and-ui/               (10)

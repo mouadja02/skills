@@ -31,13 +31,13 @@ Do not let generated mockups replace interface structure, copy, accessibility, r
 
 ## Step 1: Shape the Design
 
-Run /impeccable shape, passing along whatever feature description the user provided.
+Run {{command_prefix}}impeccable shape, passing along whatever feature description the user provided.
 
 Wait for the design brief to be fully confirmed by the user before proceeding. The brief is your blueprint, and every implementation decision should trace back to it.
 
 If this craft run resumed after `teach` created PRODUCT.md, run shape now. Do not treat the teach interview, PRODUCT.md, or a summary of project context as a substitute for shape. Shape is task-specific and must cover scope, content/states, visual direction, constraints, anti-goals, probes when applicable, and explicit brief confirmation.
 
-If the user has already run /impeccable shape and has a confirmed design brief, skip this step and use the existing brief.
+If the user has already run {{command_prefix}}impeccable shape and has a confirmed design brief, skip this step and use the existing brief.
 
 ## Step 2: Load References
 

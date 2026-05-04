@@ -1,6 +1,6 @@
 # Skills Index
 
-A curated collection of **253 Agent Skills** for Claude Code and Cursor, organized into **13 thematic categories**.
+A curated collection of **258 Agent Skills** for Claude Code and Cursor, organized into **13 thematic categories**.
 
 Each skill lives in its own folder with a `SKILL.md` file (YAML frontmatter for `name` + `description`, then the body of instructions). The agent auto-discovers and loads them when the description matches your request — both Claude Code and Cursor walk the directory tree recursively, so the category subfolders are transparent to discovery; they exist purely to keep things browsable on GitHub.
 
@@ -9,8 +9,8 @@ Each skill lives in its own folder with a `SKILL.md` file (YAML frontmatter for 
 | # | Folder | Skills | Theme |
 | --- | --- | --- | --- |
 | 1 | [`skill-authoring/`](./skill-authoring/) | 2 | Building, editing, and benchmarking skills themselves |
-| 2 | [`engineering-craft/`](./engineering-craft/) | 34 | Planning, TDD, code review, debugging, verification, senior IC roles |
-| 3 | [`ai-agents/`](./ai-agents/) | 14 | Agent architecture, scaffolds, prompt engineering, MCP, BMad Method |
+| 2 | [`engineering-craft/`](./engineering-craft/) | 35 | Planning, TDD, code review, debugging, verification, senior IC roles |
+| 3 | [`ai-agents/`](./ai-agents/) | 18 | Agent architecture, scaffolds, prompt engineering, MCP, BMad Method |
 | 4 | [`context-engineering/`](./context-engineering/) | 6 | Context windows, compression, memory, persistence |
 | 5 | [`llm-integrations/`](./llm-integrations/) | 5 | OpenRouter SDK, models, OAuth, image generation |
 | 6 | [`design-and-ui/`](./design-and-ui/) | 10 | Frontend, design systems, brand, themes, banners |
@@ -58,8 +58,8 @@ skills/
 ├── README.md                       (this file)
 │
 ├── skill-authoring/         (2)    — meta-skills for authoring skills
-├── engineering-craft/       (34)   — dev discipline + senior IC skills
-├── ai-agents/               (14)   — agent design, includes BMM (30 sub-skills)
+├── engineering-craft/       (35)   — dev discipline + senior IC skills
+├── ai-agents/               (18)   — agent design, includes BMM (30 sub-skills)
 ├── context-engineering/     (6)    — context windows, memory, compression
 ├── llm-integrations/        (5)    — OpenRouter family
 ├── design-and-ui/           (10)   — frontend, brand, design systems
@@ -72,4 +72,4 @@ skills/
 └── caveman/                 (6)    — token-efficient terse mode + find-skills
 ```
 
-Total: **253 skills** (plus 30 BMM sub-skills nested under `ai-agents/bmm-skills/`, and the Streamlit sub-skills nested under `data-and-backend/developing-with-streamlit/skills/`).
+Total: **258 skills** (plus 30 BMM sub-skills nested under `ai-agents/bmm-skills/`, and the Streamlit sub-skills nested under `data-and-backend/developing-with-streamlit/skills/`).

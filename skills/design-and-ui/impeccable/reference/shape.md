@@ -2,7 +2,7 @@ Shape the UX and UI for a feature before any code is written. This command produ
 
 **Scope**: Design planning only. This command does NOT write code. It produces the thinking that makes code good.
 
-**Output**: A design brief that can be handed off to /impeccable craft, or directly to /impeccable for freeform implementation. When visual direction probes are used, the images are supporting artifacts, not the primary output.
+**Output**: A design brief that can be handed off to {{command_prefix}}impeccable craft, or directly to {{command_prefix}}impeccable for freeform implementation. When visual direction probes are used, the images are supporting artifacts, not the primary output.
 
 ## Philosophy
 
@@ -12,7 +12,7 @@ Most AI-generated UIs fail not because of bad code, but because of skipped think
 
 **Do NOT write any code or make any design decisions during this phase.** Your only job is to understand the feature deeply enough to make excellent design decisions later.
 
-This is a required interaction, not optional guidance. Ask these questions in conversation, adapting based on answers. Don't dump them all at once; have a natural dialogue. STOP and call the AskUserQuestion tool to clarify.
+This is a required interaction, not optional guidance. Ask these questions in conversation, adapting based on answers. Don't dump them all at once; have a natural dialogue. {{ask_instruction}}
 
 ### Interview cadence
 
@@ -42,8 +42,8 @@ Discovery must include at least one user-answer round unless PRODUCT.md, DESIGN.
 Force a visual decision on three fronts. Skip anything PRODUCT.md or DESIGN.md already answers; ask only what's missing.
 
 - **Color strategy for this surface.** Pick one: Restrained / Committed / Full palette / Drenched. Can override the project default if the surface earns it (e.g. a drenched hero inside an otherwise Restrained product).
-- **Theme via scene sentence.** Write one sentence of physical context for this surface — who uses it, where, under what ambient light, in what mood. The sentence forces dark vs light. If it doesn't, add detail until it does.
-- **Two or three named anchor references.** Specific products, brands, objects — not adjectives like "modern" or "clean."
+- **Theme via scene sentence.** Write one sentence of physical context for this surface: who uses it, where, under what ambient light, in what mood. The sentence forces dark vs light. If it doesn't, add detail until it does.
+- **Two or three named anchor references.** Specific products, brands, objects. Not adjectives like "modern" or "clean."
 
 ### Scope
 
@@ -54,7 +54,7 @@ Always ask. Sketch quality and shipped quality are different outputs; don't gues
 - **Interactivity.** Static visual / interactive prototype / shipped-quality component?
 - **Time intent.** Quick exploration, or polish until it ships?
 
-Scope answers are task-scoped. Don't write them to PRODUCT.md or DESIGN.md — carry them through the design brief only.
+Scope answers are task-scoped. Don't write them to PRODUCT.md or DESIGN.md; carry them through the design brief only.
 
 ### Constraints
 - Are there technical constraints? (Framework, performance budget, browser support)
@@ -124,7 +124,7 @@ Color strategy (Restrained / Committed / Full palette / Drenched) + the theme sc
 If you ran the Visual Direction Probe step, name which probe direction won and what changed in the brief because of it.
 
 **4. Scope**
-Fidelity, breadth, interactivity, and time intent from the Scope section of the interview. Task-scoped — these don't persist beyond the brief.
+Fidelity, breadth, interactivity, and time intent from the Scope section of the interview. Task-scoped; these don't persist beyond the brief.
 
 **5. Layout Strategy**
 High-level spatial approach: what gets emphasis, what's secondary, how information flows. Describe the visual hierarchy and rhythm, not specific CSS.
@@ -146,6 +146,6 @@ Anything unresolved that the implementer should resolve during build.
 
 ---
 
-STOP and call the AskUserQuestion tool to clarify. Ask for explicit confirmation of the brief before finishing. If the user disagrees with any part, revisit the relevant discovery questions. A shape run is incomplete until the brief is confirmed.
+{{ask_instruction}} Ask for explicit confirmation of the brief before finishing. If the user disagrees with any part, revisit the relevant discovery questions. A shape run is incomplete until the brief is confirmed.
 
-Once confirmed, the brief is complete. The user can now hand it to /impeccable, or use it to guide any other implementation approach. (If the user wants the full discovery-then-build flow in one step, they should use /impeccable craft instead, which runs this command internally.)
+Once confirmed, the brief is complete. The user can now hand it to {{command_prefix}}impeccable, or use it to guide any other implementation approach. (If the user wants the full discovery-then-build flow in one step, they should use {{command_prefix}}impeccable craft instead, which runs this command internally.)
