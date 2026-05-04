@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 244 skills across 13 categories.
+**Total:** 253 skills across 13 categories.
 
 ## Install one skill
 
@@ -22,24 +22,25 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`ai-agents`](#ai-agents) | 53 |
-| [`business-and-strategy`](#business-and-strategy) | 60 |
+| [`ai-agents`](#ai-agents) | 54 |
+| [`business-and-strategy`](#business-and-strategy) | 61 |
 | [`caveman`](#caveman) | 6 |
 | [`context-engineering`](#context-engineering) | 6 |
 | [`data-and-backend`](#data-and-backend) | 22 |
 | [`design-and-ui`](#design-and-ui) | 10 |
 | [`devops-and-infrastructure`](#devops-and-infrastructure) | 14 |
-| [`docs-and-presentations`](#docs-and-presentations) | 6 |
-| [`engineering-craft`](#engineering-craft) | 29 |
+| [`docs-and-presentations`](#docs-and-presentations) | 7 |
+| [`engineering-craft`](#engineering-craft) | 34 |
 | [`llm-integrations`](#llm-integrations) | 5 |
 | [`marketing-and-growth`](#marketing-and-growth) | 22 |
-| [`product-management`](#product-management) | 9 |
+| [`product-management`](#product-management) | 10 |
 | [`skill-authoring`](#skill-authoring) | 2 |
 
 ## ai-agents
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`agentic-rag-architect`](./skills/ai-agents/agentic-rag-architect/SKILL.md) | `ai-agents/agentic-rag-architect` | Use when the user asks to build, optimize, or design a Retrieval-Augmented Generation (RAG) system, especially with agentic capabilities like self-reflection, query routing, or GraphRAG. Triggers on keywords RAG, GraphRAG, vector database, agentic RAG, semantic search. |
 | [`ai-agent-builder`](./skills/ai-agents/ai-agent-builder/SKILL.md) | `ai-agents/ai-agent-builder` | Use when designing an agent architecture, building a system where an LLM autonomously executes multi-step tasks, implementing tool calling or function calling, orchestrating multiple specialized subagents, or creating evaluation pipelines for AI outputs. Also use for agentic data engineering pipelines, code generation agents, agent-powered CLI tools, MCP server development, or any system where an AI model calls tools, makes decisions, or loops. |
 | [`auto-memory-pro`](./skills/ai-agents/auto-memory-pro/SKILL.md) | `ai-agents/auto-memory-pro` | Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Claude has learned about your project, (2) graduating a pattern from notes to enforced rules, (3) turning a debugging solution into a skill, (4) checking memory health and capacity. |
 | [`extract`](./skills/ai-agents/auto-memory-pro/skills/extract/SKILL.md) | `ai-agents/auto-memory-pro/skills/extract` | Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples. |
@@ -155,6 +156,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`hard-call`](./skills/business-and-strategy/executive-mentor/skills/hard-call/SKILL.md) | `business-and-strategy/executive-mentor/skills/hard-call` | /em -hard-call — Framework for Decisions With No Good Options |
 | [`postmortem`](./skills/business-and-strategy/executive-mentor/skills/postmortem/SKILL.md) | `business-and-strategy/executive-mentor/skills/postmortem` | /em -postmortem — Honest Analysis of What Went Wrong |
 | [`stress-test`](./skills/business-and-strategy/executive-mentor/skills/stress-test/SKILL.md) | `business-and-strategy/executive-mentor/skills/stress-test` | /em -stress-test — Business Assumption Stress Testing |
+| [`m-and-a-advisor`](./skills/business-and-strategy/m-and-a-advisor/SKILL.md) | `business-and-strategy/m-and-a-advisor` | Use when the user asks for guidance on Mergers and Acquisitions (M&A), due diligence, post-merger integration (PMI), or evaluating a potential target company. Triggers on keywords M&A, due diligence, post-merger integration, synergy. |
 | [`org-health-diagnostic`](./skills/business-and-strategy/org-health-diagnostic/SKILL.md) | `business-and-strategy/org-health-diagnostic` | Cross-functional organizational health check combining signals from all C-suite roles. Scores 8 dimensions on a traffic-light scale with drill-down recommendations. Use when assessing overall company health, preparing for board reviews, identifying at-risk functions, or when user mentions org health, health check, or health dashboard. |
 | [`saas-metrics-coach`](./skills/business-and-strategy/saas-metrics-coach/SKILL.md) | `business-and-strategy/saas-metrics-coach` | SaaS financial health advisor. Use when a user shares revenue or customer numbers, or mentions ARR, MRR, churn, LTV, CAC, NRR, or asks how their SaaS business is doing. |
 | [`scenario-war-room`](./skills/business-and-strategy/scenario-war-room/SKILL.md) | `business-and-strategy/scenario-war-room` | Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all business functions simultaneously. Use when facing complex risk scenarios, strategic decisions with major downside, or when the user asks 'what if X AND Y both happen?' |
@@ -246,6 +248,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`investor-pitch-deck-designer`](./skills/docs-and-presentations/investor-pitch-deck-designer/SKILL.md) | `docs-and-presentations/investor-pitch-deck-designer` | Use when the user asks for help designing, structuring, or writing an investor pitch deck for seed, Series A, or later rounds. Triggers on keywords pitch deck, VC pitch, investor presentation, fundraising deck. |
 | [`pptx`](./skills/docs-and-presentations/pptx/SKILL.md) | `docs-and-presentations/pptx` | Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill. |
 | [`project-development`](./skills/docs-and-presentations/project-development/SKILL.md) | `docs-and-presentations/project-development` | This skill should be used when the user asks to "start an LLM project", "design batch pipeline", "evaluate task-model fit", "structure agent project", or mentions pipeline architecture, agent-assisted development, cost estimation, or choosing between LLM and traditional approaches. |
 | [`project-docs`](./skills/docs-and-presentations/project-docs/SKILL.md) | `docs-and-presentations/project-docs` | Use when asked to produce technical documentation beyond a README — architecture docs, technical design documents, ADRs, API references, data pipeline docs, onboarding guides, integration specs, or AGENTS.md/CLAUDE.md files. Also use when documenting an AI agent system, a data pipeline, or producing technical reference material for a team. If the output is a technical document other than a README — use this skill. |
@@ -264,6 +267,11 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`evaluation`](./skills/engineering-craft/evaluation/SKILL.md) | `engineering-craft/evaluation` | This skill should be used when the user asks to "evaluate agent performance", "build test framework", "measure agent quality", "create evaluation rubrics", or mentions LLM-as-judge, multi-dimensional evaluation, agent testing, or quality gates for agent pipelines. |
 | [`executing-plans`](./skills/engineering-craft/executing-plans/SKILL.md) | `engineering-craft/executing-plans` | Use when you have a written implementation plan to execute in a separate session with review checkpoints |
 | [`finishing-a-development-branch`](./skills/engineering-craft/finishing-a-development-branch/SKILL.md) | `engineering-craft/finishing-a-development-branch` | Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup |
+| [`framework-fastapi-expert`](./skills/engineering-craft/framework-fastapi-expert/SKILL.md) | `engineering-craft/framework-fastapi-expert` | Use when the user asks to work on a Python FastAPI project. Triggers on keywords Python, FastAPI, Pydantic, SQLAlchemy. |
+| [`framework-flutter-expert`](./skills/engineering-craft/framework-flutter-expert/SKILL.md) | `engineering-craft/framework-flutter-expert` | Use when the user asks to work on a Flutter or Dart project. Triggers on keywords Flutter, Dart, BLoC, Mobile App. |
+| [`framework-nextjs-expert`](./skills/engineering-craft/framework-nextjs-expert/SKILL.md) | `engineering-craft/framework-nextjs-expert` | Use when the user asks to work on a Next.js (App Router), React, and TypeScript project. Triggers on keywords Next.js, React, Tailwind, Shadcn UI. |
+| [`framework-react-native-expert`](./skills/engineering-craft/framework-react-native-expert/SKILL.md) | `engineering-craft/framework-react-native-expert` | Use when the user asks to work on a React Native or Expo project. Triggers on keywords React Native, Expo, Mobile App, iOS, Android. |
+| [`framework-vue-nuxt-expert`](./skills/engineering-craft/framework-vue-nuxt-expert/SKILL.md) | `engineering-craft/framework-vue-nuxt-expert` | Use when the user asks to work on a Vue 3, Nuxt 3, or TailwindCSS frontend project. Triggers on keywords Vue 3, Nuxt 3, Vue.js, TailwindCSS. |
 | [`grill-me`](./skills/engineering-craft/grill-me/SKILL.md) | `engineering-craft/grill-me` | Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me". |
 | [`karpathy-guidelines`](./skills/engineering-craft/karpathy-guidlines/SKILL.md) | `engineering-craft/karpathy-guidlines` | Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria. |
 | [`receiving-code-review`](./skills/engineering-craft/receiving-code-review/SKILL.md) | `engineering-craft/receiving-code-review` | Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation |
@@ -330,6 +338,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | --- | --- |
 | [`agile-product-owner`](./skills/product-management/agile-product-owner/SKILL.md) | `product-management/agile-product-owner` | Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use for writing user stories, creating acceptance criteria, planning sprints, estimating story points, breaking down epics, or prioritizing backlog. |
 | [`experiment-designer`](./skills/product-management/experiment-designer/SKILL.md) | `product-management/experiment-designer` | Use when planning, designing, or interpreting any A/B test, split test, multivariate test, or controlled experiment — for products, features, marketing pages, signup flows, pricing, or copy variants. Covers hypothesis writing, sample-size estimation, ICE prioritization, traffic allocation, statistical-significance analysis, guardrail metrics, and the peeking problem. Triggers on: "A/B test", "split test", "experiment", "test this change", "variant copy", "multivariate test", "hypothesis", "conversion experiment", "statistical significance", "minimum detectable effect", "sample size". |
+| [`growth-pm-plg`](./skills/product-management/growth-pm-plg/SKILL.md) | `product-management/growth-pm-plg` | Use when the user asks about Product-Led Growth (PLG), viral loops, user retention, AARRR funnel optimization, or growth hacking. Triggers on keywords PLG, growth hacking, viral loop, AARRR, retention, monetization. |
 | [`product-analytics`](./skills/product-management/product-analytics/SKILL.md) | `product-management/product-analytics` | Use when defining product KPIs, building metric dashboards, running cohort or retention analysis, or interpreting feature adoption trends across product stages. |
 | [`product-discovery`](./skills/product-management/product-discovery/SKILL.md) | `product-management/product-discovery` | Use when validating product opportunities, mapping assumptions, planning discovery sprints, or testing problem-solution fit before committing delivery resources. |
 | [`product-manager-toolkit`](./skills/product-management/product-manager-toolkit/SKILL.md) | `product-management/product-manager-toolkit` | Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use for feature prioritization, user research synthesis, requirement documentation, and product strategy development. |

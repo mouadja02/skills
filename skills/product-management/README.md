@@ -12,6 +12,7 @@ These complement [`business-and-strategy/cpo-advisor`](../business-and-strategy/
 | --- | --- |
 | [`product-strategist`](./product-strategist/SKILL.md) | Strategic toolkit for Heads of Product — OKR cascade generation, quarterly planning, competitive landscape analysis, product vision documents, team scaling proposals. |
 | [`product-manager-toolkit`](./product-manager-toolkit/SKILL.md) | Comprehensive PM toolkit — RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, GTM strategies. |
+| [`growth-pm-plg`](./growth-pm-plg/SKILL.md) | Product management frameworks focusing on Product-Led Growth (PLG), AARRR funnels, viral loops, and user retention mechanics. |
 
 ### Discovery & research
 

@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-04-30T12:16:50.165Z",
+  "generated_at": "2026-05-04T10:41:04.690Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 244,
+  "count": 253,
   "categories": [
     "ai-agents",
     "business-and-strategy",
@@ -20,21 +20,29 @@
     "skill-authoring"
   ],
   "counts_by_category": {
-    "ai-agents": 53,
-    "business-and-strategy": 60,
+    "ai-agents": 54,
+    "business-and-strategy": 61,
     "caveman": 6,
     "context-engineering": 6,
     "data-and-backend": 22,
     "design-and-ui": 10,
     "devops-and-infrastructure": 14,
-    "docs-and-presentations": 6,
-    "engineering-craft": 29,
+    "docs-and-presentations": 7,
+    "engineering-craft": 34,
     "llm-integrations": 5,
     "marketing-and-growth": 22,
-    "product-management": 9,
+    "product-management": 10,
     "skill-authoring": 2
   },
   "skills": [
+    {
+      "name": "agentic-rag-architect",
+      "category": "ai-agents",
+      "install_path": "ai-agents/agentic-rag-architect",
+      "path": "skills/ai-agents/agentic-rag-architect",
+      "depth": 2,
+      "description": "Use when the user asks to build, optimize, or design a Retrieval-Augmented Generation (RAG) system, especially with agentic capabilities like self-reflection, query routing, or GraphRAG. Triggers on keywords RAG, GraphRAG, vector database, agentic RAG, semantic search."
+    },
     {
       "name": "ai-agent-builder",
       "category": "ai-agents",
@@ -916,6 +924,14 @@
       "description": "/em -stress-test — Business Assumption Stress Testing"
     },
     {
+      "name": "m-and-a-advisor",
+      "category": "business-and-strategy",
+      "install_path": "business-and-strategy/m-and-a-advisor",
+      "path": "skills/business-and-strategy/m-and-a-advisor",
+      "depth": 2,
+      "description": "Use when the user asks for guidance on Mergers and Acquisitions (M&A), due diligence, post-merger integration (PMI), or evaluating a potential target company. Triggers on keywords M&A, due diligence, post-merger integration, synergy."
+    },
+    {
       "name": "org-health-diagnostic",
       "category": "business-and-strategy",
       "install_path": "business-and-strategy/org-health-diagnostic",
@@ -1404,6 +1420,14 @@
       "description": "Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security hardening, policy-as-code with Sentinel/OPA, and CI/CD plan/apply workflows. Use when: user wants to design Terraform modules, manage state backends, review Terraform security, implement multi-region deployments, or follow IaC best practices."
     },
     {
+      "name": "investor-pitch-deck-designer",
+      "category": "docs-and-presentations",
+      "install_path": "docs-and-presentations/investor-pitch-deck-designer",
+      "path": "skills/docs-and-presentations/investor-pitch-deck-designer",
+      "depth": 2,
+      "description": "Use when the user asks for help designing, structuring, or writing an investor pitch deck for seed, Series A, or later rounds. Triggers on keywords pitch deck, VC pitch, investor presentation, fundraising deck."
+    },
+    {
       "name": "pptx",
       "category": "docs-and-presentations",
       "install_path": "docs-and-presentations/pptx",
@@ -1506,6 +1530,46 @@
       "path": "skills/engineering-craft/finishing-a-development-branch",
       "depth": 2,
       "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup"
+    },
+    {
+      "name": "framework-fastapi-expert",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/framework-fastapi-expert",
+      "path": "skills/engineering-craft/framework-fastapi-expert",
+      "depth": 2,
+      "description": "Use when the user asks to work on a Python FastAPI project. Triggers on keywords Python, FastAPI, Pydantic, SQLAlchemy."
+    },
+    {
+      "name": "framework-flutter-expert",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/framework-flutter-expert",
+      "path": "skills/engineering-craft/framework-flutter-expert",
+      "depth": 2,
+      "description": "Use when the user asks to work on a Flutter or Dart project. Triggers on keywords Flutter, Dart, BLoC, Mobile App."
+    },
+    {
+      "name": "framework-nextjs-expert",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/framework-nextjs-expert",
+      "path": "skills/engineering-craft/framework-nextjs-expert",
+      "depth": 2,
+      "description": "Use when the user asks to work on a Next.js (App Router), React, and TypeScript project. Triggers on keywords Next.js, React, Tailwind, Shadcn UI."
+    },
+    {
+      "name": "framework-react-native-expert",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/framework-react-native-expert",
+      "path": "skills/engineering-craft/framework-react-native-expert",
+      "depth": 2,
+      "description": "Use when the user asks to work on a React Native or Expo project. Triggers on keywords React Native, Expo, Mobile App, iOS, Android."
+    },
+    {
+      "name": "framework-vue-nuxt-expert",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/framework-vue-nuxt-expert",
+      "path": "skills/engineering-craft/framework-vue-nuxt-expert",
+      "depth": 2,
+      "description": "Use when the user asks to work on a Vue 3, Nuxt 3, or TailwindCSS frontend project. Triggers on keywords Vue 3, Nuxt 3, Vue.js, TailwindCSS."
     },
     {
       "name": "grill-me",
@@ -1914,6 +1978,14 @@
       "path": "skills/product-management/experiment-designer",
       "depth": 2,
       "description": "Use when planning, designing, or interpreting any A/B test, split test, multivariate test, or controlled experiment — for products, features, marketing pages, signup flows, pricing, or copy variants. Covers hypothesis writing, sample-size estimation, ICE prioritization, traffic allocation, statistical-significance analysis, guardrail metrics, and the peeking problem. Triggers on: \"A/B test\", \"split test\", \"experiment\", \"test this change\", \"variant copy\", \"multivariate test\", \"hypothesis\", \"conversion experiment\", \"statistical significance\", \"minimum detectable effect\", \"sample size\"."
+    },
+    {
+      "name": "growth-pm-plg",
+      "category": "product-management",
+      "install_path": "product-management/growth-pm-plg",
+      "path": "skills/product-management/growth-pm-plg",
+      "depth": 2,
+      "description": "Use when the user asks about Product-Led Growth (PLG), viral loops, user retention, AARRR funnel optimization, or growth hacking. Triggers on keywords PLG, growth hacking, viral loop, AARRR, retention, monetization."
     },
     {
       "name": "product-analytics",

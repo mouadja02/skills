@@ -61,6 +61,11 @@ Many of these skills come from the *Superpowers* methodology. The entry point is
 | [`senior-data-scientist`](./senior-data-scientist/SKILL.md) | Statistical modeling, experiment design, causal inference, predictive analytics — A/B sample sizing, two-proportion z-tests, lift estimation. |
 | [`senior-qa`](./senior-qa/SKILL.md) | Generate Jest + React Testing Library unit tests, integration tests, and E2E tests for React/Next.js — coverage analysis with Istanbul/LCOV. |
 | [`senior-pm`](./senior-pm/SKILL.md) | Senior project manager for enterprise software — portfolio management, quantitative risk analysis, resource optimization, stakeholder alignment. |
+| [`framework-nextjs-expert`](./framework-nextjs-expert/SKILL.md) | Comprehensive guidelines and best practices for developing with Next.js App Router, React, TypeScript, Tailwind, and Shadcn UI. |
+| [`framework-fastapi-expert`](./framework-fastapi-expert/SKILL.md) | Comprehensive guidelines and best practices for developing scalable APIs with Python, FastAPI, Pydantic, and SQLAlchemy. |
+| [`framework-vue-nuxt-expert`](./framework-vue-nuxt-expert/SKILL.md) | Comprehensive guidelines and best practices for developing with Vue 3, Nuxt 3, TypeScript, and TailwindCSS using the Composition API. |
+| [`framework-flutter-expert`](./framework-flutter-expert/SKILL.md) | Comprehensive guidelines and best practices for developing mobile applications with Flutter, Dart, and the BLoC state management pattern. |
+| [`framework-react-native-expert`](./framework-react-native-expert/SKILL.md) | Comprehensive guidelines and best practices for developing cross-platform applications using React Native and Expo. |
 
 ### Engineering analytics
 

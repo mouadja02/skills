@@ -18,6 +18,7 @@ Skills for **producing documentation, slide decks, diagrams, and project artifac
 | --- | --- |
 | [`slides`](./slides/SKILL.md) | Strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. |
 | [`pptx`](./pptx/SKILL.md) | Anything involving a `.pptx` file — read, parse, extract text, create, edit, modify, combine, split, work with templates / layouts / speaker notes / comments. |
+| [`investor-pitch-deck-designer`](./investor-pitch-deck-designer/SKILL.md) | A complete playbook for structuring, designing, and refining pitch decks tailored for Seed and Series A VC rounds. |
 
 ### Visual
 

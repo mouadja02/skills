@@ -26,6 +26,7 @@ The **C-suite advisor system** plus strategic-ops skills for founders, executive
 | [`cro-advisor`](./cro-advisor/SKILL.md) | Revenue leadership for B2B SaaS — forecasting, sales model, pricing, NRR, sales scaling. |
 | [`ciso-advisor`](./ciso-advisor/SKILL.md) | Security leadership — risk in dollars, compliance roadmap (SOC 2/ISO 27001/HIPAA/GDPR), incident response, board security reporting. |
 | [`chro-advisor`](./chro-advisor/SKILL.md) | People leadership — hiring strategy, comp design, org structure, culture, retention. |
+| [`m-and-a-advisor`](./m-and-a-advisor/SKILL.md) | Strategic guidance and robust frameworks for managing Mergers and Acquisitions (M&A), due diligence, and post-merger integration. |
 
 ### Orchestration
 

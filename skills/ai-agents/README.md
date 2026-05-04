@@ -15,6 +15,7 @@ Use these when the task is *building an agent system*, not *using* one.
 | [`tool-design`](./tool-design/SKILL.md) | Design and name agent tools — reduce complexity, write good descriptions, MCP tool patterns, consolidation strategies. |
 | [`bdi-mental-states`](./bdi-mental-states/SKILL.md) | Belief-Desire-Intention architecture — model agent mental states, RDF-to-beliefs transforms, neuro-symbolic integration. |
 | [`latent-briefing`](./latent-briefing/SKILL.md) | Cross-agent memory without summarization — KV cache compaction, attention matching, recursive language models with workers. |
+| [`agentic-rag-architect`](./agentic-rag-architect/SKILL.md) | An expert guide for building, optimizing, and designing advanced Retrieval-Augmented Generation (RAG) systems with agentic capabilities. |
 
 ### Prompt engineering & evaluation
 
