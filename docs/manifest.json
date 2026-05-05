@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-04T10:41:04.690Z",
+  "generated_at": "2026-05-04T21:25:26.684Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 253,
+  "count": 258,
   "categories": [
     "ai-agents",
     "business-and-strategy",
@@ -20,7 +20,7 @@
     "skill-authoring"
   ],
   "counts_by_category": {
-    "ai-agents": 54,
+    "ai-agents": 58,
     "business-and-strategy": 61,
     "caveman": 6,
     "context-engineering": 6,
@@ -28,13 +28,21 @@
     "design-and-ui": 10,
     "devops-and-infrastructure": 14,
     "docs-and-presentations": 7,
-    "engineering-craft": 34,
+    "engineering-craft": 35,
     "llm-integrations": 5,
     "marketing-and-growth": 22,
     "product-management": 10,
     "skill-authoring": 2
   },
   "skills": [
+    {
+      "name": "agentic-browser-automation",
+      "category": "ai-agents",
+      "install_path": "ai-agents/agentic-browser-automation",
+      "path": "skills/ai-agents/agentic-browser-automation",
+      "depth": 2,
+      "description": "Build AI-powered browser agents that autonomously navigate, scrape, fill forms, and extract data from dynamic websites using LLM reasoning + Playwright. Use when the user wants to create a browser agent, build an autonomous scraper, implement self-healing selectors, replace brittle browser automation with AI, build a web agent, use Browser-Use or Skyvern patterns, extract structured data from any website using natural language, or create adaptive web scrapers that survive site changes."
+    },
     {
       "name": "agentic-rag-architect",
       "category": "ai-agents",
@@ -420,6 +428,14 @@
       "description": "Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI. Use when building a headless agent, programmatic agent, CLI tool that uses AI, batch agent, pipeline agent, API agent, agent without a UI, or agent service."
     },
     {
+      "name": "durable-agent-workflows",
+      "category": "ai-agents",
+      "install_path": "ai-agents/durable-agent-workflows",
+      "path": "skills/ai-agents/durable-agent-workflows",
+      "depth": 2,
+      "description": "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns. Use when the user wants to build long-running agent pipelines, implement retry logic for LLM calls, create resumable agent workflows, orchestrate multi-step AI tasks that survive crashes, handle agent state persistence across sessions, build production-grade agent infrastructure with observability, or implement human-in-the-loop approval nodes in agent graphs."
+    },
+    {
       "name": "hosted-agents",
       "category": "ai-agents",
       "install_path": "ai-agents/hosted-agents",
@@ -434,6 +450,14 @@
       "path": "skills/ai-agents/latent-briefing",
       "depth": 2,
       "description": "This skill should be used when the user asks to \"share memory between agents\", \"KV cache compaction for multi-agent\", \"orchestrator worker context\", \"latent briefing\", \"reduce worker tokens\", \"cross-agent memory without summarization\", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents."
+    },
+    {
+      "name": "local-ai-stack",
+      "category": "ai-agents",
+      "install_path": "ai-agents/local-ai-stack",
+      "path": "skills/ai-agents/local-ai-stack",
+      "depth": 2,
+      "description": "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving. Use when the user wants to run LLMs locally, set up Ollama, install Open WebUI, create a private AI assistant, avoid cloud API costs, build a self-hosted ChatGPT alternative, run models on their own hardware, set up local embeddings for RAG, configure GPU acceleration for local inference, benchmark local models, or create an air-gapped AI environment for privacy-sensitive work."
     },
     {
       "name": "mcp-server-builder",
@@ -466,6 +490,14 @@
       "path": "skills/ai-agents/tool-design",
       "depth": 2,
       "description": "This skill should be used when the user asks to \"design agent tools\", \"create tool descriptions\", \"reduce tool complexity\", \"implement MCP tools\", or mentions tool consolidation, architectural reduction, tool naming conventions, or agent-tool interfaces."
+    },
+    {
+      "name": "trading-agent-builder",
+      "category": "ai-agents",
+      "install_path": "ai-agents/trading-agent-builder",
+      "path": "skills/ai-agents/trading-agent-builder",
+      "depth": 2,
+      "description": "Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs. Use when the user wants to build a trading bot, create a financial analysis agent, implement algorithmic trading with AI, build a portfolio analyzer, create a market research agent, implement sentiment-driven trading, build a multi-agent trading system like TradingAgents, analyze financial data with LLMs, backtest AI trading strategies, or create agents that monitor markets and generate trading signals."
     },
     {
       "name": "board-deck-builder",
@@ -1482,6 +1514,14 @@
       "path": "skills/engineering-craft/advanced-evaluation",
       "depth": 2,
       "description": "This skill should be used when the user asks to \"implement LLM-as-judge\", \"compare model outputs\", \"create evaluation rubrics\", \"mitigate evaluation bias\", or mentions direct scoring, pairwise comparison, position bias, evaluation pipelines, or automated quality assessment."
+    },
+    {
+      "name": "ai-code-migrator",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/ai-code-migrator",
+      "path": "skills/engineering-craft/ai-code-migrator",
+      "depth": 2,
+      "description": "Automate large-scale codebase migrations using AI — framework upgrades, language conversions, API modernization, and dependency swaps. Use when the user wants to migrate from one framework to another (React class→hooks, Vue 2→3, Angular→React, Express→Fastify, Python 2→3), upgrade major library versions (Next.js 13→15, Webpack→Vite), convert between languages (JavaScript→TypeScript, Python→Rust), modernize legacy codebases, replace deprecated APIs, or perform any systematic code transformation across hundreds of files."
     },
     {
       "name": "brainstorming",

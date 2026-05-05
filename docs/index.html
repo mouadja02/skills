@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Skills — installable agent skills for Claude Code & Cursor</title>
+    <title>Skills — Agent Skills for Claude Code & Cursor</title>
     <meta
       name="description"
-      content="Browse 244 agent skills for Claude Code and Cursor. Copy a one-line install command to add any single skill to your project, no full clone required."
+      content="Browse 258 installable agent skills for Claude Code and Cursor. One command, no full clone required."
     />
     <meta name="color-scheme" content="dark light" />
-    <meta property="og:title" content="Skills — installable agent skills" />
+    <meta property="og:title" content="Skills — Agent Skills Library" />
     <meta
       property="og:description"
-      content="Searchable index of 244 agent skills with one-line install commands."
+      content="Searchable index of 258 agent skills with one-line install commands."
     />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Cpath d='M16 22h32M16 32h22M16 42h28' stroke='%23a78bfa' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Cpath d='M16 22h32M16 32h22M16 42h28' stroke='%2300f0ff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -64,14 +64,14 @@
       <div class="hero-inner">
         <span class="eyebrow">
           <span class="eyebrow-dot" aria-hidden="true"></span>
-          One-line install · No full clone required
+          One-line install &middot; No full clone required
         </span>
         <h1>
           Agent skills,<br />
-          <span class="grad">shipped à la carte.</span>
+          <span class="accent-word">shipped &agrave; la carte.</span>
         </h1>
         <p class="tagline">
-          A curated library of <strong id="skillCount">…</strong> agent skills for
+          A curated library of <strong id="skillCount">&hellip;</strong> agent skills for
           <a href="https://docs.claude.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code</a>
           and
           <a href="https://cursor.com" target="_blank" rel="noopener">Cursor</a>.
@@ -113,18 +113,18 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
             <code>&lt;selector&gt;</code> is a single skill (<code>engineering-craft/test-driven-development</code>),
             a category (<code>engineering-craft</code>), or a quoted glob
             (<code>"*bmad*"</code>, <code>"ai-agents/*"</code>).
-            Click any card below — the command pre-fills automatically.
+            Click any card below &mdash; the command pre-fills automatically.
           </p>
         </div>
 
         <dl class="hero-stats" aria-label="Library stats">
           <div class="stat">
             <dt>Skills</dt>
-            <dd id="statSkills">…</dd>
+            <dd id="statSkills">&hellip;</dd>
           </div>
           <div class="stat">
             <dt>Categories</dt>
-            <dd id="statCategories">…</dd>
+            <dd id="statCategories">&hellip;</dd>
           </div>
           <div class="stat">
             <dt>Install methods</dt>
@@ -147,7 +147,7 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
           <input
             id="search"
             type="search"
-            placeholder="Search skills by name or description…"
+            placeholder="Search skills by name or description&hellip;"
             autocomplete="off"
             spellcheck="false"
             aria-label="Search skills"
@@ -167,8 +167,8 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
             <label class="sort-label" for="sortBy">Sort</label>
             <div class="select-wrap">
               <select id="sortBy" aria-label="Sort skills">
-                <option value="name">Name (A→Z)</option>
-                <option value="name-desc">Name (Z→A)</option>
+                <option value="name">Name (A&rarr;Z)</option>
+                <option value="name-desc">Name (Z&rarr;A)</option>
                 <option value="category">Category</option>
               </select>
               <svg class="select-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -190,7 +190,7 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
         <div class="category-banner-header">
           <div class="category-banner-text">
             Install all <strong id="catBannerCount">0</strong> skills in
-            <code id="catBannerName">…</code>
+            <code id="catBannerName">&hellip;</code>
           </div>
           <a id="catBannerDownload" class="category-banner-download" download>
             <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
@@ -232,7 +232,6 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
 
     <template id="cardTemplate">
       <article class="card" tabindex="0">
-        <span class="card-bar" aria-hidden="true"></span>
         <header>
           <div class="card-head-text">
             <h3 class="card-name"></h3>
@@ -295,7 +294,7 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
           repo changes. <a href="https://github.com/mouadja02/skills/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Pull requests welcome</a>.
         </p>
         <p class="site-footer-meta">
-          MIT licensed · Built with vanilla HTML, CSS &amp; JS · No tracking
+          MIT licensed &middot; Built with vanilla HTML, CSS &amp; JS &middot; No tracking
         </p>
       </div>
     </footer>

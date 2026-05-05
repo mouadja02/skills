@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 253 skills across 13 categories.
+**Total:** 258 skills across 13 categories.
 
 ## Install one skill
 
@@ -22,7 +22,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`ai-agents`](#ai-agents) | 54 |
+| [`ai-agents`](#ai-agents) | 58 |
 | [`business-and-strategy`](#business-and-strategy) | 61 |
 | [`caveman`](#caveman) | 6 |
 | [`context-engineering`](#context-engineering) | 6 |
@@ -30,7 +30,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`design-and-ui`](#design-and-ui) | 10 |
 | [`devops-and-infrastructure`](#devops-and-infrastructure) | 14 |
 | [`docs-and-presentations`](#docs-and-presentations) | 7 |
-| [`engineering-craft`](#engineering-craft) | 34 |
+| [`engineering-craft`](#engineering-craft) | 35 |
 | [`llm-integrations`](#llm-integrations) | 5 |
 | [`marketing-and-growth`](#marketing-and-growth) | 22 |
 | [`product-management`](#product-management) | 10 |
@@ -40,6 +40,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`agentic-browser-automation`](./skills/ai-agents/agentic-browser-automation/SKILL.md) | `ai-agents/agentic-browser-automation` | Build AI-powered browser agents that autonomously navigate, scrape, fill forms, and extract data from dynamic websites using LLM reasoning + Playwright. Use when the user wants to create a browser agent, build an autonomous scraper, implement self-healing selectors, replace brittle browser automation with AI, build a web agent, use Browser-Use or Skyvern patterns, extract structured data from any website using natural language, or create adaptive web scrapers that survive site changes. |
 | [`agentic-rag-architect`](./skills/ai-agents/agentic-rag-architect/SKILL.md) | `ai-agents/agentic-rag-architect` | Use when the user asks to build, optimize, or design a Retrieval-Augmented Generation (RAG) system, especially with agentic capabilities like self-reflection, query routing, or GraphRAG. Triggers on keywords RAG, GraphRAG, vector database, agentic RAG, semantic search. |
 | [`ai-agent-builder`](./skills/ai-agents/ai-agent-builder/SKILL.md) | `ai-agents/ai-agent-builder` | Use when designing an agent architecture, building a system where an LLM autonomously executes multi-step tasks, implementing tool calling or function calling, orchestrating multiple specialized subagents, or creating evaluation pipelines for AI outputs. Also use for agentic data engineering pipelines, code generation agents, agent-powered CLI tools, MCP server development, or any system where an AI model calls tools, makes decisions, or loops. |
 | [`auto-memory-pro`](./skills/ai-agents/auto-memory-pro/SKILL.md) | `ai-agents/auto-memory-pro` | Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Claude has learned about your project, (2) graduating a pattern from notes to enforced rules, (3) turning a debugging solution into a skill, (4) checking memory health and capacity. |
@@ -88,12 +89,15 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`bmad-sprint-status`](./skills/ai-agents/bmm-skills/4-implementation/bmad-sprint-status/SKILL.md) | `ai-agents/bmm-skills/4-implementation/bmad-sprint-status` | Summarize sprint status and surface risks. Use when the user says "check sprint status" or "show sprint status" |
 | [`create-agent-tui`](./skills/ai-agents/create-agent-tui/SKILL.md) | `ai-agents/create-agent-tui` | Scaffolds a complete agent TUI in TypeScript using @openrouter/agent — like create-react-app for terminal agents. Generates a customizable terminal interface with three input styles, four tool display modes, ASCII banners, streaming output, session persistence, and configurable tools. Use when building an agent, creating a TUI, scaffolding an agent project, or building a coding assistant. |
 | [`create-headless-agent`](./skills/ai-agents/create-headless-agent/SKILL.md) | `ai-agents/create-headless-agent` | Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI. Use when building a headless agent, programmatic agent, CLI tool that uses AI, batch agent, pipeline agent, API agent, agent without a UI, or agent service. |
+| [`durable-agent-workflows`](./skills/ai-agents/durable-agent-workflows/SKILL.md) | `ai-agents/durable-agent-workflows` | Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns. Use when the user wants to build long-running agent pipelines, implement retry logic for LLM calls, create resumable agent workflows, orchestrate multi-step AI tasks that survive crashes, handle agent state persistence across sessions, build production-grade agent infrastructure with observability, or implement human-in-the-loop approval nodes in agent graphs. |
 | [`hosted-agents`](./skills/ai-agents/hosted-agents/SKILL.md) | `ai-agents/hosted-agents` | This skill should be used when the user asks to "build background agent", "create hosted coding agent", "set up sandboxed execution", "implement multiplayer agent", or mentions background agents, sandboxed VMs, agent infrastructure, Modal sandboxes, self-spawning agents, or remote coding environments. |
 | [`latent-briefing`](./skills/ai-agents/latent-briefing/SKILL.md) | `ai-agents/latent-briefing` | This skill should be used when the user asks to "share memory between agents", "KV cache compaction for multi-agent", "orchestrator worker context", "latent briefing", "reduce worker tokens", "cross-agent memory without summarization", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents. |
+| [`local-ai-stack`](./skills/ai-agents/local-ai-stack/SKILL.md) | `ai-agents/local-ai-stack` | Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving. Use when the user wants to run LLMs locally, set up Ollama, install Open WebUI, create a private AI assistant, avoid cloud API costs, build a self-hosted ChatGPT alternative, run models on their own hardware, set up local embeddings for RAG, configure GPU acceleration for local inference, benchmark local models, or create an air-gapped AI environment for privacy-sensitive work. |
 | [`mcp-server-builder`](./skills/ai-agents/mcp-server-builder/SKILL.md) | `ai-agents/mcp-server-builder` | Build production-grade MCP (Model Context Protocol) servers from API contracts. Use when the user wants to expose a REST API to an LLM agent as MCP tools, scaffold a Python or TypeScript MCP server from OpenAPI, validate MCP tool manifests, or replace brittle browser automation with typed tools. |
 | [`multi-agent-patterns`](./skills/ai-agents/multi-agent-patterns/SKILL.md) | `ai-agents/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution. |
 | [`senior-prompt-engineer`](./skills/ai-agents/senior-prompt-engineer/SKILL.md) | `ai-agents/senior-prompt-engineer` | This skill should be used when the user asks to "optimize prompts", "design prompt templates", "evaluate LLM outputs", "A/B test prompts", "version prompts", "build agentic systems", "implement RAG", "create few-shot examples", "analyze token usage", or "design AI workflows". Covers prompt engineering patterns, A/B prompt testing with regression workflows, prompt versioning and governance, LLM evaluation frameworks, agent architectures, and structured output design. |
 | [`tool-design`](./skills/ai-agents/tool-design/SKILL.md) | `ai-agents/tool-design` | This skill should be used when the user asks to "design agent tools", "create tool descriptions", "reduce tool complexity", "implement MCP tools", or mentions tool consolidation, architectural reduction, tool naming conventions, or agent-tool interfaces. |
+| [`trading-agent-builder`](./skills/ai-agents/trading-agent-builder/SKILL.md) | `ai-agents/trading-agent-builder` | Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs. Use when the user wants to build a trading bot, create a financial analysis agent, implement algorithmic trading with AI, build a portfolio analyzer, create a market research agent, implement sentiment-driven trading, build a multi-agent trading system like TradingAgents, analyze financial data with LLMs, backtest AI trading strategies, or create agents that monitor markets and generate trading signals. |
 
 ## business-and-strategy
 
@@ -261,6 +265,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`advanced-evaluation`](./skills/engineering-craft/advanced-evaluation/SKILL.md) | `engineering-craft/advanced-evaluation` | This skill should be used when the user asks to "implement LLM-as-judge", "compare model outputs", "create evaluation rubrics", "mitigate evaluation bias", or mentions direct scoring, pairwise comparison, position bias, evaluation pipelines, or automated quality assessment. |
+| [`ai-code-migrator`](./skills/engineering-craft/ai-code-migrator/SKILL.md) | `engineering-craft/ai-code-migrator` | Automate large-scale codebase migrations using AI — framework upgrades, language conversions, API modernization, and dependency swaps. Use when the user wants to migrate from one framework to another (React class→hooks, Vue 2→3, Angular→React, Express→Fastify, Python 2→3), upgrade major library versions (Next.js 13→15, Webpack→Vite), convert between languages (JavaScript→TypeScript, Python→Rust), modernize legacy codebases, replace deprecated APIs, or perform any systematic code transformation across hundreds of files. |
 | [`brainstorming`](./skills/engineering-craft/brainstorming/SKILL.md) | `engineering-craft/brainstorming` | You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation. |
 | [`codebase-onboarding`](./skills/engineering-craft/codebase-onboarding/SKILL.md) | `engineering-craft/codebase-onboarding` | Generate onboarding documentation for an unfamiliar codebase. Use when the user asks to onboard new developers, document an existing project, produce architecture overviews, key-file maps, local setup guides, common-task runbooks, or contribution guidelines. Outputs to Markdown, Notion, or Confluence. |
 | [`dispatching-parallel-agents`](./skills/engineering-craft/dispatching-parallel-agents/SKILL.md) | `engineering-craft/dispatching-parallel-agents` | Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies |

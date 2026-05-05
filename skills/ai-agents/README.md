@@ -16,6 +16,7 @@ Use these when the task is *building an agent system*, not *using* one.
 | [`bdi-mental-states`](./bdi-mental-states/SKILL.md) | Belief-Desire-Intention architecture — model agent mental states, RDF-to-beliefs transforms, neuro-symbolic integration. |
 | [`latent-briefing`](./latent-briefing/SKILL.md) | Cross-agent memory without summarization — KV cache compaction, attention matching, recursive language models with workers. |
 | [`agentic-rag-architect`](./agentic-rag-architect/SKILL.md) | An expert guide for building, optimizing, and designing advanced Retrieval-Augmented Generation (RAG) systems with agentic capabilities. |
+| [`agentic-browser-automation`](./agentic-browser-automation/SKILL.md) | Build AI-powered browser agents that autonomously navigate, scrape, fill forms, and extract data using LLM reasoning + Playwright. Self-healing selectors, API discovery, stealth mode. |
 
 ### Prompt engineering & evaluation
 
@@ -36,6 +37,19 @@ Use these when the task is *building an agent system*, not *using* one.
 | [`create-agent-tui`](./create-agent-tui/SKILL.md) | Scaffold a TypeScript TUI agent (like create-react-app for terminal agents). Three input styles, four tool display modes, ASCII banners, streaming, sessions. |
 | [`create-headless-agent`](./create-headless-agent/SKILL.md) | Scaffold a headless TypeScript agent with Bun — for CLI tools, API servers, queue workers, pipelines. No UI. |
 | [`hosted-agents`](./hosted-agents/SKILL.md) | Build background/hosted coding agents — sandboxed VMs, Modal sandboxes, multiplayer agents, self-spawning agents. |
+
+### Infrastructure & reliability
+
+| Skill | What it does |
+| --- | --- |
+| [`durable-agent-workflows`](./durable-agent-workflows/SKILL.md) | Build fault-tolerant agent pipelines with Temporal, Inngest, or DIY checkpointing — automatic retry, crash recovery, human-in-the-loop gates, observability. |
+| [`local-ai-stack`](./local-ai-stack/SKILL.md) | Set up a complete private AI stack — Ollama, Open WebUI, local RAG pipelines, GPU acceleration, model selection, team deployment. Zero cloud dependencies. |
+
+### Domain-specific agents
+
+| Skill | What it does |
+| --- | --- |
+| [`trading-agent-builder`](./trading-agent-builder/SKILL.md) | Build multi-agent AI trading systems — fundamental/technical/sentiment analysts, risk manager, portfolio manager, backtesting framework. |
 
 ### Self-improving agents
 
@@ -58,6 +72,10 @@ Use these when the task is *building an agent system*, not *using* one.
 - "Optimize this prompt" / "A/B test prompts" / "version a prompt"
 - "Build an MCP server"
 - "Talk to Mary / Paige / John / Sally / Winston / Amelia" (BMM personas)
+- "Build a browser agent" / "scrape a website with AI" / "self-healing selectors"
+- "Make my agent survive crashes" / "add retry logic" / "durable workflows"
+- "Run LLMs locally" / "set up Ollama" / "private AI stack"
+- "Build a trading bot" / "financial analysis agent" / "market sentiment agent"
 - "Run code review / sprint planning / retrospective" (BMM workflows)
 
 ## Related categories

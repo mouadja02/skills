@@ -75,6 +75,12 @@ Many of these skills come from the *Superpowers* methodology. The entry point is
 | [`tech-debt-tracker`](./tech-debt-tracker/SKILL.md) | Scan codebases for technical debt, score severity, track trends, generate prioritized remediation plans. |
 | [`tech-stack-evaluator`](./tech-stack-evaluator/SKILL.md) | Compare frameworks and stacks — TCO analysis, security assessment, ecosystem health scoring. |
 
+### Code migration
+
+| Skill | What it does |
+| --- | --- |
+| [`ai-code-migrator`](./ai-code-migrator/SKILL.md) | AI-assisted codebase migration at scale — framework upgrades (React class→hooks, Vue 2→3, Next.js 13→15), language conversions (JS→TS, CommonJS→ESM), dependency swaps (Webpack→Vite). 6-phase workflow: analyze → plan → transform → validate → review → ship. |
+
 ## Suggested workflow
 
 ```
