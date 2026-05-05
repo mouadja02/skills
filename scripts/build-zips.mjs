@@ -30,7 +30,7 @@ const SKILL_DIR = join(ZIPS_DIR, "skill");
 const CATEGORY_DIR = join(ZIPS_DIR, "category");
 const ALL_ZIP_PATH = join(ZIPS_DIR, "all.zip");
 const SUMMARY_PATH = join(ZIPS_DIR, "_summary.json");
-const PUBLIC_BASE_URL = process.env.SKILLS_PUBLIC_BASE_URL || "";
+const PUBLIC_BASE_URL = (process.env.SKILLS_PUBLIC_BASE_URL || "").trim();
 
 async function zipMetadata(outPath, relativeUrl, extra = {}) {
   const data = await readFile(outPath);

@@ -563,8 +563,8 @@ function formatBytes(bytes) {
 }
 
 function zipHref(zip) {
-  if (zip.public_url) return zip.public_url;
-  if (/^https?:\/\//.test(zip.url)) return zip.url;
+  if (zip.public_url) return zip.public_url.trim();
+  if (/^https?:\/\//.test(zip.url)) return zip.url.trim();
   return `./${zip.url}`;
 }
 
