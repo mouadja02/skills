@@ -18,6 +18,8 @@ REPO="${SKILLS_REPO:-mouadja02/skills}"
 BRANCH="${SKILLS_BRANCH:-main}"
 RAW_BASE="${SKILLS_RAW_BASE:-https://raw.githubusercontent.com/${REPO}}"
 TARBALL_BASE="${SKILLS_TARBALL_BASE:-https://codeload.github.com/${REPO}/tar.gz/refs/heads}"
+PAGES_BASE="${SKILLS_PAGES_BASE:-https://${REPO%%/*}.github.io/${REPO#*/}}"
+DOWNLOAD_BASE="${SKILLS_DOWNLOAD_BASE:-}"
 
 SELECTOR=""
 DEST=""
@@ -34,6 +36,7 @@ install.sh — fetch one or many agent skills from mouadja02/skills.
 
 USAGE
   install.sh <selector> -d <destination> [options]
+  install.sh --all -d <destination> [options]
   install.sh --list
   install.sh --list-categories
   install.sh --help | -h
@@ -53,12 +56,17 @@ SELECTORS
       "ai-agents/*"            every direct child of ai-agents/
       "*-advisor"              every install_path ending in "-advisor"
 
+  All skills            install every skill, preserving category paths
+      --all
+
   Use single-quote or double-quote the pattern so your shell does not
   expand it before install.sh sees it.
 
 OPTIONS
   -d, --dest <path>         REQUIRED. Where to install.
-                            * single skill      -> <dest> IS the skill folder
+                            * single skill      -> <dest> can be the skill
+                                                   folder or an existing parent
+                                                   directory
                             * category / glob   -> <dest> is a parent folder
 
   --flat                    Glob mode only. Place each matched skill at
@@ -74,8 +82,12 @@ OPTIONS
   -h, --help                Show this help and exit.
 
 ENVIRONMENT
-  SKILLS_REPO     Override the source repo (default: mouadja02/skills).
-  SKILLS_BRANCH   Override the default branch (default: main).
+  SKILLS_REPO        Override the source repo (default: mouadja02/skills).
+  SKILLS_BRANCH      Override the default branch (default: main).
+  SKILLS_PAGES_BASE  Override the Pages base URL used for ZIP metadata.
+  SKILLS_DOWNLOAD_BASE
+                     Override the public ZIP base URL, for example an S3
+                     or CloudFront URL.
 
 EXAMPLES
   # one skill
@@ -90,6 +102,9 @@ EXAMPLES
 
   # every C-suite advisor, preserving install paths
   install.sh "*-advisor" -d ~/.claude/skills/exec
+
+  # all skills, preserving category paths
+  install.sh --all -d ~/.claude/skills
 
   # see what would happen
   install.sh "ai-agents/*" -d ~/.claude/skills/ai --dry-run
@@ -114,6 +129,7 @@ require_cmd() {
 while [ $# -gt 0 ]; do
   case "$1" in
     -h|--help)            HELP=1; shift ;;
+    --all)                SELECTOR="all"; shift ;;
     --list)               LIST=1; shift ;;
     --list-categories)    LIST_CATEGORIES=1; shift ;;
     -d|--dest)
@@ -178,13 +194,12 @@ case "$SELECTOR" in
 esac
 
 require_cmd curl
-require_cmd tar
 require_cmd awk
 
 # --- Resolve the selector -----------------------------------------------------
 
 # Outputs:
-#   MODE          = single | category | glob
+#   MODE          = single | category | glob | all
 #   SELECTED_IPS  = newline-separated list of install_paths
 #   CAT           = category name (only set when MODE=category)
 resolve_selector() {
@@ -192,6 +207,12 @@ resolve_selector() {
   MODE=""
   SELECTED_IPS=""
   CAT=""
+
+  if [ "$sel" = "all" ]; then
+    MODE="all"
+    SELECTED_IPS="$(awk -F'\t' 'NR>1 {print $1}' "$tsv")"
+    return
+  fi
 
   case "$sel" in
     *\**|*\?*)
@@ -234,12 +255,40 @@ resolve_selector() {
   die "no skill, category, or pattern matches: $sel  (try --list or --list-categories)"
 }
 
+prune_nested_selection() {
+  if [ "$MODE" = "single" ] || { [ "$MODE" = "glob" ] && [ "$FLAT" -eq 1 ]; }; then
+    return
+  fi
+
+  SELECTED_IPS="$(
+    printf '%s\n' "$SELECTED_IPS" |
+      awk 'NF' |
+      sort |
+      awk '
+        {
+          for (i = 1; i <= n; i++) {
+            if ($0 == roots[i] || index($0, roots[i] "/") == 1) next
+          }
+          roots[++n] = $0
+          print
+        }
+      '
+  )"
+}
+
 # Compute the final on-disk destination for one install_path.
 target_for() {
   local ip="$1"
   case "$MODE" in
     single)
-      printf '%s' "$DEST"
+      local name dest_base
+      name="$(basename "$ip")"
+      dest_base="$(basename "$DEST")"
+      if [ -d "$DEST" ] && [ ! -f "$DEST/SKILL.md" ] && [ "$dest_base" != "$name" ]; then
+        printf '%s/%s' "$DEST" "$name"
+      else
+        printf '%s' "$DEST"
+      fi
       ;;
     category)
       printf '%s/%s' "$DEST" "${ip#${CAT}/}"
@@ -251,7 +300,128 @@ target_for() {
         printf '%s/%s' "$DEST" "$ip"
       fi
       ;;
+    all)
+      printf '%s/%s' "$DEST" "$ip"
+      ;;
   esac
+}
+
+can_use_scoped_zip() {
+  [ "$BRANCH" = "main" ] || return 1
+  [ "$MODE" = "single" ] || [ "$MODE" = "category" ] || [ "$MODE" = "glob" ] || [ "$MODE" = "all" ]
+  command -v unzip >/dev/null 2>&1 || return 1
+}
+
+resolve_zip_base() {
+  if [ -n "$DOWNLOAD_BASE" ]; then
+    ZIP_BASE="${DOWNLOAD_BASE%/}"
+    return
+  fi
+
+  local summary base
+  summary="$(curl -fsSL "${PAGES_BASE%/}/zips/_summary.json" 2>/dev/null || true)"
+  base="$(printf '%s\n' "$summary" | sed -n 's/.*"public_base_url"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -n 1)"
+  if [ -n "$base" ]; then
+    ZIP_BASE="${base%/}"
+  else
+    ZIP_BASE="${PAGES_BASE%/}"
+  fi
+}
+
+hash_file() {
+  local file="$1"
+  if command -v sha256sum >/dev/null 2>&1; then
+    sha256sum "$file" | awk '{print $1}'
+  elif command -v shasum >/dev/null 2>&1; then
+    shasum -a 256 "$file" | awk '{print $1}'
+  elif command -v openssl >/dev/null 2>&1; then
+    openssl dgst -sha256 -r "$file" | awk '{print $1}'
+  else
+    return 1
+  fi
+}
+
+verify_zip() {
+  local url="$1" file="$2" sidecar expected actual
+  sidecar="$file.sha256"
+  if ! curl -fsSL "${url}.sha256" -o "$sidecar" 2>/dev/null; then
+    echo "==> No SHA256 sidecar for $(basename "$file"); skipping checksum verification" >&2
+    return 0
+  fi
+
+  expected="$(awk '{print $1; exit}' "$sidecar")"
+  actual="$(hash_file "$file" || true)"
+  [ -n "$actual" ] || {
+    echo "==> No local SHA256 tool found; skipping checksum verification" >&2
+    return 0
+  }
+  [ "$expected" = "$actual" ] || die "checksum mismatch for $(basename "$file")"
+}
+
+download_zip() {
+  local relative="$1" out="$2" url
+  url="${ZIP_BASE%/}/$relative"
+  curl -fsSL "$url" -o "$out" || return 1
+  verify_zip "$url" "$out"
+}
+
+install_from_zip_root() {
+  local zip="$1" root="$2" source_root="$3"
+  local zip_extract="$root/extract"
+
+  mkdir -p "$zip_extract"
+  unzip -q "$zip" -d "$zip_extract"
+
+  while IFS=$'\t' read -r ip target; do
+    case "$MODE" in
+      single)
+        src="$zip_extract/$(basename "$ip")"
+        ;;
+      category)
+        src="$zip_extract/$source_root/${ip#${CAT}/}"
+        ;;
+      all)
+        src="$zip_extract/skills/$ip"
+        ;;
+      *)
+        die "ZIP install is only supported for single, category, or all mode"
+        ;;
+    esac
+
+    [ -d "$src" ] || die "missing in ZIP: $ip"
+    if [ -e "$target" ] && [ "$FORCE" -eq 1 ]; then
+      rm -rf -- "$target"
+    fi
+    mkdir -p -- "$(dirname "$target")"
+    cp -r "$src" "$target"
+    echo "  - $ip -> $target" >&2
+  done < "$plan_file"
+}
+
+install_from_skill_zips() {
+  local root="$1" zip_plan="$root/zip-plan.txt" n=0
+  mkdir -p "$root"
+  : > "$zip_plan"
+
+  while IFS=$'\t' read -r ip target; do
+    n=$((n + 1))
+    local zip="$root/skill-$n.zip" zip_extract="$root/skill-$n"
+    download_zip "zips/skill/${ip}.zip" "$zip" || return 1
+    mkdir -p "$zip_extract"
+    unzip -q "$zip" -d "$zip_extract"
+    local src="$zip_extract/$(basename "$ip")"
+    [ -d "$src" ] || die "missing in ZIP: $ip"
+    printf '%s\t%s\t%s\n' "$ip" "$src" "$target" >> "$zip_plan"
+  done < "$plan_file"
+
+  while IFS=$'\t' read -r ip src target; do
+    if [ -e "$target" ] && [ "$FORCE" -eq 1 ]; then
+      rm -rf -- "$target"
+    fi
+    mkdir -p -- "$(dirname "$target")"
+    cp -r "$src" "$target"
+    echo "  - $ip -> $target" >&2
+  done < "$zip_plan"
 }
 
 # --- Main flow ----------------------------------------------------------------
@@ -264,6 +434,7 @@ echo "==> Fetching manifest from ${REPO}@${BRANCH}" >&2
 fetch_manifest_tsv "$manifest_tsv"
 
 resolve_selector "$SELECTOR" "$manifest_tsv"
+prune_nested_selection
 
 count="$(printf '%s\n' "$SELECTED_IPS" | awk 'NF' | wc -l | tr -d ' ')"
 echo "==> Selector matched $count skill(s) in mode '$MODE'" >&2
@@ -294,7 +465,51 @@ if [ "$DRY_RUN" -eq 1 ]; then
   exit 0
 fi
 
+# Prefer the prebuilt ZIP artifacts for scoped installs. This avoids
+# downloading and extracting the entire repository for one skill or category.
+if can_use_scoped_zip; then
+  resolve_zip_base
+  zip="$tmpdir/scoped.zip"
+  case "$MODE" in
+    single)
+      zip_path="zips/skill/${SELECTOR}.zip"
+      zip_root="$(basename "$SELECTOR")"
+      ;;
+    category)
+      zip_path="zips/category/${CAT}.zip"
+      zip_root="$CAT"
+      ;;
+    all)
+      zip_path="zips/all.zip"
+      zip_root="skills"
+      ;;
+    glob)
+      echo "==> Downloading $count per-skill ZIP(s) from ${ZIP_BASE}" >&2
+      if install_from_skill_zips "$tmpdir/scoped-skills"; then
+        echo "==> Done. Installed $count skill(s) under $DEST" >&2
+        exit 0
+      fi
+      echo "==> Scoped ZIPs unavailable; falling back to ${REPO}@${BRANCH} tarball" >&2
+      ;;
+  esac
+
+  if [ "$MODE" != "glob" ]; then
+    echo "==> Downloading scoped ZIP from ${ZIP_BASE}/${zip_path}" >&2
+  fi
+  if [ "$MODE" != "glob" ] && download_zip "$zip_path" "$zip"; then
+    echo "==> Installing $count skill(s) from scoped ZIP" >&2
+    install_from_zip_root "$zip" "$tmpdir/scoped" "$zip_root"
+    echo "==> Done. Installed $count skill(s) under $DEST" >&2
+    exit 0
+  fi
+
+  if [ "$MODE" != "glob" ]; then
+    echo "==> Scoped ZIP unavailable; falling back to ${REPO}@${BRANCH} tarball" >&2
+  fi
+fi
+
 # Download tarball once and extract everything to temp.
+require_cmd tar
 echo "==> Downloading ${REPO}@${BRANCH} tarball" >&2
 tarball="$tmpdir/repo.tar.gz"
 curl -fsSL "${TARBALL_BASE}/${BRANCH}" -o "$tarball" \

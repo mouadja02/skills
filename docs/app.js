@@ -295,7 +295,7 @@ function renderCategoryBanner() {
   const dlSize = $("#catBannerDownloadSize");
   const catZip = state.zips?.categories?.[cat];
   if (catZip) {
-    dlLink.href = `./${catZip.url}`;
+    dlLink.href = zipHref(catZip);
     dlLink.setAttribute("download", `${cat}.zip`);
     dlSize.textContent = `· ${formatBytes(catZip.bytes)}`;
     dlLink.classList.remove("hidden");
@@ -535,7 +535,7 @@ function renderCard(skill, tmpl, repo, branch) {
   const dlSize = $(".card-download-size", node);
   const zip = state.zips?.skills?.[skill.install_path];
   if (zip) {
-    dl.href = `./${zip.url}`;
+    dl.href = zipHref(zip);
     dl.setAttribute("download", `${skill.name}.zip`);
     dlSize.textContent = `· ${formatBytes(zip.bytes)}`;
   } else {
@@ -560,6 +560,12 @@ function formatBytes(bytes) {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
   return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+}
+
+function zipHref(zip) {
+  if (zip.public_url) return zip.public_url;
+  if (/^https?:\/\//.test(zip.url)) return zip.url;
+  return `./${zip.url}`;
 }
 
 function installCommands(skill, repo, branch) {

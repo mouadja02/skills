@@ -1,8 +1,9 @@
 name: Deploy Pages
 
-# Builds the manifest, generates per-skill and per-category ZIP archives, and
-# deploys docs/ to GitHub Pages. ZIPs are NOT committed to main; they exist
-# only inside the Pages artifact, keeping the main branch lean.
+# Builds the manifest, generates per-skill, per-category, and all-skills ZIP
+# archives, deploys docs/ to GitHub Pages, and optionally publishes ZIP
+# artifacts to S3. ZIPs are NOT committed to main; they exist only inside the
+# Pages/S3 artifacts, keeping the main branch lean.
 
 on:
   push:
@@ -28,6 +29,8 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      HAS_AWS_S3_UPLOAD: ${{ secrets.AWS_S3_BUCKET != '' && secrets.AWS_REGION != '' && secrets.AWS_ROLE_TO_ASSUME != '' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -44,13 +47,66 @@ jobs:
       - name: Build manifest (writes docs/manifest.{json,tsv} + SKILLS.md)
         run: node scripts/build-manifest.mjs
 
-      - name: Build per-skill and per-category ZIPs into docs/zips/
+      - name: Resolve public ZIP base URL
+        shell: bash
+        env:
+          PUBLIC_BASE_URL: ${{ secrets.SKILLS_PUBLIC_BASE_URL }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_S3_PREFIX: ${{ secrets.AWS_S3_PREFIX }}
+        run: |
+          set -euo pipefail
+          base="$PUBLIC_BASE_URL"
+          if [ -z "$base" ] && [ -n "$AWS_S3_BUCKET" ] && [ -n "$AWS_REGION" ]; then
+            prefix="${AWS_S3_PREFIX#/}"
+            prefix="${prefix%/}"
+            base="https://${AWS_S3_BUCKET}.s3.${AWS_REGION}.amazonaws.com"
+            if [ -n "$prefix" ]; then
+              base="${base}/${prefix}"
+            fi
+          fi
+          echo "SKILLS_PUBLIC_BASE_URL=$base" >> "$GITHUB_ENV"
+
+      - name: Build ZIP artifacts into docs/zips/
         run: node scripts/build-zips.mjs
 
       - name: Report artifact size
         run: |
           du -sh docs/zips || true
           ls -la docs/zips || true
+
+      - name: Configure AWS credentials with OIDC
+        if: ${{ env.HAS_AWS_S3_UPLOAD == 'true' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Upload ZIP artifacts to S3
+        if: ${{ env.HAS_AWS_S3_UPLOAD == 'true' }}
+        shell: bash
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_S3_PREFIX: ${{ secrets.AWS_S3_PREFIX }}
+        run: |
+          set -euo pipefail
+          prefix="${AWS_S3_PREFIX#/}"
+          prefix="${prefix%/}"
+          dest="s3://${AWS_S3_BUCKET}"
+          if [ -n "$prefix" ]; then
+            dest="${dest}/${prefix}"
+          fi
+
+          aws s3 sync docs/zips "${dest}/zips" \
+            --delete \
+            --no-progress \
+            --exclude "_summary.json" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          aws s3 cp docs/zips/_summary.json "${dest}/zips/_summary.json" \
+            --no-progress \
+            --content-type "application/json; charset=utf-8" \
+            --cache-control "public, max-age=60, must-revalidate"
 
       - uses: actions/configure-pages@v5
 

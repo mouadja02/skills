@@ -3,6 +3,7 @@
 //
 //   docs/zips/skill/<install_path>.zip      one per skill
 //   docs/zips/category/<category>.zip       one per category (all its skills)
+//   docs/zips/all.zip                       all skills
 //   docs/zips/_summary.json                 metadata: file sizes, sha if useful
 //
 // Each ZIP unzips to a folder named after the skill (or the category), so the
@@ -13,7 +14,8 @@
 // Requires: adm-zip (devDependency in package.json).
 // CI installs it; locally run `npm install` first.
 
-import { readFile, writeFile, mkdir, rm, stat } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, join, posix, basename } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,7 +28,24 @@ const SKILLS_DIR = join(ROOT, "skills");
 const ZIPS_DIR = join(ROOT, "docs", "zips");
 const SKILL_DIR = join(ZIPS_DIR, "skill");
 const CATEGORY_DIR = join(ZIPS_DIR, "category");
+const ALL_ZIP_PATH = join(ZIPS_DIR, "all.zip");
 const SUMMARY_PATH = join(ZIPS_DIR, "_summary.json");
+const PUBLIC_BASE_URL = process.env.SKILLS_PUBLIC_BASE_URL || "";
+
+async function zipMetadata(outPath, relativeUrl, extra = {}) {
+  const data = await readFile(outPath);
+  const sha256 = createHash("sha256").update(data).digest("hex");
+  await writeFile(`${outPath}.sha256`, `${sha256}  ${basename(outPath)}\n`, "utf8");
+  return {
+    ...extra,
+    bytes: data.length,
+    sha256,
+    url: relativeUrl,
+    ...(PUBLIC_BASE_URL
+      ? { public_url: `${PUBLIC_BASE_URL.replace(/\/+$/, "")}/${relativeUrl}` }
+      : {}),
+  };
+}
 
 async function main() {
   if (!existsSync(MANIFEST_PATH)) {
@@ -47,9 +66,11 @@ async function main() {
     generated_at: new Date().toISOString(),
     repo: manifest.repo,
     branch: manifest.default_branch,
+    public_base_url: PUBLIC_BASE_URL || null,
     skill_count: 0,
     category_count: 0,
     total_bytes: 0,
+    all: null,
     skills: {},
     categories: {},
   };
@@ -72,13 +93,10 @@ async function main() {
     await mkdir(dirname(outPath), { recursive: true });
     zip.writeZip(outPath);
 
-    const size = (await stat(outPath)).size;
-    summary.skills[skill.install_path] = {
-      bytes: size,
-      url: `zips/skill/${skill.install_path}.zip`,
-    };
+    const meta = await zipMetadata(outPath, `zips/skill/${skill.install_path}.zip`);
+    summary.skills[skill.install_path] = meta;
     summary.skill_count++;
-    summary.total_bytes += size;
+    summary.total_bytes += meta.bytes;
   }
 
   console.log(`Building per-category ZIPs (${manifest.categories.length})...`);
@@ -92,21 +110,28 @@ async function main() {
     const outPath = join(CATEGORY_DIR, category + ".zip");
     zip.writeZip(outPath);
 
-    const size = (await stat(outPath)).size;
-    summary.categories[category] = {
+    const meta = await zipMetadata(outPath, `zips/category/${category}.zip`, {
       skill_count: manifest.counts_by_category[category] ?? 0,
-      bytes: size,
-      url: `zips/category/${category}.zip`,
-    };
+    });
+    summary.categories[category] = meta;
     summary.category_count++;
-    summary.total_bytes += size;
+    summary.total_bytes += meta.bytes;
   }
+
+  console.log("Building all-skills ZIP...");
+  const allZip = new AdmZip();
+  allZip.addLocalFolder(SKILLS_DIR, "skills");
+  allZip.writeZip(ALL_ZIP_PATH);
+  summary.all = await zipMetadata(ALL_ZIP_PATH, "zips/all.zip", {
+    skill_count: manifest.count,
+  });
+  summary.total_bytes += summary.all.bytes;
 
   await writeFile(SUMMARY_PATH, JSON.stringify(summary, null, 2) + "\n", "utf8");
 
   const mb = (summary.total_bytes / 1024 / 1024).toFixed(2);
   console.log(
-    `OK  ${summary.skill_count} skill zips + ${summary.category_count} category zips  (${mb} MB total)`
+    `OK  ${summary.skill_count} skill zips + ${summary.category_count} category zips + all.zip  (${mb} MB total)`
   );
   console.log(`OK  docs/zips/_summary.json`);
 }

@@ -38,8 +38,9 @@ The installer scripts accept three kinds of selector:
 | Exact install path | one skill | `engineering-craft/test-driven-development` |
 | Category name | every skill in that category | `engineering-craft` (29 skills) |
 | Glob pattern (quoted) | every install path that matches | `"*bmad*"`, `"ai-agents/*"`, `"*-advisor"` |
+| All skills | every skill, preserving category paths | `--all` / `-All` |
 
-`-d` / `-Dest` is required. For single-skill installs, `<dest>` is the skill folder. For category and glob installs, `<dest>` is the parent folder; each matched skill gets its own subfolder underneath. Use `--force` / `-Force` to overwrite existing destinations.
+`-d` / `-Dest` is required. For single-skill installs, `<dest>` can be the final skill folder or an existing parent folder; parent folders install the skill under `<dest>/<skill-name>`. For category and glob installs, `<dest>` is the parent folder; each matched skill gets its own subfolder underneath. Use `--force` / `-Force` to overwrite existing destinations.
 
 #### Option A — installer scripts (recommended)
 
@@ -49,7 +50,7 @@ The installer scripts accept three kinds of selector:
 # one skill
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
   | bash -s -- engineering-craft/test-driven-development \
-      -d ~/.claude/skills/test-driven-development
+      -d ~/.claude/skills
 
 # whole category
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
@@ -58,6 +59,10 @@ curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
 # glob pattern, flattened by skill name
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
   | bash -s -- "*bmad*" -d ~/.claude/skills/bmad --flat
+
+# all skills
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
+  | bash -s -- --all -d ~/.claude/skills
 
 # preview what would happen
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
@@ -78,13 +83,16 @@ iex $content
 
 # one skill
 Install-Skill engineering-craft/test-driven-development `
-              -Dest $HOME\.claude\skills\test-driven-development
+              -Dest $HOME\.claude\skills
 
 # whole category
 Install-Skill engineering-craft -Dest $HOME\.claude\skills\engineering-craft
 
 # glob pattern, flattened by skill name
 Install-Skill "*bmad*" -Dest $HOME\.claude\skills\bmad -Flat
+
+# all skills
+Install-Skill -All -Dest $HOME\.claude\skills
 
 # preview what would happen
 Install-Skill "ai-agents/*" -Dest $HOME\.claude\skills\ai -DryRun
@@ -103,12 +111,13 @@ Install-Skill -Help              # full Get-Help output
 | `--branch <name>` | `-Branch <name>` | install from a non-default branch |
 | `--force` | `-Force` | overwrite existing destinations |
 | `--flat` | `-Flat` | glob mode: place each skill at `<dest>/<name>/` instead of preserving install paths (errors on collision) |
+| `--all` | `-All` | install every skill, preserving category paths |
 | `--dry-run` | `-DryRun` | resolve selector and print plan only |
 | `--list` | `-List` | list every skill, grouped by category |
 | `--list-categories` | `-ListCategories` | list categories with skill counts |
 | `-h` / `--help` | `-Help` | show usage |
 
-Override the source repo / branch with the `SKILLS_REPO` and `SKILLS_BRANCH` env vars (or `SKILLS_RAW_BASE` and `SKILLS_TARBALL_BASE` to point at a private mirror).
+Override the source repo / branch with the `SKILLS_REPO` and `SKILLS_BRANCH` env vars. Use `SKILLS_DOWNLOAD_BASE` to point installers at an alternate public ZIP artifact base; the default is discovered from the published ZIP summary and falls back to GitHub Pages.
 
 #### Option B — `degit` (requires Node.js, single skill or folder)
 
@@ -138,13 +147,14 @@ cd .. && rm -rf skills-tmp
 
 #### Option D — direct `.zip` download
 
-Every skill and every category is published as a downloadable `.zip` on the
+Every skill, every category, and the full library are published as downloadable `.zip` files on the
 Pages site. No tools required — click the **`↓ .zip`** button on any card,
 or grab a stable URL:
 
 ```text
 https://mouadja02.github.io/skills/zips/skill/<install-path>.zip
 https://mouadja02.github.io/skills/zips/category/<category>.zip
+https://mouadja02.github.io/skills/zips/all.zip
 ```
 
 Examples:
@@ -158,7 +168,7 @@ unzip ai-agents.zip -d ~/.claude/skills/
 ```
 
 Each zip unpacks to a single named folder ready to drop into your skills
-directory. A machine-readable index of every zip (URL + size) lives at
+directory. A machine-readable index of every zip (URL + size + SHA-256) lives at
 `https://mouadja02.github.io/skills/zips/_summary.json`.
 
 #### Option E — full clone
@@ -197,8 +207,8 @@ To publish the searchable index at `https://<user>.github.io/skills/`:
 1. **Settings → Pages** → *Source*: **GitHub Actions**.
 2. Push any change to `main`. The
    [`Deploy Pages`](./.github/workflows/deploy-pages.yml) workflow builds
-   the manifest, generates per-skill and per-category `.zip` archives into
-   `docs/zips/`, then uploads `docs/` as the Pages artifact.
+   the manifest, generates per-skill, per-category, and all-skills `.zip`
+   archives into `docs/zips/`, then uploads `docs/` as the Pages artifact.
 3. Wait ~1 minute for the first deploy.
 
 `docs/zips/` is `.gitignore`d — the archives only exist inside the Pages
