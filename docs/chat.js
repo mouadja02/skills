@@ -534,10 +534,10 @@ When in doubt, assume the user is asking about something development or producti
       return;
     }
 
-    // Show error badge if no API key
-    if (!API_KEY) {
+    // Show error badge if proxy URL is not configured
+    if (!PROXY_URL) {
       fab.classList.add("fab--no-key");
-      fab.title = "AI assistant not configured (missing API key)";
+      fab.title = "AI assistant not configured (missing PROXY_URL)";
     }
 
     // FAB click — open / close
