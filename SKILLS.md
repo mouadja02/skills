@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 258 skills across 13 categories.
+**Total:** 259 skills across 13 categories.
 
 ## Install one skill
 
@@ -34,7 +34,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`llm-integrations`](#llm-integrations) | 5 |
 | [`marketing-and-growth`](#marketing-and-growth) | 22 |
 | [`product-management`](#product-management) | 10 |
-| [`skill-authoring`](#skill-authoring) | 2 |
+| [`skills-management`](#skills-management) | 3 |
 
 ## ai-agents
 
@@ -352,9 +352,10 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`scrum-master`](./skills/product-management/scrum-master/SKILL.md) | `product-management/scrum-master` | Advanced Scrum Master skill for data-driven agile team analysis and coaching. Use when the user asks about sprint planning, velocity tracking, retrospectives, standup facilitation, backlog grooming, story points, burndown charts, blocker resolution, or agile team health. Runs Python scripts to analyse sprint JSON exports from Jira or similar tools: velocity_analyzer.py for Monte Carlo sprint forecasting, sprint_health_scorer.py for multi-dimension health scoring, and retrospective_analyzer.py for action-item and theme tracking. Produces confidence-interval forecasts, health grade reports, and improvement-velocity trends for high-performing Scrum teams. |
 | [`ux-researcher-designer`](./skills/product-management/ux-researcher-designer/SKILL.md) | `product-management/ux-researcher-designer` | UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user research, persona creation, journey mapping, and design validation. |
 
-## skill-authoring
+## skills-management
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`skill-creator`](./skills/skill-authoring/skill-creator/SKILL.md) | `skill-authoring/skill-creator` | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. |
-| [`writing-skills`](./skills/skill-authoring/writing-skills/SKILL.md) | `skill-authoring/writing-skills` | Use when creating new skills, editing existing skills, or verifying skills work before deployment |
+| [`find-skills`](./skills/skills-management/find-skills/SKILL.md) | `skills-management/find-skills` | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill. |
+| [`skill-creator`](./skills/skills-management/skill-creator/SKILL.md) | `skills-management/skill-creator` | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. |
+| [`writing-skills`](./skills/skills-management/writing-skills/SKILL.md) | `skills-management/writing-skills` | Use when creating new skills, editing existing skills, or verifying skills work before deployment |
