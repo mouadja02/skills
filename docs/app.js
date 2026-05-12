@@ -63,6 +63,8 @@ async function init() {
     const res = await fetch("./manifest.json", { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     state.manifest = await res.json();
+    // Expose manifest globally so chat.js can reuse it without a second fetch
+    window.skillsManifest = state.manifest;
   } catch (err) {
     $("#grid").innerHTML = `<div class="empty">
       <div class="empty-icon">!</div>

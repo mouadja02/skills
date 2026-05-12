@@ -6,13 +6,13 @@
     <title>Skills — Agent Skills for Claude Code & Cursor</title>
     <meta
       name="description"
-      content="Browse 258 installable agent skills for Claude Code and Cursor. One command, no full clone required."
+      content="Browse 504 installable agent skills for Claude Code and Cursor. One command, no full clone required. AI-powered skill finder included."
     />
     <meta name="color-scheme" content="dark light" />
     <meta property="og:title" content="Skills — Agent Skills Library" />
     <meta
       property="og:description"
-      content="Searchable index of 258 agent skills with one-line install commands."
+      content="Searchable index of 504 agent skills with one-line install commands and AI-powered skill finder."
     />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Cpath d='M16 22h32M16 32h22M16 42h28' stroke='%2300f0ff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -299,6 +299,109 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
       </div>
     </footer>
 
+    <!-- =====================================================================
+         AI Chat Assistant
+         ===================================================================== -->
+
+    <!-- Overlay (closes panel on click) -->
+    <div id="chatOverlay" class="chat-overlay" aria-hidden="true"></div>
+
+    <!-- Floating action button -->
+    <button
+      id="chatFab"
+      class="chat-fab"
+      type="button"
+      aria-label="Open AI skill assistant"
+      aria-expanded="false"
+      aria-controls="chatPanel"
+      title="Ask AI — find & install skills"
+    >
+      <!-- Idle icon: sparkle brain -->
+      <span class="chat-fab-icon chat-fab-icon--idle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-3.14"/>
+          <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.44-3.14"/>
+        </svg>
+      </span>
+      <!-- Open icon: X -->
+      <span class="chat-fab-icon chat-fab-icon--close" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </span>
+      <span class="chat-fab-pulse" aria-hidden="true"></span>
+    </button>
+
+    <!-- Chat panel -->
+    <aside
+      id="chatPanel"
+      class="chat-panel"
+      role="dialog"
+      aria-modal="false"
+      aria-label="Skills AI assistant"
+    >
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <span class="chat-header-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-3.14"/>
+              <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.44-3.14"/>
+            </svg>
+          </span>
+          <div>
+            <div class="chat-header-name">SkillBot</div>
+            <div class="chat-header-sub">
+              <span class="chat-status-dot" aria-hidden="true"></span>
+              AI skill assistant
+            </div>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button id="chatClear" class="chat-icon-btn" type="button" title="Clear conversation" aria-label="Clear conversation">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+            </svg>
+          </button>
+          <button id="chatClose" class="chat-icon-btn" type="button" title="Close" aria-label="Close assistant">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div id="chatMessages" class="chat-messages" role="log" aria-live="polite" aria-label="Conversation"></div>
+
+      <!-- Starters -->
+      <div id="chatStarters" class="chat-starters" aria-label="Suggested questions"></div>
+
+      <!-- Input area -->
+      <div class="chat-input-area">
+        <div class="chat-input-wrap">
+          <textarea
+            id="chatInput"
+            class="chat-input"
+            placeholder="Ask about skills, install commands, debugging…"
+            rows="1"
+            maxlength="1200"
+            aria-label="Message"
+            autocomplete="off"
+            spellcheck="true"
+          ></textarea>
+          <button id="chatSend" class="chat-send" type="button" aria-label="Send message">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7Z"/>
+            </svg>
+          </button>
+        </div>
+        <p class="chat-input-hint">Powered by NVIDIA · <a href="https://github.com/mouadja02/skills#readme" target="_blank" rel="noopener">Skills library</a></p>
+      </div>
+    </aside>
+
     <script src="./app.js" defer></script>
+    <script src="./chat-config.js" defer onerror="console.warn('[SkillBot] chat-config.js not found — AI chat disabled.')"></script>
+    <script src="./chat.js" defer></script>
   </body>
 </html>
