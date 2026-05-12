@@ -35,35 +35,6 @@
     "What's in the engineering-craft category?",
   ];
 
-  // Off-topic guard — topics we quickly reject without an API call
-  const OFFTOPIC_PATTERNS = [
-    /recipe|cook|food|meal|restaurant/i,
-    /sport|football|soccer|basketball|nba|nfl/i,
-    /weather|forecast|rain|temperature outside/i,
-    /stock price|crypto|bitcoin|ethereum|invest/i,
-    /movie|series|netflix|actor|actress|celebrity/i,
-    /dating|relationship|love advice/i,
-    /joke|funny|humor|meme/i,
-    /politic|president|election|government/i,
-    /religion|god|prayer|church/i,
-    /write me a song|compose music/i,
-  ];
-
-  // Keywords that signal an on-topic message about skills / dev tools
-  const ONTOPIC_KEYWORDS = [
-    /skill|category|install|download|cursor|claude|agent|mcp|llm|ai|copilot/i,
-    /devops|docker|terraform|azure|aws|gcp|cloud|linux/i,
-    /engineer|developer|code|coding|debug|test|framework|backend|frontend/i,
-    /python|javascript|typescript|java|kotlin|rust|go|ruby|swift|php/i,
-    /react|vue|next|nuxt|spring|fastapi|django|flask/i,
-    /database|sql|postgres|mongodb|snowflake|bigquery/i,
-    /product|pm|agile|scrum|sprint|roadmap|prd/i,
-    /marketing|seo|content|copywriting|gtm|growth/i,
-    /design|ui|ux|figma|tailwind|css|banner|brand/i,
-    /documentation|readme|diagram|slides|presentation/i,
-    /business|strategy|cto|ceo|cfo|cmo|board|startup/i,
-    /how|what|which|find|list|show|help|setup|configure/i,
-  ];
 
   /* =====================================================================
      State
@@ -150,42 +121,13 @@ ${index}
 - Format code blocks correctly with the right language tag
 - If the user wants more detail about a skill, give a fuller description + usage tips
 
-## Scope constraint
-You ONLY answer questions about:
-- The skills in this library (finding, installing, using, debugging them)
-- Claude Code and Cursor AI assistants
-- Agent development, MCP (Model Context Protocol), AI agents
-- Dev tools and workflows closely related to using skills
+## Scope
+Your expertise is this skills library and everything around it: finding the right skill, installing it, understanding what it does, debugging issues, comparing options, and general questions about Claude Code, Cursor, AI agents, and MCP.
 
-If asked about anything completely unrelated (recipes, sports, weather, politics, etc.), politely decline in one sentence and redirect to skills topics.`;
+For questions clearly outside this scope (e.g. "what's the weather?", "write me a poem about cats") reply with one friendly sentence declining and suggest a skills-related follow-up instead.
+
+When in doubt, assume the user is asking about something development or productivity related and try to connect it to a relevant skill.`;
   }
-
-  /* =====================================================================
-     Preprocessing — off-topic guard
-     ===================================================================== */
-
-  function classifyMessage(text) {
-    const t = text.trim().toLowerCase();
-
-    // Very short messages are likely on-topic (hi, help, etc.)
-    if (t.length < 15) return "ontopic";
-
-    // Check obvious off-topic patterns
-    for (const pat of OFFTOPIC_PATTERNS) {
-      if (pat.test(t)) return "offtopic";
-    }
-
-    // Check on-topic keywords
-    for (const pat of ONTOPIC_KEYWORDS) {
-      if (pat.test(t)) return "ontopic";
-    }
-
-    // Ambiguous — let the LLM decide (system prompt will guard)
-    return "ambiguous";
-  }
-
-  const OFFTOPIC_REPLY = "I'm focused on helping you find and use agent skills from this library. " +
-    "Try asking something like: *\"Find me skills for React testing\"* or *\"How do I install a skill in Cursor?\"*";
 
   /* =====================================================================
      NVIDIA API — streaming fetch
@@ -450,14 +392,6 @@ If asked about anything completely unrelated (recipes, sports, weather, politics
     // Render user bubble
     const { inner: userInner } = appendMessage("user", userText);
     setInnerContent(userInner, userText, false);
-
-    // Guard: off-topic?
-    const cls = classifyMessage(userText);
-    if (cls === "offtopic") {
-      const { inner } = appendMessage("assistant", "");
-      setInnerContent(inner, OFFTOPIC_REPLY);
-      return;
-    }
 
     // Push to history
     history.push({ role: "user", content: userText });
