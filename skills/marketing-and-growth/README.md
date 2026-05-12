@@ -53,6 +53,14 @@ A complete **marketing operating system** — strategy, content, SEO, paid acqui
 
 > **A/B testing:** for hypothesis writing, sample-size calculation, and statistical interpretation, use [`product-management/experiment-designer`](../product-management/experiment-designer/) — it's the canonical home for experiment methodology and now covers both product *and* marketing/CRO contexts.
 
+### App stores & community
+
+| Skill | What it does |
+| --- | --- |
+| [`apple-appstore-reviewer`](./apple-appstore-reviewer/SKILL.md) | Prepare App Store submissions — review guidelines compliance, metadata, screenshots, rejection responses. |
+| [`finnish-humanizer`](./finnish-humanizer/SKILL.md) | Adapt marketing content for Finnish culture and language — localization, tone, cultural nuances. |
+| [`sponsor-finder`](./sponsor-finder/SKILL.md) | Find relevant sponsors for projects, events, or newsletters — outreach strategy and qualification. |
+
 ## Suggested workflow
 
 ```

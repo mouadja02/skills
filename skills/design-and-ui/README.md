@@ -29,6 +29,24 @@ Skills for **frontend design, UI styling, brand identity, design systems, and cr
 | [`banner-design`](./banner-design/SKILL.md) | Banners for social, ads, web heroes, and print. 13+ styles (minimalist, gradient, glassmorphism, 3D, neon, duotone, …) across Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, print. |
 | [`anass-pro-style`](./anass-pro-style/SKILL.md) | Build single-file, narrative-driven portfolio/pitch sites in the style of anass.pro — pixel-art game hero, custom cursor, typewriter text, Web Audio SFX, scroll-revealed scenes, dark purple aesthetic. |
 
+### UI tools & creative software
+
+| Skill | What it does |
+| --- | --- |
+| [`adobe-illustrator-scripting`](./adobe-illustrator-scripting/SKILL.md) | Automate Adobe Illustrator with ExtendScript — batch processing, document generation, asset export. |
+| [`content-management-systems`](./content-management-systems/SKILL.md) | Work with CMS platforms — headless CMS, content modeling, editorial workflows, APIs. |
+| [`excalidraw-diagram-generator`](./excalidraw-diagram-generator/SKILL.md) | Generate Excalidraw diagrams with proper JSON schema for architecture and flow visualization. |
+| [`fluentui-blazor`](./fluentui-blazor/SKILL.md) | Microsoft Fluent UI Blazor — FluentButton, FluentDataGrid, FluentDialog, theming, JS interop. |
+| [`freecad-scripts`](./freecad-scripts/SKILL.md) | Script FreeCAD for parametric 3D modeling and engineering design automation. |
+| [`gsap-framer-scroll-animation`](./gsap-framer-scroll-animation/SKILL.md) | Build scroll-driven animations with GSAP and Framer Motion. |
+| [`legacy-circuit-mockups`](./legacy-circuit-mockups/SKILL.md) | Create circuit board mockups and electronic component diagrams. |
+| [`penpot-uiux-design`](./penpot-uiux-design/SKILL.md) | Design UI/UX mockups and prototypes in Penpot (open-source Figma alternative). |
+| [`premium-frontend-ui`](./premium-frontend-ui/SKILL.md) | Build premium, high-polish frontend UIs with advanced visual techniques. |
+| [`slang-shader-engineer`](./slang-shader-engineer/SKILL.md) | Write Slang shaders for real-time graphics — vertex, fragment, compute shaders. |
+| [`web-coder`](./web-coder/SKILL.md) | Build web applications with modern HTML, CSS, and vanilla JavaScript. |
+| [`web-design-reviewer`](./web-design-reviewer/SKILL.md) | Review web designs for aesthetics, usability, accessibility, and performance. |
+| [`napkin`](../context-engineering/napkin/SKILL.md) | Visual whiteboard — draw and sketch ideas, share with agent. *(lives in context-engineering)* |
+
 ## When to use this folder
 
 - "Design / redesign / improve / critique a UI"
@@ -36,6 +54,8 @@ Skills for **frontend design, UI styling, brand identity, design systems, and cr
 - "Create a logo / banner / icon / social image"
 - "Set up design tokens"
 - "Apply a theme to my artifact"
+- "Script Adobe Illustrator" / "model in FreeCAD" / "design in Penpot"
+- "Add scroll animations" / "write a shader"
 
 ## Related categories
 
