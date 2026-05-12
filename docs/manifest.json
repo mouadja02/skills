@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-04T21:25:26.684Z",
+  "generated_at": "2026-05-12T20:19:18.293Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 258,
+  "count": 259,
   "categories": [
     "ai-agents",
     "business-and-strategy",
@@ -17,7 +17,7 @@
     "llm-integrations",
     "marketing-and-growth",
     "product-management",
-    "skill-authoring"
+    "skills-management"
   ],
   "counts_by_category": {
     "ai-agents": 58,
@@ -32,7 +32,7 @@
     "llm-integrations": 5,
     "marketing-and-growth": 22,
     "product-management": 10,
-    "skill-authoring": 2
+    "skills-management": 3
   },
   "skills": [
     {
@@ -2084,18 +2084,26 @@
       "description": "UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user research, persona creation, journey mapping, and design validation."
     },
     {
+      "name": "find-skills",
+      "category": "skills-management",
+      "install_path": "skills-management/find-skills",
+      "path": "skills/skills-management/find-skills",
+      "depth": 2,
+      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
+    },
+    {
       "name": "skill-creator",
-      "category": "skill-authoring",
-      "install_path": "skill-authoring/skill-creator",
-      "path": "skills/skill-authoring/skill-creator",
+      "category": "skills-management",
+      "install_path": "skills-management/skill-creator",
+      "path": "skills/skills-management/skill-creator",
       "depth": 2,
       "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
     },
     {
       "name": "writing-skills",
-      "category": "skill-authoring",
-      "install_path": "skill-authoring/writing-skills",
-      "path": "skills/skill-authoring/writing-skills",
+      "category": "skills-management",
+      "install_path": "skills-management/writing-skills",
+      "path": "skills/skills-management/writing-skills",
       "depth": 2,
       "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
     }
