@@ -23,6 +23,7 @@
   // The proxy URL points to the Cloudflare Worker that adds the NVIDIA API key.
   // Falls back to a placeholder so errors are descriptive rather than silent.
   const PROXY_URL = (CFG.proxyUrl || "").replace(/\/$/, "");
+  const CHAT_COMPLETIONS_PATH = "/v1/chat/completions";
 
   const MAX_HISTORY   = 20;   // kept messages in context
   const MAX_TOKENS    = 2048;
@@ -136,17 +137,41 @@ When in doubt, assume the user is asking about something development or producti
      NVIDIA API — streaming fetch
      ===================================================================== */
 
+  function completionsEndpoint() {
+    if (!PROXY_URL) return "";
+    return PROXY_URL.endsWith(CHAT_COMPLETIONS_PATH)
+      ? PROXY_URL
+      : `${PROXY_URL}${CHAT_COMPLETIONS_PATH}`;
+  }
+
+  function looksLikeHtml(text) {
+    return /<\/?(html|head|body|title|center|h1)\b/i.test(text);
+  }
+
+  function formatApiError(response, errText) {
+    if (response.status === 405 && looksLikeHtml(errText)) {
+      return "Chat proxy URL is misconfigured. PROXY_URL must point to your Cloudflare Worker, not the GitHub Pages site or NVIDIA API directly.";
+    }
+
+    if (looksLikeHtml(errText)) {
+      return `Chat proxy returned an HTML error page (${response.status}). Check that PROXY_URL points to the deployed Cloudflare Worker.`;
+    }
+
+    return `API error ${response.status}: ${errText || response.statusText}`;
+  }
+
   async function streamCompletion(messages, onToken, onDone, onError) {
     if (!PROXY_URL) {
       onError(new Error("Chat proxy is not configured. Set PROXY_URL in GitHub Secrets and redeploy."));
       return;
     }
 
+    const endpoint = completionsEndpoint();
     let response;
     try {
       // No Authorization header here — the Cloudflare Worker adds the NVIDIA
       // API key server-side, so the key is never exposed in the browser.
-      response = await fetch(`${PROXY_URL}/v1/chat/completions`, {
+      response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -164,7 +189,7 @@ When in doubt, assume the user is asking about something development or producti
 
     if (!response.ok) {
       const errText = await response.text().catch(() => response.statusText);
-      onError(new Error(`API error ${response.status}: ${errText}`));
+      onError(new Error(formatApiError(response, errText)));
       return;
     }
 
