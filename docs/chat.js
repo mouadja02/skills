@@ -6,7 +6,10 @@
  * a live skills index and streams responses token-by-token.
  *
  * Config (injected at build time via GitHub Actions into chat-config.js):
- *   window.CHAT_CFG = { apiKey: "nvapi-...", model: "stepfun-ai/step-3.5-flash" }
+ *   window.CHAT_CFG = { proxyUrl: "https://skills-ai-proxy.<you>.workers.dev" }
+ *
+ * The NVIDIA API key lives exclusively in the Cloudflare Worker secret store.
+ * The browser never sees or sends the key — the Worker adds it server-side.
  */
 
 (() => {
@@ -17,9 +20,9 @@
      ===================================================================== */
 
   const CFG = window.CHAT_CFG || {};
-  const API_KEY   = CFG.apiKey || "";
-  const API_MODEL = CFG.model  || "stepfun-ai/step-3.5-flash";
-  const API_BASE  = "https://integrate.api.nvidia.com/v1";
+  // The proxy URL points to the Cloudflare Worker that adds the NVIDIA API key.
+  // Falls back to a placeholder so errors are descriptive rather than silent.
+  const PROXY_URL = (CFG.proxyUrl || "").replace(/\/$/, "");
 
   const MAX_HISTORY   = 20;   // kept messages in context
   const MAX_TOKENS    = 2048;
@@ -134,21 +137,19 @@ When in doubt, assume the user is asking about something development or producti
      ===================================================================== */
 
   async function streamCompletion(messages, onToken, onDone, onError) {
-    if (!API_KEY) {
-      onError(new Error("API key not configured. See deployment instructions."));
+    if (!PROXY_URL) {
+      onError(new Error("Chat proxy is not configured. Set PROXY_URL in GitHub Secrets and redeploy."));
       return;
     }
 
     let response;
     try {
-      response = await fetch(`${API_BASE}/chat/completions`, {
+      // No Authorization header here — the Cloudflare Worker adds the NVIDIA
+      // API key server-side, so the key is never exposed in the browser.
+      response = await fetch(`${PROXY_URL}/v1/chat/completions`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${API_KEY}`,
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: API_MODEL,
           messages,
           temperature: TEMPERATURE,
           top_p: 0.9,
