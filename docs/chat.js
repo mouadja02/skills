@@ -28,6 +28,7 @@
   const MAX_HISTORY   = 20;   // kept messages in context
   const MAX_TOKENS    = 2048;
   const TEMPERATURE   = 0.65;
+  const MAX_LOCAL_RECOMMENDATIONS = 8;
 
   // Suggested openers shown in empty state
   const STARTERS = [
@@ -37,6 +38,7 @@
     "Show me Azure / cloud skills",
     "I need help debugging a skill install",
     "What's in the engineering-craft category?",
+    "Give me a skill to make my agent able to find skills"
   ];
 
 
@@ -49,6 +51,19 @@
   let history    = [];     // { role, content }[]
   let streaming  = false;  // lock to prevent parallel requests
   let panelOpen  = false;
+
+  const harnessNames = {
+    "claude-code": "Claude Code", cursor: "Cursor", copilot: "GitHub Copilot",
+    windsurf: "Windsurf", opencode: "OpenCode", codex: "Codex",
+  };
+  const harnessDests = {
+    "claude-code": { project: ".claude/skills/", user: "~/.claude/skills/" },
+    cursor:        { project: ".cursor/rules/",  user: "~/.cursor/rules/" },
+    copilot:       { project: ".github/instructions/", user: "~/.copilot/skills/" },
+    windsurf:      { project: ".windsurf/skills/", user: "~/.codeium/windsurf/skills/" },
+    opencode:      { project: ".opencode/skills/", user: "~/.opencode/skills/" },
+    codex:         { project: ".codex/skills/",  user: "~/.codex/skills/" },
+  };
 
   /* =====================================================================
      DOM helpers
@@ -92,18 +107,6 @@ npx degit mouadja02/skills/skills/<category/skill-name> ${primaryDest}<skill-nam
 \`\`\``;
 
     const selectedHarnesses = window.skillsBrowser?.selectedHarnesses ?? ["claude-code"];
-    const harnessNames = {
-      "claude-code": "Claude Code", cursor: "Cursor", copilot: "GitHub Copilot",
-      windsurf: "Windsurf", opencode: "OpenCode", codex: "Codex",
-    };
-    const harnessDests = {
-      "claude-code": { project: ".claude/skills/", user: "~/.claude/skills/" },
-      cursor:        { project: ".cursor/rules/",  user: "~/.cursor/rules/" },
-      copilot:       { project: ".github/instructions/", user: "~/.copilot/skills/" },
-      windsurf:      { project: ".windsurf/skills/", user: "~/.codeium/windsurf/skills/" },
-      opencode:      { project: ".opencode/skills/", user: "~/.opencode/skills/" },
-      codex:         { project: ".codex/skills/",  user: "~/.codex/skills/" },
-    };
     const primaryHarness = selectedHarnesses[0] ?? "claude-code";
     const primaryDest = harnessDests[primaryHarness]?.user ?? "~/.claude/skills/";
     const selectedLabels = selectedHarnesses.map((id) => harnessNames[id] ?? id).join(", ");
@@ -145,6 +148,9 @@ ${index}
 - For debugging help, ask one clarifying question at a time
 - Format code blocks correctly with the right language tag
 - If the user wants more detail about a skill, give a fuller description + usage tips
+- If the user asks to find, show, list, or recommend skills, answer with skills from the index first. Do not answer with generic advice, methods, or tutorials unless the user explicitly asks for that.
+- If the user says "Show N recommended skills" after a previous request, use the previous request as the recommendation intent and show exactly N skills when possible.
+- Never invent skill names or selectors. If no indexed skill matches, say that and suggest the closest indexed alternatives.
 
 ## Scope
 Your expertise is this skills library and everything around it: finding the right skill, installing it, understanding what it does, debugging issues, comparing options, and general questions about Claude Code, Cursor, Copilot, Windsurf, OpenCode, Codex, AI agents, and MCP.
@@ -569,6 +575,169 @@ When in doubt, assume the user is asking about something development or producti
   }
 
   /* =====================================================================
+     Local skill recommendations
+     ===================================================================== */
+
+  function maybeBuildLocalSkillDiscoveryResponse(userText) {
+    if (!manifest?.skills?.length || !isSkillRecommendationRequest(userText)) return null;
+
+    const query = recommendationQuery(userText);
+    const requestedCount = requestedSkillCount(userText);
+    const skills = recommendSkills(query, requestedCount);
+    if (!skills.length) return null;
+
+    return renderLocalRecommendations(skills, requestedCount);
+  }
+
+  function isSkillRecommendationRequest(text) {
+    const normalized = normalizeText(text);
+    if (/\b(all|every)\s+skills?\b/.test(normalized)) return false;
+    if (!/\b(skills?|agents?|rules?)\b/.test(normalized)) return false;
+    return /\b(find|show|list|recommend|suggest|give|need|available|best|top|looking for)\b/.test(normalized);
+  }
+
+  function requestedSkillCount(text) {
+    const normalized = normalizeText(text);
+    const wordNumbers = {
+      one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8,
+    };
+    const digit = normalized.match(/\b(?:show|list|recommend|suggest|give|top)?\s*(\d{1,2})\s+(?:recommended\s+)?skills?\b/);
+    if (digit) return clampRecommendationCount(Number(digit[1]));
+
+    const word = normalized.match(/\b(one|two|three|four|five|six|seven|eight)\s+(?:recommended\s+)?skills?\b/);
+    if (word) return wordNumbers[word[1]];
+
+    return 5;
+  }
+
+  function clampRecommendationCount(n) {
+    if (!Number.isFinite(n)) return 5;
+    return Math.max(1, Math.min(MAX_LOCAL_RECOMMENDATIONS, Math.trunc(n)));
+  }
+
+  function recommendationQuery(userText) {
+    const current = String(userText || "").trim();
+    const normalized = normalizeText(current);
+    const isVagueFollowup =
+      /\b(recommended|recommendations|these|those|them)\b/.test(normalized) &&
+      normalized.split(/\s+/).filter(Boolean).length <= 6;
+
+    const priorUserMessages = history
+      .filter(msg => msg.role === "user")
+      .map(msg => msg.content)
+      .filter(Boolean);
+    const previousIntent = priorUserMessages.slice(-3, -1).reverse()
+      .find(msg => !isSkillRecommendationRequest(msg) || normalizeText(msg).split(/\s+/).length > 5);
+
+    return isVagueFollowup && previousIntent
+      ? `${previousIntent}\n${current}`
+      : current;
+  }
+
+  function recommendSkills(query, limit) {
+    const scored = manifest.skills
+      .map(skill => ({ skill, score: skillRelevanceScore(skill, query) }))
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score || a.skill.install_path.localeCompare(b.skill.install_path));
+
+    return scored.slice(0, limit).map(item => item.skill);
+  }
+
+  function skillRelevanceScore(skill, query) {
+    const normalizedQuery = expandQuery(normalizeText(query));
+    const tokens = uniqueTokens(normalizedQuery);
+    const name = normalizeText(skill.name);
+    const category = normalizeText(skill.category);
+    const path = normalizeText(skill.install_path);
+    const description = normalizeText(skill.description);
+    const haystack = `${name} ${category} ${path} ${description}`;
+    let score = 0;
+
+    for (const token of tokens) {
+      if (token.length < 3) continue;
+      if (name.includes(token)) score += 10;
+      if (path.includes(token)) score += 8;
+      if (category.includes(token)) score += 6;
+      if (description.includes(token)) score += 3;
+    }
+
+    if (hasCreativeIntent(normalizedQuery)) {
+      if (skill.category === "creative-thinking") score += 40;
+      const creativeBoosts = {
+        "creative-thinking/bold-ideas-generator": 28,
+        "creative-thinking/lateral-thinking-engine": 26,
+        "creative-thinking/idea-velocity": 22,
+        "creative-thinking/creative-constraints": 20,
+        "creative-thinking/reverse-brainstorm": 16,
+        "creative-thinking/cognitive-frame-shift": 14,
+        "creative-thinking/first-principles-deconstruction": 12,
+        "engineering-craft/brainstorming": 8,
+      };
+      score += creativeBoosts[skill.install_path] || 0;
+    }
+
+    if (normalizedQuery.includes(name) || normalizedQuery.includes(path)) score += 50;
+    if (haystack.includes(normalizedQuery) && normalizedQuery.length > 12) score += 15;
+
+    return score;
+  }
+
+  function expandQuery(query) {
+    const expansions = [
+      [/out\s+of\s+the\s+box/g, "out of the box unconventional bold lateral non obvious creative ideas"],
+      [/\bideas?\b/g, "idea ideas ideate ideation brainstorm creative"],
+      [/\bbrainstorm(?:ing)?\b/g, "brainstorm brainstorming ideation ideas"],
+      [/\bwild\b/g, "wild bold unconventional high impact"],
+      [/\bcreative\b/g, "creative creativity novel innovation lateral"],
+      [/\bstuck\b/g, "stuck block lateral reverse frame shift"],
+    ];
+    return expansions.reduce((out, [pattern, replacement]) => out.replace(pattern, replacement), query);
+  }
+
+  function hasCreativeIntent(query) {
+    return /\b(idea|ideas|ideate|ideation|brainstorm|creative|creativity|innovation|novel|unconventional|lateral|out of the box|bold|wild|non obvious|frame shift|constraints?)\b/.test(query);
+  }
+
+  function uniqueTokens(text) {
+    return [...new Set(String(text || "").split(/[^a-z0-9]+/).filter(Boolean))];
+  }
+
+  function normalizeText(text) {
+    return String(text || "").toLowerCase().replace(/[^\w\s/-]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+
+  function renderLocalRecommendations(skills, requestedCount) {
+    const shown = skills.slice(0, requestedCount);
+    const label = shown.length === 1 ? "skill" : "skills";
+    const lines = shown.map((skill, index) =>
+      `${index + 1}. \`${skill.install_path}\` — ${recommendationSummary(skill)}`
+    );
+
+    return `Here are ${shown.length} recommended ${label}:\n\n${lines.join("\n")}\n\n${installCommandsForRecommendations(shown)}`;
+  }
+
+  function recommendationSummary(skill) {
+    const raw = String(skill.description || "").replace(/\s+/g, " ").trim();
+    const firstSentence = raw.match(/^(.+?[.!?])(?:\s|$)/)?.[1] || raw;
+    return firstSentence.length > 180 ? `${firstSentence.slice(0, 177).trim()}...` : firstSentence;
+  }
+
+  function installCommandsForRecommendations(skills) {
+    const primaryDest = primaryHarnessDestination();
+    const raw = "https://raw.githubusercontent.com/mouadja02/skills/main/install.sh";
+    const commands = skills
+      .map(skill => `curl -fsSL ${raw} \\\n  | bash -s -- ${skill.install_path} -d ${primaryDest}${skill.name}`)
+      .join("\n\n");
+    return `Install with bash:\n\n\`\`\`bash\n${commands}\n\`\`\``;
+  }
+
+  function primaryHarnessDestination() {
+    const selectedHarnesses = window.skillsBrowser?.selectedHarnesses ?? ["claude-code"];
+    const primaryHarness = selectedHarnesses[0] ?? "claude-code";
+    return harnessDests[primaryHarness]?.user ?? "~/.claude/skills/";
+  }
+
+  /* =====================================================================
      Send a message
      ===================================================================== */
 
@@ -585,6 +754,17 @@ When in doubt, assume the user is asking about something development or producti
     // Push to history
     history.push({ role: "user", content: userText });
     if (history.length > MAX_HISTORY) history = history.slice(-MAX_HISTORY);
+
+    const localResponse = maybeBuildLocalSkillDiscoveryResponse(userText);
+    if (localResponse) {
+      const { inner } = appendMessage("assistant", "");
+      setInnerContent(inner, localResponse);
+      appendRecommendationActions(inner, localResponse);
+      history.push({ role: "assistant", content: localResponse });
+      if (history.length > MAX_HISTORY) history = history.slice(-MAX_HISTORY);
+      scrollToBottom();
+      return;
+    }
 
     // Show typing
     streaming = true;
