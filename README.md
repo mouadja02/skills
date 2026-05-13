@@ -1,6 +1,6 @@
 # skills
 
-A curated collection of **258 Agent Skills** for [Claude Code](https://docs.claude.com/en/docs/claude-code) and [Cursor](https://cursor.com), spanning *how to write code well*, *how to build agents*, *how to design UIs*, *how to ship docs and presentations*, *how to integrate LLMs*, *how to advise the C-suite*, *how to run growth marketing*, *how to operate infrastructure*, *how to manage products*, and *how to talk like a token-efficient caveman*.
+A curated collection of **622 Agent Skills** for [Claude Code](https://docs.claude.com/en/docs/claude-code) and [Cursor](https://cursor.com), spanning *how to write code well*, *how to build agents*, *how to design UIs*, *how to ship docs and presentations*, *how to integrate LLMs*, *how to advise the C-suite*, *how to run growth marketing*, *how to operate infrastructure*, *how to manage products*, *how to think boldly and creatively*, and *how to talk like a token-efficient caveman*.
 
 > Skills are reusable, model-invocable instruction packages. They auto-load based on the user's request, scoped to a single domain (writing tests, designing logos, querying Snowflake, advising a CEO, designing an experiment, etc.). One folder per skill, one `SKILL.md` per folder.
 
@@ -226,17 +226,18 @@ per-skill table; counts come from the auto-generated
 | Category | Skills | What lives here |
 | --- | --- | --- |
 | [**`skill-authoring/`**](./skills/skill-authoring/) | 2 | Building, editing, and benchmarking the skills themselves. |
-| [**`engineering-craft/`**](./skills/engineering-craft/) | 35 | The disciplined development loop: planning, brainstorming, TDD, debugging, code review, git worktrees, verification — plus senior IC roles (architect, frontend, backend, fullstack, ML, data, QA, PM) and AI-powered code migration. |
-| [**`ai-agents/`**](./skills/ai-agents/) | 58 | Designing, scaffolding, and operating AI agents — single and multi-agent, headless and TUI. Includes the **BMad Method** with 30 sub-skills and 6 named personas, the canonical `senior-prompt-engineer`, `mcp-server-builder`, browser automation, durable workflows, local AI stack, and trading agents. |
-| [**`context-engineering/`**](./skills/context-engineering/) | 6 | Context windows, compression, persistence, memory frameworks, lost-in-middle mitigation. |
-| [**`llm-integrations/`**](./skills/llm-integrations/) | 5 | OpenRouter family — TypeScript SDK, model discovery, image generation, OAuth, migration. |
-| [**`design-and-ui/`**](./skills/design-and-ui/) | 10 | Frontend craft, design systems, brand identity, themes, banners, narrative portfolio sites. |
-| [**`docs-and-presentations/`**](./skills/docs-and-presentations/) | 7 | READMEs, technical docs, ADRs, HTML slides, .pptx files, SVG diagrams. |
-| [**`data-and-backend/`**](./skills/data-and-backend/) | 22 | FastAPI + LLM, Snowflake SQL, dbt, ETL-to-dbt migration, Streamlit (with nested sub-skills for charts, dashboards, theming). |
-| [**`business-and-strategy/`**](./skills/business-and-strategy/) | 61 | The full C-suite — CEO, CFO, CTO, COO, CPO, CMO, CRO, CISO, CHRO advisors plus chief-of-staff routing, board-meeting protocol, company OS, scenario war room, executive mentor. |
-| [**`marketing-and-growth/`**](./skills/marketing-and-growth/) | 22 | A complete marketing operating system — strategy, content, SEO, paid acquisition, copywriting, conversion-rate optimization. |
-| [**`devops-and-infrastructure/`**](./skills/devops-and-infrastructure/) | 14 | CI/CD, Docker, Helm, Terraform, AWS, database design, dependency auditing, incident command, observability, Stripe integration, secops. |
-| [**`product-management/`**](./skills/product-management/) | 10 | PM toolkit, discovery, **canonical `experiment-designer`** (product *and* marketing A/B), agile delivery, UX research, roadmap communication. |
+| [**`engineering-craft/`**](./skills/engineering-craft/) | 138 | The disciplined development loop: planning, brainstorming, TDD, debugging, code review, git worktrees, verification — plus senior IC roles (architect, frontend, backend, fullstack, ML, data, QA, PM) and AI-powered code migration. |
+| [**`ai-agents/`**](./skills/ai-agents/) | 90 | Designing, scaffolding, and operating AI agents — single and multi-agent, headless and TUI. Includes the **BMad Method** with 30 sub-skills and 6 named personas, the canonical `senior-prompt-engineer`, `mcp-server-builder`, browser automation, durable workflows, local AI stack, and trading agents. |
+| [**`context-engineering/`**](./skills/context-engineering/) | 14 | Context windows, compression, persistence, memory frameworks, lost-in-middle mitigation. |
+| [**`creative-thinking/`**](./skills/creative-thinking/) | 8 | Bold ideation, lateral thinking, first-principles deconstruction, reverse brainstorming, idea velocity, cognitive frame-shifting, creative constraints, and deep focus productivity. |
+| [**`llm-integrations/`**](./skills/llm-integrations/) | 41 | OpenRouter family — TypeScript SDK, model discovery, image generation, OAuth, migration. |
+| [**`design-and-ui/`**](./skills/design-and-ui/) | 22 | Frontend craft, design systems, brand identity, themes, banners, narrative portfolio sites. |
+| [**`docs-and-presentations/`**](./skills/docs-and-presentations/) | 41 | READMEs, technical docs, ADRs, HTML slides, .pptx files, SVG diagrams. |
+| [**`data-and-backend/`**](./skills/data-and-backend/) | 70 | FastAPI + LLM, Snowflake SQL, dbt, ETL-to-dbt migration, Streamlit (with nested sub-skills for charts, dashboards, theming). |
+| [**`business-and-strategy/`**](./skills/business-and-strategy/) | 74 | The full C-suite — CEO, CFO, CTO, COO, CPO, CMO, CRO, CISO, CHRO advisors plus chief-of-staff routing, board-meeting protocol, company OS, scenario war room, executive mentor. |
+| [**`marketing-and-growth/`**](./skills/marketing-and-growth/) | 25 | A complete marketing operating system — strategy, content, SEO, paid acquisition, copywriting, conversion-rate optimization. |
+| [**`devops-and-infrastructure/`**](./skills/devops-and-infrastructure/) | 46 | CI/CD, Docker, Helm, Terraform, AWS, database design, dependency auditing, incident command, observability, Stripe integration, secops. |
+| [**`product-management/`**](./skills/product-management/) | 29 | PM toolkit, discovery, **canonical `experiment-designer`** (product *and* marketing A/B), agile delivery, UX research, roadmap communication. |
 | [**`caveman/`**](./skills/caveman/) | 6 | Token-efficient terse mode (~75% fewer output tokens) — plus `caveman-commit`, `caveman-review`, `caveman-compress`, and `find-skills`. |
 
 ---

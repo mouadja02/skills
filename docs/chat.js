@@ -77,21 +77,43 @@
     const installSnippet = `\`\`\`bash
 # Install one skill (bash)
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \\
-  | bash -s -- <category/skill-name> -d <destination>
+  | bash -s -- <category/skill-name> -d ${primaryDest}<skill-name>
 
 # Install via PowerShell
 $content = irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1
 iex $content
-Install-Skill <category/skill-name> -Dest <destination>
+Install-Skill <category/skill-name> -Dest ${primaryDest}<skill-name>
 
 # Install a whole category
-bash install.sh engineering-craft -d ~/.claude/skills/
+bash install.sh engineering-craft -d ${primaryDest}
 
 # Install with degit
-npx degit mouadja02/skills/skills/<category/skill-name> <destination>
+npx degit mouadja02/skills/skills/<category/skill-name> ${primaryDest}<skill-name>
 \`\`\``;
 
-    return `You are **SkillBot**, an expert AI assistant for the Skills library — a curated collection of ${mf.count} installable agent skills for Claude Code and Cursor.
+    const selectedHarnesses = window.skillsBrowser?.selectedHarnesses ?? ["claude-code"];
+    const harnessNames = {
+      "claude-code": "Claude Code", cursor: "Cursor", copilot: "GitHub Copilot",
+      windsurf: "Windsurf", opencode: "OpenCode", codex: "Codex",
+    };
+    const harnessDests = {
+      "claude-code": { project: ".claude/skills/", user: "~/.claude/skills/" },
+      cursor:        { project: ".cursor/rules/",  user: "~/.cursor/rules/" },
+      copilot:       { project: ".github/instructions/", user: "~/.copilot/skills/" },
+      windsurf:      { project: ".windsurf/skills/", user: "~/.codeium/windsurf/skills/" },
+      opencode:      { project: ".opencode/skills/", user: "~/.opencode/skills/" },
+      codex:         { project: ".codex/skills/",  user: "~/.codex/skills/" },
+    };
+    const primaryHarness = selectedHarnesses[0] ?? "claude-code";
+    const primaryDest = harnessDests[primaryHarness]?.user ?? "~/.claude/skills/";
+    const selectedLabels = selectedHarnesses.map((id) => harnessNames[id] ?? id).join(", ");
+    const destLines = selectedHarnesses
+      .map((id) => `- ${harnessNames[id] ?? id}: \`${harnessDests[id]?.user ?? "~/.claude/skills/"}\``)
+      .join("\n");
+
+    return `You are **SkillBot**, an expert AI assistant for the Skills library — a curated collection of ${mf.count} installable agent skills for Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex, and more.
+
+The user has selected the following tool(s): **${selectedLabels}**. Tailor install command destinations accordingly.
 
 ## Your mission
 Help users:
@@ -109,10 +131,8 @@ Skill selector formats:
 - Whole category: \`engineering-craft\`
 - Glob pattern: \`"ai-agents/*"\` or \`"*mcp*"\`
 
-Destinations:
-- Claude Code project: \`.claude/skills/\`
-- Cursor project: \`.cursor/skills/\`
-- Cursor user-level: \`~/.cursor/skills/\`
+User's selected tool destination(s):
+${destLines}
 
 ## Skills index (${mf.count} skills across ${mf.categories.length} categories)
 ${index}
@@ -127,7 +147,7 @@ ${index}
 - If the user wants more detail about a skill, give a fuller description + usage tips
 
 ## Scope
-Your expertise is this skills library and everything around it: finding the right skill, installing it, understanding what it does, debugging issues, comparing options, and general questions about Claude Code, Cursor, AI agents, and MCP.
+Your expertise is this skills library and everything around it: finding the right skill, installing it, understanding what it does, debugging issues, comparing options, and general questions about Claude Code, Cursor, Copilot, Windsurf, OpenCode, Codex, AI agents, and MCP.
 
 For questions clearly outside this scope (e.g. "what's the weather?", "write me a poem about cats") reply with one friendly sentence declining and suggest a skills-related follow-up instead.
 

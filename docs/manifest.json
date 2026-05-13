@@ -1,14 +1,15 @@
 {
   "version": 1,
-  "generated_at": "2026-05-13T00:08:21.464Z",
+  "generated_at": "2026-05-13T13:52:59.775Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 614,
+  "count": 622,
   "categories": [
     "ai-agents",
     "business-and-strategy",
     "caveman",
     "context-engineering",
+    "creative-thinking",
     "data-and-backend",
     "design-and-ui",
     "devops-and-infrastructure",
@@ -24,6 +25,7 @@
     "business-and-strategy": 74,
     "caveman": 6,
     "context-engineering": 14,
+    "creative-thinking": 8,
     "data-and-backend": 70,
     "design-and-ui": 22,
     "devops-and-infrastructure": 46,
@@ -1506,6 +1508,70 @@
       "path": "skills/context-engineering/what-context-needed",
       "depth": 2,
       "description": "Ask Copilot what files it needs to see before answering a question"
+    },
+    {
+      "name": "bold-ideas-generator",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/bold-ideas-generator",
+      "path": "skills/creative-thinking/bold-ideas-generator",
+      "depth": 2,
+      "description": "Activates when the user asks to brainstorm, ideate, or generate ideas and wants bold, unconventional, or high-impact results. Bans incremental thinking, forces 10x-scale proposals, and explicitly rejects \"safe\" answers. Use when the user says things like \"think big\", \"be bold\", \"blow my mind\", \"wild ideas\", or \"push the limits\"."
+    },
+    {
+      "name": "cognitive-frame-shift",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/cognitive-frame-shift",
+      "path": "skills/creative-thinking/cognitive-frame-shift",
+      "depth": 2,
+      "description": "Forces systematic perspective rotation by analyzing any problem through six radically different lenses — the child, the alien, the domain expert, the contrarian, the future self, and the user who hates you. Each lens surfaces assumptions and blind spots that single-perspective analysis misses entirely. Activate when a decision feels obvious and you want to stress-test it, or when diverse perspectives haven't been genuinely considered."
+    },
+    {
+      "name": "creative-constraints",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/creative-constraints",
+      "path": "skills/creative-thinking/creative-constraints",
+      "depth": 2,
+      "description": "Uses artificial limitations as creative fuel — not as obstacles, but as forcing functions that eliminate lazy defaults and drive genuine invention. Applies SCAMPER, forced associations, and time/resource constraints to produce ideas that unconstrained thinking never finds. Activate when the user needs to design within limits, when unlimited freedom is producing generic output, or when a creative block needs structural intervention."
+    },
+    {
+      "name": "deep-focus-protocol",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/deep-focus-protocol",
+      "path": "skills/creative-thinking/deep-focus-protocol",
+      "depth": 2,
+      "description": "Structures work sessions for peak cognitive performance on hard problems. Defines scope ruthlessly, eliminates scope creep, batches cognitive modes, and builds momentum through deliberate sequencing. Activate when the user needs to do deep creative or intellectual work and wants to protect their best thinking time from fragmentation."
+    },
+    {
+      "name": "first-principles-deconstruction",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/first-principles-deconstruction",
+      "path": "skills/creative-thinking/first-principles-deconstruction",
+      "depth": 2,
+      "description": "Dismantles any problem down to its bedrock truths, then rebuilds solutions from scratch — ignoring industry conventions, borrowed assumptions, and \"how it's always been done.\" Activate when the user is stuck in conventional solutions, wants to understand why something is done the way it is, or needs to design something genuinely novel."
+    },
+    {
+      "name": "idea-velocity",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/idea-velocity",
+      "path": "skills/creative-thinking/idea-velocity",
+      "depth": 2,
+      "description": "Rapid-fire ideation protocol that generates 50+ ideas in a single pass by enforcing a zero-judgment first phase. Optimizes for quantity, speed, and coverage of idea space — not quality. Quality filtering happens in a separate phase. Activate when the user needs to break a creative block, exhaust a solution space quickly, or generate enough raw material for a good idea to emerge."
+    },
+    {
+      "name": "lateral-thinking-engine",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/lateral-thinking-engine",
+      "path": "skills/creative-thinking/lateral-thinking-engine",
+      "depth": 2,
+      "description": "Applies Edward de Bono's lateral thinking toolkit — random entry, provocation, alternatives, and challenge — to generate non-obvious solutions that direct linear reasoning cannot reach. Activate when the user is stuck, when all obvious solutions have been tried, or when the user needs ideas that come from a completely different direction."
+    },
+    {
+      "name": "reverse-brainstorm",
+      "category": "creative-thinking",
+      "install_path": "creative-thinking/reverse-brainstorm",
+      "path": "skills/creative-thinking/reverse-brainstorm",
+      "depth": 2,
+      "description": "Inverts the problem — instead of asking how to succeed, asks how to guarantee failure — then flips each failure mode into an unconventional solution. Activate when forward brainstorming produces only obvious answers, when the user wants to stress-test an idea, or when hidden obstacles need to be surfaced before they become real problems."
     },
     {
       "name": "appinsights-instrumentation",

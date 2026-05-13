@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 614 skills across 13 categories.
+**Total:** 622 skills across 14 categories.
 
 ## Install one skill
 
@@ -26,6 +26,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`business-and-strategy`](#business-and-strategy) | 74 |
 | [`caveman`](#caveman) | 6 |
 | [`context-engineering`](#context-engineering) | 14 |
+| [`creative-thinking`](#creative-thinking) | 8 |
 | [`data-and-backend`](#data-and-backend) | 70 |
 | [`design-and-ui`](#design-and-ui) | 22 |
 | [`devops-and-infrastructure`](#devops-and-infrastructure) | 46 |
@@ -239,6 +240,19 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`napkin`](./skills/context-engineering/napkin/SKILL.md) | `context-engineering/napkin` | Visual whiteboard collaboration for Copilot CLI. Creates an interactive whiteboard that opens in your browser — draw, sketch, add sticky notes, then share everything back with Copilot. Copilot sees your drawings and text, and responds with analysis, suggestions, and ideas. |
 | [`onboard-context-matic`](./skills/context-engineering/onboard-context-matic/SKILL.md) | `context-engineering/onboard-context-matic` | Interactive onboarding tour for the context-matic MCP server. Walks the user through what the server does, shows all available APIs, lets them pick one to explore, explains it in their project language, demonstrates model_search and endpoint_search live, and ends with a menu of things the user can ask the agent to do. USE FOR: first-time setup; "what can this MCP do?"; "show me the available APIs"; "onboard me"; "how do I use the context-matic server"; "give me a tour". DO NOT USE FOR: actually integrating an API end-to-end (use integrate-context-matic instead). |
 | [`what-context-needed`](./skills/context-engineering/what-context-needed/SKILL.md) | `context-engineering/what-context-needed` | Ask Copilot what files it needs to see before answering a question |
+
+## creative-thinking
+
+| Skill | Install path | Description |
+| --- | --- | --- |
+| [`bold-ideas-generator`](./skills/creative-thinking/bold-ideas-generator/SKILL.md) | `creative-thinking/bold-ideas-generator` | Activates when the user asks to brainstorm, ideate, or generate ideas and wants bold, unconventional, or high-impact results. Bans incremental thinking, forces 10x-scale proposals, and explicitly rejects "safe" answers. Use when the user says things like "think big", "be bold", "blow my mind", "wild ideas", or "push the limits". |
+| [`cognitive-frame-shift`](./skills/creative-thinking/cognitive-frame-shift/SKILL.md) | `creative-thinking/cognitive-frame-shift` | Forces systematic perspective rotation by analyzing any problem through six radically different lenses — the child, the alien, the domain expert, the contrarian, the future self, and the user who hates you. Each lens surfaces assumptions and blind spots that single-perspective analysis misses entirely. Activate when a decision feels obvious and you want to stress-test it, or when diverse perspectives haven't been genuinely considered. |
+| [`creative-constraints`](./skills/creative-thinking/creative-constraints/SKILL.md) | `creative-thinking/creative-constraints` | Uses artificial limitations as creative fuel — not as obstacles, but as forcing functions that eliminate lazy defaults and drive genuine invention. Applies SCAMPER, forced associations, and time/resource constraints to produce ideas that unconstrained thinking never finds. Activate when the user needs to design within limits, when unlimited freedom is producing generic output, or when a creative block needs structural intervention. |
+| [`deep-focus-protocol`](./skills/creative-thinking/deep-focus-protocol/SKILL.md) | `creative-thinking/deep-focus-protocol` | Structures work sessions for peak cognitive performance on hard problems. Defines scope ruthlessly, eliminates scope creep, batches cognitive modes, and builds momentum through deliberate sequencing. Activate when the user needs to do deep creative or intellectual work and wants to protect their best thinking time from fragmentation. |
+| [`first-principles-deconstruction`](./skills/creative-thinking/first-principles-deconstruction/SKILL.md) | `creative-thinking/first-principles-deconstruction` | Dismantles any problem down to its bedrock truths, then rebuilds solutions from scratch — ignoring industry conventions, borrowed assumptions, and "how it's always been done." Activate when the user is stuck in conventional solutions, wants to understand why something is done the way it is, or needs to design something genuinely novel. |
+| [`idea-velocity`](./skills/creative-thinking/idea-velocity/SKILL.md) | `creative-thinking/idea-velocity` | Rapid-fire ideation protocol that generates 50+ ideas in a single pass by enforcing a zero-judgment first phase. Optimizes for quantity, speed, and coverage of idea space — not quality. Quality filtering happens in a separate phase. Activate when the user needs to break a creative block, exhaust a solution space quickly, or generate enough raw material for a good idea to emerge. |
+| [`lateral-thinking-engine`](./skills/creative-thinking/lateral-thinking-engine/SKILL.md) | `creative-thinking/lateral-thinking-engine` | Applies Edward de Bono's lateral thinking toolkit — random entry, provocation, alternatives, and challenge — to generate non-obvious solutions that direct linear reasoning cannot reach. Activate when the user is stuck, when all obvious solutions have been tried, or when the user needs ideas that come from a completely different direction. |
+| [`reverse-brainstorm`](./skills/creative-thinking/reverse-brainstorm/SKILL.md) | `creative-thinking/reverse-brainstorm` | Inverts the problem — instead of asking how to succeed, asks how to guarantee failure — then flips each failure mode into an unconventional solution. Activate when forward brainstorming produces only obvious answers, when the user wants to stress-test an idea, or when hidden obstacles need to be surfaced before they become real problems. |
 
 ## data-and-backend
 

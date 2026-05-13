@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Skills — Agent Skills for Claude Code & Cursor</title>
+    <title>Skills — Agent Skills for Claude Code, Cursor, Copilot &amp; More</title>
     <meta
       name="description"
-      content="Browse 504 installable agent skills for Claude Code and Cursor. One command, no full clone required. AI-powered skill finder included."
+      content="Browse 622 installable agent skills for Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex and more. One command, no full clone required. AI-powered skill finder included."
     />
     <meta name="color-scheme" content="dark light" />
     <meta property="og:title" content="Skills — Agent Skills Library" />
     <meta
       property="og:description"
-      content="Searchable index of 504 agent skills with one-line install commands and AI-powered skill finder."
+      content="Searchable index of 622 agent skills for Claude Code, Cursor, Copilot, Windsurf, OpenCode, Codex and more. One-line install commands and AI-powered skill finder."
     />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Cpath d='M16 22h32M16 32h22M16 42h28' stroke='%2300f0ff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,9 +72,7 @@
         </h1>
         <p class="tagline">
           A curated library of <strong id="skillCount">&hellip;</strong> agent skills for
-          <a href="https://docs.claude.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code</a>
-          and
-          <a href="https://cursor.com" target="_blank" rel="noopener">Cursor</a>.
+          Claude&nbsp;Code, Cursor, Copilot, Windsurf, OpenCode&nbsp;&amp;&nbsp;more.
           Pick one, copy a single command, and it lands in your project.
         </p>
 
@@ -159,6 +157,10 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
           </button>
           <kbd class="search-kbd" aria-hidden="true">/</kbd>
         </div>
+        <div class="harness-row">
+          <span class="harness-row-label">Tool</span>
+          <div id="harnessBar" class="harnesses" role="group" aria-label="Select AI tool"></div>
+        </div>
         <div class="controls-row">
           <div class="categories-wrap">
             <div id="categories" class="categories" role="tablist" aria-label="Filter by category"></div>
@@ -181,6 +183,13 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
           Showing <strong id="visibleCount">0</strong> of
           <strong id="totalCount">0</strong> skills
           <span id="metaActive" class="meta-active hidden"></span>
+          <button id="shareBtn" class="share-btn hidden" type="button" title="Copy link to current view" aria-label="Share current view">
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 9a3 3 0 0 0 4.5.5l2-2a3 3 0 0 0-4.24-4.24l-1.15 1.14"/>
+              <path d="M9 7a3 3 0 0 0-4.5-.5l-2 2a3 3 0 0 0 4.24 4.24l1.14-1.14"/>
+            </svg>
+            Share
+          </button>
         </div>
       </div>
     </section>
@@ -250,6 +259,13 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
             </svg>
             <span class="card-quick-copy-label">Copy install</span>
           </button>
+          <button class="card-read" type="button" title="Read skill content">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h9A1.5 1.5 0 0 1 14 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.5Z"/>
+              <path d="M5 6h6M5 8.5h6M5 11h4"/>
+            </svg>
+            <span>Read</span>
+          </button>
           <a class="card-download" download title="Download skill as .zip">
             <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true">
               <path d="M8 1.75a.75.75 0 0 1 .75.75v6.69l1.97-1.97a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 8.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.5A.75.75 0 0 1 8 1.75ZM2.75 12.5a.75.75 0 0 1 .75.75v.25c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-.25a.75.75 0 0 1 1.5 0v.25A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.5v-.25a.75.75 0 0 1 .75-.75Z"/>
@@ -277,6 +293,12 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
           <pre data-variant="sparse" class="hidden"><button class="copy" type="button">Copy</button><code></code></pre>
         </details>
         <footer>
+          <button class="card-share" type="button" title="Copy link to this skill" aria-label="Copy link to this skill">
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 9a3 3 0 0 0 4.5.5l2-2a3 3 0 0 0-4.24-4.24l-1.15 1.14"/>
+              <path d="M9 7a3 3 0 0 0-4.5-.5l-2 2a3 3 0 0 0 4.24 4.24l1.14-1.14"/>
+            </svg>
+          </button>
           <a class="card-source" target="_blank" rel="noopener">
             <span>View SKILL.md</span>
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -397,6 +419,40 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
           </button>
         </div>
         <p class="chat-input-hint">Powered by NVIDIA · <a href="https://github.com/mouadja02/skills#readme" target="_blank" rel="noopener">Skills library</a></p>
+      </div>
+    </aside>
+
+    <!-- =====================================================================
+         Skill Detail Panel
+         ===================================================================== -->
+    <div id="skillDetailOverlay" class="sd-overlay" aria-hidden="true"></div>
+
+    <aside id="skillDetail" class="skill-detail" role="dialog" aria-modal="true"
+           aria-label="Skill details" aria-hidden="true" tabindex="-1">
+      <header class="sd-header">
+        <div class="sd-header-left">
+          <button id="skillDetailClose" class="sd-close-btn" type="button" aria-label="Close skill details">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+          <div class="sd-header-meta">
+            <h2 class="sd-name"></h2>
+            <span class="sd-cat-badge"></span>
+          </div>
+        </div>
+        <div class="sd-header-actions">
+          <a class="sd-gh-link" target="_blank" rel="noopener" title="View on GitHub">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </header>
+      <div class="sd-body">
+        <div class="sd-content" aria-live="polite"></div>
+        <div class="sd-files"></div>
       </div>
     </aside>
 

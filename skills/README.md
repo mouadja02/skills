@@ -1,6 +1,6 @@
 # Skills Index
 
-A curated collection of **504 Agent Skills** for Claude Code and Cursor, organized into **13 thematic categories**.
+A curated collection of **622 Agent Skills** for Claude Code and Cursor, organized into **14 thematic categories**.
 
 Each skill lives in its own folder with a `SKILL.md` file (YAML frontmatter for `name` + `description`, then the body of instructions). The agent auto-discovers and loads them when the description matches your request — both Claude Code and Cursor walk the directory tree recursively, so the category subfolders are transparent to discovery; they exist purely to keep things browsable on GitHub.
 
@@ -12,17 +12,18 @@ Each skill lives in its own folder with a `SKILL.md` file (YAML frontmatter for 
 | --- | --- | --- | --- |
 | 1 | [`skills-management/`](./skills-management/) | 18 | Skill authoring, Copilot setup, AI tooling meta-skills |
 | 2 | [`engineering-craft/`](./engineering-craft/) | 138 | Planning, TDD, code review, debugging, languages, frameworks, testing |
-| 3 | [`ai-agents/`](./ai-agents/) | 50 | Agent architecture, scaffolds, prompt engineering, MCP, structured autonomy |
+| 3 | [`ai-agents/`](./ai-agents/) | 90 | Agent architecture, scaffolds, prompt engineering, MCP, structured autonomy |
 | 4 | [`context-engineering/`](./context-engineering/) | 14 | Context windows, compression, memory, persistence, visual thinking |
-| 5 | [`llm-integrations/`](./llm-integrations/) | 26 | OpenRouter, Arize, Phoenix, Qdrant, model selection |
-| 6 | [`design-and-ui/`](./design-and-ui/) | 22 | Frontend, design systems, brand, themes, banners, UI tools |
-| 7 | [`docs-and-presentations/`](./docs-and-presentations/) | 41 | READMEs, technical docs, slides, diagrams, specifications |
-| 8 | [`data-and-backend/`](./data-and-backend/) | 53 | APIs, databases, ETL, Power Platform, cloud data services |
-| 9 | [`business-and-strategy/`](./business-and-strategy/) | 36 | C-suite advisors, GTM strategy, board protocols, company OS |
-| 10 | [`marketing-and-growth/`](./marketing-and-growth/) | 25 | Strategy, content, SEO, paid ads, CRO, copywriting |
-| 11 | [`devops-and-infrastructure/`](./devops-and-infrastructure/) | 46 | CI/CD, Docker, Terraform, Azure/AWS, Linux, security |
-| 12 | [`product-management/`](./product-management/) | 29 | PM toolkit, specs, GitHub workflows, discovery, agile delivery |
-| 13 | [`caveman/`](./caveman/) | 6 | Token-efficient terse mode (~75% fewer output tokens) |
+| 5 | [`creative-thinking/`](./creative-thinking/) | 8 | Bold ideation, lateral thinking, first-principles, reverse brainstorm, idea velocity, frame-shifting, constraints, deep focus |
+| 6 | [`llm-integrations/`](./llm-integrations/) | 41 | OpenRouter, Arize, Phoenix, Qdrant, model selection |
+| 7 | [`design-and-ui/`](./design-and-ui/) | 22 | Frontend, design systems, brand, themes, banners, UI tools |
+| 8 | [`docs-and-presentations/`](./docs-and-presentations/) | 41 | READMEs, technical docs, slides, diagrams, specifications |
+| 9 | [`data-and-backend/`](./data-and-backend/) | 70 | APIs, databases, ETL, Power Platform, cloud data services |
+| 10 | [`business-and-strategy/`](./business-and-strategy/) | 74 | C-suite advisors, GTM strategy, board protocols, company OS |
+| 11 | [`marketing-and-growth/`](./marketing-and-growth/) | 25 | Strategy, content, SEO, paid ads, CRO, copywriting |
+| 12 | [`devops-and-infrastructure/`](./devops-and-infrastructure/) | 46 | CI/CD, Docker, Terraform, Azure/AWS, Linux, security |
+| 13 | [`product-management/`](./product-management/) | 29 | PM toolkit, specs, GitHub workflows, discovery, agile delivery |
+| 14 | [`caveman/`](./caveman/) | 6 | Token-efficient terse mode (~75% fewer output tokens) |
 
 ## Usage
 
@@ -59,17 +60,18 @@ skills/
 │
 ├── skills-management/          (18)    — meta-skills, Copilot setup, skill authoring
 ├── engineering-craft/          (138)   — dev discipline, languages, frameworks, testing
-├── ai-agents/                  (50)    — agent design, MCP, structured autonomy, prompts
+├── ai-agents/                  (90)    — agent design, MCP, structured autonomy, prompts
 ├── context-engineering/        (14)    — context windows, memory, compression, napkin
-├── llm-integrations/           (26)    — OpenRouter, Arize, Phoenix, Qdrant
+├── creative-thinking/          (8)     — bold ideation, lateral thinking, first-principles, frame-shift, deep focus
+├── llm-integrations/           (41)    — OpenRouter, Arize, Phoenix, Qdrant
 ├── design-and-ui/              (22)    — frontend, brand, design systems, UI tools
 ├── docs-and-presentations/     (41)    — docs, slides, diagrams, specs, blueprints
-├── data-and-backend/           (53)    — APIs, databases, ETL, Power Platform, migrations
-├── business-and-strategy/      (36)    — C-suite advisors, GTM, board protocols
+├── data-and-backend/           (70)    — APIs, databases, ETL, Power Platform, migrations
+├── business-and-strategy/      (74)    — C-suite advisors, GTM, board protocols
 ├── marketing-and-growth/       (25)    — full marketing operating system
 ├── devops-and-infrastructure/  (46)    — CI/CD, IaC, Azure/AWS, Linux, containers, security
 ├── product-management/         (29)    — PM toolkit, specs, GitHub workflows, agile
 └── caveman/                    (6)     — token-efficient terse mode + skill discovery
 ```
 
-Total: **504 skills** (plus nested sub-skills in `ai-agents/bmm-skills/`, `ai-agents/auto-memory-pro/`, `data-and-backend/developing-with-streamlit/`, and `ai-agents/autoresearch-agent/`).
+Total: **622 skills** (plus nested sub-skills in `ai-agents/bmm-skills/`, `ai-agents/auto-memory-pro/`, `data-and-backend/developing-with-streamlit/`, and `ai-agents/autoresearch-agent/`).

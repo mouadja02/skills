@@ -7,7 +7,31 @@ const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
 const SORT_KEY = "skills:sort";
 const THEME_KEY = "skills:theme";
+const HARNESS_KEY = "skills:harnesses";
 const SKELETON_COUNT = 9;
+
+const HARNESSES = [
+  { id: "claude-code", label: "Claude Code",
+    destBash: (n) => `~/.claude/skills/${n}`,      destPs: (n) => `$HOME\\.claude\\skills\\${n}` },
+  { id: "cursor",      label: "Cursor",
+    destBash: (n) => `~/.cursor/rules/${n}`,        destPs: (n) => `$HOME\\.cursor\\rules\\${n}` },
+  { id: "copilot",     label: "Copilot",
+    destBash: (n) => `./.github/instructions/${n}`, destPs: (n) => `.\\.github\\instructions\\${n}` },
+  { id: "windsurf",    label: "Windsurf",
+    destBash: (n) => `~/.codeium/windsurf/skills/${n}`, destPs: (n) => `$HOME\\.codeium\\windsurf\\skills\\${n}` },
+  { id: "opencode",    label: "OpenCode",
+    destBash: (n) => `~/.opencode/skills/${n}`,     destPs: (n) => `$HOME\\.opencode\\skills\\${n}` },
+  { id: "codex",       label: "Codex",
+    destBash: (n) => `~/.codex/skills/${n}`,        destPs: (n) => `$HOME\\.codex\\skills\\${n}` },
+];
+
+function loadStoredHarnesses() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(HARNESS_KEY));
+    if (Array.isArray(stored) && stored.length) return stored;
+  } catch {}
+  return ["claude-code"];
+}
 
 const state = {
   manifest: null,
@@ -17,6 +41,7 @@ const state = {
   recommendedSkillNames: null,
   sort: localStorage.getItem(SORT_KEY) || "name",
   catColor: new Map(),
+  selectedHarnesses: loadStoredHarnesses(),
 };
 
 /* ==========================================================================
@@ -106,12 +131,20 @@ async function init() {
   });
 
   renderCategories();
+  renderHarnesses();
   bindHeroTabs();
   bindSearch();
   bindGlobalCopy();
+  bindShareButton();
+  bindSkillDetail();
+  updateHeroCommands();
 
   $("#grid").setAttribute("aria-busy", "false");
-  render();
+  if (location.search) {
+    applyUrlState();
+  } else {
+    render();
+  }
 }
 
 /* ==========================================================================
@@ -284,16 +317,12 @@ function renderCategoryBanner() {
   $("#catBannerName").textContent = cat;
   $("#catBannerCount").textContent = count.toLocaleString();
 
-  const dest = `~/.claude/skills/${cat}`;
-  const psDest = `$HOME\\.claude\\skills\\${cat}`;
   const raw = `https://raw.githubusercontent.com/${repo}/${default_branch}`;
+  const harnesses = activeHarnesses();
   const variants = {
-    bash: `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${cat} -d ${dest}`,
-    ps:
-      `$content = irm ${raw}/install.ps1\n` +
-      `iex $content\n` +
-      `Install-Skill ${cat} -Dest ${psDest}`,
-    degit: `npx degit ${repo}/skills/${cat} ${dest}`,
+    bash: harnesses.map((h) => `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${cat} -d ${h.destBash(cat)}`).join("\n"),
+    ps: harnesses.map((h) => `$content = irm ${raw}/install.ps1\niex $content\nInstall-Skill ${cat} -Dest ${h.destPs(cat)}`).join("\n"),
+    degit: harnesses.map((h) => `npx degit ${repo}/skills/${cat} ${h.destBash(cat)}`).join("\n"),
   };
   $$(".category-banner-code", banner).forEach((pre) => {
     $("code", pre).textContent = variants[pre.dataset.variant];
@@ -422,6 +451,8 @@ function render() {
       renderCategoryBanner();
       render();
     });
+    updateUrl();
+    updatePageTitle();
     return;
   }
 
@@ -434,6 +465,8 @@ function render() {
     frag.appendChild(card);
   });
   grid.appendChild(frag);
+  updateUrl();
+  updatePageTitle();
 }
 
 function sortSkills(skills, mode) {
@@ -553,6 +586,16 @@ function renderCard(skill, tmpl, repo, branch) {
   src.href = `https://github.com/${repo}/blob/${branch}/${skill.path}/SKILL.md`;
   src.setAttribute("aria-label", `View SKILL.md for ${skill.name} on GitHub`);
 
+  $(".card-share", node)?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    copyShareUrl(getSkillShareUrl(skill));
+  });
+
+  $(".card-read", node)?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    openSkillDetail(skill);
+  });
+
   const dl = $(".card-download", node);
   const dlSize = $(".card-download-size", node);
   const zip = state.zips?.skills?.[skill.install_path];
@@ -590,27 +633,41 @@ function zipHref(zip) {
   return `./${zip.url}`;
 }
 
+function getPrimaryHarness() {
+  return HARNESSES.find((h) => h.id === state.selectedHarnesses[0]) ?? HARNESSES[0];
+}
+
+function activeHarnesses() {
+  return state.selectedHarnesses
+    .map((id) => HARNESSES.find((h) => h.id === id))
+    .filter(Boolean);
+}
+
 function installCommands(skill, repo, branch) {
-  const { install_path, name } = skill;
-  const ip = install_path;
-  const dest = `~/.claude/skills/${name}`;
-  const psDest = `$HOME\\.claude\\skills\\${name}`;
+  const { install_path: ip, name } = skill;
   const raw = `https://raw.githubusercontent.com/${repo}/${branch}`;
-  return {
-    bash:
-      `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${ip} -d ${dest}`,
-    ps:
-      `$content = irm ${raw}/install.ps1\n` +
-      `iex $content\n` +
-      `Install-Skill -Skill ${ip} -Dest ${psDest}`,
-    degit: `npx degit ${repo}/skills/${ip} ${dest}`,
-    sparse:
+  const harnesses = activeHarnesses();
+
+  const bash = harnesses
+    .map((h) => `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${ip} -d ${h.destBash(name)}`)
+    .join("\n");
+  const ps = harnesses
+    .map((h) => `$content = irm ${raw}/install.ps1\niex $content\nInstall-Skill -Skill ${ip} -Dest ${h.destPs(name)}`)
+    .join("\n");
+  const degit = harnesses
+    .map((h) => `npx degit ${repo}/skills/${ip} ${h.destBash(name)}`)
+    .join("\n");
+  const sparse = harnesses
+    .map((h) =>
       `git clone --no-checkout --depth 1 --filter=blob:none \\\n` +
       `  https://github.com/${repo}.git skills-tmp && cd skills-tmp \\\n` +
       `  && git sparse-checkout init --cone \\\n` +
       `  && git sparse-checkout set skills/${ip} \\\n` +
-      `  && git checkout && mv skills/${ip} ${dest} && cd .. && rm -rf skills-tmp`,
-  };
+      `  && git checkout && mv skills/${ip} ${h.destBash(name)} && cd .. && rm -rf skills-tmp`
+    )
+    .join("\n");
+
+  return { bash, ps, degit, sparse };
 }
 
 async function fetchStarCount(repo) {
@@ -706,7 +763,190 @@ function filterToSkills(refs) {
 window.skillsBrowser = {
   focusSkill,
   filterToSkills,
+  selectedHarnesses: [...state.selectedHarnesses],
 };
+
+/* ==========================================================================
+   Harness / Tool Selector
+   ========================================================================== */
+
+function renderHarnesses() {
+  const bar = document.getElementById("harnessBar");
+  if (!bar) return;
+  bar.innerHTML = HARNESSES.map((h) =>
+    `<button class="harness${state.selectedHarnesses.includes(h.id) ? " active" : ""}"
+             type="button" data-harness-id="${h.id}"
+             aria-pressed="${state.selectedHarnesses.includes(h.id) ? "true" : "false"}">${escapeHtml(h.label)}</button>`
+  ).join("");
+  bar.addEventListener("click", (e) => {
+    const btn = e.target.closest(".harness");
+    if (!btn) return;
+    const id = btn.dataset.harnessId;
+    const idx = state.selectedHarnesses.indexOf(id);
+    if (idx === -1) {
+      state.selectedHarnesses.push(id);
+    } else if (state.selectedHarnesses.length > 1) {
+      state.selectedHarnesses.splice(idx, 1);
+    }
+    localStorage.setItem(HARNESS_KEY, JSON.stringify(state.selectedHarnesses));
+    $$(".harness", bar).forEach((b) => {
+      const active = state.selectedHarnesses.includes(b.dataset.harnessId);
+      b.classList.toggle("active", active);
+      b.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+    onHarnessChange();
+  });
+}
+
+function onHarnessChange() {
+  render();
+  renderCategoryBanner();
+  updateHeroCommands();
+  window.skillsBrowser.selectedHarnesses = [...state.selectedHarnesses];
+}
+
+function updateHeroCommands() {
+  if (!state.manifest) return;
+  const { repo, default_branch } = state.manifest;
+  const raw = `https://raw.githubusercontent.com/${repo}/${default_branch}`;
+  const primary = getPrimaryHarness();
+  const bashEl = document.querySelector("#bashHero code");
+  const psEl = document.querySelector("#psHero code");
+  if (bashEl) {
+    bashEl.textContent =
+      `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- <selector> -d ${primary.destBash("<name>")}`;
+  }
+  if (psEl) {
+    psEl.textContent =
+      `$content = irm ${raw}/install.ps1\niex $content\nInstall-Skill <selector> -Dest ${primary.destPs("<name>")}`;
+  }
+}
+
+/* ==========================================================================
+   URL State — share by link
+   ========================================================================== */
+
+function updateUrl() {
+  const params = new URLSearchParams();
+  if (state.filterCategory) params.set("cat", state.filterCategory);
+  if (state.filterText) params.set("q", state.filterText);
+  if (state.recommendedSkillNames?.length) {
+    const paths = state.recommendedSkillNames.map((name) => {
+      const s = state.manifest?.skills.find((sk) => sk.name === name);
+      return s?.install_path ?? name;
+    });
+    params.set("skills", paths.join(","));
+  }
+  const qs = params.toString();
+  const newUrl = qs ? `${location.pathname}?${qs}` : location.pathname;
+  history.replaceState(null, "", newUrl);
+
+  const shareBtn = document.getElementById("shareBtn");
+  if (shareBtn) shareBtn.classList.toggle("hidden", !qs);
+}
+
+function applyUrlState() {
+  const params = new URLSearchParams(location.search);
+  const catParam = params.get("cat");
+  const qParam = params.get("q");
+  const skillParam = params.get("skill");
+  const skillsParam = params.get("skills");
+
+  if (catParam && state.manifest.categories.includes(catParam)) {
+    state.filterCategory = catParam;
+    $$("#categories .cat").forEach((c) =>
+      c.classList.toggle("active", c.dataset.cat === catParam)
+    );
+    renderCategoryBanner();
+    updateMetaActive();
+  }
+
+  if (skillsParam) {
+    const paths = skillsParam.split(",").map((s) => s.trim()).filter(Boolean);
+    filterToSkills(paths);
+    return;
+  }
+
+  if (skillParam) {
+    const skill = findSkill(skillParam);
+    if (skill) {
+      state.filterText = skill.name.toLowerCase();
+      const input = $("#search");
+      if (input) input.value = skill.name;
+      $("#searchClear")?.classList.remove("hidden");
+    }
+  } else if (qParam) {
+    state.filterText = qParam.toLowerCase();
+    const input = $("#search");
+    if (input) input.value = qParam;
+    if (qParam) $("#searchClear")?.classList.remove("hidden");
+  }
+
+  render();
+
+  if (skillParam) {
+    const skill = findSkill(skillParam);
+    if (skill) {
+      setTimeout(() => {
+        document.querySelector("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        highlightSkillCard(skill.name);
+      }, 150);
+    }
+  }
+}
+
+/* ==========================================================================
+   Share helpers
+   ========================================================================== */
+
+function showToast(msg) {
+  let toast = document.getElementById("shareToast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "shareToast";
+    toast.className = "share-toast";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add("visible");
+  clearTimeout(toast._toastTimer);
+  toast._toastTimer = setTimeout(() => toast.classList.remove("visible"), 2200);
+}
+
+async function copyShareUrl(url) {
+  try {
+    await navigator.clipboard.writeText(url);
+    showToast("Link copied!");
+  } catch {
+    showToast("Press Ctrl+C to copy");
+  }
+}
+
+function getSkillShareUrl(skill) {
+  return `${location.origin}${location.pathname}?skill=${encodeURIComponent(skill.install_path)}`;
+}
+
+function bindShareButton() {
+  const btn = document.getElementById("shareBtn");
+  if (!btn) return;
+  btn.addEventListener("click", () => copyShareUrl(location.href));
+}
+
+/* ==========================================================================
+   Page title
+   ========================================================================== */
+
+function updatePageTitle() {
+  let title = "Skills — Agent Skills for Claude Code, Cursor, Copilot & More";
+  if (state.filterCategory) {
+    title = `${state.filterCategory.replace(/-/g, " ")} — Skills`;
+  } else if (state.filterText) {
+    title = `"${state.filterText}" — Skills`;
+  } else if (state.recommendedSkillNames?.length) {
+    title = `${state.recommendedSkillNames.length} recommended skills — Skills`;
+  }
+  document.title = title;
+}
 
 function escapeHtml(str) {
   return String(str)
@@ -723,6 +963,397 @@ function cssEscape(s) {
 
 function slugify(s) {
   return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+/* ==========================================================================
+   Skill Detail Panel
+   ========================================================================== */
+
+const sdCache = new Map();
+
+function openSkillDetail(skill) {
+  const panel = document.getElementById("skillDetail");
+  if (!panel) return;
+
+  const { repo, default_branch } = state.manifest;
+
+  // Populate header
+  const nameEl = panel.querySelector(".sd-name");
+  const catEl = panel.querySelector(".sd-cat-badge");
+  const ghLink = panel.querySelector(".sd-gh-link");
+  if (nameEl) nameEl.textContent = skill.name;
+  if (catEl) {
+    catEl.textContent = skill.category.replace(/-/g, " ");
+    catEl.dataset.catColor = state.catColor.get(skill.category) ?? 0;
+  }
+  if (ghLink) ghLink.href = `https://github.com/${repo}/blob/${default_branch}/${skill.path}/SKILL.md`;
+
+  // Reset content areas
+  const contentEl = panel.querySelector(".sd-content");
+  const filesEl = panel.querySelector(".sd-files");
+  if (contentEl) contentEl.innerHTML = sdLoadingHtml();
+  if (filesEl) filesEl.innerHTML = "";
+
+  // Show
+  panel.setAttribute("aria-hidden", "false");
+  panel.classList.add("open");
+  document.getElementById("skillDetailOverlay")?.classList.add("visible");
+  document.body.classList.add("sd-open");
+  panel.focus();
+
+  fetchSkillDetail(skill, repo, default_branch);
+}
+
+function closeSkillDetail() {
+  const panel = document.getElementById("skillDetail");
+  if (!panel) return;
+  panel.setAttribute("aria-hidden", "true");
+  panel.classList.remove("open");
+  document.getElementById("skillDetailOverlay")?.classList.remove("visible");
+  document.body.classList.remove("sd-open");
+}
+
+function bindSkillDetail() {
+  document.getElementById("skillDetailClose")?.addEventListener("click", closeSkillDetail);
+  document.getElementById("skillDetailOverlay")?.addEventListener("click", closeSkillDetail);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.getElementById("skillDetail")?.classList.contains("open")) {
+      closeSkillDetail();
+    }
+  });
+}
+
+async function fetchSkillDetail(skill, repo, branch) {
+  const panel = document.getElementById("skillDetail");
+  const contentEl = panel?.querySelector(".sd-content");
+  const filesEl = panel?.querySelector(".sd-files");
+  if (!contentEl) return;
+
+  const key = skill.install_path;
+  if (sdCache.has(key)) {
+    const { markdown, files } = sdCache.get(key);
+    contentEl.innerHTML = sdMdToHtml(markdown);
+    bindSdCopy(contentEl);
+    renderSdFiles(filesEl, files, repo, branch);
+    return;
+  }
+
+  const rawUrl = `https://raw.githubusercontent.com/${repo}/${branch}/${skill.path}/SKILL.md`;
+  try {
+    const res = await fetch(rawUrl);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const markdown = await res.text();
+    contentEl.innerHTML = sdMdToHtml(markdown);
+    bindSdCopy(contentEl);
+
+    // Folder listing — best-effort via GitHub API
+    let files = [];
+    try {
+      const ar = await fetch(`https://api.github.com/repos/${repo}/contents/${skill.path}`);
+      if (ar.ok) {
+        const all = await ar.json();
+        files = Array.isArray(all) ? all.filter((f) => f.name !== "SKILL.md") : [];
+      }
+    } catch { /* optional */ }
+
+    sdCache.set(key, { markdown, files });
+    renderSdFiles(filesEl, files, repo, branch);
+  } catch (err) {
+    contentEl.innerHTML = `<div class="sd-error">
+      <p>Could not load skill content.</p>
+      <small>${escapeHtml(err.message)}</small>
+    </div>`;
+  }
+}
+
+function sdLoadingHtml() {
+  return `<div class="sd-loading" aria-label="Loading">
+    <span class="sd-dot"></span><span class="sd-dot"></span><span class="sd-dot"></span>
+  </div>`;
+}
+
+/* ---------- File tree ---------- */
+
+function renderSdFiles(el, files, repo, branch) {
+  if (!el || !files.length) return;
+  el.innerHTML = `<div class="sd-files-hd">
+    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+      <path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"/>
+    </svg>
+    <span>Additional files</span>
+  </div>
+  <ul class="sd-tree">${files.map(sdFileItemHtml).join("")}</ul>`;
+  bindSdTree(el, repo, branch);
+}
+
+function sdFileItemHtml(f) {
+  if (f.type === "dir") {
+    return `<li class="sd-ti sd-ti--dir" data-path="${escapeHtml(f.path)}">
+      <button class="sd-ti-btn" type="button">
+        <svg class="sd-ti-icon" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+          <path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"/>
+        </svg>
+        <span class="sd-ti-name">${escapeHtml(f.name)}/</span>
+        <svg class="sd-ti-caret" viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true">
+          <path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/>
+        </svg>
+      </button>
+      <ul class="sd-tree sd-tree--sub hidden"></ul>
+    </li>`;
+  }
+  const isMd = /\.(md|mdx|txt)$/i.test(f.name);
+  return `<li class="sd-ti sd-ti--file">
+    <button class="sd-ti-btn" type="button"
+            data-raw="${escapeHtml(f.download_url ?? "")}"
+            data-path="${escapeHtml(f.path)}"
+            data-md="${isMd}">
+      <svg class="sd-ti-icon" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+        <path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 8.75 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"/>
+      </svg>
+      <span class="sd-ti-name">${escapeHtml(f.name)}</span>
+    </button>
+    <div class="sd-ti-body hidden"></div>
+  </li>`;
+}
+
+function bindSdTree(root, repo, branch) {
+  root.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".sd-ti-btn");
+    if (!btn) return;
+    const li = btn.closest(".sd-ti");
+    if (!li) return;
+
+    if (li.classList.contains("sd-ti--dir")) {
+      const sub = li.querySelector(".sd-tree--sub");
+      const isOpen = !sub.classList.contains("hidden");
+      btn.querySelector(".sd-ti-caret")?.classList.toggle("open", !isOpen);
+      sub.classList.toggle("hidden", isOpen);
+
+      if (!isOpen && !sub.dataset.loaded) {
+        sub.innerHTML = `<li class="sd-ti-msg">Loading…</li>`;
+        try {
+          const ar = await fetch(`https://api.github.com/repos/${repo}/contents/${li.dataset.path}`);
+          if (!ar.ok) throw new Error(`HTTP ${ar.status}`);
+          const items = await ar.json();
+          sub.dataset.loaded = "1";
+          sub.innerHTML = Array.isArray(items) ? items.map(sdFileItemHtml).join("") : "";
+          bindSdTree(sub, repo, branch);
+        } catch (err) {
+          sub.innerHTML = `<li class="sd-ti-msg sd-ti-msg--err">Failed: ${escapeHtml(err.message)}</li>`;
+        }
+      }
+      return;
+    }
+
+    // File
+    const body = li.querySelector(".sd-ti-body");
+    const isOpen = !body.classList.contains("hidden");
+    body.classList.toggle("hidden", isOpen);
+    if (isOpen || body.dataset.loaded) return;
+
+    const rawUrl = btn.dataset.raw ||
+      `https://raw.githubusercontent.com/${repo}/${branch}/${btn.dataset.path}`;
+    const isMd = btn.dataset.md === "true";
+
+    body.innerHTML = sdLoadingHtml();
+    try {
+      const r = await fetch(rawUrl);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const text = await r.text();
+      body.dataset.loaded = "1";
+      if (isMd) {
+        body.innerHTML = `<div class="sd-file-md">${sdMdToHtml(text)}</div>`;
+        bindSdCopy(body);
+      } else {
+        body.innerHTML = `<pre class="sd-file-raw"><code>${escapeHtml(text)}</code></pre>`;
+      }
+    } catch (err) {
+      body.innerHTML = `<div class="sd-error"><small>${escapeHtml(err.message)}</small></div>`;
+    }
+  });
+}
+
+/* ---------- Copy buttons inside rendered markdown ---------- */
+
+function bindSdCopy(root) {
+  root.querySelectorAll(".sd-copy").forEach((btn) => {
+    if (btn._wired) return;
+    btn._wired = true;
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const code = btn.closest(".sd-code-wrap")?.querySelector("code")?.textContent ?? "";
+      const orig = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(code);
+        btn.classList.add("copied");
+        btn.textContent = "Copied!";
+        setTimeout(() => { btn.classList.remove("copied"); btn.textContent = orig; }, 1400);
+      } catch {
+        btn.textContent = "Press Ctrl+C";
+        setTimeout(() => (btn.textContent = orig), 1400);
+      }
+    });
+  });
+}
+
+/* ---------- Markdown → HTML renderer for skill content ---------- */
+
+function sdMdToHtml(md) {
+  // Strip YAML frontmatter
+  const src = md.replace(/^---[\s\S]*?---\n?/, "").trim();
+  const lines = src.split("\n");
+  const out = [];
+  let i = 0;
+
+  // Inline formatting (applied to already-escaped text)
+  const inlineFmt = (raw) => {
+    // Split on code spans first to avoid processing their content
+    return raw.split(/(`[^`\n]+`)/g).map((part, idx) => {
+      if (idx % 2 === 1) {
+        // Code span — escape and wrap
+        return `<code class="sd-ic">${escapeHtml(part.slice(1, -1))}</code>`;
+      }
+      let s = escapeHtml(part);
+      s = s.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
+      s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+      s = s.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
+      s = s.replace(/_([^_\n]+)_/g, "<em>$1</em>");
+      s = s.replace(/\[([^\]\n]+)\]\(([^)\n]+)\)/g,
+        (_, text, url) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`);
+      return s;
+    }).join("");
+  };
+
+  while (i < lines.length) {
+    const line = lines[i];
+    const trim = line.trim();
+
+    // ── Code fence ──────────────────────────────────────────────────────
+    if (trim.startsWith("```")) {
+      const lang = trim.slice(3).trim();
+      const code = [];
+      i++;
+      while (i < lines.length && !lines[i].trim().startsWith("```")) {
+        code.push(lines[i]);
+        i++;
+      }
+      i++; // skip closing ```
+      const escaped = code.join("\n")
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      out.push(
+        `<div class="sd-code-wrap">` +
+        (lang ? `<span class="sd-code-lang">${escapeHtml(lang)}</span>` : "") +
+        `<button class="sd-copy" type="button">Copy</button>` +
+        `<pre><code>${escaped}</code></pre></div>`
+      );
+      continue;
+    }
+
+    // ── Heading ──────────────────────────────────────────────────────────
+    const hm = trim.match(/^(#{1,4})\s+(.+)$/);
+    if (hm) {
+      const n = hm[1].length;
+      const id = slugify(hm[2]);
+      out.push(`<h${n} id="${id}" class="sd-h sd-h${n}">${inlineFmt(hm[2])}</h${n}>`);
+      i++;
+      continue;
+    }
+
+    // ── Horizontal rule ──────────────────────────────────────────────────
+    if (trim === "---" || trim === "***" || trim === "___") {
+      out.push(`<hr class="sd-hr">`);
+      i++;
+      continue;
+    }
+
+    // ── Table ────────────────────────────────────────────────────────────
+    if (trim.startsWith("|") && trim.endsWith("|") &&
+        i + 1 < lines.length && /^\|[\s\-:|]+\|$/.test(lines[i + 1].trim())) {
+      const tLines = [];
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        tLines.push(lines[i]);
+        i++;
+      }
+      const cells = (l) => l.split("|").slice(1, -1).map((c) => c.trim());
+      const hdr = cells(tLines[0]);
+      const bdy = tLines.slice(2);
+      let t = `<div class="sd-table-wrap"><table class="sd-table"><thead><tr>`;
+      hdr.forEach((c) => { t += `<th>${inlineFmt(c)}</th>`; });
+      t += `</tr></thead><tbody>`;
+      bdy.forEach((row) => {
+        t += "<tr>";
+        cells(row).forEach((c) => { t += `<td>${inlineFmt(c)}</td>`; });
+        t += "</tr>";
+      });
+      t += `</tbody></table></div>`;
+      out.push(t);
+      continue;
+    }
+
+    // ── Blockquote ───────────────────────────────────────────────────────
+    if (trim.startsWith(">")) {
+      const qLines = [];
+      while (i < lines.length && lines[i].trim().startsWith(">")) {
+        qLines.push(lines[i].trim().slice(1).trim());
+        i++;
+      }
+      out.push(`<blockquote class="sd-bq">${inlineFmt(qLines.join(" "))}</blockquote>`);
+      continue;
+    }
+
+    // ── Unordered list ───────────────────────────────────────────────────
+    if (/^\s*[-*+] /.test(line)) {
+      let html = "";
+      let prevDepth = -1;
+      const stack = [];
+      while (i < lines.length && /^\s*[-*+] /.test(lines[i])) {
+        const indent = lines[i].match(/^(\s*)/)[1].length;
+        const depth = Math.floor(indent / 2);
+        const content = lines[i].replace(/^\s*[-*+] /, "");
+        while (stack.length > depth) { html += "</ul>"; stack.pop(); }
+        if (stack.length < depth) { html += `<ul class="sd-ul sd-ul--sub">`; stack.push(depth); }
+        if (stack.length === 0 && prevDepth < 0) { html += `<ul class="sd-ul">`; stack.push(0); }
+        html += `<li>${inlineFmt(content)}</li>`;
+        prevDepth = depth;
+        i++;
+      }
+      while (stack.length) { html += "</ul>"; stack.pop(); }
+      out.push(html);
+      continue;
+    }
+
+    // ── Ordered list ─────────────────────────────────────────────────────
+    if (/^\d+\.\s/.test(trim)) {
+      let html = `<ol class="sd-ol">`;
+      while (i < lines.length && /^\d+\.\s/.test(lines[i].trim())) {
+        html += `<li>${inlineFmt(lines[i].replace(/^\d+\.\s/, ""))}</li>`;
+        i++;
+      }
+      html += `</ol>`;
+      out.push(html);
+      continue;
+    }
+
+    // ── Blank line ───────────────────────────────────────────────────────
+    if (!trim) { i++; continue; }
+
+    // ── Paragraph ────────────────────────────────────────────────────────
+    const pLines = [];
+    while (i < lines.length) {
+      const t = lines[i].trim();
+      if (!t) break;
+      if (/^#{1,4}\s/.test(t) || t.startsWith("```") || t.startsWith(">")) break;
+      if (/^\s*[-*+] /.test(lines[i]) || /^\d+\.\s/.test(t)) break;
+      if (t.startsWith("|") || t === "---" || t === "***") break;
+      pLines.push(lines[i]);
+      i++;
+    }
+    if (pLines.length) {
+      out.push(`<p class="sd-p">${inlineFmt(pLines.join(" "))}</p>`);
+    }
+  }
+
+  return out.join("\n");
 }
 
 init();
