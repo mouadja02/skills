@@ -14,6 +14,7 @@ const state = {
   zips: null,
   filterText: "",
   filterCategory: null,
+  recommendedSkillNames: null,
   sort: localStorage.getItem(SORT_KEY) || "name",
   catColor: new Map(),
 };
@@ -151,6 +152,7 @@ function bindSearch() {
   const clearBtn = $("#searchClear");
 
   input.addEventListener("input", (e) => {
+    state.recommendedSkillNames = null;
     state.filterText = e.target.value.toLowerCase().trim();
     clearBtn.classList.toggle("hidden", !state.filterText);
     render();
@@ -159,6 +161,7 @@ function bindSearch() {
   clearBtn.addEventListener("click", () => {
     input.value = "";
     state.filterText = "";
+    state.recommendedSkillNames = null;
     clearBtn.classList.add("hidden");
     input.focus();
     render();
@@ -179,6 +182,7 @@ function bindSearch() {
       if (input.value) {
         input.value = "";
         state.filterText = "";
+        state.recommendedSkillNames = null;
         clearBtn.classList.add("hidden");
         render();
       } else {
@@ -204,6 +208,7 @@ function renderCategories() {
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".cat");
     if (!btn) return;
+    state.recommendedSkillNames = null;
     state.filterCategory = btn.dataset.cat === "all" ? null : btn.dataset.cat;
     $$(".cat", container).forEach((el) =>
       el.classList.toggle("active", el.dataset.cat === btn.dataset.cat)
@@ -253,6 +258,7 @@ function updateMetaActive() {
       <button type="button" aria-label="Clear category filter">×</button>`;
     $("button", el).addEventListener("click", () => {
       state.filterCategory = null;
+      state.recommendedSkillNames = null;
       $$("#categories .cat").forEach((c) =>
         c.classList.toggle("active", c.dataset.cat === "all")
       );
@@ -383,13 +389,18 @@ function bindHeroTabs() {
 function render() {
   const { skills, repo, default_branch } = state.manifest;
   let filtered = skills.filter((s) => {
+    if (state.recommendedSkillNames?.length && !state.recommendedSkillNames.includes(s.name)) {
+      return false;
+    }
     if (state.filterCategory && s.category !== state.filterCategory) return false;
     if (!state.filterText) return true;
     const hay = `${s.name} ${s.install_path} ${s.description}`.toLowerCase();
     return hay.includes(state.filterText);
   });
 
-  filtered = sortSkills(filtered, state.sort);
+  filtered = state.recommendedSkillNames?.length
+    ? sortRecommendedSkills(filtered)
+    : sortSkills(filtered, state.sort);
 
   $("#visibleCount").textContent = filtered.length.toLocaleString();
   updateMetaActive();
@@ -403,6 +414,7 @@ function render() {
       $("#search").value = "";
       $("#searchClear").classList.add("hidden");
       state.filterText = "";
+      state.recommendedSkillNames = null;
       state.filterCategory = null;
       $$("#categories .cat").forEach((c) =>
         c.classList.toggle("active", c.dataset.cat === "all")
@@ -442,8 +454,16 @@ function sortSkills(skills, mode) {
   return arr;
 }
 
+function sortRecommendedSkills(skills) {
+  const order = new Map(state.recommendedSkillNames.map((name, index) => [name, index]));
+  return [...skills].sort((a, b) => (order.get(a.name) ?? 999) - (order.get(b.name) ?? 999));
+}
+
 function renderCard(skill, tmpl, repo, branch) {
   const node = tmpl.content.firstElementChild.cloneNode(true);
+  node.id = `skill-${slugify(skill.install_path)}`;
+  node.dataset.skillName = skill.name;
+  node.dataset.skillPath = skill.install_path;
   $(".card-name", node).textContent = skill.name;
 
   const colorIdx = state.catColor.get(skill.category) ?? 0;
@@ -615,6 +635,79 @@ function formatStars(n) {
   return `${(n / 1000).toFixed(1)}k`;
 }
 
+function findSkill(ref) {
+  const needle = String(ref || "").trim().toLowerCase();
+  if (!needle || !state.manifest?.skills) return null;
+  return state.manifest.skills.find((skill) =>
+    skill.name.toLowerCase() === needle ||
+    skill.install_path.toLowerCase() === needle ||
+    `${skill.category}/${skill.name}`.toLowerCase() === needle
+  ) || null;
+}
+
+function setAllCategoryActive() {
+  state.filterCategory = null;
+  $$("#categories .cat").forEach((c) =>
+    c.classList.toggle("active", c.dataset.cat === "all")
+  );
+  renderCategoryBanner();
+  updateMetaActive();
+}
+
+function highlightSkillCard(skillName) {
+  requestAnimationFrame(() => {
+    const card = $(`.card[data-skill-name="${cssEscape(skillName)}"]`);
+    if (!card) return;
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+    card.classList.add("card--spotlight");
+    setTimeout(() => card.classList.remove("card--spotlight"), 2200);
+  });
+}
+
+function focusSkill(ref) {
+  const skill = findSkill(ref);
+  if (!skill) return false;
+  const input = $("#search");
+  const clearBtn = $("#searchClear");
+
+  state.recommendedSkillNames = null;
+  state.filterText = skill.name.toLowerCase();
+  if (input) input.value = skill.name;
+  clearBtn?.classList.remove("hidden");
+  setAllCategoryActive();
+  render();
+  highlightSkillCard(skill.name);
+  return true;
+}
+
+function filterToSkills(refs) {
+  const unique = [];
+  const seen = new Set();
+  for (const ref of refs || []) {
+    const skill = findSkill(ref);
+    if (!skill || seen.has(skill.name)) continue;
+    seen.add(skill.name);
+    unique.push(skill);
+  }
+  if (!unique.length) return false;
+
+  state.recommendedSkillNames = unique.map((skill) => skill.name);
+  state.filterText = "";
+  const input = $("#search");
+  const clearBtn = $("#searchClear");
+  if (input) input.value = "";
+  clearBtn?.classList.add("hidden");
+  setAllCategoryActive();
+  render();
+  document.querySelector("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  return true;
+}
+
+window.skillsBrowser = {
+  focusSkill,
+  filterToSkills,
+};
+
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -626,6 +719,10 @@ function escapeHtml(str) {
 
 function cssEscape(s) {
   return String(s).replace(/[^a-zA-Z0-9_-]/g, (c) => `\\${c}`);
+}
+
+function slugify(s) {
+  return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
 init();

@@ -120,6 +120,7 @@ ${index}
 ## Response style
 - Be concise, helpful, and friendly
 - When listing skills, show 3–8 relevant ones with a one-line description each
+- Mention skills with their exact selector, e.g. \`engineering-craft/refactor-code\`, so the UI can link them
 - Always include install commands when relevant — use the bash variant by default
 - For debugging help, ask one clarifying question at a time
 - Format code blocks correctly with the right language tag
@@ -235,70 +236,160 @@ When in doubt, assume the user is asking about something development or producti
      ===================================================================== */
 
   function renderMarkdown(text) {
-    // Escape HTML first
-    let out = text
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
-
-    // Code blocks  ```lang\n...\n```
-    out = out.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
-      const langLabel = lang ? `<span class="cb-lang">${escHtml(lang)}</span>` : "";
-      return `<div class="cb-wrap">${langLabel}<button class="cb-copy" type="button" title="Copy">Copy</button><pre class="cb-pre"><code>${code.trimEnd()}</code></pre></div>`;
-    });
-
-    // Inline code `...`
-    out = out.replace(/`([^`]+)`/g, "<code>$1</code>");
-
-    // Bold **...**
-    out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-
-    // Italic *...*  (but not ** already consumed)
-    out = out.replace(/\*([^*\n]+?)\*/g, "<em>$1</em>");
-
-    // Skill name references → clickable filter links
-    if (manifest) {
-      const nameSet = new Set(manifest.skills.map(s => s.name));
-      out = out.replace(/`?([a-z][a-z0-9-]{2,}\/[a-z][a-z0-9-]{2,})`?/g, (match, path) => {
-        const parts = path.split("/");
-        const name  = parts[parts.length - 1];
-        if (nameSet.has(name)) {
-          return `<a class="skill-ref" href="#" data-skill="${escHtml(name)}">${escHtml(path)}</a>`;
-        }
-        return match;
+    const codeBlocks = [];
+    const source = String(text || "")
+      .replace(/\r\n/g, "\n")
+      .replace(/```([\w-]*)\n?([\s\S]*?)```/g, (_, lang, code) => {
+        const id = codeBlocks.length;
+        codeBlocks.push(codeBlockHtml(lang, code));
+        return `\n@@CODE_BLOCK_${id}@@\n`;
       });
+
+    const lines = source.split("\n");
+    const out = [];
+    let paragraph = [];
+    let listType = null;
+
+    const flushParagraph = () => {
+      if (!paragraph.length) return;
+      out.push(`<p>${formatInline(paragraph.join(" "))}</p>`);
+      paragraph = [];
+    };
+
+    const closeList = () => {
+      if (!listType) return;
+      out.push(`</${listType}>`);
+      listType = null;
+    };
+
+    const openList = (type) => {
+      if (listType === type) return;
+      closeList();
+      out.push(`<${type}>`);
+      listType = type;
+    };
+
+    for (const rawLine of lines) {
+      const line = rawLine.trimEnd();
+      const trimmed = line.trim();
+      const codeMatch = trimmed.match(/^@@CODE_BLOCK_(\d+)@@$/);
+
+      if (!trimmed) {
+        flushParagraph();
+        closeList();
+        continue;
+      }
+
+      if (codeMatch) {
+        flushParagraph();
+        closeList();
+        out.push(codeBlocks[Number(codeMatch[1])] || "");
+        continue;
+      }
+
+      if (/^---+$/.test(trimmed)) {
+        flushParagraph();
+        closeList();
+        out.push("<hr>");
+        continue;
+      }
+
+      const heading = trimmed.match(/^(#{2,4})\s+(.+)$/);
+      if (heading) {
+        flushParagraph();
+        closeList();
+        const tag = heading[1].length === 2 ? "h3" : "h4";
+        out.push(`<${tag}>${formatInline(heading[2])}</${tag}>`);
+        continue;
+      }
+
+      const unordered = trimmed.match(/^[-*]\s+(.+)$/);
+      if (unordered) {
+        flushParagraph();
+        openList("ul");
+        out.push(`<li>${formatInline(unordered[1])}</li>`);
+        continue;
+      }
+
+      const ordered = trimmed.match(/^\d+\.\s+(.+)$/);
+      if (ordered) {
+        flushParagraph();
+        openList("ol");
+        out.push(`<li>${formatInline(ordered[1])}</li>`);
+        continue;
+      }
+
+      closeList();
+      paragraph.push(trimmed);
     }
 
-    // ### Heading
-    out = out.replace(/^### (.+)$/gm, "<h4>$1</h4>");
-    // ## Heading
-    out = out.replace(/^## (.+)$/gm, "<h3>$1</h3>");
+    flushParagraph();
+    closeList();
+    return out.join("\n");
+  }
 
-    // Unordered list lines (- or *)
-    out = out.replace(/^[*\-] (.+)$/gm, "<li>$1</li>");
-    out = out.replace(/(<li>.*<\/li>(\n|$))+/g, "<ul>$&</ul>");
+  function codeBlockHtml(lang, code) {
+    const langLabel = lang ? `<span class="cb-lang">${escHtml(lang)}</span>` : "";
+    return `<div class="cb-wrap">${langLabel}<button class="cb-copy" type="button" title="Copy">Copy</button><pre class="cb-pre"><code>${escHtml(code.trimEnd())}</code></pre></div>`;
+  }
 
-    // Numbered list
-    out = out.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");
+  function formatInline(raw) {
+    const inlineCode = [];
+    let out = String(raw || "").replace(/`([^`]+)`/g, (_, code) => {
+      const id = inlineCode.length;
+      inlineCode.push(code);
+      return `@@INLINE_CODE_${id}@@`;
+    });
 
-    // Horizontal rule ---
-    out = out.replace(/^---+$/gm, "<hr>");
-
-    // Paragraphs — split on blank lines
-    const parts = out.split(/\n{2,}/);
-    out = parts.map(p => {
-      const trimmed = p.trim();
-      if (!trimmed) return "";
-      // Don't wrap block-level elements
-      if (/^<(h[1-6]|ul|ol|li|hr|div|pre|blockquote)/.test(trimmed)) return trimmed;
-      return `<p>${trimmed.replace(/\n/g, "<br>")}</p>`;
-    }).join("\n");
+    out = escHtml(out);
+    out = linkSkillRefs(out);
+    out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, label, url) =>
+      `<a href="${escAttr(url)}" target="_blank" rel="noopener">${label}</a>`
+    );
+    out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    out = out.replace(/\*([^*\n]+?)\*/g, "<em>$1</em>");
+    out = out.replace(/@@INLINE_CODE_(\d+)@@/g, (_, id) => inlineCodeHtml(inlineCode[Number(id)] || ""));
 
     return out;
   }
 
+  function inlineCodeHtml(code) {
+    const skill = findSkillRef(code.trim());
+    if (skill) return skillAnchor(skill, code.trim());
+    return `<code>${escHtml(code)}</code>`;
+  }
+
+  function linkSkillRefs(html) {
+    if (!manifest?.skills?.length) return html;
+    return html.replace(/(^|[^\w/="-])([a-z][a-z0-9-]*(?:\/[a-z][a-z0-9-]*)?)(?=$|[^\w/-])/gi, (match, prefix, ref) => {
+      const skill = findSkillRef(ref);
+      return skill ? `${prefix}${skillAnchor(skill, ref)}` : match;
+    });
+  }
+
+  function findSkillRef(ref) {
+    const needle = String(ref || "").toLowerCase().trim();
+    if (!needle || !manifest?.skills?.length) return null;
+    return manifest.skills.find(skill =>
+      skill.name.toLowerCase() === needle ||
+      skill.install_path.toLowerCase() === needle ||
+      `${skill.category}/${skill.name}`.toLowerCase() === needle
+    ) || null;
+  }
+
+  function skillAnchor(skill, label) {
+    return `<a class="skill-ref" href="#skill=${encodeURIComponent(skill.install_path)}" data-skill="${escAttr(skill.name)}" data-skill-path="${escAttr(skill.install_path)}" title="Show ${escAttr(skill.name)} in the skills grid">${escHtml(label)}</a>`;
+  }
+
   function escHtml(s) {
-    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function escAttr(s) {
+    return escHtml(s).replace(/"/g, "&quot;");
   }
 
   /* =====================================================================
@@ -347,8 +438,7 @@ When in doubt, assume the user is asking about something development or producti
     qa(".skill-ref", inner).forEach(link => {
       link.addEventListener("click", e => {
         e.preventDefault();
-        const name = link.dataset.skill;
-        filterToSkill(name);
+        openSkillReference(link.dataset.skillPath || link.dataset.skill);
         closePanel();
       });
     });
@@ -397,12 +487,65 @@ When in doubt, assume the user is asking about something development or producti
      Filter the skills grid to a skill name
      ===================================================================== */
 
+  function openSkillReference(ref) {
+    if (window.skillsBrowser?.focusSkill?.(ref)) return;
+    filterToSkill(ref);
+  }
+
   function filterToSkill(name) {
     const searchInput = document.getElementById("search");
     if (!searchInput) return;
     searchInput.value = name;
     searchInput.dispatchEvent(new Event("input", { bubbles: true }));
     document.getElementById("browse")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function appendRecommendationActions(inner, text) {
+    const skills = extractMentionedSkills(text);
+    if (skills.length < 2 || inner.querySelector(".skill-actions")) return;
+
+    const actions = document.createElement("div");
+    actions.className = "skill-actions";
+
+    const filterBtn = document.createElement("button");
+    filterBtn.type = "button";
+    filterBtn.className = "skill-actions-filter";
+    filterBtn.textContent = `Show ${skills.length} recommended skills`;
+    filterBtn.addEventListener("click", () => {
+      if (window.skillsBrowser?.filterToSkills?.(skills.map(skill => skill.install_path))) {
+        closePanel();
+      }
+    });
+
+    actions.appendChild(filterBtn);
+    inner.appendChild(actions);
+  }
+
+  function extractMentionedSkills(text) {
+    if (!manifest?.skills?.length) return [];
+    const haystack = String(text || "").toLowerCase();
+    return manifest.skills
+      .map(skill => {
+        const refs = [skill.install_path, `${skill.category}/${skill.name}`, skill.name];
+        const indexes = refs
+          .map(ref => skillRefIndex(haystack, ref.toLowerCase()))
+          .filter(index => index >= 0);
+        return indexes.length ? { skill, index: Math.min(...indexes) } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.index - b.index)
+      .slice(0, 8)
+      .map(item => item.skill);
+  }
+
+  function skillRefIndex(haystack, ref) {
+    if (ref.includes("/") || ref.includes("-")) return haystack.indexOf(ref);
+    const match = haystack.match(new RegExp(`(^|[^a-z0-9/-])${escapeRegex(ref)}($|[^a-z0-9/-])`, "i"));
+    return match ? match.index : -1;
+  }
+
+  function escapeRegex(s) {
+    return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
   /* =====================================================================
@@ -435,24 +578,37 @@ When in doubt, assume the user is asking about something development or producti
     ];
 
     let fullResponse = "";
-    let { inner: assistantInner, wrap: assistantWrap } = appendMessage("assistant", "", true);
+    let assistantInner = null;
+    let assistantWrap = null;
+
+    const ensureAssistantMessage = () => {
+      if (typingEl.isConnected) typingEl.remove();
+      if (!assistantInner || !assistantWrap) {
+        const msg = appendMessage("assistant", "", true);
+        assistantInner = msg.inner;
+        assistantWrap = msg.wrap;
+      }
+      return assistantInner;
+    };
 
     await streamCompletion(
       messages,
       // onToken
       (token) => {
-        if (typingEl.isConnected) typingEl.remove();
         fullResponse += token;
-        setInnerContent(assistantInner, fullResponse);
+        setInnerContent(ensureAssistantMessage(), fullResponse);
         scrollToBottom();
       },
       // onDone
       () => {
         if (typingEl.isConnected) typingEl.remove();
         if (!fullResponse) {
+          ensureAssistantMessage();
           setInnerContent(assistantInner, "_No response received._");
+        } else {
+          appendRecommendationActions(assistantInner, fullResponse);
         }
-        assistantWrap.removeAttribute("data-streaming");
+        assistantWrap?.removeAttribute("data-streaming");
         history.push({ role: "assistant", content: fullResponse });
         if (history.length > MAX_HISTORY) history = history.slice(-MAX_HISTORY);
         streaming = false;
@@ -463,8 +619,9 @@ When in doubt, assume the user is asking about something development or producti
       (err) => {
         if (typingEl.isConnected) typingEl.remove();
         const msg = err.message || "Something went wrong.";
-        setInnerContent(assistantInner, `⚠️ **Error:** ${escHtml(msg)}\n\nPlease try again.`);
-        assistantWrap.removeAttribute("data-streaming");
+        ensureAssistantMessage();
+        setInnerContent(assistantInner, `**Error:** ${msg}\n\nPlease try again.`);
+        assistantWrap?.removeAttribute("data-streaming");
         streaming = false;
         setSendDisabled(false);
         scrollToBottom();
