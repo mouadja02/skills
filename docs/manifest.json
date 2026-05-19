@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-19T09:27:58.057Z",
+  "generated_at": "2026-05-19T23:30:14.816Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 647,
+  "count": 648,
   "categories": [
     "ai-agents",
     "business-and-strategy",
@@ -32,7 +32,7 @@
     "context-engineering": 14,
     "creative-thinking": 8,
     "data-and-backend": 52,
-    "design-and-ui": 22,
+    "design-and-ui": 23,
     "devops-and-infrastructure": 46,
     "docs-and-presentations": 41,
     "engineering-craft": 138,
@@ -2284,6 +2284,14 @@
       "path": "skills/design-and-ui/gsap-framer-scroll-animation",
       "depth": 2,
       "description": "Use this skill whenever the user wants to build scroll animations, scroll effects, parallax, scroll-triggered reveals, pinned sections, horizontal scroll, text animations, or any motion tied to scroll position — in vanilla JS, React, or Next.js. Covers GSAP ScrollTrigger (pinning, scrubbing, snapping, timelines, horizontal scroll, ScrollSmoother, matchMedia) and Framer Motion / Motion v12 (useScroll, useTransform, useSpring, whileInView, variants). Use this skill even if the user just says \"animate on scroll\", \"fade in as I scroll\", \"make it scroll like Apple\", \"parallax effect\", \"sticky section\", \"scroll progress bar\", or \"entrance animation\". Also triggers for Copilot prompt patterns for GSAP or Framer Motion code generation. Pairs with the premium-frontend-ui skill for creative philosophy and design-level polish."
+    },
+    {
+      "name": "hallmark",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/hallmark",
+      "path": "skills/design-and-ui/hallmark",
+      "depth": 2,
+      "description": "Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots. Use when the user asks to build a new app or landing page, wants to redesign something, invokes Hallmark by name, or uses audit/redesign/study."
     },
     {
       "name": "impeccable",
