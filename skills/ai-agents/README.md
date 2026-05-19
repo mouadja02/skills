@@ -1,6 +1,6 @@
 # ai-agents
 
-Skills for **designing, scaffolding, and orchestrating AI agents** — single-agent and multi-agent, headless and TUI, hosted and local.
+Skills for **designing, scaffolding, and orchestrating AI agents** — single-agent and multi-agent, headless and TUI, hosted and local. Includes Microsoft Copilot agent tooling, structured autonomy frameworks, MCP integration, and prompt engineering.
 
 Use these when the task is *building an agent system*, not *using* one.
 
@@ -63,6 +63,58 @@ Use these when the task is *building an agent system*, not *using* one.
 | Skill | What it does |
 | --- | --- |
 | [`bmm-skills/`](./bmm-skills/SKILL.md) | **BMad Method (BMM)** — full agile AI-development framework with 30 sub-skills across 4 phases (Analysis → Planning → Solutioning → Implementation) and 6 named agent personas (Mary the analyst, Paige the tech writer, John the PM, Sally the UX designer, Winston the architect, Amelia the developer). Routes to the right sub-skill folder. |
+
+### Microsoft Copilot & agent platforms
+
+| Skill | What it does |
+| --- | --- |
+| [`agent-governance`](./agent-governance/SKILL.md) | Governance policies and guardrails for AI agent deployments. |
+| [`agent-owasp-compliance`](./agent-owasp-compliance/SKILL.md) | OWASP Top-10 for LLMs compliance review for agent systems. |
+| [`agent-supply-chain`](./agent-supply-chain/SKILL.md) | Supply chain security and integrity checks for AI agent pipelines. |
+| [`ai-ready`](./ai-ready/SKILL.md) | Assess and prepare a codebase to be AI agent-ready. |
+| [`ai-team-orchestration`](./ai-team-orchestration/SKILL.md) | Orchestrate teams of AI agents for complex collaborative tasks. |
+| [`create-agentsmd`](./create-agentsmd/SKILL.md) | Generate and maintain `AGENTS.md` files for codebases. |
+| [`declarative-agents`](./declarative-agents/SKILL.md) | Build Microsoft 365 Copilot declarative agents with skills and actions. |
+| [`entra-agent-user`](./entra-agent-user/SKILL.md) | Configure Microsoft Entra for AI agent user identities and permissions. |
+| [`foundry-agent-sync`](./foundry-agent-sync/SKILL.md) | Sync and manage agents using Azure AI Foundry. |
+| [`mcp-cli`](./mcp-cli/SKILL.md) | Use the MCP CLI to manage and interact with MCP servers. |
+| [`mcp-copilot-studio-server-generator`](./mcp-copilot-studio-server-generator/SKILL.md) | Generate MCP servers for Microsoft Copilot Studio integrations. |
+| [`mcp-create-adaptive-cards`](./mcp-create-adaptive-cards/SKILL.md) | Create Adaptive Cards for use in MCP-powered agent responses. |
+| [`mcp-create-declarative-agent`](./mcp-create-declarative-agent/SKILL.md) | Create declarative Copilot agents via MCP tooling. |
+| [`mcp-deploy-manage-agents`](./mcp-deploy-manage-agents/SKILL.md) | Deploy and manage agents using MCP server infrastructure. |
+| [`mcp-security-audit`](./mcp-security-audit/SKILL.md) | Audit MCP server configurations for security vulnerabilities. |
+| [`microsoft-agent-framework`](./microsoft-agent-framework/SKILL.md) | Build agents using the Microsoft Agent Framework and SDK. |
+| [`semantic-kernel`](./semantic-kernel/SKILL.md) | Build AI applications and agents with Microsoft Semantic Kernel. |
+| [`workiq-copilot`](./workiq-copilot/SKILL.md) | Query Microsoft 365 data (emails, meetings, Teams) via WorkIQ for live organizational context. |
+
+### Prompt engineering & evaluation
+
+| Skill | What it does |
+| --- | --- |
+| [`agentic-eval`](./agentic-eval/SKILL.md) | Systematic evaluation of agentic AI systems — metrics, harnesses, failure analysis. |
+| [`ai-prompt-engineering-safety-review`](./ai-prompt-engineering-safety-review/SKILL.md) | Review prompts and agent instructions for safety, injection risks, and jailbreak vectors. |
+| [`autoresearch`](./autoresearch/SKILL.md) | Run autonomous research tasks using a multi-step agent loop. |
+| [`boost-prompt`](./boost-prompt/SKILL.md) | Interactively refine prompts by interrogating scope, deliverables, and constraints. |
+| [`eval-driven-dev`](./eval-driven-dev/SKILL.md) | Evaluation-driven development — write evals before building agent features. |
+| [`finalize-agent-prompt`](./finalize-agent-prompt/SKILL.md) | Review and finalize system prompts for production agent deployments. |
+| [`prompt-builder`](./prompt-builder/SKILL.md) | Guided prompt construction workflow with structured templates. |
+| [`tldr-prompt`](./tldr-prompt/SKILL.md) | Compress verbose prompts into concise, high-signal instructions. |
+
+### Structured autonomy
+
+| Skill | What it does |
+| --- | --- |
+| [`structured-autonomy-generate`](./structured-autonomy-generate/SKILL.md) | Generate structured autonomy plans for agent task execution. |
+| [`structured-autonomy-implement`](./structured-autonomy-implement/SKILL.md) | Implement structured autonomy workflows in agent systems. |
+| [`structured-autonomy-plan`](./structured-autonomy-plan/SKILL.md) | Plan agent tasks using structured autonomy frameworks. |
+
+### Memory & cognition
+
+| Skill | What it does |
+| --- | --- |
+| [`memory-merger`](./memory-merger/SKILL.md) | Merge and deduplicate agent memory stores across sessions. |
+| [`nano-banana-pro-openrouter`](./nano-banana-pro-openrouter/SKILL.md) | Lightweight agent patterns using OpenRouter's nano/small models. |
+| [`from-the-other-side-vega`](./from-the-other-side-vega/SKILL.md) | AI partner patterns and lived experience for long-term human-AI collaboration. |
 
 ## When to use this folder
 

@@ -49,6 +49,29 @@ The **C-suite advisor system** plus strategic-ops skills for founders, executive
 | [`saas-metrics-coach`](./saas-metrics-coach/SKILL.md) | SaaS financial health advisor. Use when sharing revenue or customer numbers — ARR, MRR, churn, LTV, CAC, NRR. |
 | [`cs-founder-coach`](./cs-founder-coach/SKILL.md) | Personal leadership development for founders and first-time CEOs. Founder archetypes, delegation, energy management, calendar audits, blind spots, imposter syndrome. |
 
+### Go-to-Market (GTM)
+
+| Skill | What it does |
+| --- | --- |
+| [`gtm-0-to-1-launch`](./gtm-0-to-1-launch/SKILL.md) | Zero-to-one product launch playbook — ICP definition, messaging, launch sequencing. |
+| [`gtm-ai-gtm`](./gtm-ai-gtm/SKILL.md) | AI-specific GTM strategy — developer adoption, API monetization, model differentiation. |
+| [`gtm-board-and-investor-communication`](./gtm-board-and-investor-communication/SKILL.md) | Craft board updates and investor communications for GTM milestones. |
+| [`gtm-developer-ecosystem`](./gtm-developer-ecosystem/SKILL.md) | Build developer ecosystems — SDKs, docs, community, developer relations. |
+| [`gtm-enterprise-account-planning`](./gtm-enterprise-account-planning/SKILL.md) | Enterprise account planning — territory strategy, stakeholder mapping, expansion plays. |
+| [`gtm-enterprise-onboarding`](./gtm-enterprise-onboarding/SKILL.md) | Design enterprise onboarding programs that drive time-to-value. |
+| [`gtm-operating-cadence`](./gtm-operating-cadence/SKILL.md) | Establish GTM operating cadence — weekly/monthly/quarterly rituals and reviews. |
+| [`gtm-partnership-architecture`](./gtm-partnership-architecture/SKILL.md) | Design partner programs — resellers, ISVs, technology alliances, channel strategy. |
+| [`gtm-positioning-strategy`](./gtm-positioning-strategy/SKILL.md) | Develop product positioning and messaging frameworks for GTM. |
+| [`gtm-product-led-growth`](./gtm-product-led-growth/SKILL.md) | PLG strategy — freemium design, activation funnels, viral loops, expansion revenue. |
+| [`gtm-technical-product-pricing`](./gtm-technical-product-pricing/SKILL.md) | Price technical products — usage-based, seat-based, value metrics, packaging. |
+
+### Career & personal effectiveness
+
+| Skill | What it does |
+| --- | --- |
+| [`brag-sheet`](./brag-sheet/SKILL.md) | Turn vague accomplishments into evidence-backed impact statements for performance reviews and promotion packets. |
+| [`impediment-prioritization`](./impediment-prioritization/SKILL.md) | Identify, prioritize, and plan removal of team impediments blocking delivery. |
+
 ## When to use this folder
 
 - "Should I do X or Y?" (high-stakes business decision)
@@ -57,6 +80,7 @@ The **C-suite advisor system** plus strategic-ops skills for founders, executive
 - "Run a 6-phase board deliberation on this question"
 - "Audit our org health"
 - "Stress-test this plan"
+- "Build our GTM strategy" / "price this product" / "design a partner program"
 
 ## Related categories
 

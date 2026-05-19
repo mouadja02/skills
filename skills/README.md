@@ -4,6 +4,8 @@ A curated collection of **280+ Agent Skills** for Claude Code and Cursor, organi
 
 Each skill lives in its own folder with a `SKILL.md` file (YAML frontmatter for `name` + `description`, then the body of instructions). The agent auto-discovers and loads them when the description matches your request — both Claude Code and Cursor walk the directory tree recursively, so the category subfolders are transparent to discovery; they exist purely to keep things browsable on GitHub.
 
+> **Sources**: Original *Superpowers* collection + [awesome-copilot](https://github.com/awesome-copilot/copilot-skills) skills library (341 skills ingested May 2026).
+
 ## Categories
 
 | # | Folder | Skills | Theme |
@@ -51,8 +53,8 @@ cp -r skills/ai-agents/senior-prompt-engineer /path/to/your/project/.claude/skil
 
 Use the meta-skills:
 
-- [`skill-authoring/skill-creator/`](./skill-authoring/skill-creator/) — create, evaluate, and benchmark skills
-- [`skill-authoring/writing-skills/`](./skill-authoring/writing-skills/) — the how-to-write-a-skill discipline
+- [`skills-management/skill-creator/`](./skills-management/skill-creator/) — create, evaluate, and benchmark skills
+- [`skills-management/writing-skills/`](./skills-management/writing-skills/) — the how-to-write-a-skill discipline
 
 ## File tree at a glance
 

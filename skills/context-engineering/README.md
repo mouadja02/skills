@@ -32,6 +32,19 @@ The whole category is about treating context as a *budget* and the filesystem as
 | [`filesystem-context`](./filesystem-context/SKILL.md) | Offload context to files — dynamic context discovery, scratch pads, just-in-time loading, tool-output persistence. |
 | [`memory-systems`](./memory-systems/SKILL.md) | Cross-session memory architectures. Compares Mem0, Zep/Graphiti, Letta, LangMem, Cognee. Vector vs knowledge-graph vs temporal-graph trade-offs. |
 
+### Codebase & onboarding context
+
+| Skill | What it does |
+| --- | --- |
+| [`acquire-codebase-knowledge`](./acquire-codebase-knowledge/SKILL.md) | Systematically acquire knowledge about an unfamiliar codebase for agent context loading. |
+| [`context-map`](./context-map/SKILL.md) | Create visual and textual context maps of a system for agent understanding. |
+| [`first-ask`](./first-ask/SKILL.md) | Ask the right clarifying questions before starting any task to establish context. |
+| [`integrate-context-matic`](./integrate-context-matic/SKILL.md) | Integrate ContextMatic for automated context generation and maintenance. |
+| [`mini-context-graph`](./mini-context-graph/SKILL.md) | Build a minimal context graph of key entities and relationships in a codebase. |
+| [`onboard-context-matic`](./onboard-context-matic/SKILL.md) | Onboard ContextMatic to automatically generate CONTEXT.md files for a project. |
+| [`what-context-needed`](./what-context-needed/SKILL.md) | Determine what context the agent needs to complete a task effectively. |
+| [`napkin`](./napkin/SKILL.md) | Visual whiteboard collaboration — draw, sketch, add sticky notes, share with the agent for analysis and ideation. |
+
 ## When to use this folder
 
 - "My agent is forgetting / drifting / losing track of X"
@@ -39,6 +52,8 @@ The whole category is about treating context as a *budget* and the filesystem as
 - "I need persistent memory across sessions"
 - "Pick a memory framework"
 - "Compress this conversation"
+- "What do you need to know before starting this task?"
+- "Map out this codebase for context"
 
 ## Related categories
 

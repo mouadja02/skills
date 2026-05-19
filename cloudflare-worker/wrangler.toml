@@ -1,0 +1,17 @@
+# Cloudflare Worker — Skills AI Proxy
+# Deploy: wrangler deploy
+# Secrets: wrangler secret put NVIDIA_API_KEY
+
+name            = "skills-ai-proxy"
+main            = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Optionally restrict to a specific route on a custom domain:
+# [[routes]]
+# pattern = "ai.yourdomain.com/v1/chat/completions"
+# zone_name = "yourdomain.com"
+
+# Secrets (never put actual values here — use `wrangler secret put`):
+#   NVIDIA_API_KEY   — required  (nvapi-...)
+#   NVIDIA_MODEL     — optional  (default: stepfun-ai/step-3.5-flash)
+#   ALLOWED_ORIGIN   — optional  (default: * — restrict to https://you.github.io)
