@@ -1,4 +1,4 @@
-# llm-integrations
+# openrouter
 
 Skills for **connecting to LLMs through OpenRouter** — the SDK, model discovery, image generation, OAuth login, and migration from older SDK versions.
 
@@ -26,3 +26,4 @@ If your code calls an LLM, this is the layer.
 
 - [`ai-agents/`](../ai-agents/) — agent scaffolds and patterns that *use* this integration layer.
 - [`data-and-backend/python-fastapi-llm/`](../data-and-backend/python-fastapi-llm/) — Python equivalent for FastAPI backends.
+- [`coding/`](../coding/) — the disciplined development loop applied to code that calls these APIs.

@@ -81,5 +81,6 @@ Use these when the task is *building an agent system*, not *using* one.
 ## Related categories
 
 - [`context-engineering/`](../context-engineering/) — managing the context window of the agents you build.
-- [`llm-integrations/`](../llm-integrations/) — wiring the model layer (OpenRouter SDK, OAuth, image gen).
+- [`openrouter/`](../openrouter/) — wiring the model layer (OpenRouter SDK, OAuth, image gen).
 - [`engineering-craft/`](../engineering-craft/) — the development discipline applied *to* agent code.
+- [`coding/`](../coding/) — the disciplined coding loop for writing agent code.
