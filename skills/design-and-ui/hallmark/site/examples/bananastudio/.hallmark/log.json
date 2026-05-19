@@ -1,0 +1,27 @@
+[
+  {
+    "date": "2026-05-04",
+    "macrostructure": "Marquee Hero",
+    "theme": "Bloom",
+    "enrichment": "Tier-A animated aperture + breathing portraits + marquee strip",
+    "brief": "BananaStudio — redesign to dark mode, bold, smooth interactions, animated illustrations",
+    "knobs": {
+      "H7_marquee_hero": "title=display-italic-mix, alignment=left-bias, counterweight=animated-aperture",
+      "F2_gallery": "tiles=7, layout=feature+6-portraits, breathing-loop=on",
+      "F4_steps": "count=3, container=workbench-cards, divider=hairline-gradient"
+    },
+    "theme_axes": "dark / italic-serif / saturated-amber-bloom"
+  },
+  {
+    "date": "2026-05-04",
+    "macrostructure": "Bento Grid",
+    "theme": "Quiet",
+    "enrichment": "Tier-A pure-CSS portrait tiles",
+    "brief": "BananaStudio — SaaS landing page, AI-generated professional headshots",
+    "knobs": {
+      "F1_bento": "tiles=9, spans=irregular, accent=corner-only",
+      "H2_split_hero": "ratio=7/5, right=lede+CTA, divider=hairline-rule"
+    },
+    "theme_axes": "light / geometric-sans / warm-amber"
+  }
+]

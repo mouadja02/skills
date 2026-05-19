@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-05-07",
+    "macrostructure": "Marquee Hero",
+    "theme": "Manifesto-dark",
+    "theme_axes": "dark / display-heavy / warm-bleed-red",
+    "enrichment": "Tier-A pure-CSS departure board + IATA ticker + corner stamp",
+    "nav": "N9",
+    "footer": "Ft4",
+    "brief": "Wayfare v2 · bolder, dark, ticker + stamp + boarding-row callout"
+  },
+  {
+    "date": "2026-05-07",
+    "macrostructure": "Marquee Hero",
+    "theme": "Sport",
+    "theme_axes": "light / display-condensed-allcaps / warm-amber",
+    "enrichment": "Tier-A pure-CSS departure board",
+    "nav": "N9",
+    "footer": "Ft4",
+    "brief": "Wayfare v1 · travel booking studio · smart hero = diegetic departure board"
+  }
+]
