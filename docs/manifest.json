@@ -1,13 +1,14 @@
 {
   "version": 1,
-  "generated_at": "2026-05-13T14:40:47.319Z",
+  "generated_at": "2026-05-19T09:27:58.057Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 622,
+  "count": 647,
   "categories": [
     "ai-agents",
     "business-and-strategy",
     "caveman",
+    "coding",
     "context-engineering",
     "creative-thinking",
     "data-and-backend",
@@ -17,24 +18,31 @@
     "engineering-craft",
     "llm-integrations",
     "marketing-and-growth",
+    "openrouter",
     "product-management",
-    "skills-management"
+    "research-and-development",
+    "skills-management",
+    "streamlit"
   ],
   "counts_by_category": {
     "ai-agents": 90,
     "business-and-strategy": 74,
     "caveman": 6,
+    "coding": 24,
     "context-engineering": 14,
     "creative-thinking": 8,
-    "data-and-backend": 70,
+    "data-and-backend": 52,
     "design-and-ui": 22,
     "devops-and-infrastructure": 46,
     "docs-and-presentations": 41,
     "engineering-craft": 138,
-    "llm-integrations": 41,
+    "llm-integrations": 36,
     "marketing-and-growth": 25,
+    "openrouter": 5,
     "product-management": 29,
-    "skills-management": 18
+    "research-and-development": 1,
+    "skills-management": 18,
+    "streamlit": 18
   },
   "skills": [
     {
@@ -1398,6 +1406,198 @@
       "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
     },
     {
+      "name": "api-and-interface-design",
+      "category": "coding",
+      "install_path": "coding/api-and-interface-design",
+      "path": "skills/coding/api-and-interface-design",
+      "depth": 2,
+      "description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend."
+    },
+    {
+      "name": "browser-testing-with-devtools",
+      "category": "coding",
+      "install_path": "coding/browser-testing-with-devtools",
+      "path": "skills/coding/browser-testing-with-devtools",
+      "depth": 2,
+      "description": "Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network requests, profile performance, or verify visual output with real runtime data. Requires the chrome-devtools MCP server to be configured."
+    },
+    {
+      "name": "ci-cd-and-automation",
+      "category": "coding",
+      "install_path": "coding/ci-cd-and-automation",
+      "path": "skills/coding/ci-cd-and-automation",
+      "depth": 2,
+      "description": "Automates CI/CD pipeline setup. Use when setting up or modifying build and deployment pipelines. Use when you need to automate quality gates, configure test runners in CI, or establish deployment strategies."
+    },
+    {
+      "name": "code-review-and-quality",
+      "category": "coding",
+      "install_path": "coding/code-review-and-quality",
+      "path": "skills/coding/code-review-and-quality",
+      "depth": 2,
+      "description": "Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dimensions before it enters the main branch."
+    },
+    {
+      "name": "code-simplification",
+      "category": "coding",
+      "install_path": "coding/code-simplification",
+      "path": "skills/coding/code-simplification",
+      "depth": 2,
+      "description": "Simplifies code for clarity. Use when refactoring code for clarity without changing behavior. Use when code works but is harder to read, maintain, or extend than it should be. Use when reviewing code that has accumulated unnecessary complexity."
+    },
+    {
+      "name": "context-engineering",
+      "category": "coding",
+      "install_path": "coding/context-engineering",
+      "path": "skills/coding/context-engineering",
+      "depth": 2,
+      "description": "Optimizes agent context setup. Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project."
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "category": "coding",
+      "install_path": "coding/debugging-and-error-recovery",
+      "path": "skills/coding/debugging-and-error-recovery",
+      "depth": 2,
+      "description": "Guides systematic root-cause debugging. Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error. Use when you need a systematic approach to finding and fixing the root cause rather than guessing."
+    },
+    {
+      "name": "deprecation-and-migration",
+      "category": "coding",
+      "install_path": "coding/deprecation-and-migration",
+      "path": "skills/coding/deprecation-and-migration",
+      "depth": 2,
+      "description": "Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset existing code."
+    },
+    {
+      "name": "documentation-and-adrs",
+      "category": "coding",
+      "install_path": "coding/documentation-and-adrs",
+      "path": "skills/coding/documentation-and-adrs",
+      "depth": 2,
+      "description": "Records decisions and documentation. Use when making architectural decisions, changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase."
+    },
+    {
+      "name": "doubt-driven-development",
+      "category": "coding",
+      "install_path": "coding/doubt-driven-development",
+      "path": "skills/coding/doubt-driven-development",
+      "depth": 2,
+      "description": "Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matters more than speed, when working in unfamiliar code, when stakes are high (production, security-sensitive logic, irreversible operations), or any time a confident output would be cheaper to verify now than to debug later."
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "category": "coding",
+      "install_path": "coding/frontend-ui-engineering",
+      "path": "skills/coding/frontend-ui-engineering",
+      "depth": 2,
+      "description": "Builds production-quality UIs. Use when building or modifying user-facing interfaces. Use when creating components, implementing layouts, managing state, or when the output needs to look and feel production-quality rather than AI-generated."
+    },
+    {
+      "name": "git-workflow-and-versioning",
+      "category": "coding",
+      "install_path": "coding/git-workflow-and-versioning",
+      "path": "skills/coding/git-workflow-and-versioning",
+      "depth": 2,
+      "description": "Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, or when you need to organize work across multiple parallel streams."
+    },
+    {
+      "name": "idea-refine",
+      "category": "coding",
+      "install_path": "coding/idea-refine",
+      "path": "skills/coding/idea-refine",
+      "depth": 2,
+      "description": "Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one. Triggers on \"ideate\", \"refine this idea\", or \"stress-test my plan\"."
+    },
+    {
+      "name": "incremental-implementation",
+      "category": "coding",
+      "install_path": "coding/incremental-implementation",
+      "path": "skills/coding/incremental-implementation",
+      "depth": 2,
+      "description": "Delivers changes incrementally. Use when implementing any feature or change that touches more than one file. Use when you're about to write a large amount of code at once, or when a task feels too big to land in one step."
+    },
+    {
+      "name": "interview-me",
+      "category": "coding",
+      "install_path": "coding/interview-me",
+      "path": "skills/coding/interview-me",
+      "depth": 2,
+      "description": "Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists."
+    },
+    {
+      "name": "karpathy-guidelines",
+      "category": "coding",
+      "install_path": "coding/karpathy-guidelines",
+      "path": "skills/coding/karpathy-guidelines",
+      "depth": 2,
+      "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria."
+    },
+    {
+      "name": "performance-optimization",
+      "category": "coding",
+      "install_path": "coding/performance-optimization",
+      "path": "skills/coding/performance-optimization",
+      "depth": 2,
+      "description": "Optimizes application performance. Use when performance requirements exist, when you suspect performance regressions, or when Core Web Vitals or load times need improvement. Use when profiling reveals bottlenecks that need fixing."
+    },
+    {
+      "name": "planning-and-task-breakdown",
+      "category": "coding",
+      "install_path": "coding/planning-and-task-breakdown",
+      "path": "skills/coding/planning-and-task-breakdown",
+      "depth": 2,
+      "description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible."
+    },
+    {
+      "name": "security-and-hardening",
+      "category": "coding",
+      "install_path": "coding/security-and-hardening",
+      "path": "skills/coding/security-and-hardening",
+      "depth": 2,
+      "description": "Hardens code against vulnerabilities. Use when handling user input, authentication, data storage, or external integrations. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services."
+    },
+    {
+      "name": "shipping-and-launch",
+      "category": "coding",
+      "install_path": "coding/shipping-and-launch",
+      "path": "skills/coding/shipping-and-launch",
+      "depth": 2,
+      "description": "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy."
+    },
+    {
+      "name": "source-driven-development",
+      "category": "coding",
+      "install_path": "coding/source-driven-development",
+      "path": "skills/coding/source-driven-development",
+      "depth": 2,
+      "description": "Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library where correctness matters."
+    },
+    {
+      "name": "spec-driven-development",
+      "category": "coding",
+      "install_path": "coding/spec-driven-development",
+      "path": "skills/coding/spec-driven-development",
+      "depth": 2,
+      "description": "Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when requirements are unclear, ambiguous, or only exist as a vague idea."
+    },
+    {
+      "name": "test-driven-development",
+      "category": "coding",
+      "install_path": "coding/test-driven-development",
+      "path": "skills/coding/test-driven-development",
+      "depth": 2,
+      "description": "Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about to modify existing functionality."
+    },
+    {
+      "name": "using-agent-skills",
+      "category": "coding",
+      "install_path": "coding/using-agent-skills",
+      "path": "skills/coding/using-agent-skills",
+      "depth": 2,
+      "description": "Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked."
+    },
+    {
       "name": "acquire-codebase-knowledge",
       "category": "context-engineering",
       "install_path": "context-engineering/acquire-codebase-knowledge",
@@ -1708,150 +1908,6 @@
       "path": "skills/data-and-backend/dbt-expert",
       "depth": 2,
       "description": "Use when working in a dbt project or doing any dbt-related work — writing models, schema.yml, sources.yml, tests, macros, snapshots, seeds, or exposures. Also use when designing SQL that will land in a dbt project, generating dbt YAML programmatically, or asking about dbt best practices, incremental strategies, or project structure for Snowflake. If dbt is involved in any way — use this skill."
-    },
-    {
-      "name": "developing-with-streamlit",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit",
-      "path": "skills/data-and-backend/developing-with-streamlit",
-      "depth": 2,
-      "description": "**[REQUIRED]** Use for ALL Streamlit tasks: creating, editing, debugging, beautifying, styling, theming, optimizing, or deploying Streamlit applications. Also required for building custom components (inline or packaged), using st.components.v2, or any HTML/JS/CSS component work. Triggers: streamlit, st., dashboard, app.py, beautify, style, CSS, color, background, theme, button, widget styling, custom component, st.components, packaged component, pyproject.toml, asset_dir, CCv2, HTML/JS component."
-    },
-    {
-      "name": "building-streamlit-chat-ui",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-chat-ui",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-chat-ui",
-      "depth": 4,
-      "description": "Building chat interfaces in Streamlit. Use when creating conversational UIs, chatbots, or AI assistants. Covers st.chat_message, st.chat_input, message history, and streaming responses."
-    },
-    {
-      "name": "building-streamlit-custom-components-v2",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-custom-components-v2",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-custom-components-v2",
-      "depth": 4,
-      "description": "Builds bidirectional Streamlit Custom Components v2 (CCv2) using `st.components.v2.component`. Use when authoring inline HTML/CSS/JS components or packaged components (manifest `asset_dir`, js/css globs), wiring state/trigger callbacks, theming via `--st-*` CSS variables, or bundling with Vite / `component-template` v2."
-    },
-    {
-      "name": "building-streamlit-dashboards",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-dashboards",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-dashboards",
-      "depth": 4,
-      "description": "Building dashboards in Streamlit. Use when creating KPI displays, metric cards, or data-heavy layouts. Covers borders, cards, responsive layouts, and dashboard composition."
-    },
-    {
-      "name": "building-streamlit-multipage-apps",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/building-streamlit-multipage-apps",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/building-streamlit-multipage-apps",
-      "depth": 4,
-      "description": "Building multi-page Streamlit apps. Use when creating apps with multiple pages, setting up navigation, or managing state across pages."
-    },
-    {
-      "name": "choosing-streamlit-selection-widgets",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
-      "depth": 4,
-      "description": "Choosing the right Streamlit selection widget. Use when deciding between radio buttons, selectbox, segmented control, pills, or other option selection widgets. Helps pick the right widget for the number of options and selection type."
-    },
-    {
-      "name": "connecting-streamlit-to-snowflake",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
-      "depth": 4,
-      "description": "Connecting Streamlit apps to Snowflake. Use when setting up database connections, managing secrets, or querying Snowflake from a Streamlit app."
-    },
-    {
-      "name": "creating-streamlit-themes",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/creating-streamlit-themes",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/creating-streamlit-themes",
-      "depth": 4,
-      "description": "Creating and customizing Streamlit themes. Use when changing app colors, fonts, or appearance, or aligning apps to brand guidelines. Covers config.toml configuration, design principles, and CSS avoidance."
-    },
-    {
-      "name": "displaying-streamlit-data",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/displaying-streamlit-data",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/displaying-streamlit-data",
-      "depth": 4,
-      "description": "Displaying charts, dataframes, and metrics in Streamlit. Use when visualizing data, configuring dataframe columns, or adding sparklines to metrics. Covers native charts, Altair, and column configuration."
-    },
-    {
-      "name": "improving-streamlit-design",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/improving-streamlit-design",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/improving-streamlit-design",
-      "depth": 4,
-      "description": "Improving visual design in Streamlit apps. Use when polishing apps with icons, badges, spacing, or text styling. Covers Material icons, badge syntax, divider alternatives, and text casing conventions."
-    },
-    {
-      "name": "optimizing-streamlit-performance",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/optimizing-streamlit-performance",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/optimizing-streamlit-performance",
-      "depth": 4,
-      "description": "Optimizing Streamlit app performance. Use when apps are slow, rerunning too often, or loading heavy content. Covers caching, fragments, and static vs dynamic widget choices."
-    },
-    {
-      "name": "organizing-streamlit-code",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/organizing-streamlit-code",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/organizing-streamlit-code",
-      "depth": 4,
-      "description": "Organizing Streamlit code for maintainability. Use when structuring apps with separate modules and utilities. Covers separation of concerns, keeping UI code clean, and import patterns."
-    },
-    {
-      "name": "setting-up-streamlit-environment",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/setting-up-streamlit-environment",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/setting-up-streamlit-environment",
-      "depth": 4,
-      "description": "Setting up Python environments for Streamlit apps. Use when creating a new project or managing dependencies. Covers uv for dependency management and running apps."
-    },
-    {
-      "name": "using-streamlit-cli",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-cli",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-cli",
-      "depth": 4,
-      "description": "Documents Streamlit CLI commands for running apps, managing configuration, and diagnostics. Use when starting Streamlit apps, configuring runtime options, or troubleshooting CLI issues."
-    },
-    {
-      "name": "using-streamlit-custom-components",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-custom-components",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-custom-components",
-      "depth": 4,
-      "description": "Using third-party Streamlit custom components. Use when extending Streamlit with community packages. Covers installation, popular custom components, and when to use them."
-    },
-    {
-      "name": "using-streamlit-layouts",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-layouts",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-layouts",
-      "depth": 4,
-      "description": "Structuring Streamlit app layouts. Use when placing content in sidebars, columns, containers, or dialogs. Covers sidebar usage, column limits, horizontal containers, dialogs, and bordered cards."
-    },
-    {
-      "name": "using-streamlit-markdown",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-markdown",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-markdown",
-      "depth": 4,
-      "description": "Covers all Markdown features in Streamlit including GitHub-flavored syntax plus Streamlit extensions like colored text, badges, Material icons, and LaTeX. Use when formatting text, labels, tooltips, or any text-rendering element."
-    },
-    {
-      "name": "using-streamlit-session-state",
-      "category": "data-and-backend",
-      "install_path": "data-and-backend/developing-with-streamlit/skills/using-streamlit-session-state",
-      "path": "skills/data-and-backend/developing-with-streamlit/skills/using-streamlit-session-state",
-      "depth": 4,
-      "description": "Using st.session_state to manage state across Streamlit reruns. Use when persisting data, handling widget state, implementing callbacks, or debugging state issues. Covers initialization patterns, widget-state association, and common gotchas."
     },
     {
       "name": "ef-core",
@@ -4190,46 +4246,6 @@
       "description": "Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency"
     },
     {
-      "name": "openrouter-agent-migration",
-      "category": "llm-integrations",
-      "install_path": "llm-integrations/openrouter-agent-migration",
-      "path": "skills/llm-integrations/openrouter-agent-migration",
-      "depth": 2,
-      "description": "Migration guide from @openrouter/sdk to @openrouter/agent for callModel, tool(), stop conditions, and agent features. This skill should be used when code imports callModel, tool(), or stop conditions from @openrouter/sdk and needs to migrate to @openrouter/agent."
-    },
-    {
-      "name": "openrouter-images",
-      "category": "llm-integrations",
-      "install_path": "llm-integrations/openrouter-images",
-      "path": "skills/llm-integrations/openrouter-images",
-      "depth": 2,
-      "description": "Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, transform, or alter an existing image with a text prompt."
-    },
-    {
-      "name": "openrouter-models",
-      "category": "llm-integrations",
-      "install_path": "llm-integrations/openrouter-models",
-      "path": "skills/llm-integrations/openrouter-models",
-      "depth": 2,
-      "description": "Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance. Use when the user asks about available OpenRouter models, model pricing, model context lengths, model capabilities, provider latency or uptime, throughput limits, supported parameters, wants to search/filter/compare models, or find the fastest provider for a model."
-    },
-    {
-      "name": "openrouter-oauth",
-      "category": "llm-integrations",
-      "install_path": "llm-integrations/openrouter-oauth",
-      "path": "skills/llm-integrations/openrouter-oauth",
-      "depth": 2,
-      "description": "Implement \"Sign In with OpenRouter\" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required."
-    },
-    {
-      "name": "openrouter-typescript-sdk",
-      "category": "llm-integrations",
-      "install_path": "llm-integrations/openrouter-typescript-sdk",
-      "path": "skills/llm-integrations/openrouter-typescript-sdk",
-      "depth": 2,
-      "description": "Complete reference for integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern"
-    },
-    {
       "name": "phoenix-cli",
       "category": "llm-integrations",
       "install_path": "llm-integrations/phoenix-cli",
@@ -4638,6 +4654,46 @@
       "description": "X/Twitter growth engine for building audience, crafting viral content, and analyzing engagement. Use when the user wants to grow on X/Twitter, write tweets or threads, analyze their X profile, research competitors on X, plan a posting strategy, or optimize engagement. Complements social-content (generic multi-platform) with X-specific depth: algorithm mechanics, thread engineering, reply strategy, profile optimization, and competitive intelligence via web search."
     },
     {
+      "name": "openrouter-agent-migration",
+      "category": "openrouter",
+      "install_path": "openrouter/openrouter-agent-migration",
+      "path": "skills/openrouter/openrouter-agent-migration",
+      "depth": 2,
+      "description": "Migration guide from @openrouter/sdk to @openrouter/agent for callModel, tool(), stop conditions, and agent features. This skill should be used when code imports callModel, tool(), or stop conditions from @openrouter/sdk and needs to migrate to @openrouter/agent."
+    },
+    {
+      "name": "openrouter-images",
+      "category": "openrouter",
+      "install_path": "openrouter/openrouter-images",
+      "path": "skills/openrouter/openrouter-images",
+      "depth": 2,
+      "description": "Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, transform, or alter an existing image with a text prompt."
+    },
+    {
+      "name": "openrouter-models",
+      "category": "openrouter",
+      "install_path": "openrouter/openrouter-models",
+      "path": "skills/openrouter/openrouter-models",
+      "depth": 2,
+      "description": "Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance. Use when the user asks about available OpenRouter models, model pricing, model context lengths, model capabilities, provider latency or uptime, throughput limits, supported parameters, wants to search/filter/compare models, or find the fastest provider for a model."
+    },
+    {
+      "name": "openrouter-oauth",
+      "category": "openrouter",
+      "install_path": "openrouter/openrouter-oauth",
+      "path": "skills/openrouter/openrouter-oauth",
+      "depth": 2,
+      "description": "Implement \"Sign In with OpenRouter\" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required."
+    },
+    {
+      "name": "openrouter-typescript-sdk",
+      "category": "openrouter",
+      "install_path": "openrouter/openrouter-typescript-sdk",
+      "path": "skills/openrouter/openrouter-typescript-sdk",
+      "depth": 2,
+      "description": "Complete reference for integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern"
+    },
+    {
       "name": "agile-product-owner",
       "category": "product-management",
       "install_path": "product-management/agile-product-owner",
@@ -4870,6 +4926,14 @@
       "description": "UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user research, persona creation, journey mapping, and design validation."
     },
     {
+      "name": "deep-research",
+      "category": "research-and-development",
+      "install_path": "research-and-development/deep-research",
+      "path": "skills/research-and-development/deep-research",
+      "depth": 2,
+      "description": "Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 7 modes: full research, quick brief, paper review, lit-review, fact-check, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, source verification, cross-source synthesis, risk of bias assessment, meta-analysis, APA 7.0 report compilation, editorial review, devil's advocate challenges, ethics review, and post-research literature monitoring. Triggers on: research, deep research, literature review, systematic review, meta-analysis, PRISMA, evidence synthesis, fact-check, guide my research, help me think through, 研究, 深度研究, 文獻回顧, 文獻探討, 系統性回顧, 後設分析, 事實查核, 引導我的研究, 幫我釐清, 幫我想想, 我不確定要研究什麼, 研究方向, 研究主題."
+    },
+    {
       "name": "acreadiness-assess",
       "category": "skills-management",
       "install_path": "skills-management/acreadiness-assess",
@@ -5012,6 +5076,150 @@
       "path": "skills/skills-management/writing-skills",
       "depth": 2,
       "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
+    },
+    {
+      "name": "developing-with-streamlit",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit",
+      "path": "skills/streamlit/developing-with-streamlit",
+      "depth": 2,
+      "description": "**[REQUIRED]** Use for ALL Streamlit tasks: creating, editing, debugging, beautifying, styling, theming, optimizing, or deploying Streamlit applications. Also required for building custom components (inline or packaged), using st.components.v2, or any HTML/JS/CSS component work. Triggers: streamlit, st., dashboard, app.py, beautify, style, CSS, color, background, theme, button, widget styling, custom component, st.components, packaged component, pyproject.toml, asset_dir, CCv2, HTML/JS component."
+    },
+    {
+      "name": "building-streamlit-chat-ui",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/building-streamlit-chat-ui",
+      "path": "skills/streamlit/developing-with-streamlit/skills/building-streamlit-chat-ui",
+      "depth": 4,
+      "description": "Building chat interfaces in Streamlit. Use when creating conversational UIs, chatbots, or AI assistants. Covers st.chat_message, st.chat_input, message history, and streaming responses."
+    },
+    {
+      "name": "building-streamlit-custom-components-v2",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/building-streamlit-custom-components-v2",
+      "path": "skills/streamlit/developing-with-streamlit/skills/building-streamlit-custom-components-v2",
+      "depth": 4,
+      "description": "Builds bidirectional Streamlit Custom Components v2 (CCv2) using `st.components.v2.component`. Use when authoring inline HTML/CSS/JS components or packaged components (manifest `asset_dir`, js/css globs), wiring state/trigger callbacks, theming via `--st-*` CSS variables, or bundling with Vite / `component-template` v2."
+    },
+    {
+      "name": "building-streamlit-dashboards",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/building-streamlit-dashboards",
+      "path": "skills/streamlit/developing-with-streamlit/skills/building-streamlit-dashboards",
+      "depth": 4,
+      "description": "Building dashboards in Streamlit. Use when creating KPI displays, metric cards, or data-heavy layouts. Covers borders, cards, responsive layouts, and dashboard composition."
+    },
+    {
+      "name": "building-streamlit-multipage-apps",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/building-streamlit-multipage-apps",
+      "path": "skills/streamlit/developing-with-streamlit/skills/building-streamlit-multipage-apps",
+      "depth": 4,
+      "description": "Building multi-page Streamlit apps. Use when creating apps with multiple pages, setting up navigation, or managing state across pages."
+    },
+    {
+      "name": "choosing-streamlit-selection-widgets",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
+      "path": "skills/streamlit/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
+      "depth": 4,
+      "description": "Choosing the right Streamlit selection widget. Use when deciding between radio buttons, selectbox, segmented control, pills, or other option selection widgets. Helps pick the right widget for the number of options and selection type."
+    },
+    {
+      "name": "connecting-streamlit-to-snowflake",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
+      "path": "skills/streamlit/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
+      "depth": 4,
+      "description": "Connecting Streamlit apps to Snowflake. Use when setting up database connections, managing secrets, or querying Snowflake from a Streamlit app."
+    },
+    {
+      "name": "creating-streamlit-themes",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/creating-streamlit-themes",
+      "path": "skills/streamlit/developing-with-streamlit/skills/creating-streamlit-themes",
+      "depth": 4,
+      "description": "Creating and customizing Streamlit themes. Use when changing app colors, fonts, or appearance, or aligning apps to brand guidelines. Covers config.toml configuration, design principles, and CSS avoidance."
+    },
+    {
+      "name": "displaying-streamlit-data",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/displaying-streamlit-data",
+      "path": "skills/streamlit/developing-with-streamlit/skills/displaying-streamlit-data",
+      "depth": 4,
+      "description": "Displaying charts, dataframes, and metrics in Streamlit. Use when visualizing data, configuring dataframe columns, or adding sparklines to metrics. Covers native charts, Altair, and column configuration."
+    },
+    {
+      "name": "improving-streamlit-design",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/improving-streamlit-design",
+      "path": "skills/streamlit/developing-with-streamlit/skills/improving-streamlit-design",
+      "depth": 4,
+      "description": "Improving visual design in Streamlit apps. Use when polishing apps with icons, badges, spacing, or text styling. Covers Material icons, badge syntax, divider alternatives, and text casing conventions."
+    },
+    {
+      "name": "optimizing-streamlit-performance",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/optimizing-streamlit-performance",
+      "path": "skills/streamlit/developing-with-streamlit/skills/optimizing-streamlit-performance",
+      "depth": 4,
+      "description": "Optimizing Streamlit app performance. Use when apps are slow, rerunning too often, or loading heavy content. Covers caching, fragments, and static vs dynamic widget choices."
+    },
+    {
+      "name": "organizing-streamlit-code",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/organizing-streamlit-code",
+      "path": "skills/streamlit/developing-with-streamlit/skills/organizing-streamlit-code",
+      "depth": 4,
+      "description": "Organizing Streamlit code for maintainability. Use when structuring apps with separate modules and utilities. Covers separation of concerns, keeping UI code clean, and import patterns."
+    },
+    {
+      "name": "setting-up-streamlit-environment",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/setting-up-streamlit-environment",
+      "path": "skills/streamlit/developing-with-streamlit/skills/setting-up-streamlit-environment",
+      "depth": 4,
+      "description": "Setting up Python environments for Streamlit apps. Use when creating a new project or managing dependencies. Covers uv for dependency management and running apps."
+    },
+    {
+      "name": "using-streamlit-cli",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/using-streamlit-cli",
+      "path": "skills/streamlit/developing-with-streamlit/skills/using-streamlit-cli",
+      "depth": 4,
+      "description": "Documents Streamlit CLI commands for running apps, managing configuration, and diagnostics. Use when starting Streamlit apps, configuring runtime options, or troubleshooting CLI issues."
+    },
+    {
+      "name": "using-streamlit-custom-components",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/using-streamlit-custom-components",
+      "path": "skills/streamlit/developing-with-streamlit/skills/using-streamlit-custom-components",
+      "depth": 4,
+      "description": "Using third-party Streamlit custom components. Use when extending Streamlit with community packages. Covers installation, popular custom components, and when to use them."
+    },
+    {
+      "name": "using-streamlit-layouts",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/using-streamlit-layouts",
+      "path": "skills/streamlit/developing-with-streamlit/skills/using-streamlit-layouts",
+      "depth": 4,
+      "description": "Structuring Streamlit app layouts. Use when placing content in sidebars, columns, containers, or dialogs. Covers sidebar usage, column limits, horizontal containers, dialogs, and bordered cards."
+    },
+    {
+      "name": "using-streamlit-markdown",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/using-streamlit-markdown",
+      "path": "skills/streamlit/developing-with-streamlit/skills/using-streamlit-markdown",
+      "depth": 4,
+      "description": "Covers all Markdown features in Streamlit including GitHub-flavored syntax plus Streamlit extensions like colored text, badges, Material icons, and LaTeX. Use when formatting text, labels, tooltips, or any text-rendering element."
+    },
+    {
+      "name": "using-streamlit-session-state",
+      "category": "streamlit",
+      "install_path": "streamlit/developing-with-streamlit/skills/using-streamlit-session-state",
+      "path": "skills/streamlit/developing-with-streamlit/skills/using-streamlit-session-state",
+      "depth": 4,
+      "description": "Using st.session_state to manage state across Streamlit reruns. Use when persisting data, handling widget state, implementing callbacks, or debugging state issues. Covers initialization patterns, widget-state association, and common gotchas."
     }
   ]
 }
