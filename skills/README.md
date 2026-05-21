@@ -1,31 +1,86 @@
 # Skills Index
 
-A curated collection of **280+ Agent Skills** for Claude Code and Cursor, organized into **16 thematic categories**.
+A curated collection of **650+ Agent Skills** for Claude Code and Cursor, organized into **29 focused categories** (10–28 skills each).
 
 Each skill lives in its own folder with a `SKILL.md` file (YAML frontmatter for `name` + `description`, then the body of instructions). The agent auto-discovers and loads them when the description matches your request — both Claude Code and Cursor walk the directory tree recursively, so the category subfolders are transparent to discovery; they exist purely to keep things browsable on GitHub.
 
-> **Sources**: Original *Superpowers* collection + [awesome-copilot](https://github.com/awesome-copilot/copilot-skills) skills library (341 skills ingested May 2026).
+> **Sources**: Original *Superpowers* collection + [awesome-copilot](https://github.com/awesome-copilot/copilot-skills) skills library + GSAP official skills.
 
 ## Categories
 
+### Agent & AI systems
+
 | # | Folder | Skills | Theme |
-| --- | --- | --- | --- |
-| 1 | [`skill-authoring/`](./skill-authoring/) | 2 | Building, editing, and benchmarking skills themselves |
-| 2 | [`coding/`](./coding/) | 24 | The disciplined coding loop: spec, planning, TDD, review, debugging, security, CI/CD, launch |
-| 3 | [`engineering-craft/`](./engineering-craft/) | 35 | Planning, TDD, code review, debugging, verification, senior IC roles, evaluation |
-| 4 | [`ai-agents/`](./ai-agents/) | 18 | Agent architecture, scaffolds, prompt engineering, MCP, BMad Method |
-| 5 | [`context-engineering/`](./context-engineering/) | 6 | Context windows, compression, memory, persistence |
-| 6 | [`openrouter/`](./openrouter/) | 5 | OpenRouter SDK, models, OAuth, image generation |
-| 7 | [`design-and-ui/`](./design-and-ui/) | 10 | Frontend, design systems, brand, themes, banners |
-| 8 | [`docs-and-presentations/`](./docs-and-presentations/) | 7 | READMEs, technical docs, slides, diagrams |
-| 9 | [`data-and-backend/`](./data-and-backend/) | 4 | Python/FastAPI, Snowflake, dbt, ETL |
-| 10 | [`streamlit/`](./streamlit/) | 18 | Streamlit apps, dashboards, custom components, theming (1 hub + 17 sub-skills) |
-| 11 | [`research-and-development/`](./research-and-development/) | 1 | Deep research, systematic reviews, multi-agent research pipelines |
-| 12 | [`business-and-strategy/`](./business-and-strategy/) | 23 | C-suite advisors, board meetings, company OS, scenario modeling |
-| 13 | [`marketing-and-growth/`](./marketing-and-growth/) | 22 | Strategy, content, SEO, paid ads, CRO, copywriting |
-| 14 | [`devops-and-infrastructure/`](./devops-and-infrastructure/) | 14 | CI/CD, Docker, Helm, Terraform, AWS, security, observability |
-| 15 | [`product-management/`](./product-management/) | 10 | PM toolkit, discovery, experiments, agile delivery, UX research |
-| 16 | [`caveman/`](./caveman/) | 6 | Token-efficient terse mode (~75% fewer output tokens) + skill discovery |
+| --- | --- | ---: | --- |
+| 1 | [`agent-design/`](./agent-design/) | 21 | Agent architecture, patterns, BMad, browser automation, RAG, governance |
+| 2 | [`agent-eval/`](./agent-eval/) | 9 | Memory, evaluation, autoresearch, local AI stack |
+| 3 | [`mcp/`](./mcp/) | 13 | MCP server builders (10 languages) + tooling + security |
+| 4 | [`microsoft-agents/`](./microsoft-agents/) | 11 | Microsoft Copilot agents, Foundry, declarative agents |
+| 5 | [`prompting/`](./prompting/) | 15 | Prompt engineering + creative thinking & ideation |
+
+### Software engineering
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 6 | [`coding/`](./coding/) | 24 | The disciplined coding loop: spec, TDD, debugging, security, CI/CD |
+| 7 | [`engineering-craft/`](./engineering-craft/) | 37 | Senior IC roles, planning, mentoring, cross-cutting practices |
+| 8 | [`dotnet/`](./dotnet/) | 19 | C#, .NET, WinUI, MVVM, NuGet, VS Code extensions |
+| 9 | [`java-kotlin/`](./java-kotlin/) | 11 | Java, Kotlin, Spring Boot |
+| 10 | [`react-frontend/`](./react-frontend/) | 17 | React 18/19, Vue, Next.js, Flutter, React Native |
+| 11 | [`testing/`](./testing/) | 12 | Playwright, pytest, systematic debugging, QA |
+| 12 | [`code-quality/`](./code-quality/) | 15 | Code review, refactoring, security audit, CodeQL |
+| 13 | [`dev-workflow/`](./dev-workflow/) | 22 | Git, GitHub CLI, automation, CLI tooling |
+
+### Infrastructure & cloud
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 14 | [`devops/`](./devops/) | 28 | CI/CD, Docker, Helm, Terraform, Linux, security operations |
+| 15 | [`cloud-azure/`](./cloud-azure/) | 18 | Azure services, AWS, IoT, cloud design patterns |
+
+### Data & backend
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 16 | [`databases/`](./databases/) | 22 | SQL, PostgreSQL, Oracle migration, Snowflake, BigQuery, dbt |
+| 17 | [`microsoft-data/`](./microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse |
+| 18 | [`api-backend/`](./api-backend/) | 11 | TypeSpec, OpenAPI, FastAPI, Stripe, GDPR |
+
+### LLM & AI tooling
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 19 | [`llm-tooling/`](./llm-tooling/) | 26 | Arize, Phoenix, Qdrant, OpenRouter, model recommendation |
+| 20 | [`context-engineering/`](./context-engineering/) | 15 | Context windows, compression, memory, deep research |
+
+### Design & UI
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 21 | [`design-and-ui/`](./design-and-ui/) | 31 | Frontend design, UI systems, brand, GSAP animation |
+
+### Docs & communications
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 22 | [`documentation/`](./documentation/) | 26 | READMEs, ADRs, API docs, llms.txt, markdown tools |
+| 23 | [`diagrams-slides/`](./diagrams-slides/) | 12 | Slides, draw.io, PlantUML, presentations, professional comms |
+
+### Business & product
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 24 | [`business-strategy/`](./business-strategy/) | 25 | C-suite advisors, board, company OS, M&A |
+| 25 | [`go-to-market/`](./go-to-market/) | 11 | GTM strategy, PLG, enterprise sales, positioning |
+| 26 | [`marketing-and-growth/`](./marketing-and-growth/) | 25 | Content, SEO, paid ads, CRO, copywriting |
+| 27 | [`product-management/`](./product-management/) | 29 | PM toolkit, discovery, specifications, agile delivery |
+
+### Platform skills
+
+| # | Folder | Skills | Theme |
+| --- | --- | ---: | --- |
+| 28 | [`streamlit/`](./streamlit/) | 1 | Streamlit apps, dashboards, custom components, theming |
+| 29 | [`skills-management/`](./skills-management/) | 24 | Skill authoring, Copilot config, caveman terse mode |
 
 Each category folder has its own `README.md` with a full per-skill table.
 

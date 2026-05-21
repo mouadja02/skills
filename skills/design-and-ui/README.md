@@ -29,6 +29,21 @@ Skills for **frontend design, UI styling, brand identity, design systems, and cr
 | [`banner-design`](./banner-design/SKILL.md) | Banners for social, ads, web heroes, and print. 13+ styles (minimalist, gradient, glassmorphism, 3D, neon, duotone, …) across Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, print. |
 | [`anass-pro-style`](./anass-pro-style/SKILL.md) | Build single-file, narrative-driven portfolio/pitch sites in the style of anass.pro — pixel-art game hero, custom cursor, typewriter text, Web Audio SFX, scroll-revealed scenes, dark purple aesthetic. |
 
+### GSAP Animation
+
+Official GSAP (GreenSock Animation Platform) skills — teaches agents correct GSAP usage. All plugins are free, including SplitText, MorphSVG, Flip, and other formerly Club GSAP plugins.
+
+| Skill | What it does |
+| --- | --- |
+| [`gsap-core`](./gsap-core/SKILL.md) | Core API: `gsap.to()` / `from()` / `fromTo()`, easing, duration, stagger, `gsap.matchMedia()`, reduced-motion. |
+| [`gsap-timeline`](./gsap-timeline/SKILL.md) | Timelines: sequencing, position parameter, nesting, labels, playback control. |
+| [`gsap-scrolltrigger`](./gsap-scrolltrigger/SKILL.md) | ScrollTrigger: scroll-linked animations, pinning, scrub, triggers, refresh & cleanup. |
+| [`gsap-plugins`](./gsap-plugins/SKILL.md) | Plugins: ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, ScrambleText, SVG & physics, CustomEase, EasePack, GSDevTools. |
+| [`gsap-utils`](./gsap-utils/SKILL.md) | `gsap.utils` helpers: clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. |
+| [`gsap-react`](./gsap-react/SKILL.md) | React: `useGSAP` hook, refs, `gsap.context()`, cleanup, SSR. |
+| [`gsap-performance`](./gsap-performance/SKILL.md) | Performance: transforms over layout props, will-change, batching, ScrollTrigger tips, 60fps. |
+| [`gsap-frameworks`](./gsap-frameworks/SKILL.md) | Vue, Svelte & other frameworks: lifecycle, scoping selectors, cleanup on unmount. |
+
 ### UI tools & creative software
 
 | Skill | What it does |
@@ -55,6 +70,8 @@ Skills for **frontend design, UI styling, brand identity, design systems, and cr
 - "Set up design tokens"
 - "Apply a theme to my artifact"
 - "Script Adobe Illustrator" / "model in FreeCAD" / "design in Penpot"
+- "Add scroll animations with GSAP" / "ScrollTrigger / pinning / scrub"
+- "Animate in React / Vue / Svelte with GSAP"
 - "Add scroll animations" / "write a shader"
 
 ## Related categories

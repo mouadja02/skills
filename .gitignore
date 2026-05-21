@@ -26,4 +26,5 @@ desktop.ini
 *.swo
 
 # ....
-readme_awesome_cursorrules.md
+scripts/reorganize.ps1
+scripts/create-readmes.ps1
