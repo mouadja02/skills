@@ -71,6 +71,18 @@ Use this category when the task is *writing or improving code* rather than build
 | --- | --- |
 | [`deprecation-and-migration`](./deprecation-and-migration/SKILL.md) | Manages deprecation and migration. Use when removing old systems, APIs, or features, or migrating users from one implementation to another. |
 
+### iOS/macOS — Swift & Instruments _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `swift-concurrency-expert` | Swift concurrency review/fix — compiler errors, Sendable, actor isolation, Swift 6.2+. |
+| `swiftui-liquid-glass` | SwiftUI Liquid Glass (iOS 26+) — implement, adopt, refactor, review. |
+| `swiftui-performance-audit` | SwiftUI performance audit — render, scroll, CPU/memory, view updates, Instruments. |
+| `swiftui-view-refactor` | SwiftUI view refactor — layout ordering, DI, Observation, MV patterns. |
+| `hopper-debugger` | Hopper Disassembler debugging — macOS/iOS binaries, ObjC/Swift symbols, LLDB. |
+| `instruments-profiling` | Instruments/xctrace profiling — macOS/iOS traces, Time Profiler, exports. |
+| `native-app-performance` | Native app performance — xctrace CLI, hotspot analysis, no Instruments UI. |
+
 ## Suggested workflow
 
 ```

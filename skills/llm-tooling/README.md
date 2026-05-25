@@ -55,6 +55,19 @@ Skills for **LLM observability, tracing, evaluation (Arize/Phoenix), vector sear
 | --- | --- |
 | `model-recommendation` | Recommend the best LLM for a given use case. |
 
+### Image generation _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `nano-banana-pro` | Gemini image gen/edit — text/image input, 512-4K workflows, draft→iterate→final. |
+| `openai-image-gen` | OpenAI Images API — batches, prompt sampler, gallery via gpt-image-1. |
+
+### Second-model review _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `oracle` | Oracle — bundle prompts/files for another AI model review, debug, refactor. |
+
 ## When to use this category
 
 - "Instrument my LLM app with tracing"
@@ -62,3 +75,5 @@ Skills for **LLM observability, tracing, evaluation (Arize/Phoenix), vector sear
 - "Set up Qdrant vector search" / "optimize search quality"
 - "Use OpenRouter for model routing"
 - "Run A/B experiments on prompts"
+- "Generate images with Gemini / OpenAI"
+- "Send this codebase to another model for review"

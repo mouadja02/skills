@@ -76,3 +76,9 @@ When unsure which skill, invoke `marketing-ops` as the router.
 - [`business-and-strategy/cmo-advisor`](../business-and-strategy/cmo-advisor/) — strategic-level marketing advice (vs tactical execution here).
 - [`design-and-ui/banner-design`](../design-and-ui/banner-design/) and [`brand`](../design-and-ui/brand/) — visual side of marketing assets.
 - [`product-management/experiment-designer`](../product-management/experiment-designer/) — A/B and multivariate experiment design with statistical rigor.
+
+### Social & release copy _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `release-tweets` | Release tweets/social copy — draft from changelog, tags, npm/appcast, X/Twitter announcements. |

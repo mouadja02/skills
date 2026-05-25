@@ -59,3 +59,9 @@ If you want to write a new skill, optimize an existing one, or configure GitHub 
 - [`engineering-craft/`](../engineering-craft/) — once your skill exists, the craft skills cover TDD, code review, and verification for the implementation inside it.
 - [`ai-agents/`](../ai-agents/) — agent-focused skills that complement Copilot tooling.
 - [`docs-and-presentations/readme-writer/`](../docs-and-presentations/readme-writer/) — for documenting the project that wraps the skill.
+
+### Skill auditing _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `skill-cleaner` | Audit skills — loaded roots, duplicate skills, unused skills, prompt-budget costs, compact descriptions. |

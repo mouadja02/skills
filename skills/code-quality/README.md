@@ -40,3 +40,9 @@ Skills for **code review, refactoring, security audits, and quality assurance**.
 - "Security review" / "check for OWASP issues"
 - "Run CodeQL" / "static analysis"
 - "Reduce method complexity"
+
+### GitHub code review _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `github-deep-review` | Deep code/bug review — high-confidence, evidence-first, code-aware. Finds root cause, best fix, and refactor opportunity. |

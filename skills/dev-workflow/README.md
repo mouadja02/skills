@@ -41,9 +41,31 @@ Skills for **developer workflow, Git, GitHub, CLI tooling, and automation**.
 | `msstore-cli` | Microsoft Store CLI — package submission and management. |
 | `add-educational-comments` | Add educational inline comments to explain complex code. |
 
+### GitHub workflow extras _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `github-author-context` | GitHub contributor context — identity, activity, trust, company/team signal. |
+| `github-cache-hygiene` | GitHub quota/cache hygiene — answer reads from cache first, spend live API calls for freshness/writes. |
+| `github-project-triage` | GitHub issue/PR triage — summarize, assess risk/testability, inspect CI/diffs/trust. |
+| `github-deep-review` | Deep code/bug review — high-confidence, evidence-first, code-aware. |
+
+### CLI design & tooling _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `create-cli` | CLI UX/spec design — args, flags, help, output, errors, config, dry-run. |
+| `browser-use` | Chrome DevTools MCP automation — existing Chrome tabs, profile-aware. |
+| `codex-debugging` | Codex CLI debugging — core/tui/exec/cli/app-server/config investigation. |
+| `npm` | npm registry ops — login, whoami, package availability, publish. |
+| `xurl` | xurl X/Twitter API CLI — install, auth, app choice, shortcuts, raw endpoints. |
+
 ## When to use this category
 
 - "Write a good commit message" / "conventional commits"
 - "Use GitHub CLI" / "create a PR"
 - "Automate this task" / "write a shell script"
 - "Set up editorconfig"
+- "Triage this GitHub repo" / "review this PR deeply"
+- "Design a CLI interface"
+- "Automate the browser"

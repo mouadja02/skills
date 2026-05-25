@@ -4,7 +4,7 @@ A curated collection of **650+ Agent Skills** for Claude Code and Cursor, organi
 
 Each skill lives in its own folder with a `SKILL.md` file (YAML frontmatter for `name` + `description`, then the body of instructions). The agent auto-discovers and loads them when the description matches your request — both Claude Code and Cursor walk the directory tree recursively, so the category subfolders are transparent to discovery; they exist purely to keep things browsable on GitHub.
 
-> **Sources**: Original *Superpowers* collection + [awesome-copilot](https://github.com/awesome-copilot/copilot-skills) skills library + GSAP official skills.
+> **Sources**: Original *Superpowers* collection + [awesome-copilot](https://github.com/awesome-copilot/copilot-skills) skills library + GSAP official skills + [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
 
 ## Categories
 

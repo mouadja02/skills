@@ -62,6 +62,31 @@ Skills for **CI/CD, containers, infrastructure-as-code, Linux operations, and De
 | `senior-secops` | Senior SecOps engineer — security operations, SOC, threat hunting. |
 | `senior-security` | Senior security engineer — AppSec, pen testing, red team. |
 
+### Cloudflare & DNS _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `cloudflare-registrar` | Cloudflare Registrar — domain availability, prices, registration via API. |
+| `domain-dns-ops` | DNS/domain ops — Cloudflare zones, redirects, DNS/HTTP verification. |
+| `wrangler` | Cloudflare Wrangler CLI — Workers, KV, R2, D1, tail, deploy. |
+
+### macOS Operations _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `mac-maintenance` | macOS upkeep — brew update/upgrade, pull clean repos, empty Trash. |
+| `release-mac-app` | macOS app release — Sparkle, notarization, GitHub Release. |
+| `remote-mac` | Remote Mac management — Tailscale, SSH, tmux, non-interactive commands. |
+| `ssh-doctor` | SSH triage — Remote Login, launchd sshd, pre-auth closes, stale sessions. |
+| `vm-lab` | Parallels macOS VM lab — GUI automation testing, TCC, two-way validation. |
+
+### Monitoring & Ops Snapshots _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `clawsweeper-status` | GitHub Actions workflow health — active workers, ops snapshot. |
+| `clickclack` | Self-hosted chat app deploy — Hetzner/Docker rollout. |
+
 ## When to use this category
 
 - "Build a CI/CD pipeline" / "GitHub Actions workflow"
@@ -69,3 +94,5 @@ Skills for **CI/CD, containers, infrastructure-as-code, Linux operations, and De
 - "Write Terraform / Helm"
 - "Triage a Linux server"
 - "Threat model" / "secret scanning" / "incident response"
+- "Deploy Cloudflare Worker" / "register a domain"
+- "Mac maintenance" / "SSH not working" / "remote Mac"

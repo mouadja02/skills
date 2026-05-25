@@ -60,6 +60,13 @@ Skills for **writing, generating, and maintaining technical documentation** — 
 | `create-tldr-page` | Create tldr-pages style command summaries. |
 | `publish-to-pages` | Publish documentation to GitHub Pages. |
 
+### File & media conversion _(from steipete/agent-scripts)_
+
+| Skill | What it does |
+| --- | --- |
+| `markdown-converter` | Convert PDF, Office, HTML, data, OCR, audio, ZIP, YouTube to Markdown via markitdown — no install required. |
+| `video-transcript-downloader` | yt-dlp downloads — video, audio, subtitles, transcripts, clips, playlists. |
+
 ## When to use this category
 
 - "Write a README" / "document this project"
@@ -67,3 +74,5 @@ Skills for **writing, generating, and maintaining technical documentation** — 
 - "Convert this to Markdown / HTML / Word"
 - "Create llms.txt"
 - "Publish to GitHub Pages"
+- "Convert this PDF/Word/video to Markdown"
+- "Get the transcript of this YouTube video"
