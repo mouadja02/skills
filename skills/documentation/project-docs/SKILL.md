@@ -1,6 +1,6 @@
----
+﻿---
 name: project-docs
-description: Use when asked to produce technical documentation beyond a README — architecture docs, technical design documents, ADRs, API references, data pipeline docs, onboarding guides, integration specs, or AGENTS.md/CLAUDE.md files. Also use when documenting an AI agent system, a data pipeline, or producing technical reference material for a team. If the output is a technical document other than a README — use this skill.
+description: Also use when documenting an AI agent system, a data pipeline, or producing technical reference material for a team. If the output is a technical document other than a README — use this skill
 ---
 
 # Project Documentation

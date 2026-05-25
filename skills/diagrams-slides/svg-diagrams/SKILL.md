@@ -1,6 +1,6 @@
----
+﻿---
 name: svg-diagrams
-description: Use when asked for a diagram, chart, architecture visualization, flow, pipeline map, data model, sequence diagram, or any visual representation of a system or process. Also use when the user wants to visualize agent workflows, ETL pipelines, dbt lineage, API flows, or system integrations. If the words diagram, chart, flow, architecture, visualize, or draw appear in a visual context — use this skill.
+description: Also use when the user wants to visualize agent workflows, ETL pipelines, dbt lineage, API flows, or system integrations. If the words diagram, chart, flow, architecture, visualize, or draw appear in a visual context — use this skill
 ---
 
 # SVG Diagrams

@@ -1,6 +1,6 @@
----
+﻿---
 name: setting-up-streamlit-environment
-description: Setting up Python environments for Streamlit apps. Use when creating a new project or managing dependencies. Covers uv for dependency management and running apps.
+description: Setting up Python environments for Streamlit apps
 license: Apache-2.0
 ---
 

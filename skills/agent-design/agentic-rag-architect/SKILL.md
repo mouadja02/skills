@@ -1,6 +1,6 @@
----
+﻿---
 name: agentic-rag-architect
-description: Use when the user asks to build, optimize, or design a Retrieval-Augmented Generation (RAG) system, especially with agentic capabilities like self-reflection, query routing, or GraphRAG. Triggers on keywords RAG, GraphRAG, vector database, agentic RAG, semantic search.
+description: Triggers on keywords RAG, GraphRAG, vector database, agentic RAG, semantic search
 ---
 
 # Agentic RAG Architect

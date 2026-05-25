@@ -1,6 +1,6 @@
----
+﻿---
 name: using-streamlit-custom-components
-description: Using third-party Streamlit custom components. Use when extending Streamlit with community packages. Covers installation, popular custom components, and when to use them.
+description: Using third-party Streamlit custom components
 license: Apache-2.0
 ---
 

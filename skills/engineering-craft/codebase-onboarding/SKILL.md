@@ -1,6 +1,6 @@
----
+﻿---
 name: "codebase-onboarding"
-description: "Generate onboarding documentation for an unfamiliar codebase. Use when the user asks to onboard new developers, document an existing project, produce architecture overviews, key-file maps, local setup guides, common-task runbooks, or contribution guidelines. Outputs to Markdown, Notion, or Confluence."
+description: "Generate onboarding documentation for an unfamiliar codebase"
 ---
 
 # Codebase Onboarding

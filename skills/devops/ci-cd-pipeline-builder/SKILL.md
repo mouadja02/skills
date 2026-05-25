@@ -1,6 +1,6 @@
----
+﻿---
 name: "ci-cd-pipeline-builder"
-description: "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack. Use when the user wants to set up GitHub Actions, GitLab CI, or any CI/CD workflow with lint/test/build/deploy stages, caching, matrix builds, and environment-aware deployments. Detects language and tooling automatically."
+description: "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack"
 ---
 
 # CI/CD Pipeline Builder

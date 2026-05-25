@@ -1,6 +1,6 @@
----
+﻿---
 name: openrouter-typescript-sdk
-description: Complete reference for integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern
+description: integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern
 version: 2.0.0
 ---
 

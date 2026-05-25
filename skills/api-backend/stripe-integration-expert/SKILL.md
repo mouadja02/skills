@@ -1,6 +1,6 @@
----
+﻿---
 name: "stripe-integration-expert"
-description: "Implement production-grade Stripe integrations. Use when the user mentions Stripe, subscriptions, billing, payments, checkout, webhooks, customer portal, usage-based pricing, proration, trials, invoicing, or SaaS billing. Covers Next.js, Express, and Django patterns with idempotent webhook handling."
+description: "Implement production-grade Stripe integrations"
 ---
 
 # Stripe Integration Expert

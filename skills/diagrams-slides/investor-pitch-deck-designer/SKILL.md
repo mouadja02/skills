@@ -1,6 +1,6 @@
----
+﻿---
 name: investor-pitch-deck-designer
-description: Use when the user asks for help designing, structuring, or writing an investor pitch deck for seed, Series A, or later rounds. Triggers on keywords pitch deck, VC pitch, investor presentation, fundraising deck.
+description: Triggers on keywords pitch deck, VC pitch, investor presentation, fundraising deck
 ---
 
 # Investor Pitch Deck Designer

@@ -1,6 +1,6 @@
----
+﻿---
 name: azure-resource-visualizer
-description: Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources. Use this skill when the user asks for a diagram of their Azure resources or help in understanding how the resources relate to each other.
+description: Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources
 license: Complete terms in LICENSE.txt
 metadata:
   author: Tom Meschter (tom.meschter@microsoft.com)

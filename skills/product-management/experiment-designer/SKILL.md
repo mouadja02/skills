@@ -1,6 +1,6 @@
----
+﻿---
 name: experiment-designer
-description: Use when planning, designing, or interpreting any A/B test, split test, multivariate test, or controlled experiment — for products, features, marketing pages, signup flows, pricing, or copy variants. Covers hypothesis writing, sample-size estimation, ICE prioritization, traffic allocation, statistical-significance analysis, guardrail metrics, and the peeking problem. Triggers on: "A/B test", "split test", "experiment", "test this change", "variant copy", "multivariate test", "hypothesis", "conversion experiment", "statistical significance", "minimum detectable effect", "sample size".
+description: A/B and multivariate experiments — hypothesis, sample size, ICE priority, stats significance
 ---
 
 # Experiment Designer

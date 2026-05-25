@@ -1,6 +1,6 @@
----
+﻿---
 name: write-coding-standards-from-file
-description: 'Write a coding standards document for a project using the coding styles from the file(s) and/or folder(s) passed as arguments in the prompt.'
+description: 'Write a coding standards document for a project using the coding styles from the file(s) and/or folder(s) passed as arguments in the prompt'
 ---
 
 # Write Coding Standards From File

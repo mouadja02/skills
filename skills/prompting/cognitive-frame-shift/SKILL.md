@@ -1,6 +1,6 @@
----
+﻿---
 name: cognitive-frame-shift
-description: Forces systematic perspective rotation by analyzing any problem through six radically different lenses — the child, the alien, the domain expert, the contrarian, the future self, and the user who hates you. Each lens surfaces assumptions and blind spots that single-perspective analysis misses entirely. Activate when a decision feels obvious and you want to stress-test it, or when diverse perspectives haven't been genuinely considered.
+description: 6-lens problem rotation — child, alien, historian, contrarian, futurist, expert
 ---
 
 # Cognitive Frame Shift

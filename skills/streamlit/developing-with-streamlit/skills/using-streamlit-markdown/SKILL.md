@@ -1,6 +1,6 @@
----
+﻿---
 name: using-streamlit-markdown
-description: Covers all Markdown features in Streamlit including GitHub-flavored syntax plus Streamlit extensions like colored text, badges, Material icons, and LaTeX. Use when formatting text, labels, tooltips, or any text-rendering element.
+description: Covers all Markdown features in Streamlit including GitHub-flavored syntax plus Streamlit extensions like colored text, badges, Material icons, and LaTeX
 license: Apache-2.0
 ---
 

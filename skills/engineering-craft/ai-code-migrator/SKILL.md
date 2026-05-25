@@ -1,6 +1,6 @@
----
+﻿---
 name: "ai-code-migrator"
-description: "Automate large-scale codebase migrations using AI — framework upgrades, language conversions, API modernization, and dependency swaps. Use when the user wants to migrate from one framework to another (React class→hooks, Vue 2→3, Angular→React, Express→Fastify, Python 2→3), upgrade major library versions (Next.js 13→15, Webpack→Vite), convert between languages (JavaScript→TypeScript, Python→Rust), modernize legacy codebases, replace deprecated APIs, or perform any systematic code transformation across hundreds of files."
+description: "Automate large-scale codebase migrations using AI — framework upgrades, language conversions, API modernization, and dependency swaps"
 ---
 
 # AI Code Migrator

@@ -1,6 +1,6 @@
----
+﻿---
 name: building-streamlit-multipage-apps
-description: Building multi-page Streamlit apps. Use when creating apps with multiple pages, setting up navigation, or managing state across pages.
+description: Building multi-page Streamlit apps
 license: Apache-2.0
 ---
 

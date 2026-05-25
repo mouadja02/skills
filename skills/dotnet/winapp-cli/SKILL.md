@@ -1,6 +1,6 @@
----
+﻿---
 name: winapp-cli
-description: 'Windows App Development CLI (winapp) for building, packaging, signing, debugging, and UI-automating Windows applications. Use when asked to initialize Windows app projects, create MSIX packages, manage AppxManifest.xml or development certificates, run an app as packaged for debugging, automate Windows UI via Microsoft UI Automation, publish to the Microsoft Store, or access Windows SDK build tools. Covers commands like init, pack, run, unregister, manifest, cert, sign, store, ui, and tool. Supports .NET (csproj), C++, Electron, Rust, Tauri, Flutter, and other Windows frameworks.'
+description: 'Windows App Development CLI (winapp) for building, packaging, signing, debugging, and UI-automating Windows applications'
 ---
 
 # Windows App Development CLI

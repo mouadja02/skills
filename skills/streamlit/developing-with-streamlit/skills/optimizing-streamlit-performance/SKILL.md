@@ -1,6 +1,6 @@
----
+﻿---
 name: optimizing-streamlit-performance
-description: Optimizing Streamlit app performance. Use when apps are slow, rerunning too often, or loading heavy content. Covers caching, fragments, and static vs dynamic widget choices.
+description: Optimizing Streamlit app performance
 license: Apache-2.0
 ---
 

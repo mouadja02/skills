@@ -1,6 +1,6 @@
----
+﻿---
 name: dbt-expert
-description: Use when working in a dbt project or doing any dbt-related work — writing models, schema.yml, sources.yml, tests, macros, snapshots, seeds, or exposures. Also use when designing SQL that will land in a dbt project, generating dbt YAML programmatically, or asking about dbt best practices, incremental strategies, or project structure for Snowflake. If dbt is involved in any way — use this skill.
+description: dbt — models, schema.yml, sources, tests, macros, YAML generation, best practices
 ---
 
 # dbt Expert

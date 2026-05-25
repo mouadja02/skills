@@ -1,6 +1,6 @@
----
+﻿---
 name: connecting-streamlit-to-snowflake
-description: Connecting Streamlit apps to Snowflake. Use when setting up database connections, managing secrets, or querying Snowflake from a Streamlit app.
+description: Connecting Streamlit apps to Snowflake
 license: Apache-2.0
 ---
 

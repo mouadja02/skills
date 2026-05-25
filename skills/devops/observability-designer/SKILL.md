@@ -1,6 +1,6 @@
----
+﻿---
 name: "observability-designer"
-description: "Design comprehensive observability for production systems. Use when the user asks about SLI/SLO/SLA design, error budgets, golden signals, RED/USE methods, structured logging, distributed tracing, dashboard design, or alert optimization. Covers metrics, logs, and traces across modern observability stacks."
+description: "Design comprehensive observability for production systems"
 ---
 
 # Observability Designer (POWERFUL)

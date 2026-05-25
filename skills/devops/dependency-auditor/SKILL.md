@@ -1,6 +1,6 @@
----
+﻿---
 name: "dependency-auditor"
-description: "Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems. Use when the user mentions CVE scanning, dependency upgrades, transitive dependency risk, license auditing, supply chain security, or wants to know which packages to upgrade or remove."
+description: "Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems"
 ---
 
 # Dependency Auditor

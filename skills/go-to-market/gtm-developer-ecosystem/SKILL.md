@@ -1,6 +1,6 @@
----
+﻿---
 name: gtm-developer-ecosystem
-description: Build and scale developer-led adoption through ecosystem programs. Use when deciding open vs curated ecosystems, building developer programs, scaling platform adoption, or designing student program pipelines.
+description: Build and scale developer-led adoption through ecosystem programs
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

@@ -1,6 +1,6 @@
----
+﻿---
 name: oo-component-documentation
-description: 'Create or update standardized object-oriented component documentation using a shared template plus mode-specific guidance for new and existing docs.'
+description: 'Create or update standardized object-oriented component documentation using a shared template plus mode-specific guidance for new and existing docs'
 ---
 
 # OO Component Documentation

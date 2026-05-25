@@ -1,6 +1,6 @@
----
+﻿---
 name: using-streamlit-session-state
-description: Using st.session_state to manage state across Streamlit reruns. Use when persisting data, handling widget state, implementing callbacks, or debugging state issues. Covers initialization patterns, widget-state association, and common gotchas.
+description: Using st.session_state to manage state across Streamlit reruns
 license: Apache-2.0
 ---
 

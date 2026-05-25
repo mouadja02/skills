@@ -1,6 +1,6 @@
----
+﻿---
 name: idea-velocity
-description: Rapid-fire ideation protocol that generates 50+ ideas in a single pass by enforcing a zero-judgment first phase. Optimizes for quantity, speed, and coverage of idea space — not quality. Quality filtering happens in a separate phase. Activate when the user needs to break a creative block, exhaust a solution space quickly, or generate enough raw material for a good idea to emerge.
+description: Rapid ideation — 50+ ideas in one pass, zero-judgment phase, quantity over quality
 ---
 
 # Idea Velocity

@@ -1,6 +1,6 @@
----
+﻿---
 name: openrouter-agent-migration
-description: Migration guide from @openrouter/sdk to @openrouter/agent for callModel, tool(), stop conditions, and agent features. This skill should be used when code imports callModel, tool(), or stop conditions from @openrouter/sdk and needs to migrate to @openrouter/agent.
+description: @openrouter/sdk → @openrouter/agent — callModel, tool(), stop conditions migration
 version: 1.0.0
 ---
 

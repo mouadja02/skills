@@ -1,6 +1,6 @@
----
+﻿---
 name: framework-react-native-expert
-description: Use when the user asks to work on a React Native or Expo project. Triggers on keywords React Native, Expo, Mobile App, iOS, Android.
+description: Triggers on keywords React Native, Expo, Mobile App, iOS, Android
 ---
 
 # React Native & Expo Expert

@@ -1,6 +1,6 @@
----
+﻿---
 name: "incident-commander"
-description: "Run incident response from detection to post-mortem. Use when the user mentions incidents, sev1/sev2 triage, severity classification, timeline reconstruction, on-call, post-incident review (PIR), root-cause analysis, blameless retros, or runbook generation. Provides SRE-grade incident management templates and frameworks."
+description: "Run incident response from detection to post-mortem"
 ---
 
 # Incident Commander Skill

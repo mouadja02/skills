@@ -1,6 +1,6 @@
----
+﻿---
 name: creative-constraints
-description: Uses artificial limitations as creative fuel — not as obstacles, but as forcing functions that eliminate lazy defaults and drive genuine invention. Applies SCAMPER, forced associations, and time/resource constraints to produce ideas that unconstrained thinking never finds. Activate when the user needs to design within limits, when unlimited freedom is producing generic output, or when a creative block needs structural intervention.
+description: Artificial limits as creative fuel — eliminates lazy defaults, drives genuine innovation
 ---
 
 # Creative Constraints

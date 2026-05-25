@@ -1,6 +1,6 @@
----
+﻿---
 name: arize-annotation
-description: "INVOKE THIS SKILL when creating, managing, or using annotation configs or annotation queues on Arize (categorical, continuous, freeform), or applying human annotations to project spans via the Python SDK. Configs are the label schema for human feedback; queues are review workflows that route records to annotators. Triggers: annotation config, annotation queue, label schema, human feedback schema, bulk annotate spans, update_annotations, labeling queue, annotate record."
+description: Arize annotations — label schema configs, review queues, human feedback workflows
 ---
 
 # Arize Annotation Skill

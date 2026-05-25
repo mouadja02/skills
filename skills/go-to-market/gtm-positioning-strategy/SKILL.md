@@ -1,6 +1,6 @@
----
+﻿---
 name: gtm-positioning-strategy
-description: Find and own a defensible market position. Use when messaging sounds like competitors, conversion is weak despite awareness, repositioning a product, or testing positioning claims. Includes Crawl-Walk-Run rollout methodology and the word change that improved enterprise deal progression.
+description: Find and own a defensible market position
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

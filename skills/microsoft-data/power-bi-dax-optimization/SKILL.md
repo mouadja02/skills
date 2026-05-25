@@ -1,6 +1,6 @@
----
+﻿---
 name: power-bi-dax-optimization
-description: 'Comprehensive Power BI DAX formula optimization prompt for improving performance, readability, and maintainability of DAX calculations.'
+description: 'Comprehensive Power BI DAX formula optimization prompt for improving performance, readability, and maintainability of DAX calculations'
 ---
 
 # Power BI DAX Formula Optimizer

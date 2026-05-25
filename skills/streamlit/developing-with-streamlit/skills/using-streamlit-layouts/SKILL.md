@@ -1,6 +1,6 @@
----
+﻿---
 name: using-streamlit-layouts
-description: Structuring Streamlit app layouts. Use when placing content in sidebars, columns, containers, or dialogs. Covers sidebar usage, column limits, horizontal containers, dialogs, and bordered cards.
+description: Structuring Streamlit app layouts
 license: Apache-2.0
 ---
 

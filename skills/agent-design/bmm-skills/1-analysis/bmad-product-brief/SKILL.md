@@ -1,6 +1,6 @@
----
+﻿---
 name: bmad-product-brief
-description: Create or update product briefs through guided or autonomous discovery. Use when the user requests to create or update a Product Brief.
+description: Create or update product briefs through guided or autonomous discovery
 ---
 
 # Create Product Brief

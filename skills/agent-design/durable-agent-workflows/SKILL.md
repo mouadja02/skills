@@ -1,6 +1,6 @@
----
+﻿---
 name: "durable-agent-workflows"
-description: "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns. Use when the user wants to build long-running agent pipelines, implement retry logic for LLM calls, create resumable agent workflows, orchestrate multi-step AI tasks that survive crashes, handle agent state persistence across sessions, build production-grade agent infrastructure with observability, or implement human-in-the-loop approval nodes in agent graphs."
+description: "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns"
 ---
 
 # Durable Agent Workflows

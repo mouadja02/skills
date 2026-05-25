@@ -1,6 +1,6 @@
----
+﻿---
 name: update-specification
-description: 'Update an existing specification file for the solution, optimized for Generative AI consumption based on new requirements or updates to any existing code.'
+description: 'Update an existing specification file for the solution, optimized for Generative AI consumption based on new requirements or updates to any existing code'
 ---
 
 # Update Specification

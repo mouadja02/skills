@@ -1,6 +1,6 @@
----
+﻿---
 name: mvvm-toolkit-di
-description: 'Wire CommunityToolkit.Mvvm ViewModels into Microsoft.Extensions.DependencyInjection. Covers the .NET Generic Host composition root, constructor injection, service lifetimes (Singleton / Transient / Scoped), IMessenger registration, resolving ViewModels in Views, keyed services, testing seams, and the legacy Ioc.Default escape hatch. Use across WPF, WinUI 3, .NET MAUI, Uno, and Avalonia.'
+description: CommunityToolkit.Mvvm + DI — Generic Host, ViewModelLocator, scoped/transient registration
 ---
 
 # CommunityToolkit.Mvvm + `Microsoft.Extensions.DependencyInjection`

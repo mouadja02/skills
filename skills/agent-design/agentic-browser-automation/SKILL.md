@@ -1,6 +1,6 @@
----
+﻿---
 name: "agentic-browser-automation"
-description: "Build AI-powered browser agents that autonomously navigate, scrape, fill forms, and extract data from dynamic websites using LLM reasoning + Playwright. Use when the user wants to create a browser agent, build an autonomous scraper, implement self-healing selectors, replace brittle browser automation with AI, build a web agent, use Browser-Use or Skyvern patterns, extract structured data from any website using natural language, or create adaptive web scrapers that survive site changes."
+description: "Build AI-powered browser agents that autonomously navigate, scrape, fill forms, and extract data from dynamic websites using LLM reasoning + Playwright"
 ---
 
 # Agentic Browser Automation

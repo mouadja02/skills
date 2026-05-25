@@ -1,6 +1,6 @@
----
+﻿---
 name: organizing-streamlit-code
-description: Organizing Streamlit code for maintainability. Use when structuring apps with separate modules and utilities. Covers separation of concerns, keeping UI code clean, and import patterns.
+description: Organizing Streamlit code for maintainability
 license: Apache-2.0
 ---
 

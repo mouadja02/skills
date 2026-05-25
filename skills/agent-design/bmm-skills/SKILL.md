@@ -1,6 +1,6 @@
----
+﻿---
 name: bmm-skills
-description: BMad Method (BMM) — AI-driven agile development framework. Top-level router for the full BMad workflow, organized in 4 phases (Analysis → Planning → Solutioning → Implementation) with 30 sub-skills and 6 named agents (Mary the analyst, Paige the tech writer, John the PM, Sally the UX designer, Winston the architect, Amelia the developer). Use when the user mentions BMad, BMM, BMad Method, "talk to Mary/Paige/John/Sally/Winston/Amelia", PRDs, PRFAQs, product briefs, market/domain/technical research, UX design specs, architecture, epics and stories, sprint planning/status, story implementation, code review, retrospectives, or any phase-tagged ask like "lets create a PRD", "implement the next story", "run a retrospective", "document this project". Loads no workflow content directly — routes to the right sub-skill folder.
+description: BMad Method — AI agile framework, routes to 4-phase workflow: Analyze, Plan, Code, Review
 ---
 
 # BMad Method (BMM) — Master router

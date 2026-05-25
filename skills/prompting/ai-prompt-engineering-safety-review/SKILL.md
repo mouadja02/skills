@@ -1,6 +1,6 @@
----
+﻿---
 name: ai-prompt-engineering-safety-review
-description: 'Comprehensive AI prompt engineering safety review and improvement prompt. Analyzes prompts for safety, bias, security vulnerabilities, and effectiveness while providing detailed improvement recommendations with extensive frameworks, testing methodologies, and educational content.'
+description: Prompt safety review — bias, injection, ethical risks, scored with fixes
 ---
 
 # AI Prompt Engineering Safety Review & Improvement

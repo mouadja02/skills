@@ -1,6 +1,6 @@
----
+﻿---
 name: winmd-api-search
-description: 'Find and explore Windows desktop APIs. Use when building features that need platform capabilities — camera, file access, notifications, UI controls, AI/ML, sensors, networking, etc. Discovers the right API for a task and retrieves full type details (methods, properties, events, enumeration values).'
+description: 'Find and explore Windows desktop APIs'
 license: Complete terms in LICENSE.txt
 ---
 

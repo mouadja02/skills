@@ -1,6 +1,6 @@
----
+﻿---
 name: semantic-kernel
-description: 'Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python.'
+description: 'Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python'
 ---
 
 # Semantic Kernel

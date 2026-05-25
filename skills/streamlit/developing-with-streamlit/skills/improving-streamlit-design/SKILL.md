@@ -1,6 +1,6 @@
----
+﻿---
 name: improving-streamlit-design
-description: Improving visual design in Streamlit apps. Use when polishing apps with icons, badges, spacing, or text styling. Covers Material icons, badge syntax, divider alternatives, and text casing conventions.
+description: Improving visual design in Streamlit apps
 license: Apache-2.0
 ---
 

@@ -1,6 +1,6 @@
----
+﻿---
 name: qdrant-search-quality
-description: "Diagnoses and improves Qdrant search relevance. Use when someone reports 'search results are bad', 'wrong results', 'low precision', 'low recall', 'irrelevant matches', 'missing expected results', or asks 'how to improve search quality?', 'which embedding model?', 'should I use hybrid search?', 'should I use reranking?'. Also use when search quality degrades after quantization, model change, or data growth."
+description: "Diagnoses and improves Qdrant search relevance"
 allowed-tools:
   - Read
   - Grep

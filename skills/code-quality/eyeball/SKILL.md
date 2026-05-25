@@ -1,6 +1,6 @@
----
+﻿---
 name: eyeball
-description: 'Document analysis with inline source screenshots. When you ask Copilot to analyze a document, Eyeball generates a Word doc where every factual claim includes a highlighted screenshot from the source material so you can verify it with your own eyes.'
+description: Document analysis with source screenshots — Word doc with page images per cited passage
 ---
 
 # Eyeball

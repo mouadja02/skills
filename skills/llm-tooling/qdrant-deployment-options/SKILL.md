@@ -1,6 +1,6 @@
----
+﻿---
 name: qdrant-deployment-options
-description: "Guides Qdrant deployment selection. Use when someone asks 'how to deploy Qdrant', 'Docker vs Cloud', 'local mode', 'embedded Qdrant', 'Qdrant EDGE', 'which deployment option', 'self-hosted vs cloud', or 'need lowest latency deployment'. Also use when choosing between deployment types for a new project."
+description: "Guides Qdrant deployment selection"
 ---
 
 # Which Qdrant Deployment Do I Need?

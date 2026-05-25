@@ -1,6 +1,6 @@
----
+﻿---
 name: displaying-streamlit-data
-description: Displaying charts, dataframes, and metrics in Streamlit. Use when visualizing data, configuring dataframe columns, or adding sparklines to metrics. Covers native charts, Altair, and column configuration.
+description: Displaying charts, dataframes, and metrics in Streamlit
 license: Apache-2.0
 ---
 

@@ -1,6 +1,6 @@
----
+﻿---
 name: "local-ai-stack"
-description: "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving. Use when the user wants to run LLMs locally, set up Ollama, install Open WebUI, create a private AI assistant, avoid cloud API costs, build a self-hosted ChatGPT alternative, run models on their own hardware, set up local embeddings for RAG, configure GPU acceleration for local inference, benchmark local models, or create an air-gapped AI environment for privacy-sensitive work."
+description: "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving"
 ---
 
 # Local AI Stack

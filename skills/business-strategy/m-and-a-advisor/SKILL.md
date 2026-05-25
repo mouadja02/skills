@@ -1,6 +1,6 @@
----
+﻿---
 name: m-and-a-advisor
-description: Use when the user asks for guidance on Mergers and Acquisitions (M&A), due diligence, post-merger integration (PMI), or evaluating a potential target company. Triggers on keywords M&A, due diligence, post-merger integration, synergy.
+description: Triggers on keywords M&A, due diligence, post-merger integration, synergy
 ---
 
 # M&A Advisor

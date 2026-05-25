@@ -1,6 +1,6 @@
----
+﻿---
 name: ai-team-orchestration
-description: 'Bootstrap and run a multi-agent AI development team. Use when: starting a new software project with AI agents, setting up parallel dev/QA teams, creating sprint plans, writing brainstorm prompts with distinct agent voices, recovering a project workflow, or planning sprints.'
+description: Multi-agent dev team — parallel AI agents, roles, coordination, project kickoff
 ---
 
 # AI Team Orchestration

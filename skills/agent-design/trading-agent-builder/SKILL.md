@@ -1,6 +1,6 @@
----
+﻿---
 name: "trading-agent-builder"
-description: "Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs. Use when the user wants to build a trading bot, create a financial analysis agent, implement algorithmic trading with AI, build a portfolio analyzer, create a market research agent, implement sentiment-driven trading, build a multi-agent trading system like TradingAgents, analyze financial data with LLMs, backtest AI trading strategies, or create agents that monitor markets and generate trading signals."
+description: "Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs"
 ---
 
 # Trading Agent Builder

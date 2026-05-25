@@ -1,6 +1,6 @@
----
+﻿---
 name: architecture-blueprint-generator
-description: 'Comprehensive project architecture blueprint generator that analyzes codebases to create detailed architectural documentation. Automatically detects technology stacks and architectural patterns, generates visual diagrams, documents implementation patterns, and provides extensible blueprints for maintaining architectural consistency and guiding new development.'
+description: Project architecture blueprint — component diagrams, tech stack docs from codebase
 ---
 
 # Comprehensive Project Architecture Blueprint Generator

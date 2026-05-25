@@ -1,6 +1,6 @@
----
+﻿---
 name: framework-nextjs-expert
-description: Use when the user asks to work on a Next.js (App Router), React, and TypeScript project. Triggers on keywords Next.js, React, Tailwind, Shadcn UI.
+description: Triggers on keywords Next.js, React, Tailwind, Shadcn UI
 ---
 
 # Next.js & React Expert

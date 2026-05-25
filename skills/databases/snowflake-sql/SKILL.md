@@ -1,6 +1,6 @@
----
+﻿---
 name: snowflake-sql
-description: Use when writing or asking about Snowflake SQL, Snowflake DDL, dynamic tables, streams, tasks, stages, file formats, or Snowpark. Also use for Snowflake-specific patterns (QUALIFY, FLATTEN, LATERAL FLATTEN, PARSE_JSON, MATCH_CONDITION), VARIANT/OBJECT/ARRAY types, data vault in Snowflake, clustering keys, time travel, search optimization, or query performance tuning. If the context is Snowflake — use this skill.
+description: Snowflake SQL — QUALIFY, FLATTEN, VARIANT/OBJECT/ARRAY, tasks, streams, stages
 ---
 
 # Snowflake SQL Expert

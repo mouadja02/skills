@@ -1,6 +1,6 @@
----
+﻿---
 name: "database-designer"
-description: "Design and audit relational database schemas. Use when the user asks to design a schema, normalize tables (1NF-BCNF), optimize indexes, plan zero-downtime migrations (expand-contract), generate ERDs, or analyze constraints, naming, and data types. Produces Mermaid diagrams and migration scripts."
+description: "Design and audit relational database schemas"
 ---
 
 # Database Designer - POWERFUL Tier Skill

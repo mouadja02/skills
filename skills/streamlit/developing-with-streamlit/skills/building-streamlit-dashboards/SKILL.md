@@ -1,6 +1,6 @@
----
+﻿---
 name: building-streamlit-dashboards
-description: Building dashboards in Streamlit. Use when creating KPI displays, metric cards, or data-heavy layouts. Covers borders, cards, responsive layouts, and dashboard composition.
+description: Building dashboards in Streamlit
 license: Apache-2.0
 ---
 

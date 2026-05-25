@@ -1,6 +1,6 @@
----
+﻿---
 name: sql-optimization
-description: 'Universal SQL performance optimization assistant for comprehensive query tuning, indexing strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle). Provides execution plan analysis, pagination optimization, batch operations, and performance monitoring guidance.'
+description: SQL performance optimization — query tuning, indexing, explain plans, all dialects
 ---
 
 # SQL Performance Optimization Assistant

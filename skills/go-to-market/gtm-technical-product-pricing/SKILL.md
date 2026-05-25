@@ -1,6 +1,6 @@
----
+﻿---
 name: gtm-technical-product-pricing
-description: Pricing strategy for technical products. Use when choosing usage-based vs seat-based, designing freemium thresholds, structuring enterprise pricing conversations, deciding when to raise prices, or using price as a positioning signal.
+description: Pricing strategy for technical products
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

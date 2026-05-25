@@ -1,6 +1,6 @@
----
+﻿---
 name: arize-ai-provider-integration
-description: "INVOKE THIS SKILL when creating, reading, updating, or deleting Arize AI integrations. Covers listing integrations, creating integrations for any supported LLM provider (OpenAI, Anthropic, Azure OpenAI, AWS Bedrock, Vertex AI, Gemini, NVIDIA NIM, custom), updating credentials or metadata, and deleting integrations using the ax CLI."
+description: Arize AI integrations — list/create/update/delete for OpenAI/Anthropic/Azure/Bedrock
 ---
 
 # Arize AI Integration Skill

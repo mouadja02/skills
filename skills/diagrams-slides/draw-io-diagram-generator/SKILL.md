@@ -1,6 +1,6 @@
----
+﻿---
 name: draw-io-diagram-generator
-description: Use when creating, editing, or generating draw.io diagram files (.drawio, .drawio.svg, .drawio.png). Covers mxGraph XML authoring, shape libraries, style strings, flowcharts, system architecture, sequence diagrams, ER diagrams, UML class diagrams, network topology, layout strategy, the hediet.vscode-drawio VS Code extension, and the full agent workflow from request to a ready-to-open file.
+description: draw.io XML — flowcharts, architecture, sequence, ER, UML, mxGraph shapes/styles
 ---
 
 # Draw.io Diagram Generator

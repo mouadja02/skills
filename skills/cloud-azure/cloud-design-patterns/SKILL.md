@@ -1,6 +1,6 @@
----
+﻿---
 name: cloud-design-patterns
-description: 'Cloud design patterns for distributed systems architecture covering 42 industry-standard patterns across reliability, performance, messaging, security, and deployment categories. Use when designing, reviewing, or implementing distributed system architectures.'
+description: 'Cloud design patterns for distributed systems architecture covering 42 industry-standard patterns across reliability, performance, messaging, security, and deployment categories'
 ---
 
 # Cloud Design Patterns

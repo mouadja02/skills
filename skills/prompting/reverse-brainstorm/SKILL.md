@@ -1,6 +1,6 @@
----
+﻿---
 name: reverse-brainstorm
-description: Inverts the problem — instead of asking how to succeed, asks how to guarantee failure — then flips each failure mode into an unconventional solution. Activate when forward brainstorming produces only obvious answers, when the user wants to stress-test an idea, or when hidden obstacles need to be surfaced before they become real problems.
+description: Invert problem — brainstorm failure modes, flip into unconventional solutions
 ---
 
 # Reverse Brainstorm

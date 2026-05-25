@@ -1,6 +1,6 @@
----
+﻿---
 name: freecad-scripts
-description: 'Expert skill for writing FreeCAD Python scripts, macros, and automation. Use when asked to create FreeCAD models, parametric objects, Part/Mesh/Sketcher scripts, workbench tools, GUI dialogs with PySide, Coin3D scenegraph manipulation, or any FreeCAD Python API task. Covers FreeCAD scripting basics, geometry creation, FeaturePython objects, interface tools, and macro development.'
+description: 'writing FreeCAD Python scripts, macros, and automation'
 ---
 
 # FreeCAD Scripts

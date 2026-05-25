@@ -1,6 +1,6 @@
----
+﻿---
 name: power-bi-model-design-review
-description: 'Comprehensive Power BI data model design review prompt for evaluating model architecture, relationships, and optimization opportunities.'
+description: 'Comprehensive Power BI data model design review prompt for evaluating model architecture, relationships, and optimization opportunities'
 ---
 
 # Power BI Data Model Design Review

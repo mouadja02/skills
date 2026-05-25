@@ -1,6 +1,6 @@
----
+﻿---
 name: etl-to-dbt
-description: Use when converting, migrating, or translating ETL artifacts to dbt — Informatica IICS mappings, PowerCenter workflows, Talend jobs, DataStage pipelines. Also use when analyzing mapping XML/JSON files, extracting transformation logic from ETL metadata, generating dbt models or sources.yml from source qualifiers, or mapping ETL data types to Snowflake types. If the words mapping, IICS, Informatica, infa, PowerCenter, or ETL migration appear — use this skill.
+description: ETL/ELT → dbt migration — Informatica/PowerBI mappings, transformation logic, YAML
 ---
 
 # ETL to dbt Migration

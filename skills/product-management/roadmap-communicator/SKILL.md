@@ -1,6 +1,6 @@
----
+﻿---
 name: roadmap-communicator
-description: Use when preparing roadmap narratives, release notes, changelogs, or stakeholder updates tailored for executives, engineering teams, and customers.
+description: Use when preparing roadmap narratives, release notes, changelogs, or stakeholder updates tailored for executives, engineering teams, and customers
 ---
 
 # Roadmap Communicator

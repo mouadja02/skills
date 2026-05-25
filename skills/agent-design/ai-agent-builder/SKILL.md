@@ -1,6 +1,6 @@
----
+﻿---
 name: ai-agent-builder
-description: Use when designing an agent architecture, building a system where an LLM autonomously executes multi-step tasks, implementing tool calling or function calling, orchestrating multiple specialized subagents, or creating evaluation pipelines for AI outputs. Also use for agentic data engineering pipelines, code generation agents, agent-powered CLI tools, MCP server development, or any system where an AI model calls tools, makes decisions, or loops.
+description: Also use for agentic data engineering pipelines, code generation agents, agent-powered CLI tools, MCP server development, or any system where an AI model calls tools, makes decisions, or loops
 ---
 
 # AI Agent Builder

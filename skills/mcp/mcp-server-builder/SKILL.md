@@ -1,6 +1,6 @@
----
+﻿---
 name: "mcp-server-builder"
-description: "Build production-grade MCP (Model Context Protocol) servers from API contracts. Use when the user wants to expose a REST API to an LLM agent as MCP tools, scaffold a Python or TypeScript MCP server from OpenAPI, validate MCP tool manifests, or replace brittle browser automation with typed tools."
+description: "Build production-grade MCP (Model Context Protocol) servers from API contracts"
 ---
 
 # MCP Server Builder

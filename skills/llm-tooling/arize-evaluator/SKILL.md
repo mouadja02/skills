@@ -1,6 +1,6 @@
----
+﻿---
 name: arize-evaluator
-description: "INVOKE THIS SKILL for LLM-as-judge evaluation workflows on Arize: creating/updating evaluators, running evaluations on spans or experiments, tasks, trigger-run, column mapping, and continuous monitoring. Use when the user says: create an evaluator, LLM judge, hallucination/faithfulness/correctness/relevance, run eval, score my spans or experiment, ax tasks, trigger-run, trigger eval, column mapping, continuous monitoring, query filter for evals, evaluator version, or improve an evaluator prompt."
+description: Arize LLM judge — evaluators, hallucination/faithfulness/relevance scorers, eval runs
 ---
 
 # Arize Evaluator Skill

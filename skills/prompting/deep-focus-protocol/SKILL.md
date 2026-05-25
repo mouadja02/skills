@@ -1,6 +1,6 @@
----
+﻿---
 name: deep-focus-protocol
-description: Structures work sessions for peak cognitive performance on hard problems. Defines scope ruthlessly, eliminates scope creep, batches cognitive modes, and builds momentum through deliberate sequencing. Activate when the user needs to do deep creative or intellectual work and wants to protect their best thinking time from fragmentation.
+description: Deep focus sessions — ruthless scope, batch decisions, momentum-preserving recovery
 ---
 
 # Deep Focus Protocol

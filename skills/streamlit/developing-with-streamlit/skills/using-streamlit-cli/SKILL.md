@@ -1,6 +1,6 @@
----
+﻿---
 name: using-streamlit-cli
-description: Documents Streamlit CLI commands for running apps, managing configuration, and diagnostics. Use when starting Streamlit apps, configuring runtime options, or troubleshooting CLI issues.
+description: Documents Streamlit CLI commands for running apps, managing configuration, and diagnostics
 ---
 
 # Using the Streamlit CLI

@@ -1,6 +1,6 @@
----
+﻿---
 name: growth-pm-plg
-description: Use when the user asks about Product-Led Growth (PLG), viral loops, user retention, AARRR funnel optimization, or growth hacking. Triggers on keywords PLG, growth hacking, viral loop, AARRR, retention, monetization.
+description: Triggers on keywords PLG, growth hacking, viral loop, AARRR, retention, monetization
 ---
 
 # Growth PM (Product-Led Growth)

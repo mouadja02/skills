@@ -1,6 +1,6 @@
----
+﻿---
 name: framework-vue-nuxt-expert
-description: Use when the user asks to work on a Vue 3, Nuxt 3, or TailwindCSS frontend project. Triggers on keywords Vue 3, Nuxt 3, Vue.js, TailwindCSS.
+description: Triggers on keywords Vue 3, Nuxt 3, Vue.js, TailwindCSS
 ---
 
 # Vue 3 & Nuxt 3 Expert
