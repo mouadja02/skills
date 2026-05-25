@@ -47,8 +47,10 @@ async function walk(dir, out = []) {
 //   key: |
 //     literal block
 function parseFrontmatter(rawContent) {
+  // Strip UTF-8 BOM (EF BB BF) if present — many editors write it.
+  const noBom = rawContent.replace(/^﻿/, "");
   // Normalize CRLF -> LF so end-of-line anchors and trims behave consistently.
-  const content = rawContent.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  const content = noBom.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
   if (!content.startsWith("---")) return {};
   const end = content.indexOf("\n---", 3);
   if (end === -1) return {};
