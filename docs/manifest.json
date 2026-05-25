@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-21T15:04:07.924Z",
+  "generated_at": "2026-05-25T20:00:57.982Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 656,
+  "count": 701,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -26,8 +26,10 @@
     "llm-tooling",
     "marketing-and-growth",
     "mcp",
+    "messaging",
     "microsoft-agents",
     "microsoft-data",
+    "personal-productivity",
     "product-management",
     "prompting",
     "react-frontend",
@@ -41,28 +43,30 @@
     "api-backend": 11,
     "business-strategy": 63,
     "cloud-azure": 18,
-    "code-quality": 15,
-    "coding": 24,
+    "code-quality": 16,
+    "coding": 31,
     "context-engineering": 15,
     "databases": 22,
     "design-and-ui": 31,
-    "dev-workflow": 22,
-    "devops": 28,
+    "dev-workflow": 30,
+    "devops": 38,
     "diagrams-slides": 12,
-    "documentation": 26,
+    "documentation": 28,
     "dotnet": 19,
     "engineering-craft": 37,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 41,
-    "marketing-and-growth": 25,
+    "llm-tooling": 44,
+    "marketing-and-growth": 26,
     "mcp": 13,
+    "messaging": 3,
     "microsoft-agents": 11,
     "microsoft-data": 17,
+    "personal-productivity": 9,
     "product-management": 29,
     "prompting": 15,
     "react-frontend": 17,
-    "skills-management": 23,
+    "skills-management": 24,
     "streamlit": 18,
     "testing": 12
   },
@@ -1396,6 +1400,14 @@
       "description": "Document analysis with inline source screenshots. When you ask Copilot to analyze a document, Eyeball generates a Word doc where every factual claim includes a highlighted screenshot from the source material so you can verify it with your own eyes."
     },
     {
+      "name": "github-deep-review",
+      "category": "code-quality",
+      "install_path": "code-quality/github-deep-review",
+      "path": "skills/code-quality/github-deep-review",
+      "depth": 2,
+      "description": "GitHub deep review: bugs, PRs, best fix, stale-or-real, read code first, evidence-first."
+    },
+    {
       "name": "grill-me",
       "category": "code-quality",
       "install_path": "code-quality/grill-me",
@@ -1580,6 +1592,14 @@
       "description": "Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, or when you need to organize work across multiple parallel streams."
     },
     {
+      "name": "hopper-debugger",
+      "category": "coding",
+      "install_path": "coding/hopper-debugger",
+      "path": "skills/coding/hopper-debugger",
+      "depth": 2,
+      "description": "Hopper Disassembler debugging: macOS/iOS binaries, ObjC/Swift symbols, dyld, LLDB."
+    },
+    {
       "name": "idea-refine",
       "category": "coding",
       "install_path": "coding/idea-refine",
@@ -1596,6 +1616,14 @@
       "description": "Delivers changes incrementally. Use when implementing any feature or change that touches more than one file. Use when you're about to write a large amount of code at once, or when a task feels too big to land in one step."
     },
     {
+      "name": "instruments-profiling",
+      "category": "coding",
+      "install_path": "coding/instruments-profiling",
+      "path": "skills/coding/instruments-profiling",
+      "depth": 2,
+      "description": "Instruments/xctrace profiling: macOS/iOS traces, binaries, args, exports, Time Profiler."
+    },
+    {
       "name": "interview-me",
       "category": "coding",
       "install_path": "coding/interview-me",
@@ -1610,6 +1638,14 @@
       "path": "skills/coding/karpathy-guidelines",
       "depth": 2,
       "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria."
+    },
+    {
+      "name": "native-app-performance",
+      "category": "coding",
+      "install_path": "coding/native-app-performance",
+      "path": "skills/coding/native-app-performance",
+      "depth": 2,
+      "description": "Native macOS/iOS app performance: xctrace, Time Profiler, traces, hotspot analysis — CLI-only."
     },
     {
       "name": "performance-optimization",
@@ -1658,6 +1694,38 @@
       "path": "skills/coding/spec-driven-development",
       "depth": 2,
       "description": "Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when requirements are unclear, ambiguous, or only exist as a vague idea."
+    },
+    {
+      "name": "swift-concurrency-expert",
+      "category": "coding",
+      "install_path": "coding/swift-concurrency-expert",
+      "path": "skills/coding/swift-concurrency-expert",
+      "depth": 2,
+      "description": "Swift concurrency review/fix: compiler errors, Sendable, actor isolation, Swift 6.2+ remediation."
+    },
+    {
+      "name": "swiftui-liquid-glass",
+      "category": "coding",
+      "install_path": "coding/swiftui-liquid-glass",
+      "path": "skills/coding/swiftui-liquid-glass",
+      "depth": 2,
+      "description": "SwiftUI Liquid Glass (iOS 26+): implement, adopt, refactor, review correctness/perf/design."
+    },
+    {
+      "name": "swiftui-performance-audit",
+      "category": "coding",
+      "install_path": "coding/swiftui-performance-audit",
+      "path": "skills/coding/swiftui-performance-audit",
+      "depth": 2,
+      "description": "SwiftUI performance audit: render, scroll, CPU/memory, view updates, layout, Instruments."
+    },
+    {
+      "name": "swiftui-view-refactor",
+      "category": "coding",
+      "install_path": "coding/swiftui-view-refactor",
+      "path": "skills/coding/swiftui-view-refactor",
+      "depth": 2,
+      "description": "SwiftUI view refactor/review: layout ordering, DI, Observation, MV patterns, view models."
     },
     {
       "name": "test-driven-development",
@@ -2244,6 +2312,14 @@
       "description": "Expert-level Windows batch file (.bat/.cmd) skill for writing, debugging, and maintaining CMD scripts. Use when asked to \"create a batch file\", \"write a .bat script\", \"automate a Windows task\", \"CMD scripting\", \"batch automation\", \"scheduled task script\", \"Windows shell script\", or when working with .bat/.cmd files in the workspace. Covers cmd.exe syntax, environment variables, control flow, string processing, error handling, and integration with system tools."
     },
     {
+      "name": "browser-use",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/browser-use",
+      "path": "skills/dev-workflow/browser-use",
+      "depth": 2,
+      "description": "Chrome DevTools MCP automation: existing Chrome tabs, profile-aware, no AppleScript."
+    },
+    {
       "name": "chrome-devtools",
       "category": "dev-workflow",
       "install_path": "dev-workflow/chrome-devtools",
@@ -2260,6 +2336,14 @@
       "description": "Interactive training for the GitHub Copilot CLI. Guided lessons, quizzes, scenario challenges, and a full reference covering slash commands, shortcuts, modes, agents, skills, MCP, and configuration. Say \"cliexpert\" to start."
     },
     {
+      "name": "codex-debugging",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/codex-debugging",
+      "path": "skills/dev-workflow/codex-debugging",
+      "depth": 2,
+      "description": "Codex debugging: codex-rs core/tui/exec/cli/app-server/config."
+    },
+    {
       "name": "commit-message-storyteller",
       "category": "dev-workflow",
       "install_path": "dev-workflow/commit-message-storyteller",
@@ -2274,6 +2358,14 @@
       "path": "skills/dev-workflow/conventional-commit",
       "depth": 2,
       "description": "Prompt and workflow for generating conventional commit messages using a structured XML format. Guides users to create standardized, descriptive commit messages in line with the Conventional Commits specification, including instructions, examples, and validation."
+    },
+    {
+      "name": "create-cli",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/create-cli",
+      "path": "skills/dev-workflow/create-cli",
+      "depth": 2,
+      "description": "CLI UX/spec design: args, flags, help, output, errors, config, dry-run."
     },
     {
       "name": "editorconfig",
@@ -2316,12 +2408,36 @@
       "description": "Intelligent Git Flow branch creator that analyzes git status/diff and creates appropriate branches following the nvie Git Flow branching model."
     },
     {
+      "name": "github-author-context",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/github-author-context",
+      "path": "skills/dev-workflow/github-author-context",
+      "depth": 2,
+      "description": "GitHub contributor context: identity, activity, trust, company/team signal."
+    },
+    {
+      "name": "github-cache-hygiene",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/github-cache-hygiene",
+      "path": "skills/dev-workflow/github-cache-hygiene",
+      "depth": 2,
+      "description": "GitHub quota/cache hygiene: answer reads from cache first, spend live API calls only for freshness or writes."
+    },
+    {
       "name": "github-issues",
       "category": "dev-workflow",
       "install_path": "dev-workflow/github-issues",
       "path": "skills/dev-workflow/github-issues",
       "depth": 2,
       "description": "Create, update, and manage GitHub issues using MCP tools. Use this skill when users want to create bug reports, feature requests, or task issues, update existing issues, add labels/assignees/milestones, set issue fields (dates, priority, custom fields), set issue types, manage issue workflows, link issues, add dependencies, or track blocked-by/blocking relationships. Triggers on requests like \"create an issue\", \"file a bug\", \"request a feature\", \"update issue X\", \"set the priority\", \"set the start date\", \"link issues\", \"add dependency\", \"blocked by\", \"blocking\", or any GitHub issue management task."
+    },
+    {
+      "name": "github-project-triage",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/github-project-triage",
+      "path": "skills/dev-workflow/github-project-triage",
+      "depth": 2,
+      "description": "GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode."
     },
     {
       "name": "github-release",
@@ -2364,6 +2480,14 @@
       "description": "List my pull requests in the current repository"
     },
     {
+      "name": "npm",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/npm",
+      "path": "skills/dev-workflow/npm",
+      "depth": 2,
+      "description": "npm registry ops: login, whoami, package availability, publish; 1Password tmux auth."
+    },
+    {
       "name": "pr-dashboard",
       "category": "dev-workflow",
       "install_path": "dev-workflow/pr-dashboard",
@@ -2396,6 +2520,14 @@
       "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
     },
     {
+      "name": "xurl",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/xurl",
+      "path": "skills/dev-workflow/xurl",
+      "depth": 2,
+      "description": "xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints."
+    },
+    {
       "name": "arch-linux-triage",
       "category": "devops",
       "install_path": "devops/arch-linux-triage",
@@ -2418,6 +2550,30 @@
       "path": "skills/devops/ci-cd-pipeline-builder",
       "depth": 2,
       "description": "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack. Use when the user wants to set up GitHub Actions, GitLab CI, or any CI/CD workflow with lint/test/build/deploy stages, caching, matrix builds, and environment-aware deployments. Detects language and tooling automatically."
+    },
+    {
+      "name": "clawsweeper-status",
+      "category": "devops",
+      "install_path": "devops/clawsweeper-status",
+      "path": "skills/devops/clawsweeper-status",
+      "depth": 2,
+      "description": "ClawSweeper status: GitHub Actions workflow health, active workers, ops snapshot."
+    },
+    {
+      "name": "clickclack",
+      "category": "devops",
+      "install_path": "devops/clickclack",
+      "path": "skills/devops/clickclack",
+      "depth": 2,
+      "description": "ClickClack ops: self-hosted chat app deploy, Hetzner/Docker, DNS checks."
+    },
+    {
+      "name": "cloudflare-registrar",
+      "category": "devops",
+      "install_path": "devops/cloudflare-registrar",
+      "path": "skills/devops/cloudflare-registrar",
+      "depth": 2,
+      "description": "Cloudflare Registrar: domain availability check, prices, registration via API."
     },
     {
       "name": "containerize-aspnet-framework",
@@ -2484,6 +2640,14 @@
       "description": "Docker and container development agent skill and plugin for Dockerfile optimization, docker-compose orchestration, multi-stage builds, and container security hardening. Use when: user wants to optimize a Dockerfile, create or improve docker-compose configurations, implement multi-stage builds, audit container security, reduce image size, or follow container best practices. Covers build performance, layer caching, secret management, and production-ready container patterns."
     },
     {
+      "name": "domain-dns-ops",
+      "category": "devops",
+      "install_path": "devops/domain-dns-ops",
+      "path": "skills/devops/domain-dns-ops",
+      "depth": 2,
+      "description": "DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification."
+    },
+    {
       "name": "fedora-linux-triage",
       "category": "devops",
       "install_path": "devops/fedora-linux-triage",
@@ -2532,6 +2696,14 @@
       "description": "Enable code intelligence (go-to-definition, find-references, hover, type info) for any programming language by installing and configuring an LSP server for Copilot CLI. Detects the OS, installs the right server, and generates the JSON configuration (user-level or repo-level). Use when you need deeper code understanding and no LSP server is configured, or when the user asks to set up, install, or configure an LSP server."
     },
     {
+      "name": "mac-maintenance",
+      "category": "devops",
+      "install_path": "devops/mac-maintenance",
+      "path": "skills/devops/mac-maintenance",
+      "depth": 2,
+      "description": "macOS upkeep: brew update/upgrade, pull clean repos, empty Trash."
+    },
+    {
       "name": "multi-stage-dockerfile",
       "category": "devops",
       "install_path": "devops/multi-stage-dockerfile",
@@ -2546,6 +2718,22 @@
       "path": "skills/devops/observability-designer",
       "depth": 2,
       "description": "Design comprehensive observability for production systems. Use when the user asks about SLI/SLO/SLA design, error budgets, golden signals, RED/USE methods, structured logging, distributed tracing, dashboard design, or alert optimization. Covers metrics, logs, and traces across modern observability stacks."
+    },
+    {
+      "name": "release-mac-app",
+      "category": "devops",
+      "install_path": "devops/release-mac-app",
+      "path": "skills/devops/release-mac-app",
+      "depth": 2,
+      "description": "macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout."
+    },
+    {
+      "name": "remote-mac",
+      "category": "devops",
+      "install_path": "devops/remote-mac",
+      "path": "skills/devops/remote-mac",
+      "depth": 2,
+      "description": "Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks."
     },
     {
       "name": "saas-scaffolder",
@@ -2596,6 +2784,14 @@
       "description": "Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and penetration testing. Includes STRIDE analysis, OWASP guidance, cryptography patterns, and security scanning tools. Use when the user asks about security reviews, threat analysis, vulnerability assessments, secure coding practices, security audits, attack surface analysis, CVE remediation, or security best practices."
     },
     {
+      "name": "ssh-doctor",
+      "category": "devops",
+      "install_path": "devops/ssh-doctor",
+      "path": "skills/devops/ssh-doctor",
+      "depth": 2,
+      "description": "SSH triage: Remote Login, launchd sshd, pre-auth closes, stale sessions, macOS."
+    },
+    {
       "name": "terraform-azurerm-set-diff-analyzer",
       "category": "devops",
       "install_path": "devops/terraform-azurerm-set-diff-analyzer",
@@ -2618,6 +2814,22 @@
       "path": "skills/devops/threat-model-analyst",
       "depth": 2,
       "description": "Full STRIDE-A threat model analysis and incremental update skill for repositories and systems. Supports two modes: (1) Single analysis — full STRIDE-A threat model of a repository, producing architecture overviews, DFD diagrams, STRIDE-A analysis, prioritized findings, and executive assessments. (2) Incremental analysis — takes a previous threat model report as baseline, compares the codebase at the latest (or a given commit), and produces an updated report with change tracking (new, resolved, still-present threats), STRIDE heatmap, findings diff, and an embedded HTML comparison. Only activate when the user explicitly requests a threat model analysis, incremental update, or invokes /threat-model-analyst directly."
+    },
+    {
+      "name": "vm-lab",
+      "category": "devops",
+      "install_path": "devops/vm-lab",
+      "path": "skills/devops/vm-lab",
+      "depth": 2,
+      "description": "Parallels macOS VM lab: GUI automation testing, Peekaboo, TCC, two-way validation."
+    },
+    {
+      "name": "wrangler",
+      "category": "devops",
+      "install_path": "devops/wrangler",
+      "path": "skills/devops/wrangler",
+      "depth": 2,
+      "description": "Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, account routing."
     },
     {
       "name": "draw-io-diagram-generator",
@@ -2804,6 +3016,14 @@
       "description": "This workflow guides you through a systematic approach to identify missing features, prioritize them, and create detailed specifications for implementation."
     },
     {
+      "name": "markdown-converter",
+      "category": "documentation",
+      "install_path": "documentation/markdown-converter",
+      "path": "skills/documentation/markdown-converter",
+      "depth": 2,
+      "description": "Markdown conversion via markitdown: PDF, Office, HTML, data, OCR, audio, ZIP, YouTube — no install required."
+    },
+    {
       "name": "markdown-to-html",
       "category": "documentation",
       "install_path": "documentation/markdown-to-html",
@@ -2922,6 +3142,14 @@
       "path": "skills/documentation/update-markdown-file-index",
       "depth": 2,
       "description": "Update a markdown file section with an index/table of files from a specified folder."
+    },
+    {
+      "name": "video-transcript-downloader",
+      "category": "documentation",
+      "install_path": "documentation/video-transcript-downloader",
+      "path": "skills/documentation/video-transcript-downloader",
+      "depth": 2,
+      "description": "yt-dlp video downloads: video, audio, subtitles, transcripts, clips, playlists — YouTube and more."
     },
     {
       "name": "csharp-async",
@@ -3628,6 +3856,22 @@
       "description": "Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency"
     },
     {
+      "name": "nano-banana-pro",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/nano-banana-pro",
+      "path": "skills/llm-tooling/nano-banana-pro",
+      "depth": 2,
+      "description": "Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final."
+    },
+    {
+      "name": "openai-image-gen",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/openai-image-gen",
+      "path": "skills/llm-tooling/openai-image-gen",
+      "depth": 2,
+      "description": "OpenAI Images API: batches, prompt sampler, gallery — gpt-image-1 and variants."
+    },
+    {
       "name": "openrouter-agent-migration",
       "category": "llm-tooling",
       "install_path": "llm-tooling/openrouter-agent-migration",
@@ -3666,6 +3910,14 @@
       "path": "skills/llm-tooling/openrouter-typescript-sdk",
       "depth": 2,
       "description": "Complete reference for integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern"
+    },
+    {
+      "name": "oracle",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/oracle",
+      "path": "skills/llm-tooling/oracle",
+      "depth": 2,
+      "description": "Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design."
     },
     {
       "name": "phoenix-cli",
@@ -4052,6 +4304,14 @@
       "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages at scale,\" \"directory pages,\" \"location pages,\" \"[keyword] + [city] pages,\" \"comparison pages,\" \"integration pages,\" or \"building many pages for SEO.\" For auditing existing SEO issues, see seo-audit."
     },
     {
+      "name": "release-tweets",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/release-tweets",
+      "path": "skills/marketing-and-growth/release-tweets",
+      "depth": 2,
+      "description": "Release tweets/social copy: draft from changelog, tags, npm/appcast, artifacts — X/Twitter announcements."
+    },
+    {
       "name": "signup-flow-cro",
       "category": "marketing-and-growth",
       "install_path": "marketing-and-growth/signup-flow-cro",
@@ -4178,6 +4438,30 @@
       "path": "skills/mcp/typescript-mcp-server-generator",
       "depth": 2,
       "description": "Generate a complete MCP server project in TypeScript with tools, resources, and proper configuration"
+    },
+    {
+      "name": "discord-clawd",
+      "category": "messaging",
+      "install_path": "messaging/discord-clawd",
+      "path": "skills/messaging/discord-clawd",
+      "depth": 2,
+      "description": "Discord-backed OpenClaw agent/session relay — post/ask via relay, not archive search."
+    },
+    {
+      "name": "openclaw-relay",
+      "category": "messaging",
+      "install_path": "messaging/openclaw-relay",
+      "path": "skills/messaging/openclaw-relay",
+      "depth": 2,
+      "description": "OpenClaw session relay: prompts/posts via local/remote relay over SSH — ask, publish, force-send."
+    },
+    {
+      "name": "whatsapp",
+      "category": "messaging",
+      "install_path": "messaging/whatsapp",
+      "path": "skills/messaging/whatsapp",
+      "depth": 2,
+      "description": "WhatsApp router: history/search/read/send — archive-first vs live, safety rules."
     },
     {
       "name": "declarative-agents",
@@ -4402,6 +4686,78 @@
       "path": "skills/microsoft-data/powerbi-modeling",
       "depth": 2,
       "description": "Power BI semantic modeling assistant for building optimized data models. Use when working with Power BI semantic models, creating measures, designing star schemas, configuring relationships, implementing RLS, or optimizing model performance. Triggers on queries about DAX calculations, table relationships, dimension/fact table design, naming conventions, model documentation, cardinality, cross-filter direction, calculation groups, and data model best practices. Always connects to the active model first using power-bi-modeling MCP tools to understand the data structure before providing guidance."
+    },
+    {
+      "name": "beeper",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/beeper",
+      "path": "skills/personal-productivity/beeper",
+      "depth": 2,
+      "description": "Beeper local cache: contact hints, room lookup, WhatsApp/iMessage traces, FTS search."
+    },
+    {
+      "name": "notcrawl",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/notcrawl",
+      "path": "skills/personal-productivity/notcrawl",
+      "depth": 2,
+      "description": "Notion archive: desktop/API sync, Markdown export, page search, read-only SQL."
+    },
+    {
+      "name": "obsidian",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/obsidian",
+      "path": "skills/personal-productivity/obsidian",
+      "depth": 2,
+      "description": "Obsidian vault: search/read/write notes, backlinks, Bases, Canvas."
+    },
+    {
+      "name": "one-password",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/one-password",
+      "path": "skills/personal-productivity/one-password",
+      "depth": 2,
+      "description": "1Password CLI (op): service-account first, targeted secret read/store/inject, tmux session."
+    },
+    {
+      "name": "peekaboo",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/peekaboo",
+      "path": "skills/personal-productivity/peekaboo",
+      "depth": 2,
+      "description": "macOS screenshots, UI inspection, clicks, typing, app/window automation via Peekaboo."
+    },
+    {
+      "name": "reminders",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/reminders",
+      "path": "skills/personal-productivity/reminders",
+      "depth": 2,
+      "description": "Apple Reminders via rem CLI: add, list, search, update, complete, delete."
+    },
+    {
+      "name": "sonos",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/sonos",
+      "path": "skills/personal-productivity/sonos",
+      "depth": 2,
+      "description": "Sonos control: search, queue, playlists, rooms/groups, volume, YouTube playback."
+    },
+    {
+      "name": "speaking",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/speaking",
+      "path": "skills/personal-productivity/speaking",
+      "depth": 2,
+      "description": "Speaking ops: conference invites, keynotes, panels, calendar/email tracking."
+    },
+    {
+      "name": "things-todo",
+      "category": "personal-productivity",
+      "install_path": "personal-productivity/things-todo",
+      "path": "skills/personal-productivity/things-todo",
+      "depth": 2,
+      "description": "Things 3 via things CLI: add, list, search, update, delete, verify tasks."
     },
     {
       "name": "agile-product-owner",
@@ -5026,6 +5382,14 @@
       "path": "skills/skills-management/microsoft-skill-creator",
       "depth": 2,
       "description": "Create agent skills for Microsoft technologies using Learn MCP tools. Use when users want to create a skill that teaches agents about any Microsoft technology, library, framework, or service (Azure, .NET, M365, VS Code, Bicep, etc.). Investigates topics deeply, then generates a hybrid skill storing essential knowledge locally while enabling dynamic deeper investigation."
+    },
+    {
+      "name": "skill-cleaner",
+      "category": "skills-management",
+      "install_path": "skills-management/skill-cleaner",
+      "path": "skills/skills-management/skill-cleaner",
+      "depth": 2,
+      "description": "Audit skills: loaded roots, duplicate skills, unused skills, prompt-budget costs, compact descriptions."
     },
     {
       "name": "skill-creator",
