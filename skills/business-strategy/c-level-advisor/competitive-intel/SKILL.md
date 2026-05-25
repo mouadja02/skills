@@ -1,4 +1,4 @@
-﻿---
+---
 name: "competitive-intel"
 description: "Systematic competitor tracking that feeds CMO positioning, CRO battlecards, and CPO roadmap decisions"
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: competitive-strategy
   updated: 2026-03-05
   frameworks: ci-playbook, battlecard-template
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Competitive Intelligence
 

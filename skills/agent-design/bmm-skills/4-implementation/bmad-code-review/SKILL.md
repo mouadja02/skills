@@ -1,7 +1,11 @@
 ---
 name: bmad-code-review
 description: 'Review code changes adversarially using parallel review layers (Blind Hunter, Edge Case Hunter, Acceptance Auditor) with structured triage into actionable categories. Use when the user says "run code review" or "review this code"'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Code Review Workflow
 

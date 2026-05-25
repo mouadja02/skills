@@ -1,8 +1,12 @@
-﻿---
+---
 name: gsap-react
 description: Official GSAP — React — useGSAP hook, refs, gsap.context(), cleanup
 license: MIT
+source: "https://github.com/greensock/gsap-skills"
+attribution: "greensock/gsap-skills by GreenSock"
 ---
+
+> **Attribution:** Sourced from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) by [GreenSock](https://greensock.com).
 
 # GSAP with React
 

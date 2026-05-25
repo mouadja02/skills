@@ -1,7 +1,11 @@
 ---
 name: multi-stage-dockerfile
 description: 'Create optimized multi-stage Dockerfiles for any language or framework'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 Your goal is to help me create efficient multi-stage Dockerfiles that follow best practices, resulting in smaller, more secure container images.
 

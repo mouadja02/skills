@@ -1,9 +1,13 @@
-﻿---
+---
 name: microsoft-skill-creator
 description: Create agent skills for Microsoft technologies using Learn MCP tools
 context: fork
 compatibility: Works best with Microsoft Learn MCP Server (https://learn.microsoft.com/api/mcp). Can also use the mslearn CLI as a fallback.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # Microsoft Skill Creator
 

@@ -1,8 +1,12 @@
-﻿---
+---
 name: remember
 description: "Explicitly save important knowledge to auto-memory with timestamp and context"
 command: /si:remember
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # /si:remember — Save Knowledge Explicitly
 

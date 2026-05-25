@@ -1,7 +1,11 @@
 ---
 name: test-driven-development
 description: Use when implementing any feature or bugfix, before writing implementation code
+source: "https://github.com/obra/superpowers"
+attribution: "obra/superpowers by Jesse Vincent"
 ---
+
+> **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).
 
 # Test-Driven Development (TDD)
 

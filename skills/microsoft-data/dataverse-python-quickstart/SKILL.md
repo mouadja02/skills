@@ -1,7 +1,11 @@
 ---
 name: dataverse-python-quickstart
 description: 'Generate Python SDK setup + CRUD + bulk + paging snippets using official patterns.'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 You are assisting with Microsoft Dataverse SDK for Python (preview).
 Generate concise Python snippets that:

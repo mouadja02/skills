@@ -1,8 +1,12 @@
-﻿---
+---
 name: acreadiness-generate-instructions
 description: AgentRC instruction file generator — .github/copilot-instructions.md, custom paths
 argument-hint: "[--output .github/copilot-instructions.md|AGENTS.md] [--strategy flat|nested] [--areas | --area <name>] [--apply-to <glob>] [--claude-md] [--dry-run]"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # /acreadiness-generate-instructions — write AI agent instructions
 

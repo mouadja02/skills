@@ -1,4 +1,4 @@
-﻿---
+---
 name: "executive-mentor"
 description: "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal board meetings, dissects decisions with no good options, and forces honest post-mortems"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: decision_matrix_scorer.py, stakeholder_mapper.py
   frameworks: pre-mortem, board-prep, hard-call, stress-test, postmortem
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Executive Mentor
 

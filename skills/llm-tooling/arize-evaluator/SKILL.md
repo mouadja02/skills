@@ -1,7 +1,11 @@
-﻿---
+---
 name: arize-evaluator
 description: Arize LLM judge — evaluators, hallucination/faithfulness/relevance scorers, eval runs
+source: "https://github.com/Arize-ai/arize-skills"
+attribution: "Arize-ai/arize-skills by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).
 
 # Arize Evaluator Skill
 

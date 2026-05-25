@@ -1,7 +1,11 @@
-﻿---
+---
 name: power-bi-report-design-consultation
 description: 'Power BI report visualization design prompt for creating effective, user-friendly, and accessible reports with optimal chart selection and layout design'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Power BI Report Visualization Designer
 

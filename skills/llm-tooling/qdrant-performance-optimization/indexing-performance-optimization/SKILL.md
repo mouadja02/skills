@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-indexing-performance-optimization
 description: "Diagnoses and fixes slow Qdrant indexing and data ingestion"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # What to Do When Qdrant Indexing Is Too Slow
 

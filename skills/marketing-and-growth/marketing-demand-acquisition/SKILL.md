@@ -1,4 +1,4 @@
-﻿---
+---
 name: "marketing-demand-acquisition"
 description: Creates demand generation campaigns, optimizes paid ad spend across LinkedIn, Google, and Meta, develops SEO strategies, and structures partnership programs for Series A+ startups scaling internationally
 triggers:
@@ -23,7 +23,11 @@ metadata:
   category: marketing
   domain: demand-generation
   updated: 2025-01
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Marketing Demand & Acquisition
 

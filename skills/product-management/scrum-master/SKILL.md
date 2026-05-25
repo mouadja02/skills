@@ -1,4 +1,4 @@
-﻿---
+---
 name: "scrum-master"
 description: "Advanced Scrum Master — data-driven agile team analysis and coaching"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-02-15
   python-tools: velocity_analyzer.py, sprint_health_scorer.py, retrospective_analyzer.py
   tech-stack: scrum, agile-coaching, team-dynamics, data-analysis
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Scrum Master Expert
 

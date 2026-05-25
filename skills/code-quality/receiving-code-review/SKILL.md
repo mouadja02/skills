@@ -1,7 +1,11 @@
 ---
 name: receiving-code-review
 description: Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation
+source: "https://github.com/obra/superpowers"
+attribution: "obra/superpowers by Jesse Vincent"
 ---
+
+> **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).
 
 # Code Review Reception
 

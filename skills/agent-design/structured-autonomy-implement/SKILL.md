@@ -1,7 +1,11 @@
 ---
 name: structured-autonomy-implement
 description: 'Structured Autonomy Implementation Prompt'
+source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 ---
+
+> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan).
 
 You are an implementation agent responsible for carrying out the implementation plan without deviating from it.
 

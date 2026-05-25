@@ -10,7 +10,11 @@ metadata:
   version: 0.8.4
   pixie-qa-version: ">=0.8.4,<0.9.0"
   pixie-qa-source: https://github.com/yiouli/pixie-qa/
+source: "https://github.com/yiouli/pixie-qa"
+attribution: "yiouli/pixie-qa by yiouli"
 ---
+
+> **Attribution:** Sourced from [yiouli/pixie-qa](https://github.com/yiouli/pixie-qa) by [yiouli](https://github.com/yiouli).
 
 # Eval-Driven Development for Python LLM Applications
 

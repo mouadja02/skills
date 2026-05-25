@@ -1,7 +1,11 @@
-﻿---
+---
 name: aspire
 description: 'Aspire skill covering the Aspire CLI, AppHost orchestration, service discovery, integrations, MCP server, VS Code extension, Dev Containers, GitHub Codespaces, templates, dashboard, and deployment'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Aspire — Polyglot Distributed-App Orchestration
 

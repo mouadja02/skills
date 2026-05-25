@@ -1,4 +1,4 @@
-﻿---
+---
 name: "strategic-alignment"
 description: Strategy cascade — boardroom to IC, OKR misalignment detection and fix
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: alignment_checker.py
   frameworks: alignment-playbook
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Strategic Alignment Engine
 

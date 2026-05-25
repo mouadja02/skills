@@ -1,4 +1,4 @@
-﻿---
+---
 name: "chief-of-staff"
 description: C-suite orchestrator — routes to advisor roles, triggers board meetings, cross-functional
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: orchestration
   updated: 2026-03-05
   frameworks: routing-matrix, synthesis-framework, decision-log, board-protocol
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Chief of Staff
 

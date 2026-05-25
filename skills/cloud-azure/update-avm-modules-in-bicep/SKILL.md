@@ -1,7 +1,11 @@
 ---
 name: update-avm-modules-in-bicep
 description: 'Update Azure Verified Modules (AVM) to latest versions in Bicep files.'
+source: "https://github.com/microsoft/azure-skills"
+attribution: "microsoft/azure-skills by Microsoft Azure"
 ---
+
+> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
 
 # Update Azure Verified Modules in Bicep Files
 

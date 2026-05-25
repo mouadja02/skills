@@ -7,7 +7,11 @@ description: >
   agent memory", "persist state across sessions", "build knowledge graph for agents",
   "track entities over time", "add long-term memory", "choose a memory framework",
   or mentions temporal knowledge graphs, vector stores, entity memory, adaptive memory, dynamic memory or memory benchmarks (LoCoMo, LongMemEval).
+source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 ---
+
+> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan).
 
 # Memory System Design
 

@@ -1,7 +1,11 @@
-﻿---
+---
 name: using-streamlit-cli
 description: Documents Streamlit CLI commands for running apps, managing configuration, and diagnostics
+source: "https://github.com/streamlit/agent-skills"
+attribution: "streamlit/agent-skills by Streamlit"
 ---
+
+> **Attribution:** Sourced from [streamlit/agent-skills](https://github.com/streamlit/agent-skills) by [Streamlit](https://streamlit.io).
 
 # Using the Streamlit CLI
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "c-level-advisor"
 description: C-suite advice — channels 10 roles: CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO
 license: MIT
@@ -11,7 +11,11 @@ metadata:
   skills_count: 28
   scripts_count: 25
   references_count: 52
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # C-Level Advisory Ecosystem
 

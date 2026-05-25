@@ -1,4 +1,4 @@
-﻿---
+---
 name: "x-twitter-growth"
 description: "X/Twitter growth engine for building audience, crafting viral content, and analyzing engagement"
 license: MIT
@@ -7,7 +7,11 @@ metadata:
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-10
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # X/Twitter Growth Engine
 

@@ -1,7 +1,11 @@
 ---
 name: bmad-edit-prd
 description: 'Edit an existing PRD. Use when the user says "edit this PRD".'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # PRD Edit Workflow
 

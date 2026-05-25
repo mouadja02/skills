@@ -1,11 +1,15 @@
-﻿---
+---
 name: qdrant-performance-optimization
 description: "Different techniques to optimize the performance of Qdrant, including indexing strategies, query optimization, and hardware considerations"
 allowed-tools:
   - Read
   - Grep
   - Glob
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 
 # Qdrant Performance Optimization

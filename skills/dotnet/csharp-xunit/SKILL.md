@@ -1,7 +1,11 @@
 ---
 name: csharp-xunit
 description: 'Get best practices for XUnit unit testing, including data-driven tests'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # XUnit Best Practices
 

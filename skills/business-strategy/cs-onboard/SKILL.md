@@ -1,4 +1,4 @@
-﻿---
+---
 name: "cs-onboard"
 description: "Founder onboarding interview that captures company context across 7 dimensions"
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: orchestration
   updated: 2026-03-05
   frameworks: founder-interview, context-capture, quarterly-refresh
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # C-Suite Onboarding
 

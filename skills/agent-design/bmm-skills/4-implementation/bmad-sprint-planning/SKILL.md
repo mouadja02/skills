@@ -1,7 +1,11 @@
 ---
 name: bmad-sprint-planning
 description: 'Generate sprint status tracking from epics. Use when the user says "run sprint planning" or "generate sprint plan"'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Sprint Planning Workflow
 

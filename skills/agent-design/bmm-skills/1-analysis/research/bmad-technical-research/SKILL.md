@@ -1,7 +1,11 @@
 ---
 name: bmad-technical-research
 description: 'Conduct technical research on technologies and architecture. Use when the user says they would like to do or produce a technical research report'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Technical Research Workflow
 

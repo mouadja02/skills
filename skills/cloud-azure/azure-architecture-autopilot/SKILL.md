@@ -10,7 +10,11 @@ description: >
   - "Foundry is slow", "I want to reduce costs", "Strengthen security" (natural language modification)
   - Azure resource deployment, Bicep template generation, IaC code generation
   - Microsoft Foundry, AI Search, OpenAI, Fabric, ADLS Gen2, Databricks, and all Azure services
+source: "https://github.com/microsoft/azure-skills"
+attribution: "microsoft/azure-skills by Microsoft Azure"
 ---
+
+> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
 
 # Azure Architecture Builder
 

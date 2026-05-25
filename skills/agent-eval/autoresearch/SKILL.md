@@ -1,4 +1,4 @@
-﻿---
+---
 name: autoresearch
 description: Autonomous experiment loop — goals, metrics, iterations, eval command, structured output
 license: MIT
@@ -6,7 +6,11 @@ compatibility: Requires git. The project must be a git repository. Requires term
 metadata:
   author: luiscantero
   inspired-by: https://github.com/karpathy/autoresearch
+source: "https://github.com/luiscantero"
+attribution: "autoresearch by luiscantero by luiscantero"
 ---
+
+> **Attribution:** Sourced from [autoresearch by luiscantero](https://github.com/luiscantero) by [luiscantero](https://github.com/luiscantero).
 
 # Autoresearch: Autonomous Iterative Experimentation
 

@@ -1,7 +1,11 @@
 ---
 name: bmad-agent-architect
 description: System architect and technical design leader. Use when the user asks to talk to Winston or requests the architect.
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Winston — System Architect
 

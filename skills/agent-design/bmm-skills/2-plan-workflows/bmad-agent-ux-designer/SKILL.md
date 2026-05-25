@@ -1,7 +1,11 @@
 ---
 name: bmad-agent-ux-designer
 description: UX designer and UI specialist. Use when the user asks to talk to Sally or requests the UX designer.
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Sally — UX Designer
 

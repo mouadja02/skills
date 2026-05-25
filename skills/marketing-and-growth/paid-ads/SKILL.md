@@ -1,4 +1,4 @@
-﻿---
+---
 name: "paid-ads"
 description: "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms"
 license: MIT
@@ -7,7 +7,11 @@ metadata:
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Paid Ads
 

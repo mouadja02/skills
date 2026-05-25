@@ -1,7 +1,11 @@
 ---
 name: appinsights-instrumentation
 description: 'Instrument a webapp to send useful telemetry data to Azure App Insights'
+source: "https://github.com/microsoft/azure-skills"
+attribution: "microsoft/azure-skills by Microsoft Azure"
 ---
+
+> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
 
 # AppInsights instrumentation
 

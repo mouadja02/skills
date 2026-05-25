@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-monitoring-setup
 description: "Guides Qdrant monitoring setup including Prometheus scraping, health probes, Hybrid Cloud metrics, alerting, and log centralization"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # How to Set Up Qdrant Monitoring
 

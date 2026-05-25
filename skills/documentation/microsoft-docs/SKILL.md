@@ -1,7 +1,11 @@
-﻿---
+---
 name: microsoft-docs
 description: Query Microsoft docs — Azure, .NET, Agent Framework, Aspire, Copilot, Microsoft 365
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Microsoft Docs
 

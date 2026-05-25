@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-search-strategies
 description: "Guides Qdrant search strategy selection"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # How to Improve Search Results with Advanced Strategies
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "ciso-advisor"
 description: "Security leadership for growth-stage companies. Risk quantification in dollars, compliance roadmap (SOC 2/ISO 27001/HIPAA/GDPR), security architecture strategy, incident response leadership, and board-level security reporting"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: risk_quantifier.py, compliance_tracker.py
   frameworks: risk-based-security, zero-trust, defense-in-depth
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CISO Advisor
 

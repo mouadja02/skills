@@ -1,7 +1,11 @@
 ---
 name: using-git-worktrees
 description: Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification
+source: "https://github.com/obra/superpowers"
+attribution: "obra/superpowers by Jesse Vincent"
 ---
+
+> **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).
 
 # Using Git Worktrees
 

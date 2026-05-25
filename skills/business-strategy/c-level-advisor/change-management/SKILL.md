@@ -1,4 +1,4 @@
-﻿---
+---
 name: "change-management"
 description: Change rollout — ADKAR for startups, communication templates, resistance handling
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: change-management
   updated: 2026-03-05
   frameworks: change-playbook
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Change Management Playbook
 

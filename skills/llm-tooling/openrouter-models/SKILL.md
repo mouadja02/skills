@@ -1,7 +1,11 @@
-﻿---
+---
 name: openrouter-models
 description: Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance
+source: "https://github.com/OpenRouterTeam/skills"
+attribution: "OpenRouterTeam/skills by OpenRouter"
 ---
+
+> **Attribution:** Sourced from [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills) by [OpenRouter](https://openrouter.ai).
 
 # OpenRouter Models
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "ma-playbook"
 description: "M&A strategy for acquiring companies or being acquired. Due diligence, valuation, integration, and deal structure"
 license: MIT
@@ -8,7 +8,11 @@ metadata:
   category: c-level
   domain: ma-strategy
   updated: 2026-03-05
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # M&A Playbook
 

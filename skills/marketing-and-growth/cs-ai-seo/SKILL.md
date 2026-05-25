@@ -1,4 +1,4 @@
-﻿---
+---
 name: "ai-seo"
 description: "Optimize content to get cited by AI search engines — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Copilot"
 license: MIT
@@ -7,7 +7,11 @@ metadata:
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # AI SEO
 

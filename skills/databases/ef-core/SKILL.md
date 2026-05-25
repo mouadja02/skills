@@ -1,7 +1,11 @@
 ---
 name: ef-core
 description: 'Get best practices for Entity Framework Core'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Entity Framework Core Best Practices
 

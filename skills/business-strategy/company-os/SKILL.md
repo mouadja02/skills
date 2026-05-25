@@ -1,4 +1,4 @@
-﻿---
+---
 name: "company-os"
 description: Company OS — connective tissue across all C-suite roles, operating system (EOS/Traction)
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: company-operations
   updated: 2026-03-05
   frameworks: os-comparison, implementation-guide
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Company Operating System
 

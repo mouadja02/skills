@@ -1,7 +1,11 @@
 ---
 name: dotnet-design-pattern-review
 description: 'Review the C#/.NET code for design pattern implementation and suggest improvements.'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # .NET/C# Design Pattern Review
 

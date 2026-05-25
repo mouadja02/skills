@@ -1,7 +1,11 @@
 ---
 name: openrouter-images
 description: Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, transform, or alter an existing image with a text prompt.
+source: "https://github.com/OpenRouterTeam/skills"
+attribution: "OpenRouterTeam/skills by OpenRouter"
 ---
+
+> **Attribution:** Sourced from [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills) by [OpenRouter](https://openrouter.ai).
 
 # OpenRouter Images
 

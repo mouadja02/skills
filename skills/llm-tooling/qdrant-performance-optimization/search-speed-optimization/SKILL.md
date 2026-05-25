@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-search-speed-optimization
 description: "Diagnoses and fixes slow Qdrant search"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # Diagnose a problem
 

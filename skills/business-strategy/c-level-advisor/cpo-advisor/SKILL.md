@@ -1,4 +1,4 @@
-﻿---
+---
 name: "cpo-advisor"
 description: "Product leadership for scaling companies. Product vision, portfolio strategy, product-market fit, and product org design"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: pmf_scorer.py, portfolio_analyzer.py
   frameworks: pmf-playbook, product-strategy, product-org-design
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CPO Advisor
 

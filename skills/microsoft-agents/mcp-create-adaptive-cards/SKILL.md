@@ -1,7 +1,11 @@
 ---
 name: mcp-create-adaptive-cards
 description: 'Skill converted from mcp-create-adaptive-cards.prompt.md'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 ````prompt
 ---

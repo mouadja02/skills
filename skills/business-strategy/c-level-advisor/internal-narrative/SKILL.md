@@ -1,4 +1,4 @@
-﻿---
+---
 name: "internal-narrative"
 description: "Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed for each audience's needs"
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: narrative-strategy
   updated: 2026-03-05
   frameworks: narrative-frameworks, all-hands-template
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Internal Narrative Builder
 

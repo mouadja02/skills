@@ -1,4 +1,4 @@
-﻿---
+---
 name: "cro-advisor"
 description: "Revenue leadership for B2B SaaS companies. Revenue forecasting, sales model design, pricing strategy, net revenue retention, and sales team scaling"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: revenue_forecast_model.py, churn_analyzer.py
   frameworks: sales-playbook, pricing-strategy, nrr-playbook
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CRO Advisor
 

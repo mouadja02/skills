@@ -1,4 +1,4 @@
-﻿---
+---
 name: "board-meeting"
 description: Board meeting — 6-phase structured deliberation, multi-agent C-suite protocol
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: board-protocol
   updated: 2026-03-05
   frameworks: 6-phase-board, two-layer-memory, independent-contributions
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Board Meeting Protocol
 

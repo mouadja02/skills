@@ -1,7 +1,11 @@
 ---
 name: dotnet-upgrade
 description: 'Ready-to-use prompts for comprehensive .NET framework upgrade analysis and execution'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Project Discovery & Assessment
   - name: "Project Classification Analysis"

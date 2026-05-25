@@ -1,7 +1,11 @@
 ---
 name: bmad-domain-research
 description: 'Conduct domain and industry research. Use when the user says wants to do domain research for a topic or industry'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Domain Research Workflow
 

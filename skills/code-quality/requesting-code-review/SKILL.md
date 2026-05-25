@@ -1,7 +1,11 @@
 ---
 name: requesting-code-review
 description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
+source: "https://github.com/obra/superpowers"
+attribution: "obra/superpowers by Jesse Vincent"
 ---
+
+> **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).
 
 # Requesting Code Review
 

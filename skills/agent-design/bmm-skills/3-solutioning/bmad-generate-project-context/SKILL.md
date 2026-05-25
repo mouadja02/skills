@@ -1,7 +1,11 @@
 ---
 name: bmad-generate-project-context
 description: 'Create project-context.md with AI rules. Use when the user says "generate project context" or "create project context"'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Generate Project Context Workflow
 

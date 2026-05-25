@@ -1,7 +1,11 @@
-﻿---
+---
 name: create-headless-agent
 description: Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI
+source: "https://github.com/OpenRouterTeam/skills"
+attribution: "OpenRouterTeam/skills by OpenRouter"
 ---
+
+> **Attribution:** Sourced from [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills) by [OpenRouter](https://openrouter.ai).
 
 # Create Headless Agent
 

@@ -1,7 +1,11 @@
-﻿---
+---
 name: react-audit-grep-patterns
 description: Grep scan library for React 18.3.1 / React 19 upgrade audits
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # React Audit Grep Patterns
 

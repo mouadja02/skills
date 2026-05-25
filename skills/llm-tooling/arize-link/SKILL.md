@@ -1,7 +1,11 @@
-﻿---
+---
 name: arize-link
 description: Generate deep links to the Arize UI
+source: "https://github.com/Arize-ai/arize-skills"
+attribution: "Arize-ai/arize-skills by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).
 
 # Arize Link
 

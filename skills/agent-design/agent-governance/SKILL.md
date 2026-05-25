@@ -9,7 +9,11 @@ description: |
   - Building audit trails for agent actions and decisions
   - Enforcing rate limits, content filters, or tool restrictions on agents
   - Working with any agent framework (PydanticAI, CrewAI, OpenAI Agents, LangChain, AutoGen)
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # Agent Governance Patterns
 

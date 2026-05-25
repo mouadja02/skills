@@ -1,7 +1,11 @@
-﻿---
+---
 name: react18-batching-patterns
 description: React 18 automatic batching regression diagnosis and fix — class component patterns
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # React 18 Automatic Batching Patterns
 

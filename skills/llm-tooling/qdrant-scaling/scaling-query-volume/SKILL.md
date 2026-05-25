@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-scaling-query-volume
 description: "Guides Qdrant query volume scaling"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # Scaling for Query Volume
 

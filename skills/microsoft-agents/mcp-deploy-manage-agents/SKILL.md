@@ -1,7 +1,11 @@
 ---
 name: mcp-deploy-manage-agents
 description: 'Skill converted from mcp-deploy-manage-agents.prompt.md'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 ````prompt
 ---

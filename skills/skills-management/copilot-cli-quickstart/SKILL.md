@@ -7,7 +7,11 @@ description: >
   ask a question! Note: This skill targets GitHub Copilot CLI specifically
   and uses CLI-specific tools (ask_user, sql, fetch_copilot_cli_documentation).
 allowed-tools: ask_user, sql, fetch_copilot_cli_documentation
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # 🚀 Copilot CLI Quick Start — Your Friendly Terminal Tutor
 

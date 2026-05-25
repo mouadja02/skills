@@ -1,7 +1,11 @@
-﻿---
+---
 name: create-agent-tui
 description: Agent TUI scaffolding in TypeScript — @openrouter/agent, interactive terminal UI
+source: "https://github.com/OpenRouterTeam/skills"
+attribution: "OpenRouterTeam/skills by OpenRouter"
 ---
+
+> **Attribution:** Sourced from [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills) by [OpenRouter](https://openrouter.ai).
 
 # Create Agent TUI
 

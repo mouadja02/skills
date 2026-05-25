@@ -1,8 +1,12 @@
-﻿---
+---
 name: winmd-api-search
 description: 'Find and explore Windows desktop APIs'
 license: Complete terms in LICENSE.txt
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # WinMD API Search
 

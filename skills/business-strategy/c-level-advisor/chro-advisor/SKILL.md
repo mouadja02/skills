@@ -1,4 +1,4 @@
-﻿---
+---
 name: "chro-advisor"
 description: "People leadership for scaling companies. Hiring strategy, compensation design, org structure, culture, and retention"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: hiring_plan_modeler.py, comp_benchmarker.py
   frameworks: people-strategy, comp-frameworks, org-design
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CHRO Advisor
 

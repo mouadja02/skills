@@ -1,4 +1,4 @@
-﻿---
+---
 name: "ceo-advisor"
 description: "Executive leadership guidance for strategic decision-making, organizational development, and stakeholder management"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: strategy_analyzer.py, financial_scenario_analyzer.py
   frameworks: executive-decisions, board-governance, leadership-culture
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CEO Advisor
 

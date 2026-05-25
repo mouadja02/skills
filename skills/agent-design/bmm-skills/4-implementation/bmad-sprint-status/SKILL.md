@@ -1,7 +1,11 @@
 ---
 name: bmad-sprint-status
 description: 'Summarize sprint status and surface risks. Use when the user says "check sprint status" or "show sprint status"'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Sprint Status Workflow
 

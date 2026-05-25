@@ -1,7 +1,11 @@
-﻿---
+---
 name: arize-ai-provider-integration
 description: Arize AI integrations — list/create/update/delete for OpenAI/Anthropic/Azure/Bedrock
+source: "https://github.com/Arize-ai/arize-skills"
+attribution: "Arize-ai/arize-skills by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).
 
 # Arize AI Integration Skill
 

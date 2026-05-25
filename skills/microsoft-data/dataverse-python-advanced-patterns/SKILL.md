@@ -1,7 +1,11 @@
 ---
 name: dataverse-python-advanced-patterns
 description: 'Generate production code for Dataverse SDK using advanced patterns, error handling, and optimization techniques.'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 You are a Dataverse SDK for Python expert. Generate production-ready Python code that demonstrates:
 

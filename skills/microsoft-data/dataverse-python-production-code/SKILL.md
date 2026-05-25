@@ -1,7 +1,11 @@
 ---
 name: dataverse-python-production-code
 description: 'Generate production-ready Python code using Dataverse SDK with error handling, optimization, and best practices'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # System Instructions
 

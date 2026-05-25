@@ -1,7 +1,11 @@
-﻿---
+---
 name: suggest-awesome-github-copilot-instructions
 description: Suggest Copilot instruction files from awesome-copilot — context-aware
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # Suggest Awesome GitHub Copilot Instructions
 

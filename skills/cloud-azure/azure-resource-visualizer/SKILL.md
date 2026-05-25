@@ -1,10 +1,14 @@
-﻿---
+---
 name: azure-resource-visualizer
 description: Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources
 license: Complete terms in LICENSE.txt
 metadata:
   author: Tom Meschter (tom.meschter@microsoft.com)
+source: "https://github.com/microsoft/azure-skills"
+attribution: "microsoft/azure-skills by Microsoft Azure"
 ---
+
+> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
 
 # Azure Resource Visualizer - Architecture Diagram Generator
 

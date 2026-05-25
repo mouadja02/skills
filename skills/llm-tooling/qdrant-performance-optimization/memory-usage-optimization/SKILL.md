@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-memory-usage-optimization
 description: "Diagnoses and reduces Qdrant memory usage"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # Understanding memory usage
 

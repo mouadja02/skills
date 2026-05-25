@@ -1,4 +1,4 @@
-﻿---
+---
 name: "decision-logger"
 description: "Two-layer memory architecture for board meeting decisions. Manages raw transcripts (Layer 1) and approved decisions (Layer 2)"
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: decision-memory
   updated: 2026-03-05
   python-tools: scripts/decision_tracker.py
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Decision Logger
 

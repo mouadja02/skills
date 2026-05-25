@@ -8,7 +8,11 @@ description: >
   FluentDialog, FluentToast, FluentNavMenu, FluentTextField, FluentSelect,
   FluentAutocomplete, FluentDesignTheme, or any component prefixed with "Fluent".
   Also use when troubleshooting missing providers, JS interop issues, or theming.
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Fluent UI Blazor — Consumer Usage Guide
 

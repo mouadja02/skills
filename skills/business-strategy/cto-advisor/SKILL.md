@@ -1,4 +1,4 @@
-﻿---
+---
 name: "cto-advisor"
 description: "Technical leadership guidance for engineering teams, architecture decisions, and technology strategy"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: tech_debt_analyzer.py, team_scaling_calculator.py
   frameworks: architecture-decisions, engineering-metrics, technology-evaluation
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CTO Advisor
 

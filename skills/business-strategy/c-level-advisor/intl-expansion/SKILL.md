@@ -1,4 +1,4 @@
-﻿---
+---
 name: "intl-expansion"
 description: "International market expansion strategy. Market selection, entry modes, localization, regulatory compliance, and go-to-market by region"
 license: MIT
@@ -8,7 +8,11 @@ metadata:
   category: c-level
   domain: international-strategy
   updated: 2026-03-05
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # International Expansion
 

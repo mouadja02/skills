@@ -1,7 +1,11 @@
 ---
 name: dotnet-best-practices
 description: 'Ensure .NET/C# code meets best practices for the solution/project.'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # .NET/C# Best Practices
 

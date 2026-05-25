@@ -1,4 +1,4 @@
-﻿---
+---
 name: "board-deck-builder"
 description: "Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles"
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: board-governance
   updated: 2026-03-05
   frameworks: deck-frameworks, board-deck-template
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Board Deck Builder
 

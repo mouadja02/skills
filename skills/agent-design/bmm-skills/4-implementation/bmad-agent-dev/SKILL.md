@@ -1,7 +1,11 @@
-﻿---
+---
 name: bmad-agent-dev
 description: Senior software engineer for story execution and code implementation
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Amelia — Senior Software Engineer
 

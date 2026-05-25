@@ -2,7 +2,11 @@
 name: review
 description: "Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics."
 command: /si:review
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # /si:review — Analyze Auto-Memory
 

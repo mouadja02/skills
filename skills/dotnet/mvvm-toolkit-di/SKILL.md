@@ -1,7 +1,11 @@
-﻿---
+---
 name: mvvm-toolkit-di
 description: CommunityToolkit.Mvvm + DI — Generic Host, ViewModelLocator, scoped/transient registration
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # CommunityToolkit.Mvvm + `Microsoft.Extensions.DependencyInjection`
 

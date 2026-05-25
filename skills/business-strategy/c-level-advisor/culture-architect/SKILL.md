@@ -1,4 +1,4 @@
-﻿---
+---
 name: "culture-architect"
 description: Culture as behavior — mission/values workshops, culture metrics, behavior standards
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: culture-leadership
   updated: 2026-03-05
   frameworks: culture-playbook, culture-code-template
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Culture Architect
 

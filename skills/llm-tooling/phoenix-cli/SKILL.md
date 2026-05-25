@@ -1,4 +1,4 @@
-﻿---
+---
 name: phoenix-cli
 description: Phoenix CLI — fetch/export traces, analyze errors, open coding axial coding review
 license: Apache-2.0
@@ -6,7 +6,11 @@ compatibility: Requires Node.js (for npx) or global install of @arizeai/phoenix-
 metadata:
   author: arize-ai
   version: "3.3.0"
+source: "https://github.com/Arize-ai/phoenix"
+attribution: "Arize-ai/phoenix by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/phoenix](https://github.com/Arize-ai/phoenix) by [Arize AI](https://arize.com).
 
 # Phoenix CLI
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "coo-advisor"
 description: "Operations leadership for scaling companies. Process design, OKR execution, operational cadence, and scaling playbooks"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: ops_efficiency_analyzer.py, okr_tracker.py
   frameworks: scaling-playbook, ops-cadence, process-frameworks
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # COO Advisor
 

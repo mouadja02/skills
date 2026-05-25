@@ -1,7 +1,11 @@
-﻿---
+---
 name: arize-experiment
 description: Arize experiments — create, run, analyze. A/B eval, model comparison (GPT-4, Claude)
+source: "https://github.com/Arize-ai/arize-skills"
+attribution: "Arize-ai/arize-skills by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).
 
 # Arize Experiment Skill
 

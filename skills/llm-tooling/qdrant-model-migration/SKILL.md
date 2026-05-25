@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-model-migration
 description: "Guides embedding model migration in Qdrant without downtime"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # What to Do When Changing Embedding Models
 

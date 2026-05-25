@@ -1,7 +1,11 @@
-﻿---
+---
 name: arize-annotation
 description: Arize annotations — label schema configs, review queues, human feedback workflows
+source: "https://github.com/Arize-ai/arize-skills"
+attribution: "Arize-ai/arize-skills by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).
 
 # Arize Annotation Skill
 

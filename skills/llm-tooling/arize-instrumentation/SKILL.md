@@ -1,7 +1,11 @@
-﻿---
+---
 name: arize-instrumentation
 description: Arize AX tracing — 2-phase: codebase analysis → instrumentation with user confirmation
+source: "https://github.com/Arize-ai/arize-skills"
+attribution: "Arize-ai/arize-skills by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).
 
 # Arize Instrumentation Skill
 

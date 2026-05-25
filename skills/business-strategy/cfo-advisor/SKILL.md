@@ -1,4 +1,4 @@
-﻿---
+---
 name: "cfo-advisor"
 description: "Financial leadership for startups and scaling companies. Financial modeling, unit economics, fundraising strategy, cash management, and board financial packages"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: burn_rate_calculator.py, unit_economics_analyzer.py, fundraising_model.py
   frameworks: financial-planning, fundraising-playbook, cash-management
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CFO Advisor
 

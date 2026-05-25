@@ -1,7 +1,11 @@
-﻿---
+---
 name: bmad-agent-tech-writer
 description: Technical documentation specialist and knowledge curator
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Paige — Technical Writer
 

@@ -1,8 +1,12 @@
-﻿---
+---
 name: gsap-frameworks
 description: Official GSAP — Vue, Svelte, and other non-React frameworks — lifecycle, scoping selectors, cleanup on unmount
 license: MIT
+source: "https://github.com/greensock/gsap-skills"
+attribution: "greensock/gsap-skills by GreenSock"
 ---
+
+> **Attribution:** Sourced from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) by [GreenSock](https://greensock.com).
 
 # GSAP with Vue, Svelte, and Other Frameworks
 

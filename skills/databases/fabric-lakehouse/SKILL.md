@@ -1,10 +1,14 @@
-﻿---
+---
 name: fabric-lakehouse
 description: Microsoft Fabric Lakehouse — features, SQL endpoint, Delta tables, AI functions context
 metadata:
   author: tedvilutis
   version: "1.0"
+source: "https://github.com/microsoft/skills-for-fabric"
+attribution: "microsoft/skills-for-fabric by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills-for-fabric](https://github.com/microsoft/skills-for-fabric) by [Microsoft](https://microsoft.com).
 
 # When to Use This Skill
 

@@ -1,7 +1,11 @@
 ---
 name: containerize-aspnetcore
 description: 'Containerize an ASP.NET Core project by creating Dockerfile and .dockerfile files customized for the project.'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # ASP.NET Core Docker Containerization Prompt
 

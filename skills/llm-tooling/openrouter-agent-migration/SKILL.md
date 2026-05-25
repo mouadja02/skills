@@ -1,8 +1,12 @@
-﻿---
+---
 name: openrouter-agent-migration
 description: @openrouter/sdk → @openrouter/agent — callModel, tool(), stop conditions migration
 version: 1.0.0
+source: "https://github.com/OpenRouterTeam/skills"
+attribution: "OpenRouterTeam/skills by OpenRouter"
 ---
+
+> **Attribution:** Sourced from [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills) by [OpenRouter](https://openrouter.ai).
 
 # Migrating from @openrouter/sdk to @openrouter/agent
 

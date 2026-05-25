@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-search-quality-diagnosis
 description: "Diagnoses Qdrant search quality issues"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # How to Diagnose Bad Search Quality
 

@@ -1,7 +1,11 @@
 ---
 name: aspnet-minimal-api-openapi
 description: 'Create ASP.NET Minimal API endpoints with proper OpenAPI documentation'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # ASP.NET Minimal API with OpenAPI
 

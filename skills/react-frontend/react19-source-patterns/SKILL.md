@@ -1,7 +1,11 @@
 ---
 name: react19-source-patterns
 description: 'Reference for React 19 source-file migration patterns, including API changes, ref handling, and context updates.'
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # React 19 Source Migration Patterns
 

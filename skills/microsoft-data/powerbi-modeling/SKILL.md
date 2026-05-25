@@ -1,7 +1,11 @@
-﻿---
+---
 name: powerbi-modeling
 description: 'Power BI semantic modeling — building optimized data models'
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # Power BI Semantic Modeling
 

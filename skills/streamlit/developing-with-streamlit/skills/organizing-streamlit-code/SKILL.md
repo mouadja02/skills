@@ -1,8 +1,12 @@
-﻿---
+---
 name: organizing-streamlit-code
 description: Organizing Streamlit code for maintainability
 license: Apache-2.0
+source: "https://github.com/streamlit/agent-skills"
+attribution: "streamlit/agent-skills by Streamlit"
 ---
+
+> **Attribution:** Sourced from [streamlit/agent-skills](https://github.com/streamlit/agent-skills) by [Streamlit](https://streamlit.io).
 
 # Streamlit code organization
 

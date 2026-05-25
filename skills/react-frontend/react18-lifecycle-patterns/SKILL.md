@@ -1,7 +1,11 @@
-﻿---
+---
 name: react18-lifecycle-patterns
 description: React unsafe lifecycles → safe alternatives — componentWillMount/Update/ReceiveProps
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # React 18 Lifecycle Patterns
 

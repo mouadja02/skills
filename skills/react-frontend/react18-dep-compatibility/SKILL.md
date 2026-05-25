@@ -1,7 +1,11 @@
 ---
 name: react18-dep-compatibility
 description: 'React 18.3.1 and React 19 dependency compatibility matrix.'
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # React Dependency Compatibility Matrix
 

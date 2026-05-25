@@ -1,4 +1,4 @@
-﻿---
+---
 name: "agent-protocol"
 description: "Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats"
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: agent-orchestration
   updated: 2026-03-05
   frameworks: invocation-patterns
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Inter-Agent Protocol
 

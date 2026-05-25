@@ -1,7 +1,11 @@
 ---
 name: openapi-to-application-code
 description: 'Generate a complete, production-ready application from an OpenAPI specification'
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Generate Application from OpenAPI Spec
 

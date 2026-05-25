@@ -1,7 +1,11 @@
-﻿---
+---
 name: suggest-awesome-github-copilot-agents
 description: Suggest Copilot custom agents from awesome-copilot — context-aware
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
 
 # Suggest Awesome GitHub Copilot Custom Agents
 

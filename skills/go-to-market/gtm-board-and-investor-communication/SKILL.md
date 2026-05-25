@@ -5,7 +5,11 @@ license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)
   source: https://github.com/beingsmit/technical-product-gtm
+source: "https://github.com/beingsmit/technical-product-gtm"
+attribution: "beingsmit/technical-product-gtm by Smit Patel"
 ---
+
+> **Attribution:** Sourced from [beingsmit/technical-product-gtm](https://github.com/beingsmit/technical-product-gtm) by [Smit Patel](https://linkedin.com/in/smitkpatel).
 
 # Board and Investor Communication
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "context-engine"
 description: Company context loader — reads company-context.md, staleness detection (>90 days)
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: orchestration
   updated: 2026-03-05
   frameworks: context-loading, anonymization, context-enrichment
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Company Context Engine
 

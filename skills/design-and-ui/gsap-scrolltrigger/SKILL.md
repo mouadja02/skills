@@ -1,8 +1,12 @@
-﻿---
+---
 name: gsap-scrolltrigger
 description: Official GSAP — ScrollTrigger — scroll-linked animations, pinning, scrub, triggers
 license: MIT
+source: "https://github.com/greensock/gsap-skills"
+attribution: "greensock/gsap-skills by GreenSock"
 ---
+
+> **Attribution:** Sourced from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) by [GreenSock](https://greensock.com).
 
 # GSAP ScrollTrigger
 

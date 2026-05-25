@@ -1,7 +1,11 @@
 ---
 name: bmad-correct-course
 description: 'Manage significant changes during sprint execution. Use when the user says "correct course" or "propose sprint change"'
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).
 
 # Correct Course - Sprint Change Management Workflow
 

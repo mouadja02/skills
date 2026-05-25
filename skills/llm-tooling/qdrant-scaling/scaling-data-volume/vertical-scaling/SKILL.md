@@ -1,7 +1,11 @@
-﻿---
+---
 name: qdrant-vertical-scaling
 description: "Guides Qdrant vertical scaling decisions"
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # What to Do When Qdrant Needs to Scale Vertically
 

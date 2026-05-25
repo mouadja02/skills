@@ -6,7 +6,11 @@ allowed-tools:
   - Grep
   - Glob
   - Bash
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # Qdrant Clients SDK
 

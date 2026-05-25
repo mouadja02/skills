@@ -1,4 +1,4 @@
-﻿---
+---
 name: phoenix-tracing
 description: OpenInference semantic conventions and instrumentation for Phoenix AI observability
 license: Apache-2.0
@@ -7,7 +7,11 @@ metadata:
   author: oss@arize.com
   version: "1.0.0"
   languages: "Python, TypeScript"
+source: "https://github.com/Arize-ai/phoenix"
+attribution: "Arize-ai/phoenix by Arize AI"
 ---
+
+> **Attribution:** Sourced from [Arize-ai/phoenix](https://github.com/Arize-ai/phoenix) by [Arize AI](https://arize.com).
 
 # Phoenix Tracing
 

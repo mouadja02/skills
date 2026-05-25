@@ -1,4 +1,4 @@
-﻿---
+---
 name: "cmo-advisor"
 description: "Marketing leadership for scaling companies. Brand positioning, growth model design, marketing budget allocation, and marketing org design"
 license: MIT
@@ -10,7 +10,11 @@ metadata:
   updated: 2026-03-05
   python-tools: marketing_budget_modeler.py, growth_model_simulator.py
   frameworks: brand-positioning, growth-frameworks, marketing-org
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # CMO Advisor
 

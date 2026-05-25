@@ -1,4 +1,4 @@
-﻿---
+---
 name: "founder-coach"
 description: Founder/CEO leadership — archetype ID, delegation, blind spots, scaling decisions
 license: MIT
@@ -9,7 +9,11 @@ metadata:
   domain: founder-development
   updated: 2026-03-05
   frameworks: leadership-growth, founder-toolkit
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Founder Development Coach
 

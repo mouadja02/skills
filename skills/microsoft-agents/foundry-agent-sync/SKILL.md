@@ -1,7 +1,11 @@
-﻿---
+---
 name: foundry-agent-sync
 description: Azure AI Foundry agents via REST — create/sync prompt-based agents from local JSON manifest
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Foundry Agent Sync
 

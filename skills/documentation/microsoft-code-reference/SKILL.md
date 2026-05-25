@@ -1,8 +1,12 @@
-﻿---
+---
 name: microsoft-code-reference
 description: Look up Microsoft API references, find working code samples, and verify SDK code is correct
 compatibility: Works best with Microsoft Learn MCP Server (https://learn.microsoft.com/api/mcp). Can also use the mslearn CLI as a fallback.
+source: "https://github.com/microsoft/skills"
+attribution: "microsoft/skills by Microsoft"
 ---
+
+> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
 
 # Microsoft Code Reference
 

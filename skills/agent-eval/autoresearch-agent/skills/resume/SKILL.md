@@ -2,7 +2,11 @@
 name: "resume"
 description: "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating."
 command: /ar:resume
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # /ar:resume — Resume Experiment
 

@@ -1,11 +1,15 @@
-﻿---
+---
 name: qdrant-scaling
 description: "Guides Qdrant scaling decisions"
 allowed-tools:
   - Read
   - Grep
   - Glob
+source: "https://github.com/qdrant/skills"
+attribution: "qdrant/skills by Qdrant"
 ---
+
+> **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # Qdrant Scaling
 
