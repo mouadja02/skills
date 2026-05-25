@@ -17,6 +17,7 @@ Skills for **diagrams, presentations, slides, and visual communication**.
 
 | Skill | What it does |
 | --- | --- |
+| `html-slides-creator` | Full pipeline: analyse codebase → plan narrative → generate reveal.js deck with branding, code demos, Mermaid diagrams, speaker notes. |
 | `slides` | Create strategic HTML presentations with Chart.js. |
 | `pptx` | Generate PowerPoint (PPTX) presentations. |
 | `investor-pitch-deck-designer` | Design investor pitch decks — narrative, structure, visuals. |
@@ -39,6 +40,8 @@ Skills for **diagrams, presentations, slides, and visual communication**.
 ## When to use this category
 
 - "Create a draw.io diagram" / "PlantUML diagram"
+- "Create slides for this project / tool / codebase"
+- "Build a reveal.js presentation" / "generate a deck from this repo"
 - "Build a slide deck" / "PowerPoint presentation"
 - "Design an investor pitch"
 - "Draft a professional email" / "meeting minutes"
