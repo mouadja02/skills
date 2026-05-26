@@ -109,6 +109,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`structured-autonomy-plan`](./skills/agent-design/structured-autonomy-plan/SKILL.md) | `agent-design/structured-autonomy-plan` | Structured Autonomy Planning Prompt |
 | [`tool-design`](./skills/agent-design/tool-design/SKILL.md) | `agent-design/tool-design` | This skill should be used when the user asks to "design agent tools", "create tool descriptions", "reduce tool complexity", "implement MCP tools", or mentions tool consolidation, architectural reduction, tool naming conventions, or agent-tool interfaces. |
 | [`trading-agent-builder`](./skills/agent-design/trading-agent-builder/SKILL.md) | `agent-design/trading-agent-builder` | Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs |
+| [`harness-scaling`](./skills/agent-design/harness-scaling/SKILL.md) | `agent-design/harness-scaling` | Six-component harness framework (ℛℳ𝒞𝒮𝒪𝒢) for designing reliable agentic AI systems beyond model scaling — context governance, trustworthy memory, skill routing with verification, safe agent evolution. From arXiv:2605.26112. |
 
 ## agent-eval
 
@@ -133,6 +134,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`memory-merger`](./skills/agent-eval/memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file |
 | [`nano-banana-pro-openrouter`](./skills/agent-eval/nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model |
 | [`semantic-kernel`](./skills/agent-eval/semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python |
+| [`harness-benchmarking`](./skills/agent-eval/harness-benchmarking/SKILL.md) | `agent-eval/harness-benchmarking` | Process-level agent evaluation: pass^k reliability, memory hygiene metrics, context efficiency, trajectory quality, longitudinal drift measurement, multi-agent fidelity. From arXiv:2605.26112. |
 
 ## api-backend
 

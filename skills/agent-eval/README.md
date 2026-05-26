@@ -15,6 +15,7 @@ Skills for **evaluating, improving, and adding memory to AI agents** — autores
 | `local-ai-stack` | Run a full local AI stack — Ollama, Open WebUI, local embeddings. |
 | `semantic-kernel` | Microsoft Semantic Kernel — plugins, planners, memory, embeddings. |
 | `nano-banana-pro-openrouter` | Lightweight agent patterns via OpenRouter. |
+| `harness-benchmarking` | Process-level agent evaluation: pass^k reliability, memory hygiene metrics, context efficiency, trajectory quality, longitudinal drift measurement. From arXiv:2605.26112. |
 
 ## When to use this category
 
