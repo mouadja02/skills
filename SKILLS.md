@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 702 skills across 31 categories.
+**Total:** 704 skills across 31 categories.
 
 ## Install one skill
 
@@ -22,8 +22,8 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`agent-design`](#agent-design) | 51 |
-| [`agent-eval`](#agent-eval) | 19 |
+| [`agent-design`](#agent-design) | 52 |
+| [`agent-eval`](#agent-eval) | 20 |
 | [`api-backend`](#api-backend) | 11 |
 | [`business-strategy`](#business-strategy) | 63 |
 | [`cloud-azure`](#cloud-azure) | 18 |
@@ -102,6 +102,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`create-agentsmd`](./skills/agent-design/create-agentsmd/SKILL.md) | `agent-design/create-agentsmd` | Prompt for generating an AGENTS.md file for a repository |
 | [`create-headless-agent`](./skills/agent-design/create-headless-agent/SKILL.md) | `agent-design/create-headless-agent` | Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI |
 | [`durable-agent-workflows`](./skills/agent-design/durable-agent-workflows/SKILL.md) | `agent-design/durable-agent-workflows` | Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns |
+| [`harness-scaling`](./skills/agent-design/harness-scaling/SKILL.md) | `agent-design/harness-scaling` | Use when designing or auditing an agentic AI system holistically. Activates the six-component harness framework (ℛ Reasoning, ℳ Memory, 𝒞 Context, 𝒮 Skills, 𝒪 Orchestration, 𝒢 Governance) from arXiv:2605.26112. Trigger phrases: "design an agent system", "why is my agent unreliable", "harness architecture", "system-level agent design", "beyond model scaling", "agentic infrastructure", "scale my agent system", "agent performance bottleneck". |
 | [`latent-briefing`](./skills/agent-design/latent-briefing/SKILL.md) | `agent-design/latent-briefing` | This skill should be used when the user asks to "share memory between agents", "KV cache compaction for multi-agent", "orchestrator worker context", "latent briefing", "reduce worker tokens", "cross-agent memory without summarization", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents. |
 | [`multi-agent-patterns`](./skills/agent-design/multi-agent-patterns/SKILL.md) | `agent-design/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution. |
 | [`structured-autonomy-generate`](./skills/agent-design/structured-autonomy-generate/SKILL.md) | `agent-design/structured-autonomy-generate` | Structured Autonomy Implementation Generator Prompt |
@@ -109,7 +110,6 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`structured-autonomy-plan`](./skills/agent-design/structured-autonomy-plan/SKILL.md) | `agent-design/structured-autonomy-plan` | Structured Autonomy Planning Prompt |
 | [`tool-design`](./skills/agent-design/tool-design/SKILL.md) | `agent-design/tool-design` | This skill should be used when the user asks to "design agent tools", "create tool descriptions", "reduce tool complexity", "implement MCP tools", or mentions tool consolidation, architectural reduction, tool naming conventions, or agent-tool interfaces. |
 | [`trading-agent-builder`](./skills/agent-design/trading-agent-builder/SKILL.md) | `agent-design/trading-agent-builder` | Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs |
-| [`harness-scaling`](./skills/agent-design/harness-scaling/SKILL.md) | `agent-design/harness-scaling` | Six-component harness framework (ℛℳ𝒞𝒮𝒪𝒢) for designing reliable agentic AI systems beyond model scaling — context governance, trustworthy memory, skill routing with verification, safe agent evolution. From arXiv:2605.26112. |
 
 ## agent-eval
 
@@ -130,11 +130,11 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`setup`](./skills/agent-eval/autoresearch-agent/skills/setup/SKILL.md) | `agent-eval/autoresearch-agent/skills/setup` | Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator |
 | [`status`](./skills/agent-eval/autoresearch-agent/skills/status/SKILL.md) | `agent-eval/autoresearch-agent/skills/status` | Show experiment dashboard with results, active loops, and progress. |
 | [`eval-driven-dev`](./skills/agent-eval/eval-driven-dev/SKILL.md) | `agent-eval/eval-driven-dev` | Improve AI application with evaluation-driven development. Define eval criteria, instrument the application, build golden datasets, observe and evaluate application runs, analyze results, and produce a concrete action plan for improvements. ALWAYS USE THIS SKILL when the user asks to set up QA, add tests, add evals, evaluate, benchmark, fix wrong behaviors, improve quality, or do quality assurance for any Python project that calls an LLM model. |
+| [`harness-benchmarking`](./skills/agent-eval/harness-benchmarking/SKILL.md) | `agent-eval/harness-benchmarking` | Use when designing evaluation suites for agentic systems, choosing agent benchmarks, measuring multi-agent performance, or critiquing single-score evaluation of agents. Based on arXiv:2605.26112v1. Trigger phrases: "evaluate my agent", "benchmark agent", "measure agent reliability", "pass^k evaluation", "agent metrics beyond success rate", "trajectory quality", "memory hygiene metric", "longitudinal agent eval", "why my agent scores well on benchmarks but fails in production". |
 | [`local-ai-stack`](./skills/agent-eval/local-ai-stack/SKILL.md) | `agent-eval/local-ai-stack` | Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving |
 | [`memory-merger`](./skills/agent-eval/memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file |
 | [`nano-banana-pro-openrouter`](./skills/agent-eval/nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model |
 | [`semantic-kernel`](./skills/agent-eval/semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python |
-| [`harness-benchmarking`](./skills/agent-eval/harness-benchmarking/SKILL.md) | `agent-eval/harness-benchmarking` | Process-level agent evaluation: pass^k reliability, memory hygiene metrics, context efficiency, trajectory quality, longitudinal drift measurement, multi-agent fidelity. From arXiv:2605.26112. |
 
 ## api-backend
 

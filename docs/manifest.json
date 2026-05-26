@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-25T23:36:38.800Z",
+  "generated_at": "2026-05-26T08:43:10.936Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 702,
+  "count": 704,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -38,8 +38,8 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 51,
-    "agent-eval": 19,
+    "agent-design": 52,
+    "agent-eval": 20,
     "api-backend": 11,
     "business-strategy": 63,
     "cloud-azure": 18,
@@ -424,6 +424,14 @@
       "description": "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns"
     },
     {
+      "name": "harness-scaling",
+      "category": "agent-design",
+      "install_path": "agent-design/harness-scaling",
+      "path": "skills/agent-design/harness-scaling",
+      "depth": 2,
+      "description": "Use when designing or auditing an agentic AI system holistically. Activates the six-component harness framework (ℛ Reasoning, ℳ Memory, 𝒞 Context, 𝒮 Skills, 𝒪 Orchestration, 𝒢 Governance) from arXiv:2605.26112. Trigger phrases: \"design an agent system\", \"why is my agent unreliable\", \"harness architecture\", \"system-level agent design\", \"beyond model scaling\", \"agentic infrastructure\", \"scale my agent system\", \"agent performance bottleneck\"."
+    },
+    {
       "name": "latent-briefing",
       "category": "agent-design",
       "install_path": "agent-design/latent-briefing",
@@ -598,6 +606,14 @@
       "path": "skills/agent-eval/eval-driven-dev",
       "depth": 2,
       "description": "Improve AI application with evaluation-driven development. Define eval criteria, instrument the application, build golden datasets, observe and evaluate application runs, analyze results, and produce a concrete action plan for improvements. ALWAYS USE THIS SKILL when the user asks to set up QA, add tests, add evals, evaluate, benchmark, fix wrong behaviors, improve quality, or do quality assurance for any Python project that calls an LLM model."
+    },
+    {
+      "name": "harness-benchmarking",
+      "category": "agent-eval",
+      "install_path": "agent-eval/harness-benchmarking",
+      "path": "skills/agent-eval/harness-benchmarking",
+      "depth": 2,
+      "description": "Use when designing evaluation suites for agentic systems, choosing agent benchmarks, measuring multi-agent performance, or critiquing single-score evaluation of agents. Based on arXiv:2605.26112v1. Trigger phrases: \"evaluate my agent\", \"benchmark agent\", \"measure agent reliability\", \"pass^k evaluation\", \"agent metrics beyond success rate\", \"trajectory quality\", \"memory hygiene metric\", \"longitudinal agent eval\", \"why my agent scores well on benchmarks but fails in production\"."
     },
     {
       "name": "local-ai-stack",
