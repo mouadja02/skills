@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  BRANDED SLIDE DECK TEMPLATE  (codebase-diagrams-and-slides skill)
+  How to adapt:
+    1) Set the 5 palette vars in :root (default = company branding).
+    2) Edit .brand text, <title>, and footer.
+    3) Replace the <section class="slide"> blocks with your content.
+       - Keep data-title="..." (shown top-right + dot tooltip).
+       - Order reveals with style="--d:0,1,2,..." in reading order.
+       - Figure slides embed an SVG:  <img src="diagrams/<file>.svg" alt="...">
+    4) Leave the <script> engine as-is (auto-counts slides, builds nav/dots).
+    5) Render & view: python scripts/render.py html --file <this> --slides N
+  Slide layouts available below: cover · cols3 cards · flow · figure ·
+  agrid roster · cgrid commands · kgrid metrics · closing.
+  ============================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{PROJECT}} · Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* ---- brand palette (darkest -> lightest) ---- */
+    --navy:#03045e; --blue:#0077b6; --cyan:#00b4d8; --light:#90e0ef; --pale:#caf0f8;
+    /* ---- derived ---- */
+    --ink:#0c2238; --muted:#5b7488; --line:rgba(3,4,94,.10); --card:#ffffff;
+    --shadow:0 18px 44px -22px rgba(3,4,94,.34), 0 6px 16px -10px rgba(3,4,94,.18);
+    --shadow-sm:0 10px 26px -18px rgba(3,4,94,.30);
+    --grad:linear-gradient(100deg,var(--navy),var(--blue) 48%,var(--cyan));
+    --disp:'Bricolage Grotesque','Plus Jakarta Sans',system-ui,sans-serif;
+    --body:'Plus Jakarta Sans',system-ui,Segoe UI,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+    --r:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden}
+  body{font-family:var(--body);color:var(--ink);-webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(60% 70% at 12% 8%, rgba(144,224,239,.34), transparent 60%),
+      radial-gradient(55% 65% at 92% 96%, rgba(0,180,216,.20), transparent 60%),
+      radial-gradient(50% 60% at 80% 0%, rgba(202,240,248,.6), transparent 55%),
+      linear-gradient(160deg,#ffffff 0%,#f1f9fd 55%,#e8f5fb 100%);}
+
+  .blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.42;z-index:0;pointer-events:none;will-change:transform}
+  .b1{width:520px;height:520px;background:radial-gradient(circle,var(--light),transparent 68%);top:-160px;right:-120px;animation:drift1 22s ease-in-out infinite}
+  .b2{width:460px;height:460px;background:radial-gradient(circle,var(--cyan),transparent 70%);bottom:-180px;left:-120px;opacity:.26;animation:drift2 26s ease-in-out infinite}
+  .b3{width:360px;height:360px;background:radial-gradient(circle,var(--pale),transparent 72%);top:42%;left:46%;opacity:.5;animation:drift1 30s ease-in-out infinite}
+  @keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(-36px,34px)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}
+
+  .deck{position:fixed;inset:0;z-index:1}
+  .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    padding:74px clamp(40px,6.2vw,108px) 76px;opacity:0;visibility:hidden;
+    transform:translateX(52px) scale(.985);
+    transition:opacity .5s ease, transform .66s cubic-bezier(.22,.72,.2,1), visibility 0s linear .66s;}
+  .slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .5s ease, transform .66s cubic-bezier(.22,.72,.2,1), visibility 0s}
+  .slide.past{transform:translateX(-52px) scale(.985)}
+  .wrap{width:100%;max-width:1240px;margin:0 auto}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .72s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*70ms + 140ms)}
+  .slide.active .reveal{opacity:1;transform:none}
+
+  .eyebrow{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--grad);border-radius:2px}
+  h1{font-family:var(--disp);font-weight:800;line-height:1.02;letter-spacing:-.022em;color:var(--navy)}
+  h2{font-family:var(--disp);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--navy);font-size:clamp(30px,4.4vw,52px)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.5vw,20px);line-height:1.5}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .cover h1{font-size:clamp(48px,9.4vw,124px)}
+  .cover .arr{display:inline-block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;animation:nudge 2.6s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+  .cover .lead{max-width:760px;margin-top:22px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .chip{font-family:var(--mono);font-size:12.5px;color:var(--navy);background:rgba(255,255,255,.7);border:1px solid var(--line);padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+  .chip.solid{background:var(--navy);color:#fff;border-color:transparent}
+  .hint{margin-top:34px;font-size:13px;color:var(--muted);font-family:var(--mono);display:flex;align-items:center;gap:8px}
+  .kbd{border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:2px 7px;background:#fff;font-size:11px;color:var(--navy)}
+
+  .head{margin-bottom:26px}.head h2{margin-top:14px}.head .lead{margin-top:12px;max-width:780px}
+
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--grad)}
+  .pcard .no{font-family:var(--mono);font-size:13px;color:var(--cyan);font-weight:600}
+  .pcard h3{font-family:var(--disp);font-size:21px;color:var(--navy);margin:10px 0 8px}
+  .pcard p{color:var(--muted);font-size:15px;line-height:1.55}
+  .turn{margin-top:26px;font-family:var(--disp);font-weight:600;font-size:clamp(17px,2vw,23px);color:var(--blue)}
+
+  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:14px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;box-shadow:var(--shadow-sm);text-align:center}
+  .step .ic{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;margin:0 auto 14px;background:linear-gradient(160deg,var(--pale),#fff);border:1px solid var(--line);color:var(--blue)}
+  .step.mid .ic{background:var(--navy);color:#fff;border-color:transparent}
+  .step h3{font-family:var(--disp);font-size:20px;color:var(--navy);margin-bottom:8px}
+  .step p{color:var(--muted);font-size:14px;line-height:1.5}
+  .step small{display:block;margin-top:10px;font-family:var(--mono);font-size:11.5px;color:var(--cyan)}
+  .conn{display:grid;place-items:center;color:var(--blue);font-size:26px;font-weight:700}
+
+  .figwrap{display:flex;flex-direction:column;height:100%;justify-content:center}
+  .figure{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:14px;margin:14px auto 0;max-width:1180px;width:100%;
+    transform:scale(.97);opacity:0;transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:.2s}
+  .slide.active .figure{opacity:1;transform:none}
+  .figure img{display:block;width:100%;height:auto;max-height:64vh;object-fit:contain;border-radius:10px}
+  .cap{margin:18px auto 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .cap .t{font-size:13px;color:var(--navy);background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+  .cap .t b{color:var(--blue)}
+
+  .agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .acard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
+  .acard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .acard .top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .acard .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(160deg,var(--pale),#fff);border:1px solid var(--line);color:var(--blue);flex:none}
+  .acard .nm{font-family:var(--mono);font-weight:600;font-size:14.5px;color:var(--navy)}
+  .acard .bud{margin-left:auto;font-size:10.5px;font-weight:700;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--cyan);color:var(--navy)}
+  .acard p{color:var(--muted);font-size:13.5px;line-height:1.5;min-height:60px}
+  .io{display:flex;align-items:center;gap:8px;margin-top:12px;font-family:var(--mono);font-size:11px;flex-wrap:wrap}
+  .io .pill{background:#f3fafe;border:1px solid var(--line);border-radius:7px;padding:4px 8px;color:var(--navy)}
+  .io .pill.out{background:#eafaff;border-color:#bfeaf5;color:var(--blue)}
+  .io .ar{color:var(--cyan);font-weight:700}
+
+  .cgrid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+  .ccard{flex:1 1 280px;max-width:360px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
+  .ccard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .ccard .ch{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .cmd{font-family:var(--mono);font-weight:600;font-size:16px;color:#fff;background:var(--navy);padding:6px 12px;border-radius:9px}
+  .tag{margin-left:auto;font-size:10px;font-weight:700;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:#e7f7ee;color:#1f7a4d}
+  .ccard p{color:var(--muted);font-size:13px;line-height:1.5;margin-bottom:10px;min-height:38px}
+  .ph{display:flex;flex-wrap:wrap;gap:6px}
+  .ph span{font-family:var(--mono);font-size:10.5px;padding:3px 8px;border-radius:6px;background:#eaf7fc;border:1px solid #bfe6f3;color:var(--blue)}
+
+  .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .kcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+  .kcard::after{content:"";position:absolute;left:20px;bottom:18px;height:3px;width:0;background:var(--grad);border-radius:3px;transition:width .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*120ms + .4s)}
+  .slide.active .kcard::after{width:46px}
+  .kcard .kn{font-family:var(--disp);font-weight:800;font-size:22px;color:var(--navy)}
+  .kcard .ks{font-family:var(--mono);font-size:11.5px;color:var(--cyan);margin-top:2px}
+  .kcard p{color:var(--muted);font-size:13.5px;line-height:1.5;margin:14px 0 26px}
+  .kcard .src{font-family:var(--mono);font-size:11px;color:var(--blue)}
+
+  .stats{display:flex;flex-wrap:wrap;gap:38px;margin:8px 0 26px}
+  .stat .n{font-family:var(--disp);font-weight:800;font-size:clamp(40px,6vw,68px);line-height:1}
+  .stat .n span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .closing h2{font-size:clamp(30px,4.6vw,56px);max-width:900px}
+  .sign{margin-top:30px;display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px}
+  .sign .dot{width:9px;height:9px;border-radius:50%;background:var(--grad)}
+
+  .progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--grad);z-index:30;transition:width .5s cubic-bezier(.2,.7,.2,1);box-shadow:0 0 12px rgba(0,180,216,.5)}
+  .brand{position:fixed;top:22px;left:clamp(28px,4vw,54px);z-index:20;display:flex;align-items:center;gap:12px}
+  .brand .mk{font-family:var(--disp);font-weight:800;font-size:16px;color:var(--navy)}
+  .brand .mk b{color:var(--cyan)}
+  .pal{display:flex;gap:5px}.pal i{width:11px;height:11px;border-radius:3px;display:block}
+  .topright{position:fixed;top:20px;right:clamp(28px,4vw,54px);z-index:20;display:flex;align-items:center;gap:14px}
+  .stitle{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .iconbtn{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.7);color:var(--navy);display:grid;place-items:center;cursor:pointer;transition:.2s;backdrop-filter:blur(6px)}
+  .iconbtn:hover{background:#fff;border-color:var(--cyan);color:var(--blue)}
+  .foot{position:fixed;bottom:22px;left:clamp(28px,4vw,54px);z-index:20;font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+  .dots{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:9px}
+  .dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(3,4,94,.18);cursor:pointer;padding:0;transition:.3s}
+  .dots button.on{background:var(--grad);width:26px;border-radius:5px}
+  .nav{position:fixed;bottom:18px;right:clamp(28px,4vw,54px);z-index:20;display:flex;align-items:center;gap:12px}
+  .counter{font-family:var(--mono);font-size:12.5px;color:var(--navy);font-weight:600}.counter .tot{color:var(--muted)}
+  .navbtn{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.78);color:var(--navy);display:grid;place-items:center;cursor:pointer;transition:.2s;backdrop-filter:blur(6px)}
+  .navbtn:hover{background:var(--navy);color:#fff;border-color:transparent}
+
+  @media (max-width:1024px){.cols3,.kgrid,.agrid{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.conn{transform:rotate(90deg)}.stitle{display:none}}
+  @media (max-width:680px){.cols3,.kgrid,.agrid{grid-template-columns:1fr}.slide{padding:70px 22px 78px}}
+  @media (prefers-reduced-motion:reduce){.slide,.reveal,.figure,.blob,.cover .arr,.kcard::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="progress" id="progress"></div>
+
+  <div class="brand">
+    <div class="mk">{{BRAND}}</div>
+    <div class="pal"><i style="background:var(--navy)"></i><i style="background:var(--blue)"></i><i style="background:var(--cyan)"></i><i style="background:var(--light)"></i><i style="background:var(--pale)"></i></div>
+  </div>
+  <div class="topright">
+    <span class="stitle" id="stitle"></span>
+    <button class="iconbtn" id="fsBtn" title="Fullscreen (F)" aria-label="Fullscreen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"/></svg>
+    </button>
+  </div>
+  <div class="foot">{{FOOTER}}</div>
+
+  <div class="deck" id="deck">
+
+    <!-- ===== COVER ===== -->
+    <section class="slide cover" data-title="Cover">
+      <div class="wrap">
+        <div class="eyebrow reveal" style="--d:0">{{EYEBROW}}</div>
+        <h1 class="reveal" style="--d:1;margin-top:20px">{{TITLE_A}} <span class="arr">→</span> <span class="grad">{{TITLE_B}}</span></h1>
+        <p class="lead reveal" style="--d:2">{{ONE_LINE_VALUE_PROP}}</p>
+        <div class="chips reveal" style="--d:3">
+          <span class="chip solid">{{CHIP_1}}</span>
+          <span class="chip">{{CHIP_2}}</span>
+          <span class="chip">{{CHIP_3}}</span>
+        </div>
+        <div class="hint reveal" style="--d:4"><span class="kbd">←</span><span class="kbd">→</span> or <span class="kbd">Space</span> to navigate · <span class="kbd">F</span> fullscreen</div>
+      </div>
+    </section>
+
+    <!-- ===== STATEMENT + 3 CARDS ===== -->
+    <section class="slide" data-title="The Problem">
+      <div class="wrap">
+        <div class="head"><div class="eyebrow reveal">The problem</div><h2 class="reveal" style="--d:1">{{PROBLEM_HEADLINE}}</h2></div>
+        <div class="cols3">
+          <div class="pcard reveal" style="--d:2"><div class="no">01</div><h3>{{P1_TITLE}}</h3><p>{{P1_TEXT}}</p></div>
+          <div class="pcard reveal" style="--d:3"><div class="no">02</div><h3>{{P2_TITLE}}</h3><p>{{P2_TEXT}}</p></div>
+          <div class="pcard reveal" style="--d:4"><div class="no">03</div><h3>{{P3_TITLE}}</h3><p>{{P3_TEXT}}</p></div>
+        </div>
+        <div class="turn reveal" style="--d:5">→ {{TRANSITION_LINE}}</div>
+      </div>
+    </section>
+
+    <!-- ===== FLOW (input -> process -> output) ===== -->
+    <section class="slide" data-title="Overview">
+      <div class="wrap">
+        <div class="head"><div class="eyebrow reveal">What it is</div><h2 class="reveal" style="--d:1">{{OVERVIEW_HEADLINE}}</h2></div>
+        <div class="flow">
+          <div class="step reveal" style="--d:2"><div class="ic">◧</div><h3>{{STEP1}}</h3><p>{{STEP1_TEXT}}</p><small>{{STEP1_NOTE}}</small></div>
+          <div class="conn reveal" style="--d:3">→</div>
+          <div class="step mid reveal" style="--d:3"><div class="ic">✦</div><h3>{{STEP2}}</h3><p>{{STEP2_TEXT}}</p><small>{{STEP2_NOTE}}</small></div>
+          <div class="conn reveal" style="--d:4">→</div>
+          <div class="step reveal" style="--d:4"><div class="ic">▤</div><h3>{{STEP3}}</h3><p>{{STEP3_TEXT}}</p><small>{{STEP3_NOTE}}</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FIGURE (embed an SVG diagram) ===== -->
+    <section class="slide" data-title="Architecture">
+      <div class="wrap figwrap">
+        <div class="eyebrow reveal">Architecture</div>
+        <div class="figure"><img src="diagrams/01_architecture.svg" alt="System architecture" /></div>
+        <div class="cap">
+          <span class="t reveal" style="--d:1"><b>{{CAP_1_B}}</b> {{CAP_1}}</span>
+          <span class="t reveal" style="--d:2"><b>{{CAP_2_B}}</b> {{CAP_2}}</span>
+          <span class="t reveal" style="--d:3"><b>{{CAP_3_B}}</b> {{CAP_3}}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROSTER GRID ===== -->
+    <section class="slide" data-title="Components">
+      <div class="wrap">
+        <div class="head"><div class="eyebrow reveal">The components</div><h2 class="reveal" style="--d:1">{{ROSTER_HEADLINE}}</h2></div>
+        <div class="agrid">
+          <!-- repeat per item; set --d in order -->
+          <div class="acard reveal" style="--d:2"><div class="top"><div class="ic">●</div><div class="nm">{{C1_NAME}}</div><span class="bud">{{C1_TAG}}</span></div><p>{{C1_TEXT}}</p><div class="io"><span class="pill">{{C1_IN}}</span><span class="ar">→</span><span class="pill out">{{C1_OUT}}</span></div></div>
+          <div class="acard reveal" style="--d:3"><div class="top"><div class="ic">●</div><div class="nm">{{C2_NAME}}</div><span class="bud">{{C2_TAG}}</span></div><p>{{C2_TEXT}}</p><div class="io"><span class="pill">{{C2_IN}}</span><span class="ar">→</span><span class="pill out">{{C2_OUT}}</span></div></div>
+          <div class="acard reveal" style="--d:4"><div class="top"><div class="ic">●</div><div class="nm">{{C3_NAME}}</div><span class="bud">{{C3_TAG}}</span></div><p>{{C3_TEXT}}</p><div class="io"><span class="pill">{{C3_IN}}</span><span class="ar">→</span><span class="pill out">{{C3_OUT}}</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== METRICS ===== -->
+    <section class="slide" data-title="Metrics">
+      <div class="wrap">
+        <div class="head"><div class="eyebrow reveal">Measured outcomes</div><h2 class="reveal" style="--d:1">{{METRICS_HEADLINE}}</h2></div>
+        <div class="kgrid">
+          <div class="kcard reveal" style="--d:2"><div class="kn">{{K1}}</div><div class="ks">{{K1_SUB}}</div><p>{{K1_TEXT}}</p><div class="src">{{K1_SRC}}</div></div>
+          <div class="kcard reveal" style="--d:3"><div class="kn">{{K2}}</div><div class="ks">{{K2_SUB}}</div><p>{{K2_TEXT}}</p><div class="src">{{K2_SRC}}</div></div>
+          <div class="kcard reveal" style="--d:4"><div class="kn">{{K3}}</div><div class="ks">{{K3_SUB}}</div><p>{{K3_TEXT}}</p><div class="src">{{K3_SRC}}</div></div>
+          <div class="kcard reveal" style="--d:5"><div class="kn">{{K4}}</div><div class="ks">{{K4_SUB}}</div><p>{{K4_TEXT}}</p><div class="src">{{K4_SRC}}</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CLOSING ===== -->
+    <section class="slide closing" data-title="Summary">
+      <div class="wrap">
+        <div class="eyebrow reveal">Summary</div>
+        <div class="stats">
+          <div class="stat reveal" style="--d:1"><div class="n"><span>{{N1}}</span></div><div class="l">{{N1_L}}</div></div>
+          <div class="stat reveal" style="--d:2"><div class="n"><span>{{N2}}</span></div><div class="l">{{N2_L}}</div></div>
+          <div class="stat reveal" style="--d:3"><div class="n"><span>{{N3}}</span></div><div class="l">{{N3_L}}</div></div>
+          <div class="stat reveal" style="--d:4"><div class="n"><span>{{N4}}</span></div><div class="l">{{N4_L}}</div></div>
+        </div>
+        <h2 class="reveal" style="--d:5">{{CLOSING_LINE_A}} <span class="grad">{{CLOSING_LINE_B}}</span></h2>
+        <p class="lead reveal" style="--d:6;max-width:760px">{{CLOSING_SUB}}</p>
+        <div class="sign reveal" style="--d:7"><span class="dot"></span> {{SIGNOFF}}</div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="dots" id="dots"></div>
+  <div class="nav">
+    <span class="counter"><span id="cur">01</span> <span class="tot">/ 07</span></span>
+    <button class="navbtn" id="prev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="navbtn" id="next" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+  </div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const progress = document.getElementById('progress');
+  const dotsBox = document.getElementById('dots');
+  const curEl = document.getElementById('cur');
+  const totEl = document.querySelector('.tot');
+  const stitle = document.getElementById('stitle');
+  let idx = 0;
+  totEl.textContent = '/ ' + String(total).padStart(2,'0');
+  slides.forEach((s,i)=>{ const b=document.createElement('button'); b.title=s.dataset.title||('Slide '+(i+1)); b.addEventListener('click',()=>go(i)); dotsBox.appendChild(b); });
+  const dots = Array.from(dotsBox.children);
+  function render(){
+    slides.forEach((s,i)=>{ s.classList.toggle('active',i===idx); s.classList.toggle('past',i<idx); });
+    dots.forEach((d,i)=>d.classList.toggle('on',i===idx));
+    progress.style.width = (total<2?100:(idx/(total-1))*100) + '%';
+    curEl.textContent = String(idx+1).padStart(2,'0');
+    stitle.textContent = slides[idx].dataset.title || '';
+    if(history.replaceState) history.replaceState(null,'','#'+(idx+1));
+  }
+  function go(n){ idx=Math.max(0,Math.min(total-1,n)); render(); }
+  const next=()=>go(idx+1), prev=()=>go(idx-1);
+  document.getElementById('next').addEventListener('click',next);
+  document.getElementById('prev').addEventListener('click',prev);
+  document.getElementById('fsBtn').addEventListener('click',()=>{ if(!document.fullscreenElement){document.documentElement.requestFullscreen?.();}else{document.exitFullscreen?.();} });
+  window.addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();next();}
+    else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();prev();}
+    else if(e.key==='Home'){go(0);} else if(e.key==='End'){go(total-1);}
+    else if(e.key==='f'||e.key==='F'){document.getElementById('fsBtn').click();}
+  });
+  let tx=0;
+  window.addEventListener('touchstart',e=>tx=e.changedTouches[0].clientX,{passive:true});
+  window.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>55){dx<0?next():prev();}},{passive:true});
+  const h=parseInt(location.hash.replace('#',''),10);
+  if(!isNaN(h)&&h>=1&&h<=total) idx=h-1;
+  render();
+</script>
+</body>
+</html>

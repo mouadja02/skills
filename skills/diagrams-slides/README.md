@@ -8,6 +8,7 @@ Skills for **diagrams, presentations, slides, and visual communication**.
 
 | Skill | What it does |
 | --- | --- |
+| `codebase-diagrams-and-slides` | Turn a codebase into branded SVG architecture diagrams and an optional animated HTML slide deck. |
 | `draw-io-diagram-generator` | Generate draw.io XML diagrams from descriptions. |
 | `drawio` | Edit and create draw.io diagrams. |
 | `plantuml-ascii` | Generate PlantUML and ASCII diagrams. |
@@ -41,6 +42,7 @@ Skills for **diagrams, presentations, slides, and visual communication**.
 
 - "Create a draw.io diagram" / "PlantUML diagram"
 - "Create slides for this project / tool / codebase"
+- "Turn this codebase into architecture diagrams and a presentation"
 - "Build a reveal.js presentation" / "generate a deck from this repo"
 - "Build a slide deck" / "PowerPoint presentation"
 - "Design an investor pitch"

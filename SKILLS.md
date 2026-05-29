@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 704 skills across 31 categories.
+**Total:** 705 skills across 31 categories.
 
 ## Install one skill
 
@@ -34,7 +34,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`design-and-ui`](#design-and-ui) | 31 |
 | [`dev-workflow`](#dev-workflow) | 30 |
 | [`devops`](#devops) | 38 |
-| [`diagrams-slides`](#diagrams-slides) | 13 |
+| [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
 | [`engineering-craft`](#engineering-craft) | 37 |
@@ -465,6 +465,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`codebase-diagrams-and-slides`](./skills/diagrams-slides/codebase-diagrams-and-slides/SKILL.md) | `diagrams-slides/codebase-diagrams-and-slides` | Turns any codebase into branded, presentation-ready SVG diagrams and an optional smooth animated HTML slide deck. Analyzes a repository in any language (Markdown, Python, Rust, dbt, SQL, JS/TS, Java, Go, ...), extracts its architecture / flow / story, and generates eye-friendly 16:9 diagrams plus a polished, professional presentation. Use when the user asks to visualize, diagram, document, illustrate, or present a codebase, architecture, pipeline, or project; to build slides or a deck about a repo; or to produce diagrams from code. Defaults to the company brand palette (#03045e, #0077b6, #00b4d8, #90e0ef, #caf0f8) and writes to docs/diagrams/ and docs/presentation.html. |
 | [`draw-io-diagram-generator`](./skills/diagrams-slides/draw-io-diagram-generator/SKILL.md) | `diagrams-slides/draw-io-diagram-generator` | draw.io XML — flowcharts, architecture, sequence, ER, UML, mxGraph shapes/styles |
 | [`drawio`](./skills/diagrams-slides/drawio/SKILL.md) | `diagrams-slides/drawio` | Generate draw.io diagrams as .drawio files and export to PNG/SVG/PDF with embedded XML |
 | [`email-drafter`](./skills/diagrams-slides/email-drafter/SKILL.md) | `diagrams-slides/email-drafter` | Professional email drafting — matches personal voice from sent-email analysis |
