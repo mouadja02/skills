@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 705 skills across 31 categories.
+**Total:** 706 skills across 31 categories.
 
 ## Install one skill
 
@@ -28,7 +28,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`business-strategy`](#business-strategy) | 63 |
 | [`cloud-azure`](#cloud-azure) | 18 |
 | [`code-quality`](#code-quality) | 16 |
-| [`coding`](#coding) | 31 |
+| [`coding`](#coding) | 32 |
 | [`context-engineering`](#context-engineering) | 15 |
 | [`databases`](#databases) | 22 |
 | [`design-and-ui`](#design-and-ui) | 31 |
@@ -286,6 +286,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`instruments-profiling`](./skills/coding/instruments-profiling/SKILL.md) | `coding/instruments-profiling` | Instruments/xctrace profiling: macOS/iOS traces, binaries, args, exports, Time Profiler. |
 | [`interview-me`](./skills/coding/interview-me/SKILL.md) | `coding/interview-me` | Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified ("build me X" without "for whom" or "why now"), when the user explicitly invokes ("interview me", "grill me", "are we sure?", "stress-test my thinking"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists. |
 | [`karpathy-guidelines`](./skills/coding/karpathy-guidelines/SKILL.md) | `coding/karpathy-guidelines` | Behavioral guidelines to reduce common LLM coding mistakes |
+| [`nasa-inspired-coding-rules`](./skills/coding/nasa-inspired-coding-rules/SKILL.md) | `coding/nasa-inspired-coding-rules` | Use when writing, reviewing, or refactoring production code where reliability, portability, maintainability, explicit contracts, resource safety, and cross-language coding standards matter across Python, TS/JS, C, C++, Rust, or Go. |
 | [`native-app-performance`](./skills/coding/native-app-performance/SKILL.md) | `coding/native-app-performance` | Native macOS/iOS app performance: xctrace, Time Profiler, traces, hotspot analysis — CLI-only. |
 | [`performance-optimization`](./skills/coding/performance-optimization/SKILL.md) | `coding/performance-optimization` | Optimizes application performance |
 | [`planning-and-task-breakdown`](./skills/coding/planning-and-task-breakdown/SKILL.md) | `coding/planning-and-task-breakdown` | Breaks work into ordered tasks |

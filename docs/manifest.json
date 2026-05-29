@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-29T13:13:13.663Z",
+  "generated_at": "2026-05-29T13:45:05.531Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 705,
+  "count": 706,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -44,7 +44,7 @@
     "business-strategy": 63,
     "cloud-azure": 18,
     "code-quality": 16,
-    "coding": 31,
+    "coding": 32,
     "context-engineering": 15,
     "databases": 22,
     "design-and-ui": 31,
@@ -1654,6 +1654,14 @@
       "path": "skills/coding/karpathy-guidelines",
       "depth": 2,
       "description": "Behavioral guidelines to reduce common LLM coding mistakes"
+    },
+    {
+      "name": "nasa-inspired-coding-rules",
+      "category": "coding",
+      "install_path": "coding/nasa-inspired-coding-rules",
+      "path": "skills/coding/nasa-inspired-coding-rules",
+      "depth": 2,
+      "description": "Use when writing, reviewing, or refactoring production code where reliability, portability, maintainability, explicit contracts, resource safety, and cross-language coding standards matter across Python, TS/JS, C, C++, Rust, or Go."
     },
     {
       "name": "native-app-performance",

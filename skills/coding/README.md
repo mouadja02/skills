@@ -32,6 +32,7 @@ Use this category when the task is *writing or improving code* rather than build
 | [`doubt-driven-development`](./doubt-driven-development/SKILL.md) | Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matters more than speed, in security-sensitive or irreversible operations. |
 | [`incremental-implementation`](./incremental-implementation/SKILL.md) | Delivers changes incrementally. Use when a task touches more than one file — land it in small, reviewable steps rather than one big commit. |
 | [`karpathy-guidelines`](./karpathy-guidelines/SKILL.md) | Behavioral guidelines to reduce common LLM coding mistakes — surgical changes, surfaced assumptions, verifiable success criteria, and avoiding over-engineering. |
+| [`nasa-inspired-coding-rules`](./nasa-inspired-coding-rules/SKILL.md) | Cross-language reliability rules generalized from NASA Glenn programming guidelines — explicit contracts, resource safety, portability, and production-like verification. |
 | [`context-engineering`](./context-engineering/SKILL.md) | Optimizes agent context setup. Use when starting a new session, when output quality degrades, when switching tasks, or when configuring rules files and context for a project. |
 
 ### Code quality

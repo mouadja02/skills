@@ -197,6 +197,7 @@ coding/incremental-implementation	coding	incremental-implementation	Delivers cha
 coding/instruments-profiling	coding	instruments-profiling	Instruments/xctrace profiling: macOS/iOS traces, binaries, args, exports, Time Profiler.
 coding/interview-me	coding	interview-me	Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified ("build me X" without "for whom" or "why now"), when the user explicitly invokes ("interview me", "grill me", "are we sure?", "stress-test my thinking"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists.
 coding/karpathy-guidelines	coding	karpathy-guidelines	Behavioral guidelines to reduce common LLM coding mistakes
+coding/nasa-inspired-coding-rules	coding	nasa-inspired-coding-rules	Use when writing, reviewing, or refactoring production code where reliability, portability, maintainability, explicit contracts, resource safety, and cross-language coding standards matter across Python, TS/JS, C, C++, Rust, or Go.
 coding/native-app-performance	coding	native-app-performance	Native macOS/iOS app performance: xctrace, Time Profiler, traces, hotspot analysis — CLI-only.
 coding/performance-optimization	coding	performance-optimization	Optimizes application performance
 coding/planning-and-task-breakdown	coding	planning-and-task-breakdown	Breaks work into ordered tasks
