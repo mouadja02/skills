@@ -34,6 +34,8 @@ npm run build:manifest
 
 Configure your MCP client to run the server directly with `node`.
 
+By default, the server tries to refresh the local clone before the first tool call in each MCP server process. It runs `git pull --ff-only` and then reloads the checked-in `docs/manifest.json`. If the repo has local changes, refresh is skipped to avoid overwriting work.
+
 Windows example:
 
 ```json
@@ -57,6 +59,40 @@ macOS/Linux example:
       "command": "node",
       "args": ["/Users/you/src/skills/scripts/skills-mcp.mjs"],
       "cwd": "/Users/you/src/skills"
+    }
+  }
+}
+```
+
+Disable auto-refresh in MCP JSON when you need fully offline or pinned behavior:
+
+```json
+{
+  "mcpServers": {
+    "repo-skills": {
+      "command": "node",
+      "args": ["C:/Users/mouad/Desktop/skills/scripts/skills-mcp.mjs"],
+      "cwd": "C:/Users/mouad/Desktop/skills",
+      "env": {
+        "SKILLS_MCP_AUTO_REFRESH": "false"
+      }
+    }
+  }
+}
+```
+
+You can also disable it with an argument:
+
+```json
+{
+  "mcpServers": {
+    "repo-skills": {
+      "command": "node",
+      "args": [
+        "C:/Users/mouad/Desktop/skills/scripts/skills-mcp.mjs",
+        "--no-auto-refresh"
+      ],
+      "cwd": "C:/Users/mouad/Desktop/skills"
     }
   }
 }
@@ -167,7 +203,7 @@ You should see JSON-RPC responses, including a `tools/list` result and a categor
 
 ## Updating The Local Index
 
-Run this after adding, editing, pulling, or reorganizing skills:
+Auto-refresh handles ordinary updates when the MCP client starts a new server process. Run this manually after adding, editing, pulling, or reorganizing skills yourself:
 
 ```bash
 npm run build:manifest
@@ -175,12 +211,23 @@ npm run build:manifest
 
 Restart your MCP client after updating the repo if it keeps long-lived MCP server processes.
 
+Auto-refresh behavior:
+
+- Runs once before the first `tools/call`.
+- Uses `git pull --ff-only`, so it will not create merge commits.
+- Reloads the checked-in `docs/manifest.json` after a successful pull.
+- Skips when the repository has local changes.
+- Reports refresh status in each tool response under `server.auto_refresh`.
+- Disable with `SKILLS_MCP_AUTO_REFRESH=false` or `--no-auto-refresh`.
+
 ## Troubleshooting
 
 | Problem | Fix |
 | --- | --- |
 | Client says server returned invalid JSON | Make sure the MCP config runs `node .../scripts/skills-mcp.mjs` directly, not plain `npm run mcp`. |
 | `docs/manifest.json` is missing or stale | Run `npm run build:manifest` from the repo root. |
+| Auto-refresh is skipped | Check for local changes with `git status`; commit, stash, or disable auto-refresh. |
+| Auto-refresh fails offline | Set `SKILLS_MCP_AUTO_REFRESH=false` for offline sessions. |
 | Skill name is ambiguous | Use the full `install_path`, for example `coding/test-driven-development`. |
 | `install_skill` says destination exists | Pick another destination or pass `"overwrite": true`. |
 | Agent loads too much context | Tell it to use `list_categories`, `list_skills`, and `get_skill` before `read_skill_doc`. |
@@ -196,4 +243,3 @@ Local stdio is the recommended default for this repo:
 - It is fast because it reads local files and a local manifest.
 
 Only build a hosted HTTP MCP later if remote/cloud agents need access from machines where the repo is not cloned.
-

@@ -144,6 +144,8 @@ Example MCP client config:
 
 Important: recommend running \`node .../scripts/skills-mcp.mjs\` directly. Do not configure clients with plain \`npm run mcp\` because npm can write banners to stdout. If using npm manually, use \`npm --silent run mcp\`.
 
+Auto-refresh: enabled by default. Before the first \`tools/call\` in each server process, the server tries \`git pull --ff-only\` and then reloads the checked-in \`docs/manifest.json\`. It skips refresh when the repo has local changes. Disable in MCP JSON with \`"env": { "SKILLS_MCP_AUTO_REFRESH": "false" }\` or add \`"--no-auto-refresh"\` to args. Tool responses include \`server.auto_refresh\` status.
+
 MCP tools:
 - \`list_categories\`: compact category names and counts
 - \`list_skills\`: compact skill metadata for one category
@@ -161,6 +163,8 @@ Agent workflow to avoid context overload:
 Troubleshooting:
 - Invalid JSON from server: run node directly, not plain npm run.
 - Missing or stale index: run \`npm run build:manifest\`.
+- Auto-refresh skipped: check \`git status\`; commit, stash, or disable auto-refresh.
+- Auto-refresh fails offline: set \`SKILLS_MCP_AUTO_REFRESH=false\`.
 - Ambiguous skill name: use full install path such as \`coding/test-driven-development\`.
 - Destination exists: choose another folder or pass overwrite true.
 - Windows path issues: use absolute paths with forward slashes or escaped backslashes.

@@ -35,6 +35,8 @@ This repo includes a local stdio MCP server so agents can discover and install s
 
 The intended agent flow is compact: `list_categories` → `list_skills` or `search_skills` → `get_skill` → `read_skill_doc` only for chosen skills → `install_skill` into the workspace.
 
+The server auto-refreshes the local clone once before the first tool call by default. Disable it with `SKILLS_MCP_AUTO_REFRESH=false` in your MCP config when you need pinned or offline behavior.
+
 ### Install skills (no full clone)
 
 The installer scripts accept three kinds of selector:

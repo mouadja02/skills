@@ -181,7 +181,10 @@ npm run build:manifest</code></pre>
     "repo-skills": {
       "command": "node",
       "args": ["C:/path/to/skills/scripts/skills-mcp.mjs"],
-      "cwd": "C:/path/to/skills"
+      "cwd": "C:/path/to/skills",
+      "env": {
+        "SKILLS_MCP_AUTO_REFRESH": "true"
+      }
     }
   }
 }</code></pre>
@@ -209,6 +212,10 @@ Install useful skills into this workspace's .claude/skills directory.</code></pr
         <article class="mcp-card">
           <h3>Keep it local</h3>
           <p>No hosted service is required. The MCP process reads local files and writes only when the agent calls <code>install_skill</code>.</p>
+        </article>
+        <article class="mcp-card">
+          <h3>Auto-refresh</h3>
+          <p>Before the first tool call, the server can run <code>git pull --ff-only</code> and reload the manifest. Disable with <code>SKILLS_MCP_AUTO_REFRESH=false</code>.</p>
         </article>
       </div>
     </section>

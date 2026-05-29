@@ -6,6 +6,7 @@
 // making the whole skill library reachable.
 
 import { createInterface } from "node:readline";
+import { execFile } from "node:child_process";
 import {
   cp,
   mkdir,
@@ -23,20 +24,42 @@ import {
   resolve,
   sep,
 } from "node:path";
+import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
 
 const SERVER_NAME = "repo-skills";
-const SERVER_VERSION = "0.1.0";
+const SERVER_VERSION = "0.2.0";
 const DEFAULT_PROTOCOL_VERSION = "2025-06-18";
 const MAX_LIST_LIMIT = 100;
 const DEFAULT_DOC_CHARS = 24000;
+const DEFAULT_REFRESH_TIMEOUT_MS = 30000;
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = resolve(process.env.SKILLS_REPO_ROOT || join(__dirname, ".."));
 const SKILLS_DIR = join(ROOT, "skills");
 const MANIFEST_PATH = join(ROOT, "docs", "manifest.json");
+const execFileAsync = promisify(execFile);
 
 let manifestCache = null;
+
+const cliArgs = new Set(process.argv.slice(2));
+const AUTO_REFRESH = readBooleanOption("SKILLS_MCP_AUTO_REFRESH", true) &&
+  !cliArgs.has("--no-auto-refresh") &&
+  !cliArgs.has("--no-refresh");
+const REFRESH_TIMEOUT_MS = Number.parseInt(
+  process.env.SKILLS_MCP_REFRESH_TIMEOUT_MS || String(DEFAULT_REFRESH_TIMEOUT_MS),
+  10
+) || DEFAULT_REFRESH_TIMEOUT_MS;
+
+const refreshState = {
+  attempted: false,
+  enabled: AUTO_REFRESH,
+  status: AUTO_REFRESH ? "pending" : "disabled",
+  message: AUTO_REFRESH
+    ? "Auto-refresh will run before the first tool call."
+    : "Auto-refresh is disabled.",
+  timestamp: null,
+};
 
 const TOOLS = [
   {
@@ -266,6 +289,97 @@ async function loadManifest() {
   const raw = await readFile(MANIFEST_PATH, "utf8");
   manifestCache = JSON.parse(raw);
   return manifestCache;
+}
+
+function readBooleanOption(name, defaultValue) {
+  const value = process.env[name];
+  if (value === undefined || value === "") return defaultValue;
+  return !/^(0|false|no|off)$/i.test(value.trim());
+}
+
+async function runCommand(command, args) {
+  return execFileAsync(command, args, {
+    cwd: ROOT,
+    timeout: REFRESH_TIMEOUT_MS,
+    windowsHide: true,
+    maxBuffer: 1024 * 1024,
+  });
+}
+
+async function isGitRepo() {
+  try {
+    await runCommand("git", ["-C", ROOT, "rev-parse", "--is-inside-work-tree"]);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function hasLocalChanges() {
+  const { stdout } = await runCommand("git", ["-C", ROOT, "status", "--porcelain"]);
+  return stdout.trim().length > 0;
+}
+
+async function ensureAutoRefresh() {
+  if (refreshState.attempted) return refreshState;
+  refreshState.attempted = true;
+  refreshState.timestamp = new Date().toISOString();
+
+  if (!AUTO_REFRESH) return refreshState;
+
+  try {
+    if (!(await isGitRepo())) {
+      refreshState.status = "skipped";
+      refreshState.message = "Auto-refresh skipped because SKILLS_REPO_ROOT is not a git repository.";
+      return refreshState;
+    }
+
+    if (await hasLocalChanges()) {
+      refreshState.status = "skipped";
+      refreshState.message =
+        "Auto-refresh skipped because the repository has local changes. Commit, stash, or disable auto-refresh.";
+      return refreshState;
+    }
+
+    const pull = await runCommand("git", ["-C", ROOT, "pull", "--ff-only"]);
+    if (!existsSync(MANIFEST_PATH)) {
+      await runCommand("node", [join(ROOT, "scripts", "build-manifest.mjs")]);
+    }
+    manifestCache = null;
+
+    refreshState.status = "ok";
+    refreshState.message = (pull.stdout || "Repository already up to date.").trim();
+    return refreshState;
+  } catch (error) {
+    refreshState.status = "failed";
+    refreshState.message = compactError(error);
+    return refreshState;
+  }
+}
+
+function compactError(error) {
+  const parts = [
+    error?.message,
+    error?.stderr,
+    error?.stdout,
+  ].filter(Boolean).join("\n").trim();
+  return parts.split(/\r?\n/).map((line) => line.trim()).filter(Boolean).slice(-4).join(" ");
+}
+
+function attachServerMeta(result) {
+  if (!result || typeof result !== "object" || Array.isArray(result)) return result;
+  return {
+    ...result,
+    server: {
+      auto_refresh: {
+        enabled: refreshState.enabled,
+        attempted: refreshState.attempted,
+        status: refreshState.status,
+        message: refreshState.message,
+        timestamp: refreshState.timestamp,
+      },
+    },
+  };
 }
 
 function clampLimit(value, fallback = 50) {
@@ -693,8 +807,9 @@ async function handleRequest(message) {
     }
 
     try {
+      await ensureAutoRefresh();
       const result = await handler(params.arguments || {});
-      respond(id, toolResult(result));
+      respond(id, toolResult(attachServerMeta(result)));
     } catch (error) {
       respond(id, toolError(error));
     }
