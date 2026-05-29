@@ -607,6 +607,178 @@ h1 .accent-word {
 }
 
 /* ==========================================================================
+   MCP section
+   ========================================================================== */
+
+.mcp-section {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  padding: 56px var(--gutter);
+}
+
+.mcp-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.mcp-copy {
+  padding-top: 4px;
+}
+
+.mcp-eyebrow {
+  margin-bottom: 16px;
+}
+
+.mcp-copy h2 {
+  margin: 0 0 14px;
+  max-width: 680px;
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mcp-copy p {
+  margin: 0;
+  max-width: 620px;
+  color: var(--text-dim);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.mcp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.mcp-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.mcp-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev-2);
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mcp-panel-head code {
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xs);
+  padding: 2px 7px;
+}
+
+.mcp-steps {
+  margin: 0;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+  list-style-position: inside;
+}
+
+.mcp-steps li {
+  color: var(--text-dim);
+}
+
+.mcp-steps strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 13.5px;
+}
+
+.mcp-steps pre {
+  position: relative;
+  margin: 0;
+  padding: 14px 16px;
+  padding-right: 64px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.mcp-steps code {
+  color: var(--code-text);
+  background: transparent;
+}
+
+.mcp-details {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.mcp-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  padding: 16px;
+}
+
+.mcp-card h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.mcp-card p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mcp-card code {
+  color: var(--accent);
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  padding: 1px 5px;
+  font-size: 11.5px;
+}
+
+@media (max-width: 900px) {
+  .mcp-inner {
+    grid-template-columns: 1fr;
+  }
+  .mcp-details {
+    grid-template-columns: 1fr;
+  }
+  .mcp-copy h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .mcp-section {
+    padding: 40px var(--gutter);
+  }
+  .mcp-steps {
+    padding: 12px;
+  }
+}
+
+/* ==========================================================================
    Controls
    ========================================================================== */
 

@@ -33,6 +33,7 @@
         </a>
         <nav class="topbar-nav" aria-label="Primary">
           <a href="#browse">Browse</a>
+          <a href="#mcp">MCP</a>
           <a href="https://github.com/mouadja02/skills#readme" target="_blank" rel="noopener">Docs</a>
           <a href="https://github.com/mouadja02/skills/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a>
         </nav>
@@ -135,6 +136,82 @@ Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
         </dl>
       </div>
     </header>
+
+    <section class="mcp-section" id="mcp" aria-labelledby="mcpTitle">
+      <div class="mcp-inner">
+        <div class="mcp-copy">
+          <span class="eyebrow mcp-eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Local stdio MCP
+          </span>
+          <h2 id="mcpTitle">Give agents the skills library without loading it all.</h2>
+          <p>
+            The local Skills MCP server lets an AI assistant browse categories, search skills,
+            preview one skill, read the selected docs, and copy chosen skills into a workspace.
+            It reads your local clone and keeps the agent context small.
+          </p>
+          <div class="mcp-actions">
+            <a class="btn btn-primary" href="https://github.com/mouadja02/skills/blob/main/docs/skills-mcp.md" target="_blank" rel="noopener">
+              Full MCP docs
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 12 12 6M7 5h6v6"/>
+              </svg>
+            </a>
+            <a class="btn btn-ghost" href="#browse">Browse skills</a>
+          </div>
+        </div>
+
+        <div class="mcp-panel" aria-label="MCP setup">
+          <div class="mcp-panel-head">
+            <span>Quick setup</span>
+            <code>repo-skills</code>
+          </div>
+          <ol class="mcp-steps">
+            <li>
+              <strong>Clone and index</strong>
+              <pre><button class="copy" data-copy-target="#mcpClone" type="button">Copy</button><code id="mcpClone">git clone https://github.com/mouadja02/skills.git
+cd skills
+npm install
+npm run build:manifest</code></pre>
+            </li>
+            <li>
+              <strong>Add the local server to your MCP client</strong>
+              <pre><button class="copy" data-copy-target="#mcpConfig" type="button">Copy</button><code id="mcpConfig">{
+  "mcpServers": {
+    "repo-skills": {
+      "command": "node",
+      "args": ["C:/path/to/skills/scripts/skills-mcp.mjs"],
+      "cwd": "C:/path/to/skills"
+    }
+  }
+}</code></pre>
+            </li>
+            <li>
+              <strong>Tell the agent how to use it</strong>
+              <pre><button class="copy" data-copy-target="#mcpPrompt" type="button">Copy</button><code id="mcpPrompt">Use the repo-skills MCP server. Do not load the whole library.
+Call list_categories first, then list_skills or search_skills.
+Use get_skill for previews and read_skill_doc only for chosen skills.
+Install useful skills into this workspace's .claude/skills directory.</code></pre>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="mcp-inner mcp-details">
+        <article class="mcp-card">
+          <h3>Context-safe workflow</h3>
+          <p><code>list_categories</code> -> <code>list_skills</code> or <code>search_skills</code> -> <code>get_skill</code> -> <code>read_skill_doc</code> only for the final selection.</p>
+        </article>
+        <article class="mcp-card">
+          <h3>Install into a workspace</h3>
+          <p><code>install_skill</code> copies one selected skill folder into <code>.claude/skills</code>, <code>.codex/skills</code>, or any destination your client allows.</p>
+        </article>
+        <article class="mcp-card">
+          <h3>Keep it local</h3>
+          <p>No hosted service is required. The MCP process reads local files and writes only when the agent calls <code>install_skill</code>.</p>
+        </article>
+      </div>
+    </section>
 
     <section class="controls" id="browse">
       <div class="controls-inner">

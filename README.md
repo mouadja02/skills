@@ -29,6 +29,12 @@ Open the searchable index — it gives every skill a copy-paste install command 
 
 Or browse the markdown table at [`SKILLS.md`](./SKILLS.md), or the per-category READMEs under [`skills/`](./skills/).
 
+### Local MCP for agents
+
+This repo includes a local stdio MCP server so agents can discover and install skills without loading the full library into context. Start with the [Local Skills MCP Quickstart](./docs/skills-mcp.md).
+
+The intended agent flow is compact: `list_categories` → `list_skills` or `search_skills` → `get_skill` → `read_skill_doc` only for chosen skills → `install_skill` into the workspace.
+
 ### Install skills (no full clone)
 
 The installer scripts accept three kinds of selector:
