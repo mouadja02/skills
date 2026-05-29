@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-25T23:36:38.800Z",
+  "generated_at": "2026-05-29T13:05:22.174Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 702,
+  "count": 703,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -50,7 +50,7 @@
     "design-and-ui": 31,
     "dev-workflow": 30,
     "devops": 38,
-    "diagrams-slides": 13,
+    "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
     "engineering-craft": 37,
@@ -2830,6 +2830,14 @@
       "path": "skills/devops/wrangler",
       "depth": 2,
       "description": "Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, account routing."
+    },
+    {
+      "name": "codebase-diagrams-and-slides",
+      "category": "diagrams-slides",
+      "install_path": "diagrams-slides/codebase-diagrams-and-slides",
+      "path": "skills/diagrams-slides/codebase-diagrams-and-slides",
+      "depth": 2,
+      "description": "Turns any codebase into branded, presentation-ready SVG diagrams and an optional smooth animated HTML slide deck. Analyzes a repository in any language (Markdown, Python, Rust, dbt, SQL, JS/TS, Java, Go, ...), extracts its architecture / flow / story, and generates eye-friendly 16:9 diagrams plus a polished, professional presentation. Use when the user asks to visualize, diagram, document, illustrate, or present a codebase, architecture, pipeline, or project; to build slides or a deck about a repo; or to produce diagrams from code. Defaults to the company brand palette (#03045e, #0077b6, #00b4d8, #90e0ef, #caf0f8) and writes to docs/diagrams/ and docs/presentation.html."
     },
     {
       "name": "draw-io-diagram-generator",
