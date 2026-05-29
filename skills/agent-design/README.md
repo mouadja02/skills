@@ -27,6 +27,7 @@ Skills for **designing, architecting, and scaffolding AI agent systems** — sin
 | `agent-owasp-compliance` | Check agents against OWASP Agentic Security Initiative Top 10. |
 | `agent-supply-chain` | Verify supply chain integrity for agent plugins and tools. |
 | `trading-agent-builder` | Build trading agents with market data integration. |
+| `harness-scaling` | Six-component harness framework (ℛℳ𝒞𝒮𝒪𝒢) — design agents beyond model scaling: context governance, trustworthy memory, skill routing with verification, safe evolution. From arXiv:2605.26112. |
 
 ## When to use this category
 
