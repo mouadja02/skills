@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 706 skills across 31 categories.
+**Total:** 712 skills across 31 categories.
 
 ## Install one skill
 
@@ -22,14 +22,14 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`agent-design`](#agent-design) | 52 |
-| [`agent-eval`](#agent-eval) | 20 |
+| [`agent-design`](#agent-design) | 55 |
+| [`agent-eval`](#agent-eval) | 22 |
 | [`api-backend`](#api-backend) | 11 |
 | [`business-strategy`](#business-strategy) | 63 |
 | [`cloud-azure`](#cloud-azure) | 18 |
 | [`code-quality`](#code-quality) | 16 |
 | [`coding`](#coding) | 32 |
-| [`context-engineering`](#context-engineering) | 15 |
+| [`context-engineering`](#context-engineering) | 16 |
 | [`databases`](#databases) | 22 |
 | [`design-and-ui`](#design-and-ui) | 31 |
 | [`dev-workflow`](#dev-workflow) | 30 |
@@ -102,9 +102,12 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`create-agentsmd`](./skills/agent-design/create-agentsmd/SKILL.md) | `agent-design/create-agentsmd` | Prompt for generating an AGENTS.md file for a repository |
 | [`create-headless-agent`](./skills/agent-design/create-headless-agent/SKILL.md) | `agent-design/create-headless-agent` | Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI |
 | [`durable-agent-workflows`](./skills/agent-design/durable-agent-workflows/SKILL.md) | `agent-design/durable-agent-workflows` | Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns |
+| [`expert-trace-skill-distillation`](./skills/agent-design/expert-trace-skill-distillation/SKILL.md) | `agent-design/expert-trace-skill-distillation` | Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contrastive induction from successes and failures, intervention testing, versioning, rollback, and task-conditioned vs. reusable-library evaluation. |
 | [`harness-scaling`](./skills/agent-design/harness-scaling/SKILL.md) | `agent-design/harness-scaling` | Use when designing or auditing an agentic AI system holistically. Activates the six-component harness framework (ℛ Reasoning, ℳ Memory, 𝒞 Context, 𝒮 Skills, 𝒪 Orchestration, 𝒢 Governance) from arXiv:2605.26112. Trigger phrases: "design an agent system", "why is my agent unreliable", "harness architecture", "system-level agent design", "beyond model scaling", "agentic infrastructure", "scale my agent system", "agent performance bottleneck". |
 | [`latent-briefing`](./skills/agent-design/latent-briefing/SKILL.md) | `agent-design/latent-briefing` | This skill should be used when the user asks to "share memory between agents", "KV cache compaction for multi-agent", "orchestrator worker context", "latent briefing", "reduce worker tokens", "cross-agent memory without summarization", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents. |
 | [`multi-agent-patterns`](./skills/agent-design/multi-agent-patterns/SKILL.md) | `agent-design/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution. |
+| [`rich-claude-code-tui-clone`](./skills/agent-design/rich-claude-code-tui-clone/SKILL.md) | `agent-design/rich-claude-code-tui-clone` | Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer. |
+| [`stateful-agent-security-monitoring`](./skills/agent-design/stateful-agent-security-monitoring/SKILL.md) | `agent-design/stateful-agent-security-monitoring` | Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance checks for control-like workspace content, and sanitized commits for persistent prompt-injection defense. |
 | [`structured-autonomy-generate`](./skills/agent-design/structured-autonomy-generate/SKILL.md) | `agent-design/structured-autonomy-generate` | Structured Autonomy Implementation Generator Prompt |
 | [`structured-autonomy-implement`](./skills/agent-design/structured-autonomy-implement/SKILL.md) | `agent-design/structured-autonomy-implement` | Structured Autonomy Implementation Prompt |
 | [`structured-autonomy-plan`](./skills/agent-design/structured-autonomy-plan/SKILL.md) | `agent-design/structured-autonomy-plan` | Structured Autonomy Planning Prompt |
@@ -115,6 +118,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`agent-trajectory-diagnostics`](./skills/agent-eval/agent-trajectory-diagnostics/SKILL.md) | `agent-eval/agent-trajectory-diagnostics` | Use when diagnosing agent benchmarks or runtime failures from trajectories instead of aggregate pass rates. Builds shared action-observation decision landscapes, identifies productive cores and trap regions, profiles Access/Trap/Repair behavior, and designs conservative trap-triggered recovery experiments. |
 | [`agentic-eval`](./skills/agent-eval/agentic-eval/SKILL.md) | `agent-eval/agentic-eval` | Patterns and techniques for evaluating and improving AI agent outputs. Use this skill when: - Implementing self-critique and reflection loops - Building evaluator-optimizer pipelines for quality-critical generation - Creating test-driven code refinement workflows - Designing rubric-based or LLM-as-judge evaluation systems - Adding iterative improvement to agent outputs (code, reports, analysis) - Measuring and improving agent response quality |
 | [`auto-memory-pro`](./skills/agent-eval/auto-memory-pro/SKILL.md) | `agent-eval/auto-memory-pro` | Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Claude has learned about your project, (2) graduating a pattern from notes to enforced rules, (3) turning a debugging solution into a skill, (4) checking memory health and capacity |
 | [`extract`](./skills/agent-eval/auto-memory-pro/skills/extract/SKILL.md) | `agent-eval/auto-memory-pro/skills/extract` | Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples |
@@ -135,6 +139,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`memory-merger`](./skills/agent-eval/memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file |
 | [`nano-banana-pro-openrouter`](./skills/agent-eval/nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model |
 | [`semantic-kernel`](./skills/agent-eval/semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python |
+| [`skill-lifecycle-optimization`](./skills/agent-eval/skill-lifecycle-optimization/SKILL.md) | `agent-eval/skill-lifecycle-optimization` | Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstraction layer, test per model and harness, canary changes, and roll back regressions. |
 
 ## api-backend
 
@@ -319,6 +324,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`mini-context-graph`](./skills/context-engineering/mini-context-graph/SKILL.md) | `context-engineering/mini-context-graph` | A persistent, compounding knowledge base combining Karpathy's LLM Wiki pattern with a structured knowledge graph. Ingest documents once — the LLM writes wiki pages, extracts entities/relations into the graph, and stores raw content for evidence retrieval. Knowledge accumulates and cross-references; it is never re-derived from scratch. |
 | [`napkin`](./skills/context-engineering/napkin/SKILL.md) | `context-engineering/napkin` | Napkin browser whiteboard — draw, sketch, annotate, diagrams, visual brainstorming |
 | [`onboard-context-matic`](./skills/context-engineering/onboard-context-matic/SKILL.md) | `context-engineering/onboard-context-matic` | Context-matic MCP server tour — APIs, endpoints, capabilities walkthrough |
+| [`provenance-grounded-memory`](./skills/context-engineering/provenance-grounded-memory/SKILL.md) | `context-engineering/provenance-grounded-memory` | Use when designing or auditing long-term memory for persistent AI agents. Stores immutable source evidence before canonical facts, links beliefs to provenance, applies novelty-aware ADD/UPDATE/NOOP write gating, keeps uncertain merges explicit, separates retrieval from answer generation, supports deletion, and evaluates memory failures layer by layer. |
 | [`what-context-needed`](./skills/context-engineering/what-context-needed/SKILL.md) | `context-engineering/what-context-needed` | Ask Copilot what files it needs to see before answering a question |
 
 ## databases

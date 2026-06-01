@@ -42,22 +42,22 @@ Code**, **Cursor**, and any other client that walks a directory tree of
 4. Drop any supporting files (templates, references, scripts) in the same
    folder. They ship with the skill when users install it.
 
-5. Update [`skills/<category>/README.md`](./skills) if the category README
-   maintains a hand-curated table. Otherwise the generated
-   [`SKILLS.md`](./SKILLS.md) and [`docs/manifest.json`](./docs/manifest.json)
-   are enough.
+5. Run `npm run build:manifest`. This regenerates
+   [`SKILLS.md`](./SKILLS.md), [`docs/manifest.json`](./docs/manifest.json),
+   [`docs/manifest.tsv`](./docs/manifest.tsv), [`skills/README.md`](./skills/README.md),
+   every top-level category README, and the catalog blocks in [`README.md`](./README.md).
+   Do not edit generated category READMEs by hand.
 
 ## Editing an existing skill
 
-Just edit the file. The CI regenerates `docs/manifest.json`,
-`docs/manifest.tsv`, `SKILLS.md`, and the per-skill ZIP archive on every
-push to `main`.
+Just edit the file. The CI regenerates the manifests, root indexes, category
+READMEs, and per-skill ZIP archive on every push to `main`.
 
 ## Local preview
 
 ```bash
 npm install        # one time
-npm run build      # regenerates manifest + zips into docs/
+npm run build      # regenerates docs, audits coverage, and builds zips
 npm run preview    # serves docs/ at http://localhost:4173
 ```
 
@@ -81,6 +81,8 @@ like, including the per-skill `.zip` download buttons.
 ```
 skills/<category>/<skill>/SKILL.md     each skill
 scripts/build-manifest.mjs             generates docs/manifest.{json,tsv} + SKILLS.md
+                                      + root/category README indexes
+scripts/check-docs.mjs                 audits documentation coverage and links
 scripts/build-zips.mjs                 generates docs/zips/*.zip (CI / preview)
 scripts/preview.mjs                    static server for docs/
 install.sh / install.ps1               one-line installers (root for curl URL)

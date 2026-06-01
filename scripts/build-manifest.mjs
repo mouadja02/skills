@@ -21,9 +21,45 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
 const SKILLS_DIR = join(ROOT, "skills");
 const SKILLS_INDEX_PATH = join(ROOT, "SKILLS.md");
+const SKILLS_README_PATH = join(SKILLS_DIR, "README.md");
+const ROOT_README_PATH = join(ROOT, "README.md");
 const DOCS_DIR = join(ROOT, "docs");
 const MANIFEST_PATH = join(DOCS_DIR, "manifest.json");
 const MANIFEST_TSV_PATH = join(DOCS_DIR, "manifest.tsv");
+
+const CATEGORY_DESCRIPTIONS = {
+  "agent-design": "Agent architecture, orchestration, safety, scaffolding, and coding-agent interfaces.",
+  "agent-eval": "Agent evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.",
+  "api-backend": "API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.",
+  "business-strategy": "Executive advisory, board preparation, operating systems, and strategic decision support.",
+  "cloud-azure": "Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations.",
+  "code-quality": "Code review, refactoring, static analysis, security review, and integrity checks.",
+  coding: "Language-agnostic implementation workflows, planning, debugging, security, and shipping.",
+  "context-engineering": "Context design, compression, memory, provenance, and codebase knowledge acquisition.",
+  databases: "Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt.",
+  "design-and-ui": "Frontend design, UI systems, visual artifacts, animation, branding, and accessibility.",
+  "dev-workflow": "Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.",
+  devops: "CI/CD, containers, infrastructure as code, Linux operations, observability, and security.",
+  "diagrams-slides": "Diagrams, presentations, meeting artifacts, and professional visual communication.",
+  documentation: "READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing.",
+  dotnet: ".NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development.",
+  "engineering-craft": "Senior engineering practices, planning, mentoring, verification, and cross-cutting craft.",
+  "go-to-market": "Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG.",
+  "java-kotlin": "Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows.",
+  "llm-tooling": "LLM observability, evaluation, vector search, OpenRouter, Phoenix, Arize, and Qdrant.",
+  "marketing-and-growth": "Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth.",
+  mcp: "Model Context Protocol server generation, tooling, deployment, and security.",
+  messaging: "Messaging integrations and relay workflows.",
+  "microsoft-agents": "Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling.",
+  "microsoft-data": "Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture.",
+  "personal-productivity": "Personal productivity, reminders, communication, notes, and connected tools.",
+  "product-management": "Product discovery, specifications, delivery planning, analytics, and agile workflows.",
+  prompting: "Prompt engineering, optimization, safety review, and creative-thinking frameworks.",
+  "react-frontend": "React, Vue, Next.js, mobile frontend frameworks, migrations, and testing.",
+  "skills-management": "Skill authoring, discovery, cleanup, Copilot configuration, and terse interaction modes.",
+  streamlit: "Streamlit applications, dashboards, chat UIs, components, layouts, and performance.",
+  testing: "Testing, QA, Playwright, pytest, debugging, and evaluation strategy.",
+};
 
 async function walk(dir, out = []) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -208,9 +244,24 @@ async function main() {
   const md = renderSkillsMd(manifest);
   await writeFile(SKILLS_INDEX_PATH, md, "utf8");
 
+  await writeFile(SKILLS_README_PATH, renderSkillsReadme(manifest), "utf8");
+  for (const category of categories) {
+    await writeFile(
+      join(SKILLS_DIR, category, "README.md"),
+      renderCategoryReadme(manifest, category),
+      "utf8"
+    );
+  }
+
+  const rootReadme = await readFile(ROOT_README_PATH, "utf8");
+  await writeFile(ROOT_README_PATH, updateRootReadme(rootReadme, manifest), "utf8");
+
   console.log(`OK  docs/manifest.json  (${skills.length} skills)`);
   console.log(`OK  docs/manifest.tsv   (bash-friendly)`);
   console.log(`OK  SKILLS.md           (browsable index)`);
+  console.log(`OK  skills/README.md     (${categories.length} categories)`);
+  console.log(`OK  skills/*/README.md   (per-category indexes)`);
+  console.log(`OK  README.md            (catalog metrics + categories)`);
 
   if (errors.length) {
     console.error(`\n${errors.length} error(s):`);
@@ -221,6 +272,128 @@ async function main() {
 
 function escapePipes(s) {
   return s.replace(/\|/g, "\\|").replace(/\r?\n/g, " ");
+}
+
+function compactTableText(s, maxLength = 240) {
+  const normalized = escapePipes(s).replace(/\s+/g, " ").trim();
+  return normalized.length <= maxLength
+    ? normalized
+    : `${normalized.slice(0, maxLength - 3).trimEnd()}...`;
+}
+
+function categoryDescription(category) {
+  return CATEGORY_DESCRIPTIONS[category] ?? "Agent skills grouped by their primary domain.";
+}
+
+function renderSkillsReadme(manifest) {
+  const lines = [];
+  lines.push(`# Skills Index`);
+  lines.push("");
+  lines.push(`<!-- generated:skills-readme -->`);
+  lines.push("");
+  lines.push(
+    `This index is generated from \`SKILL.md\` frontmatter by \`scripts/build-manifest.mjs\`. Do not edit it by hand.`
+  );
+  lines.push("");
+  lines.push(
+    `**Total:** ${manifest.count} skills across ${manifest.categories.length} categories.`
+  );
+  lines.push("");
+  lines.push(`## Categories`);
+  lines.push("");
+  lines.push(`| Category | Skills | Scope |`);
+  lines.push(`| --- | ---: | --- |`);
+  for (const category of manifest.categories) {
+    lines.push(
+      `| [\`${category}\`](./${category}/) | ${manifest.counts_by_category[category]} | ${categoryDescription(category)} |`
+    );
+  }
+  lines.push("");
+  lines.push(`## Browse Every Skill`);
+  lines.push("");
+  lines.push(
+    `Use [\`../SKILLS.md\`](../SKILLS.md) for the complete install-path index, or open a category README for a focused table.`
+  );
+  lines.push("");
+  lines.push(`## Adding Or Editing A Skill`);
+  lines.push("");
+  lines.push(
+    `Follow [\`../CONTRIBUTING.md\`](../CONTRIBUTING.md). Run \`npm run build:manifest\` after changing any \`SKILL.md\` file so this index and every category README remain current.`
+  );
+  lines.push("");
+  return lines.join("\n");
+}
+
+function renderCategoryReadme(manifest, category) {
+  const categorySkills = manifest.skills.filter((skill) => skill.category === category);
+  const categoryDir = join(SKILLS_DIR, category);
+  const lines = [];
+  lines.push(`# ${category}`);
+  lines.push("");
+  lines.push(`<!-- generated:category-readme -->`);
+  lines.push("");
+  lines.push(
+    `> Auto-generated from \`SKILL.md\` frontmatter by \`scripts/build-manifest.mjs\`. Do not edit this file by hand.`
+  );
+  lines.push("");
+  lines.push(categoryDescription(category));
+  lines.push("");
+  lines.push(`**Total:** ${categorySkills.length} skills.`);
+  lines.push("");
+  lines.push(`## Skills In This Category`);
+  lines.push("");
+  lines.push(`| Skill | Install path | Description |`);
+  lines.push(`| --- | --- | --- |`);
+  for (const skill of categorySkills) {
+    const target = toPosix(relative(categoryDir, join(ROOT, skill.path, "SKILL.md")));
+    lines.push(
+      `| [\`${skill.name}\`](${target}) | \`${skill.install_path}\` | ${compactTableText(skill.description)} |`
+    );
+  }
+  lines.push("");
+  lines.push(`[Back to the category index](../README.md)`);
+  lines.push("");
+  return lines.join("\n");
+}
+
+function generatedBlock(name, body) {
+  return `<!-- generated:${name}:start -->\n${body}\n<!-- generated:${name}:end -->`;
+}
+
+function replaceGeneratedBlock(content, name, body) {
+  const start = `<!-- generated:${name}:start -->`;
+  const end = `<!-- generated:${name}:end -->`;
+  const from = content.indexOf(start);
+  const to = content.indexOf(end);
+  if (from === -1 || to === -1 || to < from) {
+    throw new Error(`README.md is missing generated block '${name}'`);
+  }
+  return (
+    content.slice(0, from) +
+    generatedBlock(name, body) +
+    content.slice(to + end.length)
+  );
+}
+
+function renderRootCatalog(manifest) {
+  const lines = [];
+  lines.push(`| Category | Skills | Scope |`);
+  lines.push(`| --- | ---: | --- |`);
+  for (const category of manifest.categories) {
+    lines.push(
+      `| [\`${category}\`](./skills/${category}/) | ${manifest.counts_by_category[category]} | ${categoryDescription(category)} |`
+    );
+  }
+  return lines.join("\n");
+}
+
+function updateRootReadme(content, manifest) {
+  const metrics = `A curated collection of **${manifest.count} Agent Skills** across **${manifest.categories.length} categories** for Claude Code, Cursor, and other clients that discover \`SKILL.md\` files recursively.`;
+  return replaceGeneratedBlock(
+    replaceGeneratedBlock(content, "catalog-metrics", metrics),
+    "category-catalog",
+    renderRootCatalog(manifest)
+  );
 }
 
 function renderSkillsMd({ count, categories, counts_by_category, skills, repo, default_branch }) {

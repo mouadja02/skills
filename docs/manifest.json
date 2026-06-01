@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-29T15:50:59.001Z",
+  "generated_at": "2026-06-01T23:12:16.017Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 706,
+  "count": 712,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -38,14 +38,14 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 52,
-    "agent-eval": 20,
+    "agent-design": 55,
+    "agent-eval": 22,
     "api-backend": 11,
     "business-strategy": 63,
     "cloud-azure": 18,
     "code-quality": 16,
     "coding": 32,
-    "context-engineering": 15,
+    "context-engineering": 16,
     "databases": 22,
     "design-and-ui": 31,
     "dev-workflow": 30,
@@ -424,6 +424,14 @@
       "description": "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns"
     },
     {
+      "name": "expert-trace-skill-distillation",
+      "category": "agent-design",
+      "install_path": "agent-design/expert-trace-skill-distillation",
+      "path": "skills/agent-design/expert-trace-skill-distillation",
+      "depth": 2,
+      "description": "Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contrastive induction from successes and failures, intervention testing, versioning, rollback, and task-conditioned vs. reusable-library evaluation."
+    },
+    {
       "name": "harness-scaling",
       "category": "agent-design",
       "install_path": "agent-design/harness-scaling",
@@ -446,6 +454,22 @@
       "path": "skills/agent-design/multi-agent-patterns",
       "depth": 2,
       "description": "This skill should be used when the user asks to \"design multi-agent system\", \"implement supervisor pattern\", \"create swarm architecture\", \"coordinate multiple agents\", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution."
+    },
+    {
+      "name": "rich-claude-code-tui-clone",
+      "category": "agent-design",
+      "install_path": "agent-design/rich-claude-code-tui-clone",
+      "path": "skills/agent-design/rich-claude-code-tui-clone",
+      "depth": 2,
+      "description": "Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer."
+    },
+    {
+      "name": "stateful-agent-security-monitoring",
+      "category": "agent-design",
+      "install_path": "agent-design/stateful-agent-security-monitoring",
+      "path": "skills/agent-design/stateful-agent-security-monitoring",
+      "depth": 2,
+      "description": "Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance checks for control-like workspace content, and sanitized commits for persistent prompt-injection defense."
     },
     {
       "name": "structured-autonomy-generate",
@@ -486,6 +510,14 @@
       "path": "skills/agent-design/trading-agent-builder",
       "depth": 2,
       "description": "Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs"
+    },
+    {
+      "name": "agent-trajectory-diagnostics",
+      "category": "agent-eval",
+      "install_path": "agent-eval/agent-trajectory-diagnostics",
+      "path": "skills/agent-eval/agent-trajectory-diagnostics",
+      "depth": 2,
+      "description": "Use when diagnosing agent benchmarks or runtime failures from trajectories instead of aggregate pass rates. Builds shared action-observation decision landscapes, identifies productive cores and trap regions, profiles Access/Trap/Repair behavior, and designs conservative trap-triggered recovery experiments."
     },
     {
       "name": "agentic-eval",
@@ -646,6 +678,14 @@
       "path": "skills/agent-eval/semantic-kernel",
       "depth": 2,
       "description": "Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python"
+    },
+    {
+      "name": "skill-lifecycle-optimization",
+      "category": "agent-eval",
+      "install_path": "agent-eval/skill-lifecycle-optimization",
+      "path": "skills/agent-eval/skill-lifecycle-optimization",
+      "depth": 2,
+      "description": "Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstraction layer, test per model and harness, canary changes, and roll back regressions."
     },
     {
       "name": "aspnet-minimal-api-openapi",
@@ -1878,6 +1918,14 @@
       "path": "skills/context-engineering/onboard-context-matic",
       "depth": 2,
       "description": "Context-matic MCP server tour — APIs, endpoints, capabilities walkthrough"
+    },
+    {
+      "name": "provenance-grounded-memory",
+      "category": "context-engineering",
+      "install_path": "context-engineering/provenance-grounded-memory",
+      "path": "skills/context-engineering/provenance-grounded-memory",
+      "depth": 2,
+      "description": "Use when designing or auditing long-term memory for persistent AI agents. Stores immutable source evidence before canonical facts, links beliefs to provenance, applies novelty-aware ADD/UPDATE/NOOP write gating, keeps uncertain merges explicit, separates retrieval from answer generation, supports deletion, and evaluates memory failures layer by layer."
     },
     {
       "name": "what-context-needed",
