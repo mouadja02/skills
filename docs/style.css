@@ -81,7 +81,7 @@
   --gutter: 24px;
 
   /* Typography */
-  --font-display: "Syne", system-ui, -apple-system, sans-serif;
+  --font-display: "outfit", system-ui, -apple-system, sans-serif;
   --font-body: "Outfit", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 
