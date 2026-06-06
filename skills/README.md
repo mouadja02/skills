@@ -4,19 +4,19 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 712 skills across 31 categories.
+**Total:** 716 skills across 31 categories.
 
 ## Categories
 
 | Category | Skills | Scope |
 | --- | ---: | --- |
-| [`agent-design`](./agent-design/) | 55 | Agent architecture, orchestration, safety, scaffolding, and coding-agent interfaces. |
-| [`agent-eval`](./agent-eval/) | 22 | Agent evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
+| [`agent-design`](./agent-design/) | 56 | Agent architecture, orchestration, safety, scaffolding, and coding-agent interfaces. |
+| [`agent-eval`](./agent-eval/) | 23 | Agent evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./api-backend/) | 11 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./business-strategy/) | 63 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-azure`](./cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
 | [`code-quality`](./code-quality/) | 16 | Code review, refactoring, static analysis, security review, and integrity checks. |
-| [`coding`](./coding/) | 32 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
+| [`coding`](./coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`context-engineering`](./context-engineering/) | 16 | Context design, compression, memory, provenance, and codebase knowledge acquisition. |
 | [`databases`](./databases/) | 22 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
 | [`design-and-ui`](./design-and-ui/) | 31 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
@@ -28,7 +28,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`engineering-craft`](./engineering-craft/) | 37 | Senior engineering practices, planning, mentoring, verification, and cross-cutting craft. |
 | [`go-to-market`](./go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
-| [`llm-tooling`](./llm-tooling/) | 44 | LLM observability, evaluation, vector search, OpenRouter, Phoenix, Arize, and Qdrant. |
+| [`llm-tooling`](./llm-tooling/) | 45 | LLM observability, evaluation, vector search, OpenRouter, Phoenix, Arize, and Qdrant. |
 | [`marketing-and-growth`](./marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
 | [`mcp`](./mcp/) | 13 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./messaging/) | 3 | Messaging integrations and relay workflows. |

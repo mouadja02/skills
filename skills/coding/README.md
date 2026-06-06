@@ -6,7 +6,7 @@
 
 Language-agnostic implementation workflows, planning, debugging, security, and shipping.
 
-**Total:** 32 skills.
+**Total:** 33 skills.
 
 ## Skills In This Category
 
@@ -38,6 +38,7 @@ Language-agnostic implementation workflows, planning, debugging, security, and s
 | [`shipping-and-launch`](shipping-and-launch/SKILL.md) | `coding/shipping-and-launch` | Prepares production launches |
 | [`source-driven-development`](source-driven-development/SKILL.md) | `coding/source-driven-development` | Grounds every implementation decision in official documentation |
 | [`spec-driven-development`](spec-driven-development/SKILL.md) | `coding/spec-driven-development` | Creates specs before coding |
+| [`swe-agent-issue-loop`](swe-agent-issue-loop/SKILL.md) | `coding/swe-agent-issue-loop` | Use when turning GitHub issues or bug reports into reproducible coding-agent repair loops with sandboxed execution, focused tests, patch generation, and regression verification. |
 | [`swift-concurrency-expert`](swift-concurrency-expert/SKILL.md) | `coding/swift-concurrency-expert` | Swift concurrency review/fix: compiler errors, Sendable, actor isolation, Swift 6.2+ remediation. |
 | [`swiftui-liquid-glass`](swiftui-liquid-glass/SKILL.md) | `coding/swiftui-liquid-glass` | SwiftUI Liquid Glass (iOS 26+): implement, adopt, refactor, review correctness/perf/design. |
 | [`swiftui-performance-audit`](swiftui-performance-audit/SKILL.md) | `coding/swiftui-performance-audit` | SwiftUI performance audit: render, scroll, CPU/memory, view updates, layout, Instruments. |

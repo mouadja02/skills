@@ -6,7 +6,7 @@
 
 Agent evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.
 
-**Total:** 22 skills.
+**Total:** 23 skills.
 
 ## Skills In This Category
 
@@ -30,6 +30,7 @@ Agent evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.
 | [`eval-driven-dev`](eval-driven-dev/SKILL.md) | `agent-eval/eval-driven-dev` | Improve AI application with evaluation-driven development. Define eval criteria, instrument the application, build golden datasets, observe and evaluate application runs, analyze results, and produce a concrete action plan for improvemen... |
 | [`harness-benchmarking`](harness-benchmarking/SKILL.md) | `agent-eval/harness-benchmarking` | Use when designing evaluation suites for agentic systems, choosing agent benchmarks, measuring multi-agent performance, or critiquing single-score evaluation of agents. Based on arXiv:2605.26112v1. Trigger phrases: "evaluate my agent", "... |
 | [`local-ai-stack`](local-ai-stack/SKILL.md) | `agent-eval/local-ai-stack` | Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving |
+| [`mcp-agent-evaluation`](mcp-agent-evaluation/SKILL.md) | `agent-eval/mcp-agent-evaluation` | Use when evaluating MCP-enabled agents, tool-using LLM systems, multi-server workflows, tool-selection quality, trajectory quality, task completion, or MCP security regressions. |
 | [`memory-merger`](memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file |
 | [`nano-banana-pro-openrouter`](nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model |
 | [`semantic-kernel`](semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python |

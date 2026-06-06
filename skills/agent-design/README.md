@@ -6,7 +6,7 @@
 
 Agent architecture, orchestration, safety, scaffolding, and coding-agent interfaces.
 
-**Total:** 55 skills.
+**Total:** 56 skills.
 
 ## Skills In This Category
 
@@ -59,6 +59,7 @@ Agent architecture, orchestration, safety, scaffolding, and coding-agent interfa
 | [`expert-trace-skill-distillation`](expert-trace-skill-distillation/SKILL.md) | `agent-design/expert-trace-skill-distillation` | Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contras... |
 | [`harness-scaling`](harness-scaling/SKILL.md) | `agent-design/harness-scaling` | Use when designing or auditing an agentic AI system holistically. Activates the six-component harness framework (ℛ Reasoning, ℳ Memory, 𝒞 Context, 𝒮 Skills, 𝒪 Orchestration, 𝒢 Governance) from arXiv:2605.26112. Trigger phrases: "desi... |
 | [`latent-briefing`](latent-briefing/SKILL.md) | `agent-design/latent-briefing` | This skill should be used when the user asks to "share memory between agents", "KV cache compaction for multi-agent", "orchestrator worker context", "latent briefing", "reduce worker tokens", "cross-agent memory without summarization", o... |
+| [`mcp-tool-routing`](mcp-tool-routing/SKILL.md) | `agent-design/mcp-tool-routing` | Use when designing scalable MCP tool routing, dynamic tool retrieval, agent-tool graphs, tool inventory indexing, or routing policies for agents with many available tools. |
 | [`multi-agent-patterns`](multi-agent-patterns/SKILL.md) | `agent-design/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs,... |
 | [`rich-claude-code-tui-clone`](rich-claude-code-tui-clone/SKILL.md) | `agent-design/rich-claude-code-tui-clone` | Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, f... |
 | [`stateful-agent-security-monitoring`](stateful-agent-security-monitoring/SKILL.md) | `agent-design/stateful-agent-security-monitoring` | Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance ch... |

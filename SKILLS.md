@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 712 skills across 31 categories.
+**Total:** 716 skills across 31 categories.
 
 ## Install one skill
 
@@ -22,13 +22,13 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`agent-design`](#agent-design) | 55 |
-| [`agent-eval`](#agent-eval) | 22 |
+| [`agent-design`](#agent-design) | 56 |
+| [`agent-eval`](#agent-eval) | 23 |
 | [`api-backend`](#api-backend) | 11 |
 | [`business-strategy`](#business-strategy) | 63 |
 | [`cloud-azure`](#cloud-azure) | 18 |
 | [`code-quality`](#code-quality) | 16 |
-| [`coding`](#coding) | 32 |
+| [`coding`](#coding) | 33 |
 | [`context-engineering`](#context-engineering) | 16 |
 | [`databases`](#databases) | 22 |
 | [`design-and-ui`](#design-and-ui) | 31 |
@@ -40,7 +40,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`engineering-craft`](#engineering-craft) | 37 |
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
-| [`llm-tooling`](#llm-tooling) | 44 |
+| [`llm-tooling`](#llm-tooling) | 45 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
 | [`mcp`](#mcp) | 13 |
 | [`messaging`](#messaging) | 3 |
@@ -105,6 +105,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`expert-trace-skill-distillation`](./skills/agent-design/expert-trace-skill-distillation/SKILL.md) | `agent-design/expert-trace-skill-distillation` | Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contrastive induction from successes and failures, intervention testing, versioning, rollback, and task-conditioned vs. reusable-library evaluation. |
 | [`harness-scaling`](./skills/agent-design/harness-scaling/SKILL.md) | `agent-design/harness-scaling` | Use when designing or auditing an agentic AI system holistically. Activates the six-component harness framework (ℛ Reasoning, ℳ Memory, 𝒞 Context, 𝒮 Skills, 𝒪 Orchestration, 𝒢 Governance) from arXiv:2605.26112. Trigger phrases: "design an agent system", "why is my agent unreliable", "harness architecture", "system-level agent design", "beyond model scaling", "agentic infrastructure", "scale my agent system", "agent performance bottleneck". |
 | [`latent-briefing`](./skills/agent-design/latent-briefing/SKILL.md) | `agent-design/latent-briefing` | This skill should be used when the user asks to "share memory between agents", "KV cache compaction for multi-agent", "orchestrator worker context", "latent briefing", "reduce worker tokens", "cross-agent memory without summarization", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents. |
+| [`mcp-tool-routing`](./skills/agent-design/mcp-tool-routing/SKILL.md) | `agent-design/mcp-tool-routing` | Use when designing scalable MCP tool routing, dynamic tool retrieval, agent-tool graphs, tool inventory indexing, or routing policies for agents with many available tools. |
 | [`multi-agent-patterns`](./skills/agent-design/multi-agent-patterns/SKILL.md) | `agent-design/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution. |
 | [`rich-claude-code-tui-clone`](./skills/agent-design/rich-claude-code-tui-clone/SKILL.md) | `agent-design/rich-claude-code-tui-clone` | Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer. |
 | [`stateful-agent-security-monitoring`](./skills/agent-design/stateful-agent-security-monitoring/SKILL.md) | `agent-design/stateful-agent-security-monitoring` | Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance checks for control-like workspace content, and sanitized commits for persistent prompt-injection defense. |
@@ -136,6 +137,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`eval-driven-dev`](./skills/agent-eval/eval-driven-dev/SKILL.md) | `agent-eval/eval-driven-dev` | Improve AI application with evaluation-driven development. Define eval criteria, instrument the application, build golden datasets, observe and evaluate application runs, analyze results, and produce a concrete action plan for improvements. ALWAYS USE THIS SKILL when the user asks to set up QA, add tests, add evals, evaluate, benchmark, fix wrong behaviors, improve quality, or do quality assurance for any Python project that calls an LLM model. |
 | [`harness-benchmarking`](./skills/agent-eval/harness-benchmarking/SKILL.md) | `agent-eval/harness-benchmarking` | Use when designing evaluation suites for agentic systems, choosing agent benchmarks, measuring multi-agent performance, or critiquing single-score evaluation of agents. Based on arXiv:2605.26112v1. Trigger phrases: "evaluate my agent", "benchmark agent", "measure agent reliability", "pass^k evaluation", "agent metrics beyond success rate", "trajectory quality", "memory hygiene metric", "longitudinal agent eval", "why my agent scores well on benchmarks but fails in production". |
 | [`local-ai-stack`](./skills/agent-eval/local-ai-stack/SKILL.md) | `agent-eval/local-ai-stack` | Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving |
+| [`mcp-agent-evaluation`](./skills/agent-eval/mcp-agent-evaluation/SKILL.md) | `agent-eval/mcp-agent-evaluation` | Use when evaluating MCP-enabled agents, tool-using LLM systems, multi-server workflows, tool-selection quality, trajectory quality, task completion, or MCP security regressions. |
 | [`memory-merger`](./skills/agent-eval/memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file |
 | [`nano-banana-pro-openrouter`](./skills/agent-eval/nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model |
 | [`semantic-kernel`](./skills/agent-eval/semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python |
@@ -299,6 +301,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`shipping-and-launch`](./skills/coding/shipping-and-launch/SKILL.md) | `coding/shipping-and-launch` | Prepares production launches |
 | [`source-driven-development`](./skills/coding/source-driven-development/SKILL.md) | `coding/source-driven-development` | Grounds every implementation decision in official documentation |
 | [`spec-driven-development`](./skills/coding/spec-driven-development/SKILL.md) | `coding/spec-driven-development` | Creates specs before coding |
+| [`swe-agent-issue-loop`](./skills/coding/swe-agent-issue-loop/SKILL.md) | `coding/swe-agent-issue-loop` | Use when turning GitHub issues or bug reports into reproducible coding-agent repair loops with sandboxed execution, focused tests, patch generation, and regression verification. |
 | [`swift-concurrency-expert`](./skills/coding/swift-concurrency-expert/SKILL.md) | `coding/swift-concurrency-expert` | Swift concurrency review/fix: compiler errors, Sendable, actor isolation, Swift 6.2+ remediation. |
 | [`swiftui-liquid-glass`](./skills/coding/swiftui-liquid-glass/SKILL.md) | `coding/swiftui-liquid-glass` | SwiftUI Liquid Glass (iOS 26+): implement, adopt, refactor, review correctness/perf/design. |
 | [`swiftui-performance-audit`](./skills/coding/swiftui-performance-audit/SKILL.md) | `coding/swiftui-performance-audit` | SwiftUI performance audit: render, scroll, CPU/memory, view updates, layout, Instruments. |
@@ -632,6 +635,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`arize-prompt-optimization`](./skills/llm-tooling/arize-prompt-optimization/SKILL.md) | `llm-tooling/arize-prompt-optimization` | Also use when the user wants to make their AI respond better or improve AI output quality. Covers extracting prompts from spans, gathering performance signal, and running a data-driven optimization loop using the ax CLI |
 | [`arize-trace`](./skills/llm-tooling/arize-trace/SKILL.md) | `llm-tooling/arize-trace` | Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI |
 | [`model-recommendation`](./skills/llm-tooling/model-recommendation/SKILL.md) | `llm-tooling/model-recommendation` | Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency |
+| [`multimodal-rag-architecture`](./skills/llm-tooling/multimodal-rag-architecture/SKILL.md) | `llm-tooling/multimodal-rag-architecture` | Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence. |
 | [`nano-banana-pro`](./skills/llm-tooling/nano-banana-pro/SKILL.md) | `llm-tooling/nano-banana-pro` | Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final. |
 | [`openai-image-gen`](./skills/llm-tooling/openai-image-gen/SKILL.md) | `llm-tooling/openai-image-gen` | OpenAI Images API: batches, prompt sampler, gallery — gpt-image-1 and variants. |
 | [`openrouter-agent-migration`](./skills/llm-tooling/openrouter-agent-migration/SKILL.md) | `llm-tooling/openrouter-agent-migration` | @openrouter/sdk → @openrouter/agent — callModel, tool(), stop conditions migration |

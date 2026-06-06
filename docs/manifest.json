@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-06-03T08:53:18.381Z",
+  "generated_at": "2026-06-06T21:23:31.395Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 712,
+  "count": 716,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -38,13 +38,13 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 55,
-    "agent-eval": 22,
+    "agent-design": 56,
+    "agent-eval": 23,
     "api-backend": 11,
     "business-strategy": 63,
     "cloud-azure": 18,
     "code-quality": 16,
-    "coding": 32,
+    "coding": 33,
     "context-engineering": 16,
     "databases": 22,
     "design-and-ui": 31,
@@ -56,7 +56,7 @@
     "engineering-craft": 37,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 44,
+    "llm-tooling": 45,
     "marketing-and-growth": 26,
     "mcp": 13,
     "messaging": 3,
@@ -448,6 +448,14 @@
       "description": "This skill should be used when the user asks to \"share memory between agents\", \"KV cache compaction for multi-agent\", \"orchestrator worker context\", \"latent briefing\", \"reduce worker tokens\", \"cross-agent memory without summarization\", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents."
     },
     {
+      "name": "mcp-tool-routing",
+      "category": "agent-design",
+      "install_path": "agent-design/mcp-tool-routing",
+      "path": "skills/agent-design/mcp-tool-routing",
+      "depth": 2,
+      "description": "Use when designing scalable MCP tool routing, dynamic tool retrieval, agent-tool graphs, tool inventory indexing, or routing policies for agents with many available tools."
+    },
+    {
       "name": "multi-agent-patterns",
       "category": "agent-design",
       "install_path": "agent-design/multi-agent-patterns",
@@ -654,6 +662,14 @@
       "path": "skills/agent-eval/local-ai-stack",
       "depth": 2,
       "description": "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving"
+    },
+    {
+      "name": "mcp-agent-evaluation",
+      "category": "agent-eval",
+      "install_path": "agent-eval/mcp-agent-evaluation",
+      "path": "skills/agent-eval/mcp-agent-evaluation",
+      "depth": 2,
+      "description": "Use when evaluating MCP-enabled agents, tool-using LLM systems, multi-server workflows, tool-selection quality, trajectory quality, task completion, or MCP security regressions."
     },
     {
       "name": "memory-merger",
@@ -1758,6 +1774,14 @@
       "path": "skills/coding/spec-driven-development",
       "depth": 2,
       "description": "Creates specs before coding"
+    },
+    {
+      "name": "swe-agent-issue-loop",
+      "category": "coding",
+      "install_path": "coding/swe-agent-issue-loop",
+      "path": "skills/coding/swe-agent-issue-loop",
+      "depth": 2,
+      "description": "Use when turning GitHub issues or bug reports into reproducible coding-agent repair loops with sandboxed execution, focused tests, patch generation, and regression verification."
     },
     {
       "name": "swift-concurrency-expert",
@@ -3942,6 +3966,14 @@
       "path": "skills/llm-tooling/model-recommendation",
       "depth": 2,
       "description": "Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency"
+    },
+    {
+      "name": "multimodal-rag-architecture",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/multimodal-rag-architecture",
+      "path": "skills/llm-tooling/multimodal-rag-architecture",
+      "depth": 2,
+      "description": "Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence."
     },
     {
       "name": "nano-banana-pro",

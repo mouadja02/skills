@@ -6,7 +6,7 @@
 
 LLM observability, evaluation, vector search, OpenRouter, Phoenix, Arize, and Qdrant.
 
-**Total:** 44 skills.
+**Total:** 45 skills.
 
 ## Skills In This Category
 
@@ -22,6 +22,7 @@ LLM observability, evaluation, vector search, OpenRouter, Phoenix, Arize, and Qd
 | [`arize-prompt-optimization`](arize-prompt-optimization/SKILL.md) | `llm-tooling/arize-prompt-optimization` | Also use when the user wants to make their AI respond better or improve AI output quality. Covers extracting prompts from spans, gathering performance signal, and running a data-driven optimization loop using the ax CLI |
 | [`arize-trace`](arize-trace/SKILL.md) | `llm-tooling/arize-trace` | Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI |
 | [`model-recommendation`](model-recommendation/SKILL.md) | `llm-tooling/model-recommendation` | Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency |
+| [`multimodal-rag-architecture`](multimodal-rag-architecture/SKILL.md) | `llm-tooling/multimodal-rag-architecture` | Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence. |
 | [`nano-banana-pro`](nano-banana-pro/SKILL.md) | `llm-tooling/nano-banana-pro` | Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final. |
 | [`openai-image-gen`](openai-image-gen/SKILL.md) | `llm-tooling/openai-image-gen` | OpenAI Images API: batches, prompt sampler, gallery — gpt-image-1 and variants. |
 | [`openrouter-agent-migration`](openrouter-agent-migration/SKILL.md) | `llm-tooling/openrouter-agent-migration` | @openrouter/sdk → @openrouter/agent — callModel, tool(), stop conditions migration |
