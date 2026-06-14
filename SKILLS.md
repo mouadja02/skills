@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 716 skills across 31 categories.
+**Total:** 721 skills across 31 categories.
 
 ## Install one skill
 
@@ -22,14 +22,14 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`agent-design`](#agent-design) | 56 |
-| [`agent-eval`](#agent-eval) | 23 |
+| [`agent-design`](#agent-design) | 58 |
+| [`agent-eval`](#agent-eval) | 24 |
 | [`api-backend`](#api-backend) | 11 |
 | [`business-strategy`](#business-strategy) | 63 |
 | [`cloud-azure`](#cloud-azure) | 18 |
 | [`code-quality`](#code-quality) | 16 |
 | [`coding`](#coding) | 33 |
-| [`context-engineering`](#context-engineering) | 16 |
+| [`context-engineering`](#context-engineering) | 17 |
 | [`databases`](#databases) | 22 |
 | [`design-and-ui`](#design-and-ui) | 31 |
 | [`dev-workflow`](#dev-workflow) | 30 |
@@ -40,7 +40,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`engineering-craft`](#engineering-craft) | 37 |
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
-| [`llm-tooling`](#llm-tooling) | 45 |
+| [`llm-tooling`](#llm-tooling) | 46 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
 | [`mcp`](#mcp) | 13 |
 | [`messaging`](#messaging) | 3 |
@@ -101,6 +101,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`create-agent-tui`](./skills/agent-design/create-agent-tui/SKILL.md) | `agent-design/create-agent-tui` | Agent TUI scaffolding in TypeScript — @openrouter/agent, interactive terminal UI |
 | [`create-agentsmd`](./skills/agent-design/create-agentsmd/SKILL.md) | `agent-design/create-agentsmd` | Prompt for generating an AGENTS.md file for a repository |
 | [`create-headless-agent`](./skills/agent-design/create-headless-agent/SKILL.md) | `agent-design/create-headless-agent` | Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI |
+| [`deepagents-harness`](./skills/agent-design/deepagents-harness/SKILL.md) | `agent-design/deepagents-harness` | Use when designing long-horizon agents that need subagents, isolated context windows, filesystem-backed work, persistence, human approval, MCP tools, or production tracing. |
 | [`durable-agent-workflows`](./skills/agent-design/durable-agent-workflows/SKILL.md) | `agent-design/durable-agent-workflows` | Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns |
 | [`expert-trace-skill-distillation`](./skills/agent-design/expert-trace-skill-distillation/SKILL.md) | `agent-design/expert-trace-skill-distillation` | Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contrastive induction from successes and failures, intervention testing, versioning, rollback, and task-conditioned vs. reusable-library evaluation. |
 | [`harness-scaling`](./skills/agent-design/harness-scaling/SKILL.md) | `agent-design/harness-scaling` | Use when designing or auditing an agentic AI system holistically. Activates the six-component harness framework (ℛ Reasoning, ℳ Memory, 𝒞 Context, 𝒮 Skills, 𝒪 Orchestration, 𝒢 Governance) from arXiv:2605.26112. Trigger phrases: "design an agent system", "why is my agent unreliable", "harness architecture", "system-level agent design", "beyond model scaling", "agentic infrastructure", "scale my agent system", "agent performance bottleneck". |
@@ -108,6 +109,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`mcp-tool-routing`](./skills/agent-design/mcp-tool-routing/SKILL.md) | `agent-design/mcp-tool-routing` | Use when designing scalable MCP tool routing, dynamic tool retrieval, agent-tool graphs, tool inventory indexing, or routing policies for agents with many available tools. |
 | [`multi-agent-patterns`](./skills/agent-design/multi-agent-patterns/SKILL.md) | `agent-design/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution. |
 | [`rich-claude-code-tui-clone`](./skills/agent-design/rich-claude-code-tui-clone/SKILL.md) | `agent-design/rich-claude-code-tui-clone` | Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer. |
+| [`smolagents-code-agents`](./skills/agent-design/smolagents-code-agents/SKILL.md) | `agent-design/smolagents-code-agents` | Use when building Hugging Face smolagents, code-executing agents, Python-action agents, Hub-shared tools, or lightweight agent prototypes that need sandboxing and provider flexibility. |
 | [`stateful-agent-security-monitoring`](./skills/agent-design/stateful-agent-security-monitoring/SKILL.md) | `agent-design/stateful-agent-security-monitoring` | Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance checks for control-like workspace content, and sanitized commits for persistent prompt-injection defense. |
 | [`structured-autonomy-generate`](./skills/agent-design/structured-autonomy-generate/SKILL.md) | `agent-design/structured-autonomy-generate` | Structured Autonomy Implementation Generator Prompt |
 | [`structured-autonomy-implement`](./skills/agent-design/structured-autonomy-implement/SKILL.md) | `agent-design/structured-autonomy-implement` | Structured Autonomy Implementation Prompt |
@@ -140,6 +142,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`mcp-agent-evaluation`](./skills/agent-eval/mcp-agent-evaluation/SKILL.md) | `agent-eval/mcp-agent-evaluation` | Use when evaluating MCP-enabled agents, tool-using LLM systems, multi-server workflows, tool-selection quality, trajectory quality, task completion, or MCP security regressions. |
 | [`memory-merger`](./skills/agent-eval/memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file |
 | [`nano-banana-pro-openrouter`](./skills/agent-eval/nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model |
+| [`rag-evaluation-matrix`](./skills/agent-eval/rag-evaluation-matrix/SKILL.md) | `agent-eval/rag-evaluation-matrix` | Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost. |
 | [`semantic-kernel`](./skills/agent-eval/semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python |
 | [`skill-lifecycle-optimization`](./skills/agent-eval/skill-lifecycle-optimization/SKILL.md) | `agent-eval/skill-lifecycle-optimization` | Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstraction layer, test per model and harness, canary changes, and roll back regressions. |
 
@@ -313,6 +316,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`ace-context-evolution`](./skills/context-engineering/ace-context-evolution/SKILL.md) | `context-engineering/ace-context-evolution` | Use when long-lived agents, project memories, system prompts, or playbooks are repeatedly summarized, rewritten, or optimized and risk losing domain detail, provenance, or execution learnings. |
 | [`acquire-codebase-knowledge`](./skills/context-engineering/acquire-codebase-knowledge/SKILL.md) | `context-engineering/acquire-codebase-knowledge` | Use this skill when the user explicitly asks to map, document, or onboard into an existing codebase. Trigger for prompts like "map this codebase", "document this architecture", "onboard me to this repo", or "create codebase docs". Do not trigger for routine feature implementation, bug fixes, or narrow code edits unless the user asks for repository-level discovery. |
 | [`context-compression`](./skills/context-engineering/context-compression/SKILL.md) | `context-engineering/context-compression` | This skill should be used when the user asks to "compress context", "summarize conversation history", "implement compaction", "reduce token usage", or mentions context compression, structured summarization, tokens-per-task optimization, or long-running agent sessions exceeding context limits. |
 | [`context-degradation`](./skills/context-engineering/context-degradation/SKILL.md) | `context-engineering/context-degradation` | This skill should be used when the user asks to "diagnose context problems", "fix lost-in-middle issues", "debug agent failures", "understand context poisoning", or mentions context degradation, attention patterns, context clash, context confusion, or agent performance degradation. Provides patterns for recognizing and mitigating context failures. |
@@ -670,6 +674,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`qdrant-search-quality-diagnosis`](./skills/llm-tooling/qdrant-search-quality/diagnosis/SKILL.md) | `llm-tooling/qdrant-search-quality/diagnosis` | Diagnoses Qdrant search quality issues |
 | [`qdrant-search-strategies`](./skills/llm-tooling/qdrant-search-quality/search-strategies/SKILL.md) | `llm-tooling/qdrant-search-quality/search-strategies` | Guides Qdrant search strategy selection |
 | [`qdrant-version-upgrade`](./skills/llm-tooling/qdrant-version-upgrade/SKILL.md) | `llm-tooling/qdrant-version-upgrade` | Guidance on how to upgrade your Qdrant version without interrupting the availability of your application and ensuring data integrity |
+| [`vllm-serving-planner`](./skills/llm-tooling/vllm-serving-planner/SKILL.md) | `llm-tooling/vllm-serving-planner` | Use when planning, reviewing, or tuning vLLM or OpenAI-compatible LLM serving for throughput, latency, KV-cache pressure, batching, quantization, prefix caching, or multimodal serving. |
 
 ## marketing-and-growth
 

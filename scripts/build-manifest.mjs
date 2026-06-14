@@ -28,14 +28,14 @@ const MANIFEST_PATH = join(DOCS_DIR, "manifest.json");
 const MANIFEST_TSV_PATH = join(DOCS_DIR, "manifest.tsv");
 
 const CATEGORY_DESCRIPTIONS = {
-  "agent-design": "Agent architecture, orchestration, safety, scaffolding, and coding-agent interfaces.",
-  "agent-eval": "Agent evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.",
+  "agent-design": "Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces.",
+  "agent-eval": "Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.",
   "api-backend": "API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.",
   "business-strategy": "Executive advisory, board preparation, operating systems, and strategic decision support.",
   "cloud-azure": "Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations.",
   "code-quality": "Code review, refactoring, static analysis, security review, and integrity checks.",
   coding: "Language-agnostic implementation workflows, planning, debugging, security, and shipping.",
-  "context-engineering": "Context design, compression, memory, provenance, and codebase knowledge acquisition.",
+  "context-engineering": "Context design, compression, evolving memory, provenance, and codebase knowledge acquisition.",
   databases: "Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt.",
   "design-and-ui": "Frontend design, UI systems, visual artifacts, animation, branding, and accessibility.",
   "dev-workflow": "Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.",
@@ -46,7 +46,7 @@ const CATEGORY_DESCRIPTIONS = {
   "engineering-craft": "Senior engineering practices, planning, mentoring, verification, and cross-cutting craft.",
   "go-to-market": "Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG.",
   "java-kotlin": "Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows.",
-  "llm-tooling": "LLM observability, evaluation, vector search, OpenRouter, Phoenix, Arize, and Qdrant.",
+  "llm-tooling": "LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM.",
   "marketing-and-growth": "Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth.",
   mcp: "Model Context Protocol server generation, tooling, deployment, and security.",
   messaging: "Messaging integrations and relay workflows.",

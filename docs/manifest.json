@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-06-06T21:26:43.636Z",
+  "generated_at": "2026-06-14T18:27:37.263Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 716,
+  "count": 721,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -38,14 +38,14 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 56,
-    "agent-eval": 23,
+    "agent-design": 58,
+    "agent-eval": 24,
     "api-backend": 11,
     "business-strategy": 63,
     "cloud-azure": 18,
     "code-quality": 16,
     "coding": 33,
-    "context-engineering": 16,
+    "context-engineering": 17,
     "databases": 22,
     "design-and-ui": 31,
     "dev-workflow": 30,
@@ -56,7 +56,7 @@
     "engineering-craft": 37,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 45,
+    "llm-tooling": 46,
     "marketing-and-growth": 26,
     "mcp": 13,
     "messaging": 3,
@@ -416,6 +416,14 @@
       "description": "Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI"
     },
     {
+      "name": "deepagents-harness",
+      "category": "agent-design",
+      "install_path": "agent-design/deepagents-harness",
+      "path": "skills/agent-design/deepagents-harness",
+      "depth": 2,
+      "description": "Use when designing long-horizon agents that need subagents, isolated context windows, filesystem-backed work, persistence, human approval, MCP tools, or production tracing."
+    },
+    {
       "name": "durable-agent-workflows",
       "category": "agent-design",
       "install_path": "agent-design/durable-agent-workflows",
@@ -470,6 +478,14 @@
       "path": "skills/agent-design/rich-claude-code-tui-clone",
       "depth": 2,
       "description": "Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer."
+    },
+    {
+      "name": "smolagents-code-agents",
+      "category": "agent-design",
+      "install_path": "agent-design/smolagents-code-agents",
+      "path": "skills/agent-design/smolagents-code-agents",
+      "depth": 2,
+      "description": "Use when building Hugging Face smolagents, code-executing agents, Python-action agents, Hub-shared tools, or lightweight agent prototypes that need sandboxing and provider flexibility."
     },
     {
       "name": "stateful-agent-security-monitoring",
@@ -686,6 +702,14 @@
       "path": "skills/agent-eval/nano-banana-pro-openrouter",
       "depth": 2,
       "description": "Generate or edit images via OpenRouter with the Gemini 3 Pro Image model"
+    },
+    {
+      "name": "rag-evaluation-matrix",
+      "category": "agent-eval",
+      "install_path": "agent-eval/rag-evaluation-matrix",
+      "path": "skills/agent-eval/rag-evaluation-matrix",
+      "depth": 2,
+      "description": "Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost."
     },
     {
       "name": "semantic-kernel",
@@ -1830,6 +1854,14 @@
       "path": "skills/coding/using-agent-skills",
       "depth": 2,
       "description": "Discovers and invokes agent skills"
+    },
+    {
+      "name": "ace-context-evolution",
+      "category": "context-engineering",
+      "install_path": "context-engineering/ace-context-evolution",
+      "path": "skills/context-engineering/ace-context-evolution",
+      "depth": 2,
+      "description": "Use when long-lived agents, project memories, system prompts, or playbooks are repeatedly summarized, rewritten, or optimized and risk losing domain detail, provenance, or execution learnings."
     },
     {
       "name": "acquire-codebase-knowledge",
@@ -4246,6 +4278,14 @@
       "path": "skills/llm-tooling/qdrant-version-upgrade",
       "depth": 2,
       "description": "Guidance on how to upgrade your Qdrant version without interrupting the availability of your application and ensuring data integrity"
+    },
+    {
+      "name": "vllm-serving-planner",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/vllm-serving-planner",
+      "path": "skills/llm-tooling/vllm-serving-planner",
+      "depth": 2,
+      "description": "Use when planning, reviewing, or tuning vLLM or OpenAI-compatible LLM serving for throughput, latency, KV-cache pressure, batching, quantization, prefix caching, or multimodal serving."
     },
     {
       "name": "apple-appstore-reviewer",
