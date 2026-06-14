@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **721 Agent Skills** across **31 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **722 Agent Skills** across **31 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -57,7 +57,7 @@ This table is generated from `docs/manifest.json`.
 | [`api-backend`](./skills/api-backend/) | 11 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./skills/business-strategy/) | 63 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
-| [`code-quality`](./skills/code-quality/) | 16 | Code review, refactoring, static analysis, security review, and integrity checks. |
+| [`code-quality`](./skills/code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./skills/coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`context-engineering`](./skills/context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |
 | [`databases`](./skills/databases/) | 22 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |

@@ -6,12 +6,13 @@
 
 Code review, refactoring, static analysis, security review, and integrity checks.
 
-**Total:** 16 skills.
+**Total:** 17 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`anti-ai-slop`](anti-ai-slop/SKILL.md) | `code-quality/anti-ai-slop` | Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content. Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics: emoji headers, "leverage", "robust", "... |
 | [`audit-integrity`](audit-integrity/SKILL.md) | `code-quality/audit-integrity` | AppSec audit integrity — output quality standards, honesty rules, continuous improvement |
 | [`codeql`](codeql/SKILL.md) | `code-quality/codeql` | CodeQL setup — GitHub Actions scanning, CLI queries, alert triage |
 | [`doublecheck`](doublecheck/SKILL.md) | `code-quality/doublecheck` | 3-layer AI output verification — claim extraction, web evidence, contradiction detection |

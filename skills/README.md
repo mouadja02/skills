@@ -4,7 +4,7 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 721 skills across 31 categories.
+**Total:** 722 skills across 31 categories.
 
 ## Categories
 
@@ -15,7 +15,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`api-backend`](./api-backend/) | 11 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./business-strategy/) | 63 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-azure`](./cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
-| [`code-quality`](./code-quality/) | 16 | Code review, refactoring, static analysis, security review, and integrity checks. |
+| [`code-quality`](./code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`context-engineering`](./context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |
 | [`databases`](./databases/) | 22 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |

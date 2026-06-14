@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 721 skills across 31 categories.
+**Total:** 722 skills across 31 categories.
 
 ## Install one skill
 
@@ -27,7 +27,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`api-backend`](#api-backend) | 11 |
 | [`business-strategy`](#business-strategy) | 63 |
 | [`cloud-azure`](#cloud-azure) | 18 |
-| [`code-quality`](#code-quality) | 16 |
+| [`code-quality`](#code-quality) | 17 |
 | [`coding`](#coding) | 33 |
 | [`context-engineering`](#context-engineering) | 17 |
 | [`databases`](#databases) | 22 |
@@ -257,6 +257,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`anti-ai-slop`](./skills/code-quality/anti-ai-slop/SKILL.md) | `code-quality/anti-ai-slop` | Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content. Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics: emoji headers, "leverage", "robust", "seamless", "delve", defensive bloat, type-hint overkill, marketing prose, "Whether you're X or Y", verbose error messages, and the rest of the AI tells catalogued from cpython, requests, flask, git, ripgrep, express, kubernetes, serde, go stdlib, and other pre-2020 reference repos. Triggers on "anti-ai", "human-style", "professional code", "clean code", "no slop", "write it like a human", or any time the agent is producing code/docs that should look hand-written. |
 | [`audit-integrity`](./skills/code-quality/audit-integrity/SKILL.md) | `code-quality/audit-integrity` | AppSec audit integrity — output quality standards, honesty rules, continuous improvement |
 | [`codeql`](./skills/code-quality/codeql/SKILL.md) | `code-quality/codeql` | CodeQL setup — GitHub Actions scanning, CLI queries, alert triage |
 | [`doublecheck`](./skills/code-quality/doublecheck/SKILL.md) | `code-quality/doublecheck` | 3-layer AI output verification — claim extraction, web evidence, contradiction detection |

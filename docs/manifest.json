@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-06-14T18:29:07.953Z",
+  "generated_at": "2026-06-14T21:46:38.364Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 721,
+  "count": 722,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -43,7 +43,7 @@
     "api-backend": 11,
     "business-strategy": 63,
     "cloud-azure": 18,
-    "code-quality": 16,
+    "code-quality": 17,
     "coding": 33,
     "context-engineering": 17,
     "databases": 22,
@@ -1462,6 +1462,14 @@
       "path": "skills/cloud-azure/update-avm-modules-in-bicep",
       "depth": 2,
       "description": "Update Azure Verified Modules (AVM) to latest versions in Bicep files."
+    },
+    {
+      "name": "anti-ai-slop",
+      "category": "code-quality",
+      "install_path": "code-quality/anti-ai-slop",
+      "path": "skills/code-quality/anti-ai-slop",
+      "depth": 2,
+      "description": "Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content. Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics: emoji headers, \"leverage\", \"robust\", \"seamless\", \"delve\", defensive bloat, type-hint overkill, marketing prose, \"Whether you're X or Y\", verbose error messages, and the rest of the AI tells catalogued from cpython, requests, flask, git, ripgrep, express, kubernetes, serde, go stdlib, and other pre-2020 reference repos. Triggers on \"anti-ai\", \"human-style\", \"professional code\", \"clean code\", \"no slop\", \"write it like a human\", or any time the agent is producing code/docs that should look hand-written."
     },
     {
       "name": "audit-integrity",
