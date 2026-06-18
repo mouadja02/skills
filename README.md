@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **722 Agent Skills** across **31 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **723 Agent Skills** across **31 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -55,15 +55,15 @@ This table is generated from `docs/manifest.json`.
 | [`agent-design`](./skills/agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./skills/agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./skills/api-backend/) | 11 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
-| [`business-strategy`](./skills/business-strategy/) | 63 | Executive advisory, board preparation, operating systems, and strategic decision support. |
+| [`business-strategy`](./skills/business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
 | [`code-quality`](./skills/code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./skills/coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`context-engineering`](./skills/context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |
 | [`databases`](./skills/databases/) | 22 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
-| [`design-and-ui`](./skills/design-and-ui/) | 31 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
+| [`design-and-ui`](./skills/design-and-ui/) | 35 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
 | [`dev-workflow`](./skills/dev-workflow/) | 30 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
-| [`devops`](./skills/devops/) | 38 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
+| [`devops`](./skills/devops/) | 36 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
 | [`diagrams-slides`](./skills/diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./skills/documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
 | [`dotnet`](./skills/dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
@@ -73,7 +73,7 @@ This table is generated from `docs/manifest.json`.
 | [`llm-tooling`](./skills/llm-tooling/) | 46 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./skills/marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
 | [`mcp`](./skills/mcp/) | 13 | Model Context Protocol server generation, tooling, deployment, and security. |
-| [`messaging`](./skills/messaging/) | 3 | Messaging integrations and relay workflows. |
+| [`messaging`](./skills/messaging/) | 1 | Messaging integrations and relay workflows. |
 | [`microsoft-agents`](./skills/microsoft-agents/) | 11 | Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling. |
 | [`microsoft-data`](./skills/microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture. |
 | [`personal-productivity`](./skills/personal-productivity/) | 9 | Personal productivity, reminders, communication, notes, and connected tools. |

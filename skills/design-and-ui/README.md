@@ -6,7 +6,7 @@
 
 Frontend design, UI systems, visual artifacts, animation, branding, and accessibility.
 
-**Total:** 31 skills.
+**Total:** 35 skills.
 
 ## Skills In This Category
 
@@ -16,6 +16,7 @@ Frontend design, UI systems, visual artifacts, animation, branding, and accessib
 | [`anass-pro-style`](anass-pro-style/SKILL.md) | `design-and-ui/anass-pro-style` | Build hyper-personalized, narrative-driven, single-file portfolio/pitch websites in the style of anass.pro. Use when the user asks for a "site like anass.pro", a one-recipient candidacy/pitch site, a behavioral-engineering landing page,... |
 | [`ckm:banner-design`](banner-design/SKILL.md) | `design-and-ui/banner-design` | Banner design — social, ads, heroes, print. Art direction with AI-generated assets |
 | [`ckm:brand`](brand/SKILL.md) | `design-and-ui/brand` | Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides |
+| [`brand-book-generator`](brand-book-generator/SKILL.md) | `design-and-ui/brand-book-generator` | Generate three radically distinct, on-trend brand concepts for any app or product and present them as a single no-scroll hero webpage — a bento "brand book" (logo + tagline, in-app screen, out-of-home, merch, palette, type, voice) that a... |
 | [`content-management-systems`](content-management-systems/SKILL.md) | `design-and-ui/content-management-systems` | Workflow for building and modifying content management systems across WordPress, Shopify, Wix, Squarespace, Drupal, WooCommerce, Joomla, HubSpot CMS Hub, Webflow, Adobe Experience Manager, and similar platforms |
 | [`ckm:design`](design/SKILL.md) | `design-and-ui/design` | Design — brand identity, tokens, UI styling, logo gen (55 styles, Gemini), corporate identity |
 | [`ckm:design-system`](design-system/SKILL.md) | `design-and-ui/design-system` | Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation |
@@ -35,12 +36,15 @@ Frontend design, UI systems, visual artifacts, animation, branding, and accessib
 | [`hallmark`](hallmark/SKILL.md) | `design-and-ui/hallmark` | Anti-AI-slop design — greenfield pages, audits, redesigns, and design extraction from URLs or screenshots |
 | [`impeccable`](impeccable/SKILL.md) | `design-and-ui/impeccable` | UI critique, audit, polish — websites, dashboards, components, onboarding, empty states |
 | [`legacy-circuit-mockups`](legacy-circuit-mockups/SKILL.md) | `design-and-ui/legacy-circuit-mockups` | Generate breadboard circuit mockups and visual diagrams using HTML5 Canvas drawing techniques |
+| [`muller-brockmann-grid`](muller-brockmann-grid/SKILL.md) | `design-and-ui/muller-brockmann-grid` | Build editorial/magazine/report webpages on a GENUINE Müller-Brockmann modular grid (International Typographic Style). Encodes the discipline (columns + modules + baseline, grotesque type, flush-left, restrained black/white/red palette)... |
+| [`nyt-data-viz`](nyt-data-viz/SKILL.md) | `design-and-ui/nyt-data-viz` | NYT-discipline data visualization. Applies the design rules of The New York Times graphics desk + Upshot — color, typography, annotation, chart-type selection — to make any chart render at Times grade. Use whenever generating charts, das... |
 | [`penpot-uiux-design`](penpot-uiux-design/SKILL.md) | `design-and-ui/penpot-uiux-design` | Penpot UI/UX design via MCP — frames, auto-layout, components, styles, prototype |
 | [`premium-frontend-ui`](premium-frontend-ui/SKILL.md) | `design-and-ui/premium-frontend-ui` | GitHub Copilot to craft immersive, high-performance web experiences with advanced motion, typography, and architectural craftsmanship |
 | [`slang-shader-engineer`](slang-shader-engineer/SKILL.md) | `design-and-ui/slang-shader-engineer` | Slang shaders, HLSL GPU code — modules, pipelines, compute, tessellation, render passes |
 | [`theme-factory`](theme-factory/SKILL.md) | `design-and-ui/theme-factory` | Theme styling toolkit — slides, docs, HTML pages, 10+ styles, dark/light, custom palette |
 | [`ckm:ui-styling`](ui-styling/SKILL.md) | `design-and-ui/ui-styling` | Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs |
 | [`ui-ux-pro-max`](ui-ux-pro-max/SKILL.md) | `design-and-ui/ui-ux-pro-max` | UI/UX design — 50+ styles, 161 palettes, 57 font pairs, 99 UX patterns, grids, accessibility |
+| [`vignelli-canon`](vignelli-canon/SKILL.md) | `design-and-ui/vignelli-canon` | Massimo Vignelli's complete design discipline — distilled from The Vignelli Canon. Encodes the Intangibles (semantics, discipline, appropriateness, timelessness, equity) and the Tangibles (the grid, the six basic typefaces, two-size type... |
 | [`web-coder`](web-coder/SKILL.md) | `design-and-ui/web-coder` | Expert 10x engineer with comprehensive knowledge of web development, internet protocols, and web standards |
 | [`web-design-reviewer`](web-design-reviewer/SKILL.md) | `design-and-ui/web-design-reviewer` | This skill enables visual inspection of websites running locally or remotely to identify and fix design issues. Triggers on requests like "review website design", "check the UI", "fix the layout", "find design problems". Detects issues w... |
 

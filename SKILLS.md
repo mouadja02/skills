@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 722 skills across 31 categories.
+**Total:** 723 skills across 31 categories.
 
 ## Install one skill
 
@@ -25,15 +25,15 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
 | [`api-backend`](#api-backend) | 11 |
-| [`business-strategy`](#business-strategy) | 63 |
+| [`business-strategy`](#business-strategy) | 64 |
 | [`cloud-azure`](#cloud-azure) | 18 |
 | [`code-quality`](#code-quality) | 17 |
 | [`coding`](#coding) | 33 |
 | [`context-engineering`](#context-engineering) | 17 |
 | [`databases`](#databases) | 22 |
-| [`design-and-ui`](#design-and-ui) | 31 |
+| [`design-and-ui`](#design-and-ui) | 35 |
 | [`dev-workflow`](#dev-workflow) | 30 |
-| [`devops`](#devops) | 38 |
+| [`devops`](#devops) | 36 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -43,7 +43,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`llm-tooling`](#llm-tooling) | 46 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
 | [`mcp`](#mcp) | 13 |
-| [`messaging`](#messaging) | 3 |
+| [`messaging`](#messaging) | 1 |
 | [`microsoft-agents`](#microsoft-agents) | 11 |
 | [`microsoft-data`](#microsoft-data) | 17 |
 | [`personal-productivity`](#personal-productivity) | 9 |
@@ -169,6 +169,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`board-deck-builder`](./skills/business-strategy/board-deck-builder/SKILL.md) | `business-strategy/board-deck-builder` | Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles |
 | [`board-meeting`](./skills/business-strategy/board-meeting/SKILL.md) | `business-strategy/board-meeting` | Board meeting — 6-phase structured deliberation, multi-agent C-suite protocol |
 | [`brag-sheet`](./skills/business-strategy/brag-sheet/SKILL.md) | `business-strategy/brag-sheet` | Turn vague "what did I do?" into evidence-backed impact statements for performance reviews, self-reviews, promotion packets, and weekly updates. Uniquely mines Copilot CLI session logs to reconstruct forgotten work, plus git commits and GitHub PRs. Enforces a 3-part impact contract (action → result → evidence). Works standalone with zero dependencies. Trigger for: "brag", "log work", "what did I do", "backfill my work history", "performance review", "self-review", "self assessment", "write impact statement", "review prep", "promo packet", "promotion case", "weekly update", "status report", "accomplishments", "what did I ship", "I forgot to log my work", "summarize my work", "track my wins", "what should I highlight", "end of half", "career growth", "work journal", or any request to document, summarize, or organize work accomplishments. |
+| [`business-simulation`](./skills/business-strategy/business-simulation/SKILL.md) | `business-strategy/business-simulation` | A battle-tested methodology for running ANY business in real-time simulation as an autonomous operator agent. Pick a venture — a shop, restaurant, SaaS product, boutique, fund, agency, nonprofit, or creator business — and the agent operates it day by day: calendar discipline, real-world grounding, source-of-truth locking, delegated authority, an operational tracker, a named persona team, finance honesty, risk/cadence management, and self-correction. Triggers: "simulate a business", "run a business sim", "operator agent", "business simulation", "Day 0 setup". |
 | [`c-level-advisor`](./skills/business-strategy/c-level-advisor/SKILL.md) | `business-strategy/c-level-advisor` | C-suite advice — channels 10 roles: CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO |
 | [`agent-protocol`](./skills/business-strategy/c-level-advisor/agent-protocol/SKILL.md) | `business-strategy/c-level-advisor/agent-protocol` | Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats |
 | [`board-deck-builder`](./skills/business-strategy/c-level-advisor/board-deck-builder/SKILL.md) | `business-strategy/c-level-advisor/board-deck-builder` | Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles |
@@ -370,6 +371,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`anass-pro-style`](./skills/design-and-ui/anass-pro-style/SKILL.md) | `design-and-ui/anass-pro-style` | Build hyper-personalized, narrative-driven, single-file portfolio/pitch websites in the style of anass.pro. Use when the user asks for a "site like anass.pro", a one-recipient candidacy/pitch site, a behavioral-engineering landing page, a single-file storytelling portfolio with a pixel-art game hero, custom cursor, typewriter text, procedural Web Audio SFX, scroll-revealed scenes, or a dark purple narrative interface that addresses one named reader. Trigger on phrases like "personal pitch site", "one-page candidacy", "narrative portfolio", "scrollytelling pitch", "pixel-art hero", "interactive landing for X", or any request to recreate / clone / adapt anass.pro. |
 | [`ckm:banner-design`](./skills/design-and-ui/banner-design/SKILL.md) | `design-and-ui/banner-design` | Banner design — social, ads, heroes, print. Art direction with AI-generated assets |
 | [`ckm:brand`](./skills/design-and-ui/brand/SKILL.md) | `design-and-ui/brand` | Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides |
+| [`brand-book-generator`](./skills/design-and-ui/brand-book-generator/SKILL.md) | `design-and-ui/brand-book-generator` | Generate three radically distinct, on-trend brand concepts for any app or product and present them as a single no-scroll hero webpage — a bento "brand book" (logo + tagline, in-app screen, out-of-home, merch, palette, type, voice) that assembles itself with a staggered pop on every toggle. Grounded in 2024-2026 design trends, not safe defaults. Triggers: "brand kit", "brand book", "brand concepts", "show me a few directions", "make it look like an agency did it", "build a brand for my app". |
 | [`content-management-systems`](./skills/design-and-ui/content-management-systems/SKILL.md) | `design-and-ui/content-management-systems` | Workflow for building and modifying content management systems across WordPress, Shopify, Wix, Squarespace, Drupal, WooCommerce, Joomla, HubSpot CMS Hub, Webflow, Adobe Experience Manager, and similar platforms |
 | [`ckm:design`](./skills/design-and-ui/design/SKILL.md) | `design-and-ui/design` | Design — brand identity, tokens, UI styling, logo gen (55 styles, Gemini), corporate identity |
 | [`ckm:design-system`](./skills/design-and-ui/design-system/SKILL.md) | `design-and-ui/design-system` | Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation |
@@ -389,12 +391,15 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`hallmark`](./skills/design-and-ui/hallmark/SKILL.md) | `design-and-ui/hallmark` | Anti-AI-slop design — greenfield pages, audits, redesigns, and design extraction from URLs or screenshots |
 | [`impeccable`](./skills/design-and-ui/impeccable/SKILL.md) | `design-and-ui/impeccable` | UI critique, audit, polish — websites, dashboards, components, onboarding, empty states |
 | [`legacy-circuit-mockups`](./skills/design-and-ui/legacy-circuit-mockups/SKILL.md) | `design-and-ui/legacy-circuit-mockups` | Generate breadboard circuit mockups and visual diagrams using HTML5 Canvas drawing techniques |
+| [`muller-brockmann-grid`](./skills/design-and-ui/muller-brockmann-grid/SKILL.md) | `design-and-ui/muller-brockmann-grid` | Build editorial/magazine/report webpages on a GENUINE Müller-Brockmann modular grid (International Typographic Style). Encodes the discipline (columns + modules + baseline, grotesque type, flush-left, restrained black/white/red palette) AND the front-end engineering to make the grid real, visible, and verified: one CSS-variable source of truth, an interactive grid-toggle overlay, subgrid bands, 8px baseline lock, and runtime optical alignment. Triggers: "magazine spread", "grid system", "Swiss design", "editorial layout", "show the grid", "align everything to the grid". |
+| [`nyt-data-viz`](./skills/design-and-ui/nyt-data-viz/SKILL.md) | `design-and-ui/nyt-data-viz` | NYT-discipline data visualization. Applies the design rules of The New York Times graphics desk + Upshot — color, typography, annotation, chart-type selection — to make any chart render at Times grade. Use whenever generating charts, dashboards, reports, or data-driven webpages. Triggers: "make this chart look professional", "NYT style", "editorial chart", "data viz", "dashboard design". |
 | [`penpot-uiux-design`](./skills/design-and-ui/penpot-uiux-design/SKILL.md) | `design-and-ui/penpot-uiux-design` | Penpot UI/UX design via MCP — frames, auto-layout, components, styles, prototype |
 | [`premium-frontend-ui`](./skills/design-and-ui/premium-frontend-ui/SKILL.md) | `design-and-ui/premium-frontend-ui` | GitHub Copilot to craft immersive, high-performance web experiences with advanced motion, typography, and architectural craftsmanship |
 | [`slang-shader-engineer`](./skills/design-and-ui/slang-shader-engineer/SKILL.md) | `design-and-ui/slang-shader-engineer` | Slang shaders, HLSL GPU code — modules, pipelines, compute, tessellation, render passes |
 | [`theme-factory`](./skills/design-and-ui/theme-factory/SKILL.md) | `design-and-ui/theme-factory` | Theme styling toolkit — slides, docs, HTML pages, 10+ styles, dark/light, custom palette |
 | [`ckm:ui-styling`](./skills/design-and-ui/ui-styling/SKILL.md) | `design-and-ui/ui-styling` | Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs |
 | [`ui-ux-pro-max`](./skills/design-and-ui/ui-ux-pro-max/SKILL.md) | `design-and-ui/ui-ux-pro-max` | UI/UX design — 50+ styles, 161 palettes, 57 font pairs, 99 UX patterns, grids, accessibility |
+| [`vignelli-canon`](./skills/design-and-ui/vignelli-canon/SKILL.md) | `design-and-ui/vignelli-canon` | Massimo Vignelli's complete design discipline — distilled from The Vignelli Canon. Encodes the Intangibles (semantics, discipline, appropriateness, timelessness, equity) and the Tangibles (the grid, the six basic typefaces, two-size type scale, rulers, primary-color-as-identifier, white space) into an applyable methodology. Use to design or critique identity systems, editorial layouts, wayfinding/transit signage, posters, and web pages in rigorous, timeless, Swiss-modernist Vignelli discipline. Triggers: "Vignelli style", "timeless design", "Swiss modernist", "design system", "transit signage". |
 | [`web-coder`](./skills/design-and-ui/web-coder/SKILL.md) | `design-and-ui/web-coder` | Expert 10x engineer with comprehensive knowledge of web development, internet protocols, and web standards |
 | [`web-design-reviewer`](./skills/design-and-ui/web-design-reviewer/SKILL.md) | `design-and-ui/web-design-reviewer` | This skill enables visual inspection of websites running locally or remotely to identify and fix design issues. Triggers on requests like "review website design", "check the UI", "fix the layout", "find design problems". Detects issues with responsive design, accessibility, visual consistency, and layout breakage, then performs fixes at the source code level. |
 
@@ -440,8 +445,6 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`arch-linux-triage`](./skills/devops/arch-linux-triage/SKILL.md) | `devops/arch-linux-triage` | Triage and resolve Arch Linux issues with pacman, systemd, and rolling-release best practices. |
 | [`centos-linux-triage`](./skills/devops/centos-linux-triage/SKILL.md) | `devops/centos-linux-triage` | Triage and resolve CentOS issues using RHEL-compatible tooling, SELinux-aware practices, and firewalld. |
 | [`ci-cd-pipeline-builder`](./skills/devops/ci-cd-pipeline-builder/SKILL.md) | `devops/ci-cd-pipeline-builder` | Generate pragmatic CI/CD pipelines tailored to a repo's detected stack |
-| [`clawsweeper-status`](./skills/devops/clawsweeper-status/SKILL.md) | `devops/clawsweeper-status` | ClawSweeper status: GitHub Actions workflow health, active workers, ops snapshot. |
-| [`clickclack`](./skills/devops/clickclack/SKILL.md) | `devops/clickclack` | ClickClack ops: self-hosted chat app deploy, Hetzner/Docker, DNS checks. |
 | [`cloudflare-registrar`](./skills/devops/cloudflare-registrar/SKILL.md) | `devops/cloudflare-registrar` | Cloudflare Registrar: domain availability check, prices, registration via API. |
 | [`containerize-aspnet-framework`](./skills/devops/containerize-aspnet-framework/SKILL.md) | `devops/containerize-aspnet-framework` | Containerize an ASP.NET .NET Framework project by creating Dockerfile and .dockerfile files customized for the project. |
 | [`containerize-aspnetcore`](./skills/devops/containerize-aspnetcore/SKILL.md) | `devops/containerize-aspnetcore` | Containerize an ASP.NET Core project by creating Dockerfile and .dockerfile files customized for the project. |
@@ -730,8 +733,6 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`discord-clawd`](./skills/messaging/discord-clawd/SKILL.md) | `messaging/discord-clawd` | Discord-backed OpenClaw agent/session relay — post/ask via relay, not archive search. |
-| [`openclaw-relay`](./skills/messaging/openclaw-relay/SKILL.md) | `messaging/openclaw-relay` | OpenClaw session relay: prompts/posts via local/remote relay over SSH — ask, publish, force-send. |
 | [`whatsapp`](./skills/messaging/whatsapp/SKILL.md) | `messaging/whatsapp` | WhatsApp router: history/search/read/send — archive-first vs live, safety rules. |
 
 ## microsoft-agents

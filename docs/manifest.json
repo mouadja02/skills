@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-06-14T22:38:14.185Z",
+  "generated_at": "2026-06-18T14:02:16.317Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 722,
+  "count": 723,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -41,15 +41,15 @@
     "agent-design": 58,
     "agent-eval": 24,
     "api-backend": 11,
-    "business-strategy": 63,
+    "business-strategy": 64,
     "cloud-azure": 18,
     "code-quality": 17,
     "coding": 33,
     "context-engineering": 17,
     "databases": 22,
-    "design-and-ui": 31,
+    "design-and-ui": 35,
     "dev-workflow": 30,
-    "devops": 38,
+    "devops": 36,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -59,7 +59,7 @@
     "llm-tooling": 46,
     "marketing-and-growth": 26,
     "mcp": 13,
-    "messaging": 3,
+    "messaging": 1,
     "microsoft-agents": 11,
     "microsoft-data": 17,
     "personal-productivity": 9,
@@ -838,6 +838,14 @@
       "path": "skills/business-strategy/brag-sheet",
       "depth": 2,
       "description": "Turn vague \"what did I do?\" into evidence-backed impact statements for performance reviews, self-reviews, promotion packets, and weekly updates. Uniquely mines Copilot CLI session logs to reconstruct forgotten work, plus git commits and GitHub PRs. Enforces a 3-part impact contract (action → result → evidence). Works standalone with zero dependencies. Trigger for: \"brag\", \"log work\", \"what did I do\", \"backfill my work history\", \"performance review\", \"self-review\", \"self assessment\", \"write impact statement\", \"review prep\", \"promo packet\", \"promotion case\", \"weekly update\", \"status report\", \"accomplishments\", \"what did I ship\", \"I forgot to log my work\", \"summarize my work\", \"track my wins\", \"what should I highlight\", \"end of half\", \"career growth\", \"work journal\", or any request to document, summarize, or organize work accomplishments."
+    },
+    {
+      "name": "business-simulation",
+      "category": "business-strategy",
+      "install_path": "business-strategy/business-simulation",
+      "path": "skills/business-strategy/business-simulation",
+      "depth": 2,
+      "description": "A battle-tested methodology for running ANY business in real-time simulation as an autonomous operator agent. Pick a venture — a shop, restaurant, SaaS product, boutique, fund, agency, nonprofit, or creator business — and the agent operates it day by day: calendar discipline, real-world grounding, source-of-truth locking, delegated authority, an operational tracker, a named persona team, finance honesty, risk/cadence management, and self-correction. Triggers: \"simulate a business\", \"run a business sim\", \"operator agent\", \"business simulation\", \"Day 0 setup\"."
     },
     {
       "name": "c-level-advisor",
@@ -2208,6 +2216,14 @@
       "description": "Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides"
     },
     {
+      "name": "brand-book-generator",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/brand-book-generator",
+      "path": "skills/design-and-ui/brand-book-generator",
+      "depth": 2,
+      "description": "Generate three radically distinct, on-trend brand concepts for any app or product and present them as a single no-scroll hero webpage — a bento \"brand book\" (logo + tagline, in-app screen, out-of-home, merch, palette, type, voice) that assembles itself with a staggered pop on every toggle. Grounded in 2024-2026 design trends, not safe defaults. Triggers: \"brand kit\", \"brand book\", \"brand concepts\", \"show me a few directions\", \"make it look like an agency did it\", \"build a brand for my app\"."
+    },
+    {
       "name": "content-management-systems",
       "category": "design-and-ui",
       "install_path": "design-and-ui/content-management-systems",
@@ -2360,6 +2376,22 @@
       "description": "Generate breadboard circuit mockups and visual diagrams using HTML5 Canvas drawing techniques"
     },
     {
+      "name": "muller-brockmann-grid",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/muller-brockmann-grid",
+      "path": "skills/design-and-ui/muller-brockmann-grid",
+      "depth": 2,
+      "description": "Build editorial/magazine/report webpages on a GENUINE Müller-Brockmann modular grid (International Typographic Style). Encodes the discipline (columns + modules + baseline, grotesque type, flush-left, restrained black/white/red palette) AND the front-end engineering to make the grid real, visible, and verified: one CSS-variable source of truth, an interactive grid-toggle overlay, subgrid bands, 8px baseline lock, and runtime optical alignment. Triggers: \"magazine spread\", \"grid system\", \"Swiss design\", \"editorial layout\", \"show the grid\", \"align everything to the grid\"."
+    },
+    {
+      "name": "nyt-data-viz",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/nyt-data-viz",
+      "path": "skills/design-and-ui/nyt-data-viz",
+      "depth": 2,
+      "description": "NYT-discipline data visualization. Applies the design rules of The New York Times graphics desk + Upshot — color, typography, annotation, chart-type selection — to make any chart render at Times grade. Use whenever generating charts, dashboards, reports, or data-driven webpages. Triggers: \"make this chart look professional\", \"NYT style\", \"editorial chart\", \"data viz\", \"dashboard design\"."
+    },
+    {
       "name": "penpot-uiux-design",
       "category": "design-and-ui",
       "install_path": "design-and-ui/penpot-uiux-design",
@@ -2406,6 +2438,14 @@
       "path": "skills/design-and-ui/ui-ux-pro-max",
       "depth": 2,
       "description": "UI/UX design — 50+ styles, 161 palettes, 57 font pairs, 99 UX patterns, grids, accessibility"
+    },
+    {
+      "name": "vignelli-canon",
+      "category": "design-and-ui",
+      "install_path": "design-and-ui/vignelli-canon",
+      "path": "skills/design-and-ui/vignelli-canon",
+      "depth": 2,
+      "description": "Massimo Vignelli's complete design discipline — distilled from The Vignelli Canon. Encodes the Intangibles (semantics, discipline, appropriateness, timelessness, equity) and the Tangibles (the grid, the six basic typefaces, two-size type scale, rulers, primary-color-as-identifier, white space) into an applyable methodology. Use to design or critique identity systems, editorial layouts, wayfinding/transit signage, posters, and web pages in rigorous, timeless, Swiss-modernist Vignelli discipline. Triggers: \"Vignelli style\", \"timeless design\", \"Swiss modernist\", \"design system\", \"transit signage\"."
     },
     {
       "name": "web-coder",
@@ -2686,22 +2726,6 @@
       "path": "skills/devops/ci-cd-pipeline-builder",
       "depth": 2,
       "description": "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack"
-    },
-    {
-      "name": "clawsweeper-status",
-      "category": "devops",
-      "install_path": "devops/clawsweeper-status",
-      "path": "skills/devops/clawsweeper-status",
-      "depth": 2,
-      "description": "ClawSweeper status: GitHub Actions workflow health, active workers, ops snapshot."
-    },
-    {
-      "name": "clickclack",
-      "category": "devops",
-      "install_path": "devops/clickclack",
-      "path": "skills/devops/clickclack",
-      "depth": 2,
-      "description": "ClickClack ops: self-hosted chat app deploy, Hetzner/Docker, DNS checks."
     },
     {
       "name": "cloudflare-registrar",
@@ -4606,22 +4630,6 @@
       "path": "skills/mcp/typescript-mcp-server-generator",
       "depth": 2,
       "description": "Generate a complete MCP server project in TypeScript with tools, resources, and proper configuration"
-    },
-    {
-      "name": "discord-clawd",
-      "category": "messaging",
-      "install_path": "messaging/discord-clawd",
-      "path": "skills/messaging/discord-clawd",
-      "depth": 2,
-      "description": "Discord-backed OpenClaw agent/session relay — post/ask via relay, not archive search."
-    },
-    {
-      "name": "openclaw-relay",
-      "category": "messaging",
-      "install_path": "messaging/openclaw-relay",
-      "path": "skills/messaging/openclaw-relay",
-      "depth": 2,
-      "description": "OpenClaw session relay: prompts/posts via local/remote relay over SSH — ask, publish, force-send."
     },
     {
       "name": "whatsapp",

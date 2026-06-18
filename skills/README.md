@@ -4,7 +4,7 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 722 skills across 31 categories.
+**Total:** 723 skills across 31 categories.
 
 ## Categories
 
@@ -13,15 +13,15 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`agent-design`](./agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./api-backend/) | 11 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
-| [`business-strategy`](./business-strategy/) | 63 | Executive advisory, board preparation, operating systems, and strategic decision support. |
+| [`business-strategy`](./business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-azure`](./cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
 | [`code-quality`](./code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`context-engineering`](./context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |
 | [`databases`](./databases/) | 22 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
-| [`design-and-ui`](./design-and-ui/) | 31 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
+| [`design-and-ui`](./design-and-ui/) | 35 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
 | [`dev-workflow`](./dev-workflow/) | 30 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
-| [`devops`](./devops/) | 38 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
+| [`devops`](./devops/) | 36 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
 | [`diagrams-slides`](./diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
 | [`dotnet`](./dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
@@ -31,7 +31,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`llm-tooling`](./llm-tooling/) | 46 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
 | [`mcp`](./mcp/) | 13 | Model Context Protocol server generation, tooling, deployment, and security. |
-| [`messaging`](./messaging/) | 3 | Messaging integrations and relay workflows. |
+| [`messaging`](./messaging/) | 1 | Messaging integrations and relay workflows. |
 | [`microsoft-agents`](./microsoft-agents/) | 11 | Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling. |
 | [`microsoft-data`](./microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture. |
 | [`personal-productivity`](./personal-productivity/) | 9 | Personal productivity, reminders, communication, notes, and connected tools. |

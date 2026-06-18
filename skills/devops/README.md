@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 38 skills.
+**Total:** 36 skills.
 
 ## Skills In This Category
 
@@ -15,8 +15,6 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`arch-linux-triage`](arch-linux-triage/SKILL.md) | `devops/arch-linux-triage` | Triage and resolve Arch Linux issues with pacman, systemd, and rolling-release best practices. |
 | [`centos-linux-triage`](centos-linux-triage/SKILL.md) | `devops/centos-linux-triage` | Triage and resolve CentOS issues using RHEL-compatible tooling, SELinux-aware practices, and firewalld. |
 | [`ci-cd-pipeline-builder`](ci-cd-pipeline-builder/SKILL.md) | `devops/ci-cd-pipeline-builder` | Generate pragmatic CI/CD pipelines tailored to a repo's detected stack |
-| [`clawsweeper-status`](clawsweeper-status/SKILL.md) | `devops/clawsweeper-status` | ClawSweeper status: GitHub Actions workflow health, active workers, ops snapshot. |
-| [`clickclack`](clickclack/SKILL.md) | `devops/clickclack` | ClickClack ops: self-hosted chat app deploy, Hetzner/Docker, DNS checks. |
 | [`cloudflare-registrar`](cloudflare-registrar/SKILL.md) | `devops/cloudflare-registrar` | Cloudflare Registrar: domain availability check, prices, registration via API. |
 | [`containerize-aspnet-framework`](containerize-aspnet-framework/SKILL.md) | `devops/containerize-aspnet-framework` | Containerize an ASP.NET .NET Framework project by creating Dockerfile and .dockerfile files customized for the project. |
 | [`containerize-aspnetcore`](containerize-aspnetcore/SKILL.md) | `devops/containerize-aspnetcore` | Containerize an ASP.NET Core project by creating Dockerfile and .dockerfile files customized for the project. |

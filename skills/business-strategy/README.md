@@ -6,7 +6,7 @@
 
 Executive advisory, board preparation, operating systems, and strategic decision support.
 
-**Total:** 63 skills.
+**Total:** 64 skills.
 
 ## Skills In This Category
 
@@ -15,6 +15,7 @@ Executive advisory, board preparation, operating systems, and strategic decision
 | [`board-deck-builder`](board-deck-builder/SKILL.md) | `business-strategy/board-deck-builder` | Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles |
 | [`board-meeting`](board-meeting/SKILL.md) | `business-strategy/board-meeting` | Board meeting — 6-phase structured deliberation, multi-agent C-suite protocol |
 | [`brag-sheet`](brag-sheet/SKILL.md) | `business-strategy/brag-sheet` | Turn vague "what did I do?" into evidence-backed impact statements for performance reviews, self-reviews, promotion packets, and weekly updates. Uniquely mines Copilot CLI session logs to reconstruct forgotten work, plus git commits and... |
+| [`business-simulation`](business-simulation/SKILL.md) | `business-strategy/business-simulation` | A battle-tested methodology for running ANY business in real-time simulation as an autonomous operator agent. Pick a venture — a shop, restaurant, SaaS product, boutique, fund, agency, nonprofit, or creator business — and the agent opera... |
 | [`c-level-advisor`](c-level-advisor/SKILL.md) | `business-strategy/c-level-advisor` | C-suite advice — channels 10 roles: CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO |
 | [`agent-protocol`](c-level-advisor/agent-protocol/SKILL.md) | `business-strategy/c-level-advisor/agent-protocol` | Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats |
 | [`board-deck-builder`](c-level-advisor/board-deck-builder/SKILL.md) | `business-strategy/c-level-advisor/board-deck-builder` | Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles |

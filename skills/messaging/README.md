@@ -6,14 +6,12 @@
 
 Messaging integrations and relay workflows.
 
-**Total:** 3 skills.
+**Total:** 1 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`discord-clawd`](discord-clawd/SKILL.md) | `messaging/discord-clawd` | Discord-backed OpenClaw agent/session relay — post/ask via relay, not archive search. |
-| [`openclaw-relay`](openclaw-relay/SKILL.md) | `messaging/openclaw-relay` | OpenClaw session relay: prompts/posts via local/remote relay over SSH — ask, publish, force-send. |
 | [`whatsapp`](whatsapp/SKILL.md) | `messaging/whatsapp` | WhatsApp router: history/search/read/send — archive-first vs live, safety rules. |
 
 [Back to the category index](../README.md)
