@@ -391,8 +391,9 @@ function bindCopy(scope) {
 }
 
 function bindGlobalCopy() {
-  // Hero copy buttons rely on data-copy-target, so we wire them once.
+  // Static copy buttons rely on data-copy-target, so we wire them once.
   bindCopy(document.querySelector(".hero"));
+  bindCopy(document.querySelector(".mcp-section"));
 }
 
 function bindHeroTabs() {

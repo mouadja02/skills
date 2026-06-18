@@ -8,9 +8,11 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "npm run build:manifest && npm run build:zips",
+    "build": "npm run build:manifest && npm run check:docs && npm run build:zips",
     "build:manifest": "node scripts/build-manifest.mjs",
     "build:zips": "node scripts/build-zips.mjs",
+    "check:docs": "node scripts/check-docs.mjs",
+    "mcp": "node scripts/skills-mcp.mjs",
     "preview": "node scripts/preview.mjs"
   },
   "devDependencies": {

@@ -1,0 +1,20 @@
+{
+  "skill_name": "nasa-inspired-coding-rules",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this TypeScript API handler before merge. Focus on whether it is likely to break in production: unvalidated JSON input, implicit any usage, hidden global cache, and missing rejected-promise handling.",
+      "expected_output": "Findings should prioritize reliability risks, explicit contracts, runtime validation, resource ownership, and verification commands such as typecheck, tests, lint, and formatter."
+    },
+    {
+      "id": 2,
+      "prompt": "Refactor a small C module that reads a binary file into a fixed buffer, parses records, and returns status codes. I want NASA-style coding practices generalized beyond C-specific syntax.",
+      "expected_output": "Guidance should cover bounded buffers, explicit ownership, checked return codes, portable standard C, named constants, modular functions, comments for binary format constraints, and sanitizer/static-analysis verification."
+    },
+    {
+      "id": 3,
+      "prompt": "Create cross-language coding rules for a mixed Python, Go, Rust, and C++ service team. The goal is fewer production bugs, not aesthetics.",
+      "expected_output": "Output should use maintainability-portability-efficiency ordering, explicit interfaces, resource lifecycles, structured control flow, deliberate errors, comments for intent, and per-language verification checks."
+    }
+  ]
+}

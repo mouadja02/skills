@@ -33,6 +33,8 @@
   // Suggested openers shown in empty state
   const STARTERS = [
     "Find me skills for building AI agents",
+    "How do I set up the local Skills MCP?",
+    "How does repo-skills avoid context overload?",
     "How do I install a skill in Cursor?",
     "What testing skills are available?",
     "Show me Azure / cloud skills",
@@ -89,6 +91,14 @@
       .map(([cat, items]) => `\n### ${cat} (${items.length} skills)\n` + items.join("\n"))
       .join("\n");
 
+    const selectedHarnesses = window.skillsBrowser?.selectedHarnesses ?? ["claude-code"];
+    const primaryHarness = selectedHarnesses[0] ?? "claude-code";
+    const primaryDest = harnessDests[primaryHarness]?.user ?? "~/.claude/skills/";
+    const selectedLabels = selectedHarnesses.map((id) => harnessNames[id] ?? id).join(", ");
+    const destLines = selectedHarnesses
+      .map((id) => `- ${harnessNames[id] ?? id}: \`${harnessDests[id]?.user ?? "~/.claude/skills/"}\``)
+      .join("\n");
+
     const installSnippet = `\`\`\`bash
 # Install one skill (bash)
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \\
@@ -106,13 +116,60 @@ bash install.sh engineering-craft -d ${primaryDest}
 npx degit mouadja02/skills/skills/<category/skill-name> ${primaryDest}<skill-name>
 \`\`\``;
 
-    const selectedHarnesses = window.skillsBrowser?.selectedHarnesses ?? ["claude-code"];
-    const primaryHarness = selectedHarnesses[0] ?? "claude-code";
-    const primaryDest = harnessDests[primaryHarness]?.user ?? "~/.claude/skills/";
-    const selectedLabels = selectedHarnesses.map((id) => harnessNames[id] ?? id).join(", ");
-    const destLines = selectedHarnesses
-      .map((id) => `- ${harnessNames[id] ?? id}: \`${harnessDests[id]?.user ?? "~/.claude/skills/"}\``)
-      .join("\n");
+    const mcpContext = `## Local Skills MCP
+This repository includes a local stdio MCP server named \`repo-skills\` at \`scripts/skills-mcp.mjs\`.
+
+Purpose: let agents discover, preview, read, and install skills without loading the full skill library into the context window.
+
+Recommended setup:
+\`\`\`bash
+git clone https://github.com/mouadja02/skills.git
+cd skills
+npm install
+npm run build:manifest
+\`\`\`
+
+Example MCP client config:
+\`\`\`json
+{
+  "mcpServers": {
+    "repo-skills": {
+      "command": "node",
+      "args": ["C:/path/to/skills/scripts/skills-mcp.mjs"],
+      "cwd": "C:/path/to/skills"
+    }
+  }
+}
+\`\`\`
+
+Important: recommend running \`node .../scripts/skills-mcp.mjs\` directly. Do not configure clients with plain \`npm run mcp\` because npm can write banners to stdout. If using npm manually, use \`npm --silent run mcp\`.
+
+Auto-refresh: enabled by default. Before the first \`tools/call\` in each server process, the server tries \`git pull --ff-only\` and then reloads the checked-in \`docs/manifest.json\`. It skips refresh when the repo has local changes. Disable in MCP JSON with \`"env": { "SKILLS_MCP_AUTO_REFRESH": "false" }\` or add \`"--no-auto-refresh"\` to args. Tool responses include \`server.auto_refresh\` status.
+
+MCP tools:
+- \`list_categories\`: compact category names and counts
+- \`list_skills\`: compact skill metadata for one category
+- \`search_skills\`: search names, install paths, and descriptions
+- \`get_skill\`: one skill's metadata, files, and short preview
+- \`read_skill_doc\`: selected \`SKILL.md\`
+- \`read_category_doc\`: selected category \`README.md\`
+- \`list_skill_files\`: bundled files for one skill
+- \`read_skill_file\`: supporting file inside one skill
+- \`install_skill\`: copy one selected skill folder into a workspace
+
+Agent workflow to avoid context overload:
+\`list_categories\` -> \`list_skills\` or \`search_skills\` -> \`get_skill\` -> \`read_skill_doc\` only for selected skills -> \`install_skill\` if needed.
+
+Troubleshooting:
+- Invalid JSON from server: run node directly, not plain npm run.
+- Missing or stale index: run \`npm run build:manifest\`.
+- Auto-refresh skipped: check \`git status\`; commit, stash, or disable auto-refresh.
+- Auto-refresh fails offline: set \`SKILLS_MCP_AUTO_REFRESH=false\`.
+- Ambiguous skill name: use full install path such as \`coding/test-driven-development\`.
+- Destination exists: choose another folder or pass overwrite true.
+- Windows path issues: use absolute paths with forward slashes or escaped backslashes.
+
+Hosting guidance: keep it local by default. Host a remote HTTP MCP only if cloud agents need access from machines where the repo is not cloned.`;
 
     return `You are **SkillBot**, an expert AI assistant for the Skills library — a curated collection of ${mf.count} installable agent skills for Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex, and more.
 
@@ -125,6 +182,7 @@ Help users:
 3. **Understand** what a skill does, when to use it, and how to configure it
 4. **Debug** install failures, missing dependencies, or skill-not-triggering issues
 5. **Compare** similar skills and recommend the best fit
+6. **Explain and troubleshoot** the local Skills MCP server, including setup, tools, context-safe workflow, and local-first design
 
 ## Install commands
 ${installSnippet}
@@ -136,6 +194,8 @@ Skill selector formats:
 
 User's selected tool destination(s):
 ${destLines}
+
+${mcpContext}
 
 ## Skills index (${mf.count} skills across ${mf.categories.length} categories)
 ${index}
@@ -871,7 +931,7 @@ When in doubt, assume the user is asking about something development or producti
     const categories = manifest?.categories?.length ?? 13;
     setInnerContent(inner,
       `Hi! I'm **SkillBot** 👋\n\nI can help you explore **${count} agent skills** across **${categories} categories** for Claude Code and Cursor.\n\n` +
-      `Ask me to find skills, explain install commands, or troubleshoot issues — I've got the full index in my context.`
+      `Ask me to find skills, explain install commands, set up the local MCP server, or troubleshoot issues — I've got the full index in my context.`
     );
   }
 

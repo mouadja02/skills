@@ -12,7 +12,7 @@
  */
 
 const NVIDIA_COMPLETIONS = "https://integrate.api.nvidia.com/v1/chat/completions";
-const DEFAULT_MODEL      = "stepfun-ai/step-3.5-flash";
+const DEFAULT_MODEL      = "nvidia/nemotron-3-ultra-550b-a55b";
 const MAX_TOKENS_CAP     = 4096;
 
 // ─── CORS helpers ──────────────────────────────────────────────────────────────

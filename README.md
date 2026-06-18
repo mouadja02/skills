@@ -1,155 +1,36 @@
 # skills
 
-A curated collection of **700+ Agent Skills** for [Claude Code](https://docs.claude.com/en/docs/claude-code) and [Cursor](https://cursor.com), spanning *how to write code well*, *how to build agents*, *how to design UIs*, *how to ship docs and presentations*, *how to integrate LLMs*, *how to advise the C-suite*, *how to run growth marketing*, *how to operate infrastructure*, *how to manage products*, *how to conduct deep research*, and *how to talk like a token-efficient caveman*.
+<!-- generated:catalog-metrics:start -->
+A curated collection of **722 Agent Skills** across **31 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+<!-- generated:catalog-metrics:end -->
 
-> Skills are reusable, model-invocable instruction packages. They auto-load based on the user's request, scoped to a single domain (writing tests, designing logos, querying Snowflake, advising a CEO, designing an experiment, etc.). One folder per skill, one `SKILL.md` per folder.
+Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
+folders keep the repository browsable without changing recursive skill discovery.
 
-**Three ways to grab a skill:** one-line installer · `npx degit` · direct `.zip` download from [the browser](https://mouadja02.github.io/skills/).
+Browse the searchable site at [mouadja02.github.io/skills](https://mouadja02.github.io/skills/), the
+complete generated Markdown index at [`SKILLS.md`](./SKILLS.md), or the focused category indexes under
+[`skills/`](./skills/).
 
----
+## Quick Start
 
-## Quick start
-
-Skills go in whichever folder your agent already looks at:
-
-| Client | Path |
-| --- | --- |
-| **Claude Code** (project) | `.claude/skills/` |
-| **Claude Code** (user) | `~/.claude/skills/` |
-| **Cursor** (project) | `.cursor/skills/` |
-| **Cursor** (user) | `~/.cursor/skills/` |
-
-Both clients walk the tree recursively, so the category subfolders below don't affect discovery — they exist purely to make this repo browsable on GitHub.
-
-### Browse and install
-
-Open the searchable index — it gives every skill a copy-paste install command **and a one-click `.zip` download**:
-
-**[mouadja02.github.io/skills](https://mouadja02.github.io/skills/)** *(once Pages is enabled — see [Setup](#setup-github-pages-one-time))*
-
-Or browse the markdown table at [`SKILLS.md`](./SKILLS.md), or the per-category READMEs under [`skills/`](./skills/).
-
-### Install skills (no full clone)
-
-The installer scripts accept three kinds of selector:
-
-| Selector | What it installs | Example |
-| --- | --- | --- |
-| Exact install path | one skill | `engineering-craft/test-driven-development` |
-| Category name | every skill in that category | `engineering-craft` (29 skills) |
-| Glob pattern (quoted) | every install path that matches | `"*bmad*"`, `"ai-agents/*"`, `"*-advisor"` |
-| All skills | every skill, preserving category paths | `--all` / `-All` |
-
-`-d` / `-Dest` is required. For single-skill installs, `<dest>` can be the final skill folder or an existing parent folder; parent folders install the skill under `<dest>/<skill-name>`. For category and glob installs, `<dest>` is the parent folder; each matched skill gets its own subfolder underneath. Use `--force` / `-Force` to overwrite existing destinations.
-
-#### Option A — installer scripts (recommended)
-
-**bash / zsh / WSL / Git Bash:**
+Install a single skill with the provided scripts.
 
 ```bash
-# one skill
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
   | bash -s -- engineering-craft/test-driven-development \
       -d ~/.claude/skills
-
-# whole category
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- engineering-craft -d ~/.claude/skills/engineering-craft
-
-# glob pattern, flattened by skill name
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- "*bmad*" -d ~/.claude/skills/bmad --flat
-
-# all skills
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- --all -d ~/.claude/skills
-
-# preview what would happen
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- "ai-agents/*" -d ~/.claude/skills/ai --dry-run
-
-# discover what's available
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- --list-categories
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- --help
 ```
-
-**PowerShell (Windows / macOS / Linux):**
 
 ```powershell
 $content = irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1
 iex $content
-
-# one skill
-Install-Skill engineering-craft/test-driven-development `
-              -Dest $HOME\.claude\skills
-
-# whole category
-Install-Skill engineering-craft -Dest $HOME\.claude\skills\engineering-craft
-
-# glob pattern, flattened by skill name
-Install-Skill "*bmad*" -Dest $HOME\.claude\skills\bmad -Flat
-
-# all skills
-Install-Skill -All -Dest $HOME\.claude\skills
-
-# preview what would happen
-Install-Skill "ai-agents/*" -Dest $HOME\.claude\skills\ai -DryRun
-
-# discover what's available
-Install-Skill -ListCategories
-Install-Skill -List
-Install-Skill -Help              # full Get-Help output
+Install-Skill engineering-craft/test-driven-development -Dest $HOME\.claude\skills
 ```
 
-**Flags (both installers):**
+Selectors may be an exact install path, a category, a quoted glob, or `--all` / `-All`. Use
+`--dry-run` / `-DryRun` to preview an installation.
 
-| bash | PowerShell | Purpose |
-| --- | --- | --- |
-| `-d <path>` | `-Dest <path>` | destination (required) |
-| `--branch <name>` | `-Branch <name>` | install from a non-default branch |
-| `--force` | `-Force` | overwrite existing destinations |
-| `--flat` | `-Flat` | glob mode: place each skill at `<dest>/<name>/` instead of preserving install paths (errors on collision) |
-| `--all` | `-All` | install every skill, preserving category paths |
-| `--dry-run` | `-DryRun` | resolve selector and print plan only |
-| `--list` | `-List` | list every skill, grouped by category |
-| `--list-categories` | `-ListCategories` | list categories with skill counts |
-| `-h` / `--help` | `-Help` | show usage |
-
-Override the source repo / branch with the `SKILLS_REPO` and `SKILLS_BRANCH` env vars. Use `SKILLS_DOWNLOAD_BASE` to point installers at an alternate public ZIP artifact base; the default is discovered from the published ZIP summary and falls back to GitHub Pages.
-
-#### Option B — `degit` (requires Node.js, single skill or folder)
-
-```bash
-# one skill
-npx degit mouadja02/skills/skills/engineering-craft/test-driven-development \
-  ~/.claude/skills/test-driven-development
-
-# whole category
-npx degit mouadja02/skills/skills/engineering-craft \
-  ~/.claude/skills/engineering-craft
-```
-
-#### Option C — `git sparse-checkout` (git only)
-
-```bash
-git clone --no-checkout --depth 1 --filter=blob:none \
-  https://github.com/mouadja02/skills.git skills-tmp
-cd skills-tmp
-git sparse-checkout init --cone
-git sparse-checkout set skills/engineering-craft/test-driven-development
-git checkout
-mv skills/engineering-craft/test-driven-development \
-  ~/.claude/skills/test-driven-development
-cd .. && rm -rf skills-tmp
-```
-
-#### Option D — direct `.zip` download
-
-Every skill, every category, and the full library are published as downloadable `.zip` files on the
-Pages site. No tools required — click the **`↓ .zip`** button on any card,
-or grab a stable URL:
+Skills may also be installed from the Pages ZIP artifacts:
 
 ```text
 https://mouadja02.github.io/skills/zips/skill/<install-path>.zip
@@ -157,228 +38,107 @@ https://mouadja02.github.io/skills/zips/category/<category>.zip
 https://mouadja02.github.io/skills/zips/all.zip
 ```
 
-Examples:
+## Client Paths
 
-```bash
-curl -LO https://mouadja02.github.io/skills/zips/skill/engineering-craft/test-driven-development.zip
-unzip test-driven-development.zip -d ~/.claude/skills/
-
-curl -LO https://mouadja02.github.io/skills/zips/category/ai-agents.zip
-unzip ai-agents.zip -d ~/.claude/skills/
-```
-
-Each zip unpacks to a single named folder ready to drop into your skills
-directory. A machine-readable index of every zip (URL + size + SHA-256) lives at
-`https://mouadja02.github.io/skills/zips/_summary.json`.
-
-#### Option E — full clone
-
-If you want everything at once:
-
-```bash
-git clone https://github.com/mouadja02/skills.git
-cp -r skills/skills/* ~/.claude/skills/
-```
-
-### Machine-readable index
-
-Every skill's `name`, `description`, `category`, and `install_path` lives in
-[`docs/manifest.json`](./docs/manifest.json) (and a tab-separated
-[`docs/manifest.tsv`](./docs/manifest.tsv) for shell tools). Two ways to
-fetch it:
-
-```bash
-# from a clone:
-node scripts/build-manifest.mjs           # regenerate locally
-
-# from anywhere:
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/docs/manifest.json
-curl -fsSL https://mouadja02.github.io/skills/manifest.json
-```
-
-The CI workflow at
-[`.github/workflows/build-manifest.yml`](./.github/workflows/build-manifest.yml)
-regenerates it on every push that touches a `SKILL.md`.
-
-### Setup: GitHub Pages (one-time)
-
-To publish the searchable index at `https://<user>.github.io/skills/`:
-
-1. **Settings → Pages** → *Source*: **GitHub Actions**.
-2. Push any change to `main`. The
-   [`Deploy Pages`](./.github/workflows/deploy-pages.yml) workflow builds
-   the manifest, generates per-skill, per-category, and all-skills `.zip`
-   archives into `docs/zips/`, then uploads `docs/` as the Pages artifact.
-3. Wait ~1 minute for the first deploy.
-
-`docs/zips/` is `.gitignore`d — the archives only exist inside the Pages
-artifact, so the main branch stays lean.
-
----
+| Client | Project path | User path |
+| --- | --- | --- |
+| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
+| Cursor | `.cursor/skills/` | `~/.cursor/skills/` |
 
 ## Categories
 
-The 700+ skills are grouped into 31 thematic categories. Click any category to see its full
-per-skill table; counts come from the auto-generated
-[`docs/manifest.json`](./docs/manifest.json).
+This table is generated from `docs/manifest.json`.
 
-| Category | Skills | What lives here |
-| --- | --- | --- |
-| [**`agent-design/`**](./skills/agent-design/) | 52 | Designing, scaffolding, and operating AI agents — governance, supply chain, BDI, multi-agent orchestration, BMad Method, durable workflows. |
-| [**`agent-eval/`**](./skills/agent-eval/) | 20 | Benchmarking, evaluating, and stress-testing agentic systems — harness-level eval, memory audit, semantic kernel, eval-driven dev. |
-| [**`api-backend/`**](./skills/api-backend/) | 11 | Backend API design — FastAPI, REST, GraphQL, Snowflake, ETL/dbt. |
-| [**`business-strategy/`**](./skills/business-strategy/) | 63 | C-suite advisors, chief-of-staff routing, scenario war rooms, company OS, executive mentoring. |
-| [**`cloud-azure/`**](./skills/cloud-azure/) | 18 | Azure services, cloud architecture, ARM/Bicep, Azure DevOps. |
-| [**`code-quality/`**](./skills/code-quality/) | 16 | Code review, linting, static analysis, deep PR review. |
-| [**`coding/`**](./skills/coding/) | 31 | The coding loop: planning, TDD, debugging, performance, Swift/SwiftUI, security hardening. |
-| [**`context-engineering/`**](./skills/context-engineering/) | 15 | Context windows, compression, persistence, memory frameworks, lost-in-middle mitigation. |
-| [**`databases/`**](./skills/databases/) | 22 | SQL, NoSQL, database design, migration, query optimization. |
-| [**`design-and-ui/`**](./skills/design-and-ui/) | 31 | Frontend craft, GSAP animation, grid systems, anti-AI-slop design, brand identity. |
-| [**`dev-workflow/`**](./skills/dev-workflow/) | 30 | Git, CLI tooling, GitHub automation, browser DevTools, npm, triage. |
-| [**`devops/`**](./skills/devops/) | 38 | CI/CD, Docker, Terraform, DNS, Cloudflare Workers, SSH, VM labs, release pipelines. |
-| [**`diagrams-slides/`**](./skills/diagrams-slides/) | 13 | SVG diagrams, Mermaid, reveal.js slides, architecture visualizations. |
-| [**`documentation/`**](./skills/documentation/) | 28 | READMEs, ADRs, technical docs, Markdown conversion, video transcripts. |
-| [**`dotnet/`**](./skills/dotnet/) | 19 | .NET, C#, ASP.NET, Blazor, Entity Framework. |
-| [**`engineering-craft/`**](./skills/engineering-craft/) | 37 | Disciplined development: TDD, brainstorming, code review, git worktrees, senior IC roles. |
-| [**`go-to-market/`**](./skills/go-to-market/) | 11 | Launch strategy, pricing, competitive analysis, GTM playbooks. |
-| [**`java-kotlin/`**](./skills/java-kotlin/) | 11 | Java, Kotlin, Spring Boot, Android development. |
-| [**`llm-tooling/`**](./skills/llm-tooling/) | 44 | LLM integration, prompt engineering, image generation, model routing, second-model review. |
-| [**`marketing-and-growth/`**](./skills/marketing-and-growth/) | 26 | SEO, content strategy, copywriting, paid acquisition, conversion optimization, release tweets. |
-| [**`mcp/`**](./skills/mcp/) | 13 | Model Context Protocol servers, tools, and integrations. |
-| [**`messaging/`**](./skills/messaging/) | 3 | WhatsApp automation, chat integrations. |
-| [**`microsoft-agents/`**](./skills/microsoft-agents/) | 11 | Microsoft AI agent frameworks and patterns. |
-| [**`microsoft-data/`**](./skills/microsoft-data/) | 17 | Power BI, Fabric, Synapse, Microsoft data platform. |
-| [**`personal-productivity/`**](./skills/personal-productivity/) | 9 | Obsidian, 1Password CLI, Apple Reminders, Things 3, Notion archive, Sonos. |
-| [**`product-management/`**](./skills/product-management/) | 29 | PM toolkit, discovery, experiment design, agile delivery, UX research. |
-| [**`prompting/`**](./skills/prompting/) | 15 | Prompt engineering, optimization, multi-model routing. |
-| [**`react-frontend/`**](./skills/react-frontend/) | 17 | React, Next.js, component patterns, state management. |
-| [**`skills-management/`**](./skills/skills-management/) | 24 | Skill creation, auditing, cleaning, and the meta-skills for managing skills. |
-| [**`streamlit/`**](./skills/streamlit/) | 18 | Streamlit apps, dashboards, chat UIs, custom components, theming. |
-| [**`testing/`**](./skills/testing/) | 12 | Test frameworks, E2E, unit testing, coverage, test strategy. |
+<!-- generated:category-catalog:start -->
+| Category | Skills | Scope |
+| --- | ---: | --- |
+| [`agent-design`](./skills/agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
+| [`agent-eval`](./skills/agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
+| [`api-backend`](./skills/api-backend/) | 11 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
+| [`business-strategy`](./skills/business-strategy/) | 63 | Executive advisory, board preparation, operating systems, and strategic decision support. |
+| [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
+| [`code-quality`](./skills/code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
+| [`coding`](./skills/coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
+| [`context-engineering`](./skills/context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |
+| [`databases`](./skills/databases/) | 22 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
+| [`design-and-ui`](./skills/design-and-ui/) | 31 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
+| [`dev-workflow`](./skills/dev-workflow/) | 30 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
+| [`devops`](./skills/devops/) | 38 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
+| [`diagrams-slides`](./skills/diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
+| [`documentation`](./skills/documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
+| [`dotnet`](./skills/dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
+| [`engineering-craft`](./skills/engineering-craft/) | 37 | Senior engineering practices, planning, mentoring, verification, and cross-cutting craft. |
+| [`go-to-market`](./skills/go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
+| [`java-kotlin`](./skills/java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
+| [`llm-tooling`](./skills/llm-tooling/) | 46 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
+| [`marketing-and-growth`](./skills/marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
+| [`mcp`](./skills/mcp/) | 13 | Model Context Protocol server generation, tooling, deployment, and security. |
+| [`messaging`](./skills/messaging/) | 3 | Messaging integrations and relay workflows. |
+| [`microsoft-agents`](./skills/microsoft-agents/) | 11 | Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling. |
+| [`microsoft-data`](./skills/microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture. |
+| [`personal-productivity`](./skills/personal-productivity/) | 9 | Personal productivity, reminders, communication, notes, and connected tools. |
+| [`product-management`](./skills/product-management/) | 29 | Product discovery, specifications, delivery planning, analytics, and agile workflows. |
+| [`prompting`](./skills/prompting/) | 15 | Prompt engineering, optimization, safety review, and creative-thinking frameworks. |
+| [`react-frontend`](./skills/react-frontend/) | 17 | React, Vue, Next.js, mobile frontend frameworks, migrations, and testing. |
+| [`skills-management`](./skills/skills-management/) | 24 | Skill authoring, discovery, cleanup, Copilot configuration, and terse interaction modes. |
+| [`streamlit`](./skills/streamlit/) | 18 | Streamlit applications, dashboards, chat UIs, components, layouts, and performance. |
+| [`testing`](./skills/testing/) | 12 | Testing, QA, Playwright, pytest, debugging, and evaluation strategy. |
+<!-- generated:category-catalog:end -->
 
----
+## Local MCP Discovery
 
-## Highlight skills
+Use the local stdio MCP server when an agent should discover or install skills without loading the full
+library into context. See [Local Skills MCP Quickstart](./docs/skills-mcp.md).
 
-A handful of skills you might want to load first:
-
-| Skill | Why it matters |
-| --- | --- |
-| [`engineering-craft/using-superpowers`](./skills/engineering-craft/using-superpowers/SKILL.md) | The conversation entry point. Establishes how the agent finds and uses other skills. |
-| [`engineering-craft/brainstorming`](./skills/engineering-craft/brainstorming/SKILL.md) | Mandatory primer before any creative work. Forces requirements & design exploration. |
-| [`engineering-craft/test-driven-development`](./skills/engineering-craft/test-driven-development/SKILL.md) | Test-first discipline before writing any feature or bugfix. |
-| [`ai-agents/bmm-skills`](./skills/ai-agents/bmm-skills/SKILL.md) | BMad Method router — full agile AI-development workflow with 30 sub-skills. |
-| [`ai-agents/senior-prompt-engineer`](./skills/ai-agents/senior-prompt-engineer/SKILL.md) | Prompt optimization, A/B testing, versioning, RAG eval, agent orchestration — the canonical prompt-engineering skill. |
-| [`business-and-strategy/chief-of-staff`](./skills/business-and-strategy/chief-of-staff/SKILL.md) | C-suite router — pick the right exec advisor or trigger a multi-role board meeting. |
-| [`product-management/experiment-designer`](./skills/product-management/experiment-designer/SKILL.md) | The canonical home for any A/B / multivariate / split test — product *or* marketing. |
-| [`design-and-ui/impeccable`](./skills/design-and-ui/impeccable/SKILL.md) | Critique, polish, and harden any frontend interface. |
-| [`skill-authoring/skill-creator`](./skills/skill-authoring/skill-creator/SKILL.md) | The meta-skill for creating, evaluating, and benchmarking new skills. |
-
----
-
-## Repo layout
-
-```
-.
-├── README.md                       (you are here)
-├── CONTRIBUTING.md                 (how to add or edit a skill)
-├── SKILLS.md                       (auto-generated browsable markdown index)
-├── package.json                    (devDeps for scripts/*)
-├── install.sh                      (one-liner installer for bash/zsh)
-├── install.ps1                     (one-liner installer for PowerShell)
-│
-├── scripts/
-│   ├── build-manifest.mjs          (regenerates docs/manifest.{json,tsv} + SKILLS.md)
-│   ├── build-zips.mjs              (generates docs/zips/ for the Pages site)
-│   └── preview.mjs                 (zero-dep static server for docs/)
-│
-├── docs/                           (GitHub Pages site — single source of truth)
-│   ├── index.html
-│   ├── app.js
-│   ├── style.css
-│   ├── manifest.json               (canonical, machine-readable)
-│   ├── manifest.tsv                (canonical, tab-separated for shell tools)
-│   └── zips/                       (.gitignored — generated by deploy workflow)
-│       ├── _summary.json
-│       ├── skill/<install_path>.zip
-│       └── category/<category>.zip
-│
-├── .github/workflows/
-│   ├── build-manifest.yml          (auto-regenerate manifest on SKILL.md changes)
-│   └── deploy-pages.yml            (build + zip + deploy docs/ to Pages)
-│
-└── skills/
-    ├── README.md                   (skills index)
-    │
-    ├── skill-authoring/             (2)   — meta-skills for authoring skills
-    ├── coding/                      (24)  — disciplined coding loop
-    ├── engineering-craft/           (35)  — dev discipline + senior IC skills
-    ├── ai-agents/                   (18+) — agent design, includes BMM (30 sub-skills)
-    ├── context-engineering/         (6)   — context windows, memory, compression
-    ├── openrouter/                  (5)   — OpenRouter SDK, models, OAuth, images
-    ├── design-and-ui/               (10)  — frontend, brand, design systems
-    ├── docs-and-presentations/      (7)   — docs, slides, diagrams
-    ├── data-and-backend/            (4)   — FastAPI, Snowflake, dbt, ETL
-    ├── streamlit/                   (18)  — Streamlit apps + 17 sub-skills
-    ├── research-and-development/    (1)   — deep research, systematic reviews
-    ├── business-and-strategy/       (23)  — C-suite advisors, board protocols
-    ├── marketing-and-growth/        (22)  — full marketing operating system
-    ├── devops-and-infrastructure/   (14)  — CI/CD, IaC, security, observability
-    ├── product-management/          (10)  — PM toolkit, experiments, agile
-    └── caveman/                     (6)   — token-efficient terse mode + find-skills
-```
-
-## Local development
-
-```bash
-npm install                  # one-time
-npm run build:manifest       # regenerate docs/manifest.{json,tsv} + SKILLS.md
-npm run build:zips           # generate docs/zips/* (requires manifest first)
-npm run build                # both, in order
-npm run preview              # serve docs/ at http://localhost:4173
-```
-
----
-
-## How a skill works
-
-Every skill folder contains a `SKILL.md` with YAML frontmatter:
-
-```yaml
----
-name: my-skill
-description: Use when the user asks to do X. Triggers on keywords X, Y, Z.
----
-
-# My Skill
-
-Instructions, references, and examples for the agent...
-```
-
-The agent client (Claude Code or Cursor) scans these files at startup, builds an index of `name + description`, and loads the body of a skill *only* when the user's request matches its description. This keeps the context window small while making a large library of expertise available on demand.
-
-A skill folder may also contain:
-
-- `references/` — supporting markdown the agent reads on demand
-- `scripts/` — runnable scripts (Python, Node, shell)
-- `templates/` — starter files the skill produces
-- `assets/` — images, fonts, data files
-
----
-
-## Authoring a new skill
-
-Use the meta-skills:
+The intended flow is:
 
 ```text
-skills/skill-authoring/skill-creator/   ← create, eval, benchmark
-skills/skill-authoring/writing-skills/  ← style guide & conventions
+list_categories -> list_skills or search_skills -> get_skill -> read_skill_doc -> install_skill
 ```
 
-Both follow strict conventions on file size, frontmatter format, naming, and progressive disclosure. Read `writing-skills` first, then `skill-creator` for the tooling.
+## Machine-Readable Index
 
----
+The canonical generated indexes are:
+
+- [`docs/manifest.json`](./docs/manifest.json)
+- [`docs/manifest.tsv`](./docs/manifest.tsv)
+- [`SKILLS.md`](./SKILLS.md)
+
+Regenerate them, the category READMEs, and the root catalog with:
+
+```bash
+npm run build:manifest
+```
+
+## Local Development
+
+```bash
+npm install
+npm run build:manifest
+npm run check:docs
+npm run build:zips
+npm run preview
+```
+
+`npm run build` performs manifest generation, documentation validation, and ZIP packaging in order.
+
+## Adding Or Editing Skills
+
+Follow [`CONTRIBUTING.md`](./CONTRIBUTING.md). Every skill must contain a `SKILL.md` file with `name` and
+`description` frontmatter. Category READMEs are generated from the manifest; do not hand-edit them.
+
+## Repository Layout
+
+```text
+skills/<category>/<skill>/SKILL.md   skill instructions
+skills/<category>/README.md          generated category index
+scripts/build-manifest.mjs           manifests and documentation indexes
+scripts/check-docs.mjs               documentation coverage audit
+scripts/build-zips.mjs               ZIP artifacts for Pages
+docs/                               Pages site and machine-readable manifests
+```
 
 ## License
 
-Skills here come from a mix of personal authorship and adapted public sources — Anthropic Claude Code skills, BMad Method, Cursor skill examples, OpenRouter docs, the Alireza Rezvani skill collection, and others. Individual skill folders contain their own `LICENSE.txt` where applicable.
+Skills come from a mix of original work and adapted public sources. Check individual skill folders for
+license files and attribution before redistributing a selected package.

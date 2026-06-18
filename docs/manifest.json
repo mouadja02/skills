@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-05-26T08:43:10.936Z",
+  "generated_at": "2026-06-14T22:38:14.185Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 704,
+  "count": 722,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -38,25 +38,25 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 52,
-    "agent-eval": 20,
+    "agent-design": 58,
+    "agent-eval": 24,
     "api-backend": 11,
     "business-strategy": 63,
     "cloud-azure": 18,
-    "code-quality": 16,
-    "coding": 31,
-    "context-engineering": 15,
+    "code-quality": 17,
+    "coding": 33,
+    "context-engineering": 17,
     "databases": 22,
     "design-and-ui": 31,
     "dev-workflow": 30,
     "devops": 38,
-    "diagrams-slides": 13,
+    "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
     "engineering-craft": 37,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 44,
+    "llm-tooling": 46,
     "marketing-and-growth": 26,
     "mcp": 13,
     "messaging": 3,
@@ -416,12 +416,28 @@
       "description": "Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI"
     },
     {
+      "name": "deepagents-harness",
+      "category": "agent-design",
+      "install_path": "agent-design/deepagents-harness",
+      "path": "skills/agent-design/deepagents-harness",
+      "depth": 2,
+      "description": "Use when designing long-horizon agents that need subagents, isolated context windows, filesystem-backed work, persistence, human approval, MCP tools, or production tracing."
+    },
+    {
       "name": "durable-agent-workflows",
       "category": "agent-design",
       "install_path": "agent-design/durable-agent-workflows",
       "path": "skills/agent-design/durable-agent-workflows",
       "depth": 2,
       "description": "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns"
+    },
+    {
+      "name": "expert-trace-skill-distillation",
+      "category": "agent-design",
+      "install_path": "agent-design/expert-trace-skill-distillation",
+      "path": "skills/agent-design/expert-trace-skill-distillation",
+      "depth": 2,
+      "description": "Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contrastive induction from successes and failures, intervention testing, versioning, rollback, and task-conditioned vs. reusable-library evaluation."
     },
     {
       "name": "harness-scaling",
@@ -440,12 +456,44 @@
       "description": "This skill should be used when the user asks to \"share memory between agents\", \"KV cache compaction for multi-agent\", \"orchestrator worker context\", \"latent briefing\", \"reduce worker tokens\", \"cross-agent memory without summarization\", or discusses Attention Matching compaction, recursive language models with workers, or token explosion in hierarchical agents."
     },
     {
+      "name": "mcp-tool-routing",
+      "category": "agent-design",
+      "install_path": "agent-design/mcp-tool-routing",
+      "path": "skills/agent-design/mcp-tool-routing",
+      "depth": 2,
+      "description": "Use when designing scalable MCP tool routing, dynamic tool retrieval, agent-tool graphs, tool inventory indexing, or routing policies for agents with many available tools."
+    },
+    {
       "name": "multi-agent-patterns",
       "category": "agent-design",
       "install_path": "agent-design/multi-agent-patterns",
       "path": "skills/agent-design/multi-agent-patterns",
       "depth": 2,
       "description": "This skill should be used when the user asks to \"design multi-agent system\", \"implement supervisor pattern\", \"create swarm architecture\", \"coordinate multiple agents\", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution."
+    },
+    {
+      "name": "rich-claude-code-tui-clone",
+      "category": "agent-design",
+      "install_path": "agent-design/rich-claude-code-tui-clone",
+      "path": "skills/agent-design/rich-claude-code-tui-clone",
+      "depth": 2,
+      "description": "Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer."
+    },
+    {
+      "name": "smolagents-code-agents",
+      "category": "agent-design",
+      "install_path": "agent-design/smolagents-code-agents",
+      "path": "skills/agent-design/smolagents-code-agents",
+      "depth": 2,
+      "description": "Use when building Hugging Face smolagents, code-executing agents, Python-action agents, Hub-shared tools, or lightweight agent prototypes that need sandboxing and provider flexibility."
+    },
+    {
+      "name": "stateful-agent-security-monitoring",
+      "category": "agent-design",
+      "install_path": "agent-design/stateful-agent-security-monitoring",
+      "path": "skills/agent-design/stateful-agent-security-monitoring",
+      "depth": 2,
+      "description": "Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance checks for control-like workspace content, and sanitized commits for persistent prompt-injection defense."
     },
     {
       "name": "structured-autonomy-generate",
@@ -486,6 +534,14 @@
       "path": "skills/agent-design/trading-agent-builder",
       "depth": 2,
       "description": "Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs"
+    },
+    {
+      "name": "agent-trajectory-diagnostics",
+      "category": "agent-eval",
+      "install_path": "agent-eval/agent-trajectory-diagnostics",
+      "path": "skills/agent-eval/agent-trajectory-diagnostics",
+      "depth": 2,
+      "description": "Use when diagnosing agent benchmarks or runtime failures from trajectories instead of aggregate pass rates. Builds shared action-observation decision landscapes, identifies productive cores and trap regions, profiles Access/Trap/Repair behavior, and designs conservative trap-triggered recovery experiments."
     },
     {
       "name": "agentic-eval",
@@ -624,6 +680,14 @@
       "description": "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving"
     },
     {
+      "name": "mcp-agent-evaluation",
+      "category": "agent-eval",
+      "install_path": "agent-eval/mcp-agent-evaluation",
+      "path": "skills/agent-eval/mcp-agent-evaluation",
+      "depth": 2,
+      "description": "Use when evaluating MCP-enabled agents, tool-using LLM systems, multi-server workflows, tool-selection quality, trajectory quality, task completion, or MCP security regressions."
+    },
+    {
       "name": "memory-merger",
       "category": "agent-eval",
       "install_path": "agent-eval/memory-merger",
@@ -640,12 +704,28 @@
       "description": "Generate or edit images via OpenRouter with the Gemini 3 Pro Image model"
     },
     {
+      "name": "rag-evaluation-matrix",
+      "category": "agent-eval",
+      "install_path": "agent-eval/rag-evaluation-matrix",
+      "path": "skills/agent-eval/rag-evaluation-matrix",
+      "depth": 2,
+      "description": "Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost."
+    },
+    {
       "name": "semantic-kernel",
       "category": "agent-eval",
       "install_path": "agent-eval/semantic-kernel",
       "path": "skills/agent-eval/semantic-kernel",
       "depth": 2,
       "description": "Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python"
+    },
+    {
+      "name": "skill-lifecycle-optimization",
+      "category": "agent-eval",
+      "install_path": "agent-eval/skill-lifecycle-optimization",
+      "path": "skills/agent-eval/skill-lifecycle-optimization",
+      "depth": 2,
+      "description": "Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstraction layer, test per model and harness, canary changes, and roll back regressions."
     },
     {
       "name": "aspnet-minimal-api-openapi",
@@ -1384,6 +1464,14 @@
       "description": "Update Azure Verified Modules (AVM) to latest versions in Bicep files."
     },
     {
+      "name": "anti-ai-slop",
+      "category": "code-quality",
+      "install_path": "code-quality/anti-ai-slop",
+      "path": "skills/code-quality/anti-ai-slop",
+      "depth": 2,
+      "description": "Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content. Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics: emoji headers, \"leverage\", \"robust\", \"seamless\", \"delve\", defensive bloat, type-hint overkill, marketing prose, \"Whether you're X or Y\", verbose error messages, and the rest of the AI tells catalogued from cpython, requests, flask, git, ripgrep, express, kubernetes, serde, go stdlib, and other pre-2020 reference repos. Triggers on \"anti-ai\", \"human-style\", \"professional code\", \"clean code\", \"no slop\", \"write it like a human\", or any time the agent is producing code/docs that should look hand-written."
+    },
+    {
       "name": "audit-integrity",
       "category": "code-quality",
       "install_path": "code-quality/audit-integrity",
@@ -1656,6 +1744,14 @@
       "description": "Behavioral guidelines to reduce common LLM coding mistakes"
     },
     {
+      "name": "nasa-inspired-coding-rules",
+      "category": "coding",
+      "install_path": "coding/nasa-inspired-coding-rules",
+      "path": "skills/coding/nasa-inspired-coding-rules",
+      "depth": 2,
+      "description": "Use when writing, reviewing, or refactoring production code where reliability, portability, maintainability, explicit contracts, resource safety, and cross-language coding standards matter across Python, TS/JS, C, C++, Rust, or Go."
+    },
+    {
       "name": "native-app-performance",
       "category": "coding",
       "install_path": "coding/native-app-performance",
@@ -1712,6 +1808,14 @@
       "description": "Creates specs before coding"
     },
     {
+      "name": "swe-agent-issue-loop",
+      "category": "coding",
+      "install_path": "coding/swe-agent-issue-loop",
+      "path": "skills/coding/swe-agent-issue-loop",
+      "depth": 2,
+      "description": "Use when turning GitHub issues or bug reports into reproducible coding-agent repair loops with sandboxed execution, focused tests, patch generation, and regression verification."
+    },
+    {
       "name": "swift-concurrency-expert",
       "category": "coding",
       "install_path": "coding/swift-concurrency-expert",
@@ -1758,6 +1862,14 @@
       "path": "skills/coding/using-agent-skills",
       "depth": 2,
       "description": "Discovers and invokes agent skills"
+    },
+    {
+      "name": "ace-context-evolution",
+      "category": "context-engineering",
+      "install_path": "context-engineering/ace-context-evolution",
+      "path": "skills/context-engineering/ace-context-evolution",
+      "depth": 2,
+      "description": "Use when long-lived agents, project memories, system prompts, or playbooks are repeatedly summarized, rewritten, or optimized and risk losing domain detail, provenance, or execution learnings."
     },
     {
       "name": "acquire-codebase-knowledge",
@@ -1870,6 +1982,14 @@
       "path": "skills/context-engineering/onboard-context-matic",
       "depth": 2,
       "description": "Context-matic MCP server tour — APIs, endpoints, capabilities walkthrough"
+    },
+    {
+      "name": "provenance-grounded-memory",
+      "category": "context-engineering",
+      "install_path": "context-engineering/provenance-grounded-memory",
+      "path": "skills/context-engineering/provenance-grounded-memory",
+      "depth": 2,
+      "description": "Use when designing or auditing long-term memory for persistent AI agents. Stores immutable source evidence before canonical facts, links beliefs to provenance, applies novelty-aware ADD/UPDATE/NOOP write gating, keeps uncertain merges explicit, separates retrieval from answer generation, supports deletion, and evaluates memory failures layer by layer."
     },
     {
       "name": "what-context-needed",
@@ -2846,6 +2966,14 @@
       "path": "skills/devops/wrangler",
       "depth": 2,
       "description": "Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, account routing."
+    },
+    {
+      "name": "codebase-diagrams-and-slides",
+      "category": "diagrams-slides",
+      "install_path": "diagrams-slides/codebase-diagrams-and-slides",
+      "path": "skills/diagrams-slides/codebase-diagrams-and-slides",
+      "depth": 2,
+      "description": "Turns any codebase into branded, presentation-ready SVG diagrams and an optional smooth animated HTML slide deck. Analyzes a repository in any language (Markdown, Python, Rust, dbt, SQL, JS/TS, Java, Go, ...), extracts its architecture / flow / story, and generates eye-friendly 16:9 diagrams plus a polished, professional presentation. Use when the user asks to visualize, diagram, document, illustrate, or present a codebase, architecture, pipeline, or project; to build slides or a deck about a repo; or to produce diagrams from code. Defaults to the company brand palette (#03045e, #0077b6, #00b4d8, #90e0ef, #caf0f8) and writes to docs/diagrams/ and docs/presentation.html."
     },
     {
       "name": "draw-io-diagram-generator",
@@ -3880,6 +4008,14 @@
       "description": "Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency"
     },
     {
+      "name": "multimodal-rag-architecture",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/multimodal-rag-architecture",
+      "path": "skills/llm-tooling/multimodal-rag-architecture",
+      "depth": 2,
+      "description": "Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence."
+    },
+    {
       "name": "nano-banana-pro",
       "category": "llm-tooling",
       "install_path": "llm-tooling/nano-banana-pro",
@@ -4150,6 +4286,14 @@
       "path": "skills/llm-tooling/qdrant-version-upgrade",
       "depth": 2,
       "description": "Guidance on how to upgrade your Qdrant version without interrupting the availability of your application and ensuring data integrity"
+    },
+    {
+      "name": "vllm-serving-planner",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/vllm-serving-planner",
+      "path": "skills/llm-tooling/vllm-serving-planner",
+      "depth": 2,
+      "description": "Use when planning, reviewing, or tuning vLLM or OpenAI-compatible LLM serving for throughput, latency, KV-cache pressure, batching, quantization, prefix caching, or multimodal serving."
     },
     {
       "name": "apple-appstore-reviewer",

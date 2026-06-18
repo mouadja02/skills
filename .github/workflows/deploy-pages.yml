@@ -15,6 +15,8 @@ on:
       - "scripts/**"
       - "package.json"
       - "package-lock.json"
+      - "README.md"
+      - "CONTRIBUTING.md"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -48,20 +50,23 @@ jobs:
       - run: npm ci
 
       # ── 1. Build manifest ────────────────────────────────────────────────
-      - name: Generate docs/manifest.{json,tsv} + SKILLS.md
+      - name: Generate manifests and documentation indexes
         run: node scripts/build-manifest.mjs
 
-      - name: Commit manifest if changed
+      - name: Audit generated documentation
+        run: node scripts/check-docs.mjs
+
+      - name: Commit generated documentation if changed
         run: |
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          paths="docs/manifest.json docs/manifest.tsv SKILLS.md"
-          if git diff --quiet -- $paths; then
-            echo "Manifest unchanged — skipping commit."
+          generated_paths=(README.md SKILLS.md docs/manifest.json docs/manifest.tsv skills/README.md skills/*/README.md)
+          if git diff --quiet -- "${generated_paths[@]}"; then
+            echo "Generated documentation unchanged — skipping commit."
           else
-            git add $paths
-            git commit -m "chore(manifest): regenerate from SKILL.md frontmatter [skip ci]"
+            git add -- "${generated_paths[@]}"
+            git commit -m "chore(docs): regenerate skill indexes [skip ci]"
             git push
           fi
 
