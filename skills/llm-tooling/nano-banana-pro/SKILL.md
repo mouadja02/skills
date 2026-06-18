@@ -3,11 +3,18 @@ name: nano-banana-pro
 description: "Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Nano Banana Pro — Gemini Image Generation & Editing
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Generating images from text prompts via Gemini Flash Image API
+- Editing existing images with targeted modifications
+- Iterating on image prompts using the draft→iterate→final workflow
 
 Generate new images or edit existing ones using Google's Gemini Flash Image API (Gemini 3.1 Flash Image).
 

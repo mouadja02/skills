@@ -3,11 +3,18 @@ name: oracle
 description: "Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Oracle (CLI) — Second-Model Review
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Getting a second-model review of code, architecture, or design
+- Bundling prompts and files into a single request for another AI model
+- Cross-validating agent output with an independent model
 
 Oracle bundles your prompt + selected files into one "one-shot" request so another model can answer with real repo context (API or browser automation). Treat outputs as advisory: verify against the codebase + tests.
 

@@ -3,6 +3,8 @@ name: beeper
 description: "Beeper local cache: contact hints, room lookup, WhatsApp/iMessage traces, FTS search."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Beeper
@@ -10,6 +12,12 @@ attribution: "steipete/agent-scripts by Peter Steinberger"
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
 
 Use this for local Beeper history questions, especially vague contact hints across iMessage/WhatsApp bridges.
+
+## When to Use
+
+- Searching local Beeper chat history across bridges (iMessage, WhatsApp)
+- Looking up contacts by vague hints across bridged messaging services
+- Querying the Beeper SQLite FTS index for message content
 
 ## Source
 

@@ -3,6 +3,8 @@ name: release-mac-app
 description: "macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Mac App Release

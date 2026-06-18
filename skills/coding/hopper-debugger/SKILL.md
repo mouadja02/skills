@@ -3,6 +3,8 @@ name: hopper-debugger
 description: "Hopper Disassembler debugging: macOS/iOS binaries, ObjC/Swift symbols, dyld, LLDB."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Hopper Debugger
@@ -10,6 +12,13 @@ attribution: "steipete/agent-scripts by Peter Steinberger"
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
 
 Goal: use Hopper through `mcporter` as a queryable disassembler, then combine the result with local source, LLDB, logs, and focused repros.
+
+## When to Use
+
+- Reverse-engineering macOS/iOS binaries to understand private API behavior
+- Debugging ObjC/Swift symbol resolution, dyld loading, or framework internals
+- Investigating runtime crashes by inspecting disassembly and pseudo-code
+- Querying Apple framework internals via Hopper + LLDB
 
 ## Quick Start
 

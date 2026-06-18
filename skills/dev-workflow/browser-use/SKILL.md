@@ -3,6 +3,7 @@ name: browser-use
 description: "Chrome DevTools MCP automation: existing Chrome tabs, profile-aware, no AppleScript."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Browser Use
@@ -10,6 +11,13 @@ attribution: "steipete/agent-scripts by Peter Steinberger"
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
 
 Use this for browser tasks against the existing Chrome session.
+
+## When to Use
+
+- Automating browser interactions via Chrome DevTools MCP
+- Inspecting or debugging live web pages in the user's existing Chrome profile
+- Taking screenshots of rendered pages for visual regression
+- Filling forms, clicking elements, or running JS in real browser tabs
 
 Hard rule: reattach to the existing Chrome profile only. Use this target:
 

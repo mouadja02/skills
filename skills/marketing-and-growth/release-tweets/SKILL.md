@@ -3,11 +3,18 @@ name: release-tweets
 description: "Release tweets/social copy: draft from changelog, tags, npm/appcast, artifacts — X/Twitter announcements."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Release Tweets
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Drafting release tweets or X/Twitter announcements from changelogs
+- Writing launch threads or social copy for npm/app releases
+- Formatting release notes into tweet-sized announcements
 
 Use when the user asks for a release tweet, launch tweet, X announcement, release thread, changelog-to-tweet rewrite, or social copy for a shipped version. This skill is about release copy, not cutting the release.
 

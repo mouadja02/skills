@@ -3,6 +3,7 @@ name: whatsapp
 description: "WhatsApp router: history/search/read/send — archive-first vs live, safety rules."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # WhatsApp

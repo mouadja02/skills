@@ -3,11 +3,18 @@ name: speaking
 description: "Speaking ops: conference invites, keynotes, panels, calendar/email tracking."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Speaking
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Evaluating conference speaking invitations and keynote opportunities
+- Tracking speaking engagements across calendar and email
+- Deciding which panels, talks, or events to accept
 
 Use this for managing speaking opportunities: conference invites, keynote/panel tracking, calendar sync, and follow-up.
 

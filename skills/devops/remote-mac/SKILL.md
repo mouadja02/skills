@@ -3,6 +3,8 @@ name: remote-mac
 description: "Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Remote Mac

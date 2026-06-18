@@ -3,11 +3,18 @@ name: github-author-context
 description: "GitHub contributor context: identity, activity, trust, company/team signal."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # GitHub Author Context
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Building contributor profiles for PR review context
+- Assessing trust signals (activity, company, commit history) of a PR author
+- Triaging PRs from unknown contributors
 
 Build a compact maintainer-facing profile for a PR author or GitHub user. Use this by default during PR review to understand contributor identity, trust level, and activity history.
 

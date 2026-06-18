@@ -3,6 +3,7 @@ name: github-project-triage
 description: "GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # GitHub Project Triage

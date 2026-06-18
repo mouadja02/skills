@@ -3,6 +3,8 @@ name: mac-maintenance
 description: "macOS upkeep: brew update/upgrade, pull clean repos, empty Trash."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Mac Maintenance

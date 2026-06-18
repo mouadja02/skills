@@ -3,11 +3,18 @@ name: domain-dns-ops
 description: "DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Domain/DNS Ops
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Setting up DNS zones and records on Cloudflare
+- Configuring vanity domains, redirects, and nameserver delegation
+- Verifying DNS propagation and HTTP redirect chains
 
 ## Golden Path (new vanity domain → Cloudflare → redirect)
 

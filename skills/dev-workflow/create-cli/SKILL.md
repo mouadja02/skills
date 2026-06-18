@@ -3,11 +3,19 @@ name: create-cli
 description: "CLI UX/spec design: args, flags, help, output, errors, config, dry-run."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Create CLI
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Designing CLI argument syntax, flags, help text, and output format
+- Reviewing CLI UX for human-friendliness and script-compatibility
+- Specifying error messages, config handling, and dry-run behavior
+- Creating a new command-line tool from scratch
 
 Design CLI surface area (syntax + behavior), human-first, script-friendly.
 

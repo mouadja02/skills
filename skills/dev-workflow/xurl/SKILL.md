@@ -3,11 +3,18 @@ name: xurl
 description: "xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # xurl
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Posting, reading, or searching on X/Twitter via the API
+- Managing auth, apps, and API endpoints with the xurl CLI
+- Automating social media interactions (likes, reposts, DMs, bookmarks)
 
 Official CLI for the X API. Primary upstream: https://github.com/xdevplatform/xurl
 

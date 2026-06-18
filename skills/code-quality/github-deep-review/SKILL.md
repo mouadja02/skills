@@ -3,11 +3,19 @@ name: github-deep-review
 description: "GitHub deep review: bugs, PRs, best fix, stale-or-real, read code first, evidence-first."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # GitHub Deep Review
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Deep-diving into bug reports or PRs to find root cause
+- Evidence-first code review where you read code before forming opinions
+- Determining if an issue is stale, a duplicate, or a real bug
+- Proposing the best fix with high confidence
 
 High-confidence, evidence-first, code-aware review. The goal is not a generic summary. The goal is to understand the bug class, find the real cause if possible, decide the best fix after reading enough code, and call out whether a larger refactor would improve the design.
 

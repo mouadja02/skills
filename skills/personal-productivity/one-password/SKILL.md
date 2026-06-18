@@ -3,11 +3,18 @@ name: one-password
 description: "1Password CLI (op): service-account first, targeted secret read/store/inject, tmux session."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # 1Password CLI
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Reading or storing secrets via 1Password CLI (`op`)
+- Injecting secrets into environment variables or config files
+- Using service-account-first auth with tmux session fallback
 
 Official docs: https://developer.1password.com/docs/cli/get-started/
 

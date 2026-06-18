@@ -3,11 +3,19 @@ name: swiftui-performance-audit
 description: "SwiftUI performance audit: render, scroll, CPU/memory, view updates, layout, Instruments."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger — originally by @Dimillian (Dimillian/Skills)"
+version: "1.0.0"
+platform: apple
 ---
 
 # SwiftUI Performance Audit
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete). Originally created by [@Dimillian](https://github.com/Dimillian) from [Dimillian/Skills](https://github.com/Dimillian/Skills) (2025-12-31).
+
+## When to Use
+
+- Auditing SwiftUI view rendering, scrolling, or CPU/memory performance
+- Identifying unnecessary view updates, body re-evaluations, or layout thrashing
+- Guiding the user to profile with Instruments when code review is inconclusive
 
 ## Overview
 

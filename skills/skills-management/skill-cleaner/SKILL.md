@@ -3,6 +3,7 @@ name: skill-cleaner
 description: "Audit skills: loaded roots, duplicate skills, unused skills, prompt-budget costs, compact descriptions."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Skill Cleaner

@@ -3,6 +3,8 @@ name: swift-concurrency-expert
 description: "Swift concurrency review/fix: compiler errors, Sendable, actor isolation, Swift 6.2+ remediation."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger — originally by @Dimillian (Dimillian/Skills)"
+version: "1.0.0"
+platform: apple
 ---
 
 # Swift Concurrency Expert
@@ -12,6 +14,13 @@ attribution: "steipete/agent-scripts by Peter Steinberger — originally by @Dim
 ## Overview
 
 Review and fix Swift Concurrency issues in Swift 6.2+ codebases by applying actor isolation, Sendable safety, and modern concurrency patterns with minimal behavior changes.
+
+## When to Use
+
+- Fixing Swift 6 strict concurrency compiler errors
+- Reviewing Sendable conformance, actor isolation, and data race safety
+- Migrating pre-Swift 6 async code to strict concurrency
+- Choosing between actors, `@MainActor`, `nonisolated`, and `@Sendable`
 
 ## Workflow
 

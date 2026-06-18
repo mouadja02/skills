@@ -3,11 +3,18 @@ name: video-transcript-downloader
 description: "yt-dlp video downloads: video, audio, subtitles, transcripts, clips, playlists — YouTube and more."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Video Transcript Downloader
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Downloading video, audio, or subtitle tracks from YouTube and other platforms
+- Extracting transcripts or captions for content analysis
+- Clipping segments or downloading playlists via yt-dlp
 
 Download and extract transcripts/video/audio from YouTube and other video platforms using `yt-dlp`.
 

@@ -3,11 +3,18 @@ name: notcrawl
 description: "Notion archive: desktop/API sync, Markdown export, page search, read-only SQL."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # notcrawl
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Searching or reading from a local Notion archive
+- Syncing Notion content via desktop cache or API
+- Exporting Notion pages to Markdown
 
 Use this for local Notion archive questions. Desktop reads local cache; API sync needs `NOTION_TOKEN` and page access.
 

@@ -3,11 +3,18 @@ name: obsidian
 description: "Obsidian vault: search/read/write notes, backlinks, Bases, Canvas."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Obsidian
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Searching, reading, or writing notes in a local Obsidian vault
+- Managing backlinks, Bases, or Canvas files
+- Querying vault content while preserving frontmatter and wikilinks
 
 Use this for local Obsidian vault work. An Obsidian vault is a normal folder of Markdown files plus `.obsidian/` config.
 

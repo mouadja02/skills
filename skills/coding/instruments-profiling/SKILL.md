@@ -3,6 +3,8 @@ name: instruments-profiling
 description: "Instruments/xctrace profiling: macOS/iOS traces, binaries, args, exports, Time Profiler."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: apple
 ---
 
 # Instruments Profiling (macOS/iOS)
@@ -12,7 +14,9 @@ attribution: "steipete/agent-scripts by Peter Steinberger"
 Use this skill when the user wants performance profiling or stack analysis for native apps.
 Focus: Time Profiler, `xctrace` CLI, and picking the correct binary/app instance.
 
-## Quick Start (CLI)
+**Related skill:** For CLI-only hotspot analysis without opening Instruments, see [native-app-performance](../native-app-performance/SKILL.md).
+
+## When to Use
 
 ```bash
 # List templates

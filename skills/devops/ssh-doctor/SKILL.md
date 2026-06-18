@@ -3,6 +3,8 @@ name: ssh-doctor
 description: "SSH triage: Remote Login, launchd sshd, pre-auth closes, stale sessions, macOS."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # SSH Doctor

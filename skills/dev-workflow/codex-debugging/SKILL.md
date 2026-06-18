@@ -3,11 +3,17 @@ name: codex-debugging
 description: "Codex debugging: codex-rs core/tui/exec/cli/app-server/config."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Codex Debugging
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Debugging Codex CLI/app behavior, config parsing, or tool invocations
+- Navigating the codex-rs codebase (core/tui/exec/cli/app-server)
 
 Use when investigating Codex CLI/app behavior, config parsing, tool behavior, prompts, MCP/app wiring, or runtime bugs.
 

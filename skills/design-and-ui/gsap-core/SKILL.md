@@ -2,6 +2,7 @@
 name: gsap-core
 description: Official GSAP — the core API — gsap.to(), from(), fromTo(), easing, duration, stagger, defaults, gsap.matchMedia() (responsive, prefers-reduced-motion)
 license: MIT
+version: "1.0.0"
 source: "https://github.com/greensock/gsap-skills"
 attribution: "greensock/gsap-skills by GreenSock"
 ---

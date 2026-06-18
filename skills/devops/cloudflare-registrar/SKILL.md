@@ -3,11 +3,18 @@ name: cloudflare-registrar
 description: "Cloudflare Registrar: domain availability check, prices, registration via API."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Cloudflare Registrar
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Checking domain name availability via Cloudflare API
+- Querying Cloudflare Registrar pricing for TLDs
+- Registering domains through the Cloudflare Registrar API
 
 Use for Cloudflare Registrar domain availability, pricing, listing, and registration.
 

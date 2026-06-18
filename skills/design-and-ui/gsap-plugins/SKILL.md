@@ -2,6 +2,7 @@
 name: gsap-plugins
 description: Official GSAP — GSAP plugins — registration, ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, ScrambleText, SVG and physics plugins, CustomEase, EasePack, CustomWiggle, CustomBounce, GSDevTools
 license: MIT
+version: "1.0.0"
 source: "https://github.com/greensock/gsap-skills"
 attribution: "greensock/gsap-skills by GreenSock"
 ---

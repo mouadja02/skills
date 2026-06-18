@@ -3,6 +3,8 @@ name: peekaboo
 description: "macOS screenshots, UI inspection, clicks, typing, app/window automation via Peekaboo."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Peekaboo

@@ -21,9 +21,15 @@ Code**, **Cursor**, and any other client that walks a directory tree of
    ---
    name: my-skill
    description: Use when the user wants X — short, action-oriented, written in third person.
+   version: "1.0.0"
    ---
 
    # My Skill
+
+   ## When to Use
+
+   - Bullet list of activation triggers and use cases
+   - Helps the model decide when to load vs skip this skill
 
    The body explains how the assistant should behave when this skill triggers.
    Lead with concrete steps. Link to other files in the folder if you need
@@ -36,8 +42,23 @@ Code**, **Cursor**, and any other client that walks a directory tree of
    - `description` is what the model sees when deciding whether to load the
      skill. Lead with the trigger phrase ("Use when…", "Activate when…").
      Keep it under ~300 chars; long descriptions get truncated in lists.
-   - You can add any other key (e.g. `tags`, `version`) — extra keys are
-     preserved in the manifest but not required.
+   - `version` — semantic version string (e.g. `"1.0.0"`). Required for
+     all new skills. Bump on meaningful changes.
+   - `platform` — set when the skill only works on specific platforms.
+     Values: `macos` (macOS-only CLI tools), `apple` (macOS/iOS/Xcode/Swift
+     development), `windows`, `linux`. Omit for cross-platform skills.
+   - `license` — SPDX identifier (e.g. `MIT`, `Apache-2.0`). Recommended.
+   - `source` — URL of the upstream repo when the skill is sourced from
+     another project.
+   - `attribution` — human-readable credit line for sourced skills.
+
+   Body structure:
+
+   - Start with a `## When to Use` section listing bullet-pointed activation
+     criteria. This helps the model decide when to load the skill *and*
+     when not to.
+   - Follow with workflow steps, code examples, and guardrails.
+   - If the skill overlaps with another, add a `**Related skill:**` link.
 
 4. Drop any supporting files (templates, references, scripts) in the same
    folder. They ship with the skill when users install it.
@@ -71,6 +92,18 @@ like, including the per-skill `.zip` download buttons.
   spaces, or emoji in folder names.
 - **Trigger language** — descriptions should read like a router rule, not
   marketing copy. "Use when…" / "Activate when…" / "Apply when…" all work.
+- **"When to Use" section** — every skill should have a `## When to Use`
+  section near the top with 3–5 bullet points describing activation
+  triggers. This is separate from the frontmatter `description`.
+- **Platform declaration** — if a skill only works on macOS, iOS, or a
+  specific OS, set `platform:` in frontmatter so users can filter.
+- **Version tracking** — include `version: "1.0.0"` in frontmatter.
+  Bump on meaningful updates so consumers can track changes.
+- **Cross-linking** — if two skills overlap (e.g. both cover xctrace
+  profiling), add a `**Related skill:**` note pointing to the other.
+- **No project-specific skills** — skills should be generally useful.
+  Tools tied to a single person's infrastructure or private project
+  don't belong in the shared repo.
 - **Self-contained** — every file referenced by `SKILL.md` should live in
   the same folder, or be installable separately. Skills installed with
   `install.sh` only get their own folder, nothing else.

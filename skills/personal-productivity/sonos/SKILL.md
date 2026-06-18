@@ -3,6 +3,8 @@ name: sonos
 description: "Sonos control: search, queue, playlists, rooms/groups, volume, YouTube playback."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Sonos
@@ -10,6 +12,12 @@ attribution: "steipete/agent-scripts by Peter Steinberger"
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
 
 Use for Sonos music, playback, queue, room/group, and YouTube workflows.
+
+## When to Use
+
+- Controlling Sonos speakers: play, pause, volume, queue management
+- Discovering speakers on the local network via mDNS
+- Managing Sonos room groups and playback state
 
 ## Rules
 

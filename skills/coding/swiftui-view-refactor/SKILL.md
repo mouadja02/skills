@@ -3,11 +3,19 @@ name: swiftui-view-refactor
 description: "SwiftUI view refactor/review: layout ordering, DI, Observation, MV patterns, view models."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger — originally by @Dimillian (Dimillian/Skills)"
+version: "1.0.0"
+platform: apple
 ---
 
 # SwiftUI View Refactor
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete). Originally created by [@Dimillian](https://github.com/Dimillian) from [Dimillian/Skills](https://github.com/Dimillian/Skills) (2025-12-31).
+
+## When to Use
+
+- Refactoring SwiftUI views for consistent layout ordering and structure
+- Reviewing dependency injection, Observation, and MV patterns
+- Extracting subviews and organizing view model relationships
 
 ## Overview
 

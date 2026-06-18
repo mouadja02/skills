@@ -2,6 +2,7 @@
 name: gsap-timeline
 description: Official GSAP — timelines — gsap.timeline(), position parameter, nesting, playback
 license: MIT
+version: "1.0.0"
 source: "https://github.com/greensock/gsap-skills"
 attribution: "greensock/gsap-skills by GreenSock"
 ---

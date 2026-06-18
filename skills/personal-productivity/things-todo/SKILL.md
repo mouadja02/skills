@@ -3,6 +3,8 @@ name: things-todo
 description: "Things 3 via things CLI: add, list, search, update, delete, verify tasks."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
+platform: macos
 ---
 
 # Things Todo

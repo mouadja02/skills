@@ -3,11 +3,19 @@ name: swiftui-liquid-glass
 description: "SwiftUI Liquid Glass (iOS 26+): implement, adopt, refactor, review correctness/perf/design."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger — originally by @Dimillian (Dimillian/Skills)"
+version: "1.0.0"
+platform: apple
 ---
 
 # SwiftUI Liquid Glass
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete). Originally created by [@Dimillian](https://github.com/Dimillian) from [Dimillian/Skills](https://github.com/Dimillian/Skills) (2025-12-31).
+
+## When to Use
+
+- Implementing iOS 26+ Liquid Glass effects in SwiftUI
+- Reviewing correctness of `glassEffect` and `GlassEffectContainer` usage
+- Refactoring existing UI to adopt the Liquid Glass design language
 
 ## Overview
 

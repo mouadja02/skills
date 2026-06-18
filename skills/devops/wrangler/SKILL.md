@@ -3,11 +3,18 @@ name: wrangler
 description: "Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, account routing."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
+version: "1.0.0"
 ---
 
 # Wrangler
 
 > **Attribution:** Sourced from [steipete/agent-scripts](https://github.com/steipete/agent-scripts) by [Peter Steinberger](https://github.com/steipete).
+
+## When to Use
+
+- Deploying or tailing Cloudflare Workers
+- Managing KV namespaces, R2 buckets, D1 databases, or Queues via CLI
+- Debugging Wrangler account routing or deploy failures
 
 Use for Cloudflare Wrangler CLI work: deploys, tails, KV/R2/D1/Queues/Workers, secrets, bindings, and account routing.
 

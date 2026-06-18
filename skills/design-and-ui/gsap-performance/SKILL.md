@@ -2,6 +2,7 @@
 name: gsap-performance
 description: Official GSAP — performance — prefer transforms, avoid layout thrashing, will-change, batching
 license: MIT
+version: "1.0.0"
 source: "https://github.com/greensock/gsap-skills"
 attribution: "greensock/gsap-skills by GreenSock"
 ---
