@@ -6,7 +6,7 @@
 
 Skill authoring, discovery, cleanup, Copilot configuration, and terse interaction modes.
 
-**Total:** 24 skills.
+**Total:** 13 skills.
 
 ## Skills In This Category
 
@@ -15,15 +15,8 @@ Skill authoring, discovery, cleanup, Copilot configuration, and terse interactio
 | [`acreadiness-assess`](acreadiness-assess/SKILL.md) | `skills-management/acreadiness-assess` | AgentRC readiness assessment — static HTML dashboard at reports/index.html |
 | [`acreadiness-generate-instructions`](acreadiness-generate-instructions/SKILL.md) | `skills-management/acreadiness-generate-instructions` | AgentRC instruction file generator — .github/copilot-instructions.md, custom paths |
 | [`acreadiness-policy`](acreadiness-policy/SKILL.md) | `skills-management/acreadiness-policy` | Help the user pick, write, or apply an AgentRC policy. Policies customise readiness scoring by disabling irrelevant checks, overriding impact/level, setting pass-rate thresholds, or chaining org baselines with team overrides |
-| [`caveman`](caveman/SKILL.md) | `skills-management/caveman` | Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says... |
-| [`caveman-commit`](caveman-commit/SKILL.md) | `skills-management/caveman-commit` | Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when "why" isn't obvious. Use when user says "write a commit", "c... |
-| [`caveman-compress`](caveman-compress/SKILL.md) | `skills-management/caveman-compress` | Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format to save input tokens. Preserves all technical substance, code, URLs, and structure. Compressed version overwrites the original file. Human-readabl... |
-| [`caveman-help`](caveman-help/SKILL.md) | `skills-management/caveman-help` | Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, "caveman help", "what caveman commands", "how do I use caveman". |
-| [`caveman-review`](caveman-review/SKILL.md) | `skills-management/caveman-review` | Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use when user says "review this PR", "code review", "review the diff", "/review"... |
-| [`copilot-cli-quickstart`](copilot-cli-quickstart/SKILL.md) | `skills-management/copilot-cli-quickstart` | Use this skill when someone wants to learn GitHub Copilot CLI from scratch. Offers interactive step-by-step tutorials with separate Developer and Non-Developer tracks, plus on-demand Q&A. Just say "start tutorial" or ask a question! Note... |
 | [`copilot-instructions-blueprint-generator`](copilot-instructions-blueprint-generator/SKILL.md) | `skills-management/copilot-instructions-blueprint-generator` | copilot-instructions.md blueprint generator — GitHub Copilot guidance file |
 | [`copilot-sdk`](copilot-sdk/SKILL.md) | `skills-management/copilot-sdk` | Build agentic applications with GitHub Copilot SDK |
-| [`copilot-spaces`](copilot-spaces/SKILL.md) | `skills-management/copilot-spaces` | Use Copilot Spaces to provide project-specific context to conversations. Use this skill when users mention a "Copilot space", want to load context from a shared knowledge base, discover available spaces, or ask questions grounded in cura... |
 | [`copilot-usage-metrics`](copilot-usage-metrics/SKILL.md) | `skills-management/copilot-usage-metrics` | Retrieve and display GitHub Copilot usage metrics for organizations and enterprises using the GitHub CLI and REST API. |
 | [`find-skills`](find-skills/SKILL.md) | `skills-management/find-skills` | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This skill should be used when the user is l... |
 | [`github-copilot-starter`](github-copilot-starter/SKILL.md) | `skills-management/github-copilot-starter` | Set up complete GitHub Copilot configuration for a new project based on technology stack |
@@ -31,10 +24,6 @@ Skill authoring, discovery, cleanup, Copilot configuration, and terse interactio
 | [`microsoft-skill-creator`](microsoft-skill-creator/SKILL.md) | `skills-management/microsoft-skill-creator` | Create agent skills for Microsoft technologies using Learn MCP tools |
 | [`skill-cleaner`](skill-cleaner/SKILL.md) | `skills-management/skill-cleaner` | Audit skills: loaded roots, duplicate skills, unused skills, prompt-budget costs, compact descriptions. |
 | [`skill-creator`](skill-creator/SKILL.md) | `skills-management/skill-creator` | Create, modify, benchmark skills — from scratch, existing docs, or URLs |
-| [`suggest-awesome-github-copilot-agents`](suggest-awesome-github-copilot-agents/SKILL.md) | `skills-management/suggest-awesome-github-copilot-agents` | Suggest Copilot custom agents from awesome-copilot — context-aware |
-| [`suggest-awesome-github-copilot-instructions`](suggest-awesome-github-copilot-instructions/SKILL.md) | `skills-management/suggest-awesome-github-copilot-instructions` | Suggest Copilot instruction files from awesome-copilot — context-aware |
-| [`suggest-awesome-github-copilot-skills`](suggest-awesome-github-copilot-skills/SKILL.md) | `skills-management/suggest-awesome-github-copilot-skills` | Suggest relevant GitHub Copilot skills from the awesome-copilot repository based on current repository context and chat history, avoiding duplicates with existing skills in this repository, and identifying outdated skills that need updates |
-| [`vardoger-analyze`](vardoger-analyze/SKILL.md) | `skills-management/vardoger-analyze` | Reads the local session directory at `~/.copilot/session-state/`, extracts recurring preferences and conventions, and writes a fenced personalization block into `~/.copilot/copilot-instructions.md`. Runs entirely on the user's machine vi... |
 | [`writing-skills`](writing-skills/SKILL.md) | `skills-management/writing-skills` | Use when creating new skills, editing existing skills, or verifying skills work before deployment |
 
 [Back to the category index](../README.md)

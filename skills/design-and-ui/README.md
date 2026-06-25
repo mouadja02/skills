@@ -6,7 +6,7 @@
 
 Frontend design, UI systems, visual artifacts, animation, branding, and accessibility.
 
-**Total:** 35 skills.
+**Total:** 34 skills.
 
 ## Skills In This Category
 
@@ -35,7 +35,6 @@ Frontend design, UI systems, visual artifacts, animation, branding, and accessib
 | [`gsap-utils`](gsap-utils/SKILL.md) | `design-and-ui/gsap-utils` | Official GSAP — gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe |
 | [`hallmark`](hallmark/SKILL.md) | `design-and-ui/hallmark` | Anti-AI-slop design — greenfield pages, audits, redesigns, and design extraction from URLs or screenshots |
 | [`impeccable`](impeccable/SKILL.md) | `design-and-ui/impeccable` | UI critique, audit, polish — websites, dashboards, components, onboarding, empty states |
-| [`legacy-circuit-mockups`](legacy-circuit-mockups/SKILL.md) | `design-and-ui/legacy-circuit-mockups` | Generate breadboard circuit mockups and visual diagrams using HTML5 Canvas drawing techniques |
 | [`muller-brockmann-grid`](muller-brockmann-grid/SKILL.md) | `design-and-ui/muller-brockmann-grid` | Build editorial/magazine/report webpages on a GENUINE Müller-Brockmann modular grid (International Typographic Style). Encodes the discipline (columns + modules + baseline, grotesque type, flush-left, restrained black/white/red palette)... |
 | [`nyt-data-viz`](nyt-data-viz/SKILL.md) | `design-and-ui/nyt-data-viz` | NYT-discipline data visualization. Applies the design rules of The New York Times graphics desk + Upshot — color, typography, annotation, chart-type selection — to make any chart render at Times grade. Use whenever generating charts, das... |
 | [`penpot-uiux-design`](penpot-uiux-design/SKILL.md) | `design-and-ui/penpot-uiux-design` | Penpot UI/UX design via MCP — frames, auto-layout, components, styles, prototype |

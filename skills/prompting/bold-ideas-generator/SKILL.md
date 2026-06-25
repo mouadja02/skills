@@ -57,9 +57,9 @@ Always generate ideas at two extremes simultaneously:
 
 **The "Moon Shot" column** — What would you build if failure had no consequences and budget was unlimited? These ideas reveal what's actually important.
 
-**The "Caveman column"** — What's the simplest possible version of this, doable with zero technology and zero budget? These ideas reveal the core mechanism.
+**The "Barebones column"** — What's the simplest possible version of this, doable with zero technology and zero budget? These ideas reveal the core mechanism.
 
-The best real ideas often sit between the two extremes — or are the moon shot with the caveman's simplicity baked in.
+The best real ideas often sit between the two extremes, or are the moon shot with barebones simplicity baked in.
 
 ### Phase 3: Apply the 10x Multiplier
 

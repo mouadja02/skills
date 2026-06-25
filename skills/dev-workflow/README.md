@@ -6,7 +6,7 @@
 
 Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.
 
-**Total:** 30 skills.
+**Total:** 29 skills.
 
 ## Skills In This Category
 
@@ -17,7 +17,6 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`batch-files`](batch-files/SKILL.md) | `dev-workflow/batch-files` | Expert-level Windows batch file (.bat/.cmd) skill for writing, debugging, and maintaining CMD scripts. Use when asked to "create a batch file", "write a .bat script", "automate a Windows task", "CMD scripting", "batch automation", "sched... |
 | [`browser-use`](browser-use/SKILL.md) | `dev-workflow/browser-use` | Chrome DevTools MCP automation: existing Chrome tabs, profile-aware, no AppleScript. |
 | [`chrome-devtools`](chrome-devtools/SKILL.md) | `dev-workflow/chrome-devtools` | Expert-level browser automation, debugging, and performance analysis using Chrome DevTools MCP |
-| [`cli-mastery`](cli-mastery/SKILL.md) | `dev-workflow/cli-mastery` | Interactive training for the GitHub Copilot CLI. Guided lessons, quizzes, scenario challenges, and a full reference covering slash commands, shortcuts, modes, agents, skills, MCP, and configuration. Say "cliexpert" to start. |
 | [`codex-debugging`](codex-debugging/SKILL.md) | `dev-workflow/codex-debugging` | Codex debugging: codex-rs core/tui/exec/cli/app-server/config. |
 | [`commit-message-storyteller`](commit-message-storyteller/SKILL.md) | `dev-workflow/commit-message-storyteller` | Analyzes git diffs or staged changes and generates narrative commit messages that explain WHY a change was made, not just what changed — following Conventional Commits format. Use when asked to "write a commit message", "generate a commi... |
 | [`conventional-commit`](conventional-commit/SKILL.md) | `dev-workflow/conventional-commit` | Conventional commits — XML-structured workflow, feat/fix/chore/BREAKING scopes |

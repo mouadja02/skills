@@ -48,8 +48,9 @@ SELECTORS
 
   A category name        install every skill in that category
       engineering-craft        (29 skills)
-      caveman                  (6 skills)
-      business-and-strategy    (60 skills)
+      communication            (1 skill)
+      finance                  (7 skills)
+      business-strategy        (60 skills)
 
   A glob pattern         install every install_path that matches
       "*bmad*"                 every skill whose path contains "bmad"

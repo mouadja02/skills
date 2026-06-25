@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 723 skills across 31 categories.
+**Total:** 725 skills across 35 categories.
 
 ## Install one skill
 
@@ -24,33 +24,37 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | ---: |
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
-| [`api-backend`](#api-backend) | 11 |
+| [`api-backend`](#api-backend) | 12 |
 | [`business-strategy`](#business-strategy) | 64 |
 | [`cloud-azure`](#cloud-azure) | 18 |
 | [`code-quality`](#code-quality) | 17 |
 | [`coding`](#coding) | 33 |
+| [`communication`](#communication) | 1 |
 | [`context-engineering`](#context-engineering) | 17 |
+| [`creative`](#creative) | 2 |
 | [`databases`](#databases) | 22 |
-| [`design-and-ui`](#design-and-ui) | 35 |
-| [`dev-workflow`](#dev-workflow) | 30 |
-| [`devops`](#devops) | 36 |
+| [`design-and-ui`](#design-and-ui) | 34 |
+| [`dev-workflow`](#dev-workflow) | 29 |
+| [`devops`](#devops) | 37 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
 | [`engineering-craft`](#engineering-craft) | 37 |
+| [`finance`](#finance) | 7 |
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
 | [`llm-tooling`](#llm-tooling) | 46 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
-| [`mcp`](#mcp) | 13 |
+| [`mcp`](#mcp) | 14 |
 | [`messaging`](#messaging) | 1 |
 | [`microsoft-agents`](#microsoft-agents) | 11 |
 | [`microsoft-data`](#microsoft-data) | 17 |
-| [`personal-productivity`](#personal-productivity) | 9 |
+| [`personal-productivity`](#personal-productivity) | 10 |
 | [`product-management`](#product-management) | 29 |
 | [`prompting`](#prompting) | 15 |
 | [`react-frontend`](#react-frontend) | 17 |
-| [`skills-management`](#skills-management) | 24 |
+| [`research`](#research) | 1 |
+| [`skills-management`](#skills-management) | 13 |
 | [`streamlit`](#streamlit) | 18 |
 | [`testing`](#testing) | 12 |
 
@@ -156,6 +160,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`openapi-to-application-code`](./skills/api-backend/openapi-to-application-code/SKILL.md) | `api-backend/openapi-to-application-code` | Generate a complete, production-ready application from an OpenAPI specification |
 | [`python-fastapi-llm`](./skills/api-backend/python-fastapi-llm/SKILL.md) | `api-backend/python-fastapi-llm` | Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill |
 | [`python-pypi-package-builder`](./skills/api-backend/python-pypi-package-builder/SKILL.md) | `api-backend/python-pypi-package-builder` | Build, test, lint, version, publish Python library to PyPI — all build tool flavors |
+| [`rest-graphql-debug`](./skills/api-backend/rest-graphql-debug/SKILL.md) | `api-backend/rest-graphql-debug` | Debug REST/GraphQL APIs: status codes, auth, schemas, repro. |
 | [`stripe-integration-expert`](./skills/api-backend/stripe-integration-expert/SKILL.md) | `api-backend/stripe-integration-expert` | Implement production-grade Stripe integrations |
 | [`transloadit-media-processing`](./skills/api-backend/transloadit-media-processing/SKILL.md) | `api-backend/transloadit-media-processing` | Process media files (video, audio, images, documents) using Transloadit |
 | [`typespec-api-operations`](./skills/api-backend/typespec-api-operations/SKILL.md) | `api-backend/typespec-api-operations` | Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing, parameters, and adaptive cards |
@@ -314,6 +319,12 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`test-driven-development`](./skills/coding/test-driven-development/SKILL.md) | `coding/test-driven-development` | Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about to modify existing functionality. |
 | [`using-agent-skills`](./skills/coding/using-agent-skills/SKILL.md) | `coding/using-agent-skills` | Discovers and invokes agent skills |
 
+## communication
+
+| Skill | Install path | Description |
+| --- | --- | --- |
+| [`one-three-one-rule`](./skills/communication/one-three-one-rule/SKILL.md) | `communication/one-three-one-rule` | Structured decision-making framework for technical proposals and trade-off analysis. When the user faces a choice between multiple approaches (architecture decisions, tool selection, refactoring strategies, migration paths), this skill produces a 1-3-1 format: one clear problem statement, three distinct options with pros/cons, and one concrete recommendation with definition of done and implementation plan. Use when the user asks for a "1-3-1", says "give me options", or needs help choosing between competing approaches. |
+
 ## context-engineering
 
 | Skill | Install path | Description |
@@ -335,6 +346,13 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`onboard-context-matic`](./skills/context-engineering/onboard-context-matic/SKILL.md) | `context-engineering/onboard-context-matic` | Context-matic MCP server tour — APIs, endpoints, capabilities walkthrough |
 | [`provenance-grounded-memory`](./skills/context-engineering/provenance-grounded-memory/SKILL.md) | `context-engineering/provenance-grounded-memory` | Use when designing or auditing long-term memory for persistent AI agents. Stores immutable source evidence before canonical facts, links beliefs to provenance, applies novelty-aware ADD/UPDATE/NOOP write gating, keeps uncertain merges explicit, separates retrieval from answer generation, supports deletion, and evaluates memory failures layer by layer. |
 | [`what-context-needed`](./skills/context-engineering/what-context-needed/SKILL.md) | `context-engineering/what-context-needed` | Ask Copilot what files it needs to see before answering a question |
+
+## creative
+
+| Skill | Install path | Description |
+| --- | --- | --- |
+| [`concept-diagrams`](./skills/creative/concept-diagrams/SKILL.md) | `creative/concept-diagrams` | Generate flat, minimal light/dark-aware SVG diagrams as standalone HTML files, using a unified educational visual language with 9 semantic color ramps, sentence-case typography, and automatic dark mode. Best suited for educational and non-software visuals — physics setups, chemistry mechanisms, math curves, physical objects (aircraft, turbines, smartphones, mechanical watches), anatomy, floor plans, cross-sections, narrative journeys (lifecycle of X, process of Y), hub-spoke system integrations (smart city, IoT), and exploded layer views. If a more specialized skill exists for the subject (dedicated software/cloud architecture, hand-drawn sketches, animated explainers, etc.), prefer that — otherwise this skill can also serve as a general-purpose SVG diagram fallback with a clean educational look. Ships with 15 example diagrams. |
+| [`creative-ideation`](./skills/creative/creative-ideation/SKILL.md) | `creative/creative-ideation` | Generate ideas via named methods from creative practice. |
 
 ## databases
 
@@ -390,7 +408,6 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`gsap-utils`](./skills/design-and-ui/gsap-utils/SKILL.md) | `design-and-ui/gsap-utils` | Official GSAP — gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe |
 | [`hallmark`](./skills/design-and-ui/hallmark/SKILL.md) | `design-and-ui/hallmark` | Anti-AI-slop design — greenfield pages, audits, redesigns, and design extraction from URLs or screenshots |
 | [`impeccable`](./skills/design-and-ui/impeccable/SKILL.md) | `design-and-ui/impeccable` | UI critique, audit, polish — websites, dashboards, components, onboarding, empty states |
-| [`legacy-circuit-mockups`](./skills/design-and-ui/legacy-circuit-mockups/SKILL.md) | `design-and-ui/legacy-circuit-mockups` | Generate breadboard circuit mockups and visual diagrams using HTML5 Canvas drawing techniques |
 | [`muller-brockmann-grid`](./skills/design-and-ui/muller-brockmann-grid/SKILL.md) | `design-and-ui/muller-brockmann-grid` | Build editorial/magazine/report webpages on a GENUINE Müller-Brockmann modular grid (International Typographic Style). Encodes the discipline (columns + modules + baseline, grotesque type, flush-left, restrained black/white/red palette) AND the front-end engineering to make the grid real, visible, and verified: one CSS-variable source of truth, an interactive grid-toggle overlay, subgrid bands, 8px baseline lock, and runtime optical alignment. Triggers: "magazine spread", "grid system", "Swiss design", "editorial layout", "show the grid", "align everything to the grid". |
 | [`nyt-data-viz`](./skills/design-and-ui/nyt-data-viz/SKILL.md) | `design-and-ui/nyt-data-viz` | NYT-discipline data visualization. Applies the design rules of The New York Times graphics desk + Upshot — color, typography, annotation, chart-type selection — to make any chart render at Times grade. Use whenever generating charts, dashboards, reports, or data-driven webpages. Triggers: "make this chart look professional", "NYT style", "editorial chart", "data viz", "dashboard design". |
 | [`penpot-uiux-design`](./skills/design-and-ui/penpot-uiux-design/SKILL.md) | `design-and-ui/penpot-uiux-design` | Penpot UI/UX design via MCP — frames, auto-layout, components, styles, prototype |
@@ -412,7 +429,6 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`batch-files`](./skills/dev-workflow/batch-files/SKILL.md) | `dev-workflow/batch-files` | Expert-level Windows batch file (.bat/.cmd) skill for writing, debugging, and maintaining CMD scripts. Use when asked to "create a batch file", "write a .bat script", "automate a Windows task", "CMD scripting", "batch automation", "scheduled task script", "Windows shell script", or when working with .bat/.cmd files in the workspace. Covers cmd.exe syntax, environment variables, control flow, string processing, error handling, and integration with system tools. |
 | [`browser-use`](./skills/dev-workflow/browser-use/SKILL.md) | `dev-workflow/browser-use` | Chrome DevTools MCP automation: existing Chrome tabs, profile-aware, no AppleScript. |
 | [`chrome-devtools`](./skills/dev-workflow/chrome-devtools/SKILL.md) | `dev-workflow/chrome-devtools` | Expert-level browser automation, debugging, and performance analysis using Chrome DevTools MCP |
-| [`cli-mastery`](./skills/dev-workflow/cli-mastery/SKILL.md) | `dev-workflow/cli-mastery` | Interactive training for the GitHub Copilot CLI. Guided lessons, quizzes, scenario challenges, and a full reference covering slash commands, shortcuts, modes, agents, skills, MCP, and configuration. Say "cliexpert" to start. |
 | [`codex-debugging`](./skills/dev-workflow/codex-debugging/SKILL.md) | `dev-workflow/codex-debugging` | Codex debugging: codex-rs core/tui/exec/cli/app-server/config. |
 | [`commit-message-storyteller`](./skills/dev-workflow/commit-message-storyteller/SKILL.md) | `dev-workflow/commit-message-storyteller` | Analyzes git diffs or staged changes and generates narrative commit messages that explain WHY a change was made, not just what changed — following Conventional Commits format. Use when asked to "write a commit message", "generate a commit", "describe my changes", "what should I commit this as", "commit this", "summarize my diff", or "help me commit". Works with git diff output, staged files, or plain descriptions of changes. |
 | [`conventional-commit`](./skills/dev-workflow/conventional-commit/SKILL.md) | `dev-workflow/conventional-commit` | Conventional commits — XML-structured workflow, feat/fix/chore/BREAKING scopes |
@@ -454,6 +470,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`dependency-auditor`](./skills/devops/dependency-auditor/SKILL.md) | `devops/dependency-auditor` | Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems |
 | [`devops-rollout-plan`](./skills/devops/devops-rollout-plan/SKILL.md) | `devops/devops-rollout-plan` | Generate comprehensive rollout plans with preflight checks, step-by-step deployment, verification signals, rollback procedures, and communication plans for infrastructure and application changes |
 | [`docker-development`](./skills/devops/docker-development/SKILL.md) | `devops/docker-development` | Docker/containers — Dockerfile optimization, compose, multi-stage builds, security scanning |
+| [`docker-management`](./skills/devops/docker-management/SKILL.md) | `devops/docker-management` | Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization. |
 | [`domain-dns-ops`](./skills/devops/domain-dns-ops/SKILL.md) | `devops/domain-dns-ops` | DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification. |
 | [`fedora-linux-triage`](./skills/devops/fedora-linux-triage/SKILL.md) | `devops/fedora-linux-triage` | Triage and resolve Fedora issues with dnf, systemd, and SELinux-aware guidance. |
 | [`helm-chart-builder`](./skills/devops/helm-chart-builder/SKILL.md) | `devops/helm-chart-builder` | Helm charts — scaffolding, values design, subcharts, lifecycle hooks, chart testing |
@@ -597,6 +614,18 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`writing-plans`](./skills/engineering-craft/writing-plans/SKILL.md) | `engineering-craft/writing-plans` | Use when you have a spec or requirements for a multi-step task, before touching code |
 | [`x-twitter-scraper`](./skills/engineering-craft/x-twitter-scraper/SKILL.md) | `engineering-craft/x-twitter-scraper` | Build GitHub Copilot workflows with Xquik X API SDKs, REST endpoints, MCP tools, signed webhooks, tweet search, user lookup, follower exports, media actions, and agent automation |
 
+## finance
+
+| Skill | Install path | Description |
+| --- | --- | --- |
+| [`3-statement-model`](./skills/finance/3-statement-model/SKILL.md) | `finance/3-statement-model` | Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author. |
+| [`comps-analysis`](./skills/finance/comps-analysis/SKILL.md) | `finance/comps-analysis` | Build comparable company analysis in Excel — operating metrics, valuation multiples, statistical benchmarking vs peer sets. Pairs with excel-author. Use for public-company valuation, IPO pricing, sector benchmarking, or outlier detection. |
+| [`dcf-model`](./skills/finance/dcf-model/SKILL.md) | `finance/dcf-model` | Build institutional-quality DCF valuation models in Excel — revenue projections, FCF build, WACC, terminal value, Bear/Base/Bull scenarios, 5x5 sensitivity tables. Pairs with excel-author. Use for intrinsic-value equity analysis. |
+| [`excel-author`](./skills/finance/excel-author/SKILL.md) | `finance/excel-author` | Build auditable Excel workbooks headless with openpyxl — blue/black/green cell conventions, formulas over hardcodes, named ranges, balance checks, sensitivity tables. Use for financial models, audit outputs, reconciliations. |
+| [`lbo-model`](./skills/finance/lbo-model/SKILL.md) | `finance/lbo-model` | Build leveraged buyout models in Excel — sources & uses, debt schedule, cash sweep, exit multiple, IRR/MOIC sensitivity. Pairs with excel-author. Use for PE screening, sponsor-case valuation, or illustrative LBO in a pitch. |
+| [`merger-model`](./skills/finance/merger-model/SKILL.md) | `finance/merger-model` | Build accretion/dilution (merger) models in Excel — pro-forma P&L, synergies, financing mix, EPS impact. Pairs with excel-author. Use for M&A pitches, board materials, or deal evaluation. |
+| [`pptx-author`](./skills/finance/pptx-author/SKILL.md) | `finance/pptx-author` | Build PowerPoint decks headless with python-pptx. Pairs with excel-author for model-backed decks where every number traces to a workbook cell. Use for pitch decks, IC memos, earnings notes. |
+
 ## go-to-market
 
 | Skill | Install path | Description |
@@ -716,6 +745,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`dotnet-mcp-builder`](./skills/mcp/dotnet-mcp-builder/SKILL.md) | `mcp/dotnet-mcp-builder` | MCP servers in C#/.NET — tools, prompts, resources, STDIO/HTTP transports, MCP Apps, OAuth, routing |
+| [`fastmcp`](./skills/mcp/fastmcp/SKILL.md) | `mcp/fastmcp` | Build, test, inspect, install, and deploy MCP servers with FastMCP in Python. Use when creating a new MCP server, wrapping an API or database as MCP tools, exposing resources or prompts, or preparing a FastMCP server for Claude Code, Cursor, or HTTP deployment. |
 | [`go-mcp-server-generator`](./skills/mcp/go-mcp-server-generator/SKILL.md) | `mcp/go-mcp-server-generator` | Generate a complete Go MCP server project with proper structure, dependencies, and implementation using the official github.com/modelcontextprotocol/go-sdk |
 | [`java-mcp-server-generator`](./skills/mcp/java-mcp-server-generator/SKILL.md) | `mcp/java-mcp-server-generator` | Generate a complete Model Context Protocol server project in Java using the official MCP Java SDK with reactive streams and optional Spring Boot integration |
 | [`kotlin-mcp-server-generator`](./skills/mcp/kotlin-mcp-server-generator/SKILL.md) | `mcp/kotlin-mcp-server-generator` | Generate a complete Kotlin MCP server project with proper structure, dependencies, and implementation using the official io.modelcontextprotocol:kotlin-sdk library |
@@ -778,6 +808,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`beeper`](./skills/personal-productivity/beeper/SKILL.md) | `personal-productivity/beeper` | Beeper local cache: contact hints, room lookup, WhatsApp/iMessage traces, FTS search. |
+| [`memento-flashcards`](./skills/personal-productivity/memento-flashcards/SKILL.md) | `personal-productivity/memento-flashcards` | Spaced-repetition flashcard system. Create cards from facts or text, chat with flashcards using free-text answers graded by the agent, generate quizzes from YouTube transcripts, review due cards with adaptive scheduling, and export/import decks as CSV. |
 | [`notcrawl`](./skills/personal-productivity/notcrawl/SKILL.md) | `personal-productivity/notcrawl` | Notion archive: desktop/API sync, Markdown export, page search, read-only SQL. |
 | [`obsidian`](./skills/personal-productivity/obsidian/SKILL.md) | `personal-productivity/obsidian` | Obsidian vault: search/read/write notes, backlinks, Bases, Canvas. |
 | [`one-password`](./skills/personal-productivity/one-password/SKILL.md) | `personal-productivity/one-password` | 1Password CLI (op): service-account first, targeted secret read/store/inject, tmux session. |
@@ -863,6 +894,12 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`react19-test-patterns`](./skills/react-frontend/react19-test-patterns/SKILL.md) | `react-frontend/react19-test-patterns` | Provides before/after patterns for migrating test files to React 19 compatibility, including act() imports, Simulate removal, and StrictMode call count changes |
 | [`unit-test-vue-pinia`](./skills/react-frontend/unit-test-vue-pinia/SKILL.md) | `react-frontend/unit-test-vue-pinia` | Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases |
 
+## research
+
+| Skill | Install path | Description |
+| --- | --- | --- |
+| [`osint-investigation`](./skills/research/osint-investigation/SKILL.md) | `research/osint-investigation` | Public-records OSINT investigation framework — SEC EDGAR filings, USAspending contracts, Senate lobbying, OFAC sanctions, ICIJ offshore leaks, NYC property records (ACRIS), OpenCorporates registries, CourtListener court records, Wayback Machine archives, Wikipedia + Wikidata, GDELT news monitoring. Entity resolution across sources, cross-link analysis, timing correlation, evidence chains. Python stdlib only. |
+
 ## skills-management
 
 | Skill | Install path | Description |
@@ -870,15 +907,8 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`acreadiness-assess`](./skills/skills-management/acreadiness-assess/SKILL.md) | `skills-management/acreadiness-assess` | AgentRC readiness assessment — static HTML dashboard at reports/index.html |
 | [`acreadiness-generate-instructions`](./skills/skills-management/acreadiness-generate-instructions/SKILL.md) | `skills-management/acreadiness-generate-instructions` | AgentRC instruction file generator — .github/copilot-instructions.md, custom paths |
 | [`acreadiness-policy`](./skills/skills-management/acreadiness-policy/SKILL.md) | `skills-management/acreadiness-policy` | Help the user pick, write, or apply an AgentRC policy. Policies customise readiness scoring by disabling irrelevant checks, overriding impact/level, setting pass-rate thresholds, or chaining org baselines with team overrides |
-| [`caveman`](./skills/skills-management/caveman/SKILL.md) | `skills-management/caveman` | Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested. |
-| [`caveman-commit`](./skills/skills-management/caveman-commit/SKILL.md) | `skills-management/caveman-commit` | Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when "why" isn't obvious. Use when user says "write a commit", "commit message", "generate commit", "/commit", or invokes /caveman-commit. Auto-triggers when staging changes. |
-| [`caveman-compress`](./skills/skills-management/caveman-compress/SKILL.md) | `skills-management/caveman-compress` | Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format to save input tokens. Preserves all technical substance, code, URLs, and structure. Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md. Trigger: /caveman:compress <filepath> or "compress memory file" |
-| [`caveman-help`](./skills/skills-management/caveman-help/SKILL.md) | `skills-management/caveman-help` | Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, "caveman help", "what caveman commands", "how do I use caveman". |
-| [`caveman-review`](./skills/skills-management/caveman-review/SKILL.md) | `skills-management/caveman-review` | Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use when user says "review this PR", "code review", "review the diff", "/review", or invokes /caveman-review. Auto-triggers when reviewing pull requests. |
-| [`copilot-cli-quickstart`](./skills/skills-management/copilot-cli-quickstart/SKILL.md) | `skills-management/copilot-cli-quickstart` | Use this skill when someone wants to learn GitHub Copilot CLI from scratch. Offers interactive step-by-step tutorials with separate Developer and Non-Developer tracks, plus on-demand Q&A. Just say "start tutorial" or ask a question! Note: This skill targets GitHub Copilot CLI specifically and uses CLI-specific tools (ask_user, sql, fetch_copilot_cli_documentation). |
 | [`copilot-instructions-blueprint-generator`](./skills/skills-management/copilot-instructions-blueprint-generator/SKILL.md) | `skills-management/copilot-instructions-blueprint-generator` | copilot-instructions.md blueprint generator — GitHub Copilot guidance file |
 | [`copilot-sdk`](./skills/skills-management/copilot-sdk/SKILL.md) | `skills-management/copilot-sdk` | Build agentic applications with GitHub Copilot SDK |
-| [`copilot-spaces`](./skills/skills-management/copilot-spaces/SKILL.md) | `skills-management/copilot-spaces` | Use Copilot Spaces to provide project-specific context to conversations. Use this skill when users mention a "Copilot space", want to load context from a shared knowledge base, discover available spaces, or ask questions grounded in curated project documentation, code, and instructions. |
 | [`copilot-usage-metrics`](./skills/skills-management/copilot-usage-metrics/SKILL.md) | `skills-management/copilot-usage-metrics` | Retrieve and display GitHub Copilot usage metrics for organizations and enterprises using the GitHub CLI and REST API. |
 | [`find-skills`](./skills/skills-management/find-skills/SKILL.md) | `skills-management/find-skills` | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill. |
 | [`github-copilot-starter`](./skills/skills-management/github-copilot-starter/SKILL.md) | `skills-management/github-copilot-starter` | Set up complete GitHub Copilot configuration for a new project based on technology stack |
@@ -886,10 +916,6 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`microsoft-skill-creator`](./skills/skills-management/microsoft-skill-creator/SKILL.md) | `skills-management/microsoft-skill-creator` | Create agent skills for Microsoft technologies using Learn MCP tools |
 | [`skill-cleaner`](./skills/skills-management/skill-cleaner/SKILL.md) | `skills-management/skill-cleaner` | Audit skills: loaded roots, duplicate skills, unused skills, prompt-budget costs, compact descriptions. |
 | [`skill-creator`](./skills/skills-management/skill-creator/SKILL.md) | `skills-management/skill-creator` | Create, modify, benchmark skills — from scratch, existing docs, or URLs |
-| [`suggest-awesome-github-copilot-agents`](./skills/skills-management/suggest-awesome-github-copilot-agents/SKILL.md) | `skills-management/suggest-awesome-github-copilot-agents` | Suggest Copilot custom agents from awesome-copilot — context-aware |
-| [`suggest-awesome-github-copilot-instructions`](./skills/skills-management/suggest-awesome-github-copilot-instructions/SKILL.md) | `skills-management/suggest-awesome-github-copilot-instructions` | Suggest Copilot instruction files from awesome-copilot — context-aware |
-| [`suggest-awesome-github-copilot-skills`](./skills/skills-management/suggest-awesome-github-copilot-skills/SKILL.md) | `skills-management/suggest-awesome-github-copilot-skills` | Suggest relevant GitHub Copilot skills from the awesome-copilot repository based on current repository context and chat history, avoiding duplicates with existing skills in this repository, and identifying outdated skills that need updates |
-| [`vardoger-analyze`](./skills/skills-management/vardoger-analyze/SKILL.md) | `skills-management/vardoger-analyze` | Reads the local session directory at `~/.copilot/session-state/`, extracts recurring preferences and conventions, and writes a fenced personalization block into `~/.copilot/copilot-instructions.md`. Runs entirely on the user's machine via the local `vardoger` CLI (`pipx install vardoger`); no network calls and no uploads. Triggers: 'personalize my copilot', 'analyze my copilot history', 'tailor copilot to me', 'run vardoger', 'update my copilot instructions from history', 'make copilot learn my style' |
 | [`writing-skills`](./skills/skills-management/writing-skills/SKILL.md) | `skills-management/writing-skills` | Use when creating new skills, editing existing skills, or verifying skills work before deployment |
 
 ## streamlit

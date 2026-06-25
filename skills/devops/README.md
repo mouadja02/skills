@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 36 skills.
+**Total:** 37 skills.
 
 ## Skills In This Category
 
@@ -24,6 +24,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`dependency-auditor`](dependency-auditor/SKILL.md) | `devops/dependency-auditor` | Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems |
 | [`devops-rollout-plan`](devops-rollout-plan/SKILL.md) | `devops/devops-rollout-plan` | Generate comprehensive rollout plans with preflight checks, step-by-step deployment, verification signals, rollback procedures, and communication plans for infrastructure and application changes |
 | [`docker-development`](docker-development/SKILL.md) | `devops/docker-development` | Docker/containers — Dockerfile optimization, compose, multi-stage builds, security scanning |
+| [`docker-management`](docker-management/SKILL.md) | `devops/docker-management` | Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization. |
 | [`domain-dns-ops`](domain-dns-ops/SKILL.md) | `devops/domain-dns-ops` | DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification. |
 | [`fedora-linux-triage`](fedora-linux-triage/SKILL.md) | `devops/fedora-linux-triage` | Triage and resolve Fedora issues with dnf, systemd, and SELinux-aware guidance. |
 | [`helm-chart-builder`](helm-chart-builder/SKILL.md) | `devops/helm-chart-builder` | Helm charts — scaffolding, values design, subcharts, lifecycle hooks, chart testing |

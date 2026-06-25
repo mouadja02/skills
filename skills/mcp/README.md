@@ -6,13 +6,14 @@
 
 Model Context Protocol server generation, tooling, deployment, and security.
 
-**Total:** 13 skills.
+**Total:** 14 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`dotnet-mcp-builder`](dotnet-mcp-builder/SKILL.md) | `mcp/dotnet-mcp-builder` | MCP servers in C#/.NET — tools, prompts, resources, STDIO/HTTP transports, MCP Apps, OAuth, routing |
+| [`fastmcp`](fastmcp/SKILL.md) | `mcp/fastmcp` | Build, test, inspect, install, and deploy MCP servers with FastMCP in Python. Use when creating a new MCP server, wrapping an API or database as MCP tools, exposing resources or prompts, or preparing a FastMCP server for Claude Code, Cur... |
 | [`go-mcp-server-generator`](go-mcp-server-generator/SKILL.md) | `mcp/go-mcp-server-generator` | Generate a complete Go MCP server project with proper structure, dependencies, and implementation using the official github.com/modelcontextprotocol/go-sdk |
 | [`java-mcp-server-generator`](java-mcp-server-generator/SKILL.md) | `mcp/java-mcp-server-generator` | Generate a complete Model Context Protocol server project in Java using the official MCP Java SDK with reactive streams and optional Spring Boot integration |
 | [`kotlin-mcp-server-generator`](kotlin-mcp-server-generator/SKILL.md) | `mcp/kotlin-mcp-server-generator` | Generate a complete Kotlin MCP server project with proper structure, dependencies, and implementation using the official io.modelcontextprotocol:kotlin-sdk library |

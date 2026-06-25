@@ -6,13 +6,14 @@
 
 Personal productivity, reminders, communication, notes, and connected tools.
 
-**Total:** 9 skills.
+**Total:** 10 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`beeper`](beeper/SKILL.md) | `personal-productivity/beeper` | Beeper local cache: contact hints, room lookup, WhatsApp/iMessage traces, FTS search. |
+| [`memento-flashcards`](memento-flashcards/SKILL.md) | `personal-productivity/memento-flashcards` | Spaced-repetition flashcard system. Create cards from facts or text, chat with flashcards using free-text answers graded by the agent, generate quizzes from YouTube transcripts, review due cards with adaptive scheduling, and export/impor... |
 | [`notcrawl`](notcrawl/SKILL.md) | `personal-productivity/notcrawl` | Notion archive: desktop/API sync, Markdown export, page search, read-only SQL. |
 | [`obsidian`](obsidian/SKILL.md) | `personal-productivity/obsidian` | Obsidian vault: search/read/write notes, backlinks, Bases, Canvas. |
 | [`one-password`](one-password/SKILL.md) | `personal-productivity/one-password` | 1Password CLI (op): service-account first, targeted secret read/store/inject, tmux session. |

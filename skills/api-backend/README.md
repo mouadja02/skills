@@ -6,7 +6,7 @@
 
 API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.
 
-**Total:** 11 skills.
+**Total:** 12 skills.
 
 ## Skills In This Category
 
@@ -18,6 +18,7 @@ API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations
 | [`openapi-to-application-code`](openapi-to-application-code/SKILL.md) | `api-backend/openapi-to-application-code` | Generate a complete, production-ready application from an OpenAPI specification |
 | [`python-fastapi-llm`](python-fastapi-llm/SKILL.md) | `api-backend/python-fastapi-llm` | Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill |
 | [`python-pypi-package-builder`](python-pypi-package-builder/SKILL.md) | `api-backend/python-pypi-package-builder` | Build, test, lint, version, publish Python library to PyPI — all build tool flavors |
+| [`rest-graphql-debug`](rest-graphql-debug/SKILL.md) | `api-backend/rest-graphql-debug` | Debug REST/GraphQL APIs: status codes, auth, schemas, repro. |
 | [`stripe-integration-expert`](stripe-integration-expert/SKILL.md) | `api-backend/stripe-integration-expert` | Implement production-grade Stripe integrations |
 | [`transloadit-media-processing`](transloadit-media-processing/SKILL.md) | `api-backend/transloadit-media-processing` | Process media files (video, audio, images, documents) using Transloadit |
 | [`typespec-api-operations`](typespec-api-operations/SKILL.md) | `api-backend/typespec-api-operations` | Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing, parameters, and adaptive cards |

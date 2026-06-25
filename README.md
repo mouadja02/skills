@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **723 Agent Skills** across **31 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **725 Agent Skills** across **35 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -54,33 +54,37 @@ This table is generated from `docs/manifest.json`.
 | --- | ---: | --- |
 | [`agent-design`](./skills/agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./skills/agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
-| [`api-backend`](./skills/api-backend/) | 11 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
+| [`api-backend`](./skills/api-backend/) | 12 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./skills/business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
 | [`code-quality`](./skills/code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./skills/coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
+| [`communication`](./skills/communication/) | 1 | Decision frameworks, stakeholder communication, proposals, and concise trade-off analysis. |
 | [`context-engineering`](./skills/context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |
+| [`creative`](./skills/creative/) | 2 | Creative ideation, concept visualization, generative methods, and reusable design prompts. |
 | [`databases`](./skills/databases/) | 22 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
-| [`design-and-ui`](./skills/design-and-ui/) | 35 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
-| [`dev-workflow`](./skills/dev-workflow/) | 30 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
-| [`devops`](./skills/devops/) | 36 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
+| [`design-and-ui`](./skills/design-and-ui/) | 34 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
+| [`dev-workflow`](./skills/dev-workflow/) | 29 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
+| [`devops`](./skills/devops/) | 37 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
 | [`diagrams-slides`](./skills/diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./skills/documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
 | [`dotnet`](./skills/dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
 | [`engineering-craft`](./skills/engineering-craft/) | 37 | Senior engineering practices, planning, mentoring, verification, and cross-cutting craft. |
+| [`finance`](./skills/finance/) | 7 | Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows. |
 | [`go-to-market`](./skills/go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./skills/java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
 | [`llm-tooling`](./skills/llm-tooling/) | 46 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./skills/marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
-| [`mcp`](./skills/mcp/) | 13 | Model Context Protocol server generation, tooling, deployment, and security. |
+| [`mcp`](./skills/mcp/) | 14 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./skills/messaging/) | 1 | Messaging integrations and relay workflows. |
 | [`microsoft-agents`](./skills/microsoft-agents/) | 11 | Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling. |
 | [`microsoft-data`](./skills/microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture. |
-| [`personal-productivity`](./skills/personal-productivity/) | 9 | Personal productivity, reminders, communication, notes, and connected tools. |
+| [`personal-productivity`](./skills/personal-productivity/) | 10 | Personal productivity, reminders, communication, notes, and connected tools. |
 | [`product-management`](./skills/product-management/) | 29 | Product discovery, specifications, delivery planning, analytics, and agile workflows. |
 | [`prompting`](./skills/prompting/) | 15 | Prompt engineering, optimization, safety review, and creative-thinking frameworks. |
 | [`react-frontend`](./skills/react-frontend/) | 17 | React, Vue, Next.js, mobile frontend frameworks, migrations, and testing. |
-| [`skills-management`](./skills/skills-management/) | 24 | Skill authoring, discovery, cleanup, Copilot configuration, and terse interaction modes. |
+| [`research`](./skills/research/) | 1 | Research workflows, public-record investigation, source collection, and evidence synthesis. |
+| [`skills-management`](./skills/skills-management/) | 13 | Skill authoring, discovery, cleanup, Copilot configuration, and terse interaction modes. |
 | [`streamlit`](./skills/streamlit/) | 18 | Streamlit applications, dashboards, chat UIs, components, layouts, and performance. |
 | [`testing`](./skills/testing/) | 12 | Testing, QA, Playwright, pytest, debugging, and evaluation strategy. |
 <!-- generated:category-catalog:end -->
@@ -141,4 +145,5 @@ docs/                               Pages site and machine-readable manifests
 ## License
 
 Skills come from a mix of original work and adapted public sources. Check individual skill folders for
-license files and attribution before redistributing a selected package.
+license files and attribution before redistributing a selected package. See
+[`docs/third-party-sources.md`](./docs/third-party-sources.md) for repo-level imported source notes.
