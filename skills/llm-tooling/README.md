@@ -6,7 +6,7 @@
 
 LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM.
 
-**Total:** 46 skills.
+**Total:** 47 skills.
 
 ## Skills In This Category
 
@@ -57,6 +57,7 @@ LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Ariz
 | [`qdrant-search-quality-diagnosis`](qdrant-search-quality/diagnosis/SKILL.md) | `llm-tooling/qdrant-search-quality/diagnosis` | Diagnoses Qdrant search quality issues |
 | [`qdrant-search-strategies`](qdrant-search-quality/search-strategies/SKILL.md) | `llm-tooling/qdrant-search-quality/search-strategies` | Guides Qdrant search strategy selection |
 | [`qdrant-version-upgrade`](qdrant-version-upgrade/SKILL.md) | `llm-tooling/qdrant-version-upgrade` | Guidance on how to upgrade your Qdrant version without interrupting the availability of your application and ensuring data integrity |
+| [`structured-output-schema-portability`](structured-output-schema-portability/SKILL.md) | `llm-tooling/structured-output-schema-portability` | Use when an LLM JSON Schema works with one structured-output provider but is rejected, weakened, or ignored by another — inventory constraints, preflight provider subsets, preserve semantics, and verify with fixtures before live calls. |
 | [`vllm-serving-planner`](vllm-serving-planner/SKILL.md) | `llm-tooling/vllm-serving-planner` | Use when planning, reviewing, or tuning vLLM or OpenAI-compatible LLM serving for throughput, latency, KV-cache pressure, batching, quantization, prefix caching, or multimodal serving. |
 
 [Back to the category index](../README.md)

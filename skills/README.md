@@ -4,7 +4,7 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 725 skills across 35 categories.
+**Total:** 726 skills across 35 categories.
 
 ## Categories
 
@@ -31,7 +31,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`finance`](./finance/) | 7 | Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows. |
 | [`go-to-market`](./go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
-| [`llm-tooling`](./llm-tooling/) | 46 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
+| [`llm-tooling`](./llm-tooling/) | 47 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
 | [`mcp`](./mcp/) | 14 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./messaging/) | 1 | Messaging integrations and relay workflows. |

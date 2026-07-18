@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 725 skills across 35 categories.
+**Total:** 726 skills across 35 categories.
 
 ## Install one skill
 
@@ -43,7 +43,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`finance`](#finance) | 7 |
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
-| [`llm-tooling`](#llm-tooling) | 46 |
+| [`llm-tooling`](#llm-tooling) | 47 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
 | [`mcp`](#mcp) | 14 |
 | [`messaging`](#messaging) | 1 |
@@ -707,6 +707,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`qdrant-search-quality-diagnosis`](./skills/llm-tooling/qdrant-search-quality/diagnosis/SKILL.md) | `llm-tooling/qdrant-search-quality/diagnosis` | Diagnoses Qdrant search quality issues |
 | [`qdrant-search-strategies`](./skills/llm-tooling/qdrant-search-quality/search-strategies/SKILL.md) | `llm-tooling/qdrant-search-quality/search-strategies` | Guides Qdrant search strategy selection |
 | [`qdrant-version-upgrade`](./skills/llm-tooling/qdrant-version-upgrade/SKILL.md) | `llm-tooling/qdrant-version-upgrade` | Guidance on how to upgrade your Qdrant version without interrupting the availability of your application and ensuring data integrity |
+| [`structured-output-schema-portability`](./skills/llm-tooling/structured-output-schema-portability/SKILL.md) | `llm-tooling/structured-output-schema-portability` | Use when an LLM JSON Schema works with one structured-output provider but is rejected, weakened, or ignored by another — inventory constraints, preflight provider subsets, preserve semantics, and verify with fixtures before live calls. |
 | [`vllm-serving-planner`](./skills/llm-tooling/vllm-serving-planner/SKILL.md) | `llm-tooling/vllm-serving-planner` | Use when planning, reviewing, or tuning vLLM or OpenAI-compatible LLM serving for throughput, latency, KV-cache pressure, batching, quantization, prefix caching, or multimodal serving. |
 
 ## marketing-and-growth
