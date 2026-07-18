@@ -31,3 +31,13 @@ License: MIT.
 Copyright (c) 2025 Nous Research.
 
 Some imported skills retain additional upstream attribution in their own content, including Anthropic financial-services references where present in the Hermes source.
+
+## GitHub Awesome Copilot
+
+Source repository: https://github.com/github/awesome-copilot
+
+| Local install path | Upstream path |
+| --- | --- |
+| `dev-workflow/github-release` | `skills/github-release` |
+
+License: MIT.

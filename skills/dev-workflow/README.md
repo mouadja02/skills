@@ -30,7 +30,7 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`github-cache-hygiene`](github-cache-hygiene/SKILL.md) | `dev-workflow/github-cache-hygiene` | GitHub quota/cache hygiene: answer reads from cache first, spend live API calls only for freshness or writes. |
 | [`github-issues`](github-issues/SKILL.md) | `dev-workflow/github-issues` | GitHub issues via MCP — bug reports, features, milestones, labels, bulk operations |
 | [`github-project-triage`](github-project-triage/SKILL.md) | `dev-workflow/github-project-triage` | GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode. |
-| [`github-release`](github-release/SKILL.md) | `dev-workflow/github-release` | Guides IA through releasing a new version of a GitHub library end-to-end. Handles SemVer versioning and Keep a Changelog formatting automatically. |
+| [`github-release`](github-release/SKILL.md) | `dev-workflow/github-release` | Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates. |
 | [`make-repo-contribution`](make-repo-contribution/SKILL.md) | `dev-workflow/make-repo-contribution` | Repo contribution — read guidance, file issue, branch, commit, PR workflow |
 | [`msstore-cli`](msstore-cli/SKILL.md) | `dev-workflow/msstore-cli` | Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store |
 | [`my-issues`](my-issues/SKILL.md) | `dev-workflow/my-issues` | List my issues in the current repository |
