@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-18T18:15:36.448Z",
+  "generated_at": "2026-07-18T18:24:59.506Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 726,
@@ -2645,7 +2645,7 @@
       "install_path": "dev-workflow/github-release",
       "path": "skills/dev-workflow/github-release",
       "depth": 2,
-      "description": "Guides IA through releasing a new version of a GitHub library end-to-end. Handles SemVer versioning and Keep a Changelog formatting automatically."
+      "description": "Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates."
     },
     {
       "name": "make-repo-contribution",

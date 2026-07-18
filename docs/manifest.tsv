@@ -319,7 +319,7 @@ dev-workflow/github-author-context	dev-workflow	github-author-context	GitHub con
 dev-workflow/github-cache-hygiene	dev-workflow	github-cache-hygiene	GitHub quota/cache hygiene: answer reads from cache first, spend live API calls only for freshness or writes.
 dev-workflow/github-issues	dev-workflow	github-issues	GitHub issues via MCP — bug reports, features, milestones, labels, bulk operations
 dev-workflow/github-project-triage	dev-workflow	github-project-triage	GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode.
-dev-workflow/github-release	dev-workflow	github-release	Guides IA through releasing a new version of a GitHub library end-to-end. Handles SemVer versioning and Keep a Changelog formatting automatically.
+dev-workflow/github-release	dev-workflow	github-release	Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates.
 dev-workflow/make-repo-contribution	dev-workflow	make-repo-contribution	Repo contribution — read guidance, file issue, branch, commit, PR workflow
 dev-workflow/msstore-cli	dev-workflow	msstore-cli	Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store
 dev-workflow/my-issues	dev-workflow	my-issues	List my issues in the current repository
