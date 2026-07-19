@@ -73,16 +73,25 @@ Code**, **Cursor**, and any other client that walks a directory tree of
 
 Just edit the file. Regenerate and commit the manifests, root indexes, and
 category READMEs with `npm run build:manifest`. Pull-request CI verifies those
-generated files are current and validates every ZIP before merge. Deployment
-builds the downloadable archives from a clean checkout after merge.
+generated files are current and validates every ZIP before merge. ZIP member
+timestamps are normalized for reproducible hashes, credential/cache residue is
+excluded fail-closed, and summary download paths are audited. Deployment builds
+the downloadable archives from a clean checkout and publishes complete
+content-addressed S3 releases before advancing the short-cache release pointer.
 
 ## Local preview
 
 ```bash
 npm install        # one time
+git add -- skills/<reviewed-path>  # stage only intentional new skill files
 npm run build      # regenerates docs, audits coverage, builds and checks zips
 npm run preview    # serves docs/ at http://localhost:4173
 ```
+
+ZIP generation uses the Git index as its publication allowlist and fails when
+non-ignored untracked files remain under `skills/`. This prevents local
+credential or editor residue from entering downloadable archives; stage only
+files intended for the pull request.
 
 The preview shows exactly what the public site at
 [mouadja02.github.io/skills](https://mouadja02.github.io/skills) will look

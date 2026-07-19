@@ -30,9 +30,11 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "20"
           cache: "npm"
@@ -78,9 +80,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "20"
           cache: "npm"
@@ -125,15 +129,25 @@ jobs:
           AWS_S3_PREFIX: ${{ secrets.AWS_S3_PREFIX }}
         run: |
           set -euo pipefail
-          base="$PUBLIC_BASE_URL"
-          if [ -z "$base" ] && [ -n "$AWS_S3_BUCKET" ] && [ -n "$AWS_REGION" ]; then
-            prefix="${AWS_S3_PREFIX#/}"
-            prefix="${prefix%/}"
-            base="https://${AWS_S3_BUCKET}.s3.${AWS_REGION}.amazonaws.com"
-            if [ -n "$prefix" ]; then
-              base="${base}/${prefix}"
+          base=""
+          release_id="$GITHUB_SHA"
+          if [ "$HAS_AWS_S3_UPLOAD" = "true" ]; then
+            base="$PUBLIC_BASE_URL"
+            if [ -z "$base" ]; then
+              prefix="${AWS_S3_PREFIX#/}"
+              prefix="${prefix%/}"
+              base="https://${AWS_S3_BUCKET}.s3.${AWS_REGION}.amazonaws.com"
+              if [ -n "$prefix" ]; then
+                base="${base}/${prefix}"
+              fi
             fi
+            case "$base" in *$'\n'*|*$'\r'*) echo "::error::Public ZIP base URL contains a newline"; exit 1;; esac
+            base="${base%/}"
+            base_hash="$(printf '%s' "$base" | sha256sum | cut -c1-12)"
+            release_id="${GITHUB_SHA}-${base_hash}"
+            base="${base}/releases/${release_id}"
           fi
+          echo "RELEASE_ID=$release_id" >> "$GITHUB_ENV"
           echo "SKILLS_PUBLIC_BASE_URL=$base" >> "$GITHUB_ENV"
 
       - name: Build ZIP artifacts into docs/zips/
@@ -147,7 +161,7 @@ jobs:
 
       - name: Configure AWS credentials with OIDC
         if: ${{ env.HAS_AWS_S3_UPLOAD == 'true' }}
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@ff717079ee2060e4bcee96c4779b553acc87447c # v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
@@ -167,24 +181,66 @@ jobs:
             dest="${dest}/${prefix}"
           fi
 
-          # Archive keys are stable and their contents change, so they must be
-          # revalidated rather than cached as immutable for a year.
-          aws s3 sync docs/zips "${dest}/zips" \
-            --delete \
+          # Publish a complete immutable release first. The release key includes
+          # both the source SHA and public-base configuration hash.
+          release_dest="${dest}/releases/${RELEASE_ID}"
+          aws s3 sync docs/zips "${release_dest}/zips" \
             --no-progress \
-            --exclude "_summary.json" \
-            --cache-control "public, max-age=300, must-revalidate"
+            --cache-control "public, max-age=31536000, immutable"
 
+          # One-time migration for legacy stable keys that were previously
+          # marked immutable while their contents changed. Treat only a real
+          # 404/NoSuchKey as absence; authorization/network errors fail closed.
+          marker_key="${prefix:+${prefix}/}.stable-cache-migrated-v2"
+          marker="s3://${AWS_S3_BUCKET}/${marker_key}"
+          head_error="$(mktemp)"
+          migration_needed=false
+          if aws s3api head-object --bucket "$AWS_S3_BUCKET" --key "$marker_key" >/dev/null 2>"$head_error"; then
+            :
+          elif grep -Eq '(^|[^0-9])404([^0-9]|$)|Not Found|NoSuchKey' "$head_error"; then
+            migration_needed=true
+          else
+            cat "$head_error" >&2
+            rm -f "$head_error"
+            exit 1
+          fi
+          rm -f "$head_error"
+
+          if [ "$migration_needed" = "true" ]; then
+            legacy_prefix="${prefix:+${prefix}/}zips/"
+            legacy_count="$(aws s3api list-objects-v2 --bucket "$AWS_S3_BUCKET" --prefix "$legacy_prefix" --max-items 1 --query 'length(Contents)' --output text)"
+            if [ "$legacy_count" != "0" ] && [ "$legacy_count" != "None" ]; then
+              aws s3 cp "${dest}/zips" "${dest}/zips" \
+                --recursive \
+                --no-progress \
+                --metadata-directive REPLACE \
+                --cache-control "public, max-age=300, must-revalidate"
+            fi
+            printf '%s\n' "$GITHUB_SHA" >/tmp/stable-cache-migrated-v2
+            aws s3 cp /tmp/stable-cache-migrated-v2 "$marker" \
+              --no-progress \
+              --content-type "text/plain; charset=utf-8" \
+              --cache-control "no-store"
+          fi
+
+          # Keep the legacy summary current for compatibility, then atomically
+          # advance the release pointer only after every immutable object exists.
           aws s3 cp docs/zips/_summary.json "${dest}/zips/_summary.json" \
             --no-progress \
             --content-type "application/json; charset=utf-8" \
             --cache-control "public, max-age=60, must-revalidate"
 
-      - uses: actions/configure-pages@v5
+          GITHUB_SHA="$GITHUB_SHA" RELEASE_ID="$RELEASE_ID" node -e 'const fs=require("fs"); const sha=process.env.GITHUB_SHA; const release=process.env.RELEASE_ID; fs.writeFileSync("/tmp/latest.json", JSON.stringify({schema_version:1, source_sha:sha, release:`releases/${release}`, summary:`releases/${release}/zips/_summary.json`}, null, 2)+"\n");'
+          aws s3 cp /tmp/latest.json "${dest}/latest.json" \
+            --no-progress \
+            --content-type "application/json; charset=utf-8" \
+            --cache-control "public, max-age=60, must-revalidate"
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: docs
 
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
