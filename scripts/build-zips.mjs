@@ -15,7 +15,7 @@
 // CI installs it; locally run `npm install` first.
 
 import { createHash } from "node:crypto";
-import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
+import { readFile, writeFile, mkdir, rm, readdir, lstat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, join, posix, basename } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -31,6 +31,62 @@ const CATEGORY_DIR = join(ZIPS_DIR, "category");
 const ALL_ZIP_PATH = join(ZIPS_DIR, "all.zip");
 const SUMMARY_PATH = join(ZIPS_DIR, "_summary.json");
 const PUBLIC_BASE_URL = (process.env.SKILLS_PUBLIC_BASE_URL || "").trim();
+
+const EXCLUDED_DIRECTORY_NAMES = new Set([
+  "__pycache__",
+  ".pytest_cache",
+  ".ruff_cache",
+  ".mypy_cache",
+  ".cache",
+  ".tmp",
+  ".git",
+  "node_modules",
+  ".venv",
+  "venv",
+]);
+const EXCLUDED_FILE_NAMES = new Set([".DS_Store", "Thumbs.db", "desktop.ini", ".env"]);
+
+function includeArchiveEntry(entryPath) {
+  const normalized = entryPath.replaceAll("\\", "/");
+  const segments = normalized.split("/").filter(Boolean);
+  if (segments.some((segment) => EXCLUDED_DIRECTORY_NAMES.has(segment))) return false;
+  const name = segments.at(-1) || "";
+  if (EXCLUDED_FILE_NAMES.has(name)) return false;
+  if (/\.(?:py[co]|sw[op]|tmp)$/i.test(name)) return false;
+  if (/^\.env\.(?:local|production|development|test)$/i.test(name)) return false;
+  return true;
+}
+
+async function addLocalFolderSafe(zip, localRoot, zipRoot) {
+  async function walk(localDir, zipDir) {
+    const entries = await readdir(localDir, { withFileTypes: true });
+    entries.sort((a, b) => a.name.localeCompare(b.name));
+    for (const entry of entries) {
+      const localPath = join(localDir, entry.name);
+      const zipPath = posix.join(zipDir, entry.name);
+
+      // Exclude whole local-only trees before traversal. AdmZip's built-in
+      // addLocalFolder filter runs only after recursive discovery, which can
+      // still follow symlinked directories outside the skill tree.
+      if (!includeArchiveEntry(zipPath)) continue;
+
+      const stats = await lstat(localPath);
+      if (stats.isSymbolicLink()) {
+        throw new Error(`Refusing to archive symbolic link: ${localPath}`);
+      }
+      if (stats.isDirectory()) {
+        zip.addFile(`${zipPath}/`, Buffer.alloc(0), "", stats);
+        await walk(localPath, zipPath);
+      } else if (stats.isFile()) {
+        zip.addFile(zipPath, await readFile(localPath), "", stats);
+      } else {
+        throw new Error(`Refusing to archive special file: ${localPath}`);
+      }
+    }
+  }
+
+  await walk(localRoot, zipRoot);
+}
 
 async function zipMetadata(outPath, relativeUrl, extra = {}) {
   const data = await readFile(outPath);
@@ -87,7 +143,7 @@ async function main() {
     const skillName = basename(skill.install_path);
     // Place files under "<skill-name>/..." inside the zip so unzipping yields
     // a single tidy folder ready to drop into ~/.claude/skills/.
-    zip.addLocalFolder(folder, skillName);
+    await addLocalFolderSafe(zip, folder, skillName);
 
     const outPath = join(SKILL_DIR, skill.install_path) + ".zip";
     await mkdir(dirname(outPath), { recursive: true });
@@ -105,7 +161,7 @@ async function main() {
     if (!existsSync(folder)) continue;
 
     const zip = new AdmZip();
-    zip.addLocalFolder(folder, category);
+    await addLocalFolderSafe(zip, folder, category);
 
     const outPath = join(CATEGORY_DIR, category + ".zip");
     zip.writeZip(outPath);
@@ -120,7 +176,7 @@ async function main() {
 
   console.log("Building all-skills ZIP...");
   const allZip = new AdmZip();
-  allZip.addLocalFolder(SKILLS_DIR, "skills");
+  await addLocalFolderSafe(allZip, SKILLS_DIR, "skills");
   allZip.writeZip(ALL_ZIP_PATH);
   summary.all = await zipMetadata(ALL_ZIP_PATH, "zips/all.zip", {
     skill_count: manifest.count,

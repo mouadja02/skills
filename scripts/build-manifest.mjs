@@ -210,9 +210,8 @@ async function main() {
     categories.map((c) => [c, skills.filter((s) => s.category === c).length])
   );
 
-  const manifest = {
+  const manifestCore = {
     version: 1,
-    generated_at: new Date().toISOString(),
     repo: REPO,
     default_branch: DEFAULT_BRANCH,
     count: skills.length,
@@ -220,6 +219,28 @@ async function main() {
     counts_by_category: byCategory,
     skills,
   };
+
+  // Keep unchanged builds byte-for-byte stable. Previously every invocation
+  // replaced generated_at, which made clean validation impossible and caused
+  // the deploy workflow to push a follow-up commit after every merge.
+  let generatedAt = new Date().toISOString();
+  if (existsSync(MANIFEST_PATH)) {
+    try {
+      const previous = JSON.parse(await readFile(MANIFEST_PATH, "utf8"));
+      const { generated_at: previousGeneratedAt, ...previousCore } = previous;
+      if (
+        typeof previousGeneratedAt === "string" &&
+        JSON.stringify(previousCore) === JSON.stringify(manifestCore)
+      ) {
+        generatedAt = previousGeneratedAt;
+      }
+    } catch {
+      // A malformed prior manifest must not block regeneration from source.
+    }
+  }
+
+  const { version, ...manifestRest } = manifestCore;
+  const manifest = { version, generated_at: generatedAt, ...manifestRest };
 
   await mkdir(DOCS_DIR, { recursive: true });
 
