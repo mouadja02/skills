@@ -210,7 +210,7 @@ jobs:
 
           if [ "$migration_needed" = "true" ]; then
             legacy_prefix="${prefix:+${prefix}/}zips/"
-            legacy_count="$(aws s3api list-objects-v2 --bucket "$AWS_S3_BUCKET" --prefix "$legacy_prefix" --max-items 1 --query 'length(Contents)' --output text)"
+            legacy_count="$(aws s3api list-objects-v2 --bucket "$AWS_S3_BUCKET" --prefix "$legacy_prefix" --max-keys 1 --query 'KeyCount' --output text)"
             if [ "$legacy_count" != "0" ] && [ "$legacy_count" != "None" ]; then
               aws s3 cp "${dest}/zips" "${dest}/zips" \
                 --recursive \
