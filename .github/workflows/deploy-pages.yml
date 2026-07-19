@@ -145,7 +145,7 @@ jobs:
             base="${base%/}"
             base_hash="$(printf '%s' "$base" | sha256sum | cut -c1-12)"
             release_id="${GITHUB_SHA}-${base_hash}"
-            base="${base}/releases/${release_id}"
+            base="${base}/zips/releases/${release_id}"
           fi
           echo "RELEASE_ID=$release_id" >> "$GITHUB_ENV"
           echo "SKILLS_PUBLIC_BASE_URL=$base" >> "$GITHUB_ENV"
@@ -183,7 +183,9 @@ jobs:
 
           # Publish a complete immutable release first. The release key includes
           # both the source SHA and public-base configuration hash.
-          release_dest="${dest}/releases/${RELEASE_ID}"
+          # Keep every write under the pre-existing zips/ IAM scope while
+          # retaining immutable, release-addressed object keys.
+          release_dest="${dest}/zips/releases/${RELEASE_ID}"
           aws s3 sync docs/zips "${release_dest}/zips" \
             --no-progress \
             --cache-control "public, max-age=31536000, immutable"
@@ -191,7 +193,7 @@ jobs:
           # One-time migration for legacy stable keys that were previously
           # marked immutable while their contents changed. Treat only a real
           # 404/NoSuchKey as absence; authorization/network errors fail closed.
-          marker_key="${prefix:+${prefix}/}.stable-cache-migrated-v2"
+          marker_key="${prefix:+${prefix}/}zips/.stable-cache-migrated-v2"
           marker="s3://${AWS_S3_BUCKET}/${marker_key}"
           head_error="$(mktemp)"
           migration_needed=false
@@ -230,8 +232,8 @@ jobs:
             --content-type "application/json; charset=utf-8" \
             --cache-control "public, max-age=60, must-revalidate"
 
-          GITHUB_SHA="$GITHUB_SHA" RELEASE_ID="$RELEASE_ID" node -e 'const fs=require("fs"); const sha=process.env.GITHUB_SHA; const release=process.env.RELEASE_ID; fs.writeFileSync("/tmp/latest.json", JSON.stringify({schema_version:1, source_sha:sha, release:`releases/${release}`, summary:`releases/${release}/zips/_summary.json`}, null, 2)+"\n");'
-          aws s3 cp /tmp/latest.json "${dest}/latest.json" \
+          GITHUB_SHA="$GITHUB_SHA" RELEASE_ID="$RELEASE_ID" node -e 'const fs=require("fs"); const sha=process.env.GITHUB_SHA; const release=process.env.RELEASE_ID; fs.writeFileSync("/tmp/latest.json", JSON.stringify({schema_version:1, source_sha:sha, release:`zips/releases/${release}`, summary:`zips/releases/${release}/zips/_summary.json`}, null, 2)+"\n");'
+          aws s3 cp /tmp/latest.json "${dest}/zips/latest.json" \
             --no-progress \
             --content-type "application/json; charset=utf-8" \
             --cache-control "public, max-age=60, must-revalidate"
