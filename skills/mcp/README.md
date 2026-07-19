@@ -6,7 +6,7 @@
 
 Model Context Protocol server generation, tooling, deployment, and security.
 
-**Total:** 14 skills.
+**Total:** 15 skills.
 
 ## Skills In This Category
 
@@ -20,6 +20,7 @@ Model Context Protocol server generation, tooling, deployment, and security.
 | [`mcp-cli`](mcp-cli/SKILL.md) | `mcp/mcp-cli` | Interface for MCP (Model Context Protocol) servers via CLI |
 | [`mcp-security-audit`](mcp-security-audit/SKILL.md) | `mcp/mcp-security-audit` | Audit MCP (Model Context Protocol) server configurations for security issues. Use this skill when: - Reviewing .mcp.json files for security risks - Checking MCP server args for hardcoded secrets or shell injection patterns - Validating t... |
 | [`mcp-server-builder`](mcp-server-builder/SKILL.md) | `mcp/mcp-server-builder` | Build production-grade MCP (Model Context Protocol) servers from API contracts |
+| [`mcp-streamable-http-conformance`](mcp-streamable-http-conformance/SKILL.md) | `mcp/mcp-streamable-http-conformance` | Use when MCP Streamable HTTP clients, servers, or gateways hang, reject streams, lose SSE framing, or disagree across protocol versions — normalize a redacted transcript, validate a pinned profile offline, and plan non-destructive migrat... |
 | [`php-mcp-server-generator`](php-mcp-server-generator/SKILL.md) | `mcp/php-mcp-server-generator` | Generate a complete PHP Model Context Protocol server project with tools, resources, prompts, and tests using the official PHP SDK |
 | [`python-mcp-server-generator`](python-mcp-server-generator/SKILL.md) | `mcp/python-mcp-server-generator` | Generate a complete MCP server project in Python with tools, resources, and proper configuration |
 | [`ruby-mcp-server-generator`](ruby-mcp-server-generator/SKILL.md) | `mcp/ruby-mcp-server-generator` | Generate a complete Model Context Protocol server project in Ruby using the official MCP Ruby SDK gem. |

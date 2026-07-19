@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 726 skills across 35 categories.
+**Total:** 727 skills across 35 categories.
 
 ## Install one skill
 
@@ -45,7 +45,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`java-kotlin`](#java-kotlin) | 11 |
 | [`llm-tooling`](#llm-tooling) | 47 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
-| [`mcp`](#mcp) | 14 |
+| [`mcp`](#mcp) | 15 |
 | [`messaging`](#messaging) | 1 |
 | [`microsoft-agents`](#microsoft-agents) | 11 |
 | [`microsoft-data`](#microsoft-data) | 17 |
@@ -753,6 +753,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`mcp-cli`](./skills/mcp/mcp-cli/SKILL.md) | `mcp/mcp-cli` | Interface for MCP (Model Context Protocol) servers via CLI |
 | [`mcp-security-audit`](./skills/mcp/mcp-security-audit/SKILL.md) | `mcp/mcp-security-audit` | Audit MCP (Model Context Protocol) server configurations for security issues. Use this skill when: - Reviewing .mcp.json files for security risks - Checking MCP server args for hardcoded secrets or shell injection patterns - Validating that MCP servers use pinned versions (not @latest) - Detecting unpinned dependencies in MCP server configurations - Auditing which MCP servers a project registers and whether they're on an approved list - Checking for environment variable usage vs. hardcoded credentials in MCP configs - Any request like "is my MCP config secure?", "audit my MCP servers", or "check .mcp.json" keywords: [mcp, security, audit, secrets, shell-injection, supply-chain, governance] |
 | [`mcp-server-builder`](./skills/mcp/mcp-server-builder/SKILL.md) | `mcp/mcp-server-builder` | Build production-grade MCP (Model Context Protocol) servers from API contracts |
+| [`mcp-streamable-http-conformance`](./skills/mcp/mcp-streamable-http-conformance/SKILL.md) | `mcp/mcp-streamable-http-conformance` | Use when MCP Streamable HTTP clients, servers, or gateways hang, reject streams, lose SSE framing, or disagree across protocol versions — normalize a redacted transcript, validate a pinned profile offline, and plan non-destructive migration or recovery. |
 | [`php-mcp-server-generator`](./skills/mcp/php-mcp-server-generator/SKILL.md) | `mcp/php-mcp-server-generator` | Generate a complete PHP Model Context Protocol server project with tools, resources, prompts, and tests using the official PHP SDK |
 | [`python-mcp-server-generator`](./skills/mcp/python-mcp-server-generator/SKILL.md) | `mcp/python-mcp-server-generator` | Generate a complete MCP server project in Python with tools, resources, and proper configuration |
 | [`ruby-mcp-server-generator`](./skills/mcp/ruby-mcp-server-generator/SKILL.md) | `mcp/ruby-mcp-server-generator` | Generate a complete Model Context Protocol server project in Ruby using the official MCP Ruby SDK gem. |
