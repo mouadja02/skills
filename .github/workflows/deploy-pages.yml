@@ -1,12 +1,22 @@
 name: Build & Deploy
 
-# Builds the manifest, commits it back to main if changed, generates per-skill
-# and per-category ZIP archives, injects the AI chat config, deploys docs/ to
-# GitHub Pages, and optionally uploads ZIPs to S3.
-# ZIPs are NOT committed to main; they live only in the Pages/S3 artifacts,
-# keeping the main branch lean.
+# Pull requests run a read-only validation gate. Pushes to main and manual runs
+# repeat the gate from a clean checkout, build downloadable archives, and deploy
+# docs/ to GitHub Pages (plus optional S3 upload).
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "docs/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - "README.md"
+      - "SKILLS.md"
+      - "CONTRIBUTING.md"
+      - ".github/workflows/deploy-pages.yml"
   push:
     branches: [main]
     paths:
@@ -16,31 +26,21 @@ on:
       - "package.json"
       - "package-lock.json"
       - "README.md"
+      - "SKILLS.md"
       - "CONTRIBUTING.md"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write   # needed to commit regenerated manifest back to main
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: read
 
 jobs:
-  build-and-deploy:
+  validate:
+    name: Validate repository
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    env:
-      HAS_AWS_S3_UPLOAD: ${{ secrets.AWS_S3_BUCKET != '' && secrets.AWS_REGION != '' && secrets.AWS_ROLE_TO_ASSUME != '' }}
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true   # required for the manifest commit-back step
 
       - uses: actions/setup-node@v4
         with:
@@ -49,56 +49,90 @@ jobs:
 
       - run: npm ci
 
-      # ── 1. Build manifest ────────────────────────────────────────────────
       - name: Generate manifests and documentation indexes
-        run: node scripts/build-manifest.mjs
+        run: npm run build:manifest
 
       - name: Audit generated documentation
-        run: node scripts/check-docs.mjs
+        run: npm run check:docs
 
-      - name: Commit generated documentation if changed
+      - name: Require generated documentation to be committed
+        shell: bash
         run: |
-          set -e
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          set -euo pipefail
           generated_paths=(README.md SKILLS.md docs/manifest.json docs/manifest.tsv skills/README.md skills/*/README.md)
-          if git diff --quiet -- "${generated_paths[@]}"; then
-            echo "Generated documentation unchanged — skipping commit."
-          else
-            git add -- "${generated_paths[@]}"
-            git commit -m "chore(docs): regenerate skill indexes [skip ci]"
-            git push
+          if ! git diff --exit-code -- "${generated_paths[@]}"; then
+            echo "::error::Generated documentation is stale. Run npm run build:manifest and commit the results."
+            exit 1
           fi
 
-      # ── 2. Inject AI chat config ─────────────────────────────────────────
-      # The NVIDIA API key is NOT injected here — it lives in the Cloudflare
-      # Worker secret store. Only the public Worker URL is written to the browser.
+      - name: Build ZIP artifacts
+        run: npm run build:zips
+
+      - name: Audit ZIP artifacts
+        run: npm run check:zips
+
+  build-and-deploy:
+    name: Build and deploy Pages
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    env:
+      HAS_AWS_S3_UPLOAD: ${{ secrets.AWS_S3_BUCKET != '' && secrets.AWS_REGION != '' && secrets.AWS_ROLE_TO_ASSUME != '' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Generate manifests and documentation indexes
+        run: npm run build:manifest
+
+      - name: Audit generated documentation
+        run: npm run check:docs
+
+      - name: Require generated documentation to be committed
+        shell: bash
+        run: |
+          set -euo pipefail
+          generated_paths=(README.md SKILLS.md docs/manifest.json docs/manifest.tsv skills/README.md skills/*/README.md)
+          if ! git diff --exit-code -- "${generated_paths[@]}"; then
+            echo "::error::Generated documentation is stale. Run npm run build:manifest and commit the results."
+            exit 1
+          fi
+
       - name: Inject AI chat configuration
         env:
           PROXY_URL: ${{ secrets.PROXY_URL }}
         run: |
           set -euo pipefail
           PROXY="${PROXY_URL:-}"
-          cat > docs/chat-config.js <<EOJS
-          /* Auto-generated by CI — do not commit */
-          window.CHAT_CFG = {
-            proxyUrl: "${PROXY}"
-          };
-          EOJS
+          node -e 'const fs=require("fs"); const proxy=process.env.PROXY_URL || ""; fs.writeFileSync("docs/chat-config.js", `/* Auto-generated by CI — do not commit */\nwindow.CHAT_CFG = ${JSON.stringify({proxyUrl: proxy}, null, 2)};\n`);'
           if [ -n "$PROXY" ]; then
-            echo "chat-config.js written (proxyUrl: ${PROXY})"
+            echo "chat-config.js written with a configured proxy URL."
           else
             echo "WARNING: PROXY_URL secret is not set — chat will show a config error."
           fi
 
-      # ── 3. Build ZIP artifacts ───────────────────────────────────────────
       - name: Resolve public ZIP base URL
         shell: bash
         env:
           PUBLIC_BASE_URL: ${{ secrets.SKILLS_PUBLIC_BASE_URL }}
-          AWS_S3_BUCKET:   ${{ secrets.AWS_S3_BUCKET }}
-          AWS_REGION:      ${{ secrets.AWS_REGION }}
-          AWS_S3_PREFIX:   ${{ secrets.AWS_S3_PREFIX }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_S3_PREFIX: ${{ secrets.AWS_S3_PREFIX }}
         run: |
           set -euo pipefail
           base="$PUBLIC_BASE_URL"
@@ -113,27 +147,27 @@ jobs:
           echo "SKILLS_PUBLIC_BASE_URL=$base" >> "$GITHUB_ENV"
 
       - name: Build ZIP artifacts into docs/zips/
-        run: node scripts/build-zips.mjs
+        run: npm run build:zips
+
+      - name: Audit ZIP artifacts
+        run: npm run check:zips
 
       - name: Report artifact size
-        run: |
-          du -sh docs/zips || true
-          ls -la docs/zips || true
+        run: du -sh docs/zips || true
 
-      # ── 4. Upload ZIPs to S3 (optional) ─────────────────────────────────
       - name: Configure AWS credentials with OIDC
         if: ${{ env.HAS_AWS_S3_UPLOAD == 'true' }}
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region:     ${{ secrets.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Upload ZIP artifacts to S3
         if: ${{ env.HAS_AWS_S3_UPLOAD == 'true' }}
         shell: bash
         env:
-          AWS_S3_BUCKET:  ${{ secrets.AWS_S3_BUCKET }}
-          AWS_S3_PREFIX:  ${{ secrets.AWS_S3_PREFIX }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_S3_PREFIX: ${{ secrets.AWS_S3_PREFIX }}
         run: |
           set -euo pipefail
           prefix="${AWS_S3_PREFIX#/}"
@@ -143,18 +177,19 @@ jobs:
             dest="${dest}/${prefix}"
           fi
 
+          # Archive keys are stable and their contents change, so they must be
+          # revalidated rather than cached as immutable for a year.
           aws s3 sync docs/zips "${dest}/zips" \
             --delete \
             --no-progress \
             --exclude "_summary.json" \
-            --cache-control "public, max-age=31536000, immutable"
+            --cache-control "public, max-age=300, must-revalidate"
 
           aws s3 cp docs/zips/_summary.json "${dest}/zips/_summary.json" \
             --no-progress \
             --content-type "application/json; charset=utf-8" \
             --cache-control "public, max-age=60, must-revalidate"
 
-      # ── 5. Deploy to GitHub Pages ────────────────────────────────────────
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
