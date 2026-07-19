@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-07-18T18:31:30.310Z",
+  "generated_at": "2026-07-19T10:52:30.739Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 726,
+  "count": 727,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -65,7 +65,7 @@
     "java-kotlin": 11,
     "llm-tooling": 47,
     "marketing-and-growth": 26,
-    "mcp": 14,
+    "mcp": 15,
     "messaging": 1,
     "microsoft-agents": 11,
     "microsoft-data": 17,
@@ -4686,6 +4686,14 @@
       "path": "skills/mcp/mcp-server-builder",
       "depth": 2,
       "description": "Build production-grade MCP (Model Context Protocol) servers from API contracts"
+    },
+    {
+      "name": "mcp-streamable-http-conformance",
+      "category": "mcp",
+      "install_path": "mcp/mcp-streamable-http-conformance",
+      "path": "skills/mcp/mcp-streamable-http-conformance",
+      "depth": 2,
+      "description": "Use when MCP Streamable HTTP clients, servers, or gateways hang, reject streams, lose SSE framing, or disagree across protocol versions — normalize a redacted transcript, validate a pinned profile offline, and plan non-destructive migration or recovery."
     },
     {
       "name": "php-mcp-server-generator",

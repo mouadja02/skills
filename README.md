@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **726 Agent Skills** across **35 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **727 Agent Skills** across **35 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -75,7 +75,7 @@ This table is generated from `docs/manifest.json`.
 | [`java-kotlin`](./skills/java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
 | [`llm-tooling`](./skills/llm-tooling/) | 47 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./skills/marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
-| [`mcp`](./skills/mcp/) | 14 | Model Context Protocol server generation, tooling, deployment, and security. |
+| [`mcp`](./skills/mcp/) | 15 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./skills/messaging/) | 1 | Messaging integrations and relay workflows. |
 | [`microsoft-agents`](./skills/microsoft-agents/) | 11 | Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling. |
 | [`microsoft-data`](./skills/microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture. |
