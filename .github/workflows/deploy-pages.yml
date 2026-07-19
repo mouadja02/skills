@@ -7,16 +7,6 @@ name: Build & Deploy
 on:
   pull_request:
     branches: [main]
-    paths:
-      - "skills/**"
-      - "docs/**"
-      - "scripts/**"
-      - "package.json"
-      - "package-lock.json"
-      - "README.md"
-      - "SKILLS.md"
-      - "CONTRIBUTING.md"
-      - ".github/workflows/deploy-pages.yml"
   push:
     branches: [main]
     paths:
