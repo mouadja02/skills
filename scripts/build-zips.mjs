@@ -15,11 +15,16 @@
 // CI installs it; locally run `npm install` first.
 
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { readFile, writeFile, mkdir, rm, readdir, lstat } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { dirname, join, posix, basename } from "node:path";
+import { dirname, join, posix, basename, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import AdmZip from "adm-zip";
+
+// AdmZip serializes DOS timestamp fields in the process timezone. Pinning TZ
+// makes identical source produce identical bytes on every host.
+process.env.TZ = "UTC";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -31,6 +36,7 @@ const CATEGORY_DIR = join(ZIPS_DIR, "category");
 const ALL_ZIP_PATH = join(ZIPS_DIR, "all.zip");
 const SUMMARY_PATH = join(ZIPS_DIR, "_summary.json");
 const PUBLIC_BASE_URL = (process.env.SKILLS_PUBLIC_BASE_URL || "").trim();
+const FIXED_ZIP_TIME = new Date("1980-01-01T00:00:00.000Z");
 
 const EXCLUDED_DIRECTORY_NAMES = new Set([
   "__pycache__",
@@ -40,21 +46,82 @@ const EXCLUDED_DIRECTORY_NAMES = new Set([
   ".cache",
   ".tmp",
   ".git",
+  ".idea",
+  ".direnv",
+  ".aws",
+  ".ssh",
+  ".gnupg",
+  ".kube",
+  ".tox",
+  ".nox",
   "node_modules",
   ".venv",
   "venv",
 ]);
-const EXCLUDED_FILE_NAMES = new Set([".DS_Store", "Thumbs.db", "desktop.ini", ".env"]);
+const EXCLUDED_FILE_NAMES = new Set([
+  ".DS_Store",
+  "Thumbs.db",
+  "desktop.ini",
+  ".env",
+  ".envrc",
+  ".coverage",
+  ".npmrc",
+  ".pypirc",
+  ".netrc",
+  ".git-credentials",
+  ".authinfo",
+  "credentials.json",
+  "service-account.json",
+  "application_default_credentials.json",
+  "secrets.json",
+  "id_rsa",
+  "id_ed25519",
+]);
+const SAFE_ENV_TEMPLATES = new Set([".env.example", ".env.sample", ".env.template"]);
+const SENSITIVE_DATA_FILE = /^(?:token|access-token|refresh-token|password|passwd|secret|credentials?|api-key|apikey|private-key)(?:\.(?:txt|json|ya?ml|ini|conf|cfg))?$/i;
+let TRACKED_FILES = new Set();
+let TRACKED_DIRS = new Set();
+
+function gitPaths(args) {
+  const output = execFileSync("git", args, { cwd: ROOT, encoding: "buffer" });
+  return output.toString("utf8").split("\0").filter(Boolean).map((path) => path.replaceAll("\\", "/"));
+}
+
+function initializeGitAllowlist() {
+  const untracked = gitPaths(["ls-files", "-z", "--others", "--exclude-standard", "--", "skills"]);
+  if (untracked.length) {
+    throw new Error(`Refusing to build with untracked skill files. Stage intended files or remove residue: ${JSON.stringify(untracked.slice(0, 20))}`);
+  }
+  TRACKED_FILES = new Set(gitPaths(["ls-files", "-z", "--cached", "--", "skills"]));
+  TRACKED_DIRS = new Set(["skills"]);
+  for (const file of TRACKED_FILES) {
+    const parts = file.split("/");
+    for (let index = 1; index < parts.length; index++) TRACKED_DIRS.add(parts.slice(0, index).join("/"));
+  }
+}
+
+function repoRelative(path) {
+  return relative(ROOT, path).split(sep).join("/");
+}
 
 function includeArchiveEntry(entryPath) {
   const normalized = entryPath.replaceAll("\\", "/");
   const segments = normalized.split("/").filter(Boolean);
-  if (segments.some((segment) => EXCLUDED_DIRECTORY_NAMES.has(segment))) return false;
+  if (segments.some((segment) => EXCLUDED_DIRECTORY_NAMES.has(segment.toLowerCase()))) return false;
   const name = segments.at(-1) || "";
-  if (EXCLUDED_FILE_NAMES.has(name)) return false;
-  if (/\.(?:py[co]|sw[op]|tmp)$/i.test(name)) return false;
-  if (/^\.env\.(?:local|production|development|test)$/i.test(name)) return false;
+  const lowerName = name.toLowerCase();
+  if (EXCLUDED_FILE_NAMES.has(lowerName)) return false;
+  if (SENSITIVE_DATA_FILE.test(lowerName)) return false;
+  if (/\.(?:py[co]|sw[op]|tmp|log|pem|key|p12|pfx|tfstate)$/i.test(lowerName)) return false;
+  if (lowerName.includes(".tfstate.")) return false;
+  if (lowerName.startsWith(".env.") && !SAFE_ENV_TEMPLATES.has(lowerName)) return false;
   return true;
+}
+
+function normalizeEntryTime(zip, zipPath) {
+  const entry = zip.getEntry(zipPath);
+  if (!entry) throw new Error(`Failed to create ZIP member: ${zipPath}`);
+  entry.header.time = FIXED_ZIP_TIME;
 }
 
 async function addLocalFolderSafe(zip, localRoot, zipRoot) {
@@ -75,10 +142,15 @@ async function addLocalFolderSafe(zip, localRoot, zipRoot) {
         throw new Error(`Refusing to archive symbolic link: ${localPath}`);
       }
       if (stats.isDirectory()) {
-        zip.addFile(`${zipPath}/`, Buffer.alloc(0), "", stats);
+        if (!TRACKED_DIRS.has(repoRelative(localPath))) continue;
+        const directoryPath = `${zipPath}/`;
+        zip.addFile(directoryPath, Buffer.alloc(0), "", stats);
+        normalizeEntryTime(zip, directoryPath);
         await walk(localPath, zipPath);
       } else if (stats.isFile()) {
+        if (!TRACKED_FILES.has(repoRelative(localPath))) continue;
         zip.addFile(zipPath, await readFile(localPath), "", stats);
+        normalizeEntryTime(zip, zipPath);
       } else {
         throw new Error(`Refusing to archive special file: ${localPath}`);
       }
@@ -104,6 +176,7 @@ async function zipMetadata(outPath, relativeUrl, extra = {}) {
 }
 
 async function main() {
+  initializeGitAllowlist();
   if (!existsSync(MANIFEST_PATH)) {
     console.error(
       "ERROR: docs/manifest.json not found. Run `node scripts/build-manifest.mjs` first."
@@ -119,7 +192,7 @@ async function main() {
   await mkdir(CATEGORY_DIR, { recursive: true });
 
   const summary = {
-    generated_at: new Date().toISOString(),
+    generated_at: manifest.generated_at,
     repo: manifest.repo,
     branch: manifest.default_branch,
     public_base_url: PUBLIC_BASE_URL || null,
