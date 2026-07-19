@@ -193,7 +193,7 @@ jobs:
           # One-time migration for legacy stable keys that were previously
           # marked immutable while their contents changed. Treat only a real
           # 404/NoSuchKey as absence; authorization/network errors fail closed.
-          marker_key="${prefix:+${prefix}/}zips/.stable-cache-migrated-v2"
+          marker_key="${prefix:+${prefix}/}zips/.stable-cache-migrated-v3"
           marker="s3://${AWS_S3_BUCKET}/${marker_key}"
           head_error="$(mktemp)"
           migration_needed=false
@@ -215,11 +215,14 @@ jobs:
               aws s3 cp "${dest}/zips" "${dest}/zips" \
                 --recursive \
                 --no-progress \
+                --exclude "releases/*" \
+                --exclude "latest.json" \
+                --exclude ".stable-cache-migrated-*" \
                 --metadata-directive REPLACE \
                 --cache-control "public, max-age=300, must-revalidate"
             fi
-            printf '%s\n' "$GITHUB_SHA" >/tmp/stable-cache-migrated-v2
-            aws s3 cp /tmp/stable-cache-migrated-v2 "$marker" \
+            printf '%s\n' "$GITHUB_SHA" >/tmp/stable-cache-migrated-v3
+            aws s3 cp /tmp/stable-cache-migrated-v3 "$marker" \
               --no-progress \
               --content-type "text/plain; charset=utf-8" \
               --cache-control "no-store"
