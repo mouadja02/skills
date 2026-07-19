@@ -523,9 +523,9 @@ llm-tooling/qdrant-monitoring	llm-tooling	qdrant-monitoring	Guides Qdrant monito
 llm-tooling/qdrant-monitoring/debugging	llm-tooling	qdrant-monitoring-debugging	Diagnoses Qdrant production issues using metrics and observability tools
 llm-tooling/qdrant-monitoring/setup	llm-tooling	qdrant-monitoring-setup	Guides Qdrant monitoring setup including Prometheus scraping, health probes, Hybrid Cloud metrics, alerting, and log centralization
 llm-tooling/qdrant-performance-optimization	llm-tooling	qdrant-performance-optimization	Different techniques to optimize the performance of Qdrant, including indexing strategies, query optimization, and hardware considerations
-llm-tooling/qdrant-performance-optimization/indexing-performance-optimization	llm-tooling	qdrant-indexing-performance-optimization	Diagnoses and fixes slow Qdrant indexing and data ingestion
-llm-tooling/qdrant-performance-optimization/memory-usage-optimization	llm-tooling	qdrant-memory-usage-optimization	Diagnoses and reduces Qdrant memory usage
-llm-tooling/qdrant-performance-optimization/search-speed-optimization	llm-tooling	qdrant-search-speed-optimization	Diagnoses and fixes slow Qdrant search
+llm-tooling/qdrant-performance-optimization/indexing-performance-optimization	llm-tooling	indexing-performance-optimization	Use when diagnosing slow Qdrant ingestion, delayed optimizer completion, long HNSW builds, or payload-index construction.
+llm-tooling/qdrant-performance-optimization/memory-usage-optimization	llm-tooling	memory-usage-optimization	Use when diagnosing Qdrant resident-memory pressure, page-cache confusion, optimization headroom, or RAM-versus-disk placement.
+llm-tooling/qdrant-performance-optimization/search-speed-optimization	llm-tooling	search-speed-optimization	Use when diagnosing slow Qdrant queries, low search throughput, filtered-search regressions, or optimizer interference.
 llm-tooling/qdrant-scaling	llm-tooling	qdrant-scaling	Guides Qdrant scaling decisions
 llm-tooling/qdrant-scaling/minimize-latency	llm-tooling	qdrant-minimize-latency	Guides Qdrant query latency optimization
 llm-tooling/qdrant-scaling/scaling-data-volume	llm-tooling	qdrant-scaling-data-volume	Guides Qdrant data volume scaling decisions
