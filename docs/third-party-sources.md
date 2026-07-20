@@ -32,6 +32,21 @@ Copyright (c) 2025 Nous Research.
 
 Some imported skills retain additional upstream attribution in their own content, including Anthropic financial-services references where present in the Hermes source.
 
+## Qdrant Agent Skills
+
+Source repository: https://github.com/qdrant/skills
+
+Imported from `skills/qdrant-performance-optimization/` on the `main` branch:
+
+| Local install path | Upstream path |
+| --- | --- |
+| `llm-tooling/qdrant-performance-optimization` | `skills/qdrant-performance-optimization` |
+| `llm-tooling/qdrant-performance-optimization/indexing-performance-optimization` | `skills/qdrant-performance-optimization/indexing-performance-optimization` |
+| `llm-tooling/qdrant-performance-optimization/memory-usage-optimization` | `skills/qdrant-performance-optimization/memory-usage-optimization` |
+| `llm-tooling/qdrant-performance-optimization/search-speed-optimization` | `skills/qdrant-performance-optimization/search-speed-optimization` |
+
+License: Apache-2.0.
+
 ## GitHub Awesome Copilot
 
 Source repository: https://github.com/github/awesome-copilot
