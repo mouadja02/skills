@@ -3,11 +3,34 @@ license: Apache-2.0
 source: https://github.com/aws/agent-toolkit-for-aws
 attribution: "Amazon Web Services - agent-toolkit-for-aws (Apache-2.0)"
 name: route53
-description: Configures Amazon Route 53 DNS: public and private records, traffic-steering routing policies, health checks, DNS Firewall, Route 53 Profiles, VPC Resolver (also known as Route 53 Resolver) for hybrid and Outposts networks, and Global Resolver. Applicable when the customer wants to point a hostname at a target, split or fail over traffic across endpoints, monitor an endpoint, block malicious domains, centralize DNS across accounts, or resolve private DNS across a hybrid network. Routes to the right per-task procedure in references. Does not cover CloudFront-specific setup (see the route53-cloudfront skill) or non-DNS networking.
-version: 1
+description: >-
+  Use when configuring or diagnosing Amazon Route 53 records, routing policies, health checks, DNS
+  Firewall, Profiles, or Resolver. Route custom-domain DNS-to-CloudFront work to the linked
+  routing-traffic-with-route53-and-cloudfront skill; exclude non-DNS networking.
+version: "1.0.1"
 ---
 
 # Amazon Route 53
+
+## When to Use
+
+- Create or diagnose public/private records, weighted or failover routing, and health checks.
+- Configure DNS Firewall, Route 53 Profiles, hybrid Resolver endpoints, Outposts, or Global Resolver.
+- Investigate DNS answers, delegation, propagation, policy selection, or resolver behavior.
+- Route CloudFront custom-domain work to
+  [routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md).
+
+Do not use this skill for VPC routing, load balancer configuration, or CloudFront-side certificate and
+distribution changes.
+
+## Prerequisites and Quick Reference
+
+- Confirm the account, hosted-zone ID, exact record name/type, intended TTL, current answers, and
+  rollback value before mutation.
+- Prefer read-only `list-resource-record-sets`, delegation, and resolver checks before a change batch.
+- Use explicit change batches and retain the Route 53 change ID; never expose credentials or Global
+  Resolver access-token values.
+- Read the matching reference in the task table and apply its completion checks.
 
 ## Overview
 
@@ -65,8 +88,33 @@ observability). Fall back to the AWS CLI otherwise. All Route 53 Domains API cal
 ## Cross-service work
 
 Pointing a custom domain at a CloudFront distribution, or failing over between CloudFront
-distributions, is cross-service work owned by the separate `route53-cloudfront` skill. Use this
-skill for the Route 53 side of pure-Route 53 tasks only.
+distributions, is cross-service work owned by the separate
+[routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md)
+skill. Use this skill for the Route 53 side of pure-Route 53 tasks only.
+
+## Verification and Recovery
+
+1. Wait for the submitted change ID to report `INSYNC`; this proves propagation through Route 53's
+   control plane, not that every resolver cache has expired.
+2. Query authoritative name servers and at least one intended resolver. Assert record type, value,
+   TTL, routing-policy identifiers, and health behavior rather than checking only that an answer exists.
+3. Verify an application-level request when DNS is part of a service cutover.
+4. If assertions fail, stop further batches and submit a reviewed inverse change using the captured
+   pre-change values. Respect prior TTLs and negative caching; do not repeatedly edit records while
+   caches are converging.
+
+## Evaluation Prompts
+
+- **Normal:** “Create a weighted Route 53 canary record and show how to verify the policy.”
+- **Difficult edge:** “Diagnose intermittent failover where the change is INSYNC but recursive
+  resolvers still return an old answer.”
+- **Should not activate:** “Configure CloudFront cache behavior and origin access control.”
+
+## Source Boundary
+
+Route 53 service behavior is sourced from AWS documentation and the imported Apache-2.0 upstream.
+The pre-change snapshot, multi-layer assertions, and inverse-change recovery procedure are curator
+recommendations.
 
 ## Security Considerations
 
