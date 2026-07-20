@@ -32,6 +32,7 @@ const CATEGORY_DESCRIPTIONS = {
   "agent-eval": "Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.",
   "api-backend": "API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.",
   "business-strategy": "Executive advisory, board preparation, operating systems, and strategic decision support.",
+  "cloud-aws": "AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability.",
   "cloud-azure": "Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations.",
   "code-quality": "Code review, refactoring, static analysis, security review, and integrity checks.",
   communication: "Decision frameworks, stakeholder communication, proposals, and concise trade-off analysis.",
