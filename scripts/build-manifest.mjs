@@ -70,9 +70,26 @@ async function walk(dir, out = []) {
   const entries = await readdir(dir, { withFileTypes: true });
   for (const entry of entries) {
     const full = join(dir, entry.name);
-    if (entry.isDirectory()) {
+    let isDirectory = entry.isDirectory();
+    let isFile = entry.isFile();
+    // Cloud/virtual filesystems (notably OneDrive Files On-Demand on Windows)
+    // return directory and file placeholders as reparse points, which readdir
+    // reports as symbolic links — so isDirectory()/isFile() are both false.
+    // Resolve the real type with stat so recursion still finds nested SKILL.md.
+    // On a normal filesystem no entry is a symlink here, so this never runs and
+    // the traversal is byte-for-byte identical.
+    if (!isDirectory && !isFile && entry.isSymbolicLink()) {
+      try {
+        const info = await stat(full);
+        isDirectory = info.isDirectory();
+        isFile = info.isFile();
+      } catch {
+        // Broken link or unreadable placeholder: skip it.
+      }
+    }
+    if (isDirectory) {
       await walk(full, out);
-    } else if (entry.isFile() && entry.name === "SKILL.md") {
+    } else if (isFile && entry.name === "SKILL.md") {
       out.push(full);
     }
   }
