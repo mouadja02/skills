@@ -3,22 +3,34 @@ license: Apache-2.0
 source: https://github.com/aws/agent-toolkit-for-aws
 attribution: "Amazon Web Services - agent-toolkit-for-aws (Apache-2.0)"
 name: cloudfront
-description: >
-  Configures Amazon CloudFront content delivery across six workflows: when to use CloudFront and
-  how it fits with AWS WAF, Shield, CloudFront Functions, Lambda@Edge, Route 53, and origins
-  (creating a distribution, caching, and Flat Rate Pricing (FRP) versus pay-as-you-go pricing); managing
-  custom-domain TLS certificates (ACM in us-east-1); configuring multi-tenant distributions;
-  protecting origins with origin access control (OAC), VPC origins, and origin mutual TLS (mTLS);
-  securing content with signed URLs and cookies, geographic restrictions, viewer mutual TLS, and
-  edge token validation; and observing traffic with standard and real-time logs. Applicable when the
-  customer wants to put CloudFront in front of content, choose pricing, lock an origin, restrict who
-  can view content, or analyze logs. Not applicable for the Route 53 DNS side of a CloudFront custom
-  domain or failover between distributions (see the route53-cloudfront skill), or for pure-Route 53
-  DNS work (see the route53 skill).
-version: 1
+description: >-
+  Use when configuring Amazon CloudFront distributions, caching, pricing, certificates, origins,
+  viewer access, multi-tenant delivery, or logs. Route DNS-to-CloudFront work to the linked
+  routing-traffic-with-route53-and-cloudfront skill and pure DNS work to route53.
+version: "1.0.1"
 ---
 
 # Amazon CloudFront
+
+## When to Use
+
+- Design, create, or tune a CloudFront distribution, cache policy, or pricing model.
+- Configure CloudFront certificates, alternate domain names, origins, or origin access controls.
+- Restrict viewer access or investigate standard and real-time CloudFront logs.
+- Route custom-domain DNS changes to
+  [routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md).
+
+Do not use this skill for pure Route 53 DNS administration. Use
+[route53](../route53/SKILL.md). Do not use it for the Route 53 alias-record portion of a CloudFront
+custom domain; use the cross-service skill linked above.
+
+## Prerequisites and Quick Reference
+
+- Confirm the AWS account, region context, distribution ID, origins, hostnames, and change window.
+- Prefer read-only discovery before proposing mutations; never print credentials or certificate keys.
+- CloudFront and its ACM certificate region use `us-east-1`; verify this before certificate work.
+- Read the matching reference in the task table, execute its checks, and retain command output for
+  verification.
 
 ## Overview
 
@@ -64,13 +76,40 @@ where the customer's application runs.
 - **Custom domain certificate vs Route 53 DNS cutover.** Requesting and validating the ACM
   certificate and adding the alternate domain name is the managing-certificates reference here.
   Pointing the domain's DNS at the distribution, including the zone apex alias and any failover, is
-  Route 53 work owned by the separate `route53-cloudfront` skill.
+  Route 53 work owned by the separate
+  [routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md)
+  skill.
 
 ## Cross-service work
 
 Pointing a custom domain's DNS at a CloudFront distribution, or failing over between distributions
-with Route 53 records, is cross-service work owned by the separate `route53-cloudfront` skill. Use
-this skill for the CloudFront-side configuration only.
+with Route 53 records, is cross-service work owned by the separate
+[routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md)
+skill. Use this skill for the CloudFront-side configuration only.
+
+## Verification and Recovery
+
+1. Re-read the distribution and confirm `Status` is `Deployed`, the expected aliases and origins are
+   present, and the last-modified time reflects the intended change.
+2. Probe the public hostname over HTTPS and record status, certificate hostname, cache headers, and
+   an expected object checksum or body assertion. A successful HTTP code alone is insufficient.
+3. Verify the origin is not unintentionally public when origin restriction was in scope.
+4. If verification fails, stop additional changes, preserve the distribution `ETag` and prior config,
+   restore the reviewed prior configuration with an `If-Match` guard, and verify again. Never retry a
+   stale write after an `ETag` conflict.
+
+## Evaluation Prompts
+
+- **Normal:** “Put CloudFront in front of this S3 origin and define objective post-deploy checks.”
+- **Difficult edge:** “Move a custom domain to CloudFront without exposing the origin or changing DNS
+  before the certificate and distribution are ready.”
+- **Should not activate:** “Create a weighted Route 53 record between two non-CloudFront endpoints.”
+
+## Source Boundary
+
+CloudFront service behavior and regional constraints are sourced from the AWS documentation below.
+The read-first workflow, evidence retention, verification assertions, and rollback guard are curator
+recommendations.
 
 ## Additional Resources
 

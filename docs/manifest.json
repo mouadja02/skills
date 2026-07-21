@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-20T15:05:37.050Z",
+  "generated_at": "2026-07-20T18:05:23.717Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 811,
@@ -1735,7 +1735,7 @@
       "install_path": "cloud-aws/networking/cloudfront",
       "path": "skills/cloud-aws/networking/cloudfront",
       "depth": 3,
-      "description": "Configures Amazon CloudFront content delivery across six workflows: when to use CloudFront and how it fits with AWS WAF, Shield, CloudFront Functions, Lambda@Edge, Route 53, and origins (creating a distribution, caching, and Flat Rate Pricing (FRP) versus pay-as-you-go pricing); managing custom-domain TLS certificates (ACM in us-east-1); configuring multi-tenant distributions; protecting origins with origin access control (OAC), VPC origins, and origin mutual TLS (mTLS); securing content with signed URLs and cookies, geographic restrictions, viewer mutual TLS, and edge token validation; and observing traffic with standard and real-time logs. Applicable when the customer wants to put CloudFront in front of content, choose pricing, lock an origin, restrict who can view content, or analyze logs. Not applicable for the Route 53 DNS side of a CloudFront custom domain or failover between distributions (see the route53-cloudfront skill), or for pure-Route 53 DNS work (see the route53 skill)."
+      "description": "Use when configuring Amazon CloudFront distributions, caching, pricing, certificates, origins, viewer access, multi-tenant delivery, or logs. Route DNS-to-CloudFront work to the linked routing-traffic-with-route53-and-cloudfront skill and pure DNS work to route53."
     },
     {
       "name": "configuring-vpc-endpoints-for-private-aws-service-access",
@@ -1791,7 +1791,7 @@
       "install_path": "cloud-aws/networking/route53",
       "path": "skills/cloud-aws/networking/route53",
       "depth": 3,
-      "description": "Configures Amazon Route 53 DNS: public and private records, traffic-steering routing policies, health checks, DNS Firewall, Route 53 Profiles, VPC Resolver (also known as Route 53 Resolver) for hybrid and Outposts networks, and Global Resolver. Applicable when the customer wants to point a hostname at a target, split or fail over traffic across endpoints, monitor an endpoint, block malicious domains, centralize DNS across accounts, or resolve private DNS across a hybrid network. Routes to the right per-task procedure in references. Does not cover CloudFront-specific setup (see the route53-cloudfront skill) or non-DNS networking."
+      "description": "Use when configuring or diagnosing Amazon Route 53 records, routing policies, health checks, DNS Firewall, Profiles, or Resolver. Route custom-domain DNS-to-CloudFront work to the linked routing-traffic-with-route53-and-cloudfront skill; exclude non-DNS networking."
     },
     {
       "name": "routing-traffic-with-route53-and-cloudfront",
@@ -1799,7 +1799,7 @@
       "install_path": "cloud-aws/networking/routing-traffic-with-route53-and-cloudfront",
       "path": "skills/cloud-aws/networking/routing-traffic-with-route53-and-cloudfront",
       "depth": 3,
-      "description": "Configures Amazon Route 53 to route traffic to a CloudFront distribution using a custom domain. Use when setting up DNS alias records, alternate domain names (CNAMEs), ACM certificates for HTTPS, and IPv6 support for CloudFront."
+      "description": "Use when routing a custom domain to Amazon CloudFront with Route 53 alias A/AAAA records, alternate domain names, ACM certificates, and IPv6. Coordinates readiness, DNS cutover, verification, and rollback across both services."
     },
     {
       "name": "shieldadvanced",
