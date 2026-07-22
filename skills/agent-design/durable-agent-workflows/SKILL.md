@@ -1,233 +1,285 @@
-﻿---
+---
 name: "durable-agent-workflows"
-description: "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns"
+description: "Use when designing retryable or crash-resilient agent workflows, especially when tools can send, charge, publish, provision, or otherwise create duplicate side effects."
+version: "2.0.0"
 ---
 
 # Durable Agent Workflows
 
-**Tier:** POWERFUL
-**Category:** AI Agents
-**Domain:** Workflow Orchestration / Agent Infrastructure / Reliability Engineering
-
-## Overview
-
-Production AI agents fail constantly — LLM rate limits, timeouts, network errors, context overflows. This skill covers building agent workflows that are **durable** (survive crashes), **observable** (you can see what's happening), and **recoverable** (resume from any checkpoint). It bridges the gap between prototype agents and production infrastructure.
+Build workflows that can resume without silently repeating externally visible work. Treat orchestration durability and side-effect safety as separate properties: a checkpoint can make a workflow resumable while still allowing an activity or tool to run more than once.
 
 ## When to Use
 
-- Agent pipelines that run for minutes/hours and must not lose state
-- Multi-step LLM workflows that need automatic retry with backoff
-- Human-in-the-loop approval gates in autonomous agent pipelines
-- Agent orchestration that must survive process restarts/deployments
-- Long-running research or analysis agents that checkpoint progress
-- Multi-agent systems that need coordination and state isolation
-- Any agent system going from prototype to production reliability
+- An agent or job is retried after timeouts, worker loss, deploys, or checkpoint recovery.
+- A tool can charge, send, publish, provision, trade, mutate records, or start costly work.
+- A long-running tool may finish after its caller has timed out.
+- A workflow needs human approval, durable waits, or crash recovery.
+- Duplicate dispatches or uncertain remote outcomes must be diagnosed and tested.
 
-## Core Concepts
+## When Not to Use
 
-### The Durability Problem
+- A short, read-only operation where duplicate execution is harmless and inexpensive.
+- A request to retry an unknown production mutation immediately; reconcile it first.
+- A request for exactly-once delivery as a transport guarantee. Design for repeated delivery and idempotent effects instead.
 
-```
-❌ Naive Agent (dies on failure):
-  Step 1 ✓ → Step 2 ✓ → Step 3 ✓ → Step 4 💥 → ALL LOST
+## Prerequisites
 
-✅ Durable Agent (resumes from checkpoint):
-  Step 1 ✓ → Step 2 ✓ → Step 3 ✓ → Step 4 💥
-  [restart] → Step 4 ✓ → Step 5 ✓ → Done ✓
-```
+Before implementation, identify:
 
-### Architecture Patterns
+- the durable runtime or checkpoint store and its retry/timeout behavior;
+- the authoritative database for operation records;
+- provider support for idempotency keys or status lookup;
+- business identifiers that represent one logical intent;
+- retention, audit, and manual-reconciliation owners.
 
-#### Pattern 1: Temporal Workflow (Recommended for Production)
+Never place credentials, authorization headers, payment data, or full sensitive tool arguments in operation keys or logs.
 
-```typescript
-// workflow.ts — deterministic orchestration
-import { proxyActivities, sleep } from '@temporalio/workflow';
-import type * as activities from './activities';
+## Quick Reference
 
-const { callLLM, searchWeb, writeDocument, notifyHuman } = proxyActivities<typeof activities>({
-  startToCloseTimeout: '5 minutes',
-  retry: {
-    maximumAttempts: 3,
-    initialInterval: '2 seconds',
-    backoffCoefficient: 2,
-    maximumInterval: '30 seconds',
-    nonRetryableErrorTypes: ['InvalidPromptError', 'ContentPolicyError'],
-  },
-});
+| Question | Required decision |
+| --- | --- |
+| Can this tool change external state? | Classify the effect before enabling retries. |
+| What identifies one logical operation? | Derive a stable key from business intent, not an attempt or request ID. |
+| Who may execute it? | Acquire a unique atomic claim before the effect. |
+| Could the effect have committed before a timeout? | Record `ambiguous`; reconcile before retrying. |
+| Does the provider accept an idempotency key? | Reuse the same key for every attempt of the same operation. |
+| How is success replayed? | Persist and return a sanitized result reference. |
+| How is safety proved? | Run concurrent-duplicate and crash-boundary fixtures. |
 
-export async function researchAgent(topic: string): Promise<ResearchReport> {
-  // Step 1: Plan research (auto-retried on failure)
-  const plan = await callLLM({
-    prompt: `Create research plan for: ${topic}`,
-    model: 'claude-sonnet-4-20250514',
-  });
+## 1. Separate Orchestration From Effects
 
-  // Step 2: Execute research in parallel
-  const sources = await Promise.all(
-    plan.queries.map(q => searchWeb(q))
-  );
+Keep deterministic control flow in the workflow and nondeterministic work in activities or tools. A durable engine may replay workflow code and may execute an activity more than once around failures. Its retry policy does not prove that a side effect happens once.
 
-  // Step 3: Human approval gate
-  const approved = await notifyHuman({
-    message: `Found ${sources.length} sources. Proceed?`,
-    timeout: '24 hours',
-  });
-  if (!approved) throw new Error('Research rejected by human');
+Model each step with:
 
-  // Step 4: Generate report
-  const report = await callLLM({
-    prompt: `Synthesize report from: ${JSON.stringify(sources)}`,
-    model: 'claude-sonnet-4-20250514',
-  });
-
-  return report;
-}
+```text
+workflow decision -> durable activity dispatch -> idempotency boundary -> provider/local effect
 ```
 
-```typescript
-// activities.ts — side-effectful operations (non-deterministic)
-export async function callLLM(params: LLMParams): Promise<any> {
-  const response = await openai.chat.completions.create({
-    model: params.model,
-    messages: [{ role: 'user', content: params.prompt }],
-  });
-  return JSON.parse(response.choices[0].message.content);
-}
+Checkpoint decisions and outputs, but do not assume that a completed external effect and its local checkpoint are atomic.
 
-export async function searchWeb(query: string): Promise<SearchResult[]> {
-  // Actual HTTP call — Temporal handles retries
-  return await tavilyClient.search(query);
-}
+## 2. Classify Every Tool
+
+Assign one class before setting retry behavior:
+
+| Class | Examples | Default retry policy |
+| --- | --- | --- |
+| Pure/read-only | deterministic transform, immutable lookup | Bounded automatic retry |
+| Naturally idempotent | set resource to an exact desired state | Retry after verifying semantics |
+| Deduplicated mutation | payment API with provider idempotency key | Retry only with the same stable key |
+| Reconciliable mutation | provision job with operation-status lookup | Query status before retry |
+| Non-idempotent mutation | email send with no receipt lookup, market order | No automatic retry after uncertain dispatch |
+
+Classification is about observable effects, not HTTP verbs or tool names. A nominally read-only call can still incur cost or start asynchronous work.
+
+## 3. Define a Stable Operation-Key Contract
+
+The key represents logical intent, independent of attempts, workers, checkpoints, and model-generated call IDs.
+
+```text
+operation_key = HMAC_SHA256(
+  service_secret,
+  canonical_json({
+    tenant_id,
+    workflow_type,
+    workflow_instance,
+    step_name,
+    business_object_id,
+    intent_version
+  })
+)
 ```
 
-#### Pattern 2: Event-Driven with Inngest (Serverless-Friendly)
+Recommendations:
 
-```typescript
-import { Inngest } from 'inngest';
-const inngest = new Inngest({ id: 'agent-pipeline' });
+1. Canonicalize field names, Unicode, numbers, and ordering before hashing.
+2. Include tenant and operation scope to prevent cross-tenant collisions.
+3. Include a semantic `intent_version` when a changed request should be a new operation.
+4. Exclude timestamps, attempt counts, worker IDs, random request IDs, and secrets.
+5. Store a separate request fingerprint. If the same key arrives with a different fingerprint, fail closed instead of replaying a mismatched result.
+6. Keep key derivation stable for at least the provider's and local store's retention windows.
 
-export const agentWorkflow = inngest.createFunction(
-  { id: 'research-agent', retries: 3 },
-  { event: 'agent/research.start' },
-  async ({ event, step }) => {
-    // Each step is automatically checkpointed
-    const plan = await step.run('create-plan', async () => {
-      return await callLLM(`Plan research for: ${event.data.topic}`);
-    });
+Use an HMAC when business fields could be guessed from a plain hash. Log only a short key prefix plus a trace ID.
 
-    const sources = await step.run('gather-sources', async () => {
-      return await Promise.all(plan.queries.map(searchWeb));
-    });
+## 4. Claim Work Atomically
 
-    // Wait for human approval (up to 7 days)
-    const approval = await step.waitForEvent('wait-for-approval', {
-      event: 'agent/research.approved',
-      timeout: '7d',
-      match: 'data.workflowId',
-    });
+A check-then-execute-then-insert sequence has a race: concurrent workers can both observe no row and both execute. Enforce uniqueness in the database and let one atomic insert win.
 
-    if (!approval) throw new Error('Timed out waiting for approval');
+Example PostgreSQL shape:
 
-    const report = await step.run('generate-report', async () => {
-      return await callLLM(`Synthesize: ${JSON.stringify(sources)}`);
-    });
-
-    return report;
-  }
+```sql
+CREATE TABLE agent_operations (
+  operation_key text PRIMARY KEY,
+  request_fingerprint text NOT NULL,
+  state text NOT NULL CHECK (state IN (
+    'pending', 'succeeded', 'failed_retryable', 'failed_terminal', 'ambiguous'
+  )),
+  owner_token text,
+  lease_until timestamptz,
+  provider_operation_id text,
+  result_ref text,
+  last_error_class text,
+  attempt_count integer NOT NULL DEFAULT 1,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
 );
+
+INSERT INTO agent_operations (
+  operation_key, request_fingerprint, state, owner_token, lease_until
+) VALUES ($1, $2, 'pending', $3, now() + interval '2 minutes')
+ON CONFLICT (operation_key) DO NOTHING
+RETURNING operation_key;
 ```
 
-#### Pattern 3: DIY Checkpoint System (Lightweight)
+Interpret the result:
 
-```typescript
-interface Checkpoint {
-  workflowId: string;
-  step: number;
-  state: any;
-  createdAt: Date;
-}
+- Insert returned a row: this worker owns the first claim.
+- Existing `succeeded`: return the stored sanitized result reference.
+- Existing key with a different fingerprint: reject as a key-contract violation.
+- Existing active `pending`: wait, poll with bounds, or return in-progress.
+- Existing expired `pending`: treat the outcome as uncertain until reconciliation proves otherwise.
+- Existing `ambiguous`: route to reconciliation; never blindly redispatch a non-idempotent mutation.
 
-class DurableWorkflow {
-  constructor(
-    private db: Database, // SQLite, Redis, etc.
-    private workflowId: string
-  ) {}
+Do not use a cache-only lock as the record of truth. Locks can expire while a slow operation is still running.
 
-  async runStep<T>(name: string, fn: () => Promise<T>): Promise<T> {
-    // Check if step already completed
-    const existing = await this.db.get(
-      `SELECT result FROM checkpoints WHERE workflow_id = ? AND step_name = ?`,
-      [this.workflowId, name]
-    );
-    if (existing) return JSON.parse(existing.result);
+## 5. Place the Transaction Boundary Correctly
 
-    // Execute and checkpoint
-    const result = await this.retryWithBackoff(fn, 3);
-    await this.db.run(
-      `INSERT INTO checkpoints (workflow_id, step_name, result) VALUES (?, ?, ?)`,
-      [this.workflowId, name, JSON.stringify(result)]
-    );
-    return result;
-  }
+### Local database effect
 
-  private async retryWithBackoff<T>(fn: () => Promise<T>, maxRetries: number): Promise<T> {
-    for (let i = 0; i < maxRetries; i++) {
-      try { return await fn(); }
-      catch (e) {
-        if (i === maxRetries - 1) throw e;
-        await sleep(Math.pow(2, i) * 1000);
-      }
-    }
-    throw new Error('Unreachable');
-  }
-}
+When the operation record and business mutation share a database, perform the mutation and transition to `succeeded` in one transaction. The unique claim prevents concurrent execution; transaction rollback prevents a committed mutation without its outcome record.
+
+### Remote provider with idempotency support
+
+1. Persist `pending` and commit the claim.
+2. Call the provider with the same operation key on every attempt.
+3. Persist the provider operation ID as soon as available.
+4. Mark `succeeded` and store a sanitized result reference.
+5. If the connection fails after dispatch, mark `ambiguous`; query by idempotency key or provider ID before retrying.
+
+Confirm the provider's exact key scope, payload-mismatch behavior, response replay behavior, and retention window. Do not assume all providers implement these semantics alike.
+
+### Remote provider without idempotency support
+
+After an uncertain dispatch, do not retry automatically. Use a provider receipt, external object lookup, ledger query, or human review to determine whether the effect happened. If no authoritative reconciliation exists, keep the operation `ambiguous` and expose that state.
+
+## 6. Use an Explicit State Machine
+
+```text
+new -> pending -> succeeded
+              -> failed_terminal
+              -> failed_retryable -> pending       only when retry is proven safe
+              -> ambiguous -> succeeded            reconciliation found the effect
+                           -> failed_retryable      reconciliation proved no effect
+                           -> failed_terminal       operator decision
 ```
 
-## Observability
+Require compare-and-set transitions that include the expected current state and owner token. Record reason codes, not raw sensitive responses. Never let a stale worker overwrite a result produced by a newer owner.
 
-### Structured Logging for Agent Steps
+A lease controls ownership, not truth. Lease expiry means “the worker may be gone,” not “the external mutation did not happen.”
 
-```typescript
-function agentLogger(workflowId: string) {
-  return {
-    step(name: string, data: any) {
-      console.log(JSON.stringify({
-        ts: new Date().toISOString(),
-        workflow: workflowId,
-        event: 'step.start',
-        step: name,
-        ...data,
-      }));
-    },
-    llmCall(model: string, tokens: { input: number; output: number }, cost: number) {
-      console.log(JSON.stringify({
-        ts: new Date().toISOString(),
-        workflow: workflowId,
-        event: 'llm.call',
-        model, tokens, cost,
-      }));
-    },
-  };
-}
-```
+## 7. Configure Durable Execution
 
-## Decision Matrix
+For Temporal, Inngest, queues, or a custom checkpoint loop:
 
-| Requirement | Temporal | Inngest | DIY Checkpoint |
-|---|---|---|---|
-| Self-hosted | ✅ | ❌ (cloud) | ✅ |
-| Serverless | ❌ | ✅ | ⚠️ |
-| Human-in-loop | ✅ (signals) | ✅ (waitForEvent) | Manual |
-| Observability | ✅ (UI built-in) | ✅ (dashboard) | Manual |
-| Complexity | High | Medium | Low |
-| Best for | Enterprise | Startups/Serverless | MVPs |
+- keep workflow code deterministic where the runtime requires it;
+- set bounded retries, timeouts, and non-retryable error classes;
+- heartbeat long activities when supported;
+- keep the operation key stable across workflow replay and activity attempts;
+- checkpoint sanitized references rather than large or secret-bearing responses;
+- make approval waits durable and time-bounded;
+- apply concurrency limits and cost circuit breakers.
+
+Retry a workflow decision and retry a side effect under separate policies.
+
+## 8. Reconcile Ambiguous Outcomes
+
+Reconciliation order:
+
+1. Query the local business transaction or outbox.
+2. Query the provider by idempotency key or stored operation ID.
+3. Search a narrow authoritative business identifier and time window.
+4. Compare amount, recipient, payload fingerprint, and final status.
+5. Transition with compare-and-set and record the evidence reference.
+6. Escalate unresolved high-impact operations to a human; do not turn uncertainty into a retry.
+
+Avoid fuzzy matching for money, trades, access changes, or deletion. “Probably not sent” is not proof of absence.
+
+## 9. Retention and Recovery
+
+Keep operation records at least as long as all of:
+
+- maximum workflow replay or redelivery window;
+- provider idempotency-key retention window;
+- business dispute and audit window;
+- maximum delayed-message lifetime.
+
+When records must expire, archive only the minimum evidence needed to prevent unsafe replay. A retry arriving after deduplication retention has expired must not silently become a fresh mutation; require a new explicit intent or reconciliation.
+
+Recovery rules:
+
+- Database unavailable before claim: do not call the side-effecting provider.
+- Persistence fails after remote success: preserve the same key and reconcile.
+- Worker crashes during call: mark or infer `ambiguous`, then reconcile.
+- Key/fingerprint mismatch: fail closed and investigate key derivation.
+- Reconciliation unavailable: pause the operation and alert its owner.
+
+## 10. Verification Gate
+
+Run synthetic, secret-free fixtures in a disposable environment. Completion requires every assertion below:
+
+1. **Concurrent duplicate:** 20 workers submit the same key; exactly one logical effect is observed and all callers converge on one result.
+2. **Different intent:** changed business intent yields a different key and a second permitted effect.
+3. **Fingerprint conflict:** same key with changed payload is rejected before dispatch.
+4. **Crash before dispatch:** retry safely acquires or resumes without an effect.
+5. **Crash after dispatch, before persistence:** state becomes `ambiguous`; no non-idempotent redispatch occurs.
+6. **Provider replay:** repeated attempts use the identical provider key and return one provider operation.
+7. **Slow original plus redelivery:** lease expiry does not create a second effect.
+8. **Stale owner:** an old worker cannot overwrite the terminal state.
+9. **Retention boundary:** an expired dedup record fails closed or requires explicit new intent.
+10. **Observability:** traces expose state and reason codes but no secrets or raw sensitive payloads.
+
+Verify the authoritative external system, not only mock call counts.
+
+## Evaluation Prompts
+
+Use these to evaluate whether the skill changes behavior observably.
+
+### Normal
+
+> Design retries for an agent tool that charges a customer, then may time out before checkpointing.
+
+Pass if the response specifies a stable intent-derived key, atomic unique claim, provider key reuse, persisted result, and reconciliation before retrying an ambiguous charge.
+
+### Difficult edge
+
+> A worker's two-minute lease expired, but its ten-minute provisioning call may still be running. Another worker receives the same tool call. What should it do?
+
+Pass if lease expiry is not treated as proof of failure, the second worker does not blindly execute, and the answer uses status reconciliation plus compare-and-set ownership/state transitions.
+
+### Should not activate
+
+> Refactor this pure in-memory JSON transformation for readability.
+
+Pass if the response does not introduce a durable operation store or side-effect idempotency machinery.
 
 ## Common Pitfalls
 
-1. **Non-deterministic workflow code** — Keep LLM calls in activities, not workflow body
-2. **No idempotency** — Activities must be safe to retry (use idempotency keys)
-3. **Unbounded retries** — Always set max attempts and non-retryable error types
-4. **Missing cost tracking** — Log token usage per step; set cost circuit breakers
-5. **No timeout on human gates** — Always set timeouts on approval steps
-6. **State too large** — Don't checkpoint entire LLM responses; store summaries
+- Deriving keys from attempt IDs, timestamps, or model tool-call IDs.
+- Checking for a row before execution without an atomic unique claim.
+- Treating timeout, lost response, or expired lease as proof that nothing happened.
+- Reusing one key for changed payloads without fingerprint validation.
+- Logging raw tool arguments, credentials, or provider responses.
+- Claiming “exactly once” without defining the effect and authoritative verifier.
+- Retaining provider keys longer than local deduplication records, or vice versa.
+- Retrying every exception even after dispatch crossed the side-effect boundary.
+
+## Sources and Scope
+
+Sourced facts:
+
+- Temporal documents that Activities may be retried and recommends idempotent Activity logic: https://docs.temporal.io/activity-definition
+- Stripe documents its API idempotency-key behavior and retention details: https://docs.stripe.com/api/idempotent_requests
+- CrewAI issue #5802 reports duplicate side effects when a successful tool execution is followed by task retry: https://github.com/crewAIInc/crewAI/issues/5802
+- LangGraph issue #7417 reports long tool calls being dispatched again from a checkpoint while the original is still running: https://github.com/langchain-ai/langgraph/issues/7417
+
+The state machine, key contract, SQL shape, safety defaults, and verification matrix above are original operational recommendations synthesized from those failure modes. Adapt transaction syntax and retention to the selected database, runtime, provider contract, and risk level.
