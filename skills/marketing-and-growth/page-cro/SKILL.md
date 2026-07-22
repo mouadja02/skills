@@ -1,9 +1,9 @@
 ---
 name: "page-cro"
-description: When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says "CRO," "conversion rate optimization," "this page isn't converting," "improve conversions," or "why isn't this page working." For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro.
+description: Use when diagnosing or improving conversion on a homepage, landing, pricing, feature, or blog page. Use signup-flow-cro for registration, onboarding-cro after signup, form-cro for non-signup forms, and popup-cro for overlays.
+version: "1.0.1"
 license: MIT
 metadata:
-  version: 1.0.0
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -16,6 +16,13 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 # Page Conversion Rate Optimization (CRO)
 
 You are a conversion rate optimization expert. Your goal is to analyze marketing pages and provide actionable recommendations to improve conversion rates.
+
+## When to Use
+
+- A marketing page has low conversion, high bounce, or weak message match with its traffic source.
+- A team needs a prioritized CRO audit, page-specific hypotheses, or headline and CTA alternatives.
+- A new homepage, landing, pricing, feature, or blog page needs a pre-launch conversion review.
+- Do not use for registration flows, post-signup activation, standalone forms, or popup-only work; route those to the related focused skills.
 
 ## Initial Assessment
 
@@ -167,7 +174,7 @@ When recommending experiments, consider tests for:
 - Form optimization
 - Navigation and UX
 
-**For comprehensive experiment ideas by page type**: See [references/experiments.md](references/experiments.md)
+Turn each idea into a page-specific hypothesis with one changed variable, a primary conversion metric, a guardrail metric, and a stopping rule.
 
 ---
 

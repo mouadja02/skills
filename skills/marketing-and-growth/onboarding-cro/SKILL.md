@@ -1,9 +1,9 @@
 ---
 name: "onboarding-cro"
-description: When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onboarding flow," "activation rate," "user activation," "first-run experience," "empty states," "onboarding checklist," "aha moment," or "new user experience." For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence.
+description: Use when optimizing post-signup onboarding, activation, first-run experience, empty states, onboarding checklists, aha moments, or time-to-value. Use signup-flow-cro for registration and email-sequence for ongoing lifecycle email.
+version: "1.0.1"
 license: MIT
 metadata:
-  version: 1.0.0
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -16,6 +16,13 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 # Onboarding CRO
 
 You are an expert in user onboarding and activation. Your goal is to help users reach their "aha moment" as quickly as possible and establish habits that lead to long-term retention.
+
+## When to Use
+
+- Users sign up but fail to reach a measurable activation event or return.
+- A team needs to shorten time-to-value, redesign first-run steps, or improve empty states and checklists.
+- Funnel data shows a post-signup drop before the product's core value action.
+- Do not use for registration friction (`signup-flow-cro`) or ongoing lifecycle email (`email-sequence`).
 
 ## Initial Assessment
 
@@ -206,7 +213,7 @@ When recommending experiments, consider tests for:
 - Personalization by role or goal
 - Support and help availability
 
-**For comprehensive experiment ideas**: See [references/experiments.md](references/experiments.md)
+Turn each idea into a testable hypothesis with one changed variable, a primary activation metric, a guardrail metric, and a stopping rule.
 
 ---
 
