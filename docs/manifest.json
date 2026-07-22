@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-20T18:05:23.717Z",
+  "generated_at": "2026-07-22T10:04:50.242Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 811,
@@ -439,7 +439,7 @@
       "install_path": "agent-design/durable-agent-workflows",
       "path": "skills/agent-design/durable-agent-workflows",
       "depth": 2,
-      "description": "Design and build durable, fault-tolerant AI agent workflows using Temporal, Inngest, or event-driven patterns"
+      "description": "Use when designing retryable or crash-resilient agent workflows, especially when tools can send, charge, publish, provision, or otherwise create duplicate side effects."
     },
     {
       "name": "expert-trace-skill-distillation",
