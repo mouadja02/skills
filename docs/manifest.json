@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-22T10:04:50.242Z",
+  "generated_at": "2026-07-22T18:05:02.197Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 811,
@@ -5239,7 +5239,7 @@
       "install_path": "marketing-and-growth/onboarding-cro",
       "path": "skills/marketing-and-growth/onboarding-cro",
       "depth": 2,
-      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" or \"new user experience.\" For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence."
+      "description": "Use when optimizing post-signup onboarding, activation, first-run experience, empty states, onboarding checklists, aha moments, or time-to-value. Use signup-flow-cro for registration and email-sequence for ongoing lifecycle email."
     },
     {
       "name": "page-cro",
@@ -5247,7 +5247,7 @@
       "install_path": "marketing-and-growth/page-cro",
       "path": "skills/marketing-and-growth/page-cro",
       "depth": 2,
-      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says \"CRO,\" \"conversion rate optimization,\" \"this page isn't converting,\" \"improve conversions,\" or \"why isn't this page working.\" For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro."
+      "description": "Use when diagnosing or improving conversion on a homepage, landing, pricing, feature, or blog page. Use signup-flow-cro for registration, onboarding-cro after signup, form-cro for non-signup forms, and popup-cro for overlays."
     },
     {
       "name": "paid-ads",
