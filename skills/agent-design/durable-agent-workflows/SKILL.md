@@ -1,4 +1,4 @@
-﻿---
+---
 name: "durable-agent-workflows"
 description: "Use when designing retryable or crash-resilient agent workflows, especially when tools can send, charge, publish, provision, or otherwise create duplicate side effects."
 version: "2.0.0"
