@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-07-22T18:05:02.197Z",
+  "generated_at": "2026-07-23T10:05:05.495Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 811,
+  "count": 812,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -54,7 +54,7 @@
     "communication": 1,
     "context-engineering": 17,
     "creative": 2,
-    "databases": 22,
+    "databases": 23,
     "design-and-ui": 34,
     "dev-workflow": 29,
     "devops": 37,
@@ -2896,6 +2896,14 @@
       "path": "skills/databases/sql-optimization",
       "depth": 2,
       "description": "SQL performance optimization — query tuning, indexing, explain plans, all dialects"
+    },
+    {
+      "name": "sqlite-wal-checkpoint-starvation-diagnostics",
+      "category": "databases",
+      "install_path": "databases/sqlite-wal-checkpoint-starvation-diagnostics",
+      "path": "skills/databases/sqlite-wal-checkpoint-starvation-diagnostics",
+      "depth": 2,
+      "description": "Use when a SQLite database in WAL mode has a growing -wal file, repeated incomplete checkpoints, SQLITE_BUSY, disk-pressure risk, or reader slowdowns that may indicate checkpoint starvation."
     },
     {
       "name": "adobe-illustrator-scripting",

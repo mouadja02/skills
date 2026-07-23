@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 811 skills across 36 categories.
+**Total:** 812 skills across 36 categories.
 
 ## Install one skill
 
@@ -33,7 +33,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`communication`](#communication) | 1 |
 | [`context-engineering`](#context-engineering) | 17 |
 | [`creative`](#creative) | 2 |
-| [`databases`](#databases) | 22 |
+| [`databases`](#databases) | 23 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
 | [`devops`](#devops) | 37 |
@@ -470,6 +470,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`snowflake-sql`](./skills/databases/snowflake-sql/SKILL.md) | `databases/snowflake-sql` | Snowflake SQL — QUALIFY, FLATTEN, VARIANT/OBJECT/ARRAY, tasks, streams, stages |
 | [`sql-code-review`](./skills/databases/sql-code-review/SKILL.md) | `databases/sql-code-review` | SQL code review — security, maintainability, quality across all SQL dialects |
 | [`sql-optimization`](./skills/databases/sql-optimization/SKILL.md) | `databases/sql-optimization` | SQL performance optimization — query tuning, indexing, explain plans, all dialects |
+| [`sqlite-wal-checkpoint-starvation-diagnostics`](./skills/databases/sqlite-wal-checkpoint-starvation-diagnostics/SKILL.md) | `databases/sqlite-wal-checkpoint-starvation-diagnostics` | Use when a SQLite database in WAL mode has a growing -wal file, repeated incomplete checkpoints, SQLITE_BUSY, disk-pressure risk, or reader slowdowns that may indicate checkpoint starvation. |
 
 ## design-and-ui
 
