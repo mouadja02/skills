@@ -6,7 +6,7 @@
 
 Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt.
 
-**Total:** 22 skills.
+**Total:** 23 skills.
 
 ## Skills In This Category
 
@@ -34,5 +34,6 @@ Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL,
 | [`snowflake-sql`](snowflake-sql/SKILL.md) | `databases/snowflake-sql` | Snowflake SQL — QUALIFY, FLATTEN, VARIANT/OBJECT/ARRAY, tasks, streams, stages |
 | [`sql-code-review`](sql-code-review/SKILL.md) | `databases/sql-code-review` | SQL code review — security, maintainability, quality across all SQL dialects |
 | [`sql-optimization`](sql-optimization/SKILL.md) | `databases/sql-optimization` | SQL performance optimization — query tuning, indexing, explain plans, all dialects |
+| [`sqlite-wal-checkpoint-starvation-diagnostics`](sqlite-wal-checkpoint-starvation-diagnostics/SKILL.md) | `databases/sqlite-wal-checkpoint-starvation-diagnostics` | Use when a SQLite database in WAL mode has a growing -wal file, repeated incomplete checkpoints, SQLITE_BUSY, disk-pressure risk, or reader slowdowns that may indicate checkpoint starvation. |
 
 [Back to the category index](../README.md)
