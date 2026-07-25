@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 37 skills.
+**Total:** 38 skills.
 
 ## Skills In This Category
 
@@ -31,6 +31,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`image-manipulation-image-magick`](image-manipulation-image-magick/SKILL.md) | `devops/image-manipulation-image-magick` | Process and manipulate images using ImageMagick. Supports resizing, format conversion, batch processing, and retrieving image metadata |
 | [`import-infrastructure-as-code`](import-infrastructure-as-code/SKILL.md) | `devops/import-infrastructure-as-code` | Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM) |
 | [`incident-commander`](incident-commander/SKILL.md) | `devops/incident-commander` | Run incident response from detection to post-mortem |
+| [`kubernetes-ssa-field-ownership-triage`](kubernetes-ssa-field-ownership-triage/SKILL.md) | `devops/kubernetes-ssa-field-ownership-triage` | Use when Kubernetes Server-Side Apply reports field-manager conflicts, controllers overwrite fields, or force-conflicts risks pruning/defaulting side effects; diagnose ownership read-only before choosing relinquish, partition, or explici... |
 | [`lsp-setup`](lsp-setup/SKILL.md) | `devops/lsp-setup` | LSP setup for any language — go-to-definition, find-refs, hover, diagnostics |
 | [`mac-maintenance`](mac-maintenance/SKILL.md) | `devops/mac-maintenance` | macOS upkeep: brew update/upgrade, pull clean repos, empty Trash. |
 | [`multi-stage-dockerfile`](multi-stage-dockerfile/SKILL.md) | `devops/multi-stage-dockerfile` | Create optimized multi-stage Dockerfiles for any language or framework |
