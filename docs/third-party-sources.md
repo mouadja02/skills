@@ -32,6 +32,14 @@ Copyright (c) 2025 Nous Research.
 
 Some imported skills retain additional upstream attribution in their own content, including Anthropic financial-services references where present in the Hermes source.
 
+## Streamlit Agent Skills
+
+Source repository: https://github.com/streamlit/agent-skills
+
+The local `streamlit/developing-with-streamlit` package was adapted from the upstream `developing-with-streamlit/` skill package. Individual nested skills retain source and attribution frontmatter. The upstream repository is archived as of 2026-07-25, and its current tree no longer contains the earlier nested-skill layout.
+
+License: Apache-2.0.
+
 ## Qdrant Agent Skills
 
 Source repository: https://github.com/qdrant/skills
