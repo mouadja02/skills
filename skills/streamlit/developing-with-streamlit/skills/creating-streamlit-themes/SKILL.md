@@ -1,6 +1,7 @@
 ---
 name: creating-streamlit-themes
 description: Creating and customizing Streamlit themes
+version: "1.0.0"
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"
@@ -459,27 +460,6 @@ st.html("""<style>.st-key-submit button { width: 100%; }</style>""")
 Most theme options update live after saving `config.toml` and rerunning. Font-related options (`fontFaces`) require a server restart.
 
 Test your theme with: buttons (primary contrast), forms (borders, focus), dataframes (headers), code blocks, charts, and sidebar.
-
-## Theme templates
-
-Ready-to-use themes with bundled fonts are available in `templates/themes/`:
-
-| Theme | Base | Primary Color | Fonts |
-|-------|------|---------------|-------|
-| **snowflake** | Light | `#29B5E8` (cyan) | Inter, JetBrains Mono |
-| **dracula** | Dark | `#BD93F9` (purple) | Fira Sans, JetBrains Mono |
-| **nord** | Dark | `#88C0D0` (frost blue) | Inter, JetBrains Mono |
-| **stripe** | Light | `#635BFF` (indigo) | Inter, Source Code Pro |
-| **solarized-light** | Light | `#268BD2` (blue) | Source Sans 3, Source Code Pro |
-| **spotify** | Dark | `#1DB954` (green) | Inter, Fira Code |
-| **github** | Light | `#0969DA` (blue) | Inter, JetBrains Mono |
-| **minimal** | Dark | `#6366f1` (indigo) | Inter, JetBrains Mono |
-
-Each theme uses Google Fonts for easy setup. See `templates/themes/README.md`.
-
-## Related skills
-
-- [improving-streamlit-design](../improving-streamlit-design/SKILL.md) - Visual polish with icons, badges, spacing
 
 ## References
 
