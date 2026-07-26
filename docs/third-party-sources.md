@@ -32,6 +32,16 @@ Copyright (c) 2025 Nous Research.
 
 Some imported skills retain additional upstream attribution in their own content, including Anthropic financial-services references where present in the Hermes source.
 
+## Hallmark
+
+Source repository: https://github.com/Nutlope/hallmark
+
+The local `design-and-ui/hallmark` package is adapted from the upstream `skills/hallmark/` skill and includes its supporting references, documentation, and site assets.
+
+License: MIT.
+
+Copyright (c) 2026 Hallmark contributors.
+
 ## Streamlit Agent Skills
 
 Source repository: https://github.com/streamlit/agent-skills
