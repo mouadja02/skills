@@ -7,7 +7,7 @@ description: >-
   Use when configuring or diagnosing Amazon Route 53 records, routing policies, health checks, DNS
   Firewall, Profiles, or Resolver. Route custom-domain DNS-to-CloudFront work to the linked
   routing-traffic-with-route53-and-cloudfront skill; exclude non-DNS networking.
-version: "1.0.1"
+version: "1.0.2"
 ---
 
 # Amazon Route 53
@@ -18,7 +18,7 @@ version: "1.0.1"
 - Configure DNS Firewall, Route 53 Profiles, hybrid Resolver endpoints, Outposts, or Global Resolver.
 - Investigate DNS answers, delegation, propagation, policy selection, or resolver behavior.
 - Route CloudFront custom-domain work to
-  [routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md).
+  [routing-traffic-with-route53-and-cloudfront](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/routing-traffic-with-route53-and-cloudfront/SKILL.md).
 
 Do not use this skill for VPC routing, load balancer configuration, or CloudFront-side certificate and
 distribution changes.
@@ -89,7 +89,7 @@ observability). Fall back to the AWS CLI otherwise. All Route 53 Domains API cal
 
 Pointing a custom domain at a CloudFront distribution, or failing over between CloudFront
 distributions, is cross-service work owned by the separate
-[routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md)
+[routing-traffic-with-route53-and-cloudfront](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/routing-traffic-with-route53-and-cloudfront/SKILL.md)
 skill. Use this skill for the Route 53 side of pure-Route 53 tasks only.
 
 ## Verification and Recovery
