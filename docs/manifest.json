@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-07-25T10:07:22.988Z",
+  "generated_at": "2026-07-27T10:06:38.569Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 813,
+  "count": 814,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -49,7 +49,7 @@
     "business-strategy": 64,
     "cloud-aws": 84,
     "cloud-azure": 18,
-    "code-quality": 17,
+    "code-quality": 18,
     "coding": 33,
     "communication": 1,
     "context-engineering": 17,
@@ -2216,6 +2216,14 @@
       "path": "skills/code-quality/grill-me",
       "depth": 2,
       "description": "Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions \"grill me\"."
+    },
+    {
+      "name": "python-free-threaded-extension-readiness",
+      "category": "code-quality",
+      "install_path": "code-quality/python-free-threaded-extension-readiness",
+      "path": "skills/code-quality/python-free-threaded-extension-readiness",
+      "depth": 2,
+      "description": "Use when auditing a CPython C/C++/Cython/Rust extension for free-threaded Python, a `t`-suffixed ABI wheel, GIL opt-out, native race, callback crash, or free-threaded release gate."
     },
     {
       "name": "quality-playbook",

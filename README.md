@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **813 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **814 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -58,7 +58,7 @@ This table is generated from `docs/manifest.json`.
 | [`business-strategy`](./skills/business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-aws`](./skills/cloud-aws/) | 84 | AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability. |
 | [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
-| [`code-quality`](./skills/code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
+| [`code-quality`](./skills/code-quality/) | 18 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./skills/coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`communication`](./skills/communication/) | 1 | Decision frameworks, stakeholder communication, proposals, and concise trade-off analysis. |
 | [`context-engineering`](./skills/context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |

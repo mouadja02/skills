@@ -4,7 +4,7 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 813 skills across 36 categories.
+**Total:** 814 skills across 36 categories.
 
 ## Categories
 
@@ -16,7 +16,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`business-strategy`](./business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-aws`](./cloud-aws/) | 84 | AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability. |
 | [`cloud-azure`](./cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
-| [`code-quality`](./code-quality/) | 17 | Code review, refactoring, static analysis, security review, and integrity checks. |
+| [`code-quality`](./code-quality/) | 18 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`communication`](./communication/) | 1 | Decision frameworks, stakeholder communication, proposals, and concise trade-off analysis. |
 | [`context-engineering`](./context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |

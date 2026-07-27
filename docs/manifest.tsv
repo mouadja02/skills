@@ -266,6 +266,7 @@ code-quality/doublecheck	code-quality	doublecheck	3-layer AI output verification
 code-quality/eyeball	code-quality	eyeball	Document analysis with source screenshots — Word doc with page images per cited passage
 code-quality/github-deep-review	code-quality	github-deep-review	GitHub deep review: bugs, PRs, best fix, stale-or-real, read code first, evidence-first.
 code-quality/grill-me	code-quality	grill-me	Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me".
+code-quality/python-free-threaded-extension-readiness	code-quality	python-free-threaded-extension-readiness	Use when auditing a CPython C/C++/Cython/Rust extension for free-threaded Python, a `t`-suffixed ABI wheel, GIL opt-out, native race, callback crash, or free-threaded release gate.
 code-quality/quality-playbook	code-quality	quality-playbook	Quality audit — behavioral requirements from code, spec-traced tests, coverage gaps
 code-quality/receiving-code-review	code-quality	receiving-code-review	Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation
 code-quality/refactor	code-quality	refactor	Code refactoring — extract functions, rename, decompose, reduce complexity, no behavior change
