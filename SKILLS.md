@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 813 skills across 36 categories.
+**Total:** 814 skills across 36 categories.
 
 ## Install one skill
 
@@ -28,7 +28,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`business-strategy`](#business-strategy) | 64 |
 | [`cloud-aws`](#cloud-aws) | 84 |
 | [`cloud-azure`](#cloud-azure) | 18 |
-| [`code-quality`](#code-quality) | 17 |
+| [`code-quality`](#code-quality) | 18 |
 | [`coding`](#coding) | 33 |
 | [`communication`](#communication) | 1 |
 | [`context-engineering`](#context-engineering) | 17 |
@@ -360,6 +360,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`eyeball`](./skills/code-quality/eyeball/SKILL.md) | `code-quality/eyeball` | Document analysis with source screenshots — Word doc with page images per cited passage |
 | [`github-deep-review`](./skills/code-quality/github-deep-review/SKILL.md) | `code-quality/github-deep-review` | GitHub deep review: bugs, PRs, best fix, stale-or-real, read code first, evidence-first. |
 | [`grill-me`](./skills/code-quality/grill-me/SKILL.md) | `code-quality/grill-me` | Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me". |
+| [`python-free-threaded-extension-readiness`](./skills/code-quality/python-free-threaded-extension-readiness/SKILL.md) | `code-quality/python-free-threaded-extension-readiness` | Use when auditing a CPython C/C++/Cython/Rust extension for free-threaded Python, a `t`-suffixed ABI wheel, GIL opt-out, native race, callback crash, or free-threaded release gate. |
 | [`quality-playbook`](./skills/code-quality/quality-playbook/SKILL.md) | `code-quality/quality-playbook` | Quality audit — behavioral requirements from code, spec-traced tests, coverage gaps |
 | [`receiving-code-review`](./skills/code-quality/receiving-code-review/SKILL.md) | `code-quality/receiving-code-review` | Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation |
 | [`refactor`](./skills/code-quality/refactor/SKILL.md) | `code-quality/refactor` | Code refactoring — extract functions, rename, decompose, reduce complexity, no behavior change |

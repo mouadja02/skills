@@ -6,7 +6,7 @@
 
 Code review, refactoring, static analysis, security review, and integrity checks.
 
-**Total:** 17 skills.
+**Total:** 18 skills.
 
 ## Skills In This Category
 
@@ -19,6 +19,7 @@ Code review, refactoring, static analysis, security review, and integrity checks
 | [`eyeball`](eyeball/SKILL.md) | `code-quality/eyeball` | Document analysis with source screenshots — Word doc with page images per cited passage |
 | [`github-deep-review`](github-deep-review/SKILL.md) | `code-quality/github-deep-review` | GitHub deep review: bugs, PRs, best fix, stale-or-real, read code first, evidence-first. |
 | [`grill-me`](grill-me/SKILL.md) | `code-quality/grill-me` | Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me". |
+| [`python-free-threaded-extension-readiness`](python-free-threaded-extension-readiness/SKILL.md) | `code-quality/python-free-threaded-extension-readiness` | Use when auditing a CPython C/C++/Cython/Rust extension for free-threaded Python, a `t`-suffixed ABI wheel, GIL opt-out, native race, callback crash, or free-threaded release gate. |
 | [`quality-playbook`](quality-playbook/SKILL.md) | `code-quality/quality-playbook` | Quality audit — behavioral requirements from code, spec-traced tests, coverage gaps |
 | [`receiving-code-review`](receiving-code-review/SKILL.md) | `code-quality/receiving-code-review` | Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation |
 | [`refactor`](refactor/SKILL.md) | `code-quality/refactor` | Code refactoring — extract functions, rename, decompose, reduce complexity, no behavior change |
