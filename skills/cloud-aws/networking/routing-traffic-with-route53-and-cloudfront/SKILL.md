@@ -7,7 +7,7 @@ description: >-
   Use when routing a custom domain to Amazon CloudFront with Route 53 alias A/AAAA records, alternate
   domain names, ACM certificates, and IPv6. Coordinates readiness, DNS cutover, verification, and
   rollback across both services.
-version: "1.0.1"
+version: "1.0.2"
 ---
 
 # Routing Traffic with Route 53 and CloudFront
@@ -19,8 +19,8 @@ version: "1.0.1"
 - Plan a low-risk DNS cutover or diagnose the Route 53-to-CloudFront boundary.
 
 Do not use this skill for CloudFront caching/origin work without DNS changes; use
-[cloudfront](../cloudfront/SKILL.md). Do not use it for Route 53 records targeting non-CloudFront
-endpoints; use [route53](../route53/SKILL.md).
+[cloudfront](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/cloudfront/SKILL.md). Do not use it for Route 53 records targeting non-CloudFront
+endpoints; use [route53](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/route53/SKILL.md).
 
 ## Prerequisites and Quick Reference
 

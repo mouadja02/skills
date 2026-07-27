@@ -7,7 +7,7 @@ description: >-
   Use when configuring Amazon CloudFront distributions, caching, pricing, certificates, origins,
   viewer access, multi-tenant delivery, or logs. Route DNS-to-CloudFront work to the linked
   routing-traffic-with-route53-and-cloudfront skill and pure DNS work to route53.
-version: "1.0.1"
+version: "1.0.2"
 ---
 
 # Amazon CloudFront
@@ -18,10 +18,10 @@ version: "1.0.1"
 - Configure CloudFront certificates, alternate domain names, origins, or origin access controls.
 - Restrict viewer access or investigate standard and real-time CloudFront logs.
 - Route custom-domain DNS changes to
-  [routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md).
+  [routing-traffic-with-route53-and-cloudfront](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/routing-traffic-with-route53-and-cloudfront/SKILL.md).
 
 Do not use this skill for pure Route 53 DNS administration. Use
-[route53](../route53/SKILL.md). Do not use it for the Route 53 alias-record portion of a CloudFront
+[route53](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/route53/SKILL.md). Do not use it for the Route 53 alias-record portion of a CloudFront
 custom domain; use the cross-service skill linked above.
 
 ## Prerequisites and Quick Reference
@@ -77,14 +77,14 @@ where the customer's application runs.
   certificate and adding the alternate domain name is the managing-certificates reference here.
   Pointing the domain's DNS at the distribution, including the zone apex alias and any failover, is
   Route 53 work owned by the separate
-  [routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md)
+  [routing-traffic-with-route53-and-cloudfront](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/routing-traffic-with-route53-and-cloudfront/SKILL.md)
   skill.
 
 ## Cross-service work
 
 Pointing a custom domain's DNS at a CloudFront distribution, or failing over between distributions
 with Route 53 records, is cross-service work owned by the separate
-[routing-traffic-with-route53-and-cloudfront](../routing-traffic-with-route53-and-cloudfront/SKILL.md)
+[routing-traffic-with-route53-and-cloudfront](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/networking/routing-traffic-with-route53-and-cloudfront/SKILL.md)
 skill. Use this skill for the CloudFront-side configuration only.
 
 ## Verification and Recovery
