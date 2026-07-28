@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-07-27T10:06:38.569Z",
+  "generated_at": "2026-07-28T10:10:03.854Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 814,
+  "count": 815,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -67,7 +67,7 @@
     "java-kotlin": 11,
     "llm-tooling": 47,
     "marketing-and-growth": 26,
-    "mcp": 15,
+    "mcp": 16,
     "messaging": 1,
     "microsoft-agents": 11,
     "microsoft-data": 17,
@@ -5368,6 +5368,14 @@
       "path": "skills/mcp/mcp-cli",
       "depth": 2,
       "description": "Interface for MCP (Model Context Protocol) servers via CLI"
+    },
+    {
+      "name": "mcp-oauth-interoperability-diagnostics",
+      "category": "mcp",
+      "install_path": "mcp/mcp-oauth-interoperability-diagnostics",
+      "path": "skills/mcp/mcp-oauth-interoperability-diagnostics",
+      "depth": 2,
+      "description": "Use when MCP OAuth clients, resources, or authorization servers disagree on discovery, exact resource URIs, scopes, PKCE, token exchange, retry, or mid-session reauthorization — classify a redacted flow offline before bounded replay."
     },
     {
       "name": "mcp-security-audit",

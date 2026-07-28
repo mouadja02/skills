@@ -4,7 +4,7 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 814 skills across 36 categories.
+**Total:** 815 skills across 36 categories.
 
 ## Categories
 
@@ -34,7 +34,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`java-kotlin`](./java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
 | [`llm-tooling`](./llm-tooling/) | 47 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
-| [`mcp`](./mcp/) | 15 | Model Context Protocol server generation, tooling, deployment, and security. |
+| [`mcp`](./mcp/) | 16 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./messaging/) | 1 | Messaging integrations and relay workflows. |
 | [`microsoft-agents`](./microsoft-agents/) | 11 | Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling. |
 | [`microsoft-data`](./microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture. |
