@@ -6,7 +6,7 @@
 
 Model Context Protocol server generation, tooling, deployment, and security.
 
-**Total:** 15 skills.
+**Total:** 16 skills.
 
 ## Skills In This Category
 
@@ -18,6 +18,7 @@ Model Context Protocol server generation, tooling, deployment, and security.
 | [`java-mcp-server-generator`](java-mcp-server-generator/SKILL.md) | `mcp/java-mcp-server-generator` | Generate a complete Model Context Protocol server project in Java using the official MCP Java SDK with reactive streams and optional Spring Boot integration |
 | [`kotlin-mcp-server-generator`](kotlin-mcp-server-generator/SKILL.md) | `mcp/kotlin-mcp-server-generator` | Generate a complete Kotlin MCP server project with proper structure, dependencies, and implementation using the official io.modelcontextprotocol:kotlin-sdk library |
 | [`mcp-cli`](mcp-cli/SKILL.md) | `mcp/mcp-cli` | Interface for MCP (Model Context Protocol) servers via CLI |
+| [`mcp-oauth-interoperability-diagnostics`](mcp-oauth-interoperability-diagnostics/SKILL.md) | `mcp/mcp-oauth-interoperability-diagnostics` | Use when MCP OAuth clients, resources, or authorization servers disagree on discovery, exact resource URIs, scopes, PKCE, token exchange, retry, or mid-session reauthorization — classify a redacted flow offline before bounded replay. |
 | [`mcp-security-audit`](mcp-security-audit/SKILL.md) | `mcp/mcp-security-audit` | Audit MCP (Model Context Protocol) server configurations for security issues. Use this skill when: - Reviewing .mcp.json files for security risks - Checking MCP server args for hardcoded secrets or shell injection patterns - Validating t... |
 | [`mcp-server-builder`](mcp-server-builder/SKILL.md) | `mcp/mcp-server-builder` | Build production-grade MCP (Model Context Protocol) servers from API contracts |
 | [`mcp-streamable-http-conformance`](mcp-streamable-http-conformance/SKILL.md) | `mcp/mcp-streamable-http-conformance` | Use when MCP Streamable HTTP clients, servers, or gateways hang, reject streams, lose SSE framing, or disagree across protocol versions — normalize a redacted transcript, validate a pinned profile offline, and plan non-destructive migrat... |

@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 814 skills across 36 categories.
+**Total:** 815 skills across 36 categories.
 
 ## Install one skill
 
@@ -46,7 +46,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`java-kotlin`](#java-kotlin) | 11 |
 | [`llm-tooling`](#llm-tooling) | 47 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
-| [`mcp`](#mcp) | 15 |
+| [`mcp`](#mcp) | 16 |
 | [`messaging`](#messaging) | 1 |
 | [`microsoft-agents`](#microsoft-agents) | 11 |
 | [`microsoft-data`](#microsoft-data) | 17 |
@@ -844,6 +844,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`java-mcp-server-generator`](./skills/mcp/java-mcp-server-generator/SKILL.md) | `mcp/java-mcp-server-generator` | Generate a complete Model Context Protocol server project in Java using the official MCP Java SDK with reactive streams and optional Spring Boot integration |
 | [`kotlin-mcp-server-generator`](./skills/mcp/kotlin-mcp-server-generator/SKILL.md) | `mcp/kotlin-mcp-server-generator` | Generate a complete Kotlin MCP server project with proper structure, dependencies, and implementation using the official io.modelcontextprotocol:kotlin-sdk library |
 | [`mcp-cli`](./skills/mcp/mcp-cli/SKILL.md) | `mcp/mcp-cli` | Interface for MCP (Model Context Protocol) servers via CLI |
+| [`mcp-oauth-interoperability-diagnostics`](./skills/mcp/mcp-oauth-interoperability-diagnostics/SKILL.md) | `mcp/mcp-oauth-interoperability-diagnostics` | Use when MCP OAuth clients, resources, or authorization servers disagree on discovery, exact resource URIs, scopes, PKCE, token exchange, retry, or mid-session reauthorization — classify a redacted flow offline before bounded replay. |
 | [`mcp-security-audit`](./skills/mcp/mcp-security-audit/SKILL.md) | `mcp/mcp-security-audit` | Audit MCP (Model Context Protocol) server configurations for security issues. Use this skill when: - Reviewing .mcp.json files for security risks - Checking MCP server args for hardcoded secrets or shell injection patterns - Validating that MCP servers use pinned versions (not @latest) - Detecting unpinned dependencies in MCP server configurations - Auditing which MCP servers a project registers and whether they're on an approved list - Checking for environment variable usage vs. hardcoded credentials in MCP configs - Any request like "is my MCP config secure?", "audit my MCP servers", or "check .mcp.json" keywords: [mcp, security, audit, secrets, shell-injection, supply-chain, governance] |
 | [`mcp-server-builder`](./skills/mcp/mcp-server-builder/SKILL.md) | `mcp/mcp-server-builder` | Build production-grade MCP (Model Context Protocol) servers from API contracts |
 | [`mcp-streamable-http-conformance`](./skills/mcp/mcp-streamable-http-conformance/SKILL.md) | `mcp/mcp-streamable-http-conformance` | Use when MCP Streamable HTTP clients, servers, or gateways hang, reject streams, lose SSE framing, or disagree across protocol versions — normalize a redacted transcript, validate a pinned profile offline, and plan non-destructive migration or recovery. |
