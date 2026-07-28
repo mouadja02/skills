@@ -3,7 +3,7 @@ name: native-app-performance
 description: "Native macOS/iOS app performance: xctrace, Time Profiler, traces, hotspot analysis — CLI-only."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
-version: "1.0.0"
+version: "1.0.1"
 platform: apple
 ---
 
@@ -13,7 +13,7 @@ platform: apple
 
 Goal: record Time Profiler via `xctrace`, extract samples, symbolicate, and propose hotspots without opening Instruments.
 
-**Related skill:** For Instruments UI workflows and trace export details, see [instruments-profiling](../instruments-profiling/SKILL.md).
+**Related skill:** For Instruments UI workflows and trace export details, see [instruments-profiling](https://github.com/mouadja02/skills/tree/main/skills/coding/instruments-profiling).
 
 ## When to Use
 
