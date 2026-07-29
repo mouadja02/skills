@@ -8,6 +8,7 @@ description: >
   "scale my agent system", "agent performance bottleneck".
 source: "https://arxiv.org/abs/2605.26112v1"
 attribution: "Shangding Gu, UC Berkeley — 'From Model Scaling to System Scaling: Scaling the Harness in Agentic AI' (arXiv:2605.26112v1, May 2026)"
+version: "1.0.1"
 ---
 
 > **Attribution:** Derived from [arXiv:2605.26112v1](https://arxiv.org/abs/2605.26112v1) — *From Model Scaling to System Scaling: Scaling the Harness in Agentic AI* by Shangding Gu (UC Berkeley), May 2026. Reference implementation: [CheetahClaws](https://github.com/SafeRL-Lab/cheetahclaws).
@@ -313,10 +314,10 @@ Fix:
 ## Integration
 
 This skill provides the architectural foundation for:
-- [memory-systems](../../context-engineering/memory-systems/SKILL.md) — implements ℳ in depth
-- [multi-agent-patterns](../multi-agent-patterns/SKILL.md) — implements 𝒪 coordination patterns
-- [context-fundamentals](../../context-engineering/context-fundamentals/SKILL.md) — implements 𝒞 in depth
-- [agentic-eval](../../agent-eval/agentic-eval/SKILL.md) — measures harness quality
+- [memory-systems](https://github.com/mouadja02/skills/tree/main/skills/context-engineering/memory-systems) — implements ℳ in depth
+- [multi-agent-patterns](https://github.com/mouadja02/skills/tree/main/skills/agent-design/multi-agent-patterns) — implements 𝒪 coordination patterns
+- [context-fundamentals](https://github.com/mouadja02/skills/tree/main/skills/context-engineering/context-fundamentals) — implements 𝒞 in depth
+- [agentic-eval](https://github.com/mouadja02/skills/tree/main/skills/agent-eval/agentic-eval) — measures harness quality
 
 ## References
 
@@ -339,4 +340,4 @@ External resources:
 
 **Created**: 2026-05-26
 **Source Paper**: arXiv:2605.26112v1 — Shangding Gu, UC Berkeley
-**Version**: 1.0.0
+**Version**: 1.0.1
