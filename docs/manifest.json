@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-07-28T10:10:03.854Z",
+  "generated_at": "2026-07-29T10:06:03.956Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 815,
+  "count": 816,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -54,7 +54,7 @@
     "communication": 1,
     "context-engineering": 17,
     "creative": 2,
-    "databases": 23,
+    "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
     "devops": 38,
@@ -2840,6 +2840,14 @@
       "path": "skills/databases/planning-oracle-to-postgres-migration-integration-testing",
       "depth": 2,
       "description": "Oracle → PostgreSQL integration test plan for .NET data access artifacts"
+    },
+    {
+      "name": "postgres-logical-slot-failover-triage",
+      "category": "databases",
+      "install_path": "databases/postgres-logical-slot-failover-triage",
+      "path": "skills/databases/postgres-logical-slot-failover-triage",
+      "depth": 2,
+      "description": "Use when PostgreSQL logical replication slots retain WAL, become orphaned or invalid after switchover, or must be proven synchronized and usable before failover."
     },
     {
       "name": "postgresql-code-review",

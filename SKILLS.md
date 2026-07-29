@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 815 skills across 36 categories.
+**Total:** 816 skills across 36 categories.
 
 ## Install one skill
 
@@ -33,7 +33,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`communication`](#communication) | 1 |
 | [`context-engineering`](#context-engineering) | 17 |
 | [`creative`](#creative) | 2 |
-| [`databases`](#databases) | 23 |
+| [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
 | [`devops`](#devops) | 38 |
@@ -463,6 +463,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`migrating-oracle-to-postgres-stored-procedures`](./skills/databases/migrating-oracle-to-postgres-stored-procedures/SKILL.md) | `databases/migrating-oracle-to-postgres-stored-procedures` | Migrates Oracle PL/SQL stored procedures to PostgreSQL PL/pgSQL. Translates Oracle-specific syntax, preserves method signatures and type-anchored parameters, leverages orafce where appropriate, and applies COLLATE "C" for Oracle-compatible text sorting. Use when converting Oracle stored procedures or functions to PostgreSQL equivalents during a database migration. |
 | [`pdftk-server`](./skills/databases/pdftk-server/SKILL.md) | `databases/pdftk-server` | — using the command-line tool pdftk (PDFtk Server) for working with PDF files |
 | [`planning-oracle-to-postgres-migration-integration-testing`](./skills/databases/planning-oracle-to-postgres-migration-integration-testing/SKILL.md) | `databases/planning-oracle-to-postgres-migration-integration-testing` | Oracle → PostgreSQL integration test plan for .NET data access artifacts |
+| [`postgres-logical-slot-failover-triage`](./skills/databases/postgres-logical-slot-failover-triage/SKILL.md) | `databases/postgres-logical-slot-failover-triage` | Use when PostgreSQL logical replication slots retain WAL, become orphaned or invalid after switchover, or must be proven synchronized and usable before failover. |
 | [`postgresql-code-review`](./skills/databases/postgresql-code-review/SKILL.md) | `databases/postgresql-code-review` | PostgreSQL code review — PG-specific best practices, anti-patterns, quality standards |
 | [`postgresql-optimization`](./skills/databases/postgresql-optimization/SKILL.md) | `databases/postgresql-optimization` | PostgreSQL optimization — unique features, advanced types, exclusive capabilities |
 | [`reviewing-oracle-to-postgres-migration`](./skills/databases/reviewing-oracle-to-postgres-migration/SKILL.md) | `databases/reviewing-oracle-to-postgres-migration` | Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral differences (empty strings, refcursors, type coercion, sorting, timestamps, concurrent transactions, etc.) |
