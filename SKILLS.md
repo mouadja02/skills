@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 816 skills across 36 categories.
+**Total:** 817 skills across 36 categories.
 
 ## Install one skill
 
@@ -44,7 +44,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`finance`](#finance) | 7 |
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
-| [`llm-tooling`](#llm-tooling) | 47 |
+| [`llm-tooling`](#llm-tooling) | 48 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
 | [`mcp`](#mcp) | 16 |
 | [`messaging`](#messaging) | 1 |
@@ -775,6 +775,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`openrouter-oauth`](./skills/llm-tooling/openrouter-oauth/SKILL.md) | `llm-tooling/openrouter-oauth` | Implement "Sign In with OpenRouter" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required. |
 | [`openrouter-typescript-sdk`](./skills/llm-tooling/openrouter-typescript-sdk/SKILL.md) | `llm-tooling/openrouter-typescript-sdk` | integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern |
 | [`oracle`](./skills/llm-tooling/oracle/SKILL.md) | `llm-tooling/oracle` | Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design. |
+| [`otel-genai-semconv-drift-validation`](./skills/llm-tooling/otel-genai-semconv-drift-validation/SKILL.md) | `llm-tooling/otel-genai-semconv-drift-validation` | Use when OpenTelemetry GenAI spans or events drift across semantic-convention versions, duplicate token usage, use obsolete names, or capture model content without explicit safeguards. |
 | [`phoenix-cli`](./skills/llm-tooling/phoenix-cli/SKILL.md) | `llm-tooling/phoenix-cli` | Phoenix CLI — fetch/export traces, analyze errors, open coding axial coding review |
 | [`phoenix-evals`](./skills/llm-tooling/phoenix-evals/SKILL.md) | `llm-tooling/phoenix-evals` | Build and run evaluators for AI/LLM applications using Phoenix. |
 | [`phoenix-tracing`](./skills/llm-tooling/phoenix-tracing/SKILL.md) | `llm-tooling/phoenix-tracing` | OpenInference semantic conventions and instrumentation for Phoenix AI observability |

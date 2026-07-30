@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "otel-genai-main-434c91d": {
+      "source": "https://github.com/open-telemetry/semantic-conventions-genai/commit/434c91dcc34ed038e3048c07720ddfed2c6bddfc",
+      "accessed": "2026-07-30",
+      "status": "development",
+      "legacy_attributes": {
+        "gen_ai.system": "gen_ai.provider.name",
+        "gen_ai.prompt": "gen_ai.input.messages",
+        "gen_ai.completion": "gen_ai.output.messages"
+      },
+      "legacy_events": {
+        "gen_ai.client.inference.operation.details": "content attributes or an explicitly versioned event representation"
+      },
+      "content_attributes": [
+        "gen_ai.system_instructions",
+        "gen_ai.input.messages",
+        "gen_ai.output.messages"
+      ]
+    }
+  }
+}

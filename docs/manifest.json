@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-07-29T10:06:03.956Z",
+  "generated_at": "2026-07-30T10:06:21.345Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 816,
+  "count": 817,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -65,7 +65,7 @@
     "finance": 7,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 47,
+    "llm-tooling": 48,
     "marketing-and-growth": 26,
     "mcp": 16,
     "messaging": 1,
@@ -4896,6 +4896,14 @@
       "path": "skills/llm-tooling/oracle",
       "depth": 2,
       "description": "Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design."
+    },
+    {
+      "name": "otel-genai-semconv-drift-validation",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/otel-genai-semconv-drift-validation",
+      "path": "skills/llm-tooling/otel-genai-semconv-drift-validation",
+      "depth": 2,
+      "description": "Use when OpenTelemetry GenAI spans or events drift across semantic-convention versions, duplicate token usage, use obsolete names, or capture model content without explicit safeguards."
     },
     {
       "name": "phoenix-cli",

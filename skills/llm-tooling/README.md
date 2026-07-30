@@ -6,7 +6,7 @@
 
 LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM.
 
-**Total:** 47 skills.
+**Total:** 48 skills.
 
 ## Skills In This Category
 
@@ -31,6 +31,7 @@ LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Ariz
 | [`openrouter-oauth`](openrouter-oauth/SKILL.md) | `llm-tooling/openrouter-oauth` | Implement "Sign In with OpenRouter" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys fo... |
 | [`openrouter-typescript-sdk`](openrouter-typescript-sdk/SKILL.md) | `llm-tooling/openrouter-typescript-sdk` | integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern |
 | [`oracle`](oracle/SKILL.md) | `llm-tooling/oracle` | Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design. |
+| [`otel-genai-semconv-drift-validation`](otel-genai-semconv-drift-validation/SKILL.md) | `llm-tooling/otel-genai-semconv-drift-validation` | Use when OpenTelemetry GenAI spans or events drift across semantic-convention versions, duplicate token usage, use obsolete names, or capture model content without explicit safeguards. |
 | [`phoenix-cli`](phoenix-cli/SKILL.md) | `llm-tooling/phoenix-cli` | Phoenix CLI — fetch/export traces, analyze errors, open coding axial coding review |
 | [`phoenix-evals`](phoenix-evals/SKILL.md) | `llm-tooling/phoenix-evals` | Build and run evaluators for AI/LLM applications using Phoenix. |
 | [`phoenix-tracing`](phoenix-tracing/SKILL.md) | `llm-tooling/phoenix-tracing` | OpenInference semantic conventions and instrumentation for Phoenix AI observability |

@@ -601,6 +601,7 @@ llm-tooling/openrouter-models	llm-tooling	openrouter-models	Query OpenRouter for
 llm-tooling/openrouter-oauth	llm-tooling	openrouter-oauth	Implement "Sign In with OpenRouter" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required.
 llm-tooling/openrouter-typescript-sdk	llm-tooling	openrouter-typescript-sdk	integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern
 llm-tooling/oracle	llm-tooling	oracle	Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design.
+llm-tooling/otel-genai-semconv-drift-validation	llm-tooling	otel-genai-semconv-drift-validation	Use when OpenTelemetry GenAI spans or events drift across semantic-convention versions, duplicate token usage, use obsolete names, or capture model content without explicit safeguards.
 llm-tooling/phoenix-cli	llm-tooling	phoenix-cli	Phoenix CLI — fetch/export traces, analyze errors, open coding axial coding review
 llm-tooling/phoenix-evals	llm-tooling	phoenix-evals	Build and run evaluators for AI/LLM applications using Phoenix.
 llm-tooling/phoenix-tracing	llm-tooling	phoenix-tracing	OpenInference semantic conventions and instrumentation for Phoenix AI observability
