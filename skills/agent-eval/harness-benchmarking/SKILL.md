@@ -7,6 +7,7 @@ description: >
   "measure agent reliability", "pass^k evaluation", "agent metrics beyond success rate",
   "trajectory quality", "memory hygiene metric", "longitudinal agent eval", "why my agent
   scores well on benchmarks but fails in production".
+version: "1.0.1"
 source: "https://arxiv.org/abs/2605.26112v1"
 attribution: "Shangding Gu, UC Berkeley — 'From Model Scaling to System Scaling: Scaling the Harness in Agentic AI' (arXiv:2605.26112v1, May 2026)"
 ---
@@ -374,9 +375,9 @@ def compute_efficiency_adjusted_score(
 ## Integration
 
 This skill complements:
-- [harness-scaling](../../agent-design/harness-scaling/SKILL.md) — the framework being evaluated
-- [multi-agent-patterns](../../agent-design/multi-agent-patterns/SKILL.md) — multi-agent coordination being measured
-- [memory-systems](../../context-engineering/memory-systems/SKILL.md) — memory quality being measured
+- [harness-scaling](https://github.com/mouadja02/skills/tree/main/skills/agent-design/harness-scaling) — the framework being evaluated
+- [multi-agent-patterns](https://github.com/mouadja02/skills/tree/main/skills/agent-design/multi-agent-patterns) — multi-agent coordination being measured
+- [memory-systems](https://github.com/mouadja02/skills/tree/main/skills/context-engineering/memory-systems) — memory quality being measured
 
 ## References
 
@@ -393,4 +394,4 @@ This skill complements:
 
 **Created**: 2026-05-26
 **Source Paper**: arXiv:2605.26112v1 — Shangding Gu, UC Berkeley
-**Version**: 1.0.0
+**Version**: 1.0.1
