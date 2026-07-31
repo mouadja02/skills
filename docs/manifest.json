@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-07-30T10:06:21.345Z",
+  "generated_at": "2026-07-31T10:06:35.332Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 817,
+  "count": 818,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
-    "devops": 38,
+    "devops": 39,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3616,6 +3616,14 @@
       "path": "skills/devops/observability-designer",
       "depth": 2,
       "description": "Design comprehensive observability for production systems"
+    },
+    {
+      "name": "oci-referrers-portability-conformance",
+      "category": "devops",
+      "install_path": "devops/oci-referrers-portability-conformance",
+      "path": "skills/devops/oci-referrers-portability-conformance",
+      "depth": 2,
+      "description": "Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images."
     },
     {
       "name": "release-mac-app",

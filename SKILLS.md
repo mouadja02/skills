@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 817 skills across 36 categories.
+**Total:** 818 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
-| [`devops`](#devops) | 38 |
+| [`devops`](#devops) | 39 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -575,6 +575,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`mac-maintenance`](./skills/devops/mac-maintenance/SKILL.md) | `devops/mac-maintenance` | macOS upkeep: brew update/upgrade, pull clean repos, empty Trash. |
 | [`multi-stage-dockerfile`](./skills/devops/multi-stage-dockerfile/SKILL.md) | `devops/multi-stage-dockerfile` | Create optimized multi-stage Dockerfiles for any language or framework |
 | [`observability-designer`](./skills/devops/observability-designer/SKILL.md) | `devops/observability-designer` | Design comprehensive observability for production systems |
+| [`oci-referrers-portability-conformance`](./skills/devops/oci-referrers-portability-conformance/SKILL.md) | `devops/oci-referrers-portability-conformance` | Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images. |
 | [`release-mac-app`](./skills/devops/release-mac-app/SKILL.md) | `devops/release-mac-app` | macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout. |
 | [`remote-mac`](./skills/devops/remote-mac/SKILL.md) | `devops/remote-mac` | Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks. |
 | [`saas-scaffolder`](./skills/devops/saas-scaffolder/SKILL.md) | `devops/saas-scaffolder` | SaaS boilerplate generator — auth, DB schemas, billing, API routes, CI/CD |

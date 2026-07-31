@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 38 skills.
+**Total:** 39 skills.
 
 ## Skills In This Category
 
@@ -36,6 +36,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`mac-maintenance`](mac-maintenance/SKILL.md) | `devops/mac-maintenance` | macOS upkeep: brew update/upgrade, pull clean repos, empty Trash. |
 | [`multi-stage-dockerfile`](multi-stage-dockerfile/SKILL.md) | `devops/multi-stage-dockerfile` | Create optimized multi-stage Dockerfiles for any language or framework |
 | [`observability-designer`](observability-designer/SKILL.md) | `devops/observability-designer` | Design comprehensive observability for production systems |
+| [`oci-referrers-portability-conformance`](oci-referrers-portability-conformance/SKILL.md) | `devops/oci-referrers-portability-conformance` | Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images. |
 | [`release-mac-app`](release-mac-app/SKILL.md) | `devops/release-mac-app` | macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout. |
 | [`remote-mac`](remote-mac/SKILL.md) | `devops/remote-mac` | Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks. |
 | [`saas-scaffolder`](saas-scaffolder/SKILL.md) | `devops/saas-scaffolder` | SaaS boilerplate generator — auth, DB schemas, billing, API routes, CI/CD |
