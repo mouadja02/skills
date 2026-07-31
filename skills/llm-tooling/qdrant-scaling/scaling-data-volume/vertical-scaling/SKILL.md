@@ -1,6 +1,7 @@
 ---
 name: qdrant-vertical-scaling
 description: "Guides Qdrant vertical scaling decisions"
+version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -47,7 +48,7 @@ RAM is the most critical resource for Qdrant performance. Use these guidelines t
 - With binary quantization: divide by 32 [Binary quantization](https://search.qdrant.tech/md/documentation/manage-data/quantization/?s=binary-quantization)
 - Add overhead for HNSW index (~20-30% of vector data), payload indexes, and WAL
 - Reserve 20% headroom for optimizer operations and OS cache
-- Monitor actual usage via Grafana/Prometheus before and after resizing [Monitoring](../../../qdrant-monitoring/SKILL.md)
+- Monitor actual usage via Grafana/Prometheus before and after resizing [Monitoring](https://github.com/mouadja02/skills/tree/main/skills/llm-tooling/qdrant-monitoring)
 
 
 ## When Vertical Scaling Is No Longer Enough
@@ -61,7 +62,7 @@ Recognize these signals that it's time to go horizontal:
 - Single-node CPU is maxed and query latency is unacceptable
 - Next vertical scaling step is the largest available node size. You might need to be able to temporarily scale up to the larger node size to do batch operations or recovery. If you are already at the largest node size, you won't be able to do that.
 
-When you hit these limits, see [Horizontal Scaling](../horizontal-scaling/SKILL.md) for guidance on sharding and node planning.
+When you hit these limits, see [Horizontal Scaling](https://github.com/mouadja02/skills/tree/main/skills/llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling) for guidance on sharding and node planning.
 
 
 ## What NOT to Do

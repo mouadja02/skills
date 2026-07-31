@@ -1,6 +1,7 @@
 ---
 name: qdrant-scaling-qps
 description: "Guides Qdrant query throughput (QPS) scaling"
+version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -37,7 +38,7 @@ If a single node is saturated on CPU after applying the tuning above, scale hori
 - Each replica adds independent query capacity without re-sharding
 - Use `replication_factor: 2+` and route reads to replicas [Distributed deployment](https://search.qdrant.tech/md/documentation/operations/distributed_deployment/?s=replication)
 
-See also [Horizontal Scaling](../scaling-data-volume/horizontal-scaling/SKILL.md) for general horizontal scaling guidance.
+See also [Horizontal Scaling](https://github.com/mouadja02/skills/tree/main/skills/llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling) for general horizontal scaling guidance.
 
 
 ## Disk I/O Bottlenecks
