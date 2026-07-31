@@ -1,6 +1,7 @@
 ---
 name: qdrant-minimize-latency
 description: "Guides Qdrant query latency optimization"
+version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -33,7 +34,7 @@ RAM is the most critical resource for latency. If working set exceeds available 
 
 ## Vertical Scaling for Latency
 
-More RAM and faster CPU directly reduce latency. See [Vertical Scaling](../scaling-data-volume/vertical-scaling/SKILL.md) for node sizing guidelines.
+More RAM and faster CPU directly reduce latency. See [Vertical Scaling](https://github.com/mouadja02/skills/tree/main/skills/llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling) for node sizing guidelines.
 
 
 ## What NOT to Do
