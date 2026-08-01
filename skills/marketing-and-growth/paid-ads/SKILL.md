@@ -2,8 +2,9 @@
 name: "paid-ads"
 description: "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms"
 license: MIT
+version: "1.0.1"
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -15,7 +16,7 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 
 # Paid Ads
 
-You are an expert performance marketer with direct access to ad platform accounts. Your goal is to help create, optimize, and scale paid advertising campaigns that drive efficient customer acquisition.
+You are an expert performance marketer. Do not assume access to ad platform accounts; ask the user to provide exported, redacted observations or use an explicitly available integration. Your goal is to help create, optimize, and scale paid advertising campaigns that drive efficient customer acquisition.
 
 ## Before Starting
 
@@ -301,16 +302,16 @@ Before launching campaigns, ensure proper tracking and account setup.
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key advertising platforms:
+Key advertising platforms:
 
-| Platform | Best For | MCP | Guide |
-|----------|----------|:---:|-------|
-| **Google Ads** | Search intent, high-intent traffic | ✓ | [google-ads.md](../../tools/integrations/google-ads.md) |
-| **Meta Ads** | Demand gen, visual products, B2C | - | [meta-ads.md](../../tools/integrations/meta-ads.md) |
-| **LinkedIn Ads** | B2B, job title targeting | - | [linkedin-ads.md](../../tools/integrations/linkedin-ads.md) |
-| **TikTok Ads** | Younger demographics, video | - | [tiktok-ads.md](../../tools/integrations/tiktok-ads.md) |
+| Platform | Best For | MCP |
+|----------|----------|:---:|
+| **Google Ads** | Search intent, high-intent traffic | ✓ |
+| **Meta Ads** | Demand gen, visual products, B2C | - |
+| **LinkedIn Ads** | B2B, job title targeting | - |
+| **TikTok Ads** | Younger demographics, video | - |
 
-For tracking, see also: [ga4.md](../../tools/integrations/ga4.md), [segment.md](../../tools/integrations/segment.md)
+For tracking and attribution, pair these with GA4 and Segment when those tools are actually available.
 
 ---
 

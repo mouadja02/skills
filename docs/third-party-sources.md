@@ -32,6 +32,16 @@ Copyright (c) 2025 Nous Research.
 
 Some imported skills retain additional upstream attribution in their own content, including Anthropic financial-services references where present in the Hermes source.
 
+## Alireza Rezvani Claude Skills
+
+Source repository: https://github.com/alirezarezvani/claude-skills
+
+The local `marketing-and-growth/email-sequence` and `marketing-and-growth/paid-ads` packages are adapted from the upstream marketing skill bundle and retain source and attribution frontmatter.
+
+License: MIT.
+
+Copyright (c) 2025 Alireza Rezvani.
+
 ## Hallmark
 
 Source repository: https://github.com/Nutlope/hallmark
