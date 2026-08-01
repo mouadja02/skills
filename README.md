@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **818 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **819 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -66,7 +66,7 @@ This table is generated from `docs/manifest.json`.
 | [`databases`](./skills/databases/) | 24 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
 | [`design-and-ui`](./skills/design-and-ui/) | 34 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
 | [`dev-workflow`](./skills/dev-workflow/) | 29 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
-| [`devops`](./skills/devops/) | 39 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
+| [`devops`](./skills/devops/) | 40 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
 | [`diagrams-slides`](./skills/diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./skills/documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
 | [`dotnet`](./skills/dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
