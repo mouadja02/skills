@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 818 skills across 36 categories.
+**Total:** 819 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
-| [`devops`](#devops) | 39 |
+| [`devops`](#devops) | 40 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -570,6 +570,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`image-manipulation-image-magick`](./skills/devops/image-manipulation-image-magick/SKILL.md) | `devops/image-manipulation-image-magick` | Process and manipulate images using ImageMagick. Supports resizing, format conversion, batch processing, and retrieving image metadata |
 | [`import-infrastructure-as-code`](./skills/devops/import-infrastructure-as-code/SKILL.md) | `devops/import-infrastructure-as-code` | Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM) |
 | [`incident-commander`](./skills/devops/incident-commander/SKILL.md) | `devops/incident-commander` | Run incident response from detection to post-mortem |
+| [`kubernetes-gateway-backend-tls-portability`](./skills/devops/kubernetes-gateway-backend-tls-portability/SKILL.md) | `devops/kubernetes-gateway-backend-tls-portability` | Use when Gateway API BackendTLSPolicy is accepted but upstream TLS fails or differs across controllers, upgrades, SAN validation, CA sources, chain depth, or implementation-native policy precedence. |
 | [`kubernetes-ssa-field-ownership-triage`](./skills/devops/kubernetes-ssa-field-ownership-triage/SKILL.md) | `devops/kubernetes-ssa-field-ownership-triage` | Use when Kubernetes Server-Side Apply reports field-manager conflicts, controllers overwrite fields, or force-conflicts risks pruning/defaulting side effects; diagnose ownership read-only before choosing relinquish, partition, or explicit transfer. |
 | [`lsp-setup`](./skills/devops/lsp-setup/SKILL.md) | `devops/lsp-setup` | LSP setup for any language — go-to-definition, find-refs, hover, diagnostics |
 | [`mac-maintenance`](./skills/devops/mac-maintenance/SKILL.md) | `devops/mac-maintenance` | macOS upkeep: brew update/upgrade, pull clean repos, empty Trash. |
