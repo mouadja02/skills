@@ -36,7 +36,7 @@ Some imported skills retain additional upstream attribution in their own content
 
 Source repository: https://github.com/alirezarezvani/claude-skills
 
-The local `marketing-and-growth/email-sequence` and `marketing-and-growth/paid-ads` packages are adapted from the upstream marketing skill bundle and retain source and attribution frontmatter.
+The local `marketing-and-growth/email-sequence`, `marketing-and-growth/paid-ads`, `marketing-and-growth/programmatic-seo`, and `marketing-and-growth/cs-seo-audit` packages are adapted from the upstream marketing skill bundle and retain source and attribution frontmatter.
 
 License: MIT.
 
