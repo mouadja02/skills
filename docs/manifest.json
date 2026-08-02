@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-01T10:08:12.445Z",
+  "generated_at": "2026-08-02T10:08:43.259Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 819,
+  "count": 820,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
-    "devops": 40,
+    "devops": 41,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3576,6 +3576,14 @@
       "path": "skills/devops/incident-commander",
       "depth": 2,
       "description": "Run incident response from detection to post-mortem"
+    },
+    {
+      "name": "kubernetes-cel-admission-policy-preflight",
+      "category": "devops",
+      "install_path": "devops/kubernetes-cel-admission-policy-preflight",
+      "path": "skills/devops/kubernetes-cel-admission-policy-preflight",
+      "depth": 2,
+      "description": "Use when native Kubernetes ValidatingAdmissionPolicy or CEL admission rules need fixture completeness, cost/resource checks, bootstrap-safety analysis, or an Audit/Warn-to-Deny rollout gate."
     },
     {
       "name": "kubernetes-gateway-backend-tls-portability",
