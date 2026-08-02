@@ -2,8 +2,9 @@
 name: "seo-audit"
 description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," or "SEO health check." For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup.
 license: MIT
+version: "1.0.1"
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -42,7 +43,7 @@ Before auditing, understand:
 ---
 
 ## Audit Framework
-→ See references/seo-audit-reference.md for details
+See the bundled [SEO audit reference](references/seo-audit-reference.md) for the detailed framework.
 
 ## Output Format
 
@@ -77,8 +78,7 @@ Same format as above
 
 ## References
 
-- [AI Writing Detection](references/ai-writing-detection.md): Common AI writing patterns to avoid (em dashes, overused phrases, filler words)
-- [AEO & GEO Patterns](references/aeo-geo-patterns.md): Content patterns optimized for answer engines and AI citation
+- [SEO Audit Reference](references/seo-audit-reference.md): Full audit framework, scoring, and remediation patterns
 
 ---
 
