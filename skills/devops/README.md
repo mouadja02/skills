@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 41 skills.
+**Total:** 42 skills.
 
 ## Skills In This Category
 
@@ -32,6 +32,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`import-infrastructure-as-code`](import-infrastructure-as-code/SKILL.md) | `devops/import-infrastructure-as-code` | Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM) |
 | [`incident-commander`](incident-commander/SKILL.md) | `devops/incident-commander` | Run incident response from detection to post-mortem |
 | [`kubernetes-cel-admission-policy-preflight`](kubernetes-cel-admission-policy-preflight/SKILL.md) | `devops/kubernetes-cel-admission-policy-preflight` | Use when native Kubernetes ValidatingAdmissionPolicy or CEL admission rules need fixture completeness, cost/resource checks, bootstrap-safety analysis, or an Audit/Warn-to-Deny rollout gate. |
+| [`kubernetes-crd-storage-version-upgrade-preflight`](kubernetes-crd-storage-version-upgrade-preflight/SKILL.md) | `devops/kubernetes-crd-storage-version-upgrade-preflight` | Use when changing a Kubernetes CRD storage/served version, conversion webhook, stored objects, or retiring an old CRD API version requires a lossless migration and rollback gate. |
 | [`kubernetes-gateway-backend-tls-portability`](kubernetes-gateway-backend-tls-portability/SKILL.md) | `devops/kubernetes-gateway-backend-tls-portability` | Use when Gateway API BackendTLSPolicy is accepted but upstream TLS fails or differs across controllers, upgrades, SAN validation, CA sources, chain depth, or implementation-native policy precedence. |
 | [`kubernetes-ssa-field-ownership-triage`](kubernetes-ssa-field-ownership-triage/SKILL.md) | `devops/kubernetes-ssa-field-ownership-triage` | Use when Kubernetes Server-Side Apply reports field-manager conflicts, controllers overwrite fields, or force-conflicts risks pruning/defaulting side effects; diagnose ownership read-only before choosing relinquish, partition, or explici... |
 | [`lsp-setup`](lsp-setup/SKILL.md) | `devops/lsp-setup` | LSP setup for any language — go-to-definition, find-refs, hover, diagnostics |

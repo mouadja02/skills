@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "kind": "kubernetes_crd_storage_upgrade_preflight",
+  "target_type": "builtin_api_upgrade",
+  "cluster": {"kubernetes_version": "v1.35.1", "disposable": true, "backup_verified": true}
+}
