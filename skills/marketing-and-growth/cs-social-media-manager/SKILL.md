@@ -1,9 +1,9 @@
 ---
-name: "social-media-manager"
-description: "When the user wants to develop social media strategy, plan content calendars, manage community engagement, or grow their social presence across platforms"
+name: "cs-social-media-manager"
+description: "Use when planning social media strategy, content calendars, platform selection, community engagement, or organic audience growth. Do not use for writing one post or analyzing supplied performance data."
+version: "1.0.1"
 license: MIT
 metadata:
-  version: 1.0.0
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -14,6 +14,14 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Social Media Manager
+
+## When to Use
+
+- Build a social media strategy, choose platforms, or define content pillars.
+- Plan a content calendar, publishing cadence, or community-management workflow.
+- Audit an underperforming social presence and prioritize improvements.
+- Systematize organic growth, measurement, and team responsibilities.
+- Do **not** activate for drafting one standalone post or analyzing a supplied performance dataset; use a focused writing or analytics skill instead.
 
 You are a senior social media strategist who has grown accounts from zero to six figures across every major platform. Your goal is to help build a sustainable social media presence that drives business results — not just vanity metrics.
 
@@ -66,7 +74,7 @@ Not every platform deserves your time. Choose based on where your audience alrea
 | **TikTok** | Young audiences, viral potential | Short video, trends, authentic | 1-3x/day |
 | **YouTube** | Education, tutorials, long-form | Videos, shorts | 1-2x/week |
 
-**Rule of thumb:** Do 1-2 platforms exceptionally well before adding a third. Half-hearted presence on 5 platforms beats zero engagement on all of them.
+**Rule of thumb:** Do 1-2 platforms exceptionally well before adding a third. A focused presence on fewer platforms usually outperforms a half-hearted presence on five.
 
 ## Content Pillar Framework
 

@@ -36,7 +36,29 @@ Some imported skills retain additional upstream attribution in their own content
 
 Source repository: https://github.com/alirezarezvani/claude-skills
 
-The local `marketing-and-growth/email-sequence`, `marketing-and-growth/paid-ads`, `marketing-and-growth/programmatic-seo`, and `marketing-and-growth/cs-seo-audit` packages are adapted from the upstream marketing skill bundle and retain source and attribution frontmatter.
+The following local packages are adapted from the upstream marketing skill bundle and retain source and attribution frontmatter:
+
+- `marketing-and-growth/content-humanizer`
+- `marketing-and-growth/content-production`
+- `marketing-and-growth/cs-ad-creative`
+- `marketing-and-growth/cs-ai-seo`
+- `marketing-and-growth/cs-cold-email`
+- `marketing-and-growth/cs-copywriting`
+- `marketing-and-growth/cs-pricing-strategy`
+- `marketing-and-growth/cs-seo-audit`
+- `marketing-and-growth/cs-social-media-manager`
+- `marketing-and-growth/email-sequence`
+- `marketing-and-growth/launch-strategy`
+- `marketing-and-growth/marketing-context`
+- `marketing-and-growth/marketing-demand-acquisition`
+- `marketing-and-growth/marketing-ops`
+- `marketing-and-growth/marketing-psychology`
+- `marketing-and-growth/onboarding-cro`
+- `marketing-and-growth/page-cro`
+- `marketing-and-growth/paid-ads`
+- `marketing-and-growth/programmatic-seo`
+- `marketing-and-growth/signup-flow-cro`
+- `marketing-and-growth/x-twitter-growth`
 
 License: MIT.
 

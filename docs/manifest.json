@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-03T10:08:22.474Z",
+  "generated_at": "2026-08-03T18:03:54.530Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 821,
@@ -5234,12 +5234,12 @@
       "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup."
     },
     {
-      "name": "social-media-manager",
+      "name": "cs-social-media-manager",
       "category": "marketing-and-growth",
       "install_path": "marketing-and-growth/cs-social-media-manager",
       "path": "skills/marketing-and-growth/cs-social-media-manager",
       "depth": 2,
-      "description": "When the user wants to develop social media strategy, plan content calendars, manage community engagement, or grow their social presence across platforms"
+      "description": "Use when planning social media strategy, content calendars, platform selection, community engagement, or organic audience growth. Do not use for writing one post or analyzing supplied performance data."
     },
     {
       "name": "email-sequence",
