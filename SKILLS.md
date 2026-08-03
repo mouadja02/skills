@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 820 skills across 36 categories.
+**Total:** 821 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
-| [`devops`](#devops) | 41 |
+| [`devops`](#devops) | 42 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -571,6 +571,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`import-infrastructure-as-code`](./skills/devops/import-infrastructure-as-code/SKILL.md) | `devops/import-infrastructure-as-code` | Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM) |
 | [`incident-commander`](./skills/devops/incident-commander/SKILL.md) | `devops/incident-commander` | Run incident response from detection to post-mortem |
 | [`kubernetes-cel-admission-policy-preflight`](./skills/devops/kubernetes-cel-admission-policy-preflight/SKILL.md) | `devops/kubernetes-cel-admission-policy-preflight` | Use when native Kubernetes ValidatingAdmissionPolicy or CEL admission rules need fixture completeness, cost/resource checks, bootstrap-safety analysis, or an Audit/Warn-to-Deny rollout gate. |
+| [`kubernetes-crd-storage-version-upgrade-preflight`](./skills/devops/kubernetes-crd-storage-version-upgrade-preflight/SKILL.md) | `devops/kubernetes-crd-storage-version-upgrade-preflight` | Use when changing a Kubernetes CRD storage/served version, conversion webhook, stored objects, or retiring an old CRD API version requires a lossless migration and rollback gate. |
 | [`kubernetes-gateway-backend-tls-portability`](./skills/devops/kubernetes-gateway-backend-tls-portability/SKILL.md) | `devops/kubernetes-gateway-backend-tls-portability` | Use when Gateway API BackendTLSPolicy is accepted but upstream TLS fails or differs across controllers, upgrades, SAN validation, CA sources, chain depth, or implementation-native policy precedence. |
 | [`kubernetes-ssa-field-ownership-triage`](./skills/devops/kubernetes-ssa-field-ownership-triage/SKILL.md) | `devops/kubernetes-ssa-field-ownership-triage` | Use when Kubernetes Server-Side Apply reports field-manager conflicts, controllers overwrite fields, or force-conflicts risks pruning/defaulting side effects; diagnose ownership read-only before choosing relinquish, partition, or explicit transfer. |
 | [`lsp-setup`](./skills/devops/lsp-setup/SKILL.md) | `devops/lsp-setup` | LSP setup for any language — go-to-definition, find-refs, hover, diagnostics |

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "kind": "kubernetes_crd_storage_upgrade_preflight",
+  "target_type": "kubernetes_crd_upgrade",
+  "cluster": {"kubernetes_version": "", "disposable": false, "backup_verified": false},
+  "crd": {
+    "name": "gadgets.example.test",
+    "current_storage_version": "v1alpha1",
+    "desired_storage_version": "v1",
+    "served_versions": ["v1alpha1", "v1"],
+    "stored_versions": ["v1alpha1"],
+    "conversion_strategy": "Webhook",
+    "webhook": {"service_exists": true, "endpoints_ready": false, "ca_valid": false, "ownership_known": false, "outage_probe_completed": false}
+  },
+  "migration": {"method": "storage_version_migration", "feature_enabled": false, "objects_before": 8, "objects_after": 6, "rewrite_completed": false},
+  "round_trip_fixtures": [
+    {"id": "field-loss", "from_version": "v1alpha1", "to_version": "v1", "back_to_version": "v1alpha1", "equal": false, "unknown_field_checked": false}
+  ],
+  "retirement": {"old_version": "v1alpha1", "served_false": true, "stored_absent": false, "clients_checked": false, "conversion_support_retained": false},
+  "rollback": {"documented": false, "backup_restore_rehearsed": false}
+}

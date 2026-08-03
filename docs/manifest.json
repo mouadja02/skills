@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-02T10:08:43.259Z",
+  "generated_at": "2026-08-03T10:08:22.474Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 820,
+  "count": 821,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
-    "devops": 41,
+    "devops": 42,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3584,6 +3584,14 @@
       "path": "skills/devops/kubernetes-cel-admission-policy-preflight",
       "depth": 2,
       "description": "Use when native Kubernetes ValidatingAdmissionPolicy or CEL admission rules need fixture completeness, cost/resource checks, bootstrap-safety analysis, or an Audit/Warn-to-Deny rollout gate."
+    },
+    {
+      "name": "kubernetes-crd-storage-version-upgrade-preflight",
+      "category": "devops",
+      "install_path": "devops/kubernetes-crd-storage-version-upgrade-preflight",
+      "path": "skills/devops/kubernetes-crd-storage-version-upgrade-preflight",
+      "depth": 2,
+      "description": "Use when changing a Kubernetes CRD storage/served version, conversion webhook, stored objects, or retiring an old CRD API version requires a lossless migration and rollback gate."
     },
     {
       "name": "kubernetes-gateway-backend-tls-portability",
