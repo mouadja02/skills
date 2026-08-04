@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 821 skills across 36 categories.
+**Total:** 822 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
-| [`devops`](#devops) | 42 |
+| [`devops`](#devops) | 43 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -590,6 +590,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`ssh-doctor`](./skills/devops/ssh-doctor/SKILL.md) | `devops/ssh-doctor` | SSH triage: Remote Login, launchd sshd, pre-auth closes, stale sessions, macOS. |
 | [`terraform-azurerm-set-diff-analyzer`](./skills/devops/terraform-azurerm-set-diff-analyzer/SKILL.md) | `devops/terraform-azurerm-set-diff-analyzer` | Analyze Terraform plan JSON output for AzureRM Provider to distinguish between false-positive diffs (order-only changes in Set-type attributes) and actual resource changes |
 | [`terraform-patterns`](./skills/devops/terraform-patterns/SKILL.md) | `devops/terraform-patterns` | Terraform IaC — module design, state management, testing, drift detection, multi-cloud |
+| [`terraform-provider-state-upgrade-compatibility`](./skills/devops/terraform-provider-state-upgrade-compatibility/SKILL.md) | `devops/terraform-provider-state-upgrade-compatibility` | Use when a Terraform provider maintainer changes a resource state schema and must prove historical state decoding, upgrader coverage, released-version migration, and a no-op plan before release. |
 | [`threat-model-analyst`](./skills/devops/threat-model-analyst/SKILL.md) | `devops/threat-model-analyst` | STRIDE-A threat model — single-repo analysis or incremental update, threat matrix, mitigations |
 | [`vm-lab`](./skills/devops/vm-lab/SKILL.md) | `devops/vm-lab` | Parallels macOS VM lab: GUI automation testing, Peekaboo, TCC, two-way validation. |
 | [`wrangler`](./skills/devops/wrangler/SKILL.md) | `devops/wrangler` | Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, account routing. |

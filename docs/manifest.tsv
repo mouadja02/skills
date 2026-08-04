@@ -456,6 +456,7 @@ devops/senior-security	devops	senior-security	Security engineering toolkit for t
 devops/ssh-doctor	devops	ssh-doctor	SSH triage: Remote Login, launchd sshd, pre-auth closes, stale sessions, macOS.
 devops/terraform-azurerm-set-diff-analyzer	devops	terraform-azurerm-set-diff-analyzer	Analyze Terraform plan JSON output for AzureRM Provider to distinguish between false-positive diffs (order-only changes in Set-type attributes) and actual resource changes
 devops/terraform-patterns	devops	terraform-patterns	Terraform IaC — module design, state management, testing, drift detection, multi-cloud
+devops/terraform-provider-state-upgrade-compatibility	devops	terraform-provider-state-upgrade-compatibility	Use when a Terraform provider maintainer changes a resource state schema and must prove historical state decoding, upgrader coverage, released-version migration, and a no-op plan before release.
 devops/threat-model-analyst	devops	threat-model-analyst	STRIDE-A threat model — single-repo analysis or incremental update, threat matrix, mitigations
 devops/vm-lab	devops	vm-lab	Parallels macOS VM lab: GUI automation testing, Peekaboo, TCC, two-way validation.
 devops/wrangler	devops	wrangler	Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, account routing.

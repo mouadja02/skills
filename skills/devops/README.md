@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 42 skills.
+**Total:** 43 skills.
 
 ## Skills In This Category
 
@@ -51,6 +51,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`ssh-doctor`](ssh-doctor/SKILL.md) | `devops/ssh-doctor` | SSH triage: Remote Login, launchd sshd, pre-auth closes, stale sessions, macOS. |
 | [`terraform-azurerm-set-diff-analyzer`](terraform-azurerm-set-diff-analyzer/SKILL.md) | `devops/terraform-azurerm-set-diff-analyzer` | Analyze Terraform plan JSON output for AzureRM Provider to distinguish between false-positive diffs (order-only changes in Set-type attributes) and actual resource changes |
 | [`terraform-patterns`](terraform-patterns/SKILL.md) | `devops/terraform-patterns` | Terraform IaC — module design, state management, testing, drift detection, multi-cloud |
+| [`terraform-provider-state-upgrade-compatibility`](terraform-provider-state-upgrade-compatibility/SKILL.md) | `devops/terraform-provider-state-upgrade-compatibility` | Use when a Terraform provider maintainer changes a resource state schema and must prove historical state decoding, upgrader coverage, released-version migration, and a no-op plan before release. |
 | [`threat-model-analyst`](threat-model-analyst/SKILL.md) | `devops/threat-model-analyst` | STRIDE-A threat model — single-repo analysis or incremental update, threat matrix, mitigations |
 | [`vm-lab`](vm-lab/SKILL.md) | `devops/vm-lab` | Parallels macOS VM lab: GUI automation testing, Peekaboo, TCC, two-way validation. |
 | [`wrangler`](wrangler/SKILL.md) | `devops/wrangler` | Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, account routing. |
