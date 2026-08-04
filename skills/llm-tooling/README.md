@@ -48,7 +48,7 @@ LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Ariz
 | [`qdrant-scaling`](qdrant-scaling/SKILL.md) | `llm-tooling/qdrant-scaling` | Guides Qdrant scaling decisions |
 | [`qdrant-minimize-latency`](qdrant-scaling/minimize-latency/SKILL.md) | `llm-tooling/qdrant-scaling/minimize-latency` | Guides Qdrant query latency optimization |
 | [`qdrant-scaling-data-volume`](qdrant-scaling/scaling-data-volume/SKILL.md) | `llm-tooling/qdrant-scaling/scaling-data-volume` | Guides Qdrant data volume scaling decisions |
-| [`qdrant-horizontal-scaling`](qdrant-scaling/scaling-data-volume/horizontal-scaling/SKILL.md) | `llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling` | Diagnoses and guides Qdrant horizontal scaling decisions |
+| [`horizontal-scaling`](qdrant-scaling/scaling-data-volume/horizontal-scaling/SKILL.md) | `llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling` | Use when diagnosing Qdrant capacity limits or deciding between vertical and horizontal scaling, including node, shard, replication, resharding, tenant-isolation, and fault-tolerance tradeoffs. |
 | [`qdrant-sliding-time-window`](qdrant-scaling/scaling-data-volume/sliding-time-window/SKILL.md) | `llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window` | Guides sliding time window scaling in Qdrant |
 | [`qdrant-tenant-scaling`](qdrant-scaling/scaling-data-volume/tenant-scaling/SKILL.md) | `llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling` | Guides Qdrant multi-tenant scaling |
 | [`qdrant-vertical-scaling`](qdrant-scaling/scaling-data-volume/vertical-scaling/SKILL.md) | `llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling` | Guides Qdrant vertical scaling decisions |

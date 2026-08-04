@@ -623,7 +623,7 @@ llm-tooling/qdrant-performance-optimization/search-speed-optimization	llm-toolin
 llm-tooling/qdrant-scaling	llm-tooling	qdrant-scaling	Guides Qdrant scaling decisions
 llm-tooling/qdrant-scaling/minimize-latency	llm-tooling	qdrant-minimize-latency	Guides Qdrant query latency optimization
 llm-tooling/qdrant-scaling/scaling-data-volume	llm-tooling	qdrant-scaling-data-volume	Guides Qdrant data volume scaling decisions
-llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling	llm-tooling	qdrant-horizontal-scaling	Diagnoses and guides Qdrant horizontal scaling decisions
+llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling	llm-tooling	horizontal-scaling	Use when diagnosing Qdrant capacity limits or deciding between vertical and horizontal scaling, including node, shard, replication, resharding, tenant-isolation, and fault-tolerance tradeoffs.
 llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window	llm-tooling	qdrant-sliding-time-window	Guides sliding time window scaling in Qdrant
 llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling	llm-tooling	qdrant-tenant-scaling	Guides Qdrant multi-tenant scaling
 llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling	llm-tooling	qdrant-vertical-scaling	Guides Qdrant vertical scaling decisions

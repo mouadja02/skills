@@ -1,6 +1,7 @@
 ---
-name: qdrant-horizontal-scaling
-description: "Diagnoses and guides Qdrant horizontal scaling decisions"
+name: horizontal-scaling
+description: "Use when diagnosing Qdrant capacity limits or deciding between vertical and horizontal scaling, including node, shard, replication, resharding, tenant-isolation, and fault-tolerance tradeoffs."
+version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -8,6 +9,13 @@ attribution: "qdrant/skills by Qdrant"
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
 
 # What to Do When Qdrant Needs More Capacity
+
+## When to Use
+
+- Decide whether a Qdrant workload should scale vertically or horizontally.
+- Plan node, shard, replication, resharding, or tenant-isolation changes.
+- Diagnose capacity, IOPS, or fault-tolerance limits in a growing deployment.
+- Do **not** activate for routine query tuning when the deployment still fits comfortably on one node.
 
 Vertical first: simpler operations, no network overhead, good up to ~100M vectors per node depending on dimensions and quantization. Horizontal when: data exceeds single node capacity, need fault tolerance, need to isolate tenants, or IOPS-bound (more nodes = more independent IOPS).
 
@@ -35,7 +43,7 @@ Resharding is designed to be transparent for user operations, updates and search
 
 But resharding operation itself is time-consuming and requires to move large amounts of data between nodes.
 
-- Available in Qdrant Cloud [Resharding](https://search.qdrant.tech/md/documentation/operations/distributed_deployment/?s=resharding)
+- Available in Qdrant Cloud [Resharding](https://skills.qdrant.tech/md/documentation/scaling/distributed_deployment/?s=resharding)
 - Resharding is not available for self-hosted deployments.
 
 Better alternatives: over-provision shards initially, or spin up new cluster with correct config and migrate data.

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-04T10:07:38.593Z",
+  "generated_at": "2026-08-04T18:04:54.765Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 822,
@@ -5074,12 +5074,12 @@
       "description": "Guides Qdrant data volume scaling decisions"
     },
     {
-      "name": "qdrant-horizontal-scaling",
+      "name": "horizontal-scaling",
       "category": "llm-tooling",
       "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling",
       "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling",
       "depth": 4,
-      "description": "Diagnoses and guides Qdrant horizontal scaling decisions"
+      "description": "Use when diagnosing Qdrant capacity limits or deciding between vertical and horizontal scaling, including node, shard, replication, resharding, tenant-isolation, and fault-tolerance tradeoffs."
     },
     {
       "name": "qdrant-sliding-time-window",
