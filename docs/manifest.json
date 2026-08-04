@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-03T18:03:54.530Z",
+  "generated_at": "2026-08-04T10:07:38.593Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 821,
+  "count": 822,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
-    "devops": 42,
+    "devops": 43,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3736,6 +3736,14 @@
       "path": "skills/devops/terraform-patterns",
       "depth": 2,
       "description": "Terraform IaC — module design, state management, testing, drift detection, multi-cloud"
+    },
+    {
+      "name": "terraform-provider-state-upgrade-compatibility",
+      "category": "devops",
+      "install_path": "devops/terraform-provider-state-upgrade-compatibility",
+      "path": "skills/devops/terraform-provider-state-upgrade-compatibility",
+      "depth": 2,
+      "description": "Use when a Terraform provider maintainer changes a resource state schema and must prove historical state decoding, upgrader coverage, released-version migration, and a no-op plan before release."
     },
     {
       "name": "threat-model-analyst",

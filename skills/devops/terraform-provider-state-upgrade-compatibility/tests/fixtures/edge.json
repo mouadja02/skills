@@ -1,0 +1,12 @@
+{
+  "task_kind": "provider_state_upgrade_preflight",
+  "resource": "example_widget",
+  "current_schema_version": 3,
+  "upgrade_strategy": "sequential",
+  "transitions": [
+    {"from": 0, "to": 2, "historical_schema_exact": false, "upgrader_registered": false, "decode_passed": false, "upgrade_passed": false, "raw_typed_equivalent": false, "null_unknown_cases_passed": false, "removed_renamed_cases_passed": false, "idempotence_passed": false, "plan_check": "change"},
+    {"from": 2, "to": 3, "historical_schema_exact": true, "upgrader_registered": true, "decode_passed": true, "upgrade_passed": true, "raw_typed_equivalent": true, "null_unknown_cases_passed": true, "removed_renamed_cases_passed": true, "idempotence_passed": true, "plan_check": "unsupported"}
+  ],
+  "released_provider": {"source_version": "1.4.0", "target_version": "2.0.0", "setup_passed": false, "migration_passed": false, "plan_check": "change"},
+  "backup_restore_rehearsed": false
+}
