@@ -1,6 +1,7 @@
 ﻿---
 name: idea-refine
-description: Refine vague ideas — divergent expansion, convergent focus, assumption stress-test
+description: Use when refining a vague idea through divergent expansion, convergent focus, and assumption stress-testing before planning or implementation.
+version: "1.0.0"
 ---
 
 # Idea Refine
@@ -18,8 +19,9 @@ Refines raw ideas into sharp, actionable concepts worth building through structu
 This skill is primarily an interactive dialogue. Invoke it with an idea, and the agent will guide you through the process.
 
 ```bash
-# Optional: Initialize the ideas directory
-bash /mnt/skills/user/idea-refine/scripts/idea-refine.sh
+# Optional: from the user's project root, initialize the ideas directory.
+# Replace <installed-skill-directory> with this skill package's location.
+bash "<installed-skill-directory>/scripts/idea-refine.sh"
 ```
 
 **Trigger Phrases:**

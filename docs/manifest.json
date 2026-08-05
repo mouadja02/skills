@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-05T10:07:35.538Z",
+  "generated_at": "2026-08-05T18:03:08.239Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 823,
@@ -2415,7 +2415,7 @@
       "install_path": "coding/idea-refine",
       "path": "skills/coding/idea-refine",
       "depth": 2,
-      "description": "Refine vague ideas — divergent expansion, convergent focus, assumption stress-test"
+      "description": "Use when refining a vague idea through divergent expansion, convergent focus, and assumption stress-testing before planning or implementation."
     },
     {
       "name": "incremental-implementation",
