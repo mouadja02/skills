@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-04T18:04:54.765Z",
+  "generated_at": "2026-08-05T10:07:35.538Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 822,
+  "count": 823,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
-    "devops": 43,
+    "devops": 44,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3680,6 +3680,14 @@
       "path": "skills/devops/sandbox-npm-install",
       "depth": 2,
       "description": "npm install in Docker sandbox — isolates node_modules, safe package evaluation"
+    },
+    {
+      "name": "sbom-package-identity-vulnerability-matching",
+      "category": "devops",
+      "install_path": "devops/sbom-package-identity-vulnerability-matching",
+      "path": "skills/devops/sbom-package-identity-vulnerability-matching",
+      "depth": 2,
+      "description": "Use when SBOM vulnerability results may be false positives or negatives because PURL qualifiers, distro release lines, package ecosystems, or native version ordering were lost during matching."
     },
     {
       "name": "secret-scanning",

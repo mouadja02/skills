@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 43 skills.
+**Total:** 44 skills.
 
 ## Skills In This Category
 
@@ -44,6 +44,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`remote-mac`](remote-mac/SKILL.md) | `devops/remote-mac` | Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks. |
 | [`saas-scaffolder`](saas-scaffolder/SKILL.md) | `devops/saas-scaffolder` | SaaS boilerplate generator — auth, DB schemas, billing, API routes, CI/CD |
 | [`sandbox-npm-install`](sandbox-npm-install/SKILL.md) | `devops/sandbox-npm-install` | npm install in Docker sandbox — isolates node_modules, safe package evaluation |
+| [`sbom-package-identity-vulnerability-matching`](sbom-package-identity-vulnerability-matching/SKILL.md) | `devops/sbom-package-identity-vulnerability-matching` | Use when SBOM vulnerability results may be false positives or negatives because PURL qualifiers, distro release lines, package ecosystems, or native version ordering were lost during matching. |
 | [`secret-scanning`](secret-scanning/SKILL.md) | `devops/secret-scanning` | GitHub secret scanning — push protection, custom patterns, alert remediation |
 | [`senior-devops`](senior-devops/SKILL.md) | `devops/senior-devops` | Comprehensive DevOps — CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring |
 | [`senior-secops`](senior-secops/SKILL.md) | `devops/senior-secops` | SecOps — app security, vuln management, compliance verification, secure dev practices |

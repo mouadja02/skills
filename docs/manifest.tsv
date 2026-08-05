@@ -449,6 +449,7 @@ devops/release-mac-app	devops	release-mac-app	macOS app release: Sparkle autoupd
 devops/remote-mac	devops	remote-mac	Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks.
 devops/saas-scaffolder	devops	saas-scaffolder	SaaS boilerplate generator — auth, DB schemas, billing, API routes, CI/CD
 devops/sandbox-npm-install	devops	sandbox-npm-install	npm install in Docker sandbox — isolates node_modules, safe package evaluation
+devops/sbom-package-identity-vulnerability-matching	devops	sbom-package-identity-vulnerability-matching	Use when SBOM vulnerability results may be false positives or negatives because PURL qualifiers, distro release lines, package ecosystems, or native version ordering were lost during matching.
 devops/secret-scanning	devops	secret-scanning	GitHub secret scanning — push protection, custom patterns, alert remediation
 devops/senior-devops	devops	senior-devops	Comprehensive DevOps — CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring
 devops/senior-secops	devops	senior-secops	SecOps — app security, vuln management, compliance verification, secure dev practices
