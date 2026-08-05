@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 822 skills across 36 categories.
+**Total:** 823 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
-| [`devops`](#devops) | 43 |
+| [`devops`](#devops) | 44 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -583,6 +583,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`remote-mac`](./skills/devops/remote-mac/SKILL.md) | `devops/remote-mac` | Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks. |
 | [`saas-scaffolder`](./skills/devops/saas-scaffolder/SKILL.md) | `devops/saas-scaffolder` | SaaS boilerplate generator — auth, DB schemas, billing, API routes, CI/CD |
 | [`sandbox-npm-install`](./skills/devops/sandbox-npm-install/SKILL.md) | `devops/sandbox-npm-install` | npm install in Docker sandbox — isolates node_modules, safe package evaluation |
+| [`sbom-package-identity-vulnerability-matching`](./skills/devops/sbom-package-identity-vulnerability-matching/SKILL.md) | `devops/sbom-package-identity-vulnerability-matching` | Use when SBOM vulnerability results may be false positives or negatives because PURL qualifiers, distro release lines, package ecosystems, or native version ordering were lost during matching. |
 | [`secret-scanning`](./skills/devops/secret-scanning/SKILL.md) | `devops/secret-scanning` | GitHub secret scanning — push protection, custom patterns, alert remediation |
 | [`senior-devops`](./skills/devops/senior-devops/SKILL.md) | `devops/senior-devops` | Comprehensive DevOps — CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring |
 | [`senior-secops`](./skills/devops/senior-secops/SKILL.md) | `devops/senior-secops` | SecOps — app security, vuln management, compliance verification, secure dev practices |
