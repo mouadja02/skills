@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 823 skills across 36 categories.
+**Total:** 824 skills across 36 categories.
 
 ## Install one skill
 
@@ -44,7 +44,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`finance`](#finance) | 7 |
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
-| [`llm-tooling`](#llm-tooling) | 48 |
+| [`llm-tooling`](#llm-tooling) | 49 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
 | [`mcp`](#mcp) | 16 |
 | [`messaging`](#messaging) | 1 |
@@ -771,6 +771,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`arize-link`](./skills/llm-tooling/arize-link/SKILL.md) | `llm-tooling/arize-link` | Generate deep links to the Arize UI |
 | [`arize-prompt-optimization`](./skills/llm-tooling/arize-prompt-optimization/SKILL.md) | `llm-tooling/arize-prompt-optimization` | Also use when the user wants to make their AI respond better or improve AI output quality. Covers extracting prompts from spans, gathering performance signal, and running a data-driven optimization loop using the ax CLI |
 | [`arize-trace`](./skills/llm-tooling/arize-trace/SKILL.md) | `llm-tooling/arize-trace` | Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI |
+| [`llm-streaming-tool-call-reassembly-conformance`](./skills/llm-tooling/llm-streaming-tool-call-reassembly-conformance/SKILL.md) | `llm-tooling/llm-streaming-tool-call-reassembly-conformance` | Use when streamed LLM tool calls merge, truncate, collide, or execute early across OpenAI-compatible, Anthropic, or Mistral events — reassemble by stable slot, validate terminal state and schema, and gate execution offline. |
 | [`model-recommendation`](./skills/llm-tooling/model-recommendation/SKILL.md) | `llm-tooling/model-recommendation` | Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency |
 | [`multimodal-rag-architecture`](./skills/llm-tooling/multimodal-rag-architecture/SKILL.md) | `llm-tooling/multimodal-rag-architecture` | Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence. |
 | [`nano-banana-pro`](./skills/llm-tooling/nano-banana-pro/SKILL.md) | `llm-tooling/nano-banana-pro` | Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final. |
