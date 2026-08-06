@@ -1,0 +1,6 @@
+{
+  "profile": "openai",
+  "chunks": [
+    {"choices": [{"delta": {"content": "ordinary text stream"}, "finish_reason": "stop"}]}
+  ]
+}

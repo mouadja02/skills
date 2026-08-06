@@ -1,0 +1,15 @@
+{
+  "profile": "openai",
+  "tool_schemas": {
+    "write_file": {
+      "type": "object",
+      "properties": {"path": {"type": "string"}},
+      "required": ["path"],
+      "additionalProperties": false
+    }
+  },
+  "chunks": [
+    {"choices": [{"delta": {"tool_calls": [{"index": 0, "id": "call_a", "type": "function", "function": {"name": "write_file", "arguments": "{\"path\":\"a.rs\"}"}}]}}]},
+    {"choices": [{"delta": {"tool_calls": [{"index": 0, "id": "call_b", "type": "function", "function": {"name": "write_file", "arguments": "{\"path\":\"b.rs\"}"}}]}, "finish_reason": "tool_calls"}]}
+  ]
+}

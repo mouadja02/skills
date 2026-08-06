@@ -6,7 +6,7 @@
 
 LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM.
 
-**Total:** 48 skills.
+**Total:** 49 skills.
 
 ## Skills In This Category
 
@@ -21,6 +21,7 @@ LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Ariz
 | [`arize-link`](arize-link/SKILL.md) | `llm-tooling/arize-link` | Generate deep links to the Arize UI |
 | [`arize-prompt-optimization`](arize-prompt-optimization/SKILL.md) | `llm-tooling/arize-prompt-optimization` | Also use when the user wants to make their AI respond better or improve AI output quality. Covers extracting prompts from spans, gathering performance signal, and running a data-driven optimization loop using the ax CLI |
 | [`arize-trace`](arize-trace/SKILL.md) | `llm-tooling/arize-trace` | Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI |
+| [`llm-streaming-tool-call-reassembly-conformance`](llm-streaming-tool-call-reassembly-conformance/SKILL.md) | `llm-tooling/llm-streaming-tool-call-reassembly-conformance` | Use when streamed LLM tool calls merge, truncate, collide, or execute early across OpenAI-compatible, Anthropic, or Mistral events — reassemble by stable slot, validate terminal state and schema, and gate execution offline. |
 | [`model-recommendation`](model-recommendation/SKILL.md) | `llm-tooling/model-recommendation` | Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency |
 | [`multimodal-rag-architecture`](multimodal-rag-architecture/SKILL.md) | `llm-tooling/multimodal-rag-architecture` | Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence. |
 | [`nano-banana-pro`](nano-banana-pro/SKILL.md) | `llm-tooling/nano-banana-pro` | Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final. |

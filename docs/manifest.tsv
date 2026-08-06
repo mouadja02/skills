@@ -597,6 +597,7 @@ llm-tooling/arize-instrumentation	llm-tooling	arize-instrumentation	Arize AX tra
 llm-tooling/arize-link	llm-tooling	arize-link	Generate deep links to the Arize UI
 llm-tooling/arize-prompt-optimization	llm-tooling	arize-prompt-optimization	Also use when the user wants to make their AI respond better or improve AI output quality. Covers extracting prompts from spans, gathering performance signal, and running a data-driven optimization loop using the ax CLI
 llm-tooling/arize-trace	llm-tooling	arize-trace	Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI
+llm-tooling/llm-streaming-tool-call-reassembly-conformance	llm-tooling	llm-streaming-tool-call-reassembly-conformance	Use when streamed LLM tool calls merge, truncate, collide, or execute early across OpenAI-compatible, Anthropic, or Mistral events — reassemble by stable slot, validate terminal state and schema, and gate execution offline.
 llm-tooling/model-recommendation	llm-tooling	model-recommendation	Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency
 llm-tooling/multimodal-rag-architecture	llm-tooling	multimodal-rag-architecture	Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence.
 llm-tooling/nano-banana-pro	llm-tooling	nano-banana-pro	Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final.

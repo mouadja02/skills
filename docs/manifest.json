@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-05T18:03:08.239Z",
+  "generated_at": "2026-08-06T10:10:17.409Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 823,
+  "count": 824,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -65,7 +65,7 @@
     "finance": 7,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 48,
+    "llm-tooling": 49,
     "marketing-and-growth": 26,
     "mcp": 16,
     "messaging": 1,
@@ -4864,6 +4864,14 @@
       "path": "skills/llm-tooling/arize-trace",
       "depth": 2,
       "description": "Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI"
+    },
+    {
+      "name": "llm-streaming-tool-call-reassembly-conformance",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/llm-streaming-tool-call-reassembly-conformance",
+      "path": "skills/llm-tooling/llm-streaming-tool-call-reassembly-conformance",
+      "depth": 2,
+      "description": "Use when streamed LLM tool calls merge, truncate, collide, or execute early across OpenAI-compatible, Anthropic, or Mistral events — reassemble by stable slot, validate terminal state and schema, and gate execution offline."
     },
     {
       "name": "model-recommendation",
