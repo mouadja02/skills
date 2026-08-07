@@ -1,0 +1,1 @@
+{"clients":["curl"],"cases":[{"name":"production","host":"production.example","environment":{},"expected":{"curl":"direct"}}]}

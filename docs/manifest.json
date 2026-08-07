@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-06T10:10:17.409Z",
+  "generated_at": "2026-08-07T10:05:46.575Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 824,
+  "count": 825,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
-    "devops": 44,
+    "devops": 45,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3632,6 +3632,14 @@
       "path": "skills/devops/multi-stage-dockerfile",
       "depth": 2,
       "description": "Create optimized multi-stage Dockerfiles for any language or framework"
+    },
+    {
+      "name": "no-proxy-cross-runtime-conformance",
+      "category": "devops",
+      "install_path": "devops/no-proxy-cross-runtime-conformance",
+      "path": "skills/devops/no-proxy-cross-runtime-conformance",
+      "depth": 2,
+      "description": "Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions."
     },
     {
       "name": "observability-designer",
