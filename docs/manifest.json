@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-07T10:05:46.575Z",
+  "generated_at": "2026-08-07T18:05:51.137Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 825,
@@ -5114,12 +5114,12 @@
       "description": "Guides sliding time window scaling in Qdrant"
     },
     {
-      "name": "qdrant-tenant-scaling",
+      "name": "tenant-scaling",
       "category": "llm-tooling",
       "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling",
       "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling",
       "depth": 4,
-      "description": "Guides Qdrant multi-tenant scaling"
+      "description": "Use when scaling multi-tenant Qdrant workloads, choosing shared payload partitioning versus dedicated shards or collections, or diagnosing tenant isolation and performance limits."
     },
     {
       "name": "qdrant-vertical-scaling",
