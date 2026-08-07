@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 44 skills.
+**Total:** 45 skills.
 
 ## Skills In This Category
 
@@ -38,6 +38,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`lsp-setup`](lsp-setup/SKILL.md) | `devops/lsp-setup` | LSP setup for any language — go-to-definition, find-refs, hover, diagnostics |
 | [`mac-maintenance`](mac-maintenance/SKILL.md) | `devops/mac-maintenance` | macOS upkeep: brew update/upgrade, pull clean repos, empty Trash. |
 | [`multi-stage-dockerfile`](multi-stage-dockerfile/SKILL.md) | `devops/multi-stage-dockerfile` | Create optimized multi-stage Dockerfiles for any language or framework |
+| [`no-proxy-cross-runtime-conformance`](no-proxy-cross-runtime-conformance/SKILL.md) | `devops/no-proxy-cross-runtime-conformance` | Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions. |
 | [`observability-designer`](observability-designer/SKILL.md) | `devops/observability-designer` | Design comprehensive observability for production systems |
 | [`oci-referrers-portability-conformance`](oci-referrers-portability-conformance/SKILL.md) | `devops/oci-referrers-portability-conformance` | Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images. |
 | [`release-mac-app`](release-mac-app/SKILL.md) | `devops/release-mac-app` | macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout. |

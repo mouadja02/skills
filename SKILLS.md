@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 824 skills across 36 categories.
+**Total:** 825 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
-| [`devops`](#devops) | 44 |
+| [`devops`](#devops) | 45 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -577,6 +577,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`lsp-setup`](./skills/devops/lsp-setup/SKILL.md) | `devops/lsp-setup` | LSP setup for any language — go-to-definition, find-refs, hover, diagnostics |
 | [`mac-maintenance`](./skills/devops/mac-maintenance/SKILL.md) | `devops/mac-maintenance` | macOS upkeep: brew update/upgrade, pull clean repos, empty Trash. |
 | [`multi-stage-dockerfile`](./skills/devops/multi-stage-dockerfile/SKILL.md) | `devops/multi-stage-dockerfile` | Create optimized multi-stage Dockerfiles for any language or framework |
+| [`no-proxy-cross-runtime-conformance`](./skills/devops/no-proxy-cross-runtime-conformance/SKILL.md) | `devops/no-proxy-cross-runtime-conformance` | Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions. |
 | [`observability-designer`](./skills/devops/observability-designer/SKILL.md) | `devops/observability-designer` | Design comprehensive observability for production systems |
 | [`oci-referrers-portability-conformance`](./skills/devops/oci-referrers-portability-conformance/SKILL.md) | `devops/oci-referrers-portability-conformance` | Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images. |
 | [`release-mac-app`](./skills/devops/release-mac-app/SKILL.md) | `devops/release-mac-app` | macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout. |

@@ -1,0 +1,1 @@
+{"clients":["curl"],"cases":[{"name":"unsafe","host":"localhost","environment":{"TOKEN":"secret"},"expected":{"curl":"direct"}}]}

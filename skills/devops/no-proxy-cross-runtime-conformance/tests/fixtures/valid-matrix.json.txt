@@ -1,0 +1,1 @@
+{"clients":["curl","python-urllib"],"cases":[{"name":"exact-host-bypass","host":"localhost","environment":{"NO_PROXY":"localhost","no_proxy":"localhost"},"expected":{"curl":"direct","python-urllib":"direct"}},{"name":"no-bypass","host":"127.0.0.1","environment":{"NO_PROXY":"","no_proxy":""},"expected":{"curl":"proxy","python-urllib":"proxy"}}]}
