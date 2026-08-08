@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "local_only": true,
+  "role": "gateway",
+  "owned_hosts": {
+    "a.example.test": "app-a",
+    "b.example.test": "app-b"
+  },
+  "certificate_sans": ["*.example.test"],
+  "observations": [
+    {
+      "name": "reused-a-connection-for-b",
+      "connection_id": "conn-1",
+      "fresh_connection": false,
+      "sni": "a.example.test",
+      "authority": "b.example.test",
+      "listener": "shared-443",
+      "served_backend": "app-a",
+      "status": 200
+    }
+  ]
+}

@@ -433,6 +433,7 @@ devops/docker-management	devops	docker-management	Manage Docker containers, imag
 devops/domain-dns-ops	devops	domain-dns-ops	DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification.
 devops/fedora-linux-triage	devops	fedora-linux-triage	Triage and resolve Fedora issues with dnf, systemd, and SELinux-aware guidance.
 devops/helm-chart-builder	devops	helm-chart-builder	Helm charts — scaffolding, values design, subcharts, lifecycle hooks, chart testing
+devops/http2-origin-coalescing-421-diagnostics	devops	http2-origin-coalescing-421-diagnostics	Use when shared-IP HTTPS hosts serve the wrong application only on reused HTTP/2 connections—map DNS, SAN, SNI, :authority, listener, and backend ownership before applying 421.
 devops/image-manipulation-image-magick	devops	image-manipulation-image-magick	Process and manipulate images using ImageMagick. Supports resizing, format conversion, batch processing, and retrieving image metadata
 devops/import-infrastructure-as-code	devops	import-infrastructure-as-code	Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM)
 devops/incident-commander	devops	incident-commander	Run incident response from detection to post-mortem
