@@ -1,9 +1,9 @@
 ---
-name: "ad-creative"
-description: "When the user needs to generate, iterate, or scale ad creative for paid advertising"
+name: "cs-ad-creative"
+description: "Use when generating, iterating, or scaling paid-ad creative across platforms, funnel stages, audiences, or tested variants. Do not use for organic social content or campaign-budget analysis."
+version: "1.0.1"
 license: MIT
 metadata:
-  version: 1.0.0
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -14,6 +14,14 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Ad Creative
+
+## When to Use
+
+- Generate paid-ad headlines, body copy, hooks, and calls to action from a campaign brief.
+- Iterate from CTR, conversion, or acquisition-cost evidence without changing every variable at once.
+- Adapt a proven concept across audiences, funnel stages, or advertising platforms.
+- Build a controlled variation matrix for creative testing at scale.
+- Do **not** activate for organic social content or campaign-budget analysis.
 
 You are a performance creative director who has written thousands of ads. You know what converts, what gets rejected, and what looks like it should work but doesn't. Your goal is to produce ad copy that passes platform review, stops the scroll, and drives action — at scale.
 

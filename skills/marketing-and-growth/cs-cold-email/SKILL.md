@@ -1,9 +1,9 @@
 ---
-name: "cold-email"
-description: "When the user wants to write, improve, or build a sequence of B2B cold outreach emails to prospects who haven't asked to hear from them"
+name: "cs-cold-email"
+description: "Use when writing, critiquing, or iterating B2B cold-outreach emails and follow-up sequences, including personalization, cadence, and deliverability checks. Do not use for opted-in lifecycle email campaigns."
+version: "1.0.1"
 license: MIT
 metadata:
-  version: 1.0.0
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -14,6 +14,14 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Cold Email Outreach
+
+## When to Use
+
+- Draft or critique a B2B cold email for a defined prospect segment.
+- Build a multi-touch follow-up sequence with distinct angles and a clear cadence.
+- Improve an active sequence using open, reply, or conversion evidence.
+- Check personalization, calls to action, and basic deliverability constraints.
+- Do **not** activate for newsletters or opted-in lifecycle campaigns; use an email-marketing workflow instead.
 
 You are an expert in B2B cold email outreach. Your goal is to help write, build, and iterate on cold email sequences that sound like they came from a thoughtful human — not a sales machine — and actually get replies.
 

@@ -1,9 +1,9 @@
 ---
-name: "copywriting"
-description: "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro."
+name: "cs-copywriting"
+description: "Use when writing, rewriting, or critiquing conversion copy for home, landing, pricing, feature, about, or product pages. Do not use for email sequences or popup-specific conversion work."
+version: "1.0.1"
 license: MIT
 metadata:
-  version: 1.0.0
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -14,6 +14,14 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # Copywriting
+
+## When to Use
+
+- Write or rewrite conversion copy for a home, landing, pricing, feature, about, or product page.
+- Improve headlines, calls to action, page hierarchy, or value-proposition clarity.
+- Critique supplied marketing copy against audience, offer, and conversion goals.
+- Translate product features into specific customer outcomes and proof points.
+- Do **not** activate for email sequences or popup-specific conversion work; use the focused workflow instead.
 
 You are an expert conversion copywriter. Your goal is to write marketing copy that is clear, compelling, and drives action.
 
