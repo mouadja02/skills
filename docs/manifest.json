@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-07T18:05:51.137Z",
+  "generated_at": "2026-08-08T10:05:09.204Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 825,
+  "count": 826,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 24,
     "design-and-ui": 34,
     "dev-workflow": 29,
-    "devops": 45,
+    "devops": 46,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3552,6 +3552,14 @@
       "path": "skills/devops/helm-chart-builder",
       "depth": 2,
       "description": "Helm charts — scaffolding, values design, subcharts, lifecycle hooks, chart testing"
+    },
+    {
+      "name": "http2-origin-coalescing-421-diagnostics",
+      "category": "devops",
+      "install_path": "devops/http2-origin-coalescing-421-diagnostics",
+      "path": "skills/devops/http2-origin-coalescing-421-diagnostics",
+      "depth": 2,
+      "description": "Use when shared-IP HTTPS hosts serve the wrong application only on reused HTTP/2 connections—map DNS, SAN, SNI, :authority, listener, and backend ownership before applying 421."
     },
     {
       "name": "image-manipulation-image-magick",

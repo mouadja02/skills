@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 825 skills across 36 categories.
+**Total:** 826 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 24 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 29 |
-| [`devops`](#devops) | 45 |
+| [`devops`](#devops) | 46 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -567,6 +567,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`domain-dns-ops`](./skills/devops/domain-dns-ops/SKILL.md) | `devops/domain-dns-ops` | DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification. |
 | [`fedora-linux-triage`](./skills/devops/fedora-linux-triage/SKILL.md) | `devops/fedora-linux-triage` | Triage and resolve Fedora issues with dnf, systemd, and SELinux-aware guidance. |
 | [`helm-chart-builder`](./skills/devops/helm-chart-builder/SKILL.md) | `devops/helm-chart-builder` | Helm charts — scaffolding, values design, subcharts, lifecycle hooks, chart testing |
+| [`http2-origin-coalescing-421-diagnostics`](./skills/devops/http2-origin-coalescing-421-diagnostics/SKILL.md) | `devops/http2-origin-coalescing-421-diagnostics` | Use when shared-IP HTTPS hosts serve the wrong application only on reused HTTP/2 connections—map DNS, SAN, SNI, :authority, listener, and backend ownership before applying 421. |
 | [`image-manipulation-image-magick`](./skills/devops/image-manipulation-image-magick/SKILL.md) | `devops/image-manipulation-image-magick` | Process and manipulate images using ImageMagick. Supports resizing, format conversion, batch processing, and retrieving image metadata |
 | [`import-infrastructure-as-code`](./skills/devops/import-infrastructure-as-code/SKILL.md) | `devops/import-infrastructure-as-code` | Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM) |
 | [`incident-commander`](./skills/devops/incident-commander/SKILL.md) | `devops/incident-commander` | Run incident response from detection to post-mortem |

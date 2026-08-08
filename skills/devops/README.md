@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 45 skills.
+**Total:** 46 skills.
 
 ## Skills In This Category
 
@@ -28,6 +28,7 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`domain-dns-ops`](domain-dns-ops/SKILL.md) | `devops/domain-dns-ops` | DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification. |
 | [`fedora-linux-triage`](fedora-linux-triage/SKILL.md) | `devops/fedora-linux-triage` | Triage and resolve Fedora issues with dnf, systemd, and SELinux-aware guidance. |
 | [`helm-chart-builder`](helm-chart-builder/SKILL.md) | `devops/helm-chart-builder` | Helm charts — scaffolding, values design, subcharts, lifecycle hooks, chart testing |
+| [`http2-origin-coalescing-421-diagnostics`](http2-origin-coalescing-421-diagnostics/SKILL.md) | `devops/http2-origin-coalescing-421-diagnostics` | Use when shared-IP HTTPS hosts serve the wrong application only on reused HTTP/2 connections—map DNS, SAN, SNI, :authority, listener, and backend ownership before applying 421. |
 | [`image-manipulation-image-magick`](image-manipulation-image-magick/SKILL.md) | `devops/image-manipulation-image-magick` | Process and manipulate images using ImageMagick. Supports resizing, format conversion, batch processing, and retrieving image metadata |
 | [`import-infrastructure-as-code`](import-infrastructure-as-code/SKILL.md) | `devops/import-infrastructure-as-code` | Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM) |
 | [`incident-commander`](incident-commander/SKILL.md) | `devops/incident-commander` | Run incident response from detection to post-mortem |
