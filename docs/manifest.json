@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-09T10:06:40.961Z",
+  "generated_at": "2026-08-09T18:03:51.688Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 827,
@@ -5242,12 +5242,12 @@
       "description": "Use when generating, iterating, or scaling paid-ad creative across platforms, funnel stages, audiences, or tested variants. Do not use for organic social content or campaign-budget analysis."
     },
     {
-      "name": "ai-seo",
+      "name": "cs-ai-seo",
       "category": "marketing-and-growth",
       "install_path": "marketing-and-growth/cs-ai-seo",
       "path": "skills/marketing-and-growth/cs-ai-seo",
       "depth": 2,
-      "description": "Optimize content to get cited by AI search engines — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Copilot"
+      "description": "Use when auditing or optimizing content for citation in AI search results, including answer structure, crawler access, authority signals, and visibility monitoring. Do not use for conventional keyword-ranking work alone."
     },
     {
       "name": "cs-cold-email",

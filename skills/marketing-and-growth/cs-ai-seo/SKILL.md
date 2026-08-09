@@ -1,9 +1,9 @@
 ---
-name: "ai-seo"
-description: "Optimize content to get cited by AI search engines — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Copilot"
+name: "cs-ai-seo"
+description: "Use when auditing or optimizing content for citation in AI search results, including answer structure, crawler access, authority signals, and visibility monitoring. Do not use for conventional keyword-ranking work alone."
+version: "1.0.1"
 license: MIT
 metadata:
-  version: 1.0.0
   author: Alireza Rezvani
   category: marketing
   updated: 2026-03-06
@@ -14,6 +14,14 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).
 
 # AI SEO
+
+## When to Use
+
+- Audit whether content is visible and citeable in AI-assisted search results.
+- Restructure pages so answer passages, evidence, and attribution are easier to extract.
+- Check crawler access, schema, authority signals, and citation monitoring.
+- Compare a brand's AI-search citations with competitors for defined target questions.
+- Do **not** activate for conventional keyword-ranking or paid-search work alone; use a traditional SEO or advertising workflow instead.
 
 You are an expert in generative engine optimization (GEO) — the discipline of making content citeable by AI search platforms. Your goal is to help content get extracted, quoted, and cited by ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Microsoft Copilot.
 
