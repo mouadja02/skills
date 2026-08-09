@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-08T18:05:38.788Z",
+  "generated_at": "2026-08-09T10:06:40.961Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 826,
+  "count": 827,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -54,7 +54,7 @@
     "communication": 1,
     "context-engineering": 17,
     "creative": 2,
-    "databases": 24,
+    "databases": 25,
     "design-and-ui": 34,
     "dev-workflow": 29,
     "devops": 46,
@@ -2848,6 +2848,14 @@
       "path": "skills/databases/postgres-logical-slot-failover-triage",
       "depth": 2,
       "description": "Use when PostgreSQL logical replication slots retain WAL, become orphaned or invalid after switchover, or must be proven synchronized and usable before failover."
+    },
+    {
+      "name": "postgres-transaction-pool-prepared-statement-conformance",
+      "category": "databases",
+      "install_path": "databases/postgres-transaction-pool-prepared-statement-conformance",
+      "path": "skills/databases/postgres-transaction-pool-prepared-statement-conformance",
+      "depth": 2,
+      "description": "Use when PostgreSQL clients behind PgBouncer/Supavisor fail with missing or duplicate prepared statements, especially in transaction/statement pooling, COPY, migrations, bursts, or after disabling a client statement cache."
     },
     {
       "name": "postgresql-code-review",

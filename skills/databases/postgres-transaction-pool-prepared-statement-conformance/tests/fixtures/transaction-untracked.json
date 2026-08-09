@@ -1,0 +1,8 @@
+{
+  "pool_mode": "transaction",
+  "preparation_kind": "protocol_named",
+  "max_prepared_statements": 0,
+  "client_statement_cache": true,
+  "operation": "query",
+  "concurrent_clients": 100
+}

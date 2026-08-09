@@ -6,7 +6,7 @@
 
 Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt.
 
-**Total:** 24 skills.
+**Total:** 25 skills.
 
 ## Skills In This Category
 
@@ -27,6 +27,7 @@ Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL,
 | [`pdftk-server`](pdftk-server/SKILL.md) | `databases/pdftk-server` | — using the command-line tool pdftk (PDFtk Server) for working with PDF files |
 | [`planning-oracle-to-postgres-migration-integration-testing`](planning-oracle-to-postgres-migration-integration-testing/SKILL.md) | `databases/planning-oracle-to-postgres-migration-integration-testing` | Oracle → PostgreSQL integration test plan for .NET data access artifacts |
 | [`postgres-logical-slot-failover-triage`](postgres-logical-slot-failover-triage/SKILL.md) | `databases/postgres-logical-slot-failover-triage` | Use when PostgreSQL logical replication slots retain WAL, become orphaned or invalid after switchover, or must be proven synchronized and usable before failover. |
+| [`postgres-transaction-pool-prepared-statement-conformance`](postgres-transaction-pool-prepared-statement-conformance/SKILL.md) | `databases/postgres-transaction-pool-prepared-statement-conformance` | Use when PostgreSQL clients behind PgBouncer/Supavisor fail with missing or duplicate prepared statements, especially in transaction/statement pooling, COPY, migrations, bursts, or after disabling a client statement cache. |
 | [`postgresql-code-review`](postgresql-code-review/SKILL.md) | `databases/postgresql-code-review` | PostgreSQL code review — PG-specific best practices, anti-patterns, quality standards |
 | [`postgresql-optimization`](postgresql-optimization/SKILL.md) | `databases/postgresql-optimization` | PostgreSQL optimization — unique features, advanced types, exclusive capabilities |
 | [`reviewing-oracle-to-postgres-migration`](reviewing-oracle-to-postgres-migration/SKILL.md) | `databases/reviewing-oracle-to-postgres-migration` | Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral differences (empty strings, refcursors, type coercion, sorting, timestamps, concurrent transactions, etc.) |

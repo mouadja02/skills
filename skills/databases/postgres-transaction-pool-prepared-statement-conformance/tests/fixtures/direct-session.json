@@ -1,0 +1,8 @@
+{
+  "pool_mode": "none",
+  "preparation_kind": "none",
+  "max_prepared_statements": 0,
+  "client_statement_cache": false,
+  "operation": "query",
+  "concurrent_clients": 1
+}

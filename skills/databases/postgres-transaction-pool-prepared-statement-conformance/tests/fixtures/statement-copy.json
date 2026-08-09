@@ -1,0 +1,8 @@
+{
+  "pool_mode": "statement",
+  "preparation_kind": "protocol_named",
+  "max_prepared_statements": 100,
+  "client_statement_cache": false,
+  "operation": "copy",
+  "concurrent_clients": 2
+}
