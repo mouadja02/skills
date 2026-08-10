@@ -2,7 +2,7 @@
 name: gsap-utils
 description: Official GSAP — gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe
 license: MIT
-version: "1.0.0"
+version: "1.0.1"
 source: "https://github.com/greensock/gsap-skills"
 attribution: "greensock/gsap-skills by GreenSock"
 ---
@@ -21,7 +21,7 @@ Apply when writing or reviewing code that uses **gsap.utils** for math, array/co
 
 **gsap.utils** provides pure helpers; no need to register. Use in tween vars (e.g. function-based values), in ScrollTrigger or Observer callbacks, or in any JS that drives GSAP. All are on **gsap.utils** (e.g. `gsap.utils.clamp()`).
 
-**Omitting the value: function form.** Many utils accept the value to transform as the **last** argument. If you omit that argument, the util returns a **function** that accepts the value later. Use the function form when you need to clamp, map, normalize, or snap many values with the same config (e.g. in a mousemove handler or tween callback). **Exception: random()** — pass **true** as the last argument to get a reusable function (do not omit the value); see [random()](https://gsap.com/docs/v3/GSAP/UtilityMethods/random()).
+**Omitting the value: function form.** Many utils accept the value to transform as the **last** argument. If you omit that argument, the util returns a **function** that accepts the value later. Use the function form when you need to clamp, map, normalize, or snap many values with the same config (e.g. in a mousemove handler or tween callback). **Exception: random()** — pass **true** as the last argument to get a reusable function (do not omit the value); see [random()](https://gsap.com/docs/v3/GSAP/UtilityMethods/random()/).
 
 ```javascript
 // With value: returns the result
@@ -182,7 +182,7 @@ const targets = gsap.utils.toArray(".box");
 const valueForIndex2 = distributor(2, targets[2], targets);
 ```
 
-See [distribute()](https://gsap.com/docs/v3/GSAP/UtilityMethods/distribute/) for more.
+See [distribute()](https://gsap.com/docs/v3/GSAP/UtilityMethods/distribute()/) for more.
 
 ## Units and Parsing
 
@@ -207,7 +207,7 @@ gsap.utils.unitize("2rem", "px"); // "2rem" (unchanged)
 
 ### splitColor(color, returnHSL?)
 
-Converts a color string into an array: **[red, green, blue]** (0–255), or **[red, green, blue, alpha]** (4 elements for RGBA when alpha is present or required). Pass **true** as the second argument (**returnHSL**) to get **[hue, saturation, lightness]** or **[hue, saturation, lightness, alpha]** (HSL/HSLA) instead. Works with `"rgb()"`, `"rgba()"`, `"hsl()"`, `"hsla()"`, hex, and named colors (e.g. `"red"`). Use when animating color components or building gradients. See [splitColor()](https://gsap.com/docs/v3/GSAP/UtilityMethods/splitColor/).
+Converts a color string into an array: **[red, green, blue]** (0–255), or **[red, green, blue, alpha]** (4 elements for RGBA when alpha is present or required). Pass **true** as the second argument (**returnHSL**) to get **[hue, saturation, lightness]** or **[hue, saturation, lightness, alpha]** (HSL/HSLA) instead. Works with `"rgb()"`, `"rgba()"`, `"hsl()"`, `"hsla()"`, hex, and named colors (e.g. `"red"`). Use when animating color components or building gradients. See [splitColor()](https://gsap.com/docs/v3/GSAP/UtilityMethods/splitColor()/).
 
 ```javascript
 gsap.utils.splitColor("red");                    // [255, 0, 0]
