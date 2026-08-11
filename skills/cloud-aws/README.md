@@ -6,7 +6,7 @@
 
 AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability.
 
-**Total:** 84 skills.
+**Total:** 85 skills.
 
 ## Skills In This Category
 
@@ -88,6 +88,7 @@ AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analy
 | [`deploying-custom-domain-rest-api`](serverless/deploying-custom-domain-rest-api/SKILL.md) | `cloud-aws/serverless/deploying-custom-domain-rest-api` | Deploys a Regional REST API with a custom domain name, a Lambda backend function, and a request-based Lambda authorizer using AWS CLI. Covers ACM certificate provisioning, API Gateway REST API creation, Lambda function deployment, reques... |
 | [`processing-s3-uploads-with-step-functions`](serverless/processing-s3-uploads-with-step-functions/SKILL.md) | `cloud-aws/serverless/processing-s3-uploads-with-step-functions` | Deploy an event-driven workflow that routes S3 uploads to either Lambda or Fargate via Step Functions based on file size. Uses EventBridge to trigger a Step Functions state machine when objects are uploaded to S3. Small files are process... |
 | [`creating-data-lake-table`](storage/creating-data-lake-table/SKILL.md) | `cloud-aws/storage/creating-data-lake-table` | Create managed Iceberg tables using Amazon S3 Tables (s3tables API namespace) with automatic compaction and snapshot management. Sets up table bucket, namespace, table, schema, Glue catalog registration, partitioning, IAM access control.... |
+| [`s3-streaming-checksum-portability-conformance`](storage/s3-streaming-checksum-portability-conformance/SKILL.md) | `cloud-aws/storage/s3-streaming-checksum-portability-conformance` | Use when S3-compatible PutObject or UploadPart fails after an SDK change—classify aws-chunked/checksum-trailer wire modes, run disposable canaries, and verify integrity before rollout. |
 | [`securing-s3-buckets`](storage/securing-s3-buckets/SKILL.md) | `cloud-aws/storage/securing-s3-buckets` | Create and secure S3 buckets following AWS best practices for access control, encryption, monitoring, and remediation of misconfigurations. Use when the user wants to secure a new bucket, audit an existing bucket, fix a security finding,... |
 | [`storing-and-querying-vectors`](storage/storing-and-querying-vectors/SKILL.md) | `cloud-aws/storage/storing-and-querying-vectors` | Store and query vector embeddings using Amazon S3 Vectors, a cost-effective long-term vector storage service with its own API namespace (s3vectors). Triggers on: create S3 vector bucket, vector index, store embeddings, semantic search, R... |
 | [`troubleshooting-efs`](storage/troubleshooting-efs/SKILL.md) | `cloud-aws/storage/troubleshooting-efs` | Diagnoses and resolves Amazon EFS issues including mount failures, NFS timeouts, permission errors, throughput problems, and burst credit exhaustion. Use when the user has an EFS file system that is not mounting, returning errors, perfor... |
