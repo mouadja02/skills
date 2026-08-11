@@ -1,0 +1,9 @@
+{
+  "operation": "UploadPart",
+  "content_encoding": "aws-chunked",
+  "x_amz_content_sha256": "UNSIGNED-PAYLOAD",
+  "x_amz_trailer": "x-amz-checksum-crc32",
+  "content_length_known": false,
+  "returned_checksum_matches": true,
+  "download_sha256_matches": true
+}
