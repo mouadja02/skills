@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-11T10:09:43.777Z",
+  "generated_at": "2026-08-12T10:16:09.234Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 828,
+  "count": 829,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 12,
+    "api-backend": 13,
     "business-strategy": 64,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -760,6 +760,14 @@
       "path": "skills/api-backend/gdpr-compliant",
       "depth": 2,
       "description": "GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails"
+    },
+    {
+      "name": "graphql-incremental-hydration-preflight",
+      "category": "api-backend",
+      "install_path": "api-backend/graphql-incremental-hydration-preflight",
+      "path": "skills/api-backend/graphql-incremental-hydration-preflight",
+      "depth": 2,
+      "description": "Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bounded rollout or recovery decision."
     },
     {
       "name": "openapi-to-application-code",

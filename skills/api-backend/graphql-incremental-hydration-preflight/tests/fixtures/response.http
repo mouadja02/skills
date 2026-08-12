@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Content-Type: multipart/mixed; boundary="graphql-boundary"; deferSpec=20220824
+
+--graphql-boundary
+Content-Type: application/json; charset=utf-8
+
+{"data":{"viewer":{"id":"u-1","name":"Ada","profile":{},"teams":[{"id":"t-1","members":[]}]}},"pending":[{"id":"profile","path":["viewer","profile"],"label":"profile"},{"id":"team-members","path":["viewer","teams",0,"members"],"label":"members"}],"hasNext":true}
+--graphql-boundary
+Content-Type: application/json
+
+{"incremental":[{"data":{"bio":"compiler pioneer"},"id":"profile"},{"items":[{"id":"m-1","name":"Lin"}],"id":"team-members"}],"completed":[{"id":"team-members"}],"hasNext":true}
+--graphql-boundary
+Content-Type: application/json
+
+{"incremental":[{"data":{"location":"London"},"id":"profile"}],"completed":[{"id":"profile"}],"hasNext":false}
+--graphql-boundary--
