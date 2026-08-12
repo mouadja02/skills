@@ -1,0 +1,21 @@
+{
+  "viewer": {
+    "id": "u-1",
+    "name": "Ada",
+    "profile": {
+      "bio": "compiler pioneer",
+      "location": "London"
+    },
+    "teams": [
+      {
+        "id": "t-1",
+        "members": [
+          {
+            "id": "m-1",
+            "name": "Lin"
+          }
+        ]
+      }
+    ]
+  }
+}

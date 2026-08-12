@@ -84,6 +84,7 @@ agent-eval/skill-lifecycle-optimization	agent-eval	skill-lifecycle-optimization	
 api-backend/aspnet-minimal-api-openapi	api-backend	aspnet-minimal-api-openapi	Create ASP.NET Minimal API endpoints with proper OpenAPI documentation
 api-backend/framework-fastapi-expert	api-backend	framework-fastapi-expert	Use when the user asks to work on a Python FastAPI project. Triggers on keywords Python, FastAPI, Pydantic, SQLAlchemy.
 api-backend/gdpr-compliant	api-backend	gdpr-compliant	GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails
+api-backend/graphql-incremental-hydration-preflight	api-backend	graphql-incremental-hydration-preflight	Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bounded rollout or recovery decision.
 api-backend/openapi-to-application-code	api-backend	openapi-to-application-code	Generate a complete, production-ready application from an OpenAPI specification
 api-backend/python-fastapi-llm	api-backend	python-fastapi-llm	Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill
 api-backend/python-pypi-package-builder	api-backend	python-pypi-package-builder	Build, test, lint, version, publish Python library to PyPI — all build tool flavors

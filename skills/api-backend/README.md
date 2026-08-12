@@ -6,7 +6,7 @@
 
 API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.
 
-**Total:** 12 skills.
+**Total:** 13 skills.
 
 ## Skills In This Category
 
@@ -15,6 +15,7 @@ API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations
 | [`aspnet-minimal-api-openapi`](aspnet-minimal-api-openapi/SKILL.md) | `api-backend/aspnet-minimal-api-openapi` | Create ASP.NET Minimal API endpoints with proper OpenAPI documentation |
 | [`framework-fastapi-expert`](framework-fastapi-expert/SKILL.md) | `api-backend/framework-fastapi-expert` | Use when the user asks to work on a Python FastAPI project. Triggers on keywords Python, FastAPI, Pydantic, SQLAlchemy. |
 | [`gdpr-compliant`](gdpr-compliant/SKILL.md) | `api-backend/gdpr-compliant` | GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails |
+| [`graphql-incremental-hydration-preflight`](graphql-incremental-hydration-preflight/SKILL.md) | `api-backend/graphql-incremental-hydration-preflight` | Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bo... |
 | [`openapi-to-application-code`](openapi-to-application-code/SKILL.md) | `api-backend/openapi-to-application-code` | Generate a complete, production-ready application from an OpenAPI specification |
 | [`python-fastapi-llm`](python-fastapi-llm/SKILL.md) | `api-backend/python-fastapi-llm` | Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill |
 | [`python-pypi-package-builder`](python-pypi-package-builder/SKILL.md) | `api-backend/python-pypi-package-builder` | Build, test, lint, version, publish Python library to PyPI — all build tool flavors |
