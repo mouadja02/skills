@@ -1,6 +1,7 @@
 ---
 name: qdrant-search-quality-diagnosis
 description: "Diagnoses Qdrant search quality issues"
+version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -15,7 +16,7 @@ Before tuning, establish baselines. Use exact KNN as ground truth, compare again
 
 Use when: results are irrelevant or missing expected matches and you need to isolate the cause.
 
-- Test with `exact=true` to bypass HNSW approximation [Search API](https://search.qdrant.tech/md/documentation/tutorials-search-engineering/retrieval-quality/?s=standard-mode-vs-exact-search)
+- Test with `exact=true` to bypass HNSW approximation [Search API](https://qdrant.tech/documentation/tutorials-search-engineering/retrieval-quality/#standard-mode-vs-exact-search)
 - Exact search bad = model or search pipeline problem. Exact good, approximate bad = tune HNSW.
 - Check if quantization degrades quality (compare with and without)
 - Check if filters are too restrictive (then you might need to use ACORN)
@@ -27,7 +28,7 @@ Payload filtering and sparse vector search are different things. Metadata (dates
 
 Use when: exact search returns good results but HNSW approximation misses them.
 
-- Increase `hnsw_ef` at query time [Search params](https://search.qdrant.tech/md/documentation/operations/optimize/?s=fine-tuning-search-parameters)
+- Increase `hnsw_ef` at query time [Search params](https://qdrant.tech/documentation/operations/optimize/#fine-tuning-search-parameters)
 - Increase `ef_construct` (200+ for high quality) [HNSW config](https://search.qdrant.tech/md/documentation/manage-data/indexing/?s=vector-index)
 - Increase `m` (16 default, 32 for high recall) [HNSW config](https://search.qdrant.tech/md/documentation/manage-data/indexing/?s=vector-index)
 - Enable oversampling + rescore with quantization [Search with quantization](https://search.qdrant.tech/md/documentation/manage-data/quantization/?s=searching-with-quantization)
