@@ -1,6 +1,7 @@
 ---
 name: qdrant-search-strategies
 description: "Guides Qdrant search strategy selection"
+version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -18,7 +19,7 @@ Use when: pure vector search misses results that contain obvious keyword matches
 
 - Dense + sparse with `prefetch` and fusion [Hybrid search](https://search.qdrant.tech/md/documentation/search/hybrid-queries/?s=hybrid-search)
 - Prefer learned sparse ([miniCOIL](https://search.qdrant.tech/md/documentation/fastembed/fastembed-minicoil/), SPLADE, GTE) over raw BM25 if applicable (when user needs smart keywords matching and learned sparse models know the vocabulary of the domain)
-- For non-English languages, [configure sparse BM25 parameters accordingly](https://search.qdrant.tech/md/documentation/search/text-search/?s=language-specific-settings)
+- For non-English languages, [configure sparse BM25 parameters accordingly](https://qdrant.tech/documentation/search/text-search/#language-specific-settings)
 - RRF: good default, supports weighted (v1.17+) [RRF](https://search.qdrant.tech/md/documentation/search/hybrid-queries/?s=reciprocal-rank-fusion-rrf)
 - DBSF with asymmetric limits (sparse_limit=250, dense_limit=100) can outperform RRF for technical docs [DBSF](https://search.qdrant.tech/md/documentation/search/hybrid-queries/?s=distribution-based-score-fusion-dbsf)
 - Fusion can also be done through reranking
