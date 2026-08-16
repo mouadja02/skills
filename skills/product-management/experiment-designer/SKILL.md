@@ -1,6 +1,7 @@
 ﻿---
 name: experiment-designer
 description: A/B and multivariate experiments — hypothesis, sample size, ICE priority, stats significance
+version: "1.0.0"
 ---
 
 # Experiment Designer
@@ -323,8 +324,8 @@ Proactively offer A/B test design when:
 
 ## Related skills
 
-- [`page-cro`](../../marketing-and-growth/page-cro/) — *what* to test on a marketing page (use first to generate hypotheses).
-- [`signup-flow-cro`](../../marketing-and-growth/signup-flow-cro/) — signup-specific test patterns.
-- [`onboarding-cro`](../../marketing-and-growth/onboarding-cro/) — activation/onboarding experiments.
-- [`product-discovery`](../product-discovery/) — qualitative validation *before* you have a hypothesis worth testing.
-- [`marketing-context`](../../marketing-and-growth/marketing-context/) — load this for ICP/positioning framing before designing marketing tests.
+- [`page-cro`](https://github.com/mouadja02/skills/tree/main/skills/marketing-and-growth/page-cro) — *what* to test on a marketing page (use first to generate hypotheses).
+- [`signup-flow-cro`](https://github.com/mouadja02/skills/tree/main/skills/marketing-and-growth/signup-flow-cro) — signup-specific test patterns.
+- [`onboarding-cro`](https://github.com/mouadja02/skills/tree/main/skills/marketing-and-growth/onboarding-cro) — activation/onboarding experiments.
+- [`product-discovery`](https://github.com/mouadja02/skills/tree/main/skills/product-management/product-discovery) — qualitative validation *before* you have a hypothesis worth testing.
+- [`marketing-context`](https://github.com/mouadja02/skills/tree/main/skills/marketing-and-growth/marketing-context) — load this for ICP/positioning framing before designing marketing tests.
