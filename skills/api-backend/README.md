@@ -6,7 +6,7 @@
 
 API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.
 
-**Total:** 14 skills.
+**Total:** 15 skills.
 
 ## Skills In This Category
 
@@ -26,5 +26,6 @@ API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations
 | [`typespec-api-operations`](typespec-api-operations/SKILL.md) | `api-backend/typespec-api-operations` | Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing, parameters, and adaptive cards |
 | [`typespec-create-agent`](typespec-create-agent/SKILL.md) | `api-backend/typespec-create-agent` | Generate a complete TypeSpec declarative agent with instructions, capabilities, and conversation starters for Microsoft 365 Copilot |
 | [`typespec-create-api-plugin`](typespec-create-api-plugin/SKILL.md) | `api-backend/typespec-create-api-plugin` | Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot |
+| [`websocket-permessage-deflate-resource-limits`](websocket-permessage-deflate-resource-limits/SKILL.md) | `api-backend/websocket-permessage-deflate-resource-limits` | Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries. |
 
 [Back to the category index](../README.md)
