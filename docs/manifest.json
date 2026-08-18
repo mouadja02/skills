@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-16T10:07:59.952Z",
+  "generated_at": "2026-08-18T10:09:50.250Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 830,
+  "count": 831,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 14,
+    "api-backend": 15,
     "business-strategy": 64,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -848,6 +848,14 @@
       "path": "skills/api-backend/typespec-create-api-plugin",
       "depth": 2,
       "description": "Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot"
+    },
+    {
+      "name": "websocket-permessage-deflate-resource-limits",
+      "category": "api-backend",
+      "install_path": "api-backend/websocket-permessage-deflate-resource-limits",
+      "path": "skills/api-backend/websocket-permessage-deflate-resource-limits",
+      "depth": 2,
+      "description": "Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries."
     },
     {
       "name": "board-deck-builder",

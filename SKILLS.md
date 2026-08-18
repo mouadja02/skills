@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 830 skills across 36 categories.
+**Total:** 831 skills across 36 categories.
 
 ## Install one skill
 
@@ -24,7 +24,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | ---: |
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
-| [`api-backend`](#api-backend) | 14 |
+| [`api-backend`](#api-backend) | 15 |
 | [`business-strategy`](#business-strategy) | 64 |
 | [`cloud-aws`](#cloud-aws) | 85 |
 | [`cloud-azure`](#cloud-azure) | 18 |
@@ -169,6 +169,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`typespec-api-operations`](./skills/api-backend/typespec-api-operations/SKILL.md) | `api-backend/typespec-api-operations` | Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing, parameters, and adaptive cards |
 | [`typespec-create-agent`](./skills/api-backend/typespec-create-agent/SKILL.md) | `api-backend/typespec-create-agent` | Generate a complete TypeSpec declarative agent with instructions, capabilities, and conversation starters for Microsoft 365 Copilot |
 | [`typespec-create-api-plugin`](./skills/api-backend/typespec-create-api-plugin/SKILL.md) | `api-backend/typespec-create-api-plugin` | Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot |
+| [`websocket-permessage-deflate-resource-limits`](./skills/api-backend/websocket-permessage-deflate-resource-limits/SKILL.md) | `api-backend/websocket-permessage-deflate-resource-limits` | Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries. |
 
 ## business-strategy
 
