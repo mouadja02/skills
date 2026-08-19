@@ -1,7 +1,7 @@
 ---
-name: qdrant-search-quality-diagnosis
-description: "Diagnoses Qdrant search quality issues"
-version: "1.0.1"
+name: diagnosis
+description: "Use when Qdrant search results are irrelevant or incomplete and the agent must isolate embedding, HNSW, quantization, filtering, or pipeline causes."
+version: "1.0.2"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---

@@ -1,7 +1,7 @@
 ---
-name: qdrant-search-strategies
-description: "Guides Qdrant search strategy selection"
-version: "1.0.1"
+name: search-strategies
+description: "Use when selecting Qdrant retrieval strategies such as hybrid search, reranking, relevance feedback, MMR, recommendation, or score boosting."
+version: "1.0.2"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
