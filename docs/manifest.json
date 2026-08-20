@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-19T10:09:14.418Z",
+  "generated_at": "2026-08-19T18:03:22.422Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 832,
@@ -5210,20 +5210,20 @@
       "description": "Diagnoses and improves Qdrant search relevance"
     },
     {
-      "name": "qdrant-search-quality-diagnosis",
+      "name": "diagnosis",
       "category": "llm-tooling",
       "install_path": "llm-tooling/qdrant-search-quality/diagnosis",
       "path": "skills/llm-tooling/qdrant-search-quality/diagnosis",
       "depth": 3,
-      "description": "Diagnoses Qdrant search quality issues"
+      "description": "Use when Qdrant search results are irrelevant or incomplete and the agent must isolate embedding, HNSW, quantization, filtering, or pipeline causes."
     },
     {
-      "name": "qdrant-search-strategies",
+      "name": "search-strategies",
       "category": "llm-tooling",
       "install_path": "llm-tooling/qdrant-search-quality/search-strategies",
       "path": "skills/llm-tooling/qdrant-search-quality/search-strategies",
       "depth": 3,
-      "description": "Guides Qdrant search strategy selection"
+      "description": "Use when selecting Qdrant retrieval strategies such as hybrid search, reranking, relevance feedback, MMR, recommendation, or score boosting."
     },
     {
       "name": "qdrant-version-upgrade",
