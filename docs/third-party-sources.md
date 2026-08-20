@@ -86,7 +86,7 @@ License: Apache-2.0.
 
 Source repository: https://github.com/qdrant/skills
 
-Imported from `skills/qdrant-performance-optimization/` on the `main` branch:
+Imported from `skills/qdrant-performance-optimization/` and `skills/qdrant-search-quality/` on the `main` branch:
 
 | Local install path | Upstream path |
 | --- | --- |
@@ -94,6 +94,9 @@ Imported from `skills/qdrant-performance-optimization/` on the `main` branch:
 | `llm-tooling/qdrant-performance-optimization/indexing-performance-optimization` | `skills/qdrant-performance-optimization/indexing-performance-optimization` |
 | `llm-tooling/qdrant-performance-optimization/memory-usage-optimization` | `skills/qdrant-performance-optimization/memory-usage-optimization` |
 | `llm-tooling/qdrant-performance-optimization/search-speed-optimization` | `skills/qdrant-performance-optimization/search-speed-optimization` |
+| `llm-tooling/qdrant-search-quality` | `skills/qdrant-search-quality` |
+| `llm-tooling/qdrant-search-quality/diagnosis` | `skills/qdrant-search-quality/diagnosis` |
+| `llm-tooling/qdrant-search-quality/search-strategies` | `skills/qdrant-search-quality/search-strategies` |
 
 License: Apache-2.0.
 
