@@ -1,0 +1,9 @@
+{
+  "profile": "oauth-dpop-nonce-v1",
+  "events": [
+    {"role":"resource_server","origin":"https://api.example","endpoint":"/orders","request_id":10,"operation_id":"read-10","retry_index":0,"proof_present":true,"request_nonce":"rs-n0","jti":"r10","iat":110,"status":200,"dpop_nonce_headers":["rs-n2"]},
+    {"role":"resource_server","origin":"https://api.example","endpoint":"/orders","request_id":9,"operation_id":"read-9","retry_index":0,"proof_present":true,"request_nonce":"rs-n0","jti":"r9","iat":109,"status":200,"dpop_nonce_headers":["rs-n1"]},
+    {"role":"authorization_server","origin":"https://as.example","endpoint":"/token","request_id":11,"operation_id":"token-2","retry_index":0,"proof_present":true,"request_nonce":"as-n6","jti":"a11","iat":111,"status":200,"dpop_nonce_headers":["as-n7"]},
+    {"role":"resource_server","origin":"https://other.example","endpoint":"/data","request_id":12,"operation_id":"read-12","retry_index":0,"proof_present":true,"request_nonce":null,"jti":"o12","iat":112,"status":401,"www_authenticate_error":"use_dpop_nonce","dpop_nonce_headers":["other-n1","other-n2"]}
+  ]
+}
