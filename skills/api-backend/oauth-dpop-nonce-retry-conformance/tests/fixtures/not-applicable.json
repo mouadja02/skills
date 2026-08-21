@@ -1,0 +1,1 @@
+{"profile":"oauth-dpop-nonce-v1","events":[{"role":"authorization_server","origin":"https://as.example","endpoint":"/authorize","request_id":1,"operation_id":"pkce","retry_index":0,"proof_present":false,"status":302,"dpop_nonce_headers":[]}]}

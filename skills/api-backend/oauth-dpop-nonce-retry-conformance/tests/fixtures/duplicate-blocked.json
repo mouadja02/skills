@@ -1,0 +1,1 @@
+{"profile":"oauth-dpop-nonce-v1","events":[{"role":"resource_server","origin":"https://other.example","endpoint":"/data","request_id":1,"operation_id":"read-1","retry_index":0,"proof_present":true,"request_nonce":null,"jti":"x1","iat":100,"status":401,"www_authenticate_error":"use_dpop_nonce","dpop_nonce_headers":["n1","n2"]}]}

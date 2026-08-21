@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-19T18:03:22.422Z",
+  "generated_at": "2026-08-21T10:10:53.834Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 832,
+  "count": 833,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 16,
+    "api-backend": 17,
     "business-strategy": 64,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -784,6 +784,14 @@
       "path": "skills/api-backend/multipart-form-data-wire-conformance",
       "depth": 2,
       "description": "Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normalized part trees, and make a bounded rollout decision."
+    },
+    {
+      "name": "oauth-dpop-nonce-retry-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/oauth-dpop-nonce-retry-conformance",
+      "path": "skills/api-backend/oauth-dpop-nonce-retry-conformance",
+      "depth": 2,
+      "description": "Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior."
     },
     {
       "name": "openapi-to-application-code",
