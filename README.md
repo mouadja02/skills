@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **833 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **834 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -54,7 +54,7 @@ This table is generated from `docs/manifest.json`.
 | --- | ---: | --- |
 | [`agent-design`](./skills/agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./skills/agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
-| [`api-backend`](./skills/api-backend/) | 17 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
+| [`api-backend`](./skills/api-backend/) | 18 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./skills/business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-aws`](./skills/cloud-aws/) | 85 | AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability. |
 | [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
