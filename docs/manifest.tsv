@@ -97,6 +97,7 @@ api-backend/transloadit-media-processing	api-backend	transloadit-media-processin
 api-backend/typespec-api-operations	api-backend	typespec-api-operations	Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing, parameters, and adaptive cards
 api-backend/typespec-create-agent	api-backend	typespec-create-agent	Generate a complete TypeSpec declarative agent with instructions, capabilities, and conversation starters for Microsoft 365 Copilot
 api-backend/typespec-create-api-plugin	api-backend	typespec-create-api-plugin	Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot
+api-backend/webauthn-rpid-origin-drift-preflight	api-backend	webauthn-rpid-origin-drift-preflight	Use when WebAuthn or passkeys fail after hostname, port, proxy, RP-ID, public-URL, or native-app origin changes and the team needs a fail-closed migration and parity preflight.
 api-backend/websocket-permessage-deflate-resource-limits	api-backend	websocket-permessage-deflate-resource-limits	Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries.
 business-strategy/board-deck-builder	business-strategy	board-deck-builder	Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles
 business-strategy/board-meeting	business-strategy	board-meeting	Board meeting — 6-phase structured deliberation, multi-agent C-suite protocol
