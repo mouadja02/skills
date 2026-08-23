@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-22T10:12:22.746Z",
+  "generated_at": "2026-08-23T10:10:01.757Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 834,
+  "count": 835,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 18,
+    "api-backend": 19,
     "business-strategy": 64,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -776,6 +776,14 @@
       "path": "skills/api-backend/grpc-trailer-preservation-conformance",
       "depth": 2,
       "description": "Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures."
+    },
+    {
+      "name": "json-duplicate-member-boundary-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/json-duplicate-member-boundary-conformance",
+      "path": "skills/api-backend/json-duplicate-member-boundary-conformance",
+      "depth": 2,
+      "description": "Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets."
     },
     {
       "name": "multipart-form-data-wire-conformance",

@@ -6,7 +6,7 @@
 
 API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.
 
-**Total:** 18 skills.
+**Total:** 19 skills.
 
 ## Skills In This Category
 
@@ -17,6 +17,7 @@ API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations
 | [`gdpr-compliant`](gdpr-compliant/SKILL.md) | `api-backend/gdpr-compliant` | GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails |
 | [`graphql-incremental-hydration-preflight`](graphql-incremental-hydration-preflight/SKILL.md) | `api-backend/graphql-incremental-hydration-preflight` | Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bo... |
 | [`grpc-trailer-preservation-conformance`](grpc-trailer-preservation-conformance/SKILL.md) | `api-backend/grpc-trailer-preservation-conformance` | Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures. |
+| [`json-duplicate-member-boundary-conformance`](json-duplicate-member-boundary-conformance/SKILL.md) | `api-backend/json-duplicate-member-boundary-conformance` | Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets. |
 | [`multipart-form-data-wire-conformance`](multipart-form-data-wire-conformance/SKILL.md) | `api-backend/multipart-form-data-wire-conformance` | Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normali... |
 | [`oauth-dpop-nonce-retry-conformance`](oauth-dpop-nonce-retry-conformance/SKILL.md) | `api-backend/oauth-dpop-nonce-retry-conformance` | Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior. |
 | [`openapi-to-application-code`](openapi-to-application-code/SKILL.md) | `api-backend/openapi-to-application-code` | Generate a complete, production-ready application from an OpenAPI specification |
