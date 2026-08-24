@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-23T10:10:01.757Z",
+  "generated_at": "2026-08-24T10:15:45.531Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 835,
+  "count": 836,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 19,
+    "api-backend": 20,
     "business-strategy": 64,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -776,6 +776,14 @@
       "path": "skills/api-backend/grpc-trailer-preservation-conformance",
       "depth": 2,
       "description": "Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures."
+    },
+    {
+      "name": "http-early-hints-proxy-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/http-early-hints-proxy-conformance",
+      "path": "skills/api-backend/http-early-hints-proxy-conformance",
+      "depth": 2,
+      "description": "Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response."
     },
     {
       "name": "json-duplicate-member-boundary-conformance",
