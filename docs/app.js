@@ -321,7 +321,7 @@ function renderCategoryBanner() {
   const harnesses = activeHarnesses();
   const variants = {
     bash: harnesses.map((h) => `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${cat} -d ${h.destBash(cat)}`).join("\n"),
-    ps: harnesses.map((h) => `$content = irm ${raw}/install.ps1\niex $content\nInstall-Skill ${cat} -Dest ${h.destPs(cat)}`).join("\n"),
+    ps: harnesses.map((h) => `& ([scriptblock]::Create((irm ${raw}/install.ps1))) ${cat} -Dest ${h.destPs(cat)}`).join("\n"),
     degit: harnesses.map((h) => `npx degit ${repo}/skills/${cat} ${h.destBash(cat)}`).join("\n"),
   };
   $$(".category-banner-code", banner).forEach((pre) => {
@@ -653,7 +653,7 @@ function installCommands(skill, repo, branch) {
     .map((h) => `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${ip} -d ${h.destBash(name)}`)
     .join("\n");
   const ps = harnesses
-    .map((h) => `$content = irm ${raw}/install.ps1\niex $content\nInstall-Skill -Skill ${ip} -Dest ${h.destPs(name)}`)
+    .map((h) => `& ([scriptblock]::Create((irm ${raw}/install.ps1))) ${ip} -Dest ${h.destPs(name)}`)
     .join("\n");
   const degit = harnesses
     .map((h) => `npx degit ${repo}/skills/${ip} ${h.destBash(name)}`)
@@ -819,7 +819,7 @@ function updateHeroCommands() {
   }
   if (psEl) {
     psEl.textContent =
-      `$content = irm ${raw}/install.ps1\niex $content\nInstall-Skill <selector> -Dest ${primary.destPs("<name>")}`;
+      `& ([scriptblock]::Create((irm ${raw}/install.ps1))) <selector> -Dest ${primary.destPs("<name>")}`;
   }
 }
 

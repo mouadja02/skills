@@ -463,7 +463,7 @@ function renderSkillsMd({ count, categories, counts_by_category, skills, repo, d
   lines.push("```powershell");
   lines.push(`# PowerShell (Windows):`);
   lines.push(
-    `iwr https://raw.githubusercontent.com/${repo}/${default_branch}/install.ps1 -UseBasicParsing | iex; Install-Skill <install_path> -Dest <destination>`
+    `& ([scriptblock]::Create((irm https://raw.githubusercontent.com/${repo}/${default_branch}/install.ps1))) <install_path> -Dest <destination>`
   );
   lines.push("```");
   lines.push("");
