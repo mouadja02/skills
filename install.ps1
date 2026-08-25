@@ -53,6 +53,13 @@
     Show this help and exit (equivalent to Get-Help Install-Skill -Full).
 
 .EXAMPLE
+    One command, nothing to clone: download this script and run it in a single
+    statement.
+
+    & ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) `
+        engineering-craft/test-driven-development -Dest $HOME\.claude\skills
+
+.EXAMPLE
     Install-Skill engineering-craft/test-driven-development `
         -Dest $HOME\.claude\skills\test-driven-development
 
@@ -69,13 +76,17 @@
     Install-Skill "ai-agents/*" -Dest $HOME\.claude\skills\ai -DryRun
 
 .EXAMPLE
-    iwr https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1 -UseBasicParsing | iex
-    Install-Skill --Help
+    & ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) -Help
 
 .NOTES
-    When piped through Invoke-Expression (`iex`), this script defines a
-    global function `Install-Skill` with the same parameters as the
-    script itself.
+    The one-command form downloads this script and invokes it with your
+    arguments in a single statement:
+
+        & ([scriptblock]::Create((irm <url>))) <selector> -Dest <destination>
+
+    Piping it through Invoke-Expression instead (`irm <url> | iex`, no
+    arguments) defines a function `Install-Skill` with the same parameters,
+    which you can then call repeatedly in that session.
 #>
 [CmdletBinding(DefaultParameterSetName = 'Install')]
 param(

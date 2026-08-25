@@ -13,7 +13,7 @@ curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh | 
 
 ```powershell
 # PowerShell (Windows):
-iwr https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1 -UseBasicParsing | iex; Install-Skill <install_path> -Dest <destination>
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) <install_path> -Dest <destination>
 ```
 
 Where `<install_path>` is the value from the **Install path** column below (e.g. `engineering-craft/test-driven-development`).

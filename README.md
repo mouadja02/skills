@@ -22,9 +22,8 @@ curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
 ```
 
 ```powershell
-$content = irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1
-iex $content
-Install-Skill engineering-craft/test-driven-development -Dest $HOME\.claude\skills
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) `
+  engineering-craft/test-driven-development -Dest $HOME\.claude\skills
 ```
 
 Selectors may be an exact install path, a category, a quoted glob, or `--all` / `-All`. Use

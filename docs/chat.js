@@ -105,9 +105,7 @@ curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \\
   | bash -s -- <category/skill-name> -d ${primaryDest}<skill-name>
 
 # Install via PowerShell
-$content = irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1
-iex $content
-Install-Skill <category/skill-name> -Dest ${primaryDest}<skill-name>
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) <category/skill-name> -Dest ${primaryDest}<skill-name>
 
 # Install a whole category
 bash install.sh engineering-craft -d ${primaryDest}

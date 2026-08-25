@@ -105,9 +105,7 @@
           </div>
           <pre class="install-code" id="bashHero" data-tab="bash"><button class="copy" data-copy-target="#bashHero code" type="button">Copy</button><code>curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
   | bash -s -- &lt;selector&gt; -d &lt;destination&gt;</code></pre>
-          <pre class="install-code hidden" id="psHero" data-tab="ps"><button class="copy" data-copy-target="#psHero code" type="button">Copy</button><code>$content = irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1
-iex $content
-Install-Skill &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
+          <pre class="install-code hidden" id="psHero" data-tab="ps"><button class="copy" data-copy-target="#psHero code" type="button">Copy</button><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
           <p class="install-help">
             <code>&lt;selector&gt;</code> is a single skill (<code>engineering-craft/test-driven-development</code>),
             a category (<code>engineering-craft</code>), or a quoted glob
