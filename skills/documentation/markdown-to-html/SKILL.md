@@ -1,4 +1,4 @@
-﻿---
+---
 name: markdown-to-html
 description: Markdown → HTML — marked.js/pandoc compatible; custom stylesheets, GFM extensions
 ---

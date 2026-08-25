@@ -1,4 +1,4 @@
-﻿---
+---
 name: project-docs
 description: Also use when documenting an AI agent system, a data pipeline, or producing technical reference material for a team. If the output is a technical document other than a README — use this skill
 ---

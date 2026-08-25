@@ -1,4 +1,4 @@
-﻿---
+---
 name: plantuml-ascii
 description: "Generate ASCII art diagrams using PlantUML text mode"
 license: MIT

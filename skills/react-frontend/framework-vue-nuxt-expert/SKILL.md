@@ -1,4 +1,4 @@
-﻿---
+---
 name: framework-vue-nuxt-expert
 description: Triggers on keywords Vue 3, Nuxt 3, Vue.js, TailwindCSS
 ---

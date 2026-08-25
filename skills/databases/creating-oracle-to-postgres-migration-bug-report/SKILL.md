@@ -1,4 +1,4 @@
-﻿---
+---
 name: creating-oracle-to-postgres-migration-bug-report
 description: 'Creates structured bug reports for defects found during Oracle-to-PostgreSQL migration'
 ---

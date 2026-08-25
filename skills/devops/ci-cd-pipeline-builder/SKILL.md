@@ -1,4 +1,4 @@
-﻿---
+---
 name: "ci-cd-pipeline-builder"
 description: "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack"
 ---

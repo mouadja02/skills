@@ -1,4 +1,4 @@
-﻿---
+---
 name: refactor-plan
 description: 'Create a concrete plan before starting a multi-file refactor'
 ---

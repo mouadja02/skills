@@ -1,4 +1,4 @@
-﻿---
+---
 name: memory-merger
 description: 'Merges mature lessons from a domain memory file into its instruction file'
 ---

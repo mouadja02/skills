@@ -12,8 +12,8 @@ Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`create-spring-boot-java-project`](create-spring-boot-java-project/SKILL.md) | `java-kotlin/create-spring-boot-java-project` | Create Spring Boot Java Project Skeleton |
-| [`create-spring-boot-kotlin-project`](create-spring-boot-kotlin-project/SKILL.md) | `java-kotlin/create-spring-boot-kotlin-project` | Create Spring Boot Kotlin Project Skeleton |
+| [`create-spring-boot-java-project`](create-spring-boot-java-project/SKILL.md) | `java-kotlin/create-spring-boot-java-project` | Use when scaffolding a new Spring Boot project in Java — generating the project skeleton, build file, package layout, and baseline configuration. |
+| [`create-spring-boot-kotlin-project`](create-spring-boot-kotlin-project/SKILL.md) | `java-kotlin/create-spring-boot-kotlin-project` | Use when scaffolding a new Spring Boot project in Kotlin — generating the project skeleton, Gradle build, package layout, and baseline configuration. |
 | [`java-add-graalvm-native-image-support`](java-add-graalvm-native-image-support/SKILL.md) | `java-kotlin/java-add-graalvm-native-image-support` | GraalVM Native Image expert that adds native image support to Java applications, builds the project, analyzes build errors, applies fixes, and iterates until successful compilation using Oracle best practices |
 | [`java-docs`](java-docs/SKILL.md) | `java-kotlin/java-docs` | Ensure that Java types are documented with Javadoc comments and follow best practices for documentation. |
 | [`java-junit`](java-junit/SKILL.md) | `java-kotlin/java-junit` | Get best practices for JUnit 5 unit testing, including data-driven tests |

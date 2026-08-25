@@ -1,4 +1,4 @@
-﻿---
+---
 name: sandbox-npm-install
 description: npm install in Docker sandbox — isolates node_modules, safe package evaluation
 ---

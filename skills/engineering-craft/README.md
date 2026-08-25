@@ -6,7 +6,7 @@
 
 Senior engineering practices, planning, mentoring, verification, and cross-cutting craft.
 
-**Total:** 37 skills.
+**Total:** 36 skills.
 
 ## Skills In This Category
 
@@ -20,7 +20,6 @@ Senior engineering practices, planning, mentoring, verification, and cross-cutti
 | [`executing-plans`](executing-plans/SKILL.md) | `engineering-craft/executing-plans` | Use when you have a written implementation plan to execute in a separate session with review checkpoints |
 | [`game-engine`](game-engine/SKILL.md) | `engineering-craft/game-engine` | building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript |
 | [`geofeed-tuner`](geofeed-tuner/SKILL.md) | `engineering-craft/geofeed-tuner` | Use this skill whenever the user mentions IP geolocation feeds, RFC 8805, geofeeds, or wants help creating, tuning, validating, or publishing a self-published IP geolocation feed in CSV format. Intended user audience is a network operato... |
-| [`karpathy-guidelines`](karpathy-guidlines/SKILL.md) | `engineering-craft/karpathy-guidlines` | Behavioral guidelines to reduce common LLM coding mistakes |
 | [`mentoring-juniors`](mentoring-juniors/SKILL.md) | `engineering-craft/mentoring-juniors` | Socratic mentoring for junior developers and AI newcomers. Guides through questions, never answers. Triggers: "help me understand", "explain this code", "I''m stuck", "Im stuck", "I''m confused", "Im confused", "I don''t understand", "I... |
 | [`minecraft-plugin-development`](minecraft-plugin-development/SKILL.md) | `engineering-craft/minecraft-plugin-development` | Minecraft Paper/Spigot/Bukkit plugin dev — plugin.yml, commands, events, Gradle |
 | [`noob-mode`](noob-mode/SKILL.md) | `engineering-craft/noob-mode` | Plain-English translation layer for non-technical Copilot CLI users. Translates every approval prompt, error message, and technical output into clear, jargon-free English with color-coded risk indicators |
@@ -41,9 +40,9 @@ Senior engineering practices, planning, mentoring, verification, and cross-cutti
 | [`senior-pm`](senior-pm/SKILL.md) | `engineering-craft/senior-pm` | Senior PM — portfolio management, stakeholder mapping, risk, earned-value reporting |
 | [`senior-qa`](senior-qa/SKILL.md) | `engineering-craft/senior-qa` | React/Next.js test generation — Jest, RTL, Playwright, E2E from component scan |
 | [`subagent-driven-development`](subagent-driven-development/SKILL.md) | `engineering-craft/subagent-driven-development` | Use when executing implementation plans with independent tasks in the current session |
+| [`superpowers-test-driven-development`](superpowers-test-driven-development/SKILL.md) | `engineering-craft/superpowers-test-driven-development` | Use when implementing any feature or bugfix, before writing implementation code — the strict superpowers RED-GREEN-REFACTOR discipline: write the test, watch it fail, then write minimal code to pass. Required background for other superpo... |
 | [`tech-debt-tracker`](tech-debt-tracker/SKILL.md) | `engineering-craft/tech-debt-tracker` | Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans |
 | [`tech-stack-evaluator`](tech-stack-evaluator/SKILL.md) | `engineering-craft/tech-stack-evaluator` | Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring |
-| [`test-driven-development`](test-driven-development/SKILL.md) | `engineering-craft/test-driven-development` | Use when implementing any feature or bugfix, before writing implementation code |
 | [`using-superpowers`](using-superpowers/SKILL.md) | `engineering-craft/using-superpowers` | Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions |
 | [`verification-before-completion`](verification-before-completion/SKILL.md) | `engineering-craft/verification-before-completion` | Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always |
 | [`write-coding-standards-from-file`](write-coding-standards-from-file/SKILL.md) | `engineering-craft/write-coding-standards-from-file` | Write a coding standards document for a project using the coding styles from the file(s) and/or folder(s) passed as arguments in the prompt |

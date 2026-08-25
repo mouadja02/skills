@@ -1,4 +1,4 @@
-﻿---
+---
 name: reviewing-oracle-to-postgres-migration
 description: 'Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral differences (empty strings, refcursors, type coercion, sorting, timestamps, concurrent transactions, etc.)'
 ---

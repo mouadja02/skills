@@ -1,4 +1,4 @@
-﻿---
+---
 name: refactor
 description: Code refactoring — extract functions, rename, decompose, reduce complexity, no behavior change
 license: MIT

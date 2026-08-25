@@ -1,4 +1,4 @@
-﻿---
+---
 name: "local-ai-stack"
 description: "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving"
 ---

@@ -1,6 +1,6 @@
 ---
 name: create-readme
-description: 'Create a README.md file for the project'
+description: Use when a project needs a README written from scratch, or an existing one rebuilt — covering what the project is, install and quickstart, usage, configuration, and contribution pointers.
 ---
 
 ## Role

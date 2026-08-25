@@ -1,4 +1,4 @@
-﻿---
+---
 name: "saas-scaffolder"
 description: SaaS boilerplate generator — auth, DB schemas, billing, API routes, CI/CD
 ---

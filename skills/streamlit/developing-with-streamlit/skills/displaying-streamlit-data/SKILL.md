@@ -1,6 +1,6 @@
 ---
 name: displaying-streamlit-data
-description: Displaying charts, dataframes, and metrics in Streamlit
+description: "Use when rendering data in Streamlit — dataframes, tables, metrics, and charts. Covers choosing between st.dataframe, st.table, st.metric, and the built-in chart elements versus Plotly, Altair, or Matplotlib."
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

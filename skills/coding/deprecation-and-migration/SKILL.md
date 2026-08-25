@@ -1,6 +1,6 @@
-﻿---
+---
 name: deprecation-and-migration
-description: Manages deprecation and migration
+description: Use when replacing an old system, API, or library, sunsetting a feature, consolidating duplicate implementations, removing dead code nobody owns, or deciding whether to maintain a legacy system versus migrate off it. Covers deprecation timelines, migration paths, and safe removal.
 ---
 
 # Deprecation and Migration

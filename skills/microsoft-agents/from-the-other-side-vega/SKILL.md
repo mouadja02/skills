@@ -1,4 +1,4 @@
-﻿---
+---
 name: from-the-other-side-vega
 description: Vega AI partner patterns — lived experience docs for Ember in human-AI partnership
 ---

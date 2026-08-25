@@ -1,4 +1,4 @@
-﻿---
+---
 name: security-review
 description: Codebase security scan — data flow tracing, OWASP top 10, secrets, dependency CVEs
 ---

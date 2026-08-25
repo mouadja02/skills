@@ -1,4 +1,4 @@
-﻿---
+---
 name: game-engine
 description: 'building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript'
 ---

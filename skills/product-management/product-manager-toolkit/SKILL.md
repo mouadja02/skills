@@ -1,4 +1,4 @@
-﻿---
+---
 name: "product-manager-toolkit"
 description: product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies
 ---

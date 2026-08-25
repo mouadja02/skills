@@ -1,5 +1,5 @@
 ---
-name: "hard-call"
+name: "executive-mentor-hard-call"
 description: "/em -hard-call — Framework for Decisions With No Good Options"
 ---
 

@@ -1,6 +1,6 @@
-﻿---
+---
 name: performance-optimization
-description: Optimizes application performance
+description: "Use when performance budgets or SLAs exist, users or monitoring report slowness, Core Web Vitals fall below thresholds, a change may have caused a regression, or a feature handles large datasets or high traffic. Measure-first workflow: profile, fix the proven bottleneck, re-measure. Not for speculative optimization."
 ---
 
 # Performance Optimization

@@ -1,4 +1,4 @@
-﻿---
+---
 name: framework-nextjs-expert
 description: Triggers on keywords Next.js, React, Tailwind, Shadcn UI
 ---

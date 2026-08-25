@@ -1,4 +1,4 @@
-﻿---
+---
 name: idea-refine
 description: Use when refining a vague idea through divergent expansion, convergent focus, and assumption stress-testing before planning or implementation.
 version: "1.0.0"

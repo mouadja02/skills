@@ -12,7 +12,7 @@
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`csharp-async`](csharp-async/SKILL.md) | `dotnet/csharp-async` | Get best practices for C# async programming |
+| [`csharp-async`](csharp-async/SKILL.md) | `dotnet/csharp-async` | Use when writing or reviewing async C# — async/await, Task and ValueTask, cancellation tokens, ConfigureAwait, deadlocks, sync-over-async, and async streams. |
 | [`csharp-docs`](csharp-docs/SKILL.md) | `dotnet/csharp-docs` | Ensure that C# types are documented with XML comments and follow best practices for documentation. |
 | [`csharp-mstest`](csharp-mstest/SKILL.md) | `dotnet/csharp-mstest` | Get best practices for MSTest 3.x/4.x unit testing, including modern assertion APIs and data-driven tests |
 | [`csharp-nunit`](csharp-nunit/SKILL.md) | `dotnet/csharp-nunit` | Get best practices for NUnit unit testing, including data-driven tests |
@@ -29,7 +29,7 @@
 | [`vscode-ext-commands`](vscode-ext-commands/SKILL.md) | `dotnet/vscode-ext-commands` | Guidelines for contributing commands in VS Code extensions. Indicates naming convention, visibility, localization and other relevant attributes, following VS Code extension development guidelines, libraries and good practices |
 | [`vscode-ext-localization`](vscode-ext-localization/SKILL.md) | `dotnet/vscode-ext-localization` | Guidelines for proper localization of VS Code extensions, following VS Code extension development guidelines, libraries and good practices |
 | [`winapp-cli`](winapp-cli/SKILL.md) | `dotnet/winapp-cli` | Windows App Development CLI (winapp) for building, packaging, signing, debugging, and UI-automating Windows applications |
-| [`winmd-api-search`](winmd-api-search/SKILL.md) | `dotnet/winmd-api-search` | Find and explore Windows desktop APIs |
+| [`winmd-api-search`](winmd-api-search/SKILL.md) | `dotnet/winmd-api-search` | Use when you need to find or explore Windows desktop APIs from Windows Metadata (.winmd) — locating a type, namespace, method, or its signature for Win32, WinRT, or Windows App SDK work. |
 | [`winui3-migration-guide`](winui3-migration-guide/SKILL.md) | `dotnet/winui3-migration-guide` | UWP → WinUI 3 migration — API mapping, before/after snippets, App SDK equivalents |
 
 [Back to the category index](../README.md)

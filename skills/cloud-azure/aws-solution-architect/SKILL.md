@@ -1,4 +1,4 @@
-﻿---
+---
 name: "aws-solution-architect"
 description: Design AWS architectures for startups using serverless patterns and IaC templates
 ---

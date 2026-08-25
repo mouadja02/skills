@@ -1,4 +1,4 @@
-﻿---
+---
 name: "mcp-server-builder"
 description: "Build production-grade MCP (Model Context Protocol) servers from API contracts"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: quality-playbook
 description: Quality audit — behavioral requirements from code, spec-traced tests, coverage gaps
 license: Complete terms in LICENSE.txt

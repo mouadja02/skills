@@ -1,4 +1,4 @@
-﻿---
+---
 name: postgresql-code-review
 description: PostgreSQL code review — PG-specific best practices, anti-patterns, quality standards
 ---

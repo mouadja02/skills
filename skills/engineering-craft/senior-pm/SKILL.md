@@ -1,4 +1,4 @@
-﻿---
+---
 name: "senior-pm"
 description: Senior PM — portfolio management, stakeholder mapping, risk, earned-value reporting
 ---

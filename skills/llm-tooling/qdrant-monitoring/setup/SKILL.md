@@ -1,6 +1,6 @@
 ---
 name: qdrant-monitoring-setup
-description: "Guides Qdrant monitoring setup including Prometheus scraping, health probes, Hybrid Cloud metrics, alerting, and log centralization"
+description: Use when setting up observability for Qdrant — enabling the metrics endpoint, wiring Prometheus and Grafana, and choosing which collection, cluster, and resource metrics to watch.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---

@@ -1,6 +1,6 @@
 ---
 name: qdrant-scaling-query-volume
-description: "Guides Qdrant query volume scaling"
+description: Use when Qdrant queries with large limits fan out across many shards and over-fetch — each shard returning the full limit. Applies Poisson-based per-shard limit reduction, valid when auto-sharding guarantees random distribution.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---

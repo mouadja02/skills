@@ -1,4 +1,4 @@
-﻿---
+---
 name: 'audit-integrity'
 description: AppSec audit integrity — output quality standards, honesty rules, continuous improvement
 compatibility: 'Cross-platform. Works with any language or framework analyzed by AppSec agents.'

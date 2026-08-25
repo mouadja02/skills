@@ -1,4 +1,4 @@
-﻿---
+---
 name: codeql
 description: CodeQL setup — GitHub Actions scanning, CLI queries, alert triage
 ---

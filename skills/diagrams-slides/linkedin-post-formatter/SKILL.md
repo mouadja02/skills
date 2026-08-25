@@ -1,4 +1,4 @@
-﻿---
+---
 name: linkedin-post-formatter
 description: LinkedIn posts — Unicode bold/italic, visual separators, structured sections, hooks
 ---

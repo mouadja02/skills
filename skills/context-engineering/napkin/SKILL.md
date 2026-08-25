@@ -1,4 +1,4 @@
-﻿---
+---
 name: napkin
 description: Napkin browser whiteboard — draw, sketch, annotate, diagrams, visual brainstorming
 ---

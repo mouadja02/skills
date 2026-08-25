@@ -1,4 +1,4 @@
-﻿---
+---
 name: hallmark
 description: "Anti-AI-slop design — greenfield pages, audits, redesigns, and design extraction from URLs or screenshots"
 version: 1.0.1

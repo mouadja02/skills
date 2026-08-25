@@ -1,4 +1,4 @@
-﻿---
+---
 name: theme-factory
 description: Theme styling toolkit — slides, docs, HTML pages, 10+ styles, dark/light, custom palette
 license: Complete terms in LICENSE.txt

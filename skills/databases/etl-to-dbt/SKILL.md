@@ -1,4 +1,4 @@
-﻿---
+---
 name: etl-to-dbt
 description: ETL/ELT → dbt migration — Informatica/PowerBI mappings, transformation logic, YAML
 ---

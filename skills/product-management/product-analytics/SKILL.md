@@ -1,4 +1,4 @@
-﻿---
+---
 name: product-analytics
 description: Use when defining product KPIs, building metric dashboards, running cohort or retention analysis, or interpreting feature adoption trends across product stages
 ---

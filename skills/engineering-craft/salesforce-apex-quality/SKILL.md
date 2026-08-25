@@ -1,4 +1,4 @@
-﻿---
+---
 name: salesforce-apex-quality
 description: Apex quality — bulk-safe SOQL/DML, sharing model, governor limits, test coverage
 ---

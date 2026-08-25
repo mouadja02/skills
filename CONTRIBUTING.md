@@ -38,10 +38,24 @@ Code**, **Cursor**, and any other client that walks a directory tree of
 
    Frontmatter rules:
 
-   - `name` must match the folder name.
+   - `name` must match the folder name, and must be lowercase `kebab-case`
+     (`^[a-z0-9]+(-[a-z0-9]+)*$`). Colons, spaces, and uppercase break skill
+     loading in Claude Code and Cursor.
+   - `name` must be **unique across the whole repository**. Folder names should
+     be too: `install.sh` installs to `<dest>/<folder-name>`, so two skills
+     sharing a folder name overwrite each other. Avoid generic names like
+     `status` or `setup`.
+   - Skills nested inside a bundle (depth 3+, e.g.
+     `llm-tooling/qdrant-monitoring/setup/`) are the one exception to
+     name-matches-folder: keep the folder short and give `name` a namespaced
+     value like `qdrant-monitoring-setup` so it stays globally unique.
    - `description` is what the model sees when deciding whether to load the
-     skill. Lead with the trigger phrase ("Use when…", "Activate when…").
-     Keep it under ~300 chars; long descriptions get truncated in lists.
+     skill — it is a router rule, not a summary. Lead with the trigger phrase
+     ("Use when…") and name the concrete situations, tools, and error messages
+     that should activate it. "Simplifies code for clarity" tells the model
+     nothing; "Use when working code has deeply nested logic, long functions, or
+     duplication after a merge" does. Aim for 150–400 chars. Hard limit is 1024;
+     anything longer is rejected by Claude Code.
    - `version` — semantic version string (e.g. `"1.0.0"`). Required for
      all new skills. Bump on meaningful changes.
    - `platform` — set when the skill only works on specific platforms.
@@ -82,11 +96,21 @@ content-addressed S3 releases before advancing the short-cache release pointer.
 ## Local preview
 
 ```bash
-npm install        # one time
+npm install         # one time
 git add -- skills/<reviewed-path>  # stage only intentional new skill files
-npm run build      # regenerates docs, audits coverage, builds and checks zips
-npm run preview    # serves docs/ at http://localhost:4173
+npm run check:skills # validate frontmatter, names, and links (fast)
+npm run build       # regenerates docs, audits coverage, builds and checks zips
+npm run preview     # serves docs/ at http://localhost:4173
 ```
+
+`npm run check:skills` is the skill-level linter and runs as part of `npm run
+build` and in CI. It **fails** on anything that would break a client: a missing
+or malformed `name`/`description`, a name that is not kebab-case, a name that
+does not match its folder, a duplicate name, a description over 1024 chars, a
+UTF-8 BOM, or a broken relative link in `SKILL.md`. It **warns** (without
+failing) on short descriptions, a missing `## When to Use`, missing
+`version`/`license`, duplicate folder names, and links that escape the skill
+folder. Run it with `--quiet` to see errors only.
 
 ZIP generation uses the Git index as its publication allowlist and fails when
 non-ignored untracked files remain under `skills/`. This prevents local
@@ -126,6 +150,7 @@ like, including the per-skill `.zip` download buttons.
 skills/<category>/<skill>/SKILL.md     each skill
 scripts/build-manifest.mjs             generates docs/manifest.{json,tsv} + SKILLS.md
                                       + root/category README indexes
+scripts/check-skills.mjs               validates SKILL.md frontmatter, names, links
 scripts/check-docs.mjs                 audits documentation coverage and links
 scripts/build-zips.mjs                 generates docs/zips/*.zip (CI / preview)
 scripts/preview.mjs                    static server for docs/

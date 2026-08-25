@@ -1,4 +1,4 @@
-﻿---
+---
 name: ui-ux-pro-max
 description: UI/UX design — 50+ styles, 161 palettes, 57 font pairs, 99 UX patterns, grids, accessibility
 ---

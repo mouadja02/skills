@@ -1,5 +1,5 @@
 ---
-name: "run"
+name: "autoresearch-run"
 description: "Run a single experiment iteration. Edit the target file, evaluate, keep or discard."
 command: /ar:run
 ---

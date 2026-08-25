@@ -1,4 +1,4 @@
-﻿---
+---
 name: skill-creator
 description: Create, modify, benchmark skills — from scratch, existing docs, or URLs
 ---

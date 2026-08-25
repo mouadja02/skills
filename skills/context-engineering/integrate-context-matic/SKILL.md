@@ -1,4 +1,4 @@
-﻿---
+---
 name: integrate-context-matic
 description: 'Discovers and integrates third-party APIs using the context-matic MCP server. Uses `fetch_api` to find available API SDKs, `ask` for integration guidance, `model_search` and `endpoint_search` for SDK details'
 ---

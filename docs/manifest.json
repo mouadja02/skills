@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-24T10:15:45.531Z",
+  "generated_at": "2026-08-25T21:13:34.088Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 836,
+  "count": 810,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -46,7 +46,7 @@
     "agent-design": 58,
     "agent-eval": 24,
     "api-backend": 20,
-    "business-strategy": 64,
+    "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
     "code-quality": 18,
@@ -61,7 +61,7 @@
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
-    "engineering-craft": 37,
+    "engineering-craft": 36,
     "finance": 7,
     "go-to-market": 11,
     "java-kotlin": 11,
@@ -519,7 +519,7 @@
       "install_path": "agent-design/structured-autonomy-implement",
       "path": "skills/agent-design/structured-autonomy-implement",
       "depth": 2,
-      "description": "Structured Autonomy Implementation Prompt"
+      "description": "Use when executing a previously agreed autonomous agent plan — running the steps within declared boundaries, checkpointing progress, and escalating when a stop condition is hit."
     },
     {
       "name": "structured-autonomy-plan",
@@ -527,7 +527,7 @@
       "install_path": "agent-design/structured-autonomy-plan",
       "path": "skills/agent-design/structured-autonomy-plan",
       "depth": 2,
-      "description": "Structured Autonomy Planning Prompt"
+      "description": "Use when an autonomous agent run needs a plan before execution — decomposing the goal, setting explicit boundaries and stop conditions, and defining what the agent may decide alone versus escalate."
     },
     {
       "name": "tool-design",
@@ -570,7 +570,7 @@
       "description": "Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Claude has learned about your project, (2) graduating a pattern from notes to enforced rules, (3) turning a debugging solution into a skill, (4) checking memory health and capacity"
     },
     {
-      "name": "extract",
+      "name": "auto-memory-extract",
       "category": "agent-eval",
       "install_path": "agent-eval/auto-memory-pro/skills/extract",
       "path": "skills/agent-eval/auto-memory-pro/skills/extract",
@@ -578,7 +578,7 @@
       "description": "Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples"
     },
     {
-      "name": "promote",
+      "name": "auto-memory-promote",
       "category": "agent-eval",
       "install_path": "agent-eval/auto-memory-pro/skills/promote",
       "path": "skills/agent-eval/auto-memory-pro/skills/promote",
@@ -586,7 +586,7 @@
       "description": "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement."
     },
     {
-      "name": "remember",
+      "name": "auto-memory-remember",
       "category": "agent-eval",
       "install_path": "agent-eval/auto-memory-pro/skills/remember",
       "path": "skills/agent-eval/auto-memory-pro/skills/remember",
@@ -594,7 +594,7 @@
       "description": "Explicitly save important knowledge to auto-memory with timestamp and context"
     },
     {
-      "name": "review",
+      "name": "auto-memory-review",
       "category": "agent-eval",
       "install_path": "agent-eval/auto-memory-pro/skills/review",
       "path": "skills/agent-eval/auto-memory-pro/skills/review",
@@ -602,7 +602,7 @@
       "description": "Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics."
     },
     {
-      "name": "status",
+      "name": "auto-memory-status",
       "category": "agent-eval",
       "install_path": "agent-eval/auto-memory-pro/skills/status",
       "path": "skills/agent-eval/auto-memory-pro/skills/status",
@@ -626,7 +626,7 @@
       "description": "Autonomous experiment loop that optimizes any file by a measurable metric. Inspired by Karpathy's autoresearch. The agent edits a target file, runs a fixed evaluation, keeps improvements (git commit), discards failures (git reset), and loops indefinitely. Use when: user wants to optimize code speed, reduce bundle/image size, improve test pass rate, optimize prompts, improve content quality (headlines, copy, CTR), or run any measurable improvement loop. Requires: a target file, an evaluation command that outputs a metric, and a git repo"
     },
     {
-      "name": "loop",
+      "name": "autoresearch-loop",
       "category": "agent-eval",
       "install_path": "agent-eval/autoresearch-agent/skills/loop",
       "path": "skills/agent-eval/autoresearch-agent/skills/loop",
@@ -634,7 +634,7 @@
       "description": "Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly). Uses CronCreate for scheduling"
     },
     {
-      "name": "resume",
+      "name": "autoresearch-resume",
       "category": "agent-eval",
       "install_path": "agent-eval/autoresearch-agent/skills/resume",
       "path": "skills/agent-eval/autoresearch-agent/skills/resume",
@@ -642,7 +642,7 @@
       "description": "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating."
     },
     {
-      "name": "run",
+      "name": "autoresearch-run",
       "category": "agent-eval",
       "install_path": "agent-eval/autoresearch-agent/skills/run",
       "path": "skills/agent-eval/autoresearch-agent/skills/run",
@@ -650,7 +650,7 @@
       "description": "Run a single experiment iteration. Edit the target file, evaluate, keep or discard."
     },
     {
-      "name": "setup",
+      "name": "autoresearch-setup",
       "category": "agent-eval",
       "install_path": "agent-eval/autoresearch-agent/skills/setup",
       "path": "skills/agent-eval/autoresearch-agent/skills/setup",
@@ -658,7 +658,7 @@
       "description": "Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator"
     },
     {
-      "name": "status",
+      "name": "autoresearch-status",
       "category": "agent-eval",
       "install_path": "agent-eval/autoresearch-agent/skills/status",
       "path": "skills/agent-eval/autoresearch-agent/skills/status",
@@ -898,6 +898,14 @@
       "description": "Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries."
     },
     {
+      "name": "agent-protocol",
+      "category": "business-strategy",
+      "install_path": "business-strategy/agent-protocol",
+      "path": "skills/business-strategy/agent-protocol",
+      "depth": 2,
+      "description": "Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats"
+    },
+    {
       "name": "board-deck-builder",
       "category": "business-strategy",
       "install_path": "business-strategy/board-deck-builder",
@@ -935,271 +943,7 @@
       "install_path": "business-strategy/c-level-advisor",
       "path": "skills/business-strategy/c-level-advisor",
       "depth": 2,
-      "description": "C-suite advice — channels 10 roles: CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO"
-    },
-    {
-      "name": "agent-protocol",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/agent-protocol",
-      "path": "skills/business-strategy/c-level-advisor/agent-protocol",
-      "depth": 3,
-      "description": "Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats"
-    },
-    {
-      "name": "board-deck-builder",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/board-deck-builder",
-      "path": "skills/business-strategy/c-level-advisor/board-deck-builder",
-      "depth": 3,
-      "description": "Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles"
-    },
-    {
-      "name": "board-meeting",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/board-meeting",
-      "path": "skills/business-strategy/c-level-advisor/board-meeting",
-      "depth": 3,
-      "description": "Board meeting — 6-phase structured deliberation, multi-agent C-suite protocol"
-    },
-    {
-      "name": "ceo-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/ceo-advisor",
-      "path": "skills/business-strategy/c-level-advisor/ceo-advisor",
-      "depth": 3,
-      "description": "Executive leadership guidance for strategic decision-making, organizational development, and stakeholder management"
-    },
-    {
-      "name": "cfo-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/cfo-advisor",
-      "path": "skills/business-strategy/c-level-advisor/cfo-advisor",
-      "depth": 3,
-      "description": "Financial leadership for startups and scaling companies. Financial modeling, unit economics, fundraising strategy, cash management, and board financial packages"
-    },
-    {
-      "name": "change-management",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/change-management",
-      "path": "skills/business-strategy/c-level-advisor/change-management",
-      "depth": 3,
-      "description": "Change rollout — ADKAR for startups, communication templates, resistance handling"
-    },
-    {
-      "name": "chief-of-staff",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/chief-of-staff",
-      "path": "skills/business-strategy/c-level-advisor/chief-of-staff",
-      "depth": 3,
-      "description": "C-suite orchestrator — routes to advisor roles, triggers board meetings, cross-functional"
-    },
-    {
-      "name": "chro-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/chro-advisor",
-      "path": "skills/business-strategy/c-level-advisor/chro-advisor",
-      "depth": 3,
-      "description": "People leadership for scaling companies. Hiring strategy, compensation design, org structure, culture, and retention"
-    },
-    {
-      "name": "ciso-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/ciso-advisor",
-      "path": "skills/business-strategy/c-level-advisor/ciso-advisor",
-      "depth": 3,
-      "description": "Security leadership for growth-stage companies. Risk quantification in dollars, compliance roadmap (SOC 2/ISO 27001/HIPAA/GDPR), security architecture strategy, incident response leadership, and board-level security reporting"
-    },
-    {
-      "name": "cmo-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/cmo-advisor",
-      "path": "skills/business-strategy/c-level-advisor/cmo-advisor",
-      "depth": 3,
-      "description": "Marketing leadership for scaling companies. Brand positioning, growth model design, marketing budget allocation, and marketing org design"
-    },
-    {
-      "name": "company-os",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/company-os",
-      "path": "skills/business-strategy/c-level-advisor/company-os",
-      "depth": 3,
-      "description": "Company OS — connective tissue across all C-suite roles, operating system (EOS/Traction)"
-    },
-    {
-      "name": "competitive-intel",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/competitive-intel",
-      "path": "skills/business-strategy/c-level-advisor/competitive-intel",
-      "depth": 3,
-      "description": "Systematic competitor tracking that feeds CMO positioning, CRO battlecards, and CPO roadmap decisions"
-    },
-    {
-      "name": "context-engine",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/context-engine",
-      "path": "skills/business-strategy/c-level-advisor/context-engine",
-      "depth": 3,
-      "description": "Company context loader — reads company-context.md, staleness detection (>90 days)"
-    },
-    {
-      "name": "coo-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/coo-advisor",
-      "path": "skills/business-strategy/c-level-advisor/coo-advisor",
-      "depth": 3,
-      "description": "Operations leadership for scaling companies. Process design, OKR execution, operational cadence, and scaling playbooks"
-    },
-    {
-      "name": "cpo-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/cpo-advisor",
-      "path": "skills/business-strategy/c-level-advisor/cpo-advisor",
-      "depth": 3,
-      "description": "Product leadership for scaling companies. Product vision, portfolio strategy, product-market fit, and product org design"
-    },
-    {
-      "name": "cro-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/cro-advisor",
-      "path": "skills/business-strategy/c-level-advisor/cro-advisor",
-      "depth": 3,
-      "description": "Revenue leadership for B2B SaaS companies. Revenue forecasting, sales model design, pricing strategy, net revenue retention, and sales team scaling"
-    },
-    {
-      "name": "cs-onboard",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/cs-onboard",
-      "path": "skills/business-strategy/c-level-advisor/cs-onboard",
-      "depth": 3,
-      "description": "Founder onboarding interview that captures company context across 7 dimensions"
-    },
-    {
-      "name": "cto-advisor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/cto-advisor",
-      "path": "skills/business-strategy/c-level-advisor/cto-advisor",
-      "depth": 3,
-      "description": "Technical leadership guidance for engineering teams, architecture decisions, and technology strategy"
-    },
-    {
-      "name": "culture-architect",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/culture-architect",
-      "path": "skills/business-strategy/c-level-advisor/culture-architect",
-      "depth": 3,
-      "description": "Culture as behavior — mission/values workshops, culture metrics, behavior standards"
-    },
-    {
-      "name": "decision-logger",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/decision-logger",
-      "path": "skills/business-strategy/c-level-advisor/decision-logger",
-      "depth": 3,
-      "description": "Two-layer memory architecture for board meeting decisions. Manages raw transcripts (Layer 1) and approved decisions (Layer 2)"
-    },
-    {
-      "name": "executive-mentor",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/executive-mentor",
-      "path": "skills/business-strategy/c-level-advisor/executive-mentor",
-      "depth": 3,
-      "description": "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal board meetings, dissects decisions with no good options, and forces honest post-mortems"
-    },
-    {
-      "name": "board-prep",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/executive-mentor/skills/board-prep",
-      "path": "skills/business-strategy/c-level-advisor/executive-mentor/skills/board-prep",
-      "depth": 5,
-      "description": "/em -board-prep — Board Meeting Preparation"
-    },
-    {
-      "name": "challenge",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/executive-mentor/skills/challenge",
-      "path": "skills/business-strategy/c-level-advisor/executive-mentor/skills/challenge",
-      "depth": 5,
-      "description": "/em -challenge — Pre-Mortem Plan Analysis"
-    },
-    {
-      "name": "hard-call",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/executive-mentor/skills/hard-call",
-      "path": "skills/business-strategy/c-level-advisor/executive-mentor/skills/hard-call",
-      "depth": 5,
-      "description": "/em -hard-call — Framework for Decisions With No Good Options"
-    },
-    {
-      "name": "postmortem",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/executive-mentor/skills/postmortem",
-      "path": "skills/business-strategy/c-level-advisor/executive-mentor/skills/postmortem",
-      "depth": 5,
-      "description": "/em -postmortem — Honest Analysis of What Went Wrong"
-    },
-    {
-      "name": "stress-test",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/executive-mentor/skills/stress-test",
-      "path": "skills/business-strategy/c-level-advisor/executive-mentor/skills/stress-test",
-      "depth": 5,
-      "description": "/em -stress-test — Business Assumption Stress Testing"
-    },
-    {
-      "name": "founder-coach",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/founder-coach",
-      "path": "skills/business-strategy/c-level-advisor/founder-coach",
-      "depth": 3,
-      "description": "Founder/CEO leadership — archetype ID, delegation, blind spots, scaling decisions"
-    },
-    {
-      "name": "internal-narrative",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/internal-narrative",
-      "path": "skills/business-strategy/c-level-advisor/internal-narrative",
-      "depth": 3,
-      "description": "Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed for each audience's needs"
-    },
-    {
-      "name": "intl-expansion",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/intl-expansion",
-      "path": "skills/business-strategy/c-level-advisor/intl-expansion",
-      "depth": 3,
-      "description": "International market expansion strategy. Market selection, entry modes, localization, regulatory compliance, and go-to-market by region"
-    },
-    {
-      "name": "ma-playbook",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/ma-playbook",
-      "path": "skills/business-strategy/c-level-advisor/ma-playbook",
-      "depth": 3,
-      "description": "M&A strategy for acquiring companies or being acquired. Due diligence, valuation, integration, and deal structure"
-    },
-    {
-      "name": "org-health-diagnostic",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/org-health-diagnostic",
-      "path": "skills/business-strategy/c-level-advisor/org-health-diagnostic",
-      "depth": 3,
-      "description": "Cross-functional organizational health check combining signals from all C-suite roles. Scores 8 dimensions on a traffic-light scale with drill-down recommendations"
-    },
-    {
-      "name": "scenario-war-room",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/scenario-war-room",
-      "path": "skills/business-strategy/c-level-advisor/scenario-war-room",
-      "depth": 3,
-      "description": "Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all business functions simultaneously"
-    },
-    {
-      "name": "strategic-alignment",
-      "category": "business-strategy",
-      "install_path": "business-strategy/c-level-advisor/strategic-alignment",
-      "path": "skills/business-strategy/c-level-advisor/strategic-alignment",
-      "depth": 3,
-      "description": "Strategy cascade — boardroom to IC, OKR misalignment detection and fix"
+      "description": "Use when a founder or executive needs C-suite advice and it is not yet clear which role should answer — routes the question to the right advisor (CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO) and explains how the 28-skill executive ecosystem fits together. Start here, then load the individual role skill."
     },
     {
       "name": "ceo-advisor",
@@ -1216,6 +960,14 @@
       "path": "skills/business-strategy/cfo-advisor",
       "depth": 2,
       "description": "Financial leadership for startups and scaling companies. Financial modeling, unit economics, fundraising strategy, cash management, and board financial packages"
+    },
+    {
+      "name": "change-management",
+      "category": "business-strategy",
+      "install_path": "business-strategy/change-management",
+      "path": "skills/business-strategy/change-management",
+      "depth": 2,
+      "description": "Change rollout — ADKAR for startups, communication templates, resistance handling"
     },
     {
       "name": "chief-of-staff",
@@ -1258,6 +1010,14 @@
       "description": "Company OS — connective tissue across all C-suite roles, operating system (EOS/Traction)"
     },
     {
+      "name": "competitive-intel",
+      "category": "business-strategy",
+      "install_path": "business-strategy/competitive-intel",
+      "path": "skills/business-strategy/competitive-intel",
+      "depth": 2,
+      "description": "Systematic competitor tracking that feeds CMO positioning, CRO battlecards, and CPO roadmap decisions"
+    },
+    {
       "name": "context-engine",
       "category": "business-strategy",
       "install_path": "business-strategy/context-engine",
@@ -1290,7 +1050,7 @@
       "description": "Revenue leadership for B2B SaaS companies. Revenue forecasting, sales model design, pricing strategy, net revenue retention, and sales team scaling"
     },
     {
-      "name": "founder-coach",
+      "name": "cs-founder-coach",
       "category": "business-strategy",
       "install_path": "business-strategy/cs-founder-coach",
       "path": "skills/business-strategy/cs-founder-coach",
@@ -1314,6 +1074,14 @@
       "description": "Technical leadership guidance for engineering teams, architecture decisions, and technology strategy"
     },
     {
+      "name": "culture-architect",
+      "category": "business-strategy",
+      "install_path": "business-strategy/culture-architect",
+      "path": "skills/business-strategy/culture-architect",
+      "depth": 2,
+      "description": "Culture as behavior — mission/values workshops, culture metrics, behavior standards"
+    },
+    {
       "name": "decision-logger",
       "category": "business-strategy",
       "install_path": "business-strategy/decision-logger",
@@ -1330,23 +1098,23 @@
       "description": "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal board meetings, dissects decisions with no good options, and forces honest post-mortems"
     },
     {
-      "name": "board-prep",
+      "name": "executive-mentor-board-prep",
       "category": "business-strategy",
       "install_path": "business-strategy/executive-mentor/skills/board-prep",
       "path": "skills/business-strategy/executive-mentor/skills/board-prep",
       "depth": 4,
-      "description": "/em -board-prep — Board Meeting Preparation"
+      "description": "Use when preparing for a board meeting and the goal is to survive the adversarial version of it — anticipating every hard question, knowing which numbers must be cold, and shaping a narrative that acknowledges weakness without losing the room."
     },
     {
-      "name": "challenge",
+      "name": "executive-mentor-challenge",
       "category": "business-strategy",
       "install_path": "business-strategy/executive-mentor/skills/challenge",
       "path": "skills/business-strategy/executive-mentor/skills/challenge",
       "depth": 4,
-      "description": "/em -challenge — Pre-Mortem Plan Analysis"
+      "description": "Use when a plan needs a pre-mortem before it is committed to — systematically surfacing the weaknesses that would kill it, so it survives contact with reality rather than being abandoned."
     },
     {
-      "name": "hard-call",
+      "name": "executive-mentor-hard-call",
       "category": "business-strategy",
       "install_path": "business-strategy/executive-mentor/skills/hard-call",
       "path": "skills/business-strategy/executive-mentor/skills/hard-call",
@@ -1354,20 +1122,20 @@
       "description": "/em -hard-call — Framework for Decisions With No Good Options"
     },
     {
-      "name": "postmortem",
+      "name": "executive-mentor-postmortem",
       "category": "business-strategy",
       "install_path": "business-strategy/executive-mentor/skills/postmortem",
       "path": "skills/business-strategy/executive-mentor/skills/postmortem",
       "depth": 4,
-      "description": "/em -postmortem — Honest Analysis of What Went Wrong"
+      "description": "Use after something went wrong — a failed deal, a missed quarter, a feature that flopped, a hire that did not work out. Produces an honest, blame-free account of what happened, why, and what changes as a result."
     },
     {
-      "name": "stress-test",
+      "name": "executive-mentor-stress-test",
       "category": "business-strategy",
       "install_path": "business-strategy/executive-mentor/skills/stress-test",
       "path": "skills/business-strategy/executive-mentor/skills/stress-test",
       "depth": 4,
-      "description": "/em -stress-test — Business Assumption Stress Testing"
+      "description": "Use when a business assumption needs breaking before the market breaks it — revenue projections, market size, competitive moat, hiring velocity, or customer retention."
     },
     {
       "name": "impediment-prioritization",
@@ -1378,12 +1146,36 @@
       "description": "Ranks any list of impediments and their countermeasures using a value-stream scoring model (ROI, Cost to Implement, Ease of Deployment, Risk Factor) and a fixed prioritization formula"
     },
     {
+      "name": "internal-narrative",
+      "category": "business-strategy",
+      "install_path": "business-strategy/internal-narrative",
+      "path": "skills/business-strategy/internal-narrative",
+      "depth": 2,
+      "description": "Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed for each audience's needs"
+    },
+    {
+      "name": "intl-expansion",
+      "category": "business-strategy",
+      "install_path": "business-strategy/intl-expansion",
+      "path": "skills/business-strategy/intl-expansion",
+      "depth": 2,
+      "description": "International market expansion strategy. Market selection, entry modes, localization, regulatory compliance, and go-to-market by region"
+    },
+    {
       "name": "m-and-a-advisor",
       "category": "business-strategy",
       "install_path": "business-strategy/m-and-a-advisor",
       "path": "skills/business-strategy/m-and-a-advisor",
       "depth": 2,
       "description": "Triggers on keywords M&A, due diligence, post-merger integration, synergy"
+    },
+    {
+      "name": "ma-playbook",
+      "category": "business-strategy",
+      "install_path": "business-strategy/ma-playbook",
+      "path": "skills/business-strategy/ma-playbook",
+      "depth": 2,
+      "description": "M&A strategy for acquiring companies or being acquired. Due diligence, valuation, integration, and deal structure"
     },
     {
       "name": "org-health-diagnostic",
@@ -1399,7 +1191,7 @@
       "install_path": "business-strategy/saas-metrics-coach",
       "path": "skills/business-strategy/saas-metrics-coach",
       "depth": 2,
-      "description": "SaaS financial health advisor"
+      "description": "Use when raw SaaS numbers need turning into a health verdict — MRR, ARR, churn, CAC, LTV, payback, burn multiple, NRR. Calculates the metrics, benchmarks them against industry standards, and returns prioritized, plain-English advice as a senior SaaS CFO would."
     },
     {
       "name": "scenario-war-room",
@@ -1408,6 +1200,14 @@
       "path": "skills/business-strategy/scenario-war-room",
       "depth": 2,
       "description": "Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all business functions simultaneously"
+    },
+    {
+      "name": "strategic-alignment",
+      "category": "business-strategy",
+      "install_path": "business-strategy/strategic-alignment",
+      "path": "skills/business-strategy/strategic-alignment",
+      "depth": 2,
+      "description": "Strategy cascade — boardroom to IC, OKR misalignment detection and fix"
     },
     {
       "name": "amazon-opensearch-service",
@@ -1495,7 +1295,7 @@
       "install_path": "cloud-aws/core/amazon-bedrock",
       "path": "skills/cloud-aws/core/amazon-bedrock",
       "depth": 3,
-      "description": "Builds generative AI applications on Amazon Bedrock. Covers model invocation (Converse API, InvokeModel), RAG with Knowledge Bases, Bedrock Agents, Guardrails, and AgentCore (including the Harness managed agent loop). Use when invoking models, setting up Knowledge Bases, creating agents, applying guardrails, deploying to AgentCore, migrating/porting/converting a Bedrock Agent (including inline agents) to an AgentCore Harness, troubleshooting Bedrock errors (ThrottlingException, AccessDeniedException), or choosing models (Claude, Llama, Nova, Titan). ALSO USE for prompt caching setup and debugging, quota health checks and throttling diagnosis, cost attribution and tracking, migrating between Claude model generations (4.5 to 4.6 to 4.7), chunking strategies, API selection (Converse vs InvokeModel), guardrail capabilities, and model selection. Also covers AgentCore Payments setup (x402, microtransactions, Payment Manager, Connector, Instrument, Coinbase CDP, Stripe Privy, 402 Payment Required, pay for content, paid endpoint, agent payments). NOT for custom model training, Rekognition, or Comprehend."
+      "description": "Builds generative AI applications on Amazon Bedrock. Use when invoking models (Converse vs InvokeModel), building RAG with Knowledge Bases, creating Bedrock Agents, applying Guardrails, deploying to AgentCore, or migrating a Bedrock Agent (including inline agents) to an AgentCore Harness. Also for prompt caching, quota health checks and throttling diagnosis, cost attribution, chunking strategies, migrating between Claude model generations, choosing models (Claude, Llama, Nova, Titan), AgentCore Payments (x402, Payment Manager, Coinbase CDP, Stripe Privy, 402 Payment Required), and troubleshooting Bedrock errors such as ThrottlingException or AccessDeniedException. NOT for custom model training, Rekognition, or Comprehend."
     },
     {
       "name": "aws-billing-and-cost-management",
@@ -2383,7 +2183,7 @@
       "install_path": "coding/api-and-interface-design",
       "path": "skills/coding/api-and-interface-design",
       "depth": 2,
-      "description": "Guides stable API and interface design"
+      "description": "Use when designing new API endpoints, defining module boundaries or contracts between teams, creating component prop interfaces, or changing an existing public interface. Covers naming, versioning, error shapes, and designing surfaces that are hard to misuse."
     },
     {
       "name": "browser-testing-with-devtools",
@@ -2399,7 +2199,7 @@
       "install_path": "coding/ci-cd-and-automation",
       "path": "skills/coding/ci-cd-and-automation",
       "depth": 2,
-      "description": "Automates CI/CD pipeline setup"
+      "description": "Use when setting up a project's CI pipeline, adding or changing automated checks, configuring deployment pipelines, or debugging CI failures. Covers quality gates, pipeline stages, and what to verify automatically on every change."
     },
     {
       "name": "code-review-and-quality",
@@ -2415,7 +2215,7 @@
       "install_path": "coding/code-simplification",
       "path": "skills/coding/code-simplification",
       "depth": 2,
-      "description": "Simplifies code for clarity"
+      "description": "Use when working code feels heavier than it needs to be — deeply nested logic, long functions, unclear names, duplication after a merge, or a review that flagged complexity. Reduces complexity while preserving behavior exactly. Not for code you do not yet understand, or code you are about to rewrite."
     },
     {
       "name": "context-engineering",
@@ -2423,7 +2223,7 @@
       "install_path": "coding/context-engineering",
       "path": "skills/coding/context-engineering",
       "depth": 2,
-      "description": "Optimizes agent context setup"
+      "description": "Use when starting a coding session, setting up a project for AI-assisted development, switching between parts of a codebase, or when agent output quality degrades — hallucinated APIs, wrong patterns, ignored project conventions. Structures what the agent loads and when."
     },
     {
       "name": "debugging-and-error-recovery",
@@ -2439,7 +2239,7 @@
       "install_path": "coding/deprecation-and-migration",
       "path": "skills/coding/deprecation-and-migration",
       "depth": 2,
-      "description": "Manages deprecation and migration"
+      "description": "Use when replacing an old system, API, or library, sunsetting a feature, consolidating duplicate implementations, removing dead code nobody owns, or deciding whether to maintain a legacy system versus migrate off it. Covers deprecation timelines, migration paths, and safe removal."
     },
     {
       "name": "documentation-and-adrs",
@@ -2447,7 +2247,7 @@
       "install_path": "coding/documentation-and-adrs",
       "path": "skills/coding/documentation-and-adrs",
       "depth": 2,
-      "description": "Records decisions and documentation"
+      "description": "Use when making an architectural decision, choosing between competing approaches, adding or changing a public API, shipping a user-facing behavior change, or repeatedly explaining the same thing. Captures the why — context, constraints, alternatives — as ADRs and project docs. Not for restating obvious code."
     },
     {
       "name": "doubt-driven-development",
@@ -2463,7 +2263,7 @@
       "install_path": "coding/frontend-ui-engineering",
       "path": "skills/coding/frontend-ui-engineering",
       "depth": 2,
-      "description": "Builds production-quality UIs"
+      "description": "Use when building or modifying user-facing interfaces: new components and pages, responsive layouts, interactivity and state management, or fixing visual and UX issues. Covers component architecture, styling, accessibility, and state boundaries."
     },
     {
       "name": "git-workflow-and-versioning",
@@ -2471,7 +2271,7 @@
       "install_path": "coding/git-workflow-and-versioning",
       "path": "skills/coding/git-workflow-and-versioning",
       "depth": 2,
-      "description": "Structures git workflow practices"
+      "description": "Use on every code change — commit structure, branching, history hygiene, and versioning. Apply when committing work, opening or splitting a branch, writing commit messages, cutting a release, or recovering from a bad history state."
     },
     {
       "name": "hopper-debugger",
@@ -2543,7 +2343,7 @@
       "install_path": "coding/performance-optimization",
       "path": "skills/coding/performance-optimization",
       "depth": 2,
-      "description": "Optimizes application performance"
+      "description": "Use when performance budgets or SLAs exist, users or monitoring report slowness, Core Web Vitals fall below thresholds, a change may have caused a regression, or a feature handles large datasets or high traffic. Measure-first workflow: profile, fix the proven bottleneck, re-measure. Not for speculative optimization."
     },
     {
       "name": "planning-and-task-breakdown",
@@ -2551,7 +2351,7 @@
       "install_path": "coding/planning-and-task-breakdown",
       "path": "skills/coding/planning-and-task-breakdown",
       "depth": 2,
-      "description": "Breaks work into ordered tasks"
+      "description": "Use when a task feels too large or vague to start, a spec needs breaking into implementable units, work must be parallelized across agents or sessions, or implementation order is unclear. Produces ordered tasks with acceptance criteria. Skip when the spec already contains well-defined tasks."
     },
     {
       "name": "security-and-hardening",
@@ -2559,7 +2359,7 @@
       "install_path": "coding/security-and-hardening",
       "path": "skills/coding/security-and-hardening",
       "depth": 2,
-      "description": "Hardens code against vulnerabilities"
+      "description": "Use when building anything that accepts user input, implementing authentication or authorization, storing or transmitting sensitive data, integrating external APIs, or adding file uploads, webhooks, or callbacks. Covers input validation, secrets, authz checks, and PII and payment handling."
     },
     {
       "name": "shipping-and-launch",
@@ -2567,7 +2367,7 @@
       "install_path": "coding/shipping-and-launch",
       "path": "skills/coding/shipping-and-launch",
       "depth": 2,
-      "description": "Prepares production launches"
+      "description": "Use when deploying to production, releasing a significant user-facing change, migrating data or infrastructure, or opening a beta. Covers the pre-launch checklist, staged rollout, monitoring, and rollback planning for deployments that carry risk."
     },
     {
       "name": "source-driven-development",
@@ -2583,7 +2383,7 @@
       "install_path": "coding/spec-driven-development",
       "path": "skills/coding/spec-driven-development",
       "depth": 2,
-      "description": "Creates specs before coding"
+      "description": "Use before writing code on anything non-trivial: a new project or feature, ambiguous or incomplete requirements, a change spanning multiple modules, an architectural decision, or work over ~30 minutes. Runs a gated Specify → Plan → Tasks → Implement workflow with human review at each phase. Skip for single-line fixes."
     },
     {
       "name": "swe-agent-issue-loop",
@@ -2639,7 +2439,7 @@
       "install_path": "coding/using-agent-skills",
       "path": "skills/coding/using-agent-skills",
       "depth": 2,
-      "description": "Discovers and invokes agent skills"
+      "description": "Use when unsure which engineering-workflow skill applies to the task at hand. Routes from development phase — idea, spec, plan, implement, test, review, ship — to the right skill, and shows how they chain together across a feature or bugfix."
     },
     {
       "name": "one-three-one-rule",
@@ -2847,7 +2647,7 @@
       "install_path": "databases/database-designer",
       "path": "skills/databases/database-designer",
       "depth": 2,
-      "description": "Design and audit relational database schemas"
+      "description": "Use when designing a new relational schema or auditing an existing one — normalization, keys and constraints, indexing strategy, and spotting modeling problems before they reach production."
     },
     {
       "name": "datanalysis-credit-risk",
@@ -2871,7 +2671,7 @@
       "install_path": "databases/ef-core",
       "path": "skills/databases/ef-core",
       "depth": 2,
-      "description": "Get best practices for Entity Framework Core"
+      "description": "Use when working with Entity Framework Core — modeling entities and relationships, migrations, LINQ query performance, change tracking, N+1 problems, and connection and transaction handling."
     },
     {
       "name": "etl-to-dbt",
@@ -3018,7 +2818,7 @@
       "description": "Build hyper-personalized, narrative-driven, single-file portfolio/pitch websites in the style of anass.pro. Use when the user asks for a \"site like anass.pro\", a one-recipient candidacy/pitch site, a behavioral-engineering landing page, a single-file storytelling portfolio with a pixel-art game hero, custom cursor, typewriter text, procedural Web Audio SFX, scroll-revealed scenes, or a dark purple narrative interface that addresses one named reader. Trigger on phrases like \"personal pitch site\", \"one-page candidacy\", \"narrative portfolio\", \"scrollytelling pitch\", \"pixel-art hero\", \"interactive landing for X\", or any request to recreate / clone / adapt anass.pro."
     },
     {
-      "name": "ckm:banner-design",
+      "name": "banner-design",
       "category": "design-and-ui",
       "install_path": "design-and-ui/banner-design",
       "path": "skills/design-and-ui/banner-design",
@@ -3026,7 +2826,7 @@
       "description": "Banner design — social, ads, heroes, print. Art direction with AI-generated assets"
     },
     {
-      "name": "ckm:brand",
+      "name": "brand",
       "category": "design-and-ui",
       "install_path": "design-and-ui/brand",
       "path": "skills/design-and-ui/brand",
@@ -3050,7 +2850,7 @@
       "description": "Workflow for building and modifying content management systems across WordPress, Shopify, Wix, Squarespace, Drupal, WooCommerce, Joomla, HubSpot CMS Hub, Webflow, Adobe Experience Manager, and similar platforms"
     },
     {
-      "name": "ckm:design",
+      "name": "design",
       "category": "design-and-ui",
       "install_path": "design-and-ui/design",
       "path": "skills/design-and-ui/design",
@@ -3058,7 +2858,7 @@
       "description": "Design — brand identity, tokens, UI styling, logo gen (55 styles, Gemini), corporate identity"
     },
     {
-      "name": "ckm:design-system",
+      "name": "design-system",
       "category": "design-and-ui",
       "install_path": "design-and-ui/design-system",
       "path": "skills/design-and-ui/design-system",
@@ -3234,7 +3034,7 @@
       "description": "Theme styling toolkit — slides, docs, HTML pages, 10+ styles, dark/light, custom palette"
     },
     {
-      "name": "ckm:ui-styling",
+      "name": "ui-styling",
       "category": "design-and-ui",
       "install_path": "design-and-ui/ui-styling",
       "path": "skills/design-and-ui/ui-styling",
@@ -3447,7 +3247,7 @@
       "install_path": "dev-workflow/my-issues",
       "path": "skills/dev-workflow/my-issues",
       "depth": 2,
-      "description": "List my issues in the current repository"
+      "description": "Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed."
     },
     {
       "name": "my-pull-requests",
@@ -3970,7 +3770,7 @@
       "description": "Generate a comprehensive repository summary and narrative story from commit history"
     },
     {
-      "name": "ckm:slides",
+      "name": "slides",
       "category": "diagrams-slides",
       "install_path": "diagrams-slides/slides",
       "path": "skills/diagrams-slides/slides",
@@ -4039,7 +3839,7 @@
       "install_path": "documentation/create-readme",
       "path": "skills/documentation/create-readme",
       "depth": 2,
-      "description": "Create a README.md file for the project"
+      "description": "Use when a project needs a README written from scratch, or an existing one rebuilt — covering what the project is, install and quickstart, usage, configuration, and contribution pointers."
     },
     {
       "name": "create-tldr-page",
@@ -4215,7 +4015,7 @@
       "install_path": "dotnet/csharp-async",
       "path": "skills/dotnet/csharp-async",
       "depth": 2,
-      "description": "Get best practices for C# async programming"
+      "description": "Use when writing or reviewing async C# — async/await, Task and ValueTask, cancellation tokens, ConfigureAwait, deadlocks, sync-over-async, and async streams."
     },
     {
       "name": "csharp-docs",
@@ -4351,7 +4151,7 @@
       "install_path": "dotnet/winmd-api-search",
       "path": "skills/dotnet/winmd-api-search",
       "depth": 2,
-      "description": "Find and explore Windows desktop APIs"
+      "description": "Use when you need to find or explore Windows desktop APIs from Windows Metadata (.winmd) — locating a type, namespace, method, or its signature for Win32, WinRT, or Windows App SDK work."
     },
     {
       "name": "winui3-migration-guide",
@@ -4424,14 +4224,6 @@
       "path": "skills/engineering-craft/geofeed-tuner",
       "depth": 2,
       "description": "Use this skill whenever the user mentions IP geolocation feeds, RFC 8805, geofeeds, or wants help creating, tuning, validating, or publishing a self-published IP geolocation feed in CSV format. Intended user audience is a network operator, ISP, mobile carrier, cloud provider, hosting company, IXP, or satellite provider asking about IP geolocation accuracy, or geofeed authoring best practices. Helps create, refine, and improve CSV-format IP geolocation feeds with opinionated recommendations beyond RFC 8805 compliance. Do NOT use for private or internal IP address management — applies only to publicly routable IP addresses."
-    },
-    {
-      "name": "karpathy-guidelines",
-      "category": "engineering-craft",
-      "install_path": "engineering-craft/karpathy-guidlines",
-      "path": "skills/engineering-craft/karpathy-guidlines",
-      "depth": 2,
-      "description": "Behavioral guidelines to reduce common LLM coding mistakes"
     },
     {
       "name": "mentoring-juniors",
@@ -4594,6 +4386,14 @@
       "description": "Use when executing implementation plans with independent tasks in the current session"
     },
     {
+      "name": "superpowers-test-driven-development",
+      "category": "engineering-craft",
+      "install_path": "engineering-craft/superpowers-test-driven-development",
+      "path": "skills/engineering-craft/superpowers-test-driven-development",
+      "depth": 2,
+      "description": "Use when implementing any feature or bugfix, before writing implementation code — the strict superpowers RED-GREEN-REFACTOR discipline: write the test, watch it fail, then write minimal code to pass. Required background for other superpowers skills that cite `superpowers:test-driven-development`."
+    },
+    {
       "name": "tech-debt-tracker",
       "category": "engineering-craft",
       "install_path": "engineering-craft/tech-debt-tracker",
@@ -4608,14 +4408,6 @@
       "path": "skills/engineering-craft/tech-stack-evaluator",
       "depth": 2,
       "description": "Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring"
-    },
-    {
-      "name": "test-driven-development",
-      "category": "engineering-craft",
-      "install_path": "engineering-craft/test-driven-development",
-      "path": "skills/engineering-craft/test-driven-development",
-      "depth": 2,
-      "description": "Use when implementing any feature or bugfix, before writing implementation code"
     },
     {
       "name": "using-superpowers",
@@ -4783,7 +4575,7 @@
       "install_path": "go-to-market/gtm-positioning-strategy",
       "path": "skills/go-to-market/gtm-positioning-strategy",
       "depth": 2,
-      "description": "Find and own a defensible market position"
+      "description": "Use when a product needs a defensible market position — defining the competitive alternative, unique attributes, the value they enable, and the segment that cares most."
     },
     {
       "name": "gtm-product-led-growth",
@@ -4799,7 +4591,7 @@
       "install_path": "go-to-market/gtm-technical-product-pricing",
       "path": "skills/go-to-market/gtm-technical-product-pricing",
       "depth": 2,
-      "description": "Pricing strategy for technical products"
+      "description": "Use when pricing a technical product — choosing a pricing model and metric, setting tiers and packaging, usage versus seat based pricing, and aligning price with delivered value."
     },
     {
       "name": "create-spring-boot-java-project",
@@ -4807,7 +4599,7 @@
       "install_path": "java-kotlin/create-spring-boot-java-project",
       "path": "skills/java-kotlin/create-spring-boot-java-project",
       "depth": 2,
-      "description": "Create Spring Boot Java Project Skeleton"
+      "description": "Use when scaffolding a new Spring Boot project in Java — generating the project skeleton, build file, package layout, and baseline configuration."
     },
     {
       "name": "create-spring-boot-kotlin-project",
@@ -4815,7 +4607,7 @@
       "install_path": "java-kotlin/create-spring-boot-kotlin-project",
       "path": "skills/java-kotlin/create-spring-boot-kotlin-project",
       "depth": 2,
-      "description": "Create Spring Boot Kotlin Project Skeleton"
+      "description": "Use when scaffolding a new Spring Boot project in Kotlin — generating the project skeleton, Gradle build, package layout, and baseline configuration."
     },
     {
       "name": "java-add-graalvm-native-image-support",
@@ -4943,7 +4735,7 @@
       "install_path": "llm-tooling/arize-link",
       "path": "skills/llm-tooling/arize-link",
       "depth": 2,
-      "description": "Generate deep links to the Arize UI"
+      "description": "Use when you need a deep link into the Arize UI for a specific model, monitor, trace, or dashboard — for example to cite a finding or hand a teammate the exact view."
     },
     {
       "name": "arize-prompt-optimization",
@@ -5095,7 +4887,7 @@
       "install_path": "llm-tooling/qdrant-deployment-options",
       "path": "skills/llm-tooling/qdrant-deployment-options",
       "depth": 2,
-      "description": "Guides Qdrant deployment selection"
+      "description": "Use when choosing how to run Qdrant: local mode, Docker, Qdrant Cloud, or self-hosted Kubernetes. Narrows the choice by managed ops versus full control, acceptable network latency, and prototyping versus production."
     },
     {
       "name": "qdrant-model-migration",
@@ -5119,7 +4911,7 @@
       "install_path": "llm-tooling/qdrant-monitoring/debugging",
       "path": "skills/llm-tooling/qdrant-monitoring/debugging",
       "depth": 3,
-      "description": "Diagnoses Qdrant production issues using metrics and observability tools"
+      "description": "Use when a Qdrant deployment misbehaves — slow queries, memory pressure, stuck optimizers, unhealthy shards, or failed replicas. Covers the metrics and telemetry endpoints to inspect and how to read them."
     },
     {
       "name": "qdrant-monitoring-setup",
@@ -5127,7 +4919,7 @@
       "install_path": "llm-tooling/qdrant-monitoring/setup",
       "path": "skills/llm-tooling/qdrant-monitoring/setup",
       "depth": 3,
-      "description": "Guides Qdrant monitoring setup including Prometheus scraping, health probes, Hybrid Cloud metrics, alerting, and log centralization"
+      "description": "Use when setting up observability for Qdrant — enabling the metrics endpoint, wiring Prometheus and Grafana, and choosing which collection, cluster, and resource metrics to watch."
     },
     {
       "name": "qdrant-performance-optimization",
@@ -5167,7 +4959,7 @@
       "install_path": "llm-tooling/qdrant-scaling",
       "path": "skills/llm-tooling/qdrant-scaling",
       "depth": 2,
-      "description": "Guides Qdrant scaling decisions"
+      "description": "Use when a Qdrant deployment needs to scale and the strategy is not yet chosen. Start here to identify what you are scaling for — data volume, query throughput (QPS), query latency, or query volume — then routes to the matching strategy with its tradeoffs."
     },
     {
       "name": "qdrant-minimize-latency",
@@ -5175,7 +4967,7 @@
       "install_path": "llm-tooling/qdrant-scaling/minimize-latency",
       "path": "skills/llm-tooling/qdrant-scaling/minimize-latency",
       "depth": 3,
-      "description": "Guides Qdrant query latency optimization"
+      "description": "Use when single-query Qdrant latency is too high and throughput is not the constraint. Covers segment count matched to CPU cores, keeping quantized vectors and HNSW in RAM, and trading recall for speed via hnsw_ef."
     },
     {
       "name": "qdrant-scaling-data-volume",
@@ -5183,7 +4975,7 @@
       "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume",
       "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume",
       "depth": 3,
-      "description": "Guides Qdrant data volume scaling decisions"
+      "description": "Use when a Qdrant dataset outgrows a single node. Covers multi-tenant payload partitioning, sharding, vertical scaling, and sliding time windows for time-bounded data."
     },
     {
       "name": "horizontal-scaling",
@@ -5199,7 +4991,7 @@
       "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window",
       "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window",
       "depth": 4,
-      "description": "Guides sliding time window scaling in Qdrant"
+      "description": "Use when Qdrant holds time-series or recency-bounded data and old points should age out. Covers sliding time-window collection patterns so storage stays bounded."
     },
     {
       "name": "tenant-scaling",
@@ -5215,7 +5007,7 @@
       "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling",
       "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling",
       "depth": 4,
-      "description": "Guides Qdrant vertical scaling decisions"
+      "description": "Use when deciding whether to grow a Qdrant node's RAM, disk, or CPU before adding shards. Covers what each resource limits and when vertical growth stops paying off."
     },
     {
       "name": "qdrant-scaling-qps",
@@ -5223,7 +5015,7 @@
       "install_path": "llm-tooling/qdrant-scaling/scaling-qps",
       "path": "skills/llm-tooling/qdrant-scaling/scaling-qps",
       "depth": 3,
-      "description": "Guides Qdrant query throughput (QPS) scaling"
+      "description": "Use when Qdrant must handle more parallel queries per second and per-query latency is not the priority. Covers fewer, larger segments, quantization in RAM, and replication — the opposite tuning direction from latency."
     },
     {
       "name": "qdrant-scaling-query-volume",
@@ -5231,7 +5023,7 @@
       "install_path": "llm-tooling/qdrant-scaling/scaling-query-volume",
       "path": "skills/llm-tooling/qdrant-scaling/scaling-query-volume",
       "depth": 3,
-      "description": "Guides Qdrant query volume scaling"
+      "description": "Use when Qdrant queries with large limits fan out across many shards and over-fetch — each shard returning the full limit. Applies Poisson-based per-shard limit reduction, valid when auto-sharding guarantees random distribution."
     },
     {
       "name": "qdrant-search-quality",
@@ -5338,7 +5130,7 @@
       "description": "Use when writing, rewriting, or critiquing conversion copy for home, landing, pricing, feature, about, or product pages. Do not use for email sequences or popup-specific conversion work."
     },
     {
-      "name": "pricing-strategy",
+      "name": "cs-pricing-strategy",
       "category": "marketing-and-growth",
       "install_path": "marketing-and-growth/cs-pricing-strategy",
       "path": "skills/marketing-and-growth/cs-pricing-strategy",
@@ -5346,7 +5138,7 @@
       "description": "Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and price increase strategy"
     },
     {
-      "name": "seo-audit",
+      "name": "cs-seo-audit",
       "category": "marketing-and-growth",
       "install_path": "marketing-and-growth/cs-seo-audit",
       "path": "skills/marketing-and-growth/cs-seo-audit",
@@ -6255,7 +6047,7 @@
       "install_path": "prompting/prompt-master",
       "path": "skills/prompting/prompt-master",
       "depth": 2,
-      "description": "Generates optimized prompts for AI tools"
+      "description": "Use when a prompt needs writing or improving for an AI tool — clarifying the task, adding structure and constraints, supplying examples, and specifying the output format."
     },
     {
       "name": "reverse-brainstorm",
@@ -6543,7 +6335,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/building-streamlit-chat-ui",
       "path": "skills/streamlit/developing-with-streamlit/skills/building-streamlit-chat-ui",
       "depth": 4,
-      "description": "Building chat interfaces in Streamlit"
+      "description": "Use when building a chat or conversational interface in Streamlit — st.chat_message and st.chat_input, streaming responses, and keeping history in session state."
     },
     {
       "name": "building-streamlit-custom-components-v2",
@@ -6559,7 +6351,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/building-streamlit-dashboards",
       "path": "skills/streamlit/developing-with-streamlit/skills/building-streamlit-dashboards",
       "depth": 4,
-      "description": "Building dashboards in Streamlit"
+      "description": "Use when building a data dashboard in Streamlit — arranging metrics and charts, wiring filters and inputs, and structuring the page so reruns stay fast."
     },
     {
       "name": "building-streamlit-multipage-apps",
@@ -6567,7 +6359,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/building-streamlit-multipage-apps",
       "path": "skills/streamlit/developing-with-streamlit/skills/building-streamlit-multipage-apps",
       "depth": 4,
-      "description": "Building multi-page Streamlit apps"
+      "description": "Use when a Streamlit app needs more than one page — the pages directory, st.navigation and st.Page, and sharing state across pages."
     },
     {
       "name": "choosing-streamlit-selection-widgets",
@@ -6575,7 +6367,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
       "path": "skills/streamlit/developing-with-streamlit/skills/choosing-streamlit-selection-widgets",
       "depth": 4,
-      "description": "Choosing the right Streamlit selection widget"
+      "description": "Use when picking a Streamlit input widget for choosing among options — segmented_control, pills, selectbox, multiselect, radio, or feedback. Covers which to use when all options should stay visible versus hidden in a dropdown, and which older patterns are now anti-patterns."
     },
     {
       "name": "connecting-streamlit-to-snowflake",
@@ -6583,7 +6375,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
       "path": "skills/streamlit/developing-with-streamlit/skills/connecting-streamlit-to-snowflake",
       "depth": 4,
-      "description": "Connecting Streamlit apps to Snowflake"
+      "description": "Use when a Streamlit app must read from or write to Snowflake — st.connection, secrets handling, caching query results, and Streamlit in Snowflake considerations."
     },
     {
       "name": "creating-streamlit-themes",
@@ -6591,7 +6383,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/creating-streamlit-themes",
       "path": "skills/streamlit/developing-with-streamlit/skills/creating-streamlit-themes",
       "depth": 4,
-      "description": "Creating and customizing Streamlit themes"
+      "description": "Use when customizing a Streamlit app's look — theme config options, colors and fonts, light and dark handling, and per-app branding."
     },
     {
       "name": "displaying-streamlit-data",
@@ -6599,7 +6391,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/displaying-streamlit-data",
       "path": "skills/streamlit/developing-with-streamlit/skills/displaying-streamlit-data",
       "depth": 4,
-      "description": "Displaying charts, dataframes, and metrics in Streamlit"
+      "description": "Use when rendering data in Streamlit — dataframes, tables, metrics, and charts. Covers choosing between st.dataframe, st.table, st.metric, and the built-in chart elements versus Plotly, Altair, or Matplotlib."
     },
     {
       "name": "improving-streamlit-design",
@@ -6607,7 +6399,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/improving-streamlit-design",
       "path": "skills/streamlit/developing-with-streamlit/skills/improving-streamlit-design",
       "depth": 4,
-      "description": "Improving visual design in Streamlit apps"
+      "description": "Use when a working Streamlit app looks rough — visual hierarchy, spacing, typography, and layout choices that make the app read as designed rather than default."
     },
     {
       "name": "optimizing-streamlit-performance",
@@ -6615,7 +6407,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/optimizing-streamlit-performance",
       "path": "skills/streamlit/developing-with-streamlit/skills/optimizing-streamlit-performance",
       "depth": 4,
-      "description": "Optimizing Streamlit app performance"
+      "description": "Use when a Streamlit app feels slow — caching with st.cache_data and st.cache_resource, reducing rerun work, fragments, and handling large dataframes."
     },
     {
       "name": "organizing-streamlit-code",
@@ -6623,7 +6415,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/organizing-streamlit-code",
       "path": "skills/streamlit/developing-with-streamlit/skills/organizing-streamlit-code",
       "depth": 4,
-      "description": "Organizing Streamlit code for maintainability"
+      "description": "Use when deciding how to structure a Streamlit app's files — when to keep everything in one streamlit_app.py, when to split into modules, and how to separate data processing from UI code."
     },
     {
       "name": "setting-up-streamlit-environment",
@@ -6631,7 +6423,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/setting-up-streamlit-environment",
       "path": "skills/streamlit/developing-with-streamlit/skills/setting-up-streamlit-environment",
       "depth": 4,
-      "description": "Setting up Python environments for Streamlit apps"
+      "description": "Use when creating or fixing the Python environment for a Streamlit app — choosing between pip, poetry, conda, and uv, pinning to the latest Streamlit, and setting up an isolated environment before the app runs."
     },
     {
       "name": "using-streamlit-cli",
@@ -6647,7 +6439,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/using-streamlit-custom-components",
       "path": "skills/streamlit/developing-with-streamlit/skills/using-streamlit-custom-components",
       "depth": 4,
-      "description": "Using third-party Streamlit custom components"
+      "description": "Use when Streamlit's core API lacks a needed feature and a third-party community component may fill the gap — finding, installing, evaluating, and wiring up custom components."
     },
     {
       "name": "using-streamlit-layouts",
@@ -6655,7 +6447,7 @@
       "install_path": "streamlit/developing-with-streamlit/skills/using-streamlit-layouts",
       "path": "skills/streamlit/developing-with-streamlit/skills/using-streamlit-layouts",
       "depth": 4,
-      "description": "Structuring Streamlit app layouts"
+      "description": "Use when structuring a Streamlit page — columns, tabs, containers, expanders, and sidebar composition to control where elements render."
     },
     {
       "name": "using-streamlit-markdown",

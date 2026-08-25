@@ -1,6 +1,6 @@
-﻿---
+---
 name: shipping-and-launch
-description: Prepares production launches
+description: Use when deploying to production, releasing a significant user-facing change, migrating data or infrastructure, or opening a beta. Covers the pre-launch checklist, staged rollout, monitoring, and rollback planning for deployments that carry risk.
 ---
 
 # Shipping and Launch

@@ -1,4 +1,4 @@
-﻿---
+---
 name: content-management-systems
 description: 'Workflow for building and modifying content management systems across WordPress, Shopify, Wix, Squarespace, Drupal, WooCommerce, Joomla, HubSpot CMS Hub, Webflow, Adobe Experience Manager, and similar platforms'
 ---

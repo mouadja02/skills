@@ -1,4 +1,4 @@
-﻿---
+---
 name: datanalysis-credit-risk
 description: Credit risk data cleaning and variable screening pipeline for pre-loan modeling
 ---

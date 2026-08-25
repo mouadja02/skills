@@ -1,4 +1,4 @@
-﻿---
+---
 name: tech-debt-tracker
 description: Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans
 ---

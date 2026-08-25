@@ -1,4 +1,4 @@
-﻿---
+---
 name: postgresql-optimization
 description: PostgreSQL optimization — unique features, advanced types, exclusive capabilities
 ---

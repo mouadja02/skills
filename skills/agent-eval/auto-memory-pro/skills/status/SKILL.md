@@ -1,5 +1,5 @@
 ---
-name: status
+name: "auto-memory-status"
 description: "Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations."
 command: /si:status
 source: "https://github.com/alirezarezvani/claude-skills"

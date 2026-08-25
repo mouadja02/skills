@@ -1,4 +1,4 @@
-﻿---
+---
 name: quasi-coder
 description: 'Expert 10x engineer — interpreting and implementing code from shorthand, quasi-code, and natural language descriptions'
 ---

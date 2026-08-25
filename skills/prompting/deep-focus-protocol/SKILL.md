@@ -1,4 +1,4 @@
-﻿---
+---
 name: deep-focus-protocol
 description: Deep focus sessions — ruthless scope, batch decisions, momentum-preserving recovery
 ---

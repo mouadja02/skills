@@ -1,4 +1,4 @@
-﻿---
+---
 name: "senior-data-engineer"
 description: Data engineering — pipelines, ETL/ELT, Python/SQL/Spark, Airflow, dbt, cloud DWH
 ---

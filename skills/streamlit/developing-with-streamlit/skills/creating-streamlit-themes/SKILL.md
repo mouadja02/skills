@@ -1,6 +1,6 @@
 ---
 name: creating-streamlit-themes
-description: Creating and customizing Streamlit themes
+description: Use when customizing a Streamlit app's look — theme config options, colors and fonts, light and dark handling, and per-app branding.
 version: "1.0.0"
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"

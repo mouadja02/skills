@@ -1,4 +1,4 @@
-﻿---
+---
 name: sql-optimization
 description: SQL performance optimization — query tuning, indexing, explain plans, all dialects
 ---

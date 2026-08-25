@@ -1,5 +1,5 @@
 ---
-name: remember
+name: "auto-memory-remember"
 description: "Explicitly save important knowledge to auto-memory with timestamp and context"
 command: /si:remember
 source: "https://github.com/alirezarezvani/claude-skills"

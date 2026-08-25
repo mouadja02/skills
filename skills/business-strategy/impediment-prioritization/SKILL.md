@@ -1,4 +1,4 @@
-﻿---
+---
 name: impediment-prioritization
 description: 'Ranks any list of impediments and their countermeasures using a value-stream scoring model (ROI, Cost to Implement, Ease of Deployment, Risk Factor) and a fixed prioritization formula'
 license: MIT

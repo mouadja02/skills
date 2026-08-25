@@ -1,4 +1,4 @@
-﻿---
+---
 name: automate-this
 description: Automate from screen recording — extract frames/audio, produce working scripts
 ---

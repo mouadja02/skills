@@ -1,4 +1,4 @@
-﻿---
+---
 name: salesforce-flow-design
 description: 'Salesforce Flow architecture decisions, flow type selection, bulk safety validation, and fault handling standards'
 ---

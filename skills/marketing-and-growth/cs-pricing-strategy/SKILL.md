@@ -1,5 +1,5 @@
 ---
-name: "pricing-strategy"
+name: "cs-pricing-strategy"
 description: "Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and price increase strategy"
 license: MIT
 metadata:

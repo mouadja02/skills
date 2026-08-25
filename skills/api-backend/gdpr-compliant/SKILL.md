@@ -1,4 +1,4 @@
-﻿---
+---
 name: gdpr-compliant
 description: GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails
 ---

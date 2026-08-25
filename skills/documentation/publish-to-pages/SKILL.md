@@ -1,4 +1,4 @@
-﻿---
+---
 name: publish-to-pages
 description: 'Publish presentations and web content to GitHub Pages. Converts PPTX, PDF, HTML, or Google Slides to a live GitHub Pages URL. Handles repo creation, file conversion, Pages enablement, and returns the live URL'
 ---

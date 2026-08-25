@@ -1,4 +1,4 @@
-﻿---
+---
 name: data-breach-blast-radius
 description: Pre-breach impact — PII/PHI/PCI-DSS inventory, data flow tracing, exposure scoring
 ---

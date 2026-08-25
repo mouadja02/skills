@@ -1,4 +1,4 @@
-﻿---
+---
 name: "marketing-strategy-pmm"
 description: Product marketing — positioning, GTM strategy, competitive intelligence, and product launches
 triggers:

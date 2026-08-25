@@ -1,4 +1,4 @@
-﻿---
+---
 name: premium-frontend-ui
 description: 'GitHub Copilot to craft immersive, high-performance web experiences with advanced motion, typography, and architectural craftsmanship'
 metadata:

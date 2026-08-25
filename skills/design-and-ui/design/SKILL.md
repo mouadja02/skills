@@ -1,5 +1,5 @@
-﻿---
-name: ckm:design
+---
+name: design
 description: Design — brand identity, tokens, UI styling, logo gen (55 styles, Gemini), corporate identity
 argument-hint: "[design-type] [context]"
 license: MIT

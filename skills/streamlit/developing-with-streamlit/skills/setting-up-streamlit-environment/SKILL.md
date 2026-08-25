@@ -1,6 +1,6 @@
 ---
 name: setting-up-streamlit-environment
-description: Setting up Python environments for Streamlit apps
+description: "Use when creating or fixing the Python environment for a Streamlit app — choosing between pip, poetry, conda, and uv, pinning to the latest Streamlit, and setting up an isolated environment before the app runs."
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

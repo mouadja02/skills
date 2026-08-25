@@ -1,4 +1,4 @@
-﻿---
+---
 name: technology-stack-blueprint-generator
 description: Tech stack blueprint — analyzes codebase, generates architecture docs and dependency graphs
 ---

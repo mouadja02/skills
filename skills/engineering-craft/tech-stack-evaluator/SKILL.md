@@ -1,4 +1,4 @@
-﻿---
+---
 name: "tech-stack-evaluator"
 description: Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: snowflake-semanticview
 description: Create, alter, and validate Snowflake semantic views using Snowflake CLI (snow)
 ---

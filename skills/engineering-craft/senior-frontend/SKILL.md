@@ -1,4 +1,4 @@
-﻿---
+---
 name: "senior-frontend"
 description: Frontend development — React, Next.js, TypeScript, and Tailwind CSS applications
 ---

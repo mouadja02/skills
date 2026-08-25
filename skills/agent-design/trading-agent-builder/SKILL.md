@@ -1,4 +1,4 @@
-﻿---
+---
 name: "trading-agent-builder"
 description: "Build AI-powered trading and financial analysis agents using multi-agent architectures with LLMs"
 ---

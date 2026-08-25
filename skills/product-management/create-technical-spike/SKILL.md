@@ -1,4 +1,4 @@
-﻿---
+---
 name: create-technical-spike
 description: 'Create time-boxed technical spike documents for researching and resolving critical development decisions before implementation'
 ---

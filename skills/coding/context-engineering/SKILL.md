@@ -1,6 +1,6 @@
-﻿---
+---
 name: context-engineering
-description: Optimizes agent context setup
+description: Use when starting a coding session, setting up a project for AI-assisted development, switching between parts of a codebase, or when agent output quality degrades — hallucinated APIs, wrong patterns, ignored project conventions. Structures what the agent loads and when.
 ---
 
 # Context Engineering

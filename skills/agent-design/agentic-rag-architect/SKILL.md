@@ -1,4 +1,4 @@
-﻿---
+---
 name: agentic-rag-architect
 description: Triggers on keywords RAG, GraphRAG, vector database, agentic RAG, semantic search
 ---

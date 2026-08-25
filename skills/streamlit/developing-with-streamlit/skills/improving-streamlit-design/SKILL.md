@@ -1,6 +1,6 @@
 ---
 name: improving-streamlit-design
-description: Improving visual design in Streamlit apps
+description: Use when a working Streamlit app looks rough — visual hierarchy, spacing, typography, and layout choices that make the app read as designed rather than default.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

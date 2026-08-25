@@ -1,6 +1,6 @@
-﻿---
+---
 name: spec-driven-development
-description: Creates specs before coding
+description: "Use before writing code on anything non-trivial: a new project or feature, ambiguous or incomplete requirements, a change spanning multiple modules, an architectural decision, or work over ~30 minutes. Runs a gated Specify → Plan → Tasks → Implement workflow with human review at each phase. Skip for single-line fixes."
 ---
 
 # Spec-Driven Development

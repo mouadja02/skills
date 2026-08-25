@@ -1,6 +1,6 @@
 ---
 name: create-spring-boot-java-project
-description: 'Create Spring Boot Java Project Skeleton'
+description: Use when scaffolding a new Spring Boot project in Java — generating the project skeleton, build file, package layout, and baseline configuration.
 ---
 
 # Create Spring Boot Java project prompt

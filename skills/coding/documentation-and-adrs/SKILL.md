@@ -1,6 +1,6 @@
-﻿---
+---
 name: documentation-and-adrs
-description: Records decisions and documentation
+description: Use when making an architectural decision, choosing between competing approaches, adding or changing a public API, shipping a user-facing behavior change, or repeatedly explaining the same thing. Captures the why — context, constraints, alternatives — as ADRs and project docs. Not for restating obvious code.
 ---
 
 # Documentation and ADRs

@@ -1,4 +1,4 @@
-﻿---
+---
 name: pptx
 description: PowerPoint (.pptx) — create, edit, convert, extract, present; any pptx task
 license: Proprietary. LICENSE.txt has complete terms

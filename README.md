@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **836 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **810 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -54,7 +54,7 @@ This table is generated from `docs/manifest.json`.
 | [`agent-design`](./skills/agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./skills/agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./skills/api-backend/) | 20 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
-| [`business-strategy`](./skills/business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
+| [`business-strategy`](./skills/business-strategy/) | 39 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-aws`](./skills/cloud-aws/) | 85 | AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability. |
 | [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
 | [`code-quality`](./skills/code-quality/) | 18 | Code review, refactoring, static analysis, security review, and integrity checks. |
@@ -69,7 +69,7 @@ This table is generated from `docs/manifest.json`.
 | [`diagrams-slides`](./skills/diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./skills/documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
 | [`dotnet`](./skills/dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
-| [`engineering-craft`](./skills/engineering-craft/) | 37 | Senior engineering practices, planning, mentoring, verification, and cross-cutting craft. |
+| [`engineering-craft`](./skills/engineering-craft/) | 36 | Senior engineering practices, planning, mentoring, verification, and cross-cutting craft. |
 | [`finance`](./skills/finance/) | 7 | Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows. |
 | [`go-to-market`](./skills/go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./skills/java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |

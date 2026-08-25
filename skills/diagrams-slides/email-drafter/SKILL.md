@@ -1,4 +1,4 @@
-﻿---
+---
 name: email-drafter
 description: Professional email drafting — matches personal voice from sent-email analysis
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: dbt-expert
 description: dbt — models, schema.yml, sources, tests, macros, YAML generation, best practices
 ---

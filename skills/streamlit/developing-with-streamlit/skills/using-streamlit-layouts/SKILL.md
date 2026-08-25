@@ -1,6 +1,6 @@
 ---
 name: using-streamlit-layouts
-description: Structuring Streamlit app layouts
+description: Use when structuring a Streamlit page — columns, tabs, containers, expanders, and sidebar composition to control where elements render.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

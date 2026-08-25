@@ -1,4 +1,4 @@
-﻿---
+---
 name: github-issues
 description: GitHub issues via MCP — bug reports, features, milestones, labels, bulk operations
 ---

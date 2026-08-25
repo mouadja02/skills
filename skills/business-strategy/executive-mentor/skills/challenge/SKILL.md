@@ -1,6 +1,6 @@
 ---
-name: "challenge"
-description: "/em -challenge — Pre-Mortem Plan Analysis"
+name: "executive-mentor-challenge"
+description: "Use when a plan needs a pre-mortem before it is committed to — systematically surfacing the weaknesses that would kill it, so it survives contact with reality rather than being abandoned."
 ---
 
 # /em:challenge — Pre-Mortem Plan Analysis

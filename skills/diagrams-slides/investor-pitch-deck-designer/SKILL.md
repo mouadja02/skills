@@ -1,4 +1,4 @@
-﻿---
+---
 name: investor-pitch-deck-designer
 description: Triggers on keywords pitch deck, VC pitch, investor presentation, fundraising deck
 ---

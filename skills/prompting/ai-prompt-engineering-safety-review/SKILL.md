@@ -1,4 +1,4 @@
-﻿---
+---
 name: ai-prompt-engineering-safety-review
 description: Prompt safety review — bias, injection, ethical risks, scored with fixes
 ---

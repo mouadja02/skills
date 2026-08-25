@@ -1,6 +1,6 @@
 ---
 name: building-streamlit-multipage-apps
-description: Building multi-page Streamlit apps
+description: Use when a Streamlit app needs more than one page — the pages directory, st.navigation and st.Page, and sharing state across pages.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

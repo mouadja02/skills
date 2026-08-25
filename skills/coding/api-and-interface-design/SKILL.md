@@ -1,6 +1,6 @@
-﻿---
+---
 name: api-and-interface-design
-description: Guides stable API and interface design
+description: Use when designing new API endpoints, defining module boundaries or contracts between teams, creating component prop interfaces, or changing an existing public interface. Covers naming, versioning, error shapes, and designing surfaces that are hard to misuse.
 ---
 
 # API and Interface Design

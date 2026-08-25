@@ -1,4 +1,4 @@
-﻿---
+---
 name: folder-structure-blueprint-generator
 description: Project folder structure docs — auto-detect type, document conventions, generate diagrams
 ---

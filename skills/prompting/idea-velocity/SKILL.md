@@ -1,4 +1,4 @@
-﻿---
+---
 name: idea-velocity
 description: Rapid ideation — 50+ ideas in one pass, zero-judgment phase, quantity over quality
 ---

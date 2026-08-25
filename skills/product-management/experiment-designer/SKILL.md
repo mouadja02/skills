@@ -1,4 +1,4 @@
-﻿---
+---
 name: experiment-designer
 description: A/B and multivariate experiments — hypothesis, sample size, ICE priority, stats significance
 version: "1.0.0"

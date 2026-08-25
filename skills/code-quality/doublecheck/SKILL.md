@@ -1,4 +1,4 @@
-﻿---
+---
 name: doublecheck
 description: 3-layer AI output verification — claim extraction, web evidence, contradiction detection
 ---

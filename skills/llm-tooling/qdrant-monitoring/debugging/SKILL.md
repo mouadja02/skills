@@ -1,6 +1,6 @@
 ---
 name: qdrant-monitoring-debugging
-description: "Diagnoses Qdrant production issues using metrics and observability tools"
+description: Use when a Qdrant deployment misbehaves — slow queries, memory pressure, stuck optimizers, unhealthy shards, or failed replicas. Covers the metrics and telemetry endpoints to inspect and how to read them.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---

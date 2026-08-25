@@ -1,4 +1,4 @@
-﻿---
+---
 name: karpathy-guidelines
 description: Behavioral guidelines to reduce common LLM coding mistakes
 license: MIT

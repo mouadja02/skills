@@ -1,5 +1,5 @@
 ---
-name: "founder-coach"
+name: "cs-founder-coach"
 description: Founder/CEO leadership — archetype ID, delegation, blind spots, scaling decisions
 license: MIT
 metadata:

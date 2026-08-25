@@ -1,6 +1,6 @@
-﻿---
+---
 name: ci-cd-and-automation
-description: Automates CI/CD pipeline setup
+description: Use when setting up a project's CI pipeline, adding or changing automated checks, configuring deployment pipelines, or debugging CI failures. Covers quality gates, pipeline stages, and what to verify automatically on every change.
 ---
 
 # CI/CD and Automation

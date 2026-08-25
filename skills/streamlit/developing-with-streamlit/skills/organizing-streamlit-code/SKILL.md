@@ -1,6 +1,6 @@
 ---
 name: organizing-streamlit-code
-description: Organizing Streamlit code for maintainability
+description: "Use when deciding how to structure a Streamlit app's files — when to keep everything in one streamlit_app.py, when to split into modules, and how to separate data processing from UI code."
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

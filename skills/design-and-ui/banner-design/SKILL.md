@@ -1,5 +1,5 @@
-﻿---
-name: ckm:banner-design
+---
+name: banner-design
 description: Banner design — social, ads, heroes, print. Art direction with AI-generated assets
 argument-hint: "[platform] [style] [dimensions]"
 license: MIT

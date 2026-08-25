@@ -20,8 +20,8 @@ Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG.
 | [`gtm-enterprise-onboarding`](gtm-enterprise-onboarding/SKILL.md) | `go-to-market/gtm-enterprise-onboarding` | Four-phase framework for onboarding enterprise customers from contract to value realization |
 | [`gtm-operating-cadence`](gtm-operating-cadence/SKILL.md) | `go-to-market/gtm-operating-cadence` | Design meeting rhythms, metric reporting, quarterly planning, and decision-making velocity for scaling companies |
 | [`gtm-partnership-architecture`](gtm-partnership-architecture/SKILL.md) | `go-to-market/gtm-partnership-architecture` | Build and scale partner ecosystems that drive revenue and platform adoption |
-| [`gtm-positioning-strategy`](gtm-positioning-strategy/SKILL.md) | `go-to-market/gtm-positioning-strategy` | Find and own a defensible market position |
+| [`gtm-positioning-strategy`](gtm-positioning-strategy/SKILL.md) | `go-to-market/gtm-positioning-strategy` | Use when a product needs a defensible market position — defining the competitive alternative, unique attributes, the value they enable, and the segment that cares most. |
 | [`gtm-product-led-growth`](gtm-product-led-growth/SKILL.md) | `go-to-market/gtm-product-led-growth` | Build self-serve acquisition and expansion motions |
-| [`gtm-technical-product-pricing`](gtm-technical-product-pricing/SKILL.md) | `go-to-market/gtm-technical-product-pricing` | Pricing strategy for technical products |
+| [`gtm-technical-product-pricing`](gtm-technical-product-pricing/SKILL.md) | `go-to-market/gtm-technical-product-pricing` | Use when pricing a technical product — choosing a pricing model and metric, setting tiers and packaging, usage versus seat based pricing, and aligning price with delivered value. |
 
 [Back to the category index](../README.md)
