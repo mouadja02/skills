@@ -7,7 +7,7 @@ Optional architectural modules that extend the core harness. Each section includ
 - [Session Persistence](#session-persistence) — JSONL conversation log (DEFAULT ON)
 - [Context Compaction](#context-compaction) — summarize older messages
 - [System Prompt Composition](#system-prompt-composition) — dynamic instructions from context files
-- [Tool Approval](#tool-approval) — gate dangerous tools behind user confirmation
+- [Tool Approval](#tool-approval) — gate mutating tools behind user confirmation (ON by default)
 - [Structured Event Logging](#structured-event-logging) — emit events for observability
 
 ---
@@ -274,59 +274,131 @@ client.callModel({ instructions, ... });
 
 ## Tool Approval
 
-Gate dangerous tools behind user confirmation. Uses `requireApproval` from `@openrouter/agent/tool` plus a session-scoped approval cache. Pattern from Codex's approval flow.
+Gate mutating tools behind user confirmation. Uses `requireApproval` from `@openrouter/agent/tool` plus a session-scoped approval cache. Pattern from Codex's approval flow.
 
-### Adding requireApproval to tools
+**This module is ON by default**, because File Write, File Edit, and Shell/Bash are default-ON tools that write to the user's disk and run arbitrary commands. Generate an ungated harness only when the user explicitly asks for one.
 
-For tools that should require approval, set `requireApproval: true` in the tool definition:
+### Approval policies
+
+`approvalPolicy` lives in `AgentConfig` and defaults to `'dangerous-only'`:
+
+| Policy | Behavior |
+|--------|----------|
+| `always` | Every mutating tool call prompts. Safest, noisiest. |
+| `dangerous-only` | **Default.** Prompts for destructive shell commands and for writes that escape the working directory. Ordinary in-project edits run unprompted. |
+| `never` | No prompts. Explicit opt-out — only when the user asks for it. |
+
+Read-only tools (`file_read`, `glob`, `grep`, `list_dir`, `web_fetch`, `view_image`) are never gated under any policy.
+
+### src/approval.ts
 
 ```typescript
-export const shellTool = tool({
-  name: 'shell',
-  description: 'Execute a shell command',
-  inputSchema: z.object({ command: z.string(), timeout: z.number().optional() }),
-  requireApproval: true,  // <-- user must confirm before execution
-  execute: async ({ command, timeout }) => { /* ... */ },
-});
+import { createInterface } from 'readline';
+import { resolve, relative, isAbsolute } from 'path';
+import type { ApprovalPolicy } from './config.js';
+
+// Session-scoped cache: once the user approves a given tool+target, the same
+// target is not re-prompted for the rest of the run. Cleared on /new.
+const approved = new Set<string>();
+
+export function resetApprovals(): void {
+  approved.clear();
+}
+
+/** Shell commands that warrant a prompt even under 'dangerous-only'. */
+const DESTRUCTIVE = /\brm\b|\bsudo\b|\bchmod\b|\bchown\b|\bdd\b|\bmkfs\b|\bkill(all)?\b|>\s*\/dev\/|\bgit\s+(push|reset\s+--hard|clean)\b|\bcurl\b[^|]*\|\s*(ba)?sh/;
+
+export function isDestructiveCommand(command: string): boolean {
+  return DESTRUCTIVE.test(command);
+}
+
+/** True when a write target escapes the working directory. */
+export function escapesCwd(path: string): boolean {
+  const rel = relative(process.cwd(), resolve(path));
+  return rel.startsWith('..') || isAbsolute(rel);
+}
+
+/**
+ * Prompt the user to confirm one tool call. Returns false to deny — the caller
+ * returns an error to the model rather than throwing, so the agent can recover
+ * and try something else.
+ */
+export async function confirm(tool: string, target: string, detail: string): Promise<boolean> {
+  const key = `${tool}:${target}`;
+  if (approved.has(key)) return true;
+
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  const answer = await new Promise<string>((r) =>
+    rl.question(`\n  \x1b[33m⚠\x1b[0m  ${tool} wants to ${detail}\n     [y] allow once  [a] allow for this session  [n] deny: `, r),
+  );
+  rl.close();
+
+  const choice = answer.trim().toLowerCase();
+  if (choice === 'a') {
+    approved.add(key);
+    return true;
+  }
+  return choice === 'y' || choice === '';
+}
+
+export function needsApproval(policy: ApprovalPolicy, dangerous: boolean): boolean {
+  if (policy === 'never') return false;
+  if (policy === 'always') return true;
+  return dangerous;
+}
 ```
 
-Or use a function for conditional approval based on the config:
+`confirm()` reads from stdin, so it cannot run while another readline interface holds the terminal. Call it from inside `execute`, after the main REPL prompt has resolved — not from a concurrent stream handler.
+
+### Gating a mutating tool
+
+Each mutating tool exports a factory that takes the policy and checks it inside `execute`. `requireApproval` is also set so SDK-side consumers see the tool's metadata:
 
 ```typescript
-export function createShellTool(approvalPolicy: 'always' | 'never' | 'dangerous-only') {
+import { tool } from '@openrouter/agent/tool';
+import { z } from 'zod';
+import { confirm, needsApproval, isDestructiveCommand } from '../approval.js';
+import type { ApprovalPolicy } from '../config.js';
+
+export function createShellTool(policy: ApprovalPolicy) {
   return tool({
     name: 'shell',
     description: 'Execute a shell command',
     inputSchema: z.object({ command: z.string(), timeout: z.number().optional() }),
-    requireApproval: approvalPolicy === 'always'
-      ? true
-      : approvalPolicy === 'never'
-        ? false
-        : ({ command }) => /\brm\b|sudo|chmod|chown|\bdd\b|mkfs/.test(command),
-    execute: async ({ command, timeout }) => { /* ... */ },
+    requireApproval: policy === 'never' ? false : policy === 'always' ? true : isDestructiveCommand,
+    execute: async ({ command, timeout }) => {
+      if (needsApproval(policy, isDestructiveCommand(command))) {
+        const ok = await confirm('shell', command, `run: ${command}`);
+        if (!ok) return { error: 'Denied by user. Do not retry this command.' };
+      }
+      /* ... run the command ... */
+    },
   });
 }
 ```
 
+`createFileWriteTool` and `createFileEditTool` follow the same shape, swapping `isDestructiveCommand(command)` for `escapesCwd(path)` and describing the action as `write ${path}` / `edit ${path}`.
+
 ### Integration
 
-Add `approvalPolicy` to the config:
-
 ```typescript
-// In config.ts AgentConfig interface:
-approvalPolicy: 'always' | 'never' | 'dangerous-only';
+// In config.ts:
+export type ApprovalPolicy = 'always' | 'dangerous-only' | 'never';
+// AgentConfig gains:  approvalPolicy: ApprovalPolicy;
+// DEFAULTS gains:     approvalPolicy: 'dangerous-only',
 
-// In tools/index.ts, create tools conditionally:
-import { createShellTool } from './shell.js';
-
+// In tools/index.ts, build mutating tools from the policy:
 export function buildTools(config: AgentConfig) {
   return [
-    fileReadTool,   // never needs approval
-    fileWriteTool,  // maybe
+    fileReadTool,   // read-only, never gated
+    createFileWriteTool(config.approvalPolicy),
+    createFileEditTool(config.approvalPolicy),
     createShellTool(config.approvalPolicy),
   ];
 }
 ```
+
+If the `/new` slash command is generated, call `resetApprovals()` alongside clearing the conversation so session approvals do not leak across conversations.
 
 ---
 

@@ -145,7 +145,7 @@ The skill presents an interactive checklist when invoked. You pick what you need
 | Session Persistence | on | JSONL append-only conversation log |
 | Context Compaction | off | Summarize old messages when context gets long |
 | System Prompt Composition | off | Build instructions from static + dynamic context files |
-| Tool Permissions | off | Gate dangerous tools behind user approval |
+| Tool Permissions | on | Gate mutating tools behind user approval |
 | Structured Logging | off | Emit events for tool calls, API requests, errors |
 
 ## What `@openrouter/agent` handles
@@ -182,8 +182,9 @@ my-agent/
     session.ts              JSONL conversation persistence
     terminal-bg.ts          Adaptive background detection
     renderer.ts             Tool display renderer
+    approval.ts             Approval gate for mutating tools
     tools/
-      index.ts              Tool registry + server tools
+      index.ts              buildTools(config) — registry + server tools
       file-read.ts          Read files
       file-write.ts         Write files
       file-edit.ts          Search-and-replace with diff

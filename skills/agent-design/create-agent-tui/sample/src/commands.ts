@@ -1,6 +1,7 @@
 import type { Interface } from 'readline';
 import type { AgentConfig } from './config.js';
 import type { ChatMessage } from './agent.js';
+import { resetApprovals } from './approval.js';
 
 const DIM = '\x1b[2m';
 const RESET = '\x1b[0m';
@@ -65,6 +66,7 @@ commands.push({
   execute: async (_args, ctx) => {
     ctx.messages.length = 0;
     ctx.sessionPath = ctx.resetSession();
+    resetApprovals();
     console.log(`  ${GREEN}✓${RESET} ${DIM}New session started.${RESET}`);
   },
 });

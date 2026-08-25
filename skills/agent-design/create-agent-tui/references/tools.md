@@ -2,6 +2,8 @@
 
 All tools use the `tool()` pattern from `@openrouter/agent/tool` with Zod schemas. See the Tool Pattern section in SKILL.md for a complete example.
 
+Every spec below is marked **Read-only** or **Mutating**. Read-only tools are plain `tool()` exports. Mutating tools touch the user's disk or run arbitrary commands, so they export a `create<Name>Tool(policy)` factory instead and route through the approval gate in [modules.md](modules.md#tool-approval) — which is ON by default. Keep that marker accurate when adding a tool: it is what decides whether the generated harness gates the call.
+
 ## Contents
 
 - [Default-ON Tools](#default-on-tools): file_read, file_write, file_edit, glob, grep, list_dir, shell, custom
@@ -118,7 +120,8 @@ export const myCustomTool = tool({
     // Define your input parameters here
     param: z.string().describe('Description of the parameter'),
   }),
-  // Optional: require user approval before execution
+  // If this tool mutates anything, gate it: export a createMyCustomTool(policy)
+  // factory and check needsApproval() inside execute — see modules.md#tool-approval
   // requireApproval: true,
   execute: async ({ param }) => {
     // Implement your tool logic here

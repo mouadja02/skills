@@ -68,6 +68,8 @@ Server tools go in the `tools` array alongside user-defined tools. No client cod
 | View Image | OFF | Read local images as base64 |
 | Custom Tool Template | ON | Empty skeleton for domain-specific tools |
 
+File Write, File Edit, and Shell/Bash are **mutating** — they change the user's disk or run arbitrary commands. Whenever any mutating tool is selected, keep `Tool Permissions / Approval` ON. Only generate an ungated harness (`approvalPolicy: 'never'`) if the user explicitly asks for one after being told what it means. [references/tools.md](references/tools.md) marks every tool Read-only or Mutating.
+
 ### Harness Modules (architectural components)
 
 | Module | Default | Description |
@@ -76,7 +78,7 @@ Server tools go in the `tools` array alongside user-defined tools. No client cod
 | ASCII Logo Banner | OFF | Custom ASCII art banner on startup — ask for project name |
 | Context Compaction | OFF | Summarize older messages when context is long |
 | System Prompt Composition | OFF | Assemble instructions from static + dynamic context |
-| Tool Permissions / Approval | OFF | Gate dangerous tools behind user confirmation |
+| Tool Permissions / Approval | ON | Gate mutating tools (file write, file edit, shell) behind user confirmation |
 | Structured Event Logging | OFF | Emit events for tool calls, API requests, errors |
 | `@`-file References | OFF | `@filename` to attach file content to next message |
 | `!` Shell Shortcut | OFF | `!command` to run shell and inject output into context |
@@ -138,6 +140,7 @@ After getting checklist selections, follow this workflow:
 - [ ] Generate src/config.ts (add showBanner field if ASCII Logo Banner is ON)
 - [ ] Generate src/tools/index.ts wiring selected tools + server tools
 - [ ] Generate selected tool files in src/tools/ (see Tool Pattern below, specs in references/tools.md)
+- [ ] If any Mutating tool is selected: generate src/approval.ts and gate those tools (see references/modules.md)
 - [ ] Generate src/agent.ts (core runner)
 - [ ] Generate selected harness modules (specs in references/modules.md)
 - [ ] Generate src/terminal-bg.ts (adaptive input background — see references/tui.md)
@@ -261,6 +264,8 @@ export interface DisplayConfig {
   inputStyle: 'block' | 'bordered' | 'plain';
 }
 
+export type ApprovalPolicy = 'always' | 'dangerous-only' | 'never';
+
 export interface AgentConfig {
   apiKey: string;
   model: string;
@@ -269,6 +274,7 @@ export interface AgentConfig {
   maxCost: number;
   sessionDir: string;
   showBanner: boolean;
+  approvalPolicy: ApprovalPolicy;
   display: DisplayConfig;
   slashCommands: boolean;
 }
@@ -294,6 +300,7 @@ const DEFAULTS: AgentConfig = {
   maxCost: 1.0,
   sessionDir: '.sessions',
   showBanner: false,
+  approvalPolicy: 'dangerous-only',
   display: { toolDisplay: 'grouped', reasoning: false, inputStyle: 'block' },
   slashCommands: true,
 };
@@ -326,33 +333,40 @@ export function loadConfig(overrides: Partial<AgentConfig> = {}): AgentConfig {
 
 ### src/tools/index.ts
 
-Adapt imports based on checklist selections. This example includes all default-ON tools:
+Adapt imports based on checklist selections. This example includes all default-ON tools. Read-only tools are plain exports; mutating tools are built from the approval policy, so the harness stays gated by default — see [references/modules.md](references/modules.md#tool-approval):
 
 ```typescript
 import { serverTool } from '@openrouter/agent';
+import type { AgentConfig } from '../config.js';
 import { fileReadTool } from './file-read.js';
-import { fileWriteTool } from './file-write.js';
-import { fileEditTool } from './file-edit.js';
+import { createFileWriteTool } from './file-write.js';
+import { createFileEditTool } from './file-edit.js';
 import { globTool } from './glob.js';
 import { grepTool } from './grep.js';
 import { listDirTool } from './list-dir.js';
-import { shellTool } from './shell.js';
+import { createShellTool } from './shell.js';
 
-export const tools = [
-  // User-defined tools — executed client-side
-  fileReadTool,
-  fileWriteTool,
-  fileEditTool,
-  globTool,
-  grepTool,
-  listDirTool,
-  shellTool,
+export function buildTools(config: AgentConfig) {
+  return [
+    // Read-only tools — executed client-side, never gated
+    fileReadTool,
+    globTool,
+    grepTool,
+    listDirTool,
 
-  // Server tools — executed by OpenRouter, no client implementation needed
-  serverTool({ type: 'openrouter:web_search' }),
-  serverTool({ type: 'openrouter:datetime', parameters: { timezone: 'UTC' } }),
-];
+    // Mutating tools — gated by config.approvalPolicy
+    createFileWriteTool(config.approvalPolicy),
+    createFileEditTool(config.approvalPolicy),
+    createShellTool(config.approvalPolicy),
+
+    // Server tools — executed by OpenRouter, no client implementation needed
+    serverTool({ type: 'openrouter:web_search' }),
+    serverTool({ type: 'openrouter:datetime', parameters: { timezone: 'UTC' } }),
+  ];
+}
 ```
+
+If the user opts out of Tool Permissions / Approval entirely, export a plain `tools` array instead and import the mutating tools directly.
 
 ### src/agent.ts
 
@@ -361,7 +375,7 @@ import { OpenRouter } from '@openrouter/agent';
 import type { Item } from '@openrouter/agent';
 import { stepCountIs, maxCost } from '@openrouter/agent/stop-conditions';
 import type { AgentConfig } from './config.js';
-import { tools } from './tools/index.js';
+import { buildTools } from './tools/index.js';
 
 export type ChatMessage = { role: 'user' | 'assistant' | 'system'; content: string };
 
@@ -382,7 +396,7 @@ export async function runAgent(
     model: config.model,
     instructions: config.systemPrompt.replace('{cwd}', process.cwd()),
     input: input as string | Item[],
-    tools,
+    tools: buildTools(config),
     stopWhen: [stepCountIs(config.maxSteps), maxCost(config.maxCost)],
   });
 

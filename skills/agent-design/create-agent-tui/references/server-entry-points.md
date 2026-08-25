@@ -168,7 +168,7 @@ Key steps:
 1. Install `@modelcontextprotocol/sdk`
 2. Create an MCP client that connects to configured servers
 3. Convert MCP tool definitions to `@openrouter/agent` tool format
-4. Add discovered tools to the `tools` array in `tools/index.ts`
+4. Add discovered tools to the array returned by `buildTools()` in `tools/index.ts`
 
 ### WebSocket Streaming
 

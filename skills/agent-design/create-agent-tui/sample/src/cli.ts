@@ -154,12 +154,14 @@ async function main() {
   const argInput = parseArg('--input') as DisplayConfig['inputStyle'] | undefined;
   const argToolDisplay = parseArg('--tool-display') as DisplayConfig['toolDisplay'] | undefined;
   const argLoaderStyle = parseArg('--loader-style') as import('./config.js').LoaderConfig['style'] | undefined;
+  const argApproval = parseArg('--approval') as import('./config.js').ApprovalPolicy | undefined;
   const demoMode = process.argv.includes('--demo');
   const demoLoaderMode = process.argv.includes('--demo-loader');
 
   const overrides: Record<string, any> = {};
   if (argBanner) overrides.name = argBanner;
   if (argModel) overrides.model = argModel;
+  if (argApproval) overrides.approvalPolicy = argApproval;
   if (argInput || argToolDisplay || argLoaderStyle) {
     overrides.display = {
       ...(argInput && { inputStyle: argInput }),
