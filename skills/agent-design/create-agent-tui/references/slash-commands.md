@@ -105,6 +105,7 @@ registerCommand({
   execute: async (_args, ctx) => {
     ctx.messages.length = 0;
     ctx.sessionPath = ctx.resetSession();
+    resetApprovals(); // if Tool Approval is enabled — don't carry approvals across conversations
     console.log(`  ${GREEN}✓${RESET} ${DIM}New session started.${RESET}`);
   },
 });

@@ -13,6 +13,8 @@ export interface DisplayConfig {
   loader: LoaderConfig;
 }
 
+export type ApprovalPolicy = 'always' | 'dangerous-only' | 'never';
+
 export interface AgentConfig {
   apiKey: string;
   model: string;
@@ -22,6 +24,7 @@ export interface AgentConfig {
   maxCost: number;
   sessionDir: string;
   showBanner: boolean;
+  approvalPolicy: ApprovalPolicy;
   display: DisplayConfig;
   slashCommands: boolean;
 }
@@ -48,6 +51,7 @@ const DEFAULTS: AgentConfig = {
   maxCost: 1.0,
   sessionDir: '.sessions',
   showBanner: true,
+  approvalPolicy: 'dangerous-only',
   display: {
     toolDisplay: 'grouped',
     reasoning: false,
