@@ -1,4 +1,4 @@
-﻿---
+---
 name: "dependency-auditor"
 description: "Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems"
 ---

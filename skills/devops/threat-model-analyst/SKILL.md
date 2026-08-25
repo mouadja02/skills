@@ -1,4 +1,4 @@
-﻿---
+---
 name: threat-model-analyst
 description: STRIDE-A threat model — single-repo analysis or incremental update, threat matrix, mitigations
 ---

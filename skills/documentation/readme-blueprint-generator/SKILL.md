@@ -1,4 +1,4 @@
-﻿---
+---
 name: readme-blueprint-generator
 description: README.md generator — install, usage, API, contribution sections from project structure
 ---

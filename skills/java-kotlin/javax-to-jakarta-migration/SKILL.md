@@ -1,4 +1,4 @@
-﻿---
+---
 name: javax-to-jakarta-migration
 description: "Migrate Java code from javax.* to jakarta.* namespace"
 argument-hint: "File, package, or module to migrate"

@@ -1,4 +1,4 @@
-﻿---
+---
 name: slang-shader-engineer
 description: Slang shaders, HLSL GPU code — modules, pipelines, compute, tessellation, render passes
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "observability-designer"
 description: "Design comprehensive observability for production systems"
 ---

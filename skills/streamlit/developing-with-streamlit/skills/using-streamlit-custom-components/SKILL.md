@@ -1,6 +1,6 @@
 ---
 name: using-streamlit-custom-components
-description: Using third-party Streamlit custom components
+description: "Use when Streamlit's core API lacks a needed feature and a third-party community component may fill the gap — finding, installing, evaluating, and wiring up custom components."
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

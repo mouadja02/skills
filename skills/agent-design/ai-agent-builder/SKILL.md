@@ -1,4 +1,4 @@
-﻿---
+---
 name: ai-agent-builder
 description: Also use for agentic data engineering pipelines, code generation agents, agent-powered CLI tools, MCP server development, or any system where an AI model calls tools, makes decisions, or loops
 ---

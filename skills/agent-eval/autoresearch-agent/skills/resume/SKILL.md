@@ -1,5 +1,5 @@
 ---
-name: "resume"
+name: "autoresearch-resume"
 description: "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating."
 command: /ar:resume
 source: "https://github.com/alirezarezvani/claude-skills"

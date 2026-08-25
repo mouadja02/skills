@@ -1,4 +1,4 @@
-﻿---
+---
 name: performance-review-writer
 description: Performance reviews, self-assessments, peer reviews — written in your own voice
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: remember-interactive-programming
 description: Interactive programmer reminder — prefer REPL/eval over file writes (esp. Clojure)
 ---

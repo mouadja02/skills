@@ -1,4 +1,4 @@
-﻿---
+---
 name: code-review-and-quality
 description: Conducts multi-axis code review. Use before merging any change
 ---

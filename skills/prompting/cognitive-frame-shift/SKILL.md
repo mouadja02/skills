@@ -1,4 +1,4 @@
-﻿---
+---
 name: cognitive-frame-shift
 description: 6-lens problem rotation — child, alien, historian, contrarian, futurist, expert
 ---

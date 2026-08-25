@@ -1,4 +1,4 @@
-﻿---
+---
 name: freecad-scripts
 description: 'writing FreeCAD Python scripts, macros, and automation'
 ---

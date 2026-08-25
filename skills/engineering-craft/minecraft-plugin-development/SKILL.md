@@ -1,4 +1,4 @@
-﻿---
+---
 name: minecraft-plugin-development
 description: Minecraft Paper/Spigot/Bukkit plugin dev — plugin.yml, commands, events, Gradle
 ---

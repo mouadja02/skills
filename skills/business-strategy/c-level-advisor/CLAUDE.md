@@ -25,49 +25,49 @@ A complete virtual board of directors: 28 skills covering 10 executive roles, or
 
 | Role | Folder | Reasoning Technique | Scripts |
 |------|--------|-------------------|---------|
-| **CEO** | `ceo-advisor/` | Tree of Thought | strategy_analyzer, financial_scenario_analyzer |
-| **CTO** | `cto-advisor/` | ReAct | tech_debt_analyzer, team_scaling_calculator |
-| **COO** | `coo-advisor/` | Step by Step | ops_efficiency_analyzer, okr_tracker |
-| **CPO** | `cpo-advisor/` | First Principles | pmf_scorer, portfolio_analyzer |
-| **CMO** | `cmo-advisor/` | Recursion of Thought | marketing_budget_modeler, growth_model_simulator |
-| **CFO** | `cfo-advisor/` | Chain of Thought | burn_rate_calculator, unit_economics_analyzer, fundraising_model |
-| **CRO** | `cro-advisor/` | Chain of Thought | revenue_forecast_model, churn_analyzer |
-| **CISO** | `ciso-advisor/` | Risk-Based | risk_quantifier, compliance_tracker |
-| **CHRO** | `chro-advisor/` | Empathy + Data | hiring_plan_modeler, comp_benchmarker |
-| **Executive Mentor** | `executive-mentor/` | Adversarial | decision_matrix_scorer, stakeholder_mapper |
+| **CEO** | `ceo-advisor` | Tree of Thought | strategy_analyzer, financial_scenario_analyzer |
+| **CTO** | `cto-advisor` | ReAct | tech_debt_analyzer, team_scaling_calculator |
+| **COO** | `coo-advisor` | Step by Step | ops_efficiency_analyzer, okr_tracker |
+| **CPO** | `cpo-advisor` | First Principles | pmf_scorer, portfolio_analyzer |
+| **CMO** | `cmo-advisor` | Recursion of Thought | marketing_budget_modeler, growth_model_simulator |
+| **CFO** | `cfo-advisor` | Chain of Thought | burn_rate_calculator, unit_economics_analyzer, fundraising_model |
+| **CRO** | `cro-advisor` | Chain of Thought | revenue_forecast_model, churn_analyzer |
+| **CISO** | `ciso-advisor` | Risk-Based | risk_quantifier, compliance_tracker |
+| **CHRO** | `chro-advisor` | Empathy + Data | hiring_plan_modeler, comp_benchmarker |
+| **Executive Mentor** | `executive-mentor` | Adversarial | decision_matrix_scorer, stakeholder_mapper |
 
 ### Orchestration (6)
 
 | Skill | Folder | Purpose |
 |-------|--------|---------|
-| **C-Suite Onboard** | `cs-onboard/` | Founder interview → company-context.md |
-| **Chief of Staff** | `chief-of-staff/` | Routes questions, triggers board meetings |
-| **Board Meeting** | `board-meeting/` | 6-phase multi-agent deliberation |
-| **Decision Logger** | `decision-logger/` | Two-layer memory (raw + approved) |
-| **Agent Protocol** | `agent-protocol/` | Inter-agent invocation, loop prevention, quality loop |
-| **Context Engine** | `context-engine/` | Company context loading + anonymization |
+| **C-Suite Onboard** | `cs-onboard` | Founder interview → company-context.md |
+| **Chief of Staff** | `chief-of-staff` | Routes questions, triggers board meetings |
+| **Board Meeting** | `board-meeting` | 6-phase multi-agent deliberation |
+| **Decision Logger** | `decision-logger` | Two-layer memory (raw + approved) |
+| **Agent Protocol** | `agent-protocol` | Inter-agent invocation, loop prevention, quality loop |
+| **Context Engine** | `context-engine` | Company context loading + anonymization |
 
 ### Cross-Cutting Capabilities (6)
 
 | Skill | Folder | Purpose |
 |-------|--------|---------|
-| **Board Deck Builder** | `board-deck-builder/` | Assembles board/investor updates |
-| **Scenario War Room** | `scenario-war-room/` | Multi-variable what-if modeling |
-| **Competitive Intel** | `competitive-intel/` | Systematic competitor tracking |
-| **Org Health Diagnostic** | `org-health-diagnostic/` | Cross-functional health scoring |
-| **M&A Playbook** | `ma-playbook/` | Acquiring or being acquired |
-| **International Expansion** | `intl-expansion/` | Market entry strategy |
+| **Board Deck Builder** | `board-deck-builder` | Assembles board/investor updates |
+| **Scenario War Room** | `scenario-war-room` | Multi-variable what-if modeling |
+| **Competitive Intel** | `competitive-intel` | Systematic competitor tracking |
+| **Org Health Diagnostic** | `org-health-diagnostic` | Cross-functional health scoring |
+| **M&A Playbook** | `ma-playbook` | Acquiring or being acquired |
+| **International Expansion** | `intl-expansion` | Market entry strategy |
 
 ### Culture & Collaboration (6)
 
 | Skill | Folder | Purpose |
 |-------|--------|---------|
-| **Culture Architect** | `culture-architect/` | Build and operationalize culture |
-| **Company OS** | `company-os/` | EOS/Scaling Up operating system |
-| **Founder Coach** | `founder-coach/` | Founder development and growth |
-| **Strategic Alignment** | `strategic-alignment/` | Strategy cascade, silo detection |
-| **Change Management** | `change-management/` | ADKAR-based change rollout |
-| **Internal Narrative** | `internal-narrative/` | One story across all audiences |
+| **Culture Architect** | `culture-architect` | Build and operationalize culture |
+| **Company OS** | `company-os` | EOS/Scaling Up operating system |
+| **Founder Coach** | `founder-coach` | Founder development and growth |
+| **Strategic Alignment** | `strategic-alignment` | Strategy cascade, silo detection |
+| **Change Management** | `change-management` | ADKAR-based change rollout |
+| **Internal Narrative** | `internal-narrative` | One story across all audiences |
 
 ## Executive Mentor Slash Commands
 

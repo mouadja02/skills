@@ -1,4 +1,4 @@
-﻿---
+---
 name: draw-io-diagram-generator
 description: draw.io XML — flowcharts, architecture, sequence, ER, UML, mxGraph shapes/styles
 ---

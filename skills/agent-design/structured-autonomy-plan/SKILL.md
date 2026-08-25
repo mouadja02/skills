@@ -1,6 +1,6 @@
 ---
 name: structured-autonomy-plan
-description: 'Structured Autonomy Planning Prompt'
+description: Use when an autonomous agent run needs a plan before execution — decomposing the goal, setting explicit boundaries and stop conditions, and defining what the agent may decide alone versus escalate.
 source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
 attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 ---

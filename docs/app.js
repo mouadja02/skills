@@ -1,6 +1,6 @@
 // Lightweight, dependency-free browser for github.com/mouadja02/skills.
-// Loads ./manifest.json, renders a searchable card grid, exposes per-skill
-// install commands across bash, PowerShell, degit, and git sparse-checkout.
+// Loads ./manifest.json, renders a searchable card grid in pages, and keeps a
+// live install command in sync with whatever the visitor has selected.
 
 const $ = (sel, el = document) => el.querySelector(sel);
 const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
@@ -8,7 +8,13 @@ const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 const SORT_KEY = "skills:sort";
 const THEME_KEY = "skills:theme";
 const HARNESS_KEY = "skills:harnesses";
+const PICKS_KEY = "skills:picks";
 const SKELETON_COUNT = 9;
+
+// Cards render a page at a time. Rendering all 810 built ~45k DOM nodes and
+// ~13k tab stops, which made the grid unusable with a keyboard and pushed the
+// document past 95,000px.
+const PAGE_SIZE = 60;
 
 const HARNESSES = [
   { id: "claude-code", label: "Claude Code",
@@ -25,6 +31,61 @@ const HARNESSES = [
     destBash: (n) => `~/.codex/skills/${n}`,        destPs: (n) => `$HOME\\.codex\\skills\\${n}` },
 ];
 
+// Task routes are an editorial layer over the 36 folder categories: folders are
+// named after where code lives, and nobody arrives thinking "microsoft-data".
+// Categories missing from this map still appear in the full category list, so a
+// new folder degrades to "not featured" rather than "unreachable".
+const TASK_ROUTES = [
+  {
+    id: "agents",
+    label: "Build AI agents",
+    blurb: "Agent architecture, evals, memory, prompts, MCP servers.",
+    cats: ["agent-design", "agent-eval", "context-engineering", "prompting", "llm-tooling", "mcp"],
+  },
+  {
+    id: "code",
+    label: "Write & review code",
+    blurb: "Implementation workflows, refactoring, review, testing.",
+    cats: ["coding", "code-quality", "engineering-craft", "testing", "dev-workflow"],
+  },
+  {
+    id: "ship",
+    label: "Ship & operate",
+    blurb: "CI/CD, containers, infrastructure, AWS and Azure.",
+    cats: ["devops", "cloud-aws", "cloud-azure"],
+  },
+  {
+    id: "interface",
+    label: "Design interfaces",
+    blurb: "UI systems, frontend frameworks, dashboards, branding.",
+    cats: ["design-and-ui", "react-frontend", "streamlit", "creative"],
+  },
+  {
+    id: "data",
+    label: "Work with data",
+    blurb: "Schema design, SQL, migrations, analytics, Power Platform.",
+    cats: ["databases", "microsoft-data"],
+  },
+  {
+    id: "product",
+    label: "Plan & sell product",
+    blurb: "Discovery, specs, strategy, positioning, growth.",
+    cats: ["product-management", "business-strategy", "go-to-market", "marketing-and-growth", "finance"],
+  },
+  {
+    id: "write",
+    label: "Write & present",
+    blurb: "READMEs, ADRs, diagrams, slides, research, comms.",
+    cats: ["documentation", "diagrams-slides", "research", "communication", "personal-productivity"],
+  },
+  {
+    id: "platform",
+    label: "Backend & platforms",
+    blurb: "APIs, .NET, Java, Microsoft agents, skill authoring.",
+    cats: ["api-backend", "dotnet", "java-kotlin", "microsoft-agents", "skills-management", "messaging"],
+  },
+];
+
 function loadStoredHarnesses() {
   try {
     const stored = JSON.parse(localStorage.getItem(HARNESS_KEY));
@@ -33,15 +94,29 @@ function loadStoredHarnesses() {
   return ["claude-code"];
 }
 
+function loadStoredPicks() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(PICKS_KEY));
+    if (Array.isArray(stored)) return stored.filter((s) => typeof s === "string");
+  } catch {}
+  return [];
+}
+
 const state = {
   manifest: null,
   zips: null,
   filterText: "",
   filterCategory: null,
+  filterRoute: null,
   recommendedSkillNames: null,
   sort: localStorage.getItem(SORT_KEY) || "name",
   catColor: new Map(),
   selectedHarnesses: loadStoredHarnesses(),
+  picks: loadStoredPicks(),
+  catsExpanded: false,
+  // Windowing
+  filtered: [],
+  shown: 0,
 };
 
 /* ==========================================================================
@@ -56,17 +131,14 @@ function initTheme() {
 
   $("#themeToggle")?.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme") || "dark";
-    const next = current === "dark" ? "light" : "dark";
-    applyTheme(next);
-    localStorage.setItem(THEME_KEY, next);
+    applyTheme(current === "dark" ? "light" : "dark");
+    localStorage.setItem(THEME_KEY, document.documentElement.getAttribute("data-theme"));
   });
 
   // Follow system if user hasn't picked manually.
   if (!stored) {
     window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
-      if (!localStorage.getItem(THEME_KEY)) {
-        applyTheme(e.matches ? "light" : "dark");
-      }
+      if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? "light" : "dark");
     });
   }
 }
@@ -75,6 +147,13 @@ function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   const meta = $('meta[name="color-scheme"]');
   if (meta) meta.setAttribute("content", theme);
+  // The control switches to the *other* theme, so name that, not the current one.
+  const toggle = $("#themeToggle");
+  if (toggle) {
+    const next = theme === "dark" ? "light" : "dark";
+    toggle.setAttribute("aria-label", `Switch to ${next} theme`);
+    toggle.title = `Switch to ${next} theme`;
+  }
 }
 
 /* ==========================================================================
@@ -92,11 +171,9 @@ async function init() {
     // Expose manifest globally so chat.js can reuse it without a second fetch
     window.skillsManifest = state.manifest;
   } catch (err) {
-    $("#grid").innerHTML = `<div class="empty">
-      <div class="empty-icon">!</div>
-      <p class="empty-title">Couldn't load the skill index</p>
-      <p class="empty-desc">${escapeHtml(err.message)}</p>
-    </div>`;
+    $("#grid").innerHTML = loadErrorHTML(err.message);
+    $("#grid").setAttribute("aria-busy", "false");
+    setSummary("The catalog could not be loaded.");
     return;
   }
 
@@ -114,14 +191,17 @@ async function init() {
   fetchStarCount(state.manifest.repo);
 
   // Assign a stable color index per category (max 13 hues).
-  state.manifest.categories.forEach((c, i) => {
-    state.catColor.set(c, i % 13);
-  });
+  state.manifest.categories.forEach((c, i) => state.catColor.set(c, i % 13));
 
-  $("#skillCount").textContent = state.manifest.count.toLocaleString();
-  $("#totalCount").textContent = state.manifest.count.toLocaleString();
-  $("#statSkills").textContent = state.manifest.count.toLocaleString();
-  $("#statCategories").textContent = state.manifest.categories.length.toLocaleString();
+  const total = state.manifest.count.toLocaleString();
+  $("#skillCount").textContent = total;
+  const heroBrowse = $("#heroBrowseCount");
+  if (heroBrowse) heroBrowse.textContent = total;
+
+  const search = $("#search");
+  if (search) {
+    search.placeholder = `Search ${total} skills — try “pytest”, “terraform”, “rag”…`;
+  }
 
   $("#sortBy").value = state.sort;
   $("#sortBy").addEventListener("change", (e) => {
@@ -130,25 +210,29 @@ async function init() {
     render();
   });
 
+  // Drop picks that no longer exist in the manifest (skills get renamed).
+  const known = new Set(state.manifest.skills.map((s) => s.install_path));
+  state.picks = state.picks.filter((p) => known.has(p));
+  savePicks();
+
+  renderRoutes();
   renderCategories();
   renderHarnesses();
-  bindHeroTabs();
+  bindAnatomy();
   bindSearch();
   bindGlobalCopy();
-  bindShareButton();
   bindSkillDetail();
-  updateHeroCommands();
+  bindShowMore();
+  bindTray();
+  renderTray();
 
   $("#grid").setAttribute("aria-busy", "false");
-  if (location.search) {
-    applyUrlState();
-  } else {
-    render();
-  }
+  if (location.search) applyUrlState();
+  else render();
 }
 
 /* ==========================================================================
-   Skeletons & empty states
+   Skeletons, empty and error states
    ========================================================================== */
 
 function showSkeletons() {
@@ -163,17 +247,181 @@ function showSkeletons() {
   grid.appendChild(frag);
 }
 
+function loadErrorHTML(detail) {
+  return `<div class="empty">
+    <div class="empty-icon empty-icon--warn">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/>
+      </svg>
+    </div>
+    <p class="empty-title">The skill index didn&rsquo;t load</p>
+    <p class="empty-desc">
+      <code>manifest.json</code> returned ${escapeHtml(detail)}. If you&rsquo;re running this
+      locally, generate it with <code>npm run build:manifest</code>, then reload.
+      Otherwise the deploy is probably mid-update &mdash; reloading in a minute usually fixes it.
+    </p>
+    <button type="button" onclick="location.reload()">Reload the page</button>
+  </div>`;
+}
+
 function emptyStateHTML() {
+  const bits = [];
+  if (state.filterText) bits.push(`<code>${escapeHtml(state.filterText)}</code>`);
+  if (state.filterCategory) bits.push(`the <strong>${escapeHtml(categoryLabel(state.filterCategory))}</strong> category`);
+  if (state.filterRoute) bits.push(`<strong>${escapeHtml(routeById(state.filterRoute)?.label ?? "")}</strong>`);
+  const what = bits.length ? bits.join(" in ") : "these filters";
+
   return `<div class="empty">
     <div class="empty-icon">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
       </svg>
     </div>
-    <p class="empty-title">No skills match your filters</p>
-    <p class="empty-desc">Try a different search term or clear the active category.</p>
-    <button id="resetFilters" type="button">Reset filters</button>
+    <p class="empty-title">Nothing matches ${what}</p>
+    <p class="empty-desc">
+      Search covers skill names, descriptions and install paths &mdash; a shorter or more
+      general word usually finds it. Or clear the filters and browse all
+      ${state.manifest.count.toLocaleString()}.
+    </p>
+    <button id="resetFilters" type="button">Clear all filters</button>
   </div>`;
+}
+
+/* ==========================================================================
+   Hero: anatomy of an install command
+   ========================================================================== */
+
+// The old hero shipped `bash -s -- <selector> -d ~/.claude/skills/<name>` behind
+// a Copy button, so the site's most prominent command was one that fails when
+// pasted. These are real, runnable examples instead.
+const ANATOMY = {
+  one: {
+    selector: "code-quality/code-review",
+    dest: (h) => h.destBash("code-review"),
+    note: "An exact install path installs that one skill.",
+  },
+  cat: {
+    selector: "cloud-aws",
+    dest: (h) => h.destBash("cloud-aws"),
+    note: () => {
+      const n = state.manifest?.counts_by_category?.["cloud-aws"];
+      return `A bare category name installs every skill inside it${n ? ` — ${n} for cloud-aws` : ""}.`;
+    },
+  },
+  glob: {
+    selector: '"*rag*"',
+    dest: (h) => h.destBash("rag-skills"),
+    note: "A quoted glob installs every install path that matches. Quote it so your shell doesn’t expand it first.",
+  },
+};
+
+function bindAnatomy() {
+  const btns = $$(".anatomy-choice");
+  if (!btns.length) return;
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btns.forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      updateAnatomy(btn.dataset.sel);
+    });
+    btn.setAttribute("aria-pressed", btn.classList.contains("active") ? "true" : "false");
+  });
+  updateAnatomy("one");
+  bindCopy($(".anatomy"));
+}
+
+function updateAnatomy(kind) {
+  if (!state.manifest) return;
+  const spec = ANATOMY[kind] ?? ANATOMY.one;
+  const { repo, default_branch } = state.manifest;
+  const raw = `https://raw.githubusercontent.com/${repo}/${default_branch}`;
+  const h = getPrimaryHarness();
+  const code = $("#anatomyCode");
+  const note = $("#anatomyNote");
+  if (code) {
+    code.textContent =
+      `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${spec.selector} -d ${spec.dest(h)}`;
+  }
+  if (note) note.textContent = typeof spec.note === "function" ? spec.note() : spec.note;
+
+  // The example counts come from the manifest so they can't drift from it.
+  const catEg = $('.anatomy-choice[data-sel="cat"] .anatomy-choice-eg');
+  if (catEg) {
+    const n = state.manifest.counts_by_category["cloud-aws"];
+    if (n) catEg.textContent = `${n} at once`;
+  }
+}
+
+function currentAnatomyKind() {
+  return $(".anatomy-choice.active")?.dataset.sel ?? "one";
+}
+
+/* ==========================================================================
+   Task routes
+   ========================================================================== */
+
+function routeById(id) {
+  return TASK_ROUTES.find((r) => r.id === id) ?? null;
+}
+
+function routeCats(route) {
+  // Only categories that actually exist in the manifest.
+  const known = new Set(state.manifest.categories);
+  return route.cats.filter((c) => known.has(c));
+}
+
+function routeCount(route) {
+  const { counts_by_category } = state.manifest;
+  return routeCats(route).reduce((n, c) => n + (counts_by_category[c] ?? 0), 0);
+}
+
+function renderRoutes() {
+  const grid = $("#routesGrid");
+  if (!grid) return;
+
+  const covered = new Set(TASK_ROUTES.flatMap((r) => routeCats(r)));
+  const orphans = state.manifest.categories.filter((c) => !covered.has(c));
+  if (orphans.length) {
+    // Not fatal: orphans stay reachable through the category list below.
+    console.info(`[skills] categories not featured in a task route: ${orphans.join(", ")}`);
+  }
+
+  grid.innerHTML = TASK_ROUTES.map((r) => {
+    const n = routeCount(r);
+    return `<button class="route" type="button" data-route="${escapeHtml(r.id)}" aria-pressed="false">
+      <span class="route-label">${escapeHtml(r.label)}</span>
+      <span class="route-blurb">${escapeHtml(r.blurb)}</span>
+      <span class="route-count"><strong>${n}</strong> skills</span>
+    </button>`;
+  }).join("");
+
+  grid.addEventListener("click", (e) => {
+    const btn = e.target.closest(".route");
+    if (!btn) return;
+    const id = btn.dataset.route;
+    selectRoute(state.filterRoute === id ? null : id);
+    focusResults();
+  });
+}
+
+function selectRoute(id) {
+  state.filterRoute = id;
+  state.filterCategory = null;
+  state.recommendedSkillNames = null;
+  syncRouteButtons();
+  syncCategoryButtons();
+  render();
+}
+
+function syncRouteButtons() {
+  $$(".route").forEach((b) => {
+    const on = b.dataset.route === state.filterRoute;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+  });
 }
 
 /* ==========================================================================
@@ -229,41 +477,65 @@ function bindSearch() {
    Categories
    ========================================================================== */
 
+// How many pills stay visible before "show all". The rest are hidden with a
+// class rather than removed, so expanding never re-renders the list. Ten pills
+// wrap to six rows on a 375px screen, so narrow viewports show fewer.
+const CATS_NARROW = window.matchMedia("(max-width: 620px)");
+const collapsedCount = () => (CATS_NARROW.matches ? 5 : 10);
+
 function renderCategories() {
   const container = $("#categories");
-  const wrap = container.parentElement;
-  const { categories, counts_by_category, count } = state.manifest;
+  const toggle = $("#catToggle");
+  const { categories, counts_by_category } = state.manifest;
+
+  // Most-populated first: the collapsed set should be the ten most likely to
+  // be useful, not the ten that sort first alphabetically.
+  const ordered = [...categories].sort(
+    (a, b) => (counts_by_category[b] ?? 0) - (counts_by_category[a] ?? 0) || a.localeCompare(b)
+  );
+
   container.innerHTML = "";
-  container.appendChild(mkCat("all", count, true, null));
-  for (const c of categories) {
+  container.appendChild(mkCat("all", state.manifest.count, true, null));
+  ordered.forEach((c) => {
     container.appendChild(mkCat(c, counts_by_category[c], false, state.catColor.get(c)));
-  }
+  });
+
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".cat");
     if (!btn) return;
     state.recommendedSkillNames = null;
+    state.filterRoute = null;
     state.filterCategory = btn.dataset.cat === "all" ? null : btn.dataset.cat;
-    $$(".cat", container).forEach((el) =>
-      el.classList.toggle("active", el.dataset.cat === btn.dataset.cat)
-    );
-    renderCategoryBanner();
-    updateMetaActive();
+    syncRouteButtons();
+    syncCategoryButtons();
     render();
-    // Keep clicked pill in view on mobile.
-    btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
   });
 
-  // Detect overflow to fade the right edge and indicate scrollability.
-  const checkOverflow = () => {
-    const overflowing = container.scrollWidth > container.clientWidth + 2;
-    const atEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 4;
-    wrap.classList.toggle("has-overflow", overflowing && !atEnd);
-  };
-  checkOverflow();
-  container.addEventListener("scroll", checkOverflow, { passive: true });
-  window.addEventListener("resize", checkOverflow);
+  if (!toggle) return;
+  // Move the toggle into the pill container so it wraps as the last item in the
+  // same flow instead of floating at the top-right of the region.
+  container.appendChild(toggle);
 
-  renderCategoryBanner();
+  const sync = () => {
+    const keep = collapsedCount();
+    const pills = $$(".cat", container).filter((b) => b.dataset.cat !== "all");
+    pills.forEach((b, i) => b.classList.toggle("cat--extra", i >= keep));
+    const extras = Math.max(0, pills.length - keep);
+    toggle.hidden = extras === 0;
+    toggle.textContent = state.catsExpanded ? "Show fewer" : `+${extras} more`;
+    toggle.setAttribute("aria-expanded", state.catsExpanded ? "true" : "false");
+    container.classList.toggle("categories--expanded", state.catsExpanded);
+  };
+
+  sync();
+  toggle.addEventListener("click", () => {
+    state.catsExpanded = !state.catsExpanded;
+    sync();
+  });
+  // Crossing the breakpoint changes how many pills fit, so the "+N more" count
+  // has to follow it.
+  CATS_NARROW.addEventListener("change", sync);
+  renderCategories._syncPills = sync;
 }
 
 function mkCat(name, count, active = false, colorIdx = null) {
@@ -271,78 +543,237 @@ function mkCat(name, count, active = false, colorIdx = null) {
   btn.className = "cat" + (active ? " active" : "");
   btn.dataset.cat = name;
   btn.type = "button";
-  btn.setAttribute("role", "tab");
-  btn.setAttribute("aria-selected", active ? "true" : "false");
+  // These are filter toggles, not tabs: there are no tab panels and no
+  // arrow-key roving, so role="tab" was describing an interaction that
+  // doesn't exist.
+  btn.setAttribute("aria-pressed", active ? "true" : "false");
   if (colorIdx !== null) btn.dataset.catColor = colorIdx;
-  const dot = colorIdx !== null
-    ? `<span class="cat-dot" aria-hidden="true"></span>`
-    : "";
-  const display = name === "all" ? "All" : name.replace(/-/g, " ");
-  btn.innerHTML = `${dot}<span class="cat-name">${escapeHtml(display)}</span><span class="cnt">${count}</span>`;
+  const dot = colorIdx !== null ? `<span class="cat-dot" aria-hidden="true"></span>` : "";
+  btn.innerHTML =
+    `${dot}<span class="cat-name">${escapeHtml(categoryLabel(name))}</span>` +
+    `<span class="cnt">${count}</span>`;
   return btn;
 }
 
-function updateMetaActive() {
-  const el = $("#metaActive");
-  if (!el) return;
-  if (state.filterCategory) {
-    el.classList.remove("hidden");
-    el.innerHTML = `· ${escapeHtml(state.filterCategory.replace(/-/g, " "))}
-      <button type="button" aria-label="Clear category filter">×</button>`;
-    $("button", el).addEventListener("click", () => {
-      state.filterCategory = null;
-      state.recommendedSkillNames = null;
-      $$("#categories .cat").forEach((c) =>
-        c.classList.toggle("active", c.dataset.cat === "all")
-      );
-      renderCategoryBanner();
-      updateMetaActive();
-      render();
-    });
-  } else {
-    el.classList.add("hidden");
-    el.innerHTML = "";
+function syncCategoryButtons() {
+  const active = state.filterCategory ?? "all";
+  $$("#categories .cat").forEach((c) => {
+    const on = c.dataset.cat === active;
+    c.classList.toggle("active", on);
+    c.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  // If the active category is one of the hidden extras, expand so it's visible.
+  const activeBtn = $(`#categories .cat.active`);
+  if (activeBtn?.classList.contains("cat--extra") && !state.catsExpanded) {
+    $("#catToggle")?.click();
   }
 }
 
-function renderCategoryBanner() {
-  const banner = $("#categoryBanner");
-  const cat = state.filterCategory;
-  if (!cat) {
-    banner.classList.add("hidden");
+/* ==========================================================================
+   Orientation: what you're looking at, not just how many
+   ========================================================================== */
+
+function setSummary(html) {
+  const el = $("#resultSummary");
+  if (el) el.innerHTML = html;
+}
+
+function updateSummary(filtered) {
+  const total = state.manifest.count;
+  const n = filtered.length;
+  const cats = new Set(filtered.map((s) => s.category)).size;
+  const nStr = `<strong>${n.toLocaleString()}</strong>`;
+
+  if (!n) {
+    setSummary(`No matches. <strong>${total.toLocaleString()}</strong> skills in the full catalog.`);
+  } else if (state.recommendedSkillNames?.length) {
+    setSummary(`${nStr} skill${n === 1 ? "" : "s"} suggested for you, in the order the assistant ranked them.`);
+  } else if (state.filterCategory) {
+    setSummary(`${nStr} skill${n === 1 ? "" : "s"} in <strong>${escapeHtml(categoryLabel(state.filterCategory))}</strong>, of ${total.toLocaleString()} total.`);
+  } else if (state.filterRoute && state.filterText) {
+    setSummary(`${nStr} match${n === 1 ? "" : "es"} for &ldquo;${escapeHtml(state.filterText)}&rdquo; within <strong>${escapeHtml(routeById(state.filterRoute)?.label ?? "")}</strong>.`);
+  } else if (state.filterRoute) {
+    const r = routeById(state.filterRoute);
+    setSummary(`${nStr} skill${n === 1 ? "" : "s"} for <strong>${escapeHtml(r?.label ?? "")}</strong>, across ${cats} categories.`);
+  } else if (state.filterText) {
+    setSummary(`${nStr} match${n === 1 ? "" : "es"} for &ldquo;${escapeHtml(state.filterText)}&rdquo;, across ${cats} categor${cats === 1 ? "y" : "ies"}.`);
+  } else {
+    setSummary(
+      `The whole catalog: <strong>${total.toLocaleString()}</strong> skills across ` +
+      `<strong>${state.manifest.categories.length}</strong> categories. ` +
+      `Biggest are ${topCategoriesPhrase(3)}.`
+    );
+  }
+
+  renderActiveFilters();
+}
+
+function topCategoriesPhrase(n) {
+  const { counts_by_category } = state.manifest;
+  return [...state.manifest.categories]
+    .sort((a, b) => counts_by_category[b] - counts_by_category[a])
+    .slice(0, n)
+    .map((c) => `${categoryLabel(c)} (${counts_by_category[c]})`)
+    .join(", ");
+}
+
+function renderActiveFilters() {
+  const el = $("#activeFilters");
+  if (!el) return;
+  const chips = [];
+  if (state.filterRoute) {
+    chips.push({ kind: "route", label: routeById(state.filterRoute)?.label ?? "", clear: () => selectRoute(null) });
+  }
+  if (state.filterCategory) {
+    chips.push({
+      kind: "cat",
+      label: categoryLabel(state.filterCategory),
+      clear: () => { state.filterCategory = null; syncCategoryButtons(); render(); },
+    });
+  }
+  if (state.filterText) {
+    chips.push({
+      kind: "q",
+      label: `“${state.filterText}”`,
+      clear: () => { $("#search").value = ""; state.filterText = ""; $("#searchClear").classList.add("hidden"); render(); },
+    });
+  }
+  if (state.recommendedSkillNames?.length) {
+    chips.push({
+      kind: "rec",
+      label: `${state.recommendedSkillNames.length} suggested`,
+      clear: () => { state.recommendedSkillNames = null; render(); },
+    });
+  }
+
+  if (!chips.length) {
+    el.hidden = true;
+    el.innerHTML = "";
     return;
   }
-  const { repo, default_branch, counts_by_category } = state.manifest;
-  const count = counts_by_category[cat] ?? 0;
-  $("#catBannerName").textContent = cat;
-  $("#catBannerCount").textContent = count.toLocaleString();
 
+  el.hidden = false;
+  el.innerHTML =
+    `<span class="active-filters-label">Filtered by</span>` +
+    chips.map((c, i) =>
+      `<button class="chip" type="button" data-i="${i}">
+        ${escapeHtml(c.label)}
+        <span class="chip-x" aria-hidden="true">&times;</span>
+        <span class="sr-only">— remove this filter</span>
+      </button>`
+    ).join("") +
+    `<button class="chip chip--reset" type="button" data-reset>Clear all</button>` +
+    `<button class="chip chip--share" type="button" id="shareBtn">Copy link to this view</button>`;
+
+  $$(".chip[data-i]", el).forEach((btn) => {
+    btn.addEventListener("click", () => chips[Number(btn.dataset.i)].clear());
+  });
+  $("[data-reset]", el)?.addEventListener("click", resetAllFilters);
+  $("#shareBtn", el)?.addEventListener("click", () => copyShareUrl(location.href));
+}
+
+function resetAllFilters() {
+  $("#search").value = "";
+  $("#searchClear").classList.add("hidden");
+  state.filterText = "";
+  state.filterCategory = null;
+  state.filterRoute = null;
+  state.recommendedSkillNames = null;
+  syncRouteButtons();
+  syncCategoryButtons();
+  render();
+  focusResults();
+}
+
+/* ==========================================================================
+   Live selector panel — what you picked, and the command it produces
+   ========================================================================== */
+
+// Turns the current view into a single install.sh selector when one exists.
+// install.sh takes exactly one selector, so this is what makes "install this
+// whole view" a single line rather than N lines.
+function currentSelector() {
+  if (state.filterCategory) {
+    return { sel: state.filterCategory, kind: "category", dest: state.filterCategory };
+  }
+  if (state.filterRoute) return null; // spans several categories — no single selector
+  if (state.recommendedSkillNames?.length) return null;
+  if (state.filterText && /^[a-z0-9][a-z0-9-]*$/.test(state.filterText)) {
+    // install.sh globs match install_path only, while the search box also looks
+    // at descriptions. Count what the *command* would actually install, so the
+    // panel never promises a set the command wouldn't produce.
+    const globHits = state.manifest.skills.filter((s) =>
+      s.install_path.toLowerCase().includes(state.filterText)
+    ).length;
+    if (!globHits) return null;
+    return {
+      sel: `"*${state.filterText}*"`,
+      kind: "glob",
+      dest: `${state.filterText}-skills`,
+      globHits,
+    };
+  }
+  return null;
+}
+
+function renderSelectorPanel(filtered) {
+  const panel = $("#selectorPanel");
+  if (!panel) return;
+  const spec = currentSelector();
+
+  if (!spec || !filtered.length) {
+    panel.hidden = true;
+    return;
+  }
+
+  const { repo, default_branch } = state.manifest;
   const raw = `https://raw.githubusercontent.com/${repo}/${default_branch}`;
   const harnesses = activeHarnesses();
+
+  if (spec.kind === "category") {
+    $("#selectorPanelTitle").textContent =
+      `Install all ${filtered.length} in ${categoryLabel(state.filterCategory)}`;
+    $("#selectorPanelSub").innerHTML =
+      `One selector — the category name — stands in for every skill inside it.`;
+  } else {
+    const n = spec.globHits;
+    $("#selectorPanelTitle").textContent =
+      `Install the ${n} skill${n === 1 ? "" : "s"} whose path contains “${state.filterText}”`;
+    const extra = filtered.length - n;
+    $("#selectorPanelSub").innerHTML =
+      `A quoted glob matches install paths, so it covers ` +
+      `<code>*${escapeHtml(state.filterText)}*</code> in the path` +
+      (extra > 0
+        ? ` — not the ${extra} further result${extra === 1 ? "" : "s"} below that matched on description alone.`
+        : `.`);
+  }
+
   const variants = {
-    bash: harnesses.map((h) => `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${cat} -d ${h.destBash(cat)}`).join("\n"),
-    ps: harnesses.map((h) => `& ([scriptblock]::Create((irm ${raw}/install.ps1))) ${cat} -Dest ${h.destPs(cat)}`).join("\n"),
-    degit: harnesses.map((h) => `npx degit ${repo}/skills/${cat} ${h.destBash(cat)}`).join("\n"),
+    bash: harnesses.map((h) => `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${spec.sel} -d ${h.destBash(spec.dest)}`).join("\n"),
+    ps: harnesses.map((h) => `& ([scriptblock]::Create((irm ${raw}/install.ps1))) ${spec.sel} -Dest ${h.destPs(spec.dest)}`).join("\n"),
+    degit: spec.kind === "category"
+      ? harnesses.map((h) => `npx degit ${repo}/skills/${spec.sel} ${h.destBash(spec.dest)}`).join("\n")
+      : `# degit resolves one directory at a time, so a glob has no degit form.\n# Use the bash or PowerShell tab, or pick the skills individually.`,
   };
-  $$(".category-banner-code", banner).forEach((pre) => {
+  $$(".selector-panel-code", panel).forEach((pre) => {
     $("code", pre).textContent = variants[pre.dataset.variant];
   });
 
   const dlLink = $("#catBannerDownload");
   const dlSize = $("#catBannerDownloadSize");
-  const catZip = state.zips?.categories?.[cat];
+  const catZip = spec.kind === "category" ? state.zips?.categories?.[spec.sel] : null;
   if (catZip) {
     dlLink.href = zipHref(catZip);
-    dlLink.setAttribute("download", `${cat}.zip`);
+    dlLink.setAttribute("download", `${spec.sel}.zip`);
     dlSize.textContent = `· ${formatBytes(catZip.bytes)}`;
     dlLink.classList.remove("hidden");
   } else {
     dlLink.classList.add("hidden");
   }
 
-  bindTabs(banner, ".category-banner-tabs .tab", ".category-banner-code");
-  bindCopy(banner);
-  banner.classList.remove("hidden");
+  bindTabs(panel, ".selector-panel-tabs .tab", ".selector-panel-code");
+  bindCopy(panel);
+  panel.hidden = false;
 }
 
 /* ==========================================================================
@@ -353,121 +784,188 @@ function bindTabs(scope, tabSel, paneSel) {
   const tabs = $$(tabSel, scope);
   const panes = $$(paneSel, scope);
   tabs.forEach((tab) => {
+    tab.setAttribute("aria-pressed", tab.classList.contains("active") ? "true" : "false");
     if (tab._wired) return;
     tab._wired = true;
     tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.toggle("active", t === tab));
-      panes.forEach((p) =>
-        p.classList.toggle("hidden", p.dataset.variant !== tab.dataset.tab)
-      );
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      panes.forEach((p) => p.classList.toggle("hidden", p.dataset.variant !== tab.dataset.tab));
     });
   });
+}
+
+// navigator.clipboard fails on http:// origins and when the document isn't
+// focused. The old fallback told people to press Ctrl+C with nothing selected,
+// which copies nothing (and names the wrong key on a Mac). Select the text so
+// the instruction is actually true.
+async function copyText(text, sourceEl) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const node = sourceEl?.closest("pre")?.querySelector("code") ?? sourceEl;
+    if (node) {
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+    return false;
+  }
+}
+
+const COPY_FALLBACK_HINT = navigator.platform?.toLowerCase().includes("mac")
+  ? "Selected it — press ⌘C"
+  : "Selected it — press Ctrl+C";
+
+function flashButton(btn, labelEl, okText, failText, ok) {
+  const target = labelEl ?? btn;
+  const orig = target.textContent;
+  target.textContent = ok ? okText : failText;
+  btn.classList.toggle("copied", ok);
+  clearTimeout(btn._flashTimer);
+  btn._flashTimer = setTimeout(() => {
+    target.textContent = orig;
+    btn.classList.remove("copied");
+  }, 1600);
 }
 
 function bindCopy(scope) {
   $$(".copy", scope).forEach((btn) => {
     if (btn._wired) return;
     btn._wired = true;
-    btn.addEventListener("click", async () => {
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
       const target = btn.dataset.copyTarget
         ? document.querySelector(btn.dataset.copyTarget)
         : $("code", btn.parentElement);
-      const code = target?.textContent ?? "";
-      const orig = btn.textContent;
-      try {
-        await navigator.clipboard.writeText(code);
-        btn.classList.add("copied");
-        btn.textContent = "Copied";
-        setTimeout(() => {
-          btn.classList.remove("copied");
-          btn.textContent = orig;
-        }, 1400);
-      } catch {
-        btn.textContent = "Press Ctrl+C";
-        setTimeout(() => (btn.textContent = orig), 1400);
-      }
+      const ok = await copyText(target?.textContent ?? "", btn);
+      flashButton(btn, null, "Copied", COPY_FALLBACK_HINT, ok);
     });
   });
 }
 
 function bindGlobalCopy() {
-  // Static copy buttons rely on data-copy-target, so we wire them once.
-  bindCopy(document.querySelector(".hero"));
-  bindCopy(document.querySelector(".mcp-section"));
-}
-
-function bindHeroTabs() {
-  const tabs = $$(".hero .install-tabs .tab");
-  const codes = {
-    bash: $("#bashHero"),
-    ps: $("#psHero"),
-  };
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.toggle("active", t === tab));
-      Object.entries(codes).forEach(([key, el]) =>
-        el.classList.toggle("hidden", key !== tab.dataset.tab)
-      );
-    });
-  });
+  bindCopy($(".mcp-section"));
 }
 
 /* ==========================================================================
-   Render
+   Render — paged
    ========================================================================== */
 
-function render() {
-  const { skills, repo, default_branch } = state.manifest;
+function currentFiltered() {
+  const { skills } = state.manifest;
+  const routeSet = state.filterRoute
+    ? new Set(routeCats(routeById(state.filterRoute)))
+    : null;
+
   let filtered = skills.filter((s) => {
-    if (state.recommendedSkillNames?.length && !state.recommendedSkillNames.includes(s.name)) {
-      return false;
-    }
+    if (state.recommendedSkillNames?.length && !state.recommendedSkillNames.includes(s.name)) return false;
+    if (routeSet && !routeSet.has(s.category)) return false;
     if (state.filterCategory && s.category !== state.filterCategory) return false;
     if (!state.filterText) return true;
     const hay = `${s.name} ${s.install_path} ${s.description}`.toLowerCase();
     return hay.includes(state.filterText);
   });
 
-  filtered = state.recommendedSkillNames?.length
+  return state.recommendedSkillNames?.length
     ? sortRecommendedSkills(filtered)
     : sortSkills(filtered, state.sort);
+}
 
-  $("#visibleCount").textContent = filtered.length.toLocaleString();
-  updateMetaActive();
+function render() {
+  state.filtered = currentFiltered();
+  state.shown = 0;
+
+  updateSummary(state.filtered);
+  renderSelectorPanel(state.filtered);
 
   const grid = $("#grid");
   grid.innerHTML = "";
 
-  if (!filtered.length) {
+  if (!state.filtered.length) {
     grid.innerHTML = emptyStateHTML();
-    $("#resetFilters")?.addEventListener("click", () => {
-      $("#search").value = "";
-      $("#searchClear").classList.add("hidden");
-      state.filterText = "";
-      state.recommendedSkillNames = null;
-      state.filterCategory = null;
-      $$("#categories .cat").forEach((c) =>
-        c.classList.toggle("active", c.dataset.cat === "all")
-      );
-      renderCategoryBanner();
-      render();
-    });
+    $("#resetFilters")?.addEventListener("click", resetAllFilters);
+    $("#gridMore").hidden = true;
     updateUrl();
     updatePageTitle();
     return;
   }
 
+  appendPage();
+  updateUrl();
+  updatePageTitle();
+}
+
+function appendPage() {
+  const { repo, default_branch } = state.manifest;
   const tmpl = $("#cardTemplate");
+  const grid = $("#grid");
+  const slice = state.filtered.slice(state.shown, state.shown + PAGE_SIZE);
+
   const frag = document.createDocumentFragment();
-  filtered.forEach((skill, i) => {
+  slice.forEach((skill, i) => {
     const card = renderCard(skill, tmpl, repo, default_branch);
     // Stagger entrance for the first few cards only — feels smooth, not slow.
-    if (i < 12) card.style.animationDelay = `${i * 30}ms`;
+    if (state.shown === 0 && i < 12) card.style.animationDelay = `${i * 30}ms`;
     frag.appendChild(card);
   });
   grid.appendChild(frag);
-  updateUrl();
-  updatePageTitle();
+  state.shown += slice.length;
+
+  updateShowMore();
+  return slice.length;
+}
+
+function updateShowMore() {
+  const wrap = $("#gridMore");
+  const btn = $("#showMore");
+  const note = $("#gridMoreNote");
+  const remaining = state.filtered.length - state.shown;
+
+  if (remaining <= 0) {
+    btn.hidden = true;
+    wrap.hidden = state.filtered.length <= PAGE_SIZE;
+    note.textContent = wrap.hidden
+      ? ""
+      : `That’s all ${state.filtered.length.toLocaleString()} of them.`;
+    return;
+  }
+
+  wrap.hidden = false;
+  btn.hidden = false;
+  const next = Math.min(PAGE_SIZE, remaining);
+  btn.textContent = `Show ${next} more`;
+  note.textContent = `Showing ${state.shown.toLocaleString()} of ${state.filtered.length.toLocaleString()} · ${remaining.toLocaleString()} to go`;
+}
+
+function bindShowMore() {
+  $("#showMore")?.addEventListener("click", () => {
+    const firstNew = state.shown;
+    const added = appendPage();
+    if (!added) return;
+    // Move focus to the first newly revealed card so keyboard users continue
+    // from where the list grew instead of being dropped back at the top.
+    const cards = $$("#grid .card .card-open");
+    cards[firstNew]?.focus({ preventScroll: true });
+    cards[firstNew]?.scrollIntoView({ block: "center", behavior: "smooth" });
+  });
+}
+
+// After a filter change the grid content is entirely new. Send focus to the
+// summary line so a screen reader lands on "24 skills in Agent Eval" instead of
+// staying on a control whose surroundings silently changed.
+function focusResults() {
+  const el = $("#resultSummary");
+  if (!el) return;
+  el.setAttribute("tabindex", "-1");
+  el.focus({ preventScroll: true });
+  $("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function sortSkills(skills, mode) {
@@ -477,9 +975,7 @@ function sortSkills(skills, mode) {
       arr.sort((a, b) => b.name.localeCompare(a.name));
       break;
     case "category":
-      arr.sort((a, b) =>
-        a.category.localeCompare(b.category) || a.name.localeCompare(b.name)
-      );
+      arr.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
       break;
     case "name":
     default:
@@ -498,124 +994,195 @@ function renderCard(skill, tmpl, repo, branch) {
   node.id = `skill-${slugify(skill.install_path)}`;
   node.dataset.skillName = skill.name;
   node.dataset.skillPath = skill.install_path;
-  $(".card-name", node).textContent = skill.name;
+  node.dataset.catColor = state.catColor.get(skill.category) ?? 0;
 
-  const colorIdx = state.catColor.get(skill.category) ?? 0;
-  node.dataset.catColor = colorIdx;
+  // The title is the card's one primary action: it opens the detail panel, and
+  // its ::after covers the whole card so the entire surface is clickable while
+  // costing a single tab stop.
+  const open = $(".card-open", node);
+  open.textContent = skill.name;
+  open.setAttribute("aria-label", `${skill.name} — open details`);
+  open.addEventListener("click", () => openSkillDetail(skill));
 
-  const cat = $(".card-category", node);
-  $(".card-category-name", cat).textContent = skill.category.replace(/-/g, " ");
-  cat.href = `#cat=${encodeURIComponent(skill.category)}`;
-  cat.setAttribute("aria-label", `Filter by category ${skill.category}`);
-  cat.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const btn = $(`.cat[data-cat="${cssEscape(skill.category)}"]`);
-    if (btn) btn.click();
-    document.querySelector("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
+  $(".card-category-name", node).textContent = categoryLabel(skill.category, { lower: true });
 
-  $(".card-desc", node).textContent = skill.description;
+  const desc = $(".card-desc", node);
+  desc.textContent = firstSentence(skill.description);
 
   const variants = installCommands(skill, repo, branch);
-  for (const [variant, code] of Object.entries(variants)) {
-    const pre = $(`pre[data-variant="${variant}"]`, node);
-    if (pre) $("code", pre).textContent = code;
-  }
 
-  const tabs = $$(".install-tabs .tab", node);
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.toggle("active", t === tab));
-      $$(".card-install pre", node).forEach((pre) =>
-        pre.classList.toggle("hidden", pre.dataset.variant !== tab.dataset.tab)
-      );
-    });
-  });
-
-  $$(".copy", node).forEach((btn) => {
-    btn.addEventListener("click", async (e) => {
-      e.stopPropagation();
-      const code = $("code", btn.parentElement).textContent;
-      const orig = btn.textContent;
-      try {
-        await navigator.clipboard.writeText(code);
-        btn.classList.add("copied");
-        btn.textContent = "Copied";
-        setTimeout(() => {
-          btn.classList.remove("copied");
-          btn.textContent = orig;
-        }, 1400);
-      } catch {
-        btn.textContent = "Press Ctrl+C";
-        setTimeout(() => (btn.textContent = orig), 1400);
-      }
-    });
-  });
-
-  // Quick-copy CTA: copies the bash variant directly.
   const quick = $(".card-quick-copy", node);
   const quickLabel = $(".card-quick-copy-label", quick);
+  quick.title = `Copy the ${activeHarnesses().map((h) => h.label).join(" + ")} install command`;
   quick.addEventListener("click", async (e) => {
     e.stopPropagation();
-    const orig = quickLabel.textContent;
-    try {
-      await navigator.clipboard.writeText(variants.bash);
-      quick.classList.add("copied");
-      quickLabel.textContent = "Copied!";
-      setTimeout(() => {
-        quick.classList.remove("copied");
-        quickLabel.textContent = orig;
-      }, 1400);
-    } catch {
-      quickLabel.textContent = "Press Ctrl+C";
-      setTimeout(() => (quickLabel.textContent = orig), 1400);
-    }
+    const ok = await copyText(variants.bash, quick);
+    flashButton(quick, quickLabel, "Copied", "Couldn’t copy", ok);
+    showToast(ok ? `Install command copied — paste it in your terminal` : COPY_FALLBACK_HINT);
   });
 
-  // Open the card on Enter / Space when the article itself is focused.
-  node.addEventListener("keydown", (e) => {
-    if (e.target !== node) return;
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      const details = $(".card-install", node);
-      details.open = !details.open;
-    }
-  });
-
-  const src = $(".card-source", node);
-  src.href = `https://github.com/${repo}/blob/${branch}/${skill.path}/SKILL.md`;
-  src.setAttribute("aria-label", `View SKILL.md for ${skill.name} on GitHub`);
-
-  $(".card-share", node)?.addEventListener("click", (e) => {
+  const pick = $(".card-pick", node);
+  syncPickButton(pick, skill.install_path);
+  pick.addEventListener("click", (e) => {
     e.stopPropagation();
-    copyShareUrl(getSkillShareUrl(skill));
+    togglePick(skill.install_path);
   });
-
-  $(".card-read", node)?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    openSkillDetail(skill);
-  });
-
-  const dl = $(".card-download", node);
-  const dlSize = $(".card-download-size", node);
-  const zip = state.zips?.skills?.[skill.install_path];
-  if (zip) {
-    dl.href = zipHref(zip);
-    dl.setAttribute("download", `${skill.name}.zip`);
-    dlSize.textContent = `· ${formatBytes(zip.bytes)}`;
-  } else {
-    dl.href = `https://download-directory.github.io/?url=${encodeURIComponent(
-      `https://github.com/${repo}/tree/${branch}/${skill.path}`
-    )}`;
-    dl.removeAttribute("download");
-    dl.target = "_blank";
-    dl.rel = "noopener";
-    dlSize.textContent = "";
-    dl.title = "Download via download-directory.github.io";
-  }
 
   return node;
+}
+
+// Card descriptions come from SKILL.md frontmatter and run to several hundred
+// words. One sentence is enough to decide whether to open the card; the full
+// text is in the detail panel.
+function firstSentence(text) {
+  const clean = String(text ?? "").replace(/\s+/g, " ").trim();
+  const cut = clean.search(/\.\s|\.$|:\s—|\n/);
+  const head = cut > 40 ? clean.slice(0, cut + 1) : clean;
+  return head.length > 180 ? `${head.slice(0, 177).trimEnd()}…` : head;
+}
+
+/* ==========================================================================
+   Shortlist ("picks")
+   ========================================================================== */
+
+function savePicks() {
+  try { localStorage.setItem(PICKS_KEY, JSON.stringify(state.picks)); } catch {}
+}
+
+function togglePick(installPath) {
+  const i = state.picks.indexOf(installPath);
+  if (i === -1) state.picks.push(installPath);
+  else state.picks.splice(i, 1);
+  savePicks();
+  $$(`.card[data-skill-path="${cssEscape(installPath)}"] .card-pick`).forEach((b) =>
+    syncPickButton(b, installPath)
+  );
+  const sdPick = $(".sd-pick");
+  if (sdPick && sdPick.dataset.path === installPath) syncPickButton(sdPick, installPath, true);
+  renderTray();
+}
+
+function syncPickButton(btn, installPath, isDetail = false) {
+  const on = state.picks.includes(installPath);
+  btn.classList.toggle("picked", on);
+  btn.setAttribute("aria-pressed", on ? "true" : "false");
+  const label = $(isDetail ? ".sd-pick-label" : ".card-pick-label", btn);
+  if (label) label.textContent = on ? (isDetail ? "In your picks" : "Added") : (isDetail ? "Add to picks" : "Add");
+  btn.title = on ? "Remove from your picks" : "Add to your picks and install them together";
+}
+
+function skillByPath(p) {
+  return state.manifest?.skills.find((s) => s.install_path === p) ?? null;
+}
+
+function renderTray() {
+  const tray = $("#shortlistTray");
+  if (!tray) return;
+  const n = state.picks.length;
+  if (!n) {
+    tray.hidden = true;
+    $("#trayPanel").hidden = true;
+    $("#trayOpen").setAttribute("aria-expanded", "false");
+    document.body.classList.remove("has-tray");
+    return;
+  }
+
+  tray.hidden = false;
+  document.body.classList.add("has-tray");
+  $("#trayCount").textContent = n;
+  $("#trayLabel").textContent = n === 1 ? "skill picked" : "skills picked";
+
+  $("#trayChips").innerHTML = state.picks
+    .map((p) => {
+      const s = skillByPath(p);
+      return `<button class="tray-chip" type="button" data-path="${escapeHtml(p)}" title="Remove ${escapeHtml(s?.name ?? p)}">
+        ${escapeHtml(s?.name ?? p)}<span class="chip-x" aria-hidden="true">&times;</span>
+        <span class="sr-only">— remove from picks</span>
+      </button>`;
+    })
+    .join("");
+  $$("#trayChips .tray-chip").forEach((b) =>
+    b.addEventListener("click", () => togglePick(b.dataset.path))
+  );
+
+  renderTrayCommand();
+}
+
+// install.sh accepts exactly one selector, so an arbitrary shortlist is N
+// commands. When every pick happens to sit in one category, or shares a
+// distinctive path fragment, a single selector does the job instead — which is
+// the whole point of the selector concept.
+function collapsePicks(paths) {
+  if (paths.length < 2) return null;
+  const cats = new Set(paths.map((p) => p.split("/")[0]));
+  if (cats.size === 1) {
+    const cat = [...cats][0];
+    const total = state.manifest.counts_by_category[cat] ?? 0;
+    if (total === paths.length) {
+      return { sel: cat, dest: cat, why: `All ${paths.length} picks are every skill in ${categoryLabel(cat)}.` };
+    }
+  }
+  return null;
+}
+
+function renderTrayCommand() {
+  const { repo, default_branch } = state.manifest;
+  const raw = `https://raw.githubusercontent.com/${repo}/${default_branch}`;
+  const harnesses = activeHarnesses();
+  const paths = state.picks;
+
+  $("#trayPanelCount").textContent = paths.length;
+
+  const collapsed = collapsePicks(paths);
+  const sub = $("#trayPanelSub");
+
+  let bash, ps;
+  if (collapsed) {
+    sub.textContent = `${collapsed.why} One selector covers them all.`;
+    bash = harnesses.map((h) => `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- ${collapsed.sel} -d ${h.destBash(collapsed.dest)}`).join("\n");
+    ps = harnesses.map((h) => `& ([scriptblock]::Create((irm ${raw}/install.ps1))) ${collapsed.sel} -Dest ${h.destPs(collapsed.dest)}`).join("\n");
+  } else {
+    sub.textContent =
+      `install.sh takes one selector per run, so this is one line per skill. ` +
+      `Paste the whole block — it runs top to bottom.`;
+    bash = harnesses
+      .flatMap((h) => paths.map((p) => `curl -fsSL ${raw}/install.sh | bash -s -- ${p} -d ${h.destBash(p.split("/").pop())}`))
+      .join("\n");
+    ps = harnesses
+      .flatMap((h) => paths.map((p) => `& ([scriptblock]::Create((irm ${raw}/install.ps1))) ${p} -Dest ${h.destPs(p.split("/").pop())}`))
+      .join("\n");
+  }
+
+  const panel = $("#trayPanel");
+  $$(".tray-code", panel).forEach((pre) => {
+    $("code", pre).textContent = pre.dataset.variant === "bash" ? bash : ps;
+  });
+  bindTabs(panel, ".tray-panel-tabs .tab", ".tray-code");
+  bindCopy(panel);
+}
+
+function bindTray() {
+  $("#trayClear")?.addEventListener("click", () => {
+    const n = state.picks.length;
+    state.picks = [];
+    savePicks();
+    $$(".card-pick").forEach((b) => {
+      const path = b.closest(".card")?.dataset.skillPath;
+      if (path) syncPickButton(b, path);
+    });
+    const sdPick = $(".sd-pick");
+    if (sdPick?.dataset.path) syncPickButton(sdPick, sdPick.dataset.path, true);
+    renderTray();
+    showToast(`Cleared ${n} pick${n === 1 ? "" : "s"}`);
+  });
+
+  $("#trayOpen")?.addEventListener("click", () => {
+    const panel = $("#trayPanel");
+    const open = panel.hidden;
+    panel.hidden = !open;
+    $("#trayOpen").setAttribute("aria-expanded", open ? "true" : "false");
+    $("#trayOpen").textContent = open ? "Hide the command" : "Get the command";
+  });
 }
 
 /* ==========================================================================
@@ -639,9 +1206,7 @@ function getPrimaryHarness() {
 }
 
 function activeHarnesses() {
-  return state.selectedHarnesses
-    .map((id) => HARNESSES.find((h) => h.id === id))
-    .filter(Boolean);
+  return state.selectedHarnesses.map((id) => HARNESSES.find((h) => h.id === id)).filter(Boolean);
 }
 
 function installCommands(skill, repo, branch) {
@@ -680,9 +1245,8 @@ async function fetchStarCount(repo) {
     const data = await res.json();
     const stars = data.stargazers_count;
     if (typeof stars !== "number") return;
-    el.textContent = formatStars(stars);
-    el.style.cssText = "display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:999px;background:var(--bg-elev-2);color:var(--text-faint);font-size:11.5px;font-weight:600;font-variant-numeric:tabular-nums;";
     el.innerHTML = `<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>${formatStars(stars)}`;
+    el.classList.add("is-loaded");
   } catch {
     // intentionally ignored — non-critical
   }
@@ -705,11 +1269,9 @@ function findSkill(ref) {
 
 function setAllCategoryActive() {
   state.filterCategory = null;
-  $$("#categories .cat").forEach((c) =>
-    c.classList.toggle("active", c.dataset.cat === "all")
-  );
-  renderCategoryBanner();
-  updateMetaActive();
+  state.filterRoute = null;
+  syncRouteButtons();
+  syncCategoryButtons();
 }
 
 function highlightSkillCard(skillName) {
@@ -757,7 +1319,7 @@ function filterToSkills(refs) {
   clearBtn?.classList.add("hidden");
   setAllCategoryActive();
   render();
-  document.querySelector("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  $("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
   return true;
 }
 
@@ -772,13 +1334,15 @@ window.skillsBrowser = {
    ========================================================================== */
 
 function renderHarnesses() {
-  const bar = document.getElementById("harnessBar");
+  const bar = $("#harnessBar");
   if (!bar) return;
-  bar.innerHTML = HARNESSES.map((h) =>
-    `<button class="harness${state.selectedHarnesses.includes(h.id) ? " active" : ""}"
-             type="button" data-harness-id="${h.id}"
-             aria-pressed="${state.selectedHarnesses.includes(h.id) ? "true" : "false"}">${escapeHtml(h.label)}</button>`
-  ).join("");
+  bar.innerHTML = HARNESSES.map((h) => {
+    const on = state.selectedHarnesses.includes(h.id);
+    return `<button class="harness${on ? " active" : ""}" type="button"
+             data-harness-id="${h.id}" aria-pressed="${on ? "true" : "false"}"
+             title="Install paths for ${escapeHtml(h.label)}">${escapeHtml(h.label)}</button>`;
+  }).join("");
+
   bar.addEventListener("click", (e) => {
     const btn = e.target.closest(".harness");
     if (!btn) return;
@@ -788,6 +1352,9 @@ function renderHarnesses() {
       state.selectedHarnesses.push(id);
     } else if (state.selectedHarnesses.length > 1) {
       state.selectedHarnesses.splice(idx, 1);
+    } else {
+      showToast("Keep at least one tool selected — the commands need a destination.");
+      return;
     }
     localStorage.setItem(HARNESS_KEY, JSON.stringify(state.selectedHarnesses));
     $$(".harness", bar).forEach((b) => {
@@ -801,26 +1368,10 @@ function renderHarnesses() {
 
 function onHarnessChange() {
   render();
-  renderCategoryBanner();
-  updateHeroCommands();
+  updateAnatomy(currentAnatomyKind());
+  if (state.picks.length) renderTrayCommand();
+  refreshOpenDetailInstall();
   window.skillsBrowser.selectedHarnesses = [...state.selectedHarnesses];
-}
-
-function updateHeroCommands() {
-  if (!state.manifest) return;
-  const { repo, default_branch } = state.manifest;
-  const raw = `https://raw.githubusercontent.com/${repo}/${default_branch}`;
-  const primary = getPrimaryHarness();
-  const bashEl = document.querySelector("#bashHero code");
-  const psEl = document.querySelector("#psHero code");
-  if (bashEl) {
-    bashEl.textContent =
-      `curl -fsSL ${raw}/install.sh \\\n  | bash -s -- <selector> -d ${primary.destBash("<name>")}`;
-  }
-  if (psEl) {
-    psEl.textContent =
-      `& ([scriptblock]::Create((irm ${raw}/install.ps1))) <selector> -Dest ${primary.destPs("<name>")}`;
-  }
 }
 
 /* ==========================================================================
@@ -830,6 +1381,7 @@ function updateHeroCommands() {
 function updateUrl() {
   const params = new URLSearchParams();
   if (state.filterCategory) params.set("cat", state.filterCategory);
+  if (state.filterRoute) params.set("route", state.filterRoute);
   if (state.filterText) params.set("q", state.filterText);
   if (state.recommendedSkillNames?.length) {
     const paths = state.recommendedSkillNames.map((name) => {
@@ -839,33 +1391,32 @@ function updateUrl() {
     params.set("skills", paths.join(","));
   }
   const qs = params.toString();
-  const newUrl = qs ? `${location.pathname}?${qs}` : location.pathname;
-  history.replaceState(null, "", newUrl);
-
-  const shareBtn = document.getElementById("shareBtn");
-  if (shareBtn) shareBtn.classList.toggle("hidden", !qs);
+  history.replaceState(null, "", qs ? `${location.pathname}?${qs}` : location.pathname);
 }
 
 function applyUrlState() {
   const params = new URLSearchParams(location.search);
   const catParam = params.get("cat");
+  const routeParam = params.get("route");
   const qParam = params.get("q");
   const skillParam = params.get("skill");
   const skillsParam = params.get("skills");
 
+  if (routeParam && routeById(routeParam)) {
+    state.filterRoute = routeParam;
+    syncRouteButtons();
+  }
+
   if (catParam && state.manifest.categories.includes(catParam)) {
     state.filterCategory = catParam;
-    $$("#categories .cat").forEach((c) =>
-      c.classList.toggle("active", c.dataset.cat === catParam)
-    );
-    renderCategoryBanner();
-    updateMetaActive();
+    state.filterRoute = null;
+    syncRouteButtons();
+    syncCategoryButtons();
   }
 
   if (skillsParam) {
     const paths = skillsParam.split(",").map((s) => s.trim()).filter(Boolean);
-    filterToSkills(paths);
-    return;
+    if (filterToSkills(paths)) return;
   }
 
   if (skillParam) {
@@ -880,7 +1431,7 @@ function applyUrlState() {
     state.filterText = qParam.toLowerCase();
     const input = $("#search");
     if (input) input.value = qParam;
-    if (qParam) $("#searchClear")?.classList.remove("hidden");
+    $("#searchClear")?.classList.remove("hidden");
   }
 
   render();
@@ -889,7 +1440,7 @@ function applyUrlState() {
     const skill = findSkill(skillParam);
     if (skill) {
       setTimeout(() => {
-        document.querySelector("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        $("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
         highlightSkillCard(skill.name);
       }, 150);
     }
@@ -906,31 +1457,23 @@ function showToast(msg) {
     toast = document.createElement("div");
     toast.id = "shareToast";
     toast.className = "share-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
     document.body.appendChild(toast);
   }
   toast.textContent = msg;
   toast.classList.add("visible");
   clearTimeout(toast._toastTimer);
-  toast._toastTimer = setTimeout(() => toast.classList.remove("visible"), 2200);
+  toast._toastTimer = setTimeout(() => toast.classList.remove("visible"), 2600);
 }
 
 async function copyShareUrl(url) {
-  try {
-    await navigator.clipboard.writeText(url);
-    showToast("Link copied!");
-  } catch {
-    showToast("Press Ctrl+C to copy");
-  }
+  const ok = await copyText(url);
+  showToast(ok ? "Link copied — it reopens this exact view" : COPY_FALLBACK_HINT);
 }
 
 function getSkillShareUrl(skill) {
   return `${location.origin}${location.pathname}?skill=${encodeURIComponent(skill.install_path)}`;
-}
-
-function bindShareButton() {
-  const btn = document.getElementById("shareBtn");
-  if (!btn) return;
-  btn.addEventListener("click", () => copyShareUrl(location.href));
 }
 
 /* ==========================================================================
@@ -940,13 +1483,43 @@ function bindShareButton() {
 function updatePageTitle() {
   let title = "Skills — Agent Skills for Claude Code, Cursor, Copilot & More";
   if (state.filterCategory) {
-    title = `${state.filterCategory.replace(/-/g, " ")} — Skills`;
+    title = `${categoryLabel(state.filterCategory)} — Skills`;
+  } else if (state.filterRoute) {
+    title = `${routeById(state.filterRoute)?.label ?? ""} — Skills`;
   } else if (state.filterText) {
     title = `"${state.filterText}" — Skills`;
   } else if (state.recommendedSkillNames?.length) {
     title = `${state.recommendedSkillNames.length} recommended skills — Skills`;
   }
   document.title = title;
+}
+
+
+// Category slugs render as display labels in several places. Naive
+// slug.replace(/-/g," ") plus CSS text-transform:capitalize produced "Api
+// Backend", "Cloud Aws", "Llm Tooling" — so casing is resolved here instead and
+// the CSS transform is off.
+const CATEGORY_ACRONYMS = {
+  api: "API", aws: "AWS", ui: "UI", ux: "UX", llm: "LLM", mcp: "MCP",
+  ai: "AI", seo: "SEO", qa: "QA", devops: "DevOps", dotnet: ".NET",
+};
+const CATEGORY_MINOR_WORDS = new Set(["and", "to", "of", "for"]);
+
+// `lower` keeps the quieter all-lowercase tag style used on cards while still
+// letting acronyms through as "cloud AWS" rather than "cloud aws".
+function categoryLabel(slug, { lower = false } = {}) {
+  if (!slug) return "";
+  if (slug === "all") return "All";
+  return slug
+    .split("-")
+    .map((word, i) => {
+      const key = word.toLowerCase();
+      if (CATEGORY_ACRONYMS[key]) return CATEGORY_ACRONYMS[key];
+      if (lower) return key;
+      if (i > 0 && CATEGORY_MINOR_WORDS.has(key)) return key;
+      return key.charAt(0).toUpperCase() + key.slice(1);
+    })
+    .join(" ");
 }
 
 function escapeHtml(str) {
@@ -966,43 +1539,94 @@ function slugify(s) {
   return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
+
 /* ==========================================================================
-   Skill Detail Panel
+   Skill Detail Panel — the card's primary action lands here
    ========================================================================== */
 
 const sdCache = new Map();
+let sdReturnFocus = null;
+let sdSkill = null;
 
 function openSkillDetail(skill) {
   const panel = document.getElementById("skillDetail");
   if (!panel) return;
 
+  sdSkill = skill;
+  sdReturnFocus = document.activeElement;
+
   const { repo, default_branch } = state.manifest;
 
-  // Populate header
   const nameEl = panel.querySelector(".sd-name");
   const catEl = panel.querySelector(".sd-cat-badge");
   const ghLink = panel.querySelector(".sd-gh-link");
   if (nameEl) nameEl.textContent = skill.name;
   if (catEl) {
-    catEl.textContent = skill.category.replace(/-/g, " ");
+    catEl.textContent = categoryLabel(skill.category);
     catEl.dataset.catColor = state.catColor.get(skill.category) ?? 0;
   }
   if (ghLink) ghLink.href = `https://github.com/${repo}/blob/${default_branch}/${skill.path}/SKILL.md`;
 
-  // Reset content areas
+  renderDetailInstall(skill, repo, default_branch);
+
   const contentEl = panel.querySelector(".sd-content");
   const filesEl = panel.querySelector(".sd-files");
   if (contentEl) contentEl.innerHTML = sdLoadingHtml();
   if (filesEl) filesEl.innerHTML = "";
 
-  // Show
   panel.setAttribute("aria-hidden", "false");
   panel.classList.add("open");
   document.getElementById("skillDetailOverlay")?.classList.add("visible");
   document.body.classList.add("sd-open");
-  panel.focus();
+  // Focus the close button rather than the panel: it is the reliable escape,
+  // and it puts the keyboard user at the start of the panel's tab order.
+  panel.querySelector("#skillDetailClose")?.focus();
 
   fetchSkillDetail(skill, repo, default_branch);
+}
+
+function renderDetailInstall(skill, repo, branch) {
+  const panel = document.getElementById("skillDetail");
+  const variants = installCommands(skill, repo, branch);
+  panel.querySelectorAll(".sd-install-code").forEach((pre) => {
+    pre.querySelector("code").textContent = variants[pre.dataset.variant] ?? "";
+  });
+
+  const pick = panel.querySelector(".sd-pick");
+  if (pick) {
+    pick.dataset.path = skill.install_path;
+    syncPickButton(pick, skill.install_path, true);
+  }
+
+  const dl = panel.querySelector(".sd-download");
+  const dlSize = panel.querySelector(".sd-download-size");
+  const zip = state.zips?.skills?.[skill.install_path];
+  if (zip) {
+    dl.href = zipHref(zip);
+    dl.setAttribute("download", `${skill.name}.zip`);
+    dl.removeAttribute("target");
+    dlSize.textContent = `· ${formatBytes(zip.bytes)}`;
+    dl.title = `Download ${skill.name} as a .zip`;
+  } else {
+    dl.href = `https://download-directory.github.io/?url=${encodeURIComponent(
+      `https://github.com/${repo}/tree/${branch}/${skill.path}`
+    )}`;
+    dl.removeAttribute("download");
+    dl.target = "_blank";
+    dl.rel = "noopener";
+    dlSize.textContent = "";
+    dl.title = "Download via download-directory.github.io";
+  }
+
+  bindTabs(panel, ".sd-install-tabs .tab", ".sd-install-code");
+  bindCopy(panel.querySelector(".sd-install"));
+}
+
+// Harness changes rewrite every install path, so an open panel has to catch up.
+function refreshOpenDetailInstall() {
+  const panel = document.getElementById("skillDetail");
+  if (!panel?.classList.contains("open") || !sdSkill) return;
+  renderDetailInstall(sdSkill, state.manifest.repo, state.manifest.default_branch);
 }
 
 function closeSkillDetail() {
@@ -1012,14 +1636,47 @@ function closeSkillDetail() {
   panel.classList.remove("open");
   document.getElementById("skillDetailOverlay")?.classList.remove("visible");
   document.body.classList.remove("sd-open");
+  // Return focus to whatever opened the panel so the keyboard position in the
+  // grid is not lost.
+  if (sdReturnFocus?.isConnected) sdReturnFocus.focus({ preventScroll: true });
+  sdReturnFocus = null;
+  sdSkill = null;
 }
 
 function bindSkillDetail() {
+  const panel = document.getElementById("skillDetail");
   document.getElementById("skillDetailClose")?.addEventListener("click", closeSkillDetail);
   document.getElementById("skillDetailOverlay")?.addEventListener("click", closeSkillDetail);
+
+  panel?.querySelector(".sd-pick")?.addEventListener("click", (e) => {
+    const path = e.currentTarget.dataset.path;
+    if (path) togglePick(path);
+  });
+
+  panel?.querySelector(".sd-share")?.addEventListener("click", () => {
+    if (sdSkill) copyShareUrl(getSkillShareUrl(sdSkill));
+  });
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && document.getElementById("skillDetail")?.classList.contains("open")) {
+    if (!panel?.classList.contains("open")) return;
+    if (e.key === "Escape") {
       closeSkillDetail();
+      return;
+    }
+    // The panel is aria-modal; keep Tab inside it.
+    if (e.key !== "Tab") return;
+    const f = [...panel.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]), textarea, select, [tabindex]:not([tabindex="-1"])'
+    )].filter((el) => el.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0];
+    const last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   });
 }
@@ -1356,5 +2013,6 @@ function sdMdToHtml(md) {
 
   return out.join("\n");
 }
+
 
 init();

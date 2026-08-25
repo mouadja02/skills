@@ -1,6 +1,6 @@
-﻿---
+---
 name: using-agent-skills
-description: Discovers and invokes agent skills
+description: Use when unsure which engineering-workflow skill applies to the task at hand. Routes from development phase — idea, spec, plan, implement, test, review, ship — to the right skill, and shows how they chain together across a feature or bugfix.
 ---
 
 # Using Agent Skills

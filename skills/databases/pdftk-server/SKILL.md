@@ -1,4 +1,4 @@
-﻿---
+---
 name: pdftk-server
 description: '— using the command-line tool pdftk (PDFtk Server) for working with PDF files'
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: planning-oracle-to-postgres-migration-integration-testing
 description: Oracle → PostgreSQL integration test plan for .NET data access artifacts
 ---

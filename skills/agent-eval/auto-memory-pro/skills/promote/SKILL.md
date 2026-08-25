@@ -1,5 +1,5 @@
 ---
-name: promote
+name: "auto-memory-promote"
 description: "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement."
 command: /si:promote
 source: "https://github.com/alirezarezvani/claude-skills"

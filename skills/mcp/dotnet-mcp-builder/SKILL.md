@@ -1,4 +1,4 @@
-﻿---
+---
 name: dotnet-mcp-builder
 description: MCP servers in C#/.NET — tools, prompts, resources, STDIO/HTTP transports, MCP Apps, OAuth, routing
 ---

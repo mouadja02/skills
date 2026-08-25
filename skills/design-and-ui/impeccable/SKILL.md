@@ -1,4 +1,4 @@
-﻿---
+---
 name: impeccable
 description: UI critique, audit, polish — websites, dashboards, components, onboarding, empty states
 argument-hint: "[{{command_hint}}] [target]"

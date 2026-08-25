@@ -1,6 +1,6 @@
-﻿---
+---
 name: security-and-hardening
-description: Hardens code against vulnerabilities
+description: Use when building anything that accepts user input, implementing authentication or authorization, storing or transmitting sensitive data, integrating external APIs, or adding file uploads, webhooks, or callbacks. Covers input validation, secrets, authz checks, and PII and payment handling.
 ---
 
 # Security and Hardening

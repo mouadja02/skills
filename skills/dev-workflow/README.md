@@ -33,7 +33,7 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`github-release`](github-release/SKILL.md) | `dev-workflow/github-release` | Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates. |
 | [`make-repo-contribution`](make-repo-contribution/SKILL.md) | `dev-workflow/make-repo-contribution` | Repo contribution — read guidance, file issue, branch, commit, PR workflow |
 | [`msstore-cli`](msstore-cli/SKILL.md) | `dev-workflow/msstore-cli` | Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store |
-| [`my-issues`](my-issues/SKILL.md) | `dev-workflow/my-issues` | List my issues in the current repository |
+| [`my-issues`](my-issues/SKILL.md) | `dev-workflow/my-issues` | Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed. |
 | [`my-pull-requests`](my-pull-requests/SKILL.md) | `dev-workflow/my-pull-requests` | List my pull requests in the current repository |
 | [`npm`](npm/SKILL.md) | `dev-workflow/npm` | npm registry ops: login, whoami, package availability, publish; 1Password tmux auth. |
 | [`pr-dashboard`](pr-dashboard/SKILL.md) | `dev-workflow/pr-dashboard` | Open a GitHub PR dashboard in the browser. Use when the user asks to see their pull requests, open the PR dashboard, show PRs for a date range, or check PR status. Trigger phrases include "show my PRs", "open PR dashboard", "pull request... |

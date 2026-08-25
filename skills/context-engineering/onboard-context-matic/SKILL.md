@@ -1,4 +1,4 @@
-﻿---
+---
 name: onboard-context-matic
 description: Context-matic MCP server tour — APIs, endpoints, capabilities walkthrough
 ---

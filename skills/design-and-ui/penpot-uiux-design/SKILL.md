@@ -1,4 +1,4 @@
-﻿---
+---
 name: penpot-uiux-design
 description: Penpot UI/UX design via MCP — frames, auto-layout, components, styles, prototype
 ---

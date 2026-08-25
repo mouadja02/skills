@@ -1,5 +1,5 @@
-﻿---
-name: ckm:ui-styling
+---
+name: ui-styling
 description: Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs
 argument-hint: "[component or layout]"
 license: MIT

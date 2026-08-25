@@ -1,4 +1,4 @@
-﻿---
+---
 name: chrome-devtools
 description: 'Expert-level browser automation, debugging, and performance analysis using Chrome DevTools MCP'
 license: MIT

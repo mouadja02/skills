@@ -1,6 +1,6 @@
 ---
 name: qdrant-sliding-time-window
-description: "Guides sliding time window scaling in Qdrant"
+description: Use when Qdrant holds time-series or recency-bounded data and old points should age out. Covers sliding time-window collection patterns so storage stays bounded.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---

@@ -1,6 +1,6 @@
-﻿---
+---
 name: code-simplification
-description: Simplifies code for clarity
+description: Use when working code feels heavier than it needs to be — deeply nested logic, long functions, unclear names, duplication after a merge, or a review that flagged complexity. Reduces complexity while preserving behavior exactly. Not for code you do not yet understand, or code you are about to rewrite.
 ---
 
 # Code Simplification

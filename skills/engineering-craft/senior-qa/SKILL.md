@@ -1,4 +1,4 @@
-﻿---
+---
 name: "senior-qa"
 description: React/Next.js test generation — Jest, RTL, Playwright, E2E from component scan
 ---

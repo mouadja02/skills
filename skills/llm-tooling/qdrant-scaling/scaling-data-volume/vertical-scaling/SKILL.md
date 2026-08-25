@@ -1,6 +1,6 @@
 ---
 name: qdrant-vertical-scaling
-description: "Guides Qdrant vertical scaling decisions"
+description: Use when deciding whether to grow a Qdrant node's RAM, disk, or CPU before adding shards. Covers what each resource limits and when vertical growth stops paying off.
 version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"

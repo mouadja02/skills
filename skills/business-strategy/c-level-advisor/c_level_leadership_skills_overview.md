@@ -382,7 +382,7 @@ These C-Level leadership skills provide comprehensive frameworks, tools, and gui
 The synergy between CTO and CEO skills creates a powerful leadership toolkit that addresses both technical and business challenges, ensuring aligned, effective leadership across the organization.
 
 **Files Available**:
-- [CTO Advisor Skill](computer:///mnt/user-data/outputs/cto-advisor.zip)
-- [CEO Advisor Skill](computer:///mnt/user-data/outputs/ceo-advisor.zip)
+- The `cto-advisor` skill (`business-strategy/cto-advisor`)
+- The `ceo-advisor` skill (`business-strategy/ceo-advisor`)
 
 Deploy these skills to transform your leadership effectiveness and drive organizational excellence.

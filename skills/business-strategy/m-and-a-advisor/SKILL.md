@@ -1,4 +1,4 @@
-﻿---
+---
 name: m-and-a-advisor
 description: Triggers on keywords M&A, due diligence, post-merger integration, synergy
 ---

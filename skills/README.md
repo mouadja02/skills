@@ -4,7 +4,7 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 836 skills across 36 categories.
+**Total:** 810 skills across 36 categories.
 
 ## Categories
 
@@ -13,7 +13,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`agent-design`](./agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./api-backend/) | 20 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
-| [`business-strategy`](./business-strategy/) | 64 | Executive advisory, board preparation, operating systems, and strategic decision support. |
+| [`business-strategy`](./business-strategy/) | 39 | Executive advisory, board preparation, operating systems, and strategic decision support. |
 | [`cloud-aws`](./cloud-aws/) | 85 | AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability. |
 | [`cloud-azure`](./cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
 | [`code-quality`](./code-quality/) | 18 | Code review, refactoring, static analysis, security review, and integrity checks. |
@@ -28,7 +28,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`diagrams-slides`](./diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
 | [`dotnet`](./dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
-| [`engineering-craft`](./engineering-craft/) | 37 | Senior engineering practices, planning, mentoring, verification, and cross-cutting craft. |
+| [`engineering-craft`](./engineering-craft/) | 36 | Senior engineering practices, planning, mentoring, verification, and cross-cutting craft. |
 | [`finance`](./finance/) | 7 | Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows. |
 | [`go-to-market`](./go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |

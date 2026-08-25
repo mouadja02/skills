@@ -1,4 +1,4 @@
-﻿---
+---
 name: ai-team-orchestration
 description: Multi-agent dev team — parallel AI agents, roles, coordination, project kickoff
 ---

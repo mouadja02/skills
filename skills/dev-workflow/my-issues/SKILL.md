@@ -1,6 +1,6 @@
 ---
 name: my-issues
-description: 'List my issues in the current repository'
+description: Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed.
 ---
 
 Search the current repo (using #githubRepo for the repo info) and list any issues you find (using #list_issues) that are assigned to me.

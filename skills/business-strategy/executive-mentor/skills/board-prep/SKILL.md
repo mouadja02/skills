@@ -1,6 +1,6 @@
 ---
-name: "board-prep"
-description: "/em -board-prep — Board Meeting Preparation"
+name: "executive-mentor-board-prep"
+description: "Use when preparing for a board meeting and the goal is to survive the adversarial version of it — anticipating every hard question, knowing which numbers must be cold, and shaping a narrative that acknowledges weakness without losing the room."
 ---
 
 # /em:board-prep — Board Meeting Preparation

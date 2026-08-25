@@ -1,4 +1,4 @@
-﻿---
+---
 name: growth-pm-plg
 description: Triggers on keywords PLG, growth hacking, viral loop, AARRR, retention, monetization
 ---

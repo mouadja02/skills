@@ -1,4 +1,4 @@
-﻿---
+---
 name: bmm-skills
 description: BMad Method — AI agile framework, routes to 4-phase workflow: Analyze, Plan, Code, Review
 ---

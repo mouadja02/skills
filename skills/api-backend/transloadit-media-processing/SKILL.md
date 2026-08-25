@@ -1,4 +1,4 @@
-﻿---
+---
 name: transloadit-media-processing
 description: 'Process media files (video, audio, images, documents) using Transloadit'
 license: MIT

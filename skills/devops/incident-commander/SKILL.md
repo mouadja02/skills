@@ -1,4 +1,4 @@
-﻿---
+---
 name: "incident-commander"
 description: "Run incident response from detection to post-mortem"
 ---

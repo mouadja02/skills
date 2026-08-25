@@ -1,6 +1,6 @@
-﻿---
+---
 name: git-workflow-and-versioning
-description: Structures git workflow practices
+description: Use on every code change — commit structure, branching, history hygiene, and versioning. Apply when committing work, opening or splitting a branch, writing commit messages, cutting a release, or recovering from a bad history state.
 ---
 
 # Git Workflow and Versioning

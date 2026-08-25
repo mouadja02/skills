@@ -1,4 +1,4 @@
-﻿---
+---
 name: sql-code-review
 description: SQL code review — security, maintainability, quality across all SQL dialects
 ---

@@ -1,6 +1,6 @@
 ---
 name: optimizing-streamlit-performance
-description: Optimizing Streamlit app performance
+description: Use when a Streamlit app feels slow — caching with st.cache_data and st.cache_resource, reducing rerun work, fragments, and handling large dataframes.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

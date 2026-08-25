@@ -1,6 +1,6 @@
 ---
 name: qdrant-scaling
-description: "Guides Qdrant scaling decisions"
+description: Use when a Qdrant deployment needs to scale and the strategy is not yet chosen. Start here to identify what you are scaling for — data volume, query throughput (QPS), query latency, or query volume — then routes to the matching strategy with its tradeoffs.
 allowed-tools:
   - Read
   - Grep

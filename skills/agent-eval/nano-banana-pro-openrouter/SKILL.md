@@ -1,4 +1,4 @@
-﻿---
+---
 name: nano-banana-pro-openrouter
 description: 'Generate or edit images via OpenRouter with the Gemini 3 Pro Image model'
 metadata:

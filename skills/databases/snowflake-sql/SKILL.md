@@ -1,4 +1,4 @@
-﻿---
+---
 name: snowflake-sql
 description: Snowflake SQL — QUALIFY, FLATTEN, VARIANT/OBJECT/ARRAY, tasks, streams, stages
 ---

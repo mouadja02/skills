@@ -1,6 +1,6 @@
 ---
 name: qdrant-minimize-latency
-description: "Guides Qdrant query latency optimization"
+description: Use when single-query Qdrant latency is too high and throughput is not the constraint. Covers segment count matched to CPU cores, keeping quantized vectors and HNSW in RAM, and trading recall for speed via hnsw_ef.
 version: "1.0.1"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"

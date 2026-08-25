@@ -1,6 +1,6 @@
 ---
 name: structured-autonomy-implement
-description: 'Structured Autonomy Implementation Prompt'
+description: Use when executing a previously agreed autonomous agent plan — running the steps within declared boundaries, checkpointing progress, and escalating when a stop condition is hit.
 source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
 attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: architecture-blueprint-generator
 description: Project architecture blueprint — component diagrams, tech stack docs from codebase
 ---

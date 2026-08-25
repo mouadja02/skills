@@ -44,6 +44,9 @@ jobs:
       - name: Generate manifests and documentation indexes
         run: npm run build:manifest
 
+      - name: Validate skill definitions
+        run: npm run check:skills
+
       - name: Audit generated documentation
         run: npm run check:docs
 
@@ -93,6 +96,9 @@ jobs:
 
       - name: Generate manifests and documentation indexes
         run: npm run build:manifest
+
+      - name: Validate skill definitions
+        run: npm run check:skills
 
       - name: Audit generated documentation
         run: npm run check:docs

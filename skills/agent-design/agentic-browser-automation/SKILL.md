@@ -1,4 +1,4 @@
-﻿---
+---
 name: "agentic-browser-automation"
 description: "Build AI-powered browser agents that autonomously navigate, scrape, fill forms, and extract data from dynamic websites using LLM reasoning + Playwright"
 ---

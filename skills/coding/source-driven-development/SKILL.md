@@ -1,4 +1,4 @@
-﻿---
+---
 name: source-driven-development
 description: Grounds every implementation decision in official documentation
 ---

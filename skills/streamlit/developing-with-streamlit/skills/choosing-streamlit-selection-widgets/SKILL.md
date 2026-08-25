@@ -1,6 +1,6 @@
 ---
 name: choosing-streamlit-selection-widgets
-description: Choosing the right Streamlit selection widget
+description: "Use when picking a Streamlit input widget for choosing among options — segmented_control, pills, selectbox, multiselect, radio, or feedback. Covers which to use when all options should stay visible versus hidden in a dropdown, and which older patterns are now anti-patterns."
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

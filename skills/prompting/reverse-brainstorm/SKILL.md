@@ -1,4 +1,4 @@
-﻿---
+---
 name: reverse-brainstorm
 description: Invert problem — brainstorm failure modes, flip into unconventional solutions
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "codebase-onboarding"
 description: "Generate onboarding documentation for an unfamiliar codebase"
 ---

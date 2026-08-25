@@ -1,6 +1,6 @@
 ---
 name: gtm-positioning-strategy
-description: Find and own a defensible market position
+description: Use when a product needs a defensible market position — defining the competitive alternative, unique attributes, the value they enable, and the segment that cares most.
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

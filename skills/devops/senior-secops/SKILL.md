@@ -1,4 +1,4 @@
-﻿---
+---
 name: "senior-secops"
 description: SecOps — app security, vuln management, compliance verification, secure dev practices
 ---

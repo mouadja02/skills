@@ -24,7 +24,7 @@ Diagrams, presentations, meeting artifacts, and professional visual communicatio
 | [`plantuml-ascii`](plantuml-ascii/SKILL.md) | `diagrams-slides/plantuml-ascii` | Generate ASCII art diagrams using PlantUML text mode |
 | [`pptx`](pptx/SKILL.md) | `diagrams-slides/pptx` | PowerPoint (.pptx) — create, edit, convert, extract, present; any pptx task |
 | [`repo-story-time`](repo-story-time/SKILL.md) | `diagrams-slides/repo-story-time` | Generate a comprehensive repository summary and narrative story from commit history |
-| [`ckm:slides`](slides/SKILL.md) | `diagrams-slides/slides` | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies |
+| [`slides`](slides/SKILL.md) | `diagrams-slides/slides` | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies |
 | [`svg-diagrams`](svg-diagrams/SKILL.md) | `diagrams-slides/svg-diagrams` | Also use when the user wants to visualize agent workflows, ETL pipelines, dbt lineage, API flows, or system integrations. If the words diagram, chart, flow, architecture, visualize, or draw appear in a visual context — use this skill |
 
 [Back to the category index](../README.md)

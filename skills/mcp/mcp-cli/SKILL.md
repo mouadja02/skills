@@ -1,4 +1,4 @@
-﻿---
+---
 name: mcp-cli
 description: Interface for MCP (Model Context Protocol) servers via CLI
 ---

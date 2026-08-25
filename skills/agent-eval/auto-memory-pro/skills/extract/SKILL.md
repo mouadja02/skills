@@ -1,5 +1,5 @@
 ---
-name: extract
+name: "auto-memory-extract"
 description: "Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples"
 command: /si:extract
 source: "https://github.com/alirezarezvani/claude-skills"

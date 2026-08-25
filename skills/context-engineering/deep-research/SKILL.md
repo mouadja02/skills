@@ -1,4 +1,4 @@
-﻿---
+---
 name: deep-research
 description: Deep research pipeline — 13 agents, 7 modes: full, quick brief, systematic lit review, more
 metadata:

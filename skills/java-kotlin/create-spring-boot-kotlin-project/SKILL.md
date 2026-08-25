@@ -1,6 +1,6 @@
 ---
 name: create-spring-boot-kotlin-project
-description: 'Create Spring Boot Kotlin Project Skeleton'
+description: Use when scaffolding a new Spring Boot project in Kotlin — generating the project skeleton, Gradle build, package layout, and baseline configuration.
 ---
 
 # Create Spring Boot Kotlin project prompt

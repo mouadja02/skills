@@ -44,7 +44,7 @@ npx ai-agent-skills install alirezarezvani/claude-skills/c-level-advisor/cto-adv
 
 **Supported Agents:** Claude Code, Cursor, VS Code, Copilot, Goose, Amp, Codex
 
-**Complete Installation Guide:** See [../INSTALLATION.md](../INSTALLATION.md) for detailed instructions, troubleshooting, and manual installation.
+**Complete Installation Guide:** See the repository [README](https://github.com/mouadja02/skills#quick-start) for install instructions and troubleshooting.
 
 ---
 
@@ -104,7 +104,7 @@ This C-Level advisory skills collection provides executive leadership guidance f
 - Building organizational culture
 - Managing stakeholder relationships
 
-**Learn More:** [ceo-advisor/SKILL.md](ceo-advisor/SKILL.md)
+**Learn More:** the `ceo-advisor` skill (`business-strategy/ceo-advisor`)
 
 ---
 
@@ -138,7 +138,7 @@ This C-Level advisory skills collection provides executive leadership guidance f
 - Making architecture decisions
 - Measuring engineering performance
 
-**Learn More:** [cto-advisor/SKILL.md](cto-advisor/SKILL.md)
+**Learn More:** the `cto-advisor` skill (`business-strategy/cto-advisor`)
 
 ---
 
@@ -369,9 +369,9 @@ This C-Level advisory skills collection provides executive leadership guidance f
 
 ## 📚 Additional Resources
 
-- **CLAUDE.md:** [c-level-advisor/CLAUDE.md](CLAUDE.md) - Claude Code specific guidance (if exists)
-- **Main Documentation:** [../CLAUDE.md](../CLAUDE.md)
-- **Installation Guide:** [../INSTALLATION.md](../INSTALLATION.md)
+- **CLAUDE.md:** [CLAUDE.md](CLAUDE.md) - Claude Code specific guidance
+- **Main Documentation:** [repository README](https://github.com/mouadja02/skills#readme)
+- **Installation Guide:** [Quick Start](https://github.com/mouadja02/skills#quick-start)
 
 ---
 

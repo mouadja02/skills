@@ -1,6 +1,6 @@
 ---
 name: winmd-api-search
-description: 'Find and explore Windows desktop APIs'
+description: Use when you need to find or explore Windows desktop APIs from Windows Metadata (.winmd) — locating a type, namespace, method, or its signature for Win32, WinRT, or Windows App SDK work.
 license: Complete terms in LICENSE.txt
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"

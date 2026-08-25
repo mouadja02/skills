@@ -1,4 +1,4 @@
-﻿---
+---
 name: creative-constraints
 description: Artificial limits as creative fuel — eliminates lazy defaults, drives genuine innovation
 ---

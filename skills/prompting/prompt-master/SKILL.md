@@ -1,7 +1,7 @@
-﻿---
+---
 name: prompt-master
 version: 1.6.0
-description: Generates optimized prompts for AI tools
+description: Use when a prompt needs writing or improving for an AI tool — clarifying the task, adding structure and constraints, supplying examples, and specifying the output format.
 ---
 
 ## PRIMACY ZONE — Identity, Hard Rules, Output Lock

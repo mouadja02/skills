@@ -599,7 +599,7 @@ Rules:
 #### Step 3: Attach Tuned Data to Entries
 
 - Generate a new **script** for attaching tuned data.
-- Load both [./run/data/report-data.json](./run/data/report-data.json) and the deduplication map (held in memory from Step 1, or re-derived from the payload file).
+- Load both `./run/data/report-data.json` and the deduplication map (held in memory from Step 1, or re-derived from the payload file).
 - For each response from the MCP server:
   - Extract the `rowKey` from the response.
   - Look up the `entryIndices` array associated with that `rowKey` from the deduplication map.

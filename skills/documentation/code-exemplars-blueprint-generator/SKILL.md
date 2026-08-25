@@ -1,4 +1,4 @@
-﻿---
+---
 name: code-exemplars-blueprint-generator
 description: Code exemplar docs — scans for patterns, creates customizable AI training prompts
 ---

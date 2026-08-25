@@ -1,6 +1,6 @@
-﻿---
+---
 name: saas-metrics-coach
-description: SaaS financial health advisor
+description: Use when raw SaaS numbers need turning into a health verdict — MRR, ARR, churn, CAC, LTV, payback, burn multiple, NRR. Calculates the metrics, benchmarks them against industry standards, and returns prioritized, plain-English advice as a senior SaaS CFO would.
 license: MIT
 metadata:
   version: 1.0.0

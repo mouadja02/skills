@@ -1,6 +1,6 @@
 ---
 name: qdrant-scaling-data-volume
-description: "Guides Qdrant data volume scaling decisions"
+description: Use when a Qdrant dataset outgrows a single node. Covers multi-tenant payload partitioning, sharding, vertical scaling, and sliding time windows for time-bounded data.
 allowed-tools:
   - Read
   - Grep

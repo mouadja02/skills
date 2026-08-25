@@ -1,4 +1,4 @@
-﻿---
+---
 name: browser-testing-with-devtools
 description: Tests in real browsers via Chrome DevTools MCP
 ---

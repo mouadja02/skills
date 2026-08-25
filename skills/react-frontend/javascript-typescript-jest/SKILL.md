@@ -1,4 +1,4 @@
-﻿---
+---
 name: javascript-typescript-jest
 description: 'Best practices for writing JavaScript/TypeScript tests using Jest, including mocking strategies, test structure, and common patterns'
 ---

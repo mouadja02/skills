@@ -1,4 +1,4 @@
-﻿---
+---
 name: eyeball
 description: Document analysis with source screenshots — Word doc with page images per cited passage
 ---

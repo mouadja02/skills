@@ -6,13 +6,13 @@
     <title>Skills — Agent Skills for Claude Code, Cursor, Copilot &amp; More</title>
     <meta
       name="description"
-      content="Browse 656 installable agent skills for Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex and more. One command, no full clone required. AI-powered skill finder included."
+      content="Browse 810 installable agent skills for Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex and more. A skill is a folder your agent reads. One command installs it, no clone required."
     />
     <meta name="color-scheme" content="dark light" />
     <meta property="og:title" content="Skills — Agent Skills Library" />
     <meta
       property="og:description"
-      content="Searchable index of 656 agent skills for Claude Code, Cursor, Copilot, Windsurf, OpenCode, Codex and more. One-line install commands and AI-powered skill finder."
+      content="810 agent skills for Claude Code, Cursor, Copilot, Windsurf, OpenCode and Codex. Pick a skill, copy one command, and your agent can use it."
     />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Cpath d='M16 22h32M16 32h22M16 42h28' stroke='%2300f0ff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#browse">Skip to the skill catalog</a>
+
     <div class="topbar">
       <div class="topbar-inner">
         <a class="brand" href="#top" aria-label="Skills home">
@@ -38,7 +40,7 @@
           <a href="https://github.com/mouadja02/skills/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a>
         </nav>
         <div class="topbar-actions">
-          <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle color theme" title="Toggle theme">
+          <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch to light theme" title="Switch theme">
             <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
             </svg>
@@ -65,76 +67,250 @@
       <div class="hero-inner">
         <span class="eyebrow">
           <span class="eyebrow-dot" aria-hidden="true"></span>
-          One-line install &middot; No full clone required
+          <strong id="skillCount">&hellip;</strong>&nbsp;skills &middot; 6 AI tools &middot; no clone
         </span>
         <h1>
           Agent skills,<br />
           <span class="accent-word">shipped &agrave; la carte.</span>
         </h1>
         <p class="tagline">
-          A curated library of <strong id="skillCount">&hellip;</strong> agent skills for
-          Claude&nbsp;Code, Cursor, Copilot, Windsurf, OpenCode&nbsp;&amp;&nbsp;more.
-          Pick one, copy a single command, and it lands in your project.
+          A <strong>skill</strong> is a folder with a <code>SKILL.md</code> file that teaches your
+          coding agent one job &mdash; reviewing a PR, designing a schema, shipping to AWS.
+          Drop it in, and Claude&nbsp;Code, Cursor, Copilot, Windsurf, OpenCode or Codex picks it
+          up automatically.
         </p>
 
+        <!-- Anatomy of a command: teaches the selector concept with runnable examples. -->
+        <div class="anatomy">
+          <div class="anatomy-head">
+            <h2 class="anatomy-title">One command. Three ways to aim it.</h2>
+            <p class="anatomy-sub">
+              Every install is the same line &mdash; only the <em>selector</em> changes.
+            </p>
+          </div>
+          <div class="anatomy-choices" role="group" aria-label="Selector type">
+            <button class="anatomy-choice active" type="button" data-sel="one">
+              <span class="anatomy-choice-label">One skill</span>
+              <span class="anatomy-choice-eg">code-review</span>
+            </button>
+            <button class="anatomy-choice" type="button" data-sel="cat">
+              <span class="anatomy-choice-label">A category</span>
+              <span class="anatomy-choice-eg">86 at once</span>
+            </button>
+            <button class="anatomy-choice" type="button" data-sel="glob">
+              <span class="anatomy-choice-label">A pattern</span>
+              <span class="anatomy-choice-eg">"*rag*"</span>
+            </button>
+          </div>
+          <pre class="anatomy-code"><button class="copy" id="anatomyCopy" type="button">Copy</button><code id="anatomyCode"></code></pre>
+          <p class="anatomy-note" id="anatomyNote"></p>
+        </div>
+
         <div class="hero-cta">
-          <a href="#browse" class="btn btn-primary">
-            Browse skills
+          <a href="#routes" class="btn btn-primary">
+            Find a skill
             <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4"/>
             </svg>
           </a>
-          <a href="https://github.com/mouadja02/skills#readme" target="_blank" rel="noopener" class="btn btn-ghost">
-            How it works
-          </a>
+          <a href="#browse" class="btn btn-ghost">Browse all <span id="heroBrowseCount">810</span></a>
         </div>
-
-        <div class="install-card">
-          <div class="install-card-head">
-            <div class="install-card-title">
-              <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-                <path d="M2.75 2A1.75 1.75 0 0 0 1 3.75v8.5C1 13.216 1.784 14 2.75 14h10.5A1.75 1.75 0 0 0 15 12.25v-8.5A1.75 1.75 0 0 0 13.25 2H2.75ZM2.5 3.75a.25.25 0 0 1 .25-.25h10.5a.25.25 0 0 1 .25.25v1.25h-11V3.75Zm0 2.75h11v5.75a.25.25 0 0 1-.25.25H2.75a.25.25 0 0 1-.25-.25V6.5Z"/>
-                <path d="M4 9h2v1H4V9Zm3 0h5v1H7V9Z"/>
-              </svg>
-              <span>Quick install</span>
-            </div>
-            <div class="install-tabs" role="tablist" aria-label="Install command shell">
-              <button class="tab active" role="tab" data-tab="bash">bash / zsh</button>
-              <button class="tab" role="tab" data-tab="ps">PowerShell</button>
-            </div>
-          </div>
-          <pre class="install-code" id="bashHero" data-tab="bash"><button class="copy" data-copy-target="#bashHero code" type="button">Copy</button><code>curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- &lt;selector&gt; -d &lt;destination&gt;</code></pre>
-          <pre class="install-code hidden" id="psHero" data-tab="ps"><button class="copy" data-copy-target="#psHero code" type="button">Copy</button><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) &lt;selector&gt; -Dest &lt;destination&gt;</code></pre>
-          <p class="install-help">
-            <code>&lt;selector&gt;</code> is a single skill (<code>engineering-craft/test-driven-development</code>),
-            a category (<code>engineering-craft</code>), or a quoted glob
-            (<code>"*bmad*"</code>, <code>"agent-design/*"</code>).
-            Click any card below &mdash; the command pre-fills automatically.
-          </p>
-        </div>
-
-        <dl class="hero-stats" aria-label="Library stats">
-          <div class="stat">
-            <dt>Skills</dt>
-            <dd id="statSkills">&hellip;</dd>
-          </div>
-          <div class="stat">
-            <dt>Categories</dt>
-            <dd id="statCategories">&hellip;</dd>
-          </div>
-          <div class="stat">
-            <dt>Install methods</dt>
-            <dd>4</dd>
-          </div>
-          <div class="stat">
-            <dt>Clone needed</dt>
-            <dd class="stat-no">No</dd>
-          </div>
-        </dl>
       </div>
     </header>
 
+    <!-- =====================================================================
+         Task routes — the entry path into 810 skills
+         ===================================================================== -->
+    <section class="routes" id="routes" aria-labelledby="routesTitle">
+      <div class="routes-inner">
+        <div class="routes-head">
+          <h2 id="routesTitle">What are you working on?</h2>
+          <p>Pick the closest job. You can widen or narrow it once you&rsquo;re in.</p>
+        </div>
+        <div class="routes-grid" id="routesGrid"></div>
+      </div>
+    </section>
+
+    <section class="controls" id="browse">
+      <div class="controls-inner">
+        <div class="controls-primary">
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search 810 skills — try &ldquo;pytest&rdquo;, &ldquo;terraform&rdquo;, &ldquo;rag&rdquo;&hellip;"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search skills by name or description"
+              aria-describedby="resultSummary"
+            />
+            <button id="searchClear" class="search-clear hidden" type="button" aria-label="Clear search">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+            <kbd class="search-kbd" aria-hidden="true">/</kbd>
+          </div>
+          <div class="sort-wrap">
+            <label class="sort-label" for="sortBy">Sort</label>
+            <div class="select-wrap">
+              <select id="sortBy" aria-label="Sort skills">
+                <option value="name">Name (A&rarr;Z)</option>
+                <option value="name-desc">Name (Z&rarr;A)</option>
+                <option value="category">Category</option>
+              </select>
+              <svg class="select-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-rows">
+          <div class="filter-row">
+            <span class="filter-row-label" id="harnessLabel">Your tool</span>
+            <div id="harnessBar" class="harnesses" role="group" aria-labelledby="harnessLabel"></div>
+          </div>
+          <div class="filter-row filter-row--cats">
+            <span class="filter-row-label" id="catLabel">Category</span>
+            <div class="cat-region">
+              <div id="categories" class="categories" role="group" aria-labelledby="catLabel"></div>
+              <button id="catToggle" class="cat-toggle" type="button" aria-expanded="false" aria-controls="categories"></button>
+            </div>
+          </div>
+        </div>
+
+        <p class="result-summary" id="resultSummary" role="status" aria-live="polite">
+          Loading the catalog&hellip;
+        </p>
+        <div class="active-filters" id="activeFilters" hidden></div>
+      </div>
+    </section>
+
+    <!-- Live selector panel: mirrors whatever is currently selected. -->
+    <section id="selectorPanel" class="selector-panel" aria-labelledby="selectorPanelTitle" hidden>
+      <div class="selector-panel-inner">
+        <div class="selector-panel-head">
+          <div class="selector-panel-titles">
+            <h2 id="selectorPanelTitle" class="selector-panel-title">Install this whole view</h2>
+            <p class="selector-panel-sub" id="selectorPanelSub"></p>
+          </div>
+          <a id="catBannerDownload" class="selector-panel-download hidden" download>
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+              <path d="M8 1.75a.75.75 0 0 1 .75.75v6.69l1.97-1.97a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 8.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.5A.75.75 0 0 1 8 1.75ZM2.75 12.5a.75.75 0 0 1 .75.75v.25c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-.25a.75.75 0 0 1 1.5 0v.25A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.5v-.25a.75.75 0 0 1 .75-.75Z"/>
+            </svg>
+            <span>Download .zip</span>
+            <span id="catBannerDownloadSize" class="selector-panel-download-size"></span>
+          </a>
+        </div>
+        <div class="selector-panel-tabs install-tabs" role="group" aria-label="Shell">
+          <button class="tab active" type="button" data-tab="bash">bash</button>
+          <button class="tab" type="button" data-tab="ps">PowerShell</button>
+          <button class="tab" type="button" data-tab="degit">degit</button>
+        </div>
+        <pre class="selector-panel-code" data-variant="bash"><button class="copy" type="button">Copy</button><code></code></pre>
+        <pre class="selector-panel-code hidden" data-variant="ps"><button class="copy" type="button">Copy</button><code></code></pre>
+        <pre class="selector-panel-code hidden" data-variant="degit"><button class="copy" type="button">Copy</button><code></code></pre>
+      </div>
+    </section>
+
+    <main id="main">
+      <div id="grid" class="grid" aria-busy="true"></div>
+      <div class="grid-more" id="gridMore" hidden>
+        <button id="showMore" class="btn btn-ghost" type="button"></button>
+        <p class="grid-more-note" id="gridMoreNote"></p>
+      </div>
+    </main>
+
+    <template id="skeletonTemplate">
+      <article class="card skeleton" aria-hidden="true">
+        <header>
+          <div class="sk-line sk-w-60"></div>
+          <div class="sk-pill"></div>
+        </header>
+        <div class="sk-line sk-w-100"></div>
+        <div class="sk-line sk-w-90"></div>
+        <div class="sk-line sk-w-70"></div>
+        <div class="sk-line sk-w-50"></div>
+        <footer>
+          <div class="sk-pill sk-pill-sm"></div>
+          <div class="sk-line sk-w-30"></div>
+        </footer>
+      </article>
+    </template>
+
+    <!--
+      One tab stop for the title button (which also covers the whole card via an
+      inset ::after), plus the two actions. Install variants, .zip and the source
+      link live in the detail panel — the place someone who is actually
+      interested has already opened.
+    -->
+    <template id="cardTemplate">
+      <article class="card">
+        <h3 class="card-name"><button class="card-open" type="button"></button></h3>
+        <p class="card-category">
+          <span class="card-category-dot" aria-hidden="true"></span>
+          <span class="card-category-name"></span>
+        </p>
+        <p class="card-desc"></p>
+        <div class="card-actions">
+          <button class="card-quick-copy" type="button">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="4" width="9" height="9" rx="1.5"/>
+              <path d="M3 11V3.5A1.5 1.5 0 0 1 4.5 2H11"/>
+            </svg>
+            <span class="card-quick-copy-label">Copy install</span>
+          </button>
+          <button class="card-pick" type="button" aria-pressed="false">
+            <svg class="card-pick-add" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M8 3.5v9M3.5 8h9"/>
+            </svg>
+            <svg class="card-pick-on" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m3 8.5 3.5 3.5L13 5"/>
+            </svg>
+            <span class="card-pick-label">Add</span>
+          </button>
+        </div>
+      </article>
+    </template>
+
+    <!-- =====================================================================
+         Shortlist tray
+         ===================================================================== -->
+    <div id="shortlistTray" class="tray" hidden>
+      <div class="tray-inner">
+        <div class="tray-summary">
+          <span class="tray-count" id="trayCount">0</span>
+          <span class="tray-label" id="trayLabel">skills picked</span>
+        </div>
+        <div class="tray-chips" id="trayChips"></div>
+        <div class="tray-actions">
+          <button id="trayClear" class="tray-btn" type="button">Clear</button>
+          <button id="trayOpen" class="tray-btn tray-btn--primary" type="button" aria-expanded="false" aria-controls="trayPanel">
+            Get the command
+          </button>
+        </div>
+      </div>
+      <div id="trayPanel" class="tray-panel" hidden>
+        <div class="tray-panel-head">
+          <h2 class="tray-panel-title">Install your <span id="trayPanelCount">0</span> picks</h2>
+          <p class="tray-panel-sub" id="trayPanelSub"></p>
+        </div>
+        <div class="install-tabs tray-panel-tabs" role="group" aria-label="Shell">
+          <button class="tab active" type="button" data-tab="bash">bash</button>
+          <button class="tab" type="button" data-tab="ps">PowerShell</button>
+        </div>
+        <pre class="tray-code" data-variant="bash"><button class="copy" type="button">Copy</button><code></code></pre>
+        <pre class="tray-code hidden" data-variant="ps"><button class="copy" type="button">Copy</button><code></code></pre>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         MCP — power-user setup, placed after the catalog
+         ===================================================================== -->
     <section class="mcp-section" id="mcp" aria-labelledby="mcpTitle">
       <div class="mcp-inner">
         <div class="mcp-copy">
@@ -155,7 +331,7 @@
                 <path d="M6 12 12 6M7 5h6v6"/>
               </svg>
             </a>
-            <a class="btn btn-ghost" href="#browse">Browse skills</a>
+            <a class="btn btn-ghost" href="#browse">Back to the catalog</a>
           </div>
         </div>
 
@@ -217,179 +393,6 @@ Install useful skills into this workspace's .claude/skills directory.</code></pr
         </article>
       </div>
     </section>
-
-    <section class="controls" id="browse">
-      <div class="controls-inner">
-        <div class="search-wrap">
-          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
-          </svg>
-          <input
-            id="search"
-            type="search"
-            placeholder="Search skills by name or description&hellip;"
-            autocomplete="off"
-            spellcheck="false"
-            aria-label="Search skills"
-          />
-          <button id="searchClear" class="search-clear hidden" type="button" aria-label="Clear search">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 6 6 18M6 6l12 12"/>
-            </svg>
-          </button>
-          <kbd class="search-kbd" aria-hidden="true">/</kbd>
-        </div>
-        <div class="harness-row">
-          <span class="harness-row-label">Tool</span>
-          <div id="harnessBar" class="harnesses" role="group" aria-label="Select AI tool"></div>
-        </div>
-        <div class="controls-row">
-          <div class="categories-wrap">
-            <div id="categories" class="categories" role="tablist" aria-label="Filter by category"></div>
-          </div>
-          <div class="sort-wrap">
-            <label class="sort-label" for="sortBy">Sort</label>
-            <div class="select-wrap">
-              <select id="sortBy" aria-label="Sort skills">
-                <option value="name">Name (A&rarr;Z)</option>
-                <option value="name-desc">Name (Z&rarr;A)</option>
-                <option value="category">Category</option>
-              </select>
-              <svg class="select-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="m6 9 6 6 6-6"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="meta">
-          Showing <strong id="visibleCount">0</strong> of
-          <strong id="totalCount">0</strong> skills
-          <span id="metaActive" class="meta-active hidden"></span>
-          <button id="shareBtn" class="share-btn hidden" type="button" title="Copy link to current view" aria-label="Share current view">
-            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 9a3 3 0 0 0 4.5.5l2-2a3 3 0 0 0-4.24-4.24l-1.15 1.14"/>
-              <path d="M9 7a3 3 0 0 0-4.5-.5l-2 2a3 3 0 0 0 4.24 4.24l1.14-1.14"/>
-            </svg>
-            Share
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="categoryBanner" class="category-banner hidden" aria-live="polite">
-      <div class="category-banner-inner">
-        <div class="category-banner-header">
-          <div class="category-banner-text">
-            Install all <strong id="catBannerCount">0</strong> skills in
-            <code id="catBannerName">&hellip;</code>
-          </div>
-          <a id="catBannerDownload" class="category-banner-download" download>
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-              <path d="M8 1.75a.75.75 0 0 1 .75.75v6.69l1.97-1.97a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 8.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.5A.75.75 0 0 1 8 1.75ZM2.75 12.5a.75.75 0 0 1 .75.75v.25c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-.25a.75.75 0 0 1 1.5 0v.25A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.5v-.25a.75.75 0 0 1 .75-.75Z"/>
-            </svg>
-            <span>Download .zip</span>
-            <span id="catBannerDownloadSize" class="category-banner-download-size"></span>
-          </a>
-        </div>
-        <div class="category-banner-tabs install-tabs">
-          <button class="tab active" data-tab="bash">bash</button>
-          <button class="tab" data-tab="ps">PowerShell</button>
-          <button class="tab" data-tab="degit">degit</button>
-        </div>
-        <pre class="category-banner-code" data-variant="bash"><button class="copy" type="button">Copy</button><code></code></pre>
-        <pre class="category-banner-code hidden" data-variant="ps"><button class="copy" type="button">Copy</button><code></code></pre>
-        <pre class="category-banner-code hidden" data-variant="degit"><button class="copy" type="button">Copy</button><code></code></pre>
-      </div>
-    </section>
-
-    <main id="grid" class="grid" aria-live="polite" aria-busy="true"></main>
-
-    <template id="skeletonTemplate">
-      <article class="card skeleton" aria-hidden="true">
-        <header>
-          <div class="sk-line sk-w-60"></div>
-          <div class="sk-pill"></div>
-        </header>
-        <div class="sk-line sk-w-100"></div>
-        <div class="sk-line sk-w-90"></div>
-        <div class="sk-line sk-w-70"></div>
-        <div class="sk-line sk-w-50"></div>
-        <footer>
-          <div class="sk-pill sk-pill-sm"></div>
-          <div class="sk-line sk-w-30"></div>
-        </footer>
-      </article>
-    </template>
-
-    <template id="cardTemplate">
-      <article class="card" tabindex="0">
-        <header>
-          <div class="card-head-text">
-            <h3 class="card-name"></h3>
-            <a class="card-category" href="#">
-              <span class="card-category-dot" aria-hidden="true"></span>
-              <span class="card-category-name"></span>
-            </a>
-          </div>
-        </header>
-        <p class="card-desc"></p>
-        <div class="card-actions">
-          <button class="card-quick-copy" type="button" title="Copy bash install command">
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="4" y="4" width="9" height="9" rx="1.5"/>
-              <path d="M3 11V3.5A1.5 1.5 0 0 1 4.5 2H11"/>
-            </svg>
-            <span class="card-quick-copy-label">Copy install</span>
-          </button>
-          <button class="card-read" type="button" title="Read skill content">
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h9A1.5 1.5 0 0 1 14 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.5Z"/>
-              <path d="M5 6h6M5 8.5h6M5 11h4"/>
-            </svg>
-            <span>Read</span>
-          </button>
-          <a class="card-download" download title="Download skill as .zip">
-            <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true">
-              <path d="M8 1.75a.75.75 0 0 1 .75.75v6.69l1.97-1.97a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 8.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.5A.75.75 0 0 1 8 1.75ZM2.75 12.5a.75.75 0 0 1 .75.75v.25c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-.25a.75.75 0 0 1 1.5 0v.25A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.5v-.25a.75.75 0 0 1 .75-.75Z"/>
-            </svg>
-            <span>.zip</span>
-            <span class="card-download-size"></span>
-          </a>
-        </div>
-        <details class="card-install">
-          <summary>
-            <span class="summary-label">More install options</span>
-            <svg class="summary-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="m6 9 6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="install-tabs">
-            <button class="tab active" data-tab="bash">bash</button>
-            <button class="tab" data-tab="ps">PowerShell</button>
-            <button class="tab" data-tab="degit">degit</button>
-            <button class="tab" data-tab="sparse">sparse-checkout</button>
-          </div>
-          <pre data-variant="bash"><button class="copy" type="button">Copy</button><code></code></pre>
-          <pre data-variant="ps" class="hidden"><button class="copy" type="button">Copy</button><code></code></pre>
-          <pre data-variant="degit" class="hidden"><button class="copy" type="button">Copy</button><code></code></pre>
-          <pre data-variant="sparse" class="hidden"><button class="copy" type="button">Copy</button><code></code></pre>
-        </details>
-        <footer>
-          <button class="card-share" type="button" title="Copy link to this skill" aria-label="Copy link to this skill">
-            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 9a3 3 0 0 0 4.5.5l2-2a3 3 0 0 0-4.24-4.24l-1.15 1.14"/>
-              <path d="M9 7a3 3 0 0 0-4.5-.5l-2 2a3 3 0 0 0 4.24 4.24l1.14-1.14"/>
-            </svg>
-          </button>
-          <a class="card-source" target="_blank" rel="noopener">
-            <span>View SKILL.md</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 17 17 7M8 7h9v9"/>
-            </svg>
-          </a>
-        </footer>
-      </article>
-    </template>
 
     <footer class="site-footer">
       <div class="site-footer-inner">
@@ -510,7 +513,7 @@ Install useful skills into this workspace's .claude/skills directory.</code></pr
     <div id="skillDetailOverlay" class="sd-overlay" aria-hidden="true"></div>
 
     <aside id="skillDetail" class="skill-detail" role="dialog" aria-modal="true"
-           aria-label="Skill details" aria-hidden="true" tabindex="-1">
+           aria-labelledby="sdName" aria-hidden="true" tabindex="-1">
       <header class="sd-header">
         <div class="sd-header-left">
           <button id="skillDetailClose" class="sd-close-btn" type="button" aria-label="Close skill details">
@@ -519,21 +522,60 @@ Install useful skills into this workspace's .claude/skills directory.</code></pr
             </svg>
           </button>
           <div class="sd-header-meta">
-            <h2 class="sd-name"></h2>
+            <h2 class="sd-name" id="sdName"></h2>
             <span class="sd-cat-badge"></span>
           </div>
         </div>
         <div class="sd-header-actions">
-          <a class="sd-gh-link" target="_blank" rel="noopener" title="View on GitHub">
+          <a class="sd-gh-link" target="_blank" rel="noopener" title="View SKILL.md on GitHub">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5"/>
             </svg>
-            GitHub
+            Source
           </a>
         </div>
       </header>
+
+      <!-- Install block: the actions demoted from the card land here. -->
+      <div class="sd-install">
+        <div class="sd-install-head">
+          <div class="install-tabs sd-install-tabs" role="group" aria-label="Install method">
+            <button class="tab active" type="button" data-tab="bash">bash</button>
+            <button class="tab" type="button" data-tab="ps">PowerShell</button>
+            <button class="tab" type="button" data-tab="degit">degit</button>
+            <button class="tab" type="button" data-tab="sparse">sparse-checkout</button>
+          </div>
+          <div class="sd-install-side">
+            <button class="sd-pick" type="button" aria-pressed="false">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M8 3.5v9M3.5 8h9"/>
+              </svg>
+              <span class="sd-pick-label">Add to picks</span>
+            </button>
+            <a class="sd-download" download>
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true">
+                <path d="M8 1.75a.75.75 0 0 1 .75.75v6.69l1.97-1.97a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 8.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.5A.75.75 0 0 1 8 1.75ZM2.75 12.5a.75.75 0 0 1 .75.75v.25c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-.25a.75.75 0 0 1 1.5 0v.25A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.5v-.25a.75.75 0 0 1 .75-.75Z"/>
+              </svg>
+              <span>.zip</span>
+              <span class="sd-download-size"></span>
+            </a>
+            <button class="sd-share" type="button" title="Copy a link to this skill">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 9a3 3 0 0 0 4.5.5l2-2a3 3 0 0 0-4.24-4.24l-1.15 1.14"/>
+                <path d="M9 7a3 3 0 0 0-4.5-.5l-2 2a3 3 0 0 0 4.24 4.24l1.14-1.14"/>
+              </svg>
+              <span>Link</span>
+            </button>
+          </div>
+        </div>
+        <pre class="sd-install-code" data-variant="bash"><button class="copy" type="button">Copy</button><code></code></pre>
+        <pre class="sd-install-code hidden" data-variant="ps"><button class="copy" type="button">Copy</button><code></code></pre>
+        <pre class="sd-install-code hidden" data-variant="degit"><button class="copy" type="button">Copy</button><code></code></pre>
+        <pre class="sd-install-code hidden" data-variant="sparse"><button class="copy" type="button">Copy</button><code></code></pre>
+      </div>
+
       <div class="sd-body">
-        <div class="sd-content" aria-live="polite"></div>
+        <div class="sd-content"></div>
         <div class="sd-files"></div>
       </div>
     </aside>

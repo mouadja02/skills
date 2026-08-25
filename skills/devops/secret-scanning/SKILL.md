@@ -1,4 +1,4 @@
-﻿---
+---
 name: secret-scanning
 description: GitHub secret scanning — push protection, custom patterns, alert remediation
 ---

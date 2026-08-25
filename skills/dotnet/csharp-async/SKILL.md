@@ -1,6 +1,6 @@
 ---
 name: csharp-async
-description: 'Get best practices for C# async programming'
+description: Use when writing or reviewing async C# — async/await, Task and ValueTask, cancellation tokens, ConfigureAwait, deadlocks, sync-over-async, and async streams.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 ---

@@ -1,6 +1,6 @@
 ---
 name: building-streamlit-chat-ui
-description: Building chat interfaces in Streamlit
+description: Use when building a chat or conversational interface in Streamlit — st.chat_message and st.chat_input, streaming responses, and keeping history in session state.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

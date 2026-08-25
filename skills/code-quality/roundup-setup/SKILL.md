@@ -1,4 +1,4 @@
-﻿---
+---
 name: roundup-setup
 description: Roundup status briefing setup — configure voice, audiences, data sources (GitHub, Jira)
 ---

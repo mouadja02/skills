@@ -1,4 +1,4 @@
-﻿---
+---
 name: salesforce-component-standards
 description: Salesforce LWC/Aura/VF quality standards — SLDS 2, accessibility, performance
 ---

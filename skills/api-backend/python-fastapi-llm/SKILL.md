@@ -1,4 +1,4 @@
-﻿---
+---
 name: python-fastapi-llm
 description: Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill
 ---

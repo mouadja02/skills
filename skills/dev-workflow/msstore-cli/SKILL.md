@@ -1,4 +1,4 @@
-﻿---
+---
 name: msstore-cli
 description: 'Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store'
 license: MIT

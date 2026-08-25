@@ -1,6 +1,6 @@
 ---
 name: building-streamlit-dashboards
-description: Building dashboards in Streamlit
+description: Use when building a data dashboard in Streamlit — arranging metrics and charts, wiring filters and inputs, and structuring the page so reruns stay fast.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

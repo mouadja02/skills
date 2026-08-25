@@ -1,6 +1,6 @@
 ---
-name: "stress-test"
-description: "/em -stress-test — Business Assumption Stress Testing"
+name: "executive-mentor-stress-test"
+description: "Use when a business assumption needs breaking before the market breaks it — revenue projections, market size, competitive moat, hiring velocity, or customer retention."
 ---
 
 # /em:stress-test — Business Assumption Stress Testing

@@ -1,4 +1,4 @@
-﻿---
+---
 name: lsp-setup
 description: LSP setup for any language — go-to-definition, find-refs, hover, diagnostics
 ---

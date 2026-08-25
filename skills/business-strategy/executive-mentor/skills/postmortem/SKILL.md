@@ -1,6 +1,6 @@
 ---
-name: "postmortem"
-description: "/em -postmortem — Honest Analysis of What Went Wrong"
+name: "executive-mentor-postmortem"
+description: "Use after something went wrong — a failed deal, a missed quarter, a feature that flopped, a hire that did not work out. Produces an honest, blame-free account of what happened, why, and what changes as a result."
 ---
 
 # /em:postmortem — Honest Analysis of What Went Wrong

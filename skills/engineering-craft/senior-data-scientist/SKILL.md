@@ -1,4 +1,4 @@
-﻿---
+---
 name: "senior-data-scientist"
 description: Senior data scientist — stats modeling, causal inference, ML, Python/pandas/sklearn/PyMC
 ---

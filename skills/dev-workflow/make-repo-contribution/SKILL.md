@@ -1,4 +1,4 @@
-﻿---
+---
 name: make-repo-contribution
 description: Repo contribution — read guidance, file issue, branch, commit, PR workflow
 allowed-tools: Read Edit Bash(git:*) Bash(gh issue:*) Bash(gh pr:*)

@@ -1,4 +1,4 @@
-﻿---
+---
 name: conventional-commit
 description: Conventional commits — XML-structured workflow, feat/fix/chore/BREAKING scopes
 ---

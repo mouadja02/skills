@@ -1,4 +1,4 @@
-﻿---
+---
 name: "senior-security"
 description: Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and penetration testing. Includes STRIDE analysis, OWASP guidance, cryptography patterns, and security scanning tools
 triggers:
@@ -438,7 +438,7 @@ For compliance framework requirements (OWASP ASVS, CIS Benchmarks, NIST CSF, PCI
 
 | Skill | Integration Point |
 |-------|-------------------|
-| [senior-devops](../senior-devops/) | CI/CD security, infrastructure hardening |
-| [senior-secops](../senior-secops/) | Security monitoring, incident response |
-| [senior-backend](../senior-backend/) | Secure API development |
-| [senior-architect](../senior-architect/) | Security architecture decisions |
+| `senior-devops` (`devops/senior-devops`) | CI/CD security, infrastructure hardening |
+| `senior-secops` (`devops/senior-secops`) | Security monitoring, incident response |
+| `senior-backend` (`engineering-craft/senior-backend`) | Secure API development |
+| `senior-architect` (`engineering-craft/senior-architect`) | Security architecture decisions |

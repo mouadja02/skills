@@ -1,4 +1,4 @@
-﻿---
+---
 name: python-pypi-package-builder
 description: Build, test, lint, version, publish Python library to PyPI — all build tool flavors
 ---

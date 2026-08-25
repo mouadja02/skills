@@ -1,6 +1,6 @@
 ---
 name: ef-core
-description: 'Get best practices for Entity Framework Core'
+description: Use when working with Entity Framework Core — modeling entities and relationships, migrations, LINQ query performance, change tracking, N+1 problems, and connection and transaction handling.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 ---

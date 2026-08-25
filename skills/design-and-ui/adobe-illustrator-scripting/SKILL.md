@@ -1,4 +1,4 @@
-﻿---
+---
 name: adobe-illustrator-scripting
 description: 'Write, debug, and optimize Adobe Illustrator automation scripts using ExtendScript (JavaScript/JSX)'
 ---

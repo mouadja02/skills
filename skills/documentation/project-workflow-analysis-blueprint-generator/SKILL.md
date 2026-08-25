@@ -1,4 +1,4 @@
-﻿---
+---
 name: project-workflow-analysis-blueprint-generator
 description: End-to-end workflow docs — CI/CD, service boundaries, data flow, auto-detect project type
 ---

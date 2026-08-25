@@ -1,5 +1,5 @@
 ---
-name: "status"
+name: "autoresearch-status"
 description: "Show experiment dashboard with results, active loops, and progress."
 command: /ar:status
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: unit-test-vue-pinia
 category: testing
 description: 'Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases'

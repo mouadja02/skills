@@ -1,9 +1,9 @@
 ---
 name: "c-level-advisor"
-description: C-suite advice — channels 10 roles: CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO
+description: Use when a founder or executive needs C-suite advice and it is not yet clear which role should answer — routes the question to the right advisor (CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO) and explains how the 28-skill executive ecosystem fits together. Start here, then load the individual role skill.
 license: MIT
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   author: Alireza Rezvani
   category: c-level
   domain: executive-advisory
@@ -20,6 +20,22 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 # C-Level Advisory Ecosystem
 
 A complete virtual board of directors for founders and executives.
+
+> **How this ecosystem is laid out:** this skill is the map and router. Every role
+> and workflow it describes ships as its own sibling skill under
+> `business-strategy/` (for example `business-strategy/ceo-advisor`,
+> `business-strategy/chief-of-staff`), so you can install just the roles you need.
+> Install this skill when you want the routing logic and the shared conventions.
+
+## When to Use
+
+- A strategic question spans several executive functions and you need it routed to the right role
+- You want the shared protocol, memory model, and output contract the role skills all follow
+- You are setting up the executive ecosystem for the first time and need the onboarding sequence
+- You need the catalog of which advisor skill covers which decision
+
+**Skip this skill** and load the role skill directly when you already know the question is purely
+financial (`cfo-advisor`), technical (`cto-advisor`), and so on.
 
 ## Quick Start
 
@@ -153,5 +169,5 @@ Culture Architect, Company OS, Founder Coach, Strategic Alignment, Change Manage
 ## See Also
 
 - `CLAUDE.md` — full architecture diagram and integration guide
-- `agent-protocol/SKILL.md` — communication standard and quality loop details
-- `chief-of-staff/SKILL.md` — routing matrix for all 28 skills
+- The `agent-protocol` skill (`business-strategy/agent-protocol`) — communication standard and quality loop details
+- The `chief-of-staff` skill (`business-strategy/chief-of-staff`) — routing matrix for every role in this ecosystem

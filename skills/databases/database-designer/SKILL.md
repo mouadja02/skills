@@ -1,6 +1,6 @@
-﻿---
+---
 name: "database-designer"
-description: "Design and audit relational database schemas"
+description: Use when designing a new relational schema or auditing an existing one — normalization, keys and constraints, indexing strategy, and spotting modeling problems before they reach production.
 ---
 
 # Database Designer - POWERFUL Tier Skill

@@ -1,6 +1,6 @@
-﻿---
+---
 name: planning-and-task-breakdown
-description: Breaks work into ordered tasks
+description: Use when a task feels too large or vague to start, a spec needs breaking into implementable units, work must be parallelized across agents or sessions, or implementation order is unclear. Produces ordered tasks with acceptance criteria. Skip when the spec already contains well-defined tasks.
 ---
 
 # Planning and Task Breakdown

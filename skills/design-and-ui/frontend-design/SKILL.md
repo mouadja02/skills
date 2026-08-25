@@ -1,4 +1,4 @@
-﻿---
+---
 name: frontend-design
 description: Create distinctive, production-grade frontend interfaces with high design quality
 license: Complete terms in LICENSE.txt

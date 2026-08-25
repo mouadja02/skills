@@ -1,4 +1,4 @@
-﻿---
+---
 name: framework-react-native-expert
 description: Triggers on keywords React Native, Expo, Mobile App, iOS, Android
 ---

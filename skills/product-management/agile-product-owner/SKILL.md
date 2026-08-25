@@ -1,4 +1,4 @@
-﻿---
+---
 name: "agile-product-owner"
 description: Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking
 triggers:

@@ -1,4 +1,4 @@
-﻿---
+---
 name: "stripe-integration-expert"
 description: "Implement production-grade Stripe integrations"
 ---

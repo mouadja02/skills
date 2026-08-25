@@ -1,4 +1,4 @@
-﻿---
+---
 name: "ai-code-migrator"
 description: "Automate large-scale codebase migrations using AI — framework upgrades, language conversions, API modernization, and dependency swaps"
 ---
