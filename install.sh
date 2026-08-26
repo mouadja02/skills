@@ -6,7 +6,7 @@
 #   install.sh --list | --list-categories | --help
 #
 # A selector is one of:
-#   * an exact install path        engineering-craft/test-driven-development
+#   * an exact install path        engineering-craft/superpowers-test-driven-development
 #   * a category name              engineering-craft
 #   * a glob pattern (quoted)      "*bmad*"  "ai-agents/bmad*"  "*-advisor"
 #
@@ -43,7 +43,7 @@ USAGE
 
 SELECTORS
   An exact install path  install one skill
-      engineering-craft/test-driven-development
+      engineering-craft/superpowers-test-driven-development
       ai-agents/bmm-skills/1-analysis/bmad-prfaq
 
   A category name        install every skill in that category
@@ -92,8 +92,8 @@ ENVIRONMENT
 
 EXAMPLES
   # one skill
-  install.sh engineering-craft/test-driven-development \
-      -d ~/.claude/skills/test-driven-development
+  install.sh engineering-craft/superpowers-test-driven-development \
+      -d ~/.claude/skills/superpowers-test-driven-development
 
   # every skill in a category
   install.sh engineering-craft -d ~/.claude/skills/engineering-craft

@@ -16,7 +16,7 @@ curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh | 
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) <install_path> -Dest <destination>
 ```
 
-Where `<install_path>` is the value from the **Install path** column below (e.g. `engineering-craft/test-driven-development`).
+Where `<install_path>` is the value from the **Install path** column below (e.g. `engineering-craft/superpowers-test-driven-development`).
 
 ## Categories
 

@@ -468,7 +468,7 @@ function renderSkillsMd({ count, categories, counts_by_category, skills, repo, d
   lines.push("```");
   lines.push("");
   lines.push(
-    `Where \`<install_path>\` is the value from the **Install path** column below (e.g. \`engineering-craft/test-driven-development\`).`
+    `Where \`<install_path>\` is the value from the **Install path** column below (e.g. \`engineering-craft/superpowers-test-driven-development\`).`
   );
   lines.push("");
   lines.push(`## Categories`);

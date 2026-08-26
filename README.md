@@ -17,13 +17,13 @@ Install a single skill with the provided scripts.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- engineering-craft/test-driven-development \
+  | bash -s -- engineering-craft/superpowers-test-driven-development \
       -d ~/.claude/skills
 ```
 
 ```powershell
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) `
-  engineering-craft/test-driven-development -Dest $HOME\.claude\skills
+  engineering-craft/superpowers-test-driven-development -Dest $HOME\.claude\skills
 ```
 
 Selectors may be an exact install path, a category, a quoted glob, or `--all` / `-All`. Use
