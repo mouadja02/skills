@@ -7,7 +7,7 @@
     Pass any of these as -Skill / -Selector:
 
       * an exact install path -> install one skill
-            engineering-craft/test-driven-development
+            engineering-craft/superpowers-test-driven-development
       * a category name       -> install every skill in that category
             engineering-craft
       * a glob pattern        -> install every install_path that matches
@@ -57,11 +57,11 @@
     statement.
 
     & ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) `
-        engineering-craft/test-driven-development -Dest $HOME\.claude\skills
+        engineering-craft/superpowers-test-driven-development -Dest $HOME\.claude\skills
 
 .EXAMPLE
-    Install-Skill engineering-craft/test-driven-development `
-        -Dest $HOME\.claude\skills\test-driven-development
+    Install-Skill engineering-craft/superpowers-test-driven-development `
+        -Dest $HOME\.claude\skills\superpowers-test-driven-development
 
 .EXAMPLE
     Install-Skill engineering-craft -Dest $HOME\.claude\skills\engineering-craft

@@ -186,7 +186,7 @@ Help users:
 ${installSnippet}
 
 Skill selector formats:
-- Single skill: \`engineering-craft/test-driven-development\`
+- Single skill: \`engineering-craft/superpowers-test-driven-development\`
 - Whole category: \`engineering-craft\`
 - Glob pattern: \`"ai-agents/*"\` or \`"*mcp*"\`
 
