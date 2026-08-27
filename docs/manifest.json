@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-25T21:13:34.088Z",
+  "generated_at": "2026-08-27T10:17:46.445Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 810,
+  "count": 811,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 20,
+    "api-backend": 21,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -784,6 +784,14 @@
       "path": "skills/api-backend/http-early-hints-proxy-conformance",
       "depth": 2,
       "description": "Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response."
+    },
+    {
+      "name": "ipv6-zone-identifier-uri-portability-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/ipv6-zone-identifier-uri-portability-conformance",
+      "path": "skills/api-backend/ipv6-zone-identifier-uri-portability-conformance",
+      "depth": 2,
+      "description": "Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any network probe."
     },
     {
       "name": "json-duplicate-member-boundary-conformance",
