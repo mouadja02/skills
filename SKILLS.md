@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 810 skills across 36 categories.
+**Total:** 811 skills across 36 categories.
 
 ## Install one skill
 
@@ -24,7 +24,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | ---: |
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
-| [`api-backend`](#api-backend) | 20 |
+| [`api-backend`](#api-backend) | 21 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 85 |
 | [`cloud-azure`](#cloud-azure) | 18 |
@@ -161,6 +161,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`graphql-incremental-hydration-preflight`](./skills/api-backend/graphql-incremental-hydration-preflight/SKILL.md) | `api-backend/graphql-incremental-hydration-preflight` | Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bounded rollout or recovery decision. |
 | [`grpc-trailer-preservation-conformance`](./skills/api-backend/grpc-trailer-preservation-conformance/SKILL.md) | `api-backend/grpc-trailer-preservation-conformance` | Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures. |
 | [`http-early-hints-proxy-conformance`](./skills/api-backend/http-early-hints-proxy-conformance/SKILL.md) | `api-backend/http-early-hints-proxy-conformance` | Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response. |
+| [`ipv6-zone-identifier-uri-portability-conformance`](./skills/api-backend/ipv6-zone-identifier-uri-portability-conformance/SKILL.md) | `api-backend/ipv6-zone-identifier-uri-portability-conformance` | Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any network probe. |
 | [`json-duplicate-member-boundary-conformance`](./skills/api-backend/json-duplicate-member-boundary-conformance/SKILL.md) | `api-backend/json-duplicate-member-boundary-conformance` | Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets. |
 | [`multipart-form-data-wire-conformance`](./skills/api-backend/multipart-form-data-wire-conformance/SKILL.md) | `api-backend/multipart-form-data-wire-conformance` | Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normalized part trees, and make a bounded rollout decision. |
 | [`oauth-dpop-nonce-retry-conformance`](./skills/api-backend/oauth-dpop-nonce-retry-conformance/SKILL.md) | `api-backend/oauth-dpop-nonce-retry-conformance` | Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior. |
