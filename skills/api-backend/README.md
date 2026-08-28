@@ -6,7 +6,7 @@
 
 API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.
 
-**Total:** 21 skills.
+**Total:** 22 skills.
 
 ## Skills In This Category
 
@@ -22,6 +22,7 @@ API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations
 | [`json-duplicate-member-boundary-conformance`](json-duplicate-member-boundary-conformance/SKILL.md) | `api-backend/json-duplicate-member-boundary-conformance` | Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets. |
 | [`multipart-form-data-wire-conformance`](multipart-form-data-wire-conformance/SKILL.md) | `api-backend/multipart-form-data-wire-conformance` | Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normali... |
 | [`oauth-dpop-nonce-retry-conformance`](oauth-dpop-nonce-retry-conformance/SKILL.md) | `api-backend/oauth-dpop-nonce-retry-conformance` | Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior. |
+| [`openapi-nullability-migration-conformance`](openapi-nullability-migration-conformance/SKILL.md) | `api-backend/openapi-nullability-migration-conformance` | Use when OpenAPI 3.0 nullable schemas are ignored, rewritten, or generate unusable types after an OpenAPI 3.1 migration. Inventory requiredness, null acceptance, references, composition, and fixtures offline before changing a contract. |
 | [`openapi-to-application-code`](openapi-to-application-code/SKILL.md) | `api-backend/openapi-to-application-code` | Generate a complete, production-ready application from an OpenAPI specification |
 | [`python-fastapi-llm`](python-fastapi-llm/SKILL.md) | `api-backend/python-fastapi-llm` | Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill |
 | [`python-pypi-package-builder`](python-pypi-package-builder/SKILL.md) | `api-backend/python-pypi-package-builder` | Build, test, lint, version, publish Python library to PyPI — all build tool flavors |
