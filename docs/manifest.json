@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-27T10:17:46.445Z",
+  "generated_at": "2026-08-28T10:11:55.137Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 811,
+  "count": 812,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 21,
+    "api-backend": 22,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -816,6 +816,14 @@
       "path": "skills/api-backend/oauth-dpop-nonce-retry-conformance",
       "depth": 2,
       "description": "Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior."
+    },
+    {
+      "name": "openapi-nullability-migration-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/openapi-nullability-migration-conformance",
+      "path": "skills/api-backend/openapi-nullability-migration-conformance",
+      "depth": 2,
+      "description": "Use when OpenAPI 3.0 nullable schemas are ignored, rewritten, or generate unusable types after an OpenAPI 3.1 migration. Inventory requiredness, null acceptance, references, composition, and fixtures offline before changing a contract."
     },
     {
       "name": "openapi-to-application-code",

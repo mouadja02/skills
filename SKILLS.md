@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 811 skills across 36 categories.
+**Total:** 812 skills across 36 categories.
 
 ## Install one skill
 
@@ -24,7 +24,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | ---: |
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
-| [`api-backend`](#api-backend) | 21 |
+| [`api-backend`](#api-backend) | 22 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 85 |
 | [`cloud-azure`](#cloud-azure) | 18 |
@@ -165,6 +165,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`json-duplicate-member-boundary-conformance`](./skills/api-backend/json-duplicate-member-boundary-conformance/SKILL.md) | `api-backend/json-duplicate-member-boundary-conformance` | Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets. |
 | [`multipart-form-data-wire-conformance`](./skills/api-backend/multipart-form-data-wire-conformance/SKILL.md) | `api-backend/multipart-form-data-wire-conformance` | Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normalized part trees, and make a bounded rollout decision. |
 | [`oauth-dpop-nonce-retry-conformance`](./skills/api-backend/oauth-dpop-nonce-retry-conformance/SKILL.md) | `api-backend/oauth-dpop-nonce-retry-conformance` | Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior. |
+| [`openapi-nullability-migration-conformance`](./skills/api-backend/openapi-nullability-migration-conformance/SKILL.md) | `api-backend/openapi-nullability-migration-conformance` | Use when OpenAPI 3.0 nullable schemas are ignored, rewritten, or generate unusable types after an OpenAPI 3.1 migration. Inventory requiredness, null acceptance, references, composition, and fixtures offline before changing a contract. |
 | [`openapi-to-application-code`](./skills/api-backend/openapi-to-application-code/SKILL.md) | `api-backend/openapi-to-application-code` | Generate a complete, production-ready application from an OpenAPI specification |
 | [`python-fastapi-llm`](./skills/api-backend/python-fastapi-llm/SKILL.md) | `api-backend/python-fastapi-llm` | Also use for async Python patterns, Pydantic schemas for LLM structured outputs, retry strategies for LLM calls, background AI jobs, or any service combining FastAPI and LLMs. If Python + AI backend is in scope — use this skill |
 | [`python-pypi-package-builder`](./skills/api-backend/python-pypi-package-builder/SKILL.md) | `api-backend/python-pypi-package-builder` | Build, test, lint, version, publish Python library to PyPI — all build tool flavors |
