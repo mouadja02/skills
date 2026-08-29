@@ -6,7 +6,7 @@
 
 API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.
 
-**Total:** 22 skills.
+**Total:** 23 skills.
 
 ## Skills In This Category
 
@@ -18,6 +18,7 @@ API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations
 | [`graphql-incremental-hydration-preflight`](graphql-incremental-hydration-preflight/SKILL.md) | `api-backend/graphql-incremental-hydration-preflight` | Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bo... |
 | [`grpc-trailer-preservation-conformance`](grpc-trailer-preservation-conformance/SKILL.md) | `api-backend/grpc-trailer-preservation-conformance` | Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures. |
 | [`http-early-hints-proxy-conformance`](http-early-hints-proxy-conformance/SKILL.md) | `api-backend/http-early-hints-proxy-conformance` | Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response. |
+| [`http-redirect-credential-boundary-conformance`](http-redirect-credential-boundary-conformance/SKILL.md) | `api-backend/http-redirect-credential-boundary-conformance` | Use when an HTTP client follows redirects and credentials are silently dropped or may cross host, scheme, or port boundaries—especially Authorization, Cookie, Proxy-Authorization, API-key headers, 301/302/303/307/308, or default-port con... |
 | [`ipv6-zone-identifier-uri-portability-conformance`](ipv6-zone-identifier-uri-portability-conformance/SKILL.md) | `api-backend/ipv6-zone-identifier-uri-portability-conformance` | Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any netw... |
 | [`json-duplicate-member-boundary-conformance`](json-duplicate-member-boundary-conformance/SKILL.md) | `api-backend/json-duplicate-member-boundary-conformance` | Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets. |
 | [`multipart-form-data-wire-conformance`](multipart-form-data-wire-conformance/SKILL.md) | `api-backend/multipart-form-data-wire-conformance` | Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normali... |

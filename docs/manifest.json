@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T10:11:55.137Z",
+  "generated_at": "2026-08-29T10:05:04.365Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 812,
+  "count": 813,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 22,
+    "api-backend": 23,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -784,6 +784,14 @@
       "path": "skills/api-backend/http-early-hints-proxy-conformance",
       "depth": 2,
       "description": "Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response."
+    },
+    {
+      "name": "http-redirect-credential-boundary-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/http-redirect-credential-boundary-conformance",
+      "path": "skills/api-backend/http-redirect-credential-boundary-conformance",
+      "depth": 2,
+      "description": "Use when an HTTP client follows redirects and credentials are silently dropped or may cross host, scheme, or port boundaries—especially Authorization, Cookie, Proxy-Authorization, API-key headers, 301/302/303/307/308, or default-port confusion."
     },
     {
       "name": "ipv6-zone-identifier-uri-portability-conformance",
