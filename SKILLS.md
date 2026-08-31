@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 814 skills across 36 categories.
+**Total:** 815 skills across 36 categories.
 
 ## Install one skill
 
@@ -35,7 +35,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`creative`](#creative) | 2 |
 | [`databases`](#databases) | 25 |
 | [`design-and-ui`](#design-and-ui) | 34 |
-| [`dev-workflow`](#dev-workflow) | 29 |
+| [`dev-workflow`](#dev-workflow) | 30 |
 | [`devops`](#devops) | 46 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
@@ -530,6 +530,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`my-issues`](./skills/dev-workflow/my-issues/SKILL.md) | `dev-workflow/my-issues` | Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed. |
 | [`my-pull-requests`](./skills/dev-workflow/my-pull-requests/SKILL.md) | `dev-workflow/my-pull-requests` | List my pull requests in the current repository |
 | [`npm`](./skills/dev-workflow/npm/SKILL.md) | `dev-workflow/npm` | npm registry ops: login, whoami, package availability, publish; 1Password tmux auth. |
+| [`npm-platform-optional-lockfile-conformance`](./skills/dev-workflow/npm-platform-optional-lockfile-conformance/SKILL.md) | `dev-workflow/npm-platform-optional-lockfile-conformance` | Use when an npm package-lock omits or misstates OS/CPU/libc-specific optional packages, npm ci fails only on another platform, or a native binary is absent after lockfile regeneration. |
 | [`pr-dashboard`](./skills/dev-workflow/pr-dashboard/SKILL.md) | `dev-workflow/pr-dashboard` | Open a GitHub PR dashboard in the browser. Use when the user asks to see their pull requests, open the PR dashboard, show PRs for a date range, or check PR status. Trigger phrases include "show my PRs", "open PR dashboard", "pull request dashboard". |
 | [`ruff-recursive-fix`](./skills/dev-workflow/ruff-recursive-fix/SKILL.md) | `dev-workflow/ruff-recursive-fix` | Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively, review each change, and resolve remaining findings with targeted edits or user decisions |
 | [`shuffle-json-data`](./skills/dev-workflow/shuffle-json-data/SKILL.md) | `dev-workflow/shuffle-json-data` | Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries. |

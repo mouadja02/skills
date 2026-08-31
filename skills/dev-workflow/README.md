@@ -6,7 +6,7 @@
 
 Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.
 
-**Total:** 29 skills.
+**Total:** 30 skills.
 
 ## Skills In This Category
 
@@ -36,6 +36,7 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`my-issues`](my-issues/SKILL.md) | `dev-workflow/my-issues` | Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed. |
 | [`my-pull-requests`](my-pull-requests/SKILL.md) | `dev-workflow/my-pull-requests` | List my pull requests in the current repository |
 | [`npm`](npm/SKILL.md) | `dev-workflow/npm` | npm registry ops: login, whoami, package availability, publish; 1Password tmux auth. |
+| [`npm-platform-optional-lockfile-conformance`](npm-platform-optional-lockfile-conformance/SKILL.md) | `dev-workflow/npm-platform-optional-lockfile-conformance` | Use when an npm package-lock omits or misstates OS/CPU/libc-specific optional packages, npm ci fails only on another platform, or a native binary is absent after lockfile regeneration. |
 | [`pr-dashboard`](pr-dashboard/SKILL.md) | `dev-workflow/pr-dashboard` | Open a GitHub PR dashboard in the browser. Use when the user asks to see their pull requests, open the PR dashboard, show PRs for a date range, or check PR status. Trigger phrases include "show my PRs", "open PR dashboard", "pull request... |
 | [`ruff-recursive-fix`](ruff-recursive-fix/SKILL.md) | `dev-workflow/ruff-recursive-fix` | Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively, review each change, and resolve remaining findings with targeted edits or user decisions |
 | [`shuffle-json-data`](shuffle-json-data/SKILL.md) | `dev-workflow/shuffle-json-data` | Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries. |

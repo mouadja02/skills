@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-30T10:09:08.510Z",
+  "generated_at": "2026-08-31T10:17:43.640Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 814,
+  "count": 815,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -56,7 +56,7 @@
     "creative": 2,
     "databases": 25,
     "design-and-ui": 34,
-    "dev-workflow": 29,
+    "dev-workflow": 30,
     "devops": 46,
     "diagrams-slides": 14,
     "documentation": 28,
@@ -3296,6 +3296,14 @@
       "path": "skills/dev-workflow/npm",
       "depth": 2,
       "description": "npm registry ops: login, whoami, package availability, publish; 1Password tmux auth."
+    },
+    {
+      "name": "npm-platform-optional-lockfile-conformance",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/npm-platform-optional-lockfile-conformance",
+      "path": "skills/dev-workflow/npm-platform-optional-lockfile-conformance",
+      "depth": 2,
+      "description": "Use when an npm package-lock omits or misstates OS/CPU/libc-specific optional packages, npm ci fails only on another platform, or a native binary is absent after lockfile regeneration."
     },
     {
       "name": "pr-dashboard",
