@@ -4,7 +4,7 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 814 skills across 36 categories.
+**Total:** 815 skills across 36 categories.
 
 ## Categories
 
@@ -23,7 +23,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`creative`](./creative/) | 2 | Creative ideation, concept visualization, generative methods, and reusable design prompts. |
 | [`databases`](./databases/) | 25 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
 | [`design-and-ui`](./design-and-ui/) | 34 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
-| [`dev-workflow`](./dev-workflow/) | 29 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
+| [`dev-workflow`](./dev-workflow/) | 30 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
 | [`devops`](./devops/) | 46 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
 | [`diagrams-slides`](./diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
