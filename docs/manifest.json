@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-08-31T10:17:43.640Z",
+  "generated_at": "2026-09-01T10:12:02.525Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 815,
+  "count": 816,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -56,7 +56,7 @@
     "creative": 2,
     "databases": 25,
     "design-and-ui": 34,
-    "dev-workflow": 30,
+    "dev-workflow": 31,
     "devops": 46,
     "diagrams-slides": 14,
     "documentation": 28,
@@ -3256,6 +3256,14 @@
       "path": "skills/dev-workflow/github-release",
       "depth": 2,
       "description": "Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates."
+    },
+    {
+      "name": "http-range-resume-integrity-conformance",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/http-range-resume-integrity-conformance",
+      "path": "skills/dev-workflow/http-range-resume-integrity-conformance",
+      "depth": 2,
+      "description": "Use when interrupted HTTP downloads resume with Range/If-Range, partial caches may be stale, or 200/206/416 and Content-Range handling could append incompatible bytes."
     },
     {
       "name": "make-repo-contribution",

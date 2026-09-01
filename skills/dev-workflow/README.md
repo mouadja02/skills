@@ -6,7 +6,7 @@
 
 Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.
 
-**Total:** 30 skills.
+**Total:** 31 skills.
 
 ## Skills In This Category
 
@@ -31,6 +31,7 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`github-issues`](github-issues/SKILL.md) | `dev-workflow/github-issues` | GitHub issues via MCP — bug reports, features, milestones, labels, bulk operations |
 | [`github-project-triage`](github-project-triage/SKILL.md) | `dev-workflow/github-project-triage` | GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode. |
 | [`github-release`](github-release/SKILL.md) | `dev-workflow/github-release` | Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates. |
+| [`http-range-resume-integrity-conformance`](http-range-resume-integrity-conformance/SKILL.md) | `dev-workflow/http-range-resume-integrity-conformance` | Use when interrupted HTTP downloads resume with Range/If-Range, partial caches may be stale, or 200/206/416 and Content-Range handling could append incompatible bytes. |
 | [`make-repo-contribution`](make-repo-contribution/SKILL.md) | `dev-workflow/make-repo-contribution` | Repo contribution — read guidance, file issue, branch, commit, PR workflow |
 | [`msstore-cli`](msstore-cli/SKILL.md) | `dev-workflow/msstore-cli` | Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store |
 | [`my-issues`](my-issues/SKILL.md) | `dev-workflow/my-issues` | Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed. |

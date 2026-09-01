@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 815 skills across 36 categories.
+**Total:** 816 skills across 36 categories.
 
 ## Install one skill
 
@@ -35,7 +35,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`creative`](#creative) | 2 |
 | [`databases`](#databases) | 25 |
 | [`design-and-ui`](#design-and-ui) | 34 |
-| [`dev-workflow`](#dev-workflow) | 30 |
+| [`dev-workflow`](#dev-workflow) | 31 |
 | [`devops`](#devops) | 46 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
@@ -525,6 +525,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`github-issues`](./skills/dev-workflow/github-issues/SKILL.md) | `dev-workflow/github-issues` | GitHub issues via MCP — bug reports, features, milestones, labels, bulk operations |
 | [`github-project-triage`](./skills/dev-workflow/github-project-triage/SKILL.md) | `dev-workflow/github-project-triage` | GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode. |
 | [`github-release`](./skills/dev-workflow/github-release/SKILL.md) | `dev-workflow/github-release` | Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates. |
+| [`http-range-resume-integrity-conformance`](./skills/dev-workflow/http-range-resume-integrity-conformance/SKILL.md) | `dev-workflow/http-range-resume-integrity-conformance` | Use when interrupted HTTP downloads resume with Range/If-Range, partial caches may be stale, or 200/206/416 and Content-Range handling could append incompatible bytes. |
 | [`make-repo-contribution`](./skills/dev-workflow/make-repo-contribution/SKILL.md) | `dev-workflow/make-repo-contribution` | Repo contribution — read guidance, file issue, branch, commit, PR workflow |
 | [`msstore-cli`](./skills/dev-workflow/msstore-cli/SKILL.md) | `dev-workflow/msstore-cli` | Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store |
 | [`my-issues`](./skills/dev-workflow/my-issues/SKILL.md) | `dev-workflow/my-issues` | Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed. |
