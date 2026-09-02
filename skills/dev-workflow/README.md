@@ -6,7 +6,7 @@
 
 Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.
 
-**Total:** 31 skills.
+**Total:** 32 skills.
 
 ## Skills In This Category
 
@@ -41,6 +41,7 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`pr-dashboard`](pr-dashboard/SKILL.md) | `dev-workflow/pr-dashboard` | Open a GitHub PR dashboard in the browser. Use when the user asks to see their pull requests, open the PR dashboard, show PRs for a date range, or check PR status. Trigger phrases include "show my PRs", "open PR dashboard", "pull request... |
 | [`ruff-recursive-fix`](ruff-recursive-fix/SKILL.md) | `dev-workflow/ruff-recursive-fix` | Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively, review each change, and resolve remaining findings with targeted edits or user decisions |
 | [`shuffle-json-data`](shuffle-json-data/SKILL.md) | `dev-workflow/shuffle-json-data` | Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries. |
+| [`timezone-database-provenance-conformance`](timezone-database-provenance-conformance/SKILL.md) | `dev-workflow/timezone-database-provenance-conformance` | Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants. |
 | [`using-git-worktrees`](using-git-worktrees/SKILL.md) | `dev-workflow/using-git-worktrees` | Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification |
 | [`xurl`](xurl/SKILL.md) | `dev-workflow/xurl` | xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints. |
 

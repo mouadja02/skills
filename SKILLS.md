@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 816 skills across 36 categories.
+**Total:** 817 skills across 36 categories.
 
 ## Install one skill
 
@@ -35,7 +35,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`creative`](#creative) | 2 |
 | [`databases`](#databases) | 25 |
 | [`design-and-ui`](#design-and-ui) | 34 |
-| [`dev-workflow`](#dev-workflow) | 31 |
+| [`dev-workflow`](#dev-workflow) | 32 |
 | [`devops`](#devops) | 46 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
@@ -535,6 +535,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`pr-dashboard`](./skills/dev-workflow/pr-dashboard/SKILL.md) | `dev-workflow/pr-dashboard` | Open a GitHub PR dashboard in the browser. Use when the user asks to see their pull requests, open the PR dashboard, show PRs for a date range, or check PR status. Trigger phrases include "show my PRs", "open PR dashboard", "pull request dashboard". |
 | [`ruff-recursive-fix`](./skills/dev-workflow/ruff-recursive-fix/SKILL.md) | `dev-workflow/ruff-recursive-fix` | Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively, review each change, and resolve remaining findings with targeted edits or user decisions |
 | [`shuffle-json-data`](./skills/dev-workflow/shuffle-json-data/SKILL.md) | `dev-workflow/shuffle-json-data` | Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries. |
+| [`timezone-database-provenance-conformance`](./skills/dev-workflow/timezone-database-provenance-conformance/SKILL.md) | `dev-workflow/timezone-database-provenance-conformance` | Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants. |
 | [`using-git-worktrees`](./skills/dev-workflow/using-git-worktrees/SKILL.md) | `dev-workflow/using-git-worktrees` | Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification |
 | [`xurl`](./skills/dev-workflow/xurl/SKILL.md) | `dev-workflow/xurl` | xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints. |
 
