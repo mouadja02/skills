@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-01T10:12:02.525Z",
+  "generated_at": "2026-09-02T10:12:35.367Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 816,
+  "count": 817,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -56,7 +56,7 @@
     "creative": 2,
     "databases": 25,
     "design-and-ui": 34,
-    "dev-workflow": 31,
+    "dev-workflow": 32,
     "devops": 46,
     "diagrams-slides": 14,
     "documentation": 28,
@@ -3336,6 +3336,14 @@
       "path": "skills/dev-workflow/shuffle-json-data",
       "depth": 2,
       "description": "Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries."
+    },
+    {
+      "name": "timezone-database-provenance-conformance",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/timezone-database-provenance-conformance",
+      "path": "skills/dev-workflow/timezone-database-provenance-conformance",
+      "depth": 2,
+      "description": "Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants."
     },
     {
       "name": "using-git-worktrees",
