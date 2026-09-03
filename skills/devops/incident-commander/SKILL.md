@@ -1,6 +1,7 @@
 ---
 name: "incident-commander"
 description: "Run incident response from detection to post-mortem"
+version: "1.0.1"
 ---
 
 # Incident Commander Skill
@@ -375,29 +376,30 @@ Status page: {link}
 
 ### Example 1: Database Connection Pool Exhaustion
 
-```bash
-# Classify the incident
-echo '{"description": "Users reporting 500 errors, database connections timing out", "affected_users": "80%", "business_impact": "high"}' | python scripts/incident_classifier.py
-
-# Reconstruct timeline from logs
-python scripts/timeline_reconstructor.py --input assets/db_incident_events.json --output timeline.md
-
-# Generate PIR after resolution
-python scripts/pir_generator.py --incident assets/db_incident_data.json --timeline timeline.md --output pir.md
-```
-
-### Example 2: API Rate Limiting Incident
+Run these commands from the installed `incident-commander` package directory. The timeline is emitted as JSON so the PIR generator can consume it.
 
 ```bash
-# Quick classification from stdin
-echo "API rate limits causing customer API calls to fail" | python scripts/incident_classifier.py --format text
+# Classify the bundled incident
+python3 scripts/incident_classifier.py --input assets/sample_incident_classification.json --format text
 
-# Build timeline from multiple sources
-python scripts/timeline_reconstructor.py --input assets/api_incident_logs.json --detect-phases --gap-analysis
+# Reconstruct the bundled timeline as machine-readable JSON
+python3 scripts/timeline_reconstructor.py --input assets/sample_timeline_events.json --format json --output timeline.json
 
-# Generate comprehensive PIR
-python scripts/pir_generator.py --incident assets/api_incident_summary.json --rca-method fishbone --action-items
+# Generate a Markdown PIR from bundled incident and timeline data
+python3 scripts/pir_generator.py --incident assets/sample_incident_pir_data.json --timeline timeline.json --format markdown --output pir.md
 ```
+
+### Example 2: Minimal Incident Smoke Test
+
+```bash
+# Quick classification from a bundled minimal fixture
+python3 scripts/incident_classifier.py --input assets/simple_incident.json --format text
+
+# Exercise phase detection and gap analysis with the bundled minimal timeline
+python3 scripts/timeline_reconstructor.py --input assets/simple_timeline_events.json --detect-phases --gap-analysis --format text
+```
+
+Completion requires all five commands to exit `0`, `timeline.json` to parse as JSON, and `pir.md` to contain a `# Post-Incident Review` heading. Remove the two generated output files after reviewing them.
 
 ## Best Practices
 
