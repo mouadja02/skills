@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-02T10:12:35.367Z",
+  "generated_at": "2026-09-02T11:24:51.460Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 817,
+  "count": 818,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -66,7 +66,7 @@
     "go-to-market": 11,
     "java-kotlin": 11,
     "llm-tooling": 49,
-    "marketing-and-growth": 26,
+    "marketing-and-growth": 27,
     "mcp": 16,
     "messaging": 1,
     "microsoft-agents": 11,
@@ -5136,6 +5136,14 @@
       "path": "skills/marketing-and-growth/apple-appstore-reviewer",
       "depth": 2,
       "description": "Serves as a reviewer of the codebase with instructions on looking for Apple App Store optimizations or rejection reasons"
+    },
+    {
+      "name": "bulkpublish-social-publishing",
+      "category": "marketing-and-growth",
+      "install_path": "marketing-and-growth/bulkpublish-social-publishing",
+      "path": "skills/marketing-and-growth/bulkpublish-social-publishing",
+      "depth": 2,
+      "description": "Use when an agent needs to prepare, approve, schedule, or publish social content through BulkPublish."
     },
     {
       "name": "content-humanizer",

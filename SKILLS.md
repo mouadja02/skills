@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 817 skills across 36 categories.
+**Total:** 818 skills across 36 categories.
 
 ## Install one skill
 
@@ -45,7 +45,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
 | [`llm-tooling`](#llm-tooling) | 49 |
-| [`marketing-and-growth`](#marketing-and-growth) | 26 |
+| [`marketing-and-growth`](#marketing-and-growth) | 27 |
 | [`mcp`](#mcp) | 16 |
 | [`messaging`](#messaging) | 1 |
 | [`microsoft-agents`](#microsoft-agents) | 11 |
@@ -810,6 +810,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`apple-appstore-reviewer`](./skills/marketing-and-growth/apple-appstore-reviewer/SKILL.md) | `marketing-and-growth/apple-appstore-reviewer` | Serves as a reviewer of the codebase with instructions on looking for Apple App Store optimizations or rejection reasons |
+| [`bulkpublish-social-publishing`](./skills/marketing-and-growth/bulkpublish-social-publishing/SKILL.md) | `marketing-and-growth/bulkpublish-social-publishing` | Use when an agent needs to prepare, approve, schedule, or publish social content through BulkPublish. |
 | [`content-humanizer`](./skills/marketing-and-growth/content-humanizer/SKILL.md) | `marketing-and-growth/content-humanizer` | Makes AI-generated content sound genuinely human — not just cleaned up, but alive |
 | [`content-production`](./skills/marketing-and-growth/content-production/SKILL.md) | `marketing-and-growth/content-production` | Full content production pipeline — takes a topic from blank page to published-ready piece |
 | [`cs-ad-creative`](./skills/marketing-and-growth/cs-ad-creative/SKILL.md) | `marketing-and-growth/cs-ad-creative` | Use when generating, iterating, or scaling paid-ad creative across platforms, funnel stages, audiences, or tested variants. Do not use for organic social content or campaign-budget analysis. |
