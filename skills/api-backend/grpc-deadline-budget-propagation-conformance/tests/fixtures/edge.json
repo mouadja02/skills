@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "grpc_deadline_trace",
+  "rpc_type": "server_streaming",
+  "missing_deadline_policy": "block",
+  "initial_timeout": "1S",
+  "hops": [
+    {"name": "A", "elapsed_ns": 100000000, "forwarded_timeout": "900m"},
+    {"name": "B", "elapsed_ns": 200000000, "forwarded_timeout": "900m"}
+  ],
+  "server": {"elapsed_since_initial_ns": 1100000000, "work_active": true, "cancellation_observed": false}
+}

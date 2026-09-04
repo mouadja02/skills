@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 817 skills across 36 categories.
+**Total:** 818 skills across 36 categories.
 
 ## Install one skill
 
@@ -24,7 +24,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | ---: |
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
-| [`api-backend`](#api-backend) | 24 |
+| [`api-backend`](#api-backend) | 25 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 85 |
 | [`cloud-azure`](#cloud-azure) | 18 |
@@ -159,6 +159,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`framework-fastapi-expert`](./skills/api-backend/framework-fastapi-expert/SKILL.md) | `api-backend/framework-fastapi-expert` | Use when the user asks to work on a Python FastAPI project. Triggers on keywords Python, FastAPI, Pydantic, SQLAlchemy. |
 | [`gdpr-compliant`](./skills/api-backend/gdpr-compliant/SKILL.md) | `api-backend/gdpr-compliant` | GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails |
 | [`graphql-incremental-hydration-preflight`](./skills/api-backend/graphql-incremental-hydration-preflight/SKILL.md) | `api-backend/graphql-incremental-hydration-preflight` | Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bounded rollout or recovery decision. |
+| [`grpc-deadline-budget-propagation-conformance`](./skills/api-backend/grpc-deadline-budget-propagation-conformance/SKILL.md) | `api-backend/grpc-deadline-budget-propagation-conformance` | Use when gRPC deadlines grow across proxy hops, grpc-timeout parsing disagrees, server clamps are unclear, or expired RPC work continues without cancellation. |
 | [`grpc-trailer-preservation-conformance`](./skills/api-backend/grpc-trailer-preservation-conformance/SKILL.md) | `api-backend/grpc-trailer-preservation-conformance` | Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures. |
 | [`http-content-disposition-filename-conformance`](./skills/api-backend/http-content-disposition-filename-conformance/SKILL.md) | `api-backend/http-content-disposition-filename-conformance` | Use when an HTTP download gets the wrong, garbled, unsafe, or client-dependent filename—especially Content-Disposition filename/filename*, RFC 8187 percent encoding, duplicate parameters, redirects, path traversal, device names, or media-type extension mismatches. |
 | [`http-early-hints-proxy-conformance`](./skills/api-backend/http-early-hints-proxy-conformance/SKILL.md) | `api-backend/http-early-hints-proxy-conformance` | Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response. |
