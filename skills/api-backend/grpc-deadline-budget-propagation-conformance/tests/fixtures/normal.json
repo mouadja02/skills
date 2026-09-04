@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "kind": "grpc_deadline_trace",
+  "rpc_type": "unary",
+  "missing_deadline_policy": "block",
+  "initial_timeout": "2S",
+  "hops": [{"name": "proxy", "elapsed_ns": 250000000, "forwarded_timeout": "1750m"}],
+  "server": {"elapsed_since_initial_ns": 1450000000, "work_active": false, "cancellation_observed": false, "status": "OK"}
+}

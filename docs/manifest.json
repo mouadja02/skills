@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-02T10:12:35.367Z",
+  "generated_at": "2026-09-04T10:15:05.924Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 817,
+  "count": 818,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 24,
+    "api-backend": 25,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -768,6 +768,14 @@
       "path": "skills/api-backend/graphql-incremental-hydration-preflight",
       "depth": 2,
       "description": "Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bounded rollout or recovery decision."
+    },
+    {
+      "name": "grpc-deadline-budget-propagation-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/grpc-deadline-budget-propagation-conformance",
+      "path": "skills/api-backend/grpc-deadline-budget-propagation-conformance",
+      "depth": 2,
+      "description": "Use when gRPC deadlines grow across proxy hops, grpc-timeout parsing disagrees, server clamps are unclear, or expired RPC work continues without cancellation."
     },
     {
       "name": "grpc-trailer-preservation-conformance",
