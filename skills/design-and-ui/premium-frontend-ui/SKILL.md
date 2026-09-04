@@ -1,6 +1,7 @@
 ---
 name: premium-frontend-ui
 description: 'GitHub Copilot to craft immersive, high-performance web experiences with advanced motion, typography, and architectural craftsmanship'
+version: '1.0.0'
 metadata:
   author: 'Utkarsh Patrikar'
   author_url: 'https://github.com/utkarsh232005'
@@ -93,7 +94,8 @@ When the user asks you to implement these patterns, leverage industry-standard l
 
 ### For React / Next.js Targets
 - Structure the application to support **Framer Motion** for layout transitions and spring physics.
-- Recommend **Lenis** (`@studio-freight/lenis`) for smooth scrolling context.
+- Recommend **Lenis** (`lenis`) for smooth scrolling context, following the
+  [canonical Lenis repository](https://github.com/darkroomengineering/lenis).
 - Implement **React Three Fiber** (`@react-three/fiber`) if webGL or 3D interactions are requested.
 
 ### For Vanilla / HTML / Astro Targets
