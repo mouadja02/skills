@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-04T10:15:05.924Z",
+  "generated_at": "2026-09-05T10:16:27.989Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 818,
+  "count": 819,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 25,
+    "api-backend": 26,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -920,6 +920,14 @@
       "path": "skills/api-backend/typespec-create-api-plugin",
       "depth": 2,
       "description": "Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot"
+    },
+    {
+      "name": "w3c-baggage-propagation-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/w3c-baggage-propagation-conformance",
+      "path": "skills/api-backend/w3c-baggage-propagation-conformance",
+      "depth": 2,
+      "description": "Use when W3C Baggage members disappear across hops, repeated baggage fields are only partly read, percent encoding changes values, metadata is rewritten, or propagation limits disagree."
     },
     {
       "name": "webauthn-rpid-origin-drift-preflight",

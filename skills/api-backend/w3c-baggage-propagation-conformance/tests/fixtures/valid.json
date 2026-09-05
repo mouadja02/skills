@@ -1,0 +1,1 @@
+{"kind":"w3c_baggage_trace","received_fields":["userId=alice","serverNode=DF%2028,isProduction=false"],"forwarded_fields":["userId=alice,serverNode=DF%2028,isProduction=false"]}
