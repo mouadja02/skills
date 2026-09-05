@@ -6,7 +6,7 @@
 
 API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations.
 
-**Total:** 25 skills.
+**Total:** 26 skills.
 
 ## Skills In This Category
 
@@ -35,6 +35,7 @@ API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations
 | [`typespec-api-operations`](typespec-api-operations/SKILL.md) | `api-backend/typespec-api-operations` | Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing, parameters, and adaptive cards |
 | [`typespec-create-agent`](typespec-create-agent/SKILL.md) | `api-backend/typespec-create-agent` | Generate a complete TypeSpec declarative agent with instructions, capabilities, and conversation starters for Microsoft 365 Copilot |
 | [`typespec-create-api-plugin`](typespec-create-api-plugin/SKILL.md) | `api-backend/typespec-create-api-plugin` | Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot |
+| [`w3c-baggage-propagation-conformance`](w3c-baggage-propagation-conformance/SKILL.md) | `api-backend/w3c-baggage-propagation-conformance` | Use when W3C Baggage members disappear across hops, repeated baggage fields are only partly read, percent encoding changes values, metadata is rewritten, or propagation limits disagree. |
 | [`webauthn-rpid-origin-drift-preflight`](webauthn-rpid-origin-drift-preflight/SKILL.md) | `api-backend/webauthn-rpid-origin-drift-preflight` | Use when WebAuthn or passkeys fail after hostname, port, proxy, RP-ID, public-URL, or native-app origin changes and the team needs a fail-closed migration and parity preflight. |
 | [`websocket-permessage-deflate-resource-limits`](websocket-permessage-deflate-resource-limits/SKILL.md) | `api-backend/websocket-permessage-deflate-resource-limits` | Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries. |
 
