@@ -1,7 +1,7 @@
 ---
 name: oauth-dpop-nonce-retry-conformance
 description: Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior.
-version: "1.0.0"
+version: "1.0.1"
 license: MIT
 ---
 
@@ -15,7 +15,7 @@ license: MIT
 - Concurrent requests overwrite newer nonce state or cross-contaminate endpoints.
 - Browser clients cannot observe `DPoP-Nonce` because CORS exposure is missing.
 
-Do **not** use this skill for ordinary OAuth/PKCE flows without DPoP evidence, JWT signing or key generation, token recovery, generic redirect-URI debugging, bypassing proof-of-possession, or replaying production requests. Use [`mcp-oauth-interoperability-diagnostics`](../../mcp/mcp-oauth-interoperability-diagnostics/SKILL.md) for MCP discovery, resource indicators, scopes, PKCE, and reauthorization outside this DPoP nonce boundary.
+Do **not** use this skill for ordinary OAuth/PKCE flows without DPoP evidence, JWT signing or key generation, token recovery, generic redirect-URI debugging, bypassing proof-of-possession, or replaying production requests. Use [`mcp-oauth-interoperability-diagnostics`](https://github.com/mouadja02/skills/blob/main/skills/mcp/mcp-oauth-interoperability-diagnostics/SKILL.md) for MCP discovery, resource indicators, scopes, PKCE, and reauthorization outside this DPoP nonce boundary.
 
 ## Prerequisites
 
