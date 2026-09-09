@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 819 skills across 36 categories.
+**Total:** 820 skills across 36 categories.
 
 ## Install one skill
 
@@ -24,7 +24,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | ---: |
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
-| [`api-backend`](#api-backend) | 26 |
+| [`api-backend`](#api-backend) | 27 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 85 |
 | [`cloud-azure`](#cloud-azure) | 18 |
@@ -165,6 +165,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`http-early-hints-proxy-conformance`](./skills/api-backend/http-early-hints-proxy-conformance/SKILL.md) | `api-backend/http-early-hints-proxy-conformance` | Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response. |
 | [`http-redirect-credential-boundary-conformance`](./skills/api-backend/http-redirect-credential-boundary-conformance/SKILL.md) | `api-backend/http-redirect-credential-boundary-conformance` | Use when an HTTP client follows redirects and credentials are silently dropped or may cross host, scheme, or port boundaries—especially Authorization, Cookie, Proxy-Authorization, API-key headers, 301/302/303/307/308, or default-port confusion. |
 | [`ipv6-zone-identifier-uri-portability-conformance`](./skills/api-backend/ipv6-zone-identifier-uri-portability-conformance/SKILL.md) | `api-backend/ipv6-zone-identifier-uri-portability-conformance` | Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any network probe. |
+| [`jose-critical-header-validation-conformance`](./skills/api-backend/jose-critical-header-validation-conformance/SKILL.md) | `api-backend/jose-critical-header-validation-conformance` | Use when a JWS/JWT library or service accepts, rejects, or misinterprets the `crit` (critical) header parameter — unknown extensions silently ignored, standard JOSE names listed in `crit`, duplicate or dangling entries, or `b64` (RFC 7797) not enforced. Validate structural and fail-closed `crit` handling across runtimes before deployment. |
 | [`json-duplicate-member-boundary-conformance`](./skills/api-backend/json-duplicate-member-boundary-conformance/SKILL.md) | `api-backend/json-duplicate-member-boundary-conformance` | Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets. |
 | [`multipart-form-data-wire-conformance`](./skills/api-backend/multipart-form-data-wire-conformance/SKILL.md) | `api-backend/multipart-form-data-wire-conformance` | Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normalized part trees, and make a bounded rollout decision. |
 | [`oauth-dpop-nonce-retry-conformance`](./skills/api-backend/oauth-dpop-nonce-retry-conformance/SKILL.md) | `api-backend/oauth-dpop-nonce-retry-conformance` | Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior. |

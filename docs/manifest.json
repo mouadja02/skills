@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-05T10:16:27.989Z",
+  "generated_at": "2026-09-09T10:22:52.981Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 819,
+  "count": 820,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 26,
+    "api-backend": 27,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -816,6 +816,14 @@
       "path": "skills/api-backend/ipv6-zone-identifier-uri-portability-conformance",
       "depth": 2,
       "description": "Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any network probe."
+    },
+    {
+      "name": "jose-critical-header-validation-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/jose-critical-header-validation-conformance",
+      "path": "skills/api-backend/jose-critical-header-validation-conformance",
+      "depth": 2,
+      "description": "Use when a JWS/JWT library or service accepts, rejects, or misinterprets the `crit` (critical) header parameter — unknown extensions silently ignored, standard JOSE names listed in `crit`, duplicate or dangling entries, or `b64` (RFC 7797) not enforced. Validate structural and fail-closed `crit` handling across runtimes before deployment."
     },
     {
       "name": "json-duplicate-member-boundary-conformance",
