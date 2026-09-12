@@ -413,6 +413,7 @@ dev-workflow/shuffle-json-data	dev-workflow	shuffle-json-data	Shuffle repetitive
 dev-workflow/timezone-database-provenance-conformance	dev-workflow	timezone-database-provenance-conformance	Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants.
 dev-workflow/using-git-worktrees	dev-workflow	using-git-worktrees	Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification
 dev-workflow/xurl	dev-workflow	xurl	xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints.
+dev-workflow/zip-metadata-encoding-portability-conformance	dev-workflow	zip-metadata-encoding-portability-conformance	Use when ZIP member names or comments become mojibake, differ across Python/.NET/Go/archive tools, lose UTF-8 flags after rewrites, or need pre-extraction EFS and Unicode extra-field verification.
 devops/arch-linux-triage	devops	arch-linux-triage	Triage and resolve Arch Linux issues with pacman, systemd, and rolling-release best practices.
 devops/centos-linux-triage	devops	centos-linux-triage	Triage and resolve CentOS issues using RHEL-compatible tooling, SELinux-aware practices, and firewalld.
 devops/ci-cd-pipeline-builder	devops	ci-cd-pipeline-builder	Generate pragmatic CI/CD pipelines tailored to a repo's detected stack
