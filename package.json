@@ -18,7 +18,7 @@
     "preview": "node scripts/preview.mjs"
   },
   "devDependencies": {
-    "adm-zip": "^0.6.0"
+    "adm-zip": "^0.6.1"
   },
   "repository": {
     "type": "git",
