@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-10T10:14:51.140Z",
+  "generated_at": "2026-09-12T10:10:41.722Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 821,
+  "count": 822,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -56,7 +56,7 @@
     "creative": 2,
     "databases": 25,
     "design-and-ui": 34,
-    "dev-workflow": 32,
+    "dev-workflow": 33,
     "devops": 46,
     "diagrams-slides": 14,
     "documentation": 28,
@@ -3392,6 +3392,14 @@
       "path": "skills/dev-workflow/xurl",
       "depth": 2,
       "description": "xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints."
+    },
+    {
+      "name": "zip-metadata-encoding-portability-conformance",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/zip-metadata-encoding-portability-conformance",
+      "path": "skills/dev-workflow/zip-metadata-encoding-portability-conformance",
+      "depth": 2,
+      "description": "Use when ZIP member names or comments become mojibake, differ across Python/.NET/Go/archive tools, lose UTF-8 flags after rewrites, or need pre-extraction EFS and Unicode extra-field verification."
     },
     {
       "name": "arch-linux-triage",

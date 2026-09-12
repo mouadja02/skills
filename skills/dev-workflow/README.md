@@ -6,7 +6,7 @@
 
 Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.
 
-**Total:** 32 skills.
+**Total:** 33 skills.
 
 ## Skills In This Category
 
@@ -44,5 +44,6 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`timezone-database-provenance-conformance`](timezone-database-provenance-conformance/SKILL.md) | `dev-workflow/timezone-database-provenance-conformance` | Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants. |
 | [`using-git-worktrees`](using-git-worktrees/SKILL.md) | `dev-workflow/using-git-worktrees` | Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification |
 | [`xurl`](xurl/SKILL.md) | `dev-workflow/xurl` | xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints. |
+| [`zip-metadata-encoding-portability-conformance`](zip-metadata-encoding-portability-conformance/SKILL.md) | `dev-workflow/zip-metadata-encoding-portability-conformance` | Use when ZIP member names or comments become mojibake, differ across Python/.NET/Go/archive tools, lose UTF-8 flags after rewrites, or need pre-extraction EFS and Unicode extra-field verification. |
 
 [Back to the category index](../README.md)
