@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-12T10:10:41.722Z",
+  "generated_at": "2026-09-13T10:10:14.114Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 822,
+  "count": 823,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -56,7 +56,7 @@
     "creative": 2,
     "databases": 25,
     "design-and-ui": 34,
-    "dev-workflow": 33,
+    "dev-workflow": 34,
     "devops": 46,
     "diagrams-slides": 14,
     "documentation": 28,
@@ -3392,6 +3392,14 @@
       "path": "skills/dev-workflow/xurl",
       "depth": 2,
       "description": "xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints."
+    },
+    {
+      "name": "yaml-boolean-coercion-conformance",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/yaml-boolean-coercion-conformance",
+      "path": "skills/dev-workflow/yaml-boolean-coercion-conformance",
+      "depth": 2,
+      "description": "Use when YAML values such as yes/no/on/off change type across PyYAML, Go, SnakeYAML, OmegaConf, Helm, or generated schemas and need a byte-preserving YAML 1.1-versus-1.2 audit."
     },
     {
       "name": "zip-metadata-encoding-portability-conformance",
