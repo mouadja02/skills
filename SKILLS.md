@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 824 skills across 36 categories.
+**Total:** 825 skills across 36 categories.
 
 ## Install one skill
 
@@ -35,7 +35,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`creative`](#creative) | 2 |
 | [`databases`](#databases) | 25 |
 | [`design-and-ui`](#design-and-ui) | 34 |
-| [`dev-workflow`](#dev-workflow) | 34 |
+| [`dev-workflow`](#dev-workflow) | 35 |
 | [`devops`](#devops) | 46 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
@@ -544,6 +544,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`using-git-worktrees`](./skills/dev-workflow/using-git-worktrees/SKILL.md) | `dev-workflow/using-git-worktrees` | Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification |
 | [`xurl`](./skills/dev-workflow/xurl/SKILL.md) | `dev-workflow/xurl` | xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints. |
 | [`yaml-boolean-coercion-conformance`](./skills/dev-workflow/yaml-boolean-coercion-conformance/SKILL.md) | `dev-workflow/yaml-boolean-coercion-conformance` | Use when YAML values such as yes/no/on/off change type across PyYAML, Go, SnakeYAML, OmegaConf, Helm, or generated schemas and need a byte-preserving YAML 1.1-versus-1.2 audit. |
+| [`yaml-duplicate-key-portability-conformance`](./skills/dev-workflow/yaml-duplicate-key-portability-conformance/SKILL.md) | `dev-workflow/yaml-duplicate-key-portability-conformance` | Use when YAML configuration may silently discard repeated mapping keys across PyYAML, Helm, Ansible, CI, or deployment tools—detect duplicates before construction, distinguish merge keys, and fail closed with source coordinates. |
 | [`zip-metadata-encoding-portability-conformance`](./skills/dev-workflow/zip-metadata-encoding-portability-conformance/SKILL.md) | `dev-workflow/zip-metadata-encoding-portability-conformance` | Use when ZIP member names or comments become mojibake, differ across Python/.NET/Go/archive tools, lose UTF-8 flags after rewrites, or need pre-extraction EFS and Unicode extra-field verification. |
 
 ## devops

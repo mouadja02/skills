@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-14T10:10:06.443Z",
+  "generated_at": "2026-09-18T10:08:21.946Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 824,
+  "count": 825,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -56,7 +56,7 @@
     "creative": 2,
     "databases": 25,
     "design-and-ui": 34,
-    "dev-workflow": 34,
+    "dev-workflow": 35,
     "devops": 46,
     "diagrams-slides": 14,
     "documentation": 28,
@@ -3408,6 +3408,14 @@
       "path": "skills/dev-workflow/yaml-boolean-coercion-conformance",
       "depth": 2,
       "description": "Use when YAML values such as yes/no/on/off change type across PyYAML, Go, SnakeYAML, OmegaConf, Helm, or generated schemas and need a byte-preserving YAML 1.1-versus-1.2 audit."
+    },
+    {
+      "name": "yaml-duplicate-key-portability-conformance",
+      "category": "dev-workflow",
+      "install_path": "dev-workflow/yaml-duplicate-key-portability-conformance",
+      "path": "skills/dev-workflow/yaml-duplicate-key-portability-conformance",
+      "depth": 2,
+      "description": "Use when YAML configuration may silently discard repeated mapping keys across PyYAML, Helm, Ansible, CI, or deployment tools—detect duplicates before construction, distinguish merge keys, and fail closed with source coordinates."
     },
     {
       "name": "zip-metadata-encoding-portability-conformance",
