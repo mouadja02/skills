@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-18T10:08:21.946Z",
+  "generated_at": "2026-09-19T10:07:06.086Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 825,
+  "count": 826,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -57,7 +57,7 @@
     "databases": 25,
     "design-and-ui": 34,
     "dev-workflow": 35,
-    "devops": 46,
+    "devops": 47,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -3656,6 +3656,14 @@
       "path": "skills/devops/observability-designer",
       "depth": 2,
       "description": "Design comprehensive observability for production systems"
+    },
+    {
+      "name": "oci-image-platform-graph-conformance",
+      "category": "devops",
+      "install_path": "devops/oci-image-platform-graph-conformance",
+      "path": "skills/devops/oci-image-platform-graph-conformance",
+      "depth": 2,
+      "description": "Use when multi-platform OCI images select the wrong architecture, descriptor platforms disagree with child configs, or copy/push/pull operations silently strip image-index variants."
     },
     {
       "name": "oci-referrers-portability-conformance",

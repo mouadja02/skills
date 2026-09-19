@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 825 skills across 36 categories.
+**Total:** 826 skills across 36 categories.
 
 ## Install one skill
 
@@ -36,7 +36,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`databases`](#databases) | 25 |
 | [`design-and-ui`](#design-and-ui) | 34 |
 | [`dev-workflow`](#dev-workflow) | 35 |
-| [`devops`](#devops) | 46 |
+| [`devops`](#devops) | 47 |
 | [`diagrams-slides`](#diagrams-slides) | 14 |
 | [`documentation`](#documentation) | 28 |
 | [`dotnet`](#dotnet) | 19 |
@@ -580,6 +580,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`multi-stage-dockerfile`](./skills/devops/multi-stage-dockerfile/SKILL.md) | `devops/multi-stage-dockerfile` | Create optimized multi-stage Dockerfiles for any language or framework |
 | [`no-proxy-cross-runtime-conformance`](./skills/devops/no-proxy-cross-runtime-conformance/SKILL.md) | `devops/no-proxy-cross-runtime-conformance` | Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions. |
 | [`observability-designer`](./skills/devops/observability-designer/SKILL.md) | `devops/observability-designer` | Design comprehensive observability for production systems |
+| [`oci-image-platform-graph-conformance`](./skills/devops/oci-image-platform-graph-conformance/SKILL.md) | `devops/oci-image-platform-graph-conformance` | Use when multi-platform OCI images select the wrong architecture, descriptor platforms disagree with child configs, or copy/push/pull operations silently strip image-index variants. |
 | [`oci-referrers-portability-conformance`](./skills/devops/oci-referrers-portability-conformance/SKILL.md) | `devops/oci-referrers-portability-conformance` | Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images. |
 | [`release-mac-app`](./skills/devops/release-mac-app/SKILL.md) | `devops/release-mac-app` | macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout. |
 | [`remote-mac`](./skills/devops/remote-mac/SKILL.md) | `devops/remote-mac` | Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks. |

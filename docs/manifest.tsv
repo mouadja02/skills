@@ -446,6 +446,7 @@ devops/mac-maintenance	devops	mac-maintenance	macOS upkeep: brew update/upgrade,
 devops/multi-stage-dockerfile	devops	multi-stage-dockerfile	Create optimized multi-stage Dockerfiles for any language or framework
 devops/no-proxy-cross-runtime-conformance	devops	no-proxy-cross-runtime-conformance	Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions.
 devops/observability-designer	devops	observability-designer	Design comprehensive observability for production systems
+devops/oci-image-platform-graph-conformance	devops	oci-image-platform-graph-conformance	Use when multi-platform OCI images select the wrong architecture, descriptor platforms disagree with child configs, or copy/push/pull operations silently strip image-index variants.
 devops/oci-referrers-portability-conformance	devops	oci-referrers-portability-conformance	Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images.
 devops/release-mac-app	devops	release-mac-app	macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout.
 devops/remote-mac	devops	remote-mac	Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks.
