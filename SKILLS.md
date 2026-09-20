@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 826 skills across 36 categories.
+**Total:** 827 skills across 36 categories.
 
 ## Install one skill
 
@@ -24,7 +24,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | --- | ---: |
 | [`agent-design`](#agent-design) | 58 |
 | [`agent-eval`](#agent-eval) | 24 |
-| [`api-backend`](#api-backend) | 29 |
+| [`api-backend`](#api-backend) | 30 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 85 |
 | [`cloud-azure`](#cloud-azure) | 18 |
@@ -165,6 +165,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`http-content-disposition-filename-conformance`](./skills/api-backend/http-content-disposition-filename-conformance/SKILL.md) | `api-backend/http-content-disposition-filename-conformance` | Use when an HTTP download gets the wrong, garbled, unsafe, or client-dependent filename—especially Content-Disposition filename/filename*, RFC 8187 percent encoding, duplicate parameters, redirects, path traversal, device names, or media-type extension mismatches. |
 | [`http-content-encoding-chain-conformance`](./skills/api-backend/http-content-encoding-chain-conformance/SKILL.md) | `api-backend/http-content-encoding-chain-conformance` | Use when HTTP clients, proxies, or tests mishandle repeated or comma-listed Content-Encoding values, stacked gzip/deflate bodies, unknown codings, or decompression limits; validates the complete chain before bounded inverse decoding. |
 | [`http-early-hints-proxy-conformance`](./skills/api-backend/http-early-hints-proxy-conformance/SKILL.md) | `api-backend/http-early-hints-proxy-conformance` | Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response. |
+| [`http-message-signature-profile-conformance`](./skills/api-backend/http-message-signature-profile-conformance/SKILL.md) | `api-backend/http-message-signature-profile-conformance` | Use when preflighting RFC 9421 HTTP Message Signatures, validating Signature-Input structured fields and application profiles, reconstructing canonical signature bases, or managing migration from legacy draft-cavage signatures. |
 | [`http-redirect-credential-boundary-conformance`](./skills/api-backend/http-redirect-credential-boundary-conformance/SKILL.md) | `api-backend/http-redirect-credential-boundary-conformance` | Use when an HTTP client follows redirects and credentials are silently dropped or may cross host, scheme, or port boundaries—especially Authorization, Cookie, Proxy-Authorization, API-key headers, 301/302/303/307/308, or default-port confusion. |
 | [`ipv6-zone-identifier-uri-portability-conformance`](./skills/api-backend/ipv6-zone-identifier-uri-portability-conformance/SKILL.md) | `api-backend/ipv6-zone-identifier-uri-portability-conformance` | Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any network probe. |
 | [`jose-critical-header-validation-conformance`](./skills/api-backend/jose-critical-header-validation-conformance/SKILL.md) | `api-backend/jose-critical-header-validation-conformance` | Use when a JWS/JWT library or service accepts, rejects, or misinterprets the `crit` (critical) header parameter — unknown extensions silently ignored, standard JOSE names listed in `crit`, duplicate or dangling entries, or `b64` (RFC 7797) not enforced. Validate structural and fail-closed `crit` handling across runtimes before deployment. |
