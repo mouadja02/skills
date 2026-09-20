@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-19T10:07:06.086Z",
+  "generated_at": "2026-09-20T10:08:27.394Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 826,
+  "count": 827,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 29,
+    "api-backend": 30,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -816,6 +816,14 @@
       "path": "skills/api-backend/http-early-hints-proxy-conformance",
       "depth": 2,
       "description": "Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response."
+    },
+    {
+      "name": "http-message-signature-profile-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/http-message-signature-profile-conformance",
+      "path": "skills/api-backend/http-message-signature-profile-conformance",
+      "depth": 2,
+      "description": "Use when preflighting RFC 9421 HTTP Message Signatures, validating Signature-Input structured fields and application profiles, reconstructing canonical signature bases, or managing migration from legacy draft-cavage signatures."
     },
     {
       "name": "http-redirect-credential-boundary-conformance",
