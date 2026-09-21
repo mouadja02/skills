@@ -1,6 +1,7 @@
 ---
 name: "local-ai-stack"
 description: "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving"
+version: "1.0.1"
 ---
 
 # Local AI Stack
@@ -29,8 +30,15 @@ Build a complete, private AI stack on your own hardware — from local model ser
 ### Step 1: Install Ollama
 
 ```bash
-# macOS / Linux
-curl -fsSL https://ollama.ai/install.sh | sh
+# Linux: download and inspect the official installer before execution
+installer="$(mktemp)"
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://ollama.com/install.sh -o "$installer"
+${PAGER:-less} "$installer"  # stop if the script is unexpected
+sh "$installer"
+rm -f "$installer"
+
+# macOS: use the signed app from https://ollama.com/download/mac
 
 # Windows (PowerShell)
 winget install Ollama.Ollama
