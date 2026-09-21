@@ -3,6 +3,7 @@ name: aspire
 description: 'Aspire skill covering the Aspire CLI, AppHost orchestration, service discovery, integrations, MCP server, VS Code extension, Dev Containers, GitHub Codespaces, templates, dashboard, and deployment'
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+version: "1.0.1"
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
@@ -101,17 +102,31 @@ Search the official docs repo on GitHub:
 | **Container runtime** | Docker Desktop, Podman, or Rancher Desktop |
 | **IDE (optional)** | VS Code + C# Dev Kit, Visual Studio 2022, JetBrains Rider |
 
+Linux / macOS:
+
 ```bash
-# Linux / macOS
-curl -sSL https://aspire.dev/install.sh | bash
+installer="$(mktemp)"
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://aspire.dev/install.sh -o "$installer"
+${PAGER:-less} "$installer"  # inspect; do not continue if anything is unexpected
+bash "$installer"
+rm -f "$installer"
+```
 
-# Windows PowerShell
-irm https://aspire.dev/install.ps1 | iex
+Windows PowerShell:
 
-# Verify
+```powershell
+$installer = Join-Path $env:TEMP "aspire-install.ps1"
+Invoke-WebRequest https://aspire.dev/install.ps1 -OutFile $installer
+Get-Content $installer  # inspect; do not continue if anything is unexpected
+& $installer
+Remove-Item $installer
+```
+
+Verify and install templates:
+
+```bash
 aspire --version
-
-# Install templates
 dotnet new install Aspire.ProjectTemplates
 ```
 

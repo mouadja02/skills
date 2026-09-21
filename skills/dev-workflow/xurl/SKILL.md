@@ -3,7 +3,7 @@ name: xurl
 description: "xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
-version: "1.0.0"
+version: "1.0.1"
 ---
 
 # xurl
@@ -27,8 +27,14 @@ brew install --cask xdevplatform/tap/xurl
 # npm
 npm install -g @xdevplatform/xurl
 
-# Shell script
-curl -fsSL https://raw.githubusercontent.com/xdevplatform/xurl/main/install.sh | bash
+# Shell script fallback (prefer Homebrew, npm, or Go above)
+installer="$(mktemp)"
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://raw.githubusercontent.com/xdevplatform/xurl/main/install.sh \
+  -o "$installer"
+${PAGER:-less} "$installer"  # inspect before execution; stop if unexpected
+bash "$installer"
+rm -f "$installer"
 
 # Go
 go install github.com/xdevplatform/xurl@latest
@@ -40,6 +46,7 @@ go install github.com/xdevplatform/xurl@latest
 - Never ask the user to paste client secrets, bearer tokens, or OAuth tokens into chat.
 - Never use `--verbose` in agent runs; it can expose auth headers.
 - The user must register app credentials manually on their machine outside the agent session.
+- Prefer a package manager. Never pipe a remote installer directly into a shell; download and inspect it first.
 
 ## Auth
 
