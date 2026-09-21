@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-21T10:03:46.100Z",
+  "generated_at": "2026-09-21T12:50:55.153Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 828,
+  "count": 792,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,19 +45,19 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 31,
+    "api-backend": 12,
     "business-strategy": 39,
-    "cloud-aws": 85,
+    "cloud-aws": 84,
     "cloud-azure": 18,
     "code-quality": 18,
     "coding": 33,
     "communication": 1,
     "context-engineering": 17,
     "creative": 2,
-    "databases": 25,
+    "databases": 24,
     "design-and-ui": 34,
-    "dev-workflow": 35,
-    "devops": 47,
+    "dev-workflow": 29,
+    "devops": 41,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -65,9 +65,9 @@
     "finance": 7,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 49,
+    "llm-tooling": 47,
     "marketing-and-growth": 26,
-    "mcp": 16,
+    "mcp": 15,
     "messaging": 1,
     "microsoft-agents": 11,
     "microsoft-data": 17,
@@ -746,22 +746,6 @@
       "description": "Create ASP.NET Minimal API endpoints with proper OpenAPI documentation"
     },
     {
-      "name": "dns-svcb-https-parameter-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/dns-svcb-https-parameter-conformance",
-      "path": "skills/api-backend/dns-svcb-https-parameter-conformance",
-      "depth": 2,
-      "description": "Use when validating RFC 9460 DNS SVCB and HTTPS resource records, verifying presentation and wire-format parameter encodings, ensuring canonical ascending key order, or preventing AliasMode and ServiceMode deployment misconfigurations."
-    },
-    {
-      "name": "forwarded-client-attribution-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/forwarded-client-attribution-conformance",
-      "path": "skills/api-backend/forwarded-client-attribution-conformance",
-      "depth": 2,
-      "description": "Use when proxy or CDN headers produce wrong, spoofable, or inconsistent client IP/port attribution in logs, rate limits, audits, access controls, or geolocation. Validate Forwarded and X-Forwarded-For chains offline against an explicit trust policy."
-    },
-    {
       "name": "framework-fastapi-expert",
       "category": "api-backend",
       "install_path": "api-backend/framework-fastapi-expert",
@@ -776,118 +760,6 @@
       "path": "skills/api-backend/gdpr-compliant",
       "depth": 2,
       "description": "GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails"
-    },
-    {
-      "name": "graphql-incremental-hydration-preflight",
-      "category": "api-backend",
-      "install_path": "api-backend/graphql-incremental-hydration-preflight",
-      "path": "skills/api-backend/graphql-incremental-hydration-preflight",
-      "depth": 2,
-      "description": "Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bounded rollout or recovery decision."
-    },
-    {
-      "name": "grpc-deadline-budget-propagation-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/grpc-deadline-budget-propagation-conformance",
-      "path": "skills/api-backend/grpc-deadline-budget-propagation-conformance",
-      "depth": 2,
-      "description": "Use when gRPC deadlines grow across proxy hops, grpc-timeout parsing disagrees, server clamps are unclear, or expired RPC work continues without cancellation."
-    },
-    {
-      "name": "grpc-trailer-preservation-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/grpc-trailer-preservation-conformance",
-      "path": "skills/api-backend/grpc-trailer-preservation-conformance",
-      "depth": 2,
-      "description": "Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures."
-    },
-    {
-      "name": "http-content-disposition-filename-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-content-disposition-filename-conformance",
-      "path": "skills/api-backend/http-content-disposition-filename-conformance",
-      "depth": 2,
-      "description": "Use when an HTTP download gets the wrong, garbled, unsafe, or client-dependent filename—especially Content-Disposition filename/filename*, RFC 8187 percent encoding, duplicate parameters, redirects, path traversal, device names, or media-type extension mismatches."
-    },
-    {
-      "name": "http-content-encoding-chain-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-content-encoding-chain-conformance",
-      "path": "skills/api-backend/http-content-encoding-chain-conformance",
-      "depth": 2,
-      "description": "Use when HTTP clients, proxies, or tests mishandle repeated or comma-listed Content-Encoding values, stacked gzip/deflate bodies, unknown codings, or decompression limits; validates the complete chain before bounded inverse decoding."
-    },
-    {
-      "name": "http-early-hints-proxy-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-early-hints-proxy-conformance",
-      "path": "skills/api-backend/http-early-hints-proxy-conformance",
-      "depth": 2,
-      "description": "Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response."
-    },
-    {
-      "name": "http-message-signature-profile-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-message-signature-profile-conformance",
-      "path": "skills/api-backend/http-message-signature-profile-conformance",
-      "depth": 2,
-      "description": "Use when preflighting RFC 9421 HTTP Message Signatures, validating Signature-Input structured fields and application profiles, reconstructing canonical signature bases, or managing migration from legacy draft-cavage signatures."
-    },
-    {
-      "name": "http-redirect-credential-boundary-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-redirect-credential-boundary-conformance",
-      "path": "skills/api-backend/http-redirect-credential-boundary-conformance",
-      "depth": 2,
-      "description": "Use when an HTTP client follows redirects and credentials are silently dropped or may cross host, scheme, or port boundaries—especially Authorization, Cookie, Proxy-Authorization, API-key headers, 301/302/303/307/308, or default-port confusion."
-    },
-    {
-      "name": "ipv6-zone-identifier-uri-portability-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/ipv6-zone-identifier-uri-portability-conformance",
-      "path": "skills/api-backend/ipv6-zone-identifier-uri-portability-conformance",
-      "depth": 2,
-      "description": "Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any network probe."
-    },
-    {
-      "name": "jose-critical-header-validation-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/jose-critical-header-validation-conformance",
-      "path": "skills/api-backend/jose-critical-header-validation-conformance",
-      "depth": 2,
-      "description": "Use when a JWS/JWT library or service accepts, rejects, or misinterprets the `crit` (critical) header parameter — unknown extensions silently ignored, standard JOSE names listed in `crit`, duplicate or dangling entries, or `b64` (RFC 7797) not enforced. Validate structural and fail-closed `crit` handling across runtimes before deployment."
-    },
-    {
-      "name": "json-duplicate-member-boundary-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/json-duplicate-member-boundary-conformance",
-      "path": "skills/api-backend/json-duplicate-member-boundary-conformance",
-      "depth": 2,
-      "description": "Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets."
-    },
-    {
-      "name": "multipart-form-data-wire-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/multipart-form-data-wire-conformance",
-      "path": "skills/api-backend/multipart-form-data-wire-conformance",
-      "depth": 2,
-      "description": "Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normalized part trees, and make a bounded rollout decision."
-    },
-    {
-      "name": "oauth-dpop-nonce-retry-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/oauth-dpop-nonce-retry-conformance",
-      "path": "skills/api-backend/oauth-dpop-nonce-retry-conformance",
-      "depth": 2,
-      "description": "Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior."
-    },
-    {
-      "name": "openapi-nullability-migration-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/openapi-nullability-migration-conformance",
-      "path": "skills/api-backend/openapi-nullability-migration-conformance",
-      "depth": 2,
-      "description": "Use when OpenAPI 3.0 nullable schemas are ignored, rewritten, or generate unusable types after an OpenAPI 3.1 migration. Inventory requiredness, null acceptance, references, composition, and fixtures offline before changing a contract."
     },
     {
       "name": "openapi-to-application-code",
@@ -960,30 +832,6 @@
       "path": "skills/api-backend/typespec-create-api-plugin",
       "depth": 2,
       "description": "Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot"
-    },
-    {
-      "name": "w3c-baggage-propagation-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/w3c-baggage-propagation-conformance",
-      "path": "skills/api-backend/w3c-baggage-propagation-conformance",
-      "depth": 2,
-      "description": "Use when W3C Baggage members disappear across hops, repeated baggage fields are only partly read, percent encoding changes values, metadata is rewritten, or propagation limits disagree."
-    },
-    {
-      "name": "webauthn-rpid-origin-drift-preflight",
-      "category": "api-backend",
-      "install_path": "api-backend/webauthn-rpid-origin-drift-preflight",
-      "path": "skills/api-backend/webauthn-rpid-origin-drift-preflight",
-      "depth": 2,
-      "description": "Use when WebAuthn or passkeys fail after hostname, port, proxy, RP-ID, public-URL, or native-app origin changes and the team needs a fail-closed migration and parity preflight."
-    },
-    {
-      "name": "websocket-permessage-deflate-resource-limits",
-      "category": "api-backend",
-      "install_path": "api-backend/websocket-permessage-deflate-resource-limits",
-      "path": "skills/api-backend/websocket-permessage-deflate-resource-limits",
-      "depth": 2,
-      "description": "Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries."
     },
     {
       "name": "agent-protocol",
@@ -1906,14 +1754,6 @@
       "description": "Create managed Iceberg tables using Amazon S3 Tables (s3tables API namespace) with automatic compaction and snapshot management. Sets up table bucket, namespace, table, schema, Glue catalog registration, partitioning, IAM access control. Triggers on: create table, data lake table, analytics table, structured data storage, S3 Tables, Iceberg, Athena table, partitioning strategy, access permissions. Do NOT use for: importing files (use ingesting-into-data-lake), vector storage (use storing-and-querying-vectors), querying existing tables (use querying-data-lake), or locating existing table (use finding-data-lake-assets)."
     },
     {
-      "name": "s3-streaming-checksum-portability-conformance",
-      "category": "cloud-aws",
-      "install_path": "cloud-aws/storage/s3-streaming-checksum-portability-conformance",
-      "path": "skills/cloud-aws/storage/s3-streaming-checksum-portability-conformance",
-      "depth": 3,
-      "description": "Use when S3-compatible PutObject or UploadPart fails after an SDK change—classify aws-chunked/checksum-trailer wire modes, run disposable canaries, and verify integrity before rollout."
-    },
-    {
       "name": "securing-s3-buckets",
       "category": "cloud-aws",
       "install_path": "cloud-aws/storage/securing-s3-buckets",
@@ -2810,14 +2650,6 @@
       "description": "Use when PostgreSQL logical replication slots retain WAL, become orphaned or invalid after switchover, or must be proven synchronized and usable before failover."
     },
     {
-      "name": "postgres-transaction-pool-prepared-statement-conformance",
-      "category": "databases",
-      "install_path": "databases/postgres-transaction-pool-prepared-statement-conformance",
-      "path": "skills/databases/postgres-transaction-pool-prepared-statement-conformance",
-      "depth": 2,
-      "description": "Use when PostgreSQL clients behind PgBouncer/Supavisor fail with missing or duplicate prepared statements, especially in transaction/statement pooling, COPY, migrations, bursts, or after disabling a client statement cache."
-    },
-    {
       "name": "postgresql-code-review",
       "category": "databases",
       "install_path": "databases/postgresql-code-review",
@@ -3314,14 +3146,6 @@
       "description": "Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates."
     },
     {
-      "name": "http-range-resume-integrity-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/http-range-resume-integrity-conformance",
-      "path": "skills/dev-workflow/http-range-resume-integrity-conformance",
-      "depth": 2,
-      "description": "Use when interrupted HTTP downloads resume with Range/If-Range, partial caches may be stale, or 200/206/416 and Content-Range handling could append incompatible bytes."
-    },
-    {
       "name": "make-repo-contribution",
       "category": "dev-workflow",
       "install_path": "dev-workflow/make-repo-contribution",
@@ -3362,14 +3186,6 @@
       "description": "npm registry ops: login, whoami, package availability, publish; 1Password tmux auth."
     },
     {
-      "name": "npm-platform-optional-lockfile-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/npm-platform-optional-lockfile-conformance",
-      "path": "skills/dev-workflow/npm-platform-optional-lockfile-conformance",
-      "depth": 2,
-      "description": "Use when an npm package-lock omits or misstates OS/CPU/libc-specific optional packages, npm ci fails only on another platform, or a native binary is absent after lockfile regeneration."
-    },
-    {
       "name": "pr-dashboard",
       "category": "dev-workflow",
       "install_path": "dev-workflow/pr-dashboard",
@@ -3394,14 +3210,6 @@
       "description": "Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries."
     },
     {
-      "name": "timezone-database-provenance-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/timezone-database-provenance-conformance",
-      "path": "skills/dev-workflow/timezone-database-provenance-conformance",
-      "depth": 2,
-      "description": "Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants."
-    },
-    {
       "name": "using-git-worktrees",
       "category": "dev-workflow",
       "install_path": "dev-workflow/using-git-worktrees",
@@ -3416,30 +3224,6 @@
       "path": "skills/dev-workflow/xurl",
       "depth": 2,
       "description": "xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints."
-    },
-    {
-      "name": "yaml-boolean-coercion-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/yaml-boolean-coercion-conformance",
-      "path": "skills/dev-workflow/yaml-boolean-coercion-conformance",
-      "depth": 2,
-      "description": "Use when YAML values such as yes/no/on/off change type across PyYAML, Go, SnakeYAML, OmegaConf, Helm, or generated schemas and need a byte-preserving YAML 1.1-versus-1.2 audit."
-    },
-    {
-      "name": "yaml-duplicate-key-portability-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/yaml-duplicate-key-portability-conformance",
-      "path": "skills/dev-workflow/yaml-duplicate-key-portability-conformance",
-      "depth": 2,
-      "description": "Use when YAML configuration may silently discard repeated mapping keys across PyYAML, Helm, Ansible, CI, or deployment tools—detect duplicates before construction, distinguish merge keys, and fail closed with source coordinates."
-    },
-    {
-      "name": "zip-metadata-encoding-portability-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/zip-metadata-encoding-portability-conformance",
-      "path": "skills/dev-workflow/zip-metadata-encoding-portability-conformance",
-      "depth": 2,
-      "description": "Use when ZIP member names or comments become mojibake, differ across Python/.NET/Go/archive tools, lose UTF-8 flags after rewrites, or need pre-extraction EFS and Unicode extra-field verification."
     },
     {
       "name": "arch-linux-triage",
@@ -3602,30 +3386,6 @@
       "description": "Run incident response from detection to post-mortem"
     },
     {
-      "name": "kubernetes-cel-admission-policy-preflight",
-      "category": "devops",
-      "install_path": "devops/kubernetes-cel-admission-policy-preflight",
-      "path": "skills/devops/kubernetes-cel-admission-policy-preflight",
-      "depth": 2,
-      "description": "Use when native Kubernetes ValidatingAdmissionPolicy or CEL admission rules need fixture completeness, cost/resource checks, bootstrap-safety analysis, or an Audit/Warn-to-Deny rollout gate."
-    },
-    {
-      "name": "kubernetes-crd-storage-version-upgrade-preflight",
-      "category": "devops",
-      "install_path": "devops/kubernetes-crd-storage-version-upgrade-preflight",
-      "path": "skills/devops/kubernetes-crd-storage-version-upgrade-preflight",
-      "depth": 2,
-      "description": "Use when changing a Kubernetes CRD storage/served version, conversion webhook, stored objects, or retiring an old CRD API version requires a lossless migration and rollback gate."
-    },
-    {
-      "name": "kubernetes-gateway-backend-tls-portability",
-      "category": "devops",
-      "install_path": "devops/kubernetes-gateway-backend-tls-portability",
-      "path": "skills/devops/kubernetes-gateway-backend-tls-portability",
-      "depth": 2,
-      "description": "Use when Gateway API BackendTLSPolicy is accepted but upstream TLS fails or differs across controllers, upgrades, SAN validation, CA sources, chain depth, or implementation-native policy precedence."
-    },
-    {
       "name": "kubernetes-ssa-field-ownership-triage",
       "category": "devops",
       "install_path": "devops/kubernetes-ssa-field-ownership-triage",
@@ -3658,36 +3418,12 @@
       "description": "Create optimized multi-stage Dockerfiles for any language or framework"
     },
     {
-      "name": "no-proxy-cross-runtime-conformance",
-      "category": "devops",
-      "install_path": "devops/no-proxy-cross-runtime-conformance",
-      "path": "skills/devops/no-proxy-cross-runtime-conformance",
-      "depth": 2,
-      "description": "Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions."
-    },
-    {
       "name": "observability-designer",
       "category": "devops",
       "install_path": "devops/observability-designer",
       "path": "skills/devops/observability-designer",
       "depth": 2,
       "description": "Design comprehensive observability for production systems"
-    },
-    {
-      "name": "oci-image-platform-graph-conformance",
-      "category": "devops",
-      "install_path": "devops/oci-image-platform-graph-conformance",
-      "path": "skills/devops/oci-image-platform-graph-conformance",
-      "depth": 2,
-      "description": "Use when multi-platform OCI images select the wrong architecture, descriptor platforms disagree with child configs, or copy/push/pull operations silently strip image-index variants."
-    },
-    {
-      "name": "oci-referrers-portability-conformance",
-      "category": "devops",
-      "install_path": "devops/oci-referrers-portability-conformance",
-      "path": "skills/devops/oci-referrers-portability-conformance",
-      "depth": 2,
-      "description": "Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images."
     },
     {
       "name": "release-mac-app",
@@ -4898,14 +4634,6 @@
       "description": "Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI"
     },
     {
-      "name": "llm-streaming-tool-call-reassembly-conformance",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/llm-streaming-tool-call-reassembly-conformance",
-      "path": "skills/llm-tooling/llm-streaming-tool-call-reassembly-conformance",
-      "depth": 2,
-      "description": "Use when streamed LLM tool calls merge, truncate, collide, or execute early across OpenAI-compatible, Anthropic, or Mistral events — reassemble by stable slot, validate terminal state and schema, and gate execution offline."
-    },
-    {
       "name": "model-recommendation",
       "category": "llm-tooling",
       "install_path": "llm-tooling/model-recommendation",
@@ -4984,14 +4712,6 @@
       "path": "skills/llm-tooling/oracle",
       "depth": 2,
       "description": "Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design."
-    },
-    {
-      "name": "otel-genai-semconv-drift-validation",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/otel-genai-semconv-drift-validation",
-      "path": "skills/llm-tooling/otel-genai-semconv-drift-validation",
-      "depth": 2,
-      "description": "Use when OpenTelemetry GenAI spans or events drift across semantic-convention versions, duplicate token usage, use obsolete names, or capture model content without explicit safeguards."
     },
     {
       "name": "phoenix-cli",
@@ -5496,14 +5216,6 @@
       "path": "skills/mcp/mcp-server-builder",
       "depth": 2,
       "description": "Build production-grade MCP (Model Context Protocol) servers from API contracts"
-    },
-    {
-      "name": "mcp-streamable-http-conformance",
-      "category": "mcp",
-      "install_path": "mcp/mcp-streamable-http-conformance",
-      "path": "skills/mcp/mcp-streamable-http-conformance",
-      "depth": 2,
-      "description": "Use when MCP Streamable HTTP clients, servers, or gateways hang, reject streams, lose SSE framing, or disagree across protocol versions — normalize a redacted transcript, validate a pinned profile offline, and plan non-destructive migration or recovery."
     },
     {
       "name": "php-mcp-server-generator",

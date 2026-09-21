@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **828 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **792 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -53,19 +53,19 @@ This table is generated from `docs/manifest.json`.
 | --- | ---: | --- |
 | [`agent-design`](./skills/agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./skills/agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
-| [`api-backend`](./skills/api-backend/) | 31 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
+| [`api-backend`](./skills/api-backend/) | 12 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./skills/business-strategy/) | 39 | Executive advisory, board preparation, operating systems, and strategic decision support. |
-| [`cloud-aws`](./skills/cloud-aws/) | 85 | AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability. |
+| [`cloud-aws`](./skills/cloud-aws/) | 84 | AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability. |
 | [`cloud-azure`](./skills/cloud-azure/) | 18 | Azure, AWS, cloud architecture, IoT, pricing, deployment, and operations. |
 | [`code-quality`](./skills/code-quality/) | 18 | Code review, refactoring, static analysis, security review, and integrity checks. |
 | [`coding`](./skills/coding/) | 33 | Language-agnostic implementation workflows, planning, debugging, security, and shipping. |
 | [`communication`](./skills/communication/) | 1 | Decision frameworks, stakeholder communication, proposals, and concise trade-off analysis. |
 | [`context-engineering`](./skills/context-engineering/) | 17 | Context design, compression, evolving memory, provenance, and codebase knowledge acquisition. |
 | [`creative`](./skills/creative/) | 2 | Creative ideation, concept visualization, generative methods, and reusable design prompts. |
-| [`databases`](./skills/databases/) | 25 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
+| [`databases`](./skills/databases/) | 24 | Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt. |
 | [`design-and-ui`](./skills/design-and-ui/) | 34 | Frontend design, UI systems, visual artifacts, animation, branding, and accessibility. |
-| [`dev-workflow`](./skills/dev-workflow/) | 35 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
-| [`devops`](./skills/devops/) | 47 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
+| [`dev-workflow`](./skills/dev-workflow/) | 29 | Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity. |
+| [`devops`](./skills/devops/) | 41 | CI/CD, containers, infrastructure as code, Linux operations, observability, and security. |
 | [`diagrams-slides`](./skills/diagrams-slides/) | 14 | Diagrams, presentations, meeting artifacts, and professional visual communication. |
 | [`documentation`](./skills/documentation/) | 28 | READMEs, ADRs, project documentation, Markdown tooling, conversion, and publishing. |
 | [`dotnet`](./skills/dotnet/) | 19 | .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development. |
@@ -73,9 +73,9 @@ This table is generated from `docs/manifest.json`.
 | [`finance`](./skills/finance/) | 7 | Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows. |
 | [`go-to-market`](./skills/go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./skills/java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
-| [`llm-tooling`](./skills/llm-tooling/) | 49 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
+| [`llm-tooling`](./skills/llm-tooling/) | 47 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./skills/marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
-| [`mcp`](./skills/mcp/) | 16 | Model Context Protocol server generation, tooling, deployment, and security. |
+| [`mcp`](./skills/mcp/) | 15 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./skills/messaging/) | 1 | Messaging integrations and relay workflows. |
 | [`microsoft-agents`](./skills/microsoft-agents/) | 11 | Microsoft Copilot agents, declarative agents, Foundry, Entra, and MCP tooling. |
 | [`microsoft-data`](./skills/microsoft-data/) | 17 | Power BI, Power Apps, Power Automate, Dataverse, and Power Platform architecture. |

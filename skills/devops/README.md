@@ -6,7 +6,7 @@
 
 CI/CD, containers, infrastructure as code, Linux operations, observability, and security.
 
-**Total:** 47 skills.
+**Total:** 41 skills.
 
 ## Skills In This Category
 
@@ -32,17 +32,11 @@ CI/CD, containers, infrastructure as code, Linux operations, observability, and 
 | [`image-manipulation-image-magick`](image-manipulation-image-magick/SKILL.md) | `devops/image-manipulation-image-magick` | Process and manipulate images using ImageMagick. Supports resizing, format conversion, batch processing, and retrieving image metadata |
 | [`import-infrastructure-as-code`](import-infrastructure-as-code/SKILL.md) | `devops/import-infrastructure-as-code` | Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM) |
 | [`incident-commander`](incident-commander/SKILL.md) | `devops/incident-commander` | Run incident response from detection to post-mortem |
-| [`kubernetes-cel-admission-policy-preflight`](kubernetes-cel-admission-policy-preflight/SKILL.md) | `devops/kubernetes-cel-admission-policy-preflight` | Use when native Kubernetes ValidatingAdmissionPolicy or CEL admission rules need fixture completeness, cost/resource checks, bootstrap-safety analysis, or an Audit/Warn-to-Deny rollout gate. |
-| [`kubernetes-crd-storage-version-upgrade-preflight`](kubernetes-crd-storage-version-upgrade-preflight/SKILL.md) | `devops/kubernetes-crd-storage-version-upgrade-preflight` | Use when changing a Kubernetes CRD storage/served version, conversion webhook, stored objects, or retiring an old CRD API version requires a lossless migration and rollback gate. |
-| [`kubernetes-gateway-backend-tls-portability`](kubernetes-gateway-backend-tls-portability/SKILL.md) | `devops/kubernetes-gateway-backend-tls-portability` | Use when Gateway API BackendTLSPolicy is accepted but upstream TLS fails or differs across controllers, upgrades, SAN validation, CA sources, chain depth, or implementation-native policy precedence. |
 | [`kubernetes-ssa-field-ownership-triage`](kubernetes-ssa-field-ownership-triage/SKILL.md) | `devops/kubernetes-ssa-field-ownership-triage` | Use when Kubernetes Server-Side Apply reports field-manager conflicts, controllers overwrite fields, or force-conflicts risks pruning/defaulting side effects; diagnose ownership read-only before choosing relinquish, partition, or explici... |
 | [`lsp-setup`](lsp-setup/SKILL.md) | `devops/lsp-setup` | LSP setup for any language — go-to-definition, find-refs, hover, diagnostics |
 | [`mac-maintenance`](mac-maintenance/SKILL.md) | `devops/mac-maintenance` | macOS upkeep: brew update/upgrade, pull clean repos, empty Trash. |
 | [`multi-stage-dockerfile`](multi-stage-dockerfile/SKILL.md) | `devops/multi-stage-dockerfile` | Create optimized multi-stage Dockerfiles for any language or framework |
-| [`no-proxy-cross-runtime-conformance`](no-proxy-cross-runtime-conformance/SKILL.md) | `devops/no-proxy-cross-runtime-conformance` | Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions. |
 | [`observability-designer`](observability-designer/SKILL.md) | `devops/observability-designer` | Design comprehensive observability for production systems |
-| [`oci-image-platform-graph-conformance`](oci-image-platform-graph-conformance/SKILL.md) | `devops/oci-image-platform-graph-conformance` | Use when multi-platform OCI images select the wrong architecture, descriptor platforms disagree with child configs, or copy/push/pull operations silently strip image-index variants. |
-| [`oci-referrers-portability-conformance`](oci-referrers-portability-conformance/SKILL.md) | `devops/oci-referrers-portability-conformance` | Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images. |
 | [`release-mac-app`](release-mac-app/SKILL.md) | `devops/release-mac-app` | macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout. |
 | [`remote-mac`](remote-mac/SKILL.md) | `devops/remote-mac` | Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks. |
 | [`saas-scaffolder`](saas-scaffolder/SKILL.md) | `devops/saas-scaffolder` | SaaS boilerplate generator — auth, DB schemas, billing, API routes, CI/CD |
