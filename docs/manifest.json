@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-20T10:08:27.394Z",
+  "generated_at": "2026-09-21T10:03:46.100Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 827,
+  "count": 828,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,7 +45,7 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 30,
+    "api-backend": 31,
     "business-strategy": 39,
     "cloud-aws": 85,
     "cloud-azure": 18,
@@ -744,6 +744,14 @@
       "path": "skills/api-backend/aspnet-minimal-api-openapi",
       "depth": 2,
       "description": "Create ASP.NET Minimal API endpoints with proper OpenAPI documentation"
+    },
+    {
+      "name": "dns-svcb-https-parameter-conformance",
+      "category": "api-backend",
+      "install_path": "api-backend/dns-svcb-https-parameter-conformance",
+      "path": "skills/api-backend/dns-svcb-https-parameter-conformance",
+      "depth": 2,
+      "description": "Use when validating RFC 9460 DNS SVCB and HTTPS resource records, verifying presentation and wire-format parameter encodings, ensuring canonical ascending key order, or preventing AliasMode and ServiceMode deployment misconfigurations."
     },
     {
       "name": "forwarded-client-attribution-conformance",
