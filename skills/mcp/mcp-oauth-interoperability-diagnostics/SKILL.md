@@ -15,7 +15,7 @@ license: MIT
 - Refresh expiry starts a new browser authorization mid-session, but the code exchange never completes.
 - A successful token is rejected on the first bounded MCP retry.
 
-Do **not** use this skill for stdio MCP, ordinary login design, token minting, credential recovery, SSE framing, proxy/TLS failures without OAuth evidence, or bypassing an authorization server. Use [`mcp-streamable-http-conformance`](https://github.com/mouadja02/skills/tree/main/skills/mcp/mcp-streamable-http-conformance) for Streamable HTTP/SSE behavior after authorization.
+Do **not** use this skill for stdio MCP, ordinary login design, token minting, credential recovery, SSE framing, proxy/TLS failures without OAuth evidence, or bypassing an authorization server.
 
 ## Prerequisites
 
