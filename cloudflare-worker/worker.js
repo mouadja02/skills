@@ -18,13 +18,19 @@ const MAX_TOKENS_CAP     = 4096;
 // ─── CORS helpers ──────────────────────────────────────────────────────────────
 
 function corsHeaders(origin, env) {
-  const allowed = env.ALLOWED_ORIGIN || "*";
+  const allowed = (env.ALLOWED_ORIGIN || "*").trim();
+  // Support a comma-separated list of origins and tolerate trailing slashes,
+  // since a single mismatched character here silently turns every preflight
+  // request into a 403 (which the browser reports as a generic CORS error).
+  const allowList = allowed.split(",").map((o) => o.trim().replace(/\/$/, ""));
+  const normalizedOrigin = origin.replace(/\/$/, "");
+
   // If a specific origin is configured, only allow that origin.
   // Otherwise reflect the request origin (or '*' for open access).
   const allowOrigin =
     allowed === "*"
       ? "*"
-      : origin === allowed
+      : allowList.includes(normalizedOrigin)
       ? origin
       : null;
 
@@ -60,6 +66,9 @@ export default {
 
     // Reject requests from disallowed origins
     if (cors === null) {
+      // Logged so `wrangler tail` shows the exact mismatch (e.g. trailing
+      // slash or typo in the ALLOWED_ORIGIN secret) instead of a bare 403.
+      console.log(`Rejected origin "${origin}" — does not match ALLOWED_ORIGIN.`);
       return new Response("Forbidden", { status: 403 });
     }
 
