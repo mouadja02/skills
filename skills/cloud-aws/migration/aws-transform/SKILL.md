@@ -6,7 +6,7 @@ name: aws-transform
 description: Performs code upgrades, migrations, and transformations using the AWS Transform (ATX) CLI. Use when upgrading language versions, migrating AWS SDKs, migrating frameworks (Angular, Vue.js, Spring Boot, React), upgrading libraries, optimizing performance, migrating x86 to Graviton, analyzing codebases / generating documentation, or defining custom transformations with natural language. Runs locally on a few repositories or at scale across hundreds via AWS Batch/Fargate.
 metadata:
   author: AWS
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # AWS Transform (ATX)
@@ -168,8 +168,14 @@ Local mode also uses it for transformation execution.
 
 ```bash
 atx --version
-# Install: curl -fsSL https://transform-cli.awsstatic.com/install.sh | bash
+# If installation is needed, download and inspect the installer first:
+curl -fsSL https://transform-cli.awsstatic.com/install.sh -o atx-install.sh
+less atx-install.sh
+bash atx-install.sh
+rm atx-install.sh
 ```
+
+Do not run `bash atx-install.sh` until the downloaded file has been reviewed.
 
 **Mandatory: always run `atx update` once at the start of every session**, even if you just ran it recently. This catches new ATX CLI versions and new TDs. Run it before any other ATX command (including `atx custom def list --json`):
 
@@ -588,7 +594,10 @@ cat "$ATX_INFRA_DIR/container/Dockerfile" 2>/dev/null
 
    ```dockerfile
    # Go
-   RUN curl -fsSL https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xz
+   RUN curl -fsSL https://go.dev/dl/go1.22.0.linux-amd64.tar.gz -o /tmp/go.tar.gz && \
+       tar -tzf /tmp/go.tar.gz >/dev/null && \
+       tar -C /usr/local -xzf /tmp/go.tar.gz && \
+       rm /tmp/go.tar.gz
    ENV PATH="/usr/local/go/bin:$PATH"
 
    # Ruby (via rbenv — must run as atxuser)
@@ -602,10 +611,17 @@ cat "$ATX_INFRA_DIR/container/Dockerfile" 2>/dev/null
 
    # Rust
    USER atxuser
-   RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+   RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rustup-init.sh && \
+       sed -n '1,240p' /tmp/rustup-init.sh && \
+       sh /tmp/rustup-init.sh -y && \
+       rm /tmp/rustup-init.sh
    ENV PATH="/home/atxuser/.cargo/bin:$PATH"
    USER root
    ```
+
+   Review the downloaded Rust installer text in the build log before accepting
+   the image. For stronger reproducibility, pin and verify release checksums for
+   downloaded runtime artifacts when the upstream project publishes them.
 
 3. Update the version switcher in `$ATX_INFRA_DIR/container/entrypoint.sh`.
    Find the relevant `switch_*_version` function and add a case for the new
