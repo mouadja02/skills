@@ -16,10 +16,14 @@ Source blog: <https://aws.amazon.com/blogs/database/connect-to-amazon-rds-for-db
 
 Works from EC2 or CloudShell with internet.
 
-**Step 1 — Download the installer scripts:**
+**Step 1 — Download and inspect the installer script:**
 
 ```bash
-curl -sL https://bit.ly/getdb2driver | bash
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://bit.ly/getdb2driver -o getdb2driver.sh
+${PAGER:-less} getdb2driver.sh  # stop if the script is unexpected
+chmod +x getdb2driver.sh
+./getdb2driver.sh
 ```
 
 Writes `db2-driver.sh` (RT client installer) and `db2client-airgap.sh` (airgap bundler) to the current directory.
@@ -55,10 +59,14 @@ db2_help
 
 Private subnet with no internet. Artifacts staged in S3.
 
-**Step 1 — On internet-connected machine, download:**
+**Step 1 — On internet-connected machine, download and inspect:**
 
 ```bash
-curl -sL https://bit.ly/getdb2driver | bash
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://bit.ly/getdb2driver -o getdb2driver.sh
+${PAGER:-less} getdb2driver.sh  # stop if the script is unexpected
+chmod +x getdb2driver.sh
+./getdb2driver.sh
 ./db2client-airgap.sh --mode download --region <region>
 # Or for Db2 12.1:
 DB2_VER=12.1 ./db2client-airgap.sh --mode download --region <region>

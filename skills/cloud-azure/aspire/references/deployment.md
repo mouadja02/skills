@@ -140,8 +140,13 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Install Aspire CLI
-        run: curl -sSL https://aspire.dev/install.sh | bash
+        run: npm install --global @microsoft/aspire-cli
 
       - name: Generate manifests
         run: aspire publish -p azure -o ./deploy
@@ -168,7 +173,11 @@ steps:
     inputs:
       version: '10.0.x'
 
-  - script: curl -sSL https://aspire.dev/install.sh | bash
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '22.x'
+
+  - script: npm install --global @microsoft/aspire-cli
     displayName: 'Install Aspire CLI'
 
   - script: aspire publish -p azure -o $(Build.ArtifactStagingDirectory)/deploy
@@ -226,7 +235,7 @@ Aspire templates include `.devcontainer/` configuration:
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/node:1": {}
   },
-  "postCreateCommand": "curl -sSL https://aspire.dev/install.sh | bash",
+  "postCreateCommand": "npm install --global @microsoft/aspire-cli",
   "forwardPorts": [18888],
   "portsAttributes": {
     "18888": { "label": "Aspire Dashboard" }
