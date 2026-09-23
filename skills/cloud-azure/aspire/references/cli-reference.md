@@ -9,11 +9,20 @@ The Aspire CLI (`aspire`) is the primary interface for creating, running, and pu
 ## Installation
 
 ```bash
-# Linux / macOS
-curl -sSL https://aspire.dev/install.sh | bash
+# Linux / macOS: download and inspect before execution
+installer="$(mktemp)"
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://aspire.dev/install.sh -o "$installer"
+${PAGER:-less} "$installer"  # stop if the script is unexpected
+bash "$installer"
+rm -f "$installer"
 
-# Windows PowerShell
-irm https://aspire.dev/install.ps1 | iex
+# Windows PowerShell: run these commands in PowerShell instead
+# $installer = Join-Path $env:TEMP "aspire-install.ps1"
+# Invoke-WebRequest https://aspire.dev/install.ps1 -OutFile $installer
+# Get-Content $installer  # stop if the script is unexpected
+# & $installer
+# Remove-Item $installer
 
 # Verify
 aspire --version
