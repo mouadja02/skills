@@ -2,6 +2,7 @@
 name: smolagents-code-agents
 description: Use when building Hugging Face smolagents, code-executing agents, Python-action agents, Hub-shared tools, or lightweight agent prototypes that need sandboxing and provider flexibility.
 source: "https://github.com/huggingface/smolagents"
+version: "1.0.0"
 ---
 
 # Smolagents Code Agents
@@ -33,7 +34,7 @@ Never treat `LocalPythonExecutor` as a security boundary for untrusted code. Use
 Generate a starter safety scaffold:
 
 ```bash
-python skills/agent-design/smolagents-code-agents/scripts/smolagent_safety_scaffold.py --name research_agent
+python scripts/smolagent_safety_scaffold.py --name research_agent
 ```
 
 Review [sandboxing-checklist.md](references/sandboxing-checklist.md) before running any agent that executes model-written code.

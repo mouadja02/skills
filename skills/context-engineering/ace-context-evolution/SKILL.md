@@ -2,6 +2,7 @@
 name: ace-context-evolution
 description: Use when long-lived agents, project memories, system prompts, or playbooks are repeatedly summarized, rewritten, or optimized and risk losing domain detail, provenance, or execution learnings.
 source: "https://arxiv.org/abs/2510.04618"
+version: "1.0.0"
 ---
 
 # ACE Context Evolution
@@ -44,7 +45,7 @@ See [context-evolution-contract.md](references/context-evolution-contract.md) fo
 Before replacing any long-lived context, compare the old and new versions:
 
 ```bash
-python skills/context-engineering/ace-context-evolution/scripts/context_update_guard.py OLD.md NEW.md
+python scripts/context_update_guard.py OLD.md NEW.md
 ```
 
 Reject the rewrite if it drops named tools, file paths, commands, metric thresholds, failure modes, citations, or explicit constraints without an invalidation note.
