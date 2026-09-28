@@ -2,6 +2,7 @@
 name: vllm-serving-planner
 description: Use when planning, reviewing, or tuning vLLM or OpenAI-compatible LLM serving for throughput, latency, KV-cache pressure, batching, quantization, prefix caching, or multimodal serving.
 source: "https://github.com/vllm-project/vllm"
+version: "1.0.0"
 ---
 
 # vLLM Serving Planner
@@ -29,7 +30,7 @@ Plan LLM serving around workload shape: concurrency, context length, output leng
 ## Capacity Helper
 
 ```bash
-python skills/llm-tooling/vllm-serving-planner/scripts/vllm_capacity_planner.py \
+python scripts/vllm_capacity_planner.py \
   --model-gb 70 --gpu-gb 80 --input-tokens 4000 --output-tokens 1000 --concurrency 32
 ```
 
