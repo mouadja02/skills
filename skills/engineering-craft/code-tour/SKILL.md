@@ -10,6 +10,7 @@ description: >
   vibecoder, security reviewer, and more), all CodeTour step types (file/line, selection,
   pattern, uri, commands, view), and tour-level fields (ref, isPrimary, nextTour).
   Works with any repository in any language.
+version: "1.0.0"
 ---
 
 # Code Tour Skill
@@ -20,8 +21,8 @@ the [VS Code CodeTour extension](https://github.com/microsoft/codetour).
 
 Two scripts are bundled in `scripts/`:
 
-- **`scripts/validate_tour.py`** — run after writing any tour. Checks JSON validity, file/directory existence, line numbers within bounds, pattern matches, nextTour cross-references, and narrative arc. Run it: `python ~/.agents/skills/code-tour/scripts/validate_tour.py .tours/<name>.tour --repo-root .`
-- **`scripts/generate_from_docs.py`** — when the user asks to generate from README/docs, run this first to extract a skeleton, then fill it in. Run it: `python ~/.agents/skills/code-tour/scripts/generate_from_docs.py --persona new-joiner --output .tours/skeleton.tour`
+- **`scripts/validate_tour.py`** — run after writing any tour. Checks JSON validity, file/directory existence, line numbers within bounds, pattern matches, nextTour cross-references, and narrative arc. From this skill's installed directory, run it: `python scripts/validate_tour.py .tours/<name>.tour --repo-root .`
+- **`scripts/generate_from_docs.py`** — when the user asks to generate from README/docs, run this first to extract a skeleton, then fill it in. From this skill's installed directory, run it: `python scripts/generate_from_docs.py --persona new-joiner --output .tours/skeleton.tour`
 
 Two reference files are bundled:
 
@@ -71,7 +72,7 @@ If the repo is sparse or empty, say so and work with what exists.
 **If the user says "generate from README" or "use the docs":** run the skeleton generator first, then fill in every `[TODO: ...]` by reading the actual files:
 
 ```bash
-python skills/code-tour/scripts/generate_from_docs.py \
+python scripts/generate_from_docs.py \
   --persona new-joiner \
   --output .tours/skeleton.tour
 ```
@@ -382,7 +383,7 @@ If asked for any of these, say clearly that it's not supported — do not sugges
 **Always run the validator immediately after writing the tour file. Do not skip this step.**
 
 ```bash
-python ~/.agents/skills/code-tour/scripts/validate_tour.py .tours/<name>.tour --repo-root .
+python scripts/validate_tour.py .tours/<name>.tour --repo-root .
 ```
 
 The validator checks:
