@@ -183,35 +183,35 @@ function App() {
 
 ---
 
-## defaultProps Removed
+## Function Component defaultProps Removed
 
 ### Pattern 1: Function Component with defaultProps
 
 ```jsx
 // Before (React 18):
-function Button({ label = 'Click', disabled = false }) {
+function Button({ label, disabled }) {
   return <button disabled={disabled}>{label}</button>;
 }
 
-// WORKS BUT is removed in React 19:
+// Removed for function components in React 19:
 Button.defaultProps = {
   label: 'Click',
   disabled: false
 };
 
 // After (React 19):
-// ES6 default params are now the ONLY way:
+// Use ES6 default parameters for function components:
 function Button({ label = 'Click', disabled = false }) {
   return <button disabled={disabled}>{label}</button>;
 }
 
-// Remove all defaultProps assignments
+// Remove function-component defaultProps assignments
 ```
 
-### Pattern 2: Class Component defaultProps
+### Pattern 2: Class Component defaultProps Remain Supported
 
 ```jsx
-// Before (React 18):
+// React 18 and React 19:
 class Button extends React.Component {
   static defaultProps = {
     label: 'Click',
@@ -222,33 +222,15 @@ class Button extends React.Component {
     return <button disabled={this.props.disabled}>{this.props.label}</button>;
   }
 }
-
-// After (React 19):
-// Use default params in constructor or class field:
-class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.label = props.label || 'Click';
-    this.disabled = props.disabled || false;
-  }
-  
-  render() {
-    return <button disabled={this.disabled}>{this.label}</button>;
-  }
-}
-
-// Or simplify to function component with ES6 defaults:
-function Button({ label = 'Click', disabled = false }) {
-  return <button disabled={disabled}>{label}</button>;
-}
 ```
+
+Class components continue to support `defaultProps` in React 19 because there is no equivalent ES6 default-parameter mechanism for class component props. Do not replace a class component's defaults merely for React 19 compatibility. If the component is independently converted to a function, preserve `undefined`, `null`, `false`, `0`, and empty-string behavior explicitly during that separate refactor.
 
 ### Pattern 3: defaultProps with null
 
 ```jsx
-// Before (React 18):
+// Before (function component):
 function Component({ value }) {
-  // defaultProps can set null to reset a parent-passed value
   return <div>{value}</div>;
 }
 
@@ -256,17 +238,16 @@ Component.defaultProps = {
   value: null
 };
 
-// After (React 19):
-// Use explicit null checks or nullish coalescing:
+// After (React 19 function component):
+// A default parameter applies only when value is undefined, matching defaultProps.
 function Component({ value = null }) {
   return <div>{value}</div>;
 }
-
-// Or:
-function Component({ value }) {
-  return <div>{value ?? null}</div>;
-}
 ```
+
+An explicitly passed `null` remains `null`; do not use `||` as a substitute because it also replaces valid falsy values such as `false`, `0`, and `''`.
+
+**Canonical source:** [React 19 Upgrade Guide — removed `propTypes` and `defaultProps` for functions](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops-for-functions)
 
 ---
 
