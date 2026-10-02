@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-21T12:50:55.153Z",
+  "generated_at": "2026-10-02T18:08:05.872Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 792,
@@ -6047,7 +6047,7 @@
       "install_path": "react-frontend/react19-source-patterns",
       "path": "skills/react-frontend/react19-source-patterns",
       "depth": 2,
-      "description": "Reference for React 19 source-file migration patterns, including API changes, ref handling, and context updates."
+      "description": "Use when migrating React source files to React 19 APIs, refs, context, and component defaults."
     },
     {
       "name": "react19-test-patterns",

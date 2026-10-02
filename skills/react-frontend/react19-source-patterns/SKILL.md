@@ -1,6 +1,8 @@
 ---
 name: react19-source-patterns
-description: 'Reference for React 19 source-file migration patterns, including API changes, ref handling, and context updates.'
+description: 'Use when migrating React source files to React 19 APIs, refs, context, and component defaults.'
+version: "1.0.1"
+license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 ---
@@ -11,6 +13,12 @@ attribution: "github/awesome-copilot by GitHub Community"
 
 Reference for every source-file migration required for React 19.
 
+## When to Use
+
+- Migrating a React 18 application or component library to React 19.
+- Replacing APIs removed in React 19, including legacy roots, legacy context, and string refs.
+- Reviewing `ref`, `defaultProps`, `propTypes`, or `useRef` changes during an upgrade.
+
 ## Quick Reference Table
 
 | Pattern | Action | Reference |
@@ -20,7 +28,7 @@ Reference for every source-file migration required for React 19.
 | `unmountComponentAtNode` | → `root.unmount()` | Inline fix |
 | `ReactDOM.findDOMNode` | → direct ref | Inline fix |
 | `forwardRef(...)` wrapper | → ref as direct prop | See references/api-migrations.md |
-| `Component.defaultProps = {}` | → ES6 default params | See references/api-migrations.md |
+| Function component `.defaultProps = {}` | → ES6 default params | See references/api-migrations.md |
 | `useRef()` no arg | → `useRef(null)` | Inline fix  add `null` |
 | Legacy Context | → `createContext` | [→ api-migrations.md#legacy-context](references/api-migrations.md#legacy-context) |
 | String refs `this.refs.x` | → `createRef()` | [→ api-migrations.md#string-refs](references/api-migrations.md#string-refs) |
@@ -28,12 +36,13 @@ Reference for every source-file migration required for React 19.
 
 ## PropTypes Rule
 
-Do **not** remove `.propTypes` assignments. The `prop-types` package still works as a standalone validator. React 19 only removes the built-in runtime checking from the React package  the package itself remains valid.
+In React 19, component `.propTypes` assignments are silently ignored. Migrate runtime assumptions to TypeScript or another explicit type-checking solution; do not present retained assignments as active validation. The standalone `prop-types` package can still be invoked directly, but React no longer runs those component checks.
 
-Add this comment above any `.propTypes` block:
+If an assignment must remain temporarily, mark it as non-enforcing and track its replacement:
+
 ```jsx
-// NOTE: React 19 no longer runs propTypes validation at runtime.
-// PropTypes kept for documentation and IDE tooling only.
+// React 19 ignores this assignment; retained temporarily as documentation.
+// TODO: replace with TypeScript or another explicit validation boundary.
 ```
 
 ## Read the Reference
