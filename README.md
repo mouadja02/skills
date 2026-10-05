@@ -16,14 +16,19 @@ complete generated Markdown index at [`SKILLS.md`](./SKILLS.md), or the focused 
 Install a single skill with the provided scripts.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh \
-  | bash -s -- engineering-craft/superpowers-test-driven-development \
-      -d ~/.claude/skills
+installer="$(mktemp)"
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh -o "$installer"
+less "$installer"  # Review the downloaded script before continuing.
+bash "$installer" engineering-craft/superpowers-test-driven-development -d ~/.claude/skills
+rm "$installer"
 ```
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) `
-  engineering-craft/superpowers-test-driven-development -Dest $HOME\.claude\skills
+$installer = Join-Path ([System.IO.Path]::GetTempPath()) "skills-install.ps1"
+Invoke-WebRequest https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1 -OutFile $installer
+Get-Content $installer -Raw  # Review the downloaded script before continuing.
+& $installer engineering-craft/superpowers-test-driven-development -Dest $HOME\.claude\skills
+Remove-Item $installer
 ```
 
 Selectors may be an exact install path, a category, a quoted glob, or `--all` / `-All`. Use
