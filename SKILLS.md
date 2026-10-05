@@ -8,12 +8,20 @@ Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do n
 
 ```bash
 # bash / zsh (macOS, Linux, WSL, Git Bash):
-curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh | bash -s -- <install_path> -d <destination>
+installer="$(mktemp)"
+curl -fsSL https://raw.githubusercontent.com/mouadja02/skills/main/install.sh -o "$installer"
+less "$installer"  # Review the downloaded script before continuing.
+bash "$installer" <install_path> -d <destination>
+rm "$installer"
 ```
 
 ```powershell
 # PowerShell (Windows):
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) <install_path> -Dest <destination>
+$installer = Join-Path ([System.IO.Path]::GetTempPath()) "skills-install.ps1"
+Invoke-WebRequest https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1 -OutFile $installer
+Get-Content $installer -Raw  # Review the downloaded script before continuing.
+& $installer <install_path> -Dest <destination>
+Remove-Item $installer
 ```
 
 Where `<install_path>` is the value from the **Install path** column below (e.g. `engineering-craft/superpowers-test-driven-development`).
