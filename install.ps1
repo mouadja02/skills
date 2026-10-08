@@ -53,11 +53,13 @@
     Show this help and exit (equivalent to Get-Help Install-Skill -Full).
 
 .EXAMPLE
-    One command, nothing to clone: download this script and run it in a single
-    statement.
+    Download this script, inspect it, and then run it.
 
-    & ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) `
-        engineering-craft/superpowers-test-driven-development -Dest $HOME\.claude\skills
+    $installer = Join-Path ([System.IO.Path]::GetTempPath()) "skills-install.ps1"
+    Invoke-WebRequest https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1 -OutFile $installer
+    Get-Content $installer -Raw
+    & $installer engineering-craft/superpowers-test-driven-development -Dest $HOME\.claude\skills
+    Remove-Item $installer
 
 .EXAMPLE
     Install-Skill engineering-craft/superpowers-test-driven-development `
@@ -76,17 +78,16 @@
     Install-Skill "ai-agents/*" -Dest $HOME\.claude\skills\ai -DryRun
 
 .EXAMPLE
-    & ([scriptblock]::Create((irm https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1))) -Help
+    $installer = Join-Path ([System.IO.Path]::GetTempPath()) "skills-install.ps1"
+    Invoke-WebRequest https://raw.githubusercontent.com/mouadja02/skills/main/install.ps1 -OutFile $installer
+    Get-Content $installer -Raw
+    & $installer -Help
+    Remove-Item $installer
 
 .NOTES
-    The one-command form downloads this script and invokes it with your
-    arguments in a single statement:
-
-        & ([scriptblock]::Create((irm <url>))) <selector> -Dest <destination>
-
-    Piping it through Invoke-Expression instead (`irm <url> | iex`, no
-    arguments) defines a function `Install-Skill` with the same parameters,
-    which you can then call repeatedly in that session.
+    Keep network retrieval separate from execution: save the script with
+    Invoke-WebRequest -OutFile, inspect the saved file, and invoke that file.
+    Do not pipe downloaded content into Invoke-Expression.
 #>
 [CmdletBinding(DefaultParameterSetName = 'Install')]
 param(

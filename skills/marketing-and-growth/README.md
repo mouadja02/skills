@@ -13,7 +13,7 @@ Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth.
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`apple-appstore-reviewer`](apple-appstore-reviewer/SKILL.md) | `marketing-and-growth/apple-appstore-reviewer` | Serves as a reviewer of the codebase with instructions on looking for Apple App Store optimizations or rejection reasons |
-| [`bulkpublish-social-publishing`](bulkpublish-social-publishing/SKILL.md) | `marketing-and-growth/bulkpublish-social-publishing` | Use when an agent needs to prepare, approve, schedule, or publish social content through BulkPublish. |
+| [`bulkpublish-social-publishing`](bulkpublish-social-publishing/SKILL.md) | `marketing-and-growth/bulkpublish-social-publishing` | Use when the user wants a finished social post drafted, scheduled, or published through BulkPublish, or asks to approve, reject, or retry a BulkPublish post — including a 403 APPROVAL_REQUIRED or an unconfirmed platform result. |
 | [`content-humanizer`](content-humanizer/SKILL.md) | `marketing-and-growth/content-humanizer` | Makes AI-generated content sound genuinely human — not just cleaned up, but alive |
 | [`content-production`](content-production/SKILL.md) | `marketing-and-growth/content-production` | Full content production pipeline — takes a topic from blank page to published-ready piece |
 | [`cs-ad-creative`](cs-ad-creative/SKILL.md) | `marketing-and-growth/cs-ad-creative` | Use when generating, iterating, or scaling paid-ad creative across platforms, funnel stages, audiences, or tested variants. Do not use for organic social content or campaign-budget analysis. |

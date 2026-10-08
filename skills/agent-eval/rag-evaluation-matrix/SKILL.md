@@ -2,6 +2,7 @@
 name: rag-evaluation-matrix
 description: Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost.
 source: "https://arxiv.org/abs/2601.07711"
+version: "1.0.0"
 ---
 
 # RAG Evaluation Matrix
@@ -39,7 +40,7 @@ Do not choose agentic RAG by fashion. Compare retrieval designs against domain q
 Use the helper to combine per-run JSON metrics into a decision table:
 
 ```bash
-python skills/agent-eval/rag-evaluation-matrix/scripts/rag_eval_matrix.py results/*.json
+python scripts/rag_eval_matrix.py results/*.json
 ```
 
 Expected JSON fields: `pipeline`, `question_type`, `correct`, `answerable_correct`, `latency_ms`, `cost_usd`.

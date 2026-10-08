@@ -5,8 +5,13 @@ Set up a complete, private AI stack on your own hardware — from local model se
 ## Quick Start
 
 ```bash
-# 1. Install Ollama
-curl -fsSL https://ollama.ai/install.sh | sh
+# 1. Install Ollama (inspect the downloaded script before running it)
+installer="$(mktemp)"
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://ollama.com/install.sh -o "$installer"
+${PAGER:-less} "$installer"  # stop if the script is unexpected
+sh "$installer"
+rm -f "$installer"
 
 # 2. Pull a model
 ollama pull qwen2.5:14b

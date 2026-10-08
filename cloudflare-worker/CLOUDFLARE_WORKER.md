@@ -99,7 +99,38 @@ curl -X POST http://localhost:8787/v1/chat/completions \
 |-----------------|----------|--------------------------------------------------------------|
 | `NVIDIA_API_KEY`| Yes      | Your `nvapi-...` key from NVIDIA NGC                         |
 | `NVIDIA_MODEL`  | No       | Model ID override (default: `stepfun-ai/step-3.5-flash`)     |
-| `ALLOWED_ORIGIN`| No       | Restrict CORS to a single origin (default: `*`)              |
+| `ALLOWED_ORIGIN`| No       | Restrict CORS to one or more origins, comma-separated (default: `*`) |
+
+---
+
+## Troubleshooting CORS errors
+
+If the browser console shows:
+
+> Response to preflight request doesn't pass access control check: It does not
+> have HTTP ok status.
+
+The Worker returned a non-2xx status (usually **403**) for the `OPTIONS`
+preflight — almost always because `ALLOWED_ORIGIN` doesn't exactly match the
+page's origin (protocol + host, no path, no trailing slash). Fix it with:
+
+```bash
+# Check what's currently set (shows names only, not values)
+wrangler secret list
+
+# Re-set it to the exact origin shown in the browser address bar
+wrangler secret put ALLOWED_ORIGIN
+# e.g. https://mouadja02.github.io   (no trailing slash)
+
+# Or, to unblock quickly while debugging, delete the restriction entirely:
+wrangler secret delete ALLOWED_ORIGIN
+
+wrangler deploy
+```
+
+`wrangler tail` will log `Rejected origin "..." — does not match ALLOWED_ORIGIN.`
+when a request is denied, which shows the exact origin the browser sent so you
+can compare it against the secret value.
 
 ---
 

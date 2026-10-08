@@ -26,7 +26,7 @@ React, Vue, Next.js, mobile frontend frameworks, migrations, and testing.
 | [`react18-lifecycle-patterns`](react18-lifecycle-patterns/SKILL.md) | `react-frontend/react18-lifecycle-patterns` | React unsafe lifecycles → safe alternatives — componentWillMount/Update/ReceiveProps |
 | [`react18-string-refs`](react18-string-refs/SKILL.md) | `react-frontend/react18-string-refs` | Provides exact migration patterns for React string refs (ref="name" + this.refs.name) to React.createRef() in class components. Use this skill whenever migrating string ref usage - including single element refs, multiple refs in a compon... |
 | [`react19-concurrent-patterns`](react19-concurrent-patterns/SKILL.md) | `react-frontend/react19-concurrent-patterns` | Preserve React 18 concurrent patterns and adopt React 19 APIs (useTransition, useDeferredValue, Suspense, use(), useOptimistic, Actions) during migration |
-| [`react19-source-patterns`](react19-source-patterns/SKILL.md) | `react-frontend/react19-source-patterns` | Reference for React 19 source-file migration patterns, including API changes, ref handling, and context updates. |
+| [`react19-source-patterns`](react19-source-patterns/SKILL.md) | `react-frontend/react19-source-patterns` | Use when migrating React source files to React 19 APIs, refs, context, and component defaults. |
 | [`react19-test-patterns`](react19-test-patterns/SKILL.md) | `react-frontend/react19-test-patterns` | Provides before/after patterns for migrating test files to React 19 compatibility, including act() imports, Simulate removal, and StrictMode call count changes |
 | [`unit-test-vue-pinia`](unit-test-vue-pinia/SKILL.md) | `react-frontend/unit-test-vue-pinia` | Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases |
 

@@ -206,3 +206,16 @@ Imported from `skills/` on the `main` branch (commit `eb968520`, 2026-07-20). AW
 License: Apache-2.0.
 
 Copyright Amazon.com, Inc. or its affiliates.
+
+## BulkPublish AI Toolkit
+
+Source repositories:
+
+- https://github.com/azeemkafridi/bulkpublish-ai-toolkit at commit `ca98104027b6fa2b085ad5cb6e2ab44d053a352c`
+- https://github.com/azeemkafridi/bulkpublish-api at commit `c31ba8919dbbf31feac1e4666ef4befbf6fcb3de`
+
+`marketing-and-growth/bulkpublish-social-publishing` adapts the procedure, tool and parameter names, approval transitions, and error codes from the toolkit's `skills/using-bulkpublish/SKILL.md` and `skills/schedule-post/SKILL.md` (the `create_post` field list is adapted closely), cross-checked against `mcp-server/src/index.ts` and `openapi.json` in the API repository. The skill's frontmatter carries `source` and `attribution`.
+
+License: MIT.
+
+Copyright (c) 2026 BulkPublish (toolkit); Copyright (c) 2024-present BulkPublish (API repository).

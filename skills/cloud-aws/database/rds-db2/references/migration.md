@@ -28,11 +28,10 @@ Source: https://aws.amazon.com/blogs/database/restore-self-managed-db2-linux-dat
 Run before the final backup. Catches blocking issues early.
 
 ```bash
-# Direct (local)
-curl -sL https://bit.ly/precheckdb2migration | bash
-
-# Download + run
-curl -sL https://bit.ly/precheckdb2migration -o db2_migration_prereq_check.sh
+# Download, inspect, and run locally
+curl --proto '=https' --tlsv1.2 -fsSL \
+  https://bit.ly/precheckdb2migration -o db2_migration_prereq_check.sh
+${PAGER:-less} db2_migration_prereq_check.sh  # stop if the script is unexpected
 chmod +x db2_migration_prereq_check.sh
 ./db2_migration_prereq_check.sh
 

@@ -1,6 +1,7 @@
 ---
 name: copilot-sdk
 description: Build agentic applications with GitHub Copilot SDK
+version: "1.0.0"
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 ---
@@ -907,11 +908,11 @@ The SDK manages the CLI process lifecycle automatically. All communication happe
 ## Resources
 
 - **GitHub Repository**: https://github.com/github/copilot-sdk
-- **Getting Started Tutorial**: https://github.com/github/copilot-sdk/blob/main/docs/tutorials/first-app.md
+- **Getting Started**: https://github.com/github/copilot-sdk/blob/main/docs/getting-started.md
 - **GitHub MCP Server**: https://github.com/github/github-mcp-server
 - **MCP Servers Directory**: https://github.com/modelcontextprotocol/servers
-- **Cookbook**: https://github.com/github/copilot-sdk/tree/main/cookbook
-- **Samples**: https://github.com/github/copilot-sdk/tree/main/samples
+- **Feature Guides**: https://github.com/github/copilot-sdk/tree/main/docs/features
+- **Node.js Samples**: https://github.com/github/copilot-sdk/tree/main/nodejs/samples
 
 ## Status
 

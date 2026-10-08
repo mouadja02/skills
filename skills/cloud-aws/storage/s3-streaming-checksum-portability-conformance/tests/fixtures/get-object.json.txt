@@ -1,9 +1,0 @@
-{
-  "operation": "GetObject",
-  "content_encoding": null,
-  "x_amz_content_sha256": null,
-  "x_amz_trailer": null,
-  "content_length_known": true,
-  "returned_checksum_matches": true,
-  "download_sha256_matches": true
-}

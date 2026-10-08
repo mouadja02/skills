@@ -6,7 +6,7 @@
 
 Git, GitHub, CLI tooling, release workflows, local automation, and developer productivity.
 
-**Total:** 32 skills.
+**Total:** 29 skills.
 
 ## Skills In This Category
 
@@ -31,17 +31,14 @@ Git, GitHub, CLI tooling, release workflows, local automation, and developer pro
 | [`github-issues`](github-issues/SKILL.md) | `dev-workflow/github-issues` | GitHub issues via MCP — bug reports, features, milestones, labels, bulk operations |
 | [`github-project-triage`](github-project-triage/SKILL.md) | `dev-workflow/github-project-triage` | GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode. |
 | [`github-release`](github-release/SKILL.md) | `dev-workflow/github-release` | Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates. |
-| [`http-range-resume-integrity-conformance`](http-range-resume-integrity-conformance/SKILL.md) | `dev-workflow/http-range-resume-integrity-conformance` | Use when interrupted HTTP downloads resume with Range/If-Range, partial caches may be stale, or 200/206/416 and Content-Range handling could append incompatible bytes. |
 | [`make-repo-contribution`](make-repo-contribution/SKILL.md) | `dev-workflow/make-repo-contribution` | Repo contribution — read guidance, file issue, branch, commit, PR workflow |
 | [`msstore-cli`](msstore-cli/SKILL.md) | `dev-workflow/msstore-cli` | Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store |
 | [`my-issues`](my-issues/SKILL.md) | `dev-workflow/my-issues` | Use when the user asks what is assigned to them, what they should work on, or wants their open issues in the current repository listed. |
 | [`my-pull-requests`](my-pull-requests/SKILL.md) | `dev-workflow/my-pull-requests` | List my pull requests in the current repository |
 | [`npm`](npm/SKILL.md) | `dev-workflow/npm` | npm registry ops: login, whoami, package availability, publish; 1Password tmux auth. |
-| [`npm-platform-optional-lockfile-conformance`](npm-platform-optional-lockfile-conformance/SKILL.md) | `dev-workflow/npm-platform-optional-lockfile-conformance` | Use when an npm package-lock omits or misstates OS/CPU/libc-specific optional packages, npm ci fails only on another platform, or a native binary is absent after lockfile regeneration. |
 | [`pr-dashboard`](pr-dashboard/SKILL.md) | `dev-workflow/pr-dashboard` | Open a GitHub PR dashboard in the browser. Use when the user asks to see their pull requests, open the PR dashboard, show PRs for a date range, or check PR status. Trigger phrases include "show my PRs", "open PR dashboard", "pull request... |
 | [`ruff-recursive-fix`](ruff-recursive-fix/SKILL.md) | `dev-workflow/ruff-recursive-fix` | Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively, review each change, and resolve remaining findings with targeted edits or user decisions |
 | [`shuffle-json-data`](shuffle-json-data/SKILL.md) | `dev-workflow/shuffle-json-data` | Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries. |
-| [`timezone-database-provenance-conformance`](timezone-database-provenance-conformance/SKILL.md) | `dev-workflow/timezone-database-provenance-conformance` | Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants. |
 | [`using-git-worktrees`](using-git-worktrees/SKILL.md) | `dev-workflow/using-git-worktrees` | Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification |
 | [`xurl`](xurl/SKILL.md) | `dev-workflow/xurl` | xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw endpoints. |
 

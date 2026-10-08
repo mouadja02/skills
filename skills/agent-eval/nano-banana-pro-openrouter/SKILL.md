@@ -1,6 +1,7 @@
 ---
 name: nano-banana-pro-openrouter
 description: 'Generate or edit images via OpenRouter with the Gemini 3 Pro Image model'
+version: "1.0.1"
 metadata:
   emoji: 🍌
   requires:
@@ -68,7 +69,29 @@ If the script exits non-zero, check stderr against these common blockers:
 | Symptom | Resolution |
 |---------|------------|
 | `OPENROUTER_API_KEY is not set` | Ask the user to set it. PowerShell: `$env:OPENROUTER_API_KEY = "sk-or-..."` / bash: `export OPENROUTER_API_KEY="sk-or-..."` |
-| `uv: command not found` or not recognized | macOS/Linux: <code>curl -LsSf https://astral.sh/uv/install.sh &#124; sh</code>. Windows: <code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 &#124; iex"</code>. Then restart the terminal. |
+| `uv: command not found` or not recognized | Install `uv` with a package manager when available: `brew install uv` on macOS or `winget install --id astral-sh.uv -e` on Windows. For the standalone installer, download it to a file, inspect it, and execute that saved file as shown below. Then restart the terminal. |
 | `AuthenticationError` / HTTP 401 | Key is invalid or has no credits. Verify at <https://openrouter.ai/settings/keys>. |
+
+Standalone installer fallback:
+
+```bash
+# macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh -o uv-install.sh
+less uv-install.sh
+sh uv-install.sh
+rm uv-install.sh
+```
+
+```powershell
+# Windows PowerShell
+Invoke-WebRequest https://astral.sh/uv/install.ps1 -OutFile uv-install.ps1
+Get-Content uv-install.ps1 | More
+powershell -ExecutionPolicy ByPass -File .\uv-install.ps1
+Remove-Item .\uv-install.ps1
+```
+
+Do not execute the downloaded installer until its contents have been reviewed.
+The canonical installation options are documented at
+<https://docs.astral.sh/uv/getting-started/installation/>.
 
 For transient errors (HTTP 429, network timeouts), retry once after 30 seconds. Do not retry the same error more than twice — surface the issue to the user instead.

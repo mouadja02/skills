@@ -1,6 +1,7 @@
 ---
 name: drawio
 description: Generate draw.io diagrams as .drawio files and export to PNG/SVG/PDF with embedded XML
+version: "1.0.0"
 ---
 
 # Draw.io Diagram Skill
@@ -23,17 +24,18 @@ This skill includes `drawio-to-png.mjs`, a Node.js export script with two render
 ### Usage
 
 ```bash
-# Install dependencies (one-time, from the scripts folder)
-cd skills/drawio/scripts && npm install
+# Run these commands from this skill's installed directory.
+# Install dependencies once without changing directories.
+npm --prefix scripts install
 
 # Export a single diagram
-node skills/drawio/scripts/drawio-to-png.mjs <input.drawio> [output.png]
+node scripts/drawio-to-png.mjs <input.drawio> [output.png]
 
 # Export all .drawio files in a directory
-node skills/drawio/scripts/drawio-to-png.mjs --dir <directory>
+node scripts/drawio-to-png.mjs --dir <directory>
 
 # Force a specific renderer
-node skills/drawio/scripts/drawio-to-png.mjs --renderer=cli|viewer|auto <input.drawio>
+node scripts/drawio-to-png.mjs --renderer=cli|viewer|auto <input.drawio>
 ```
 
 ### Skill Folder Contents

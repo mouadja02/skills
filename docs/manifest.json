@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-09-02T11:24:51.460Z",
+  "generated_at": "2026-10-08T13:47:09.048Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 818,
+  "count": 793,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -45,19 +45,19 @@
   "counts_by_category": {
     "agent-design": 58,
     "agent-eval": 24,
-    "api-backend": 24,
+    "api-backend": 12,
     "business-strategy": 39,
-    "cloud-aws": 85,
+    "cloud-aws": 84,
     "cloud-azure": 18,
     "code-quality": 18,
     "coding": 33,
     "communication": 1,
     "context-engineering": 17,
     "creative": 2,
-    "databases": 25,
+    "databases": 24,
     "design-and-ui": 34,
-    "dev-workflow": 32,
-    "devops": 46,
+    "dev-workflow": 29,
+    "devops": 41,
     "diagrams-slides": 14,
     "documentation": 28,
     "dotnet": 19,
@@ -65,9 +65,9 @@
     "finance": 7,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 49,
+    "llm-tooling": 47,
     "marketing-and-growth": 27,
-    "mcp": 16,
+    "mcp": 15,
     "messaging": 1,
     "microsoft-agents": 11,
     "microsoft-data": 17,
@@ -762,86 +762,6 @@
       "description": "GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails"
     },
     {
-      "name": "graphql-incremental-hydration-preflight",
-      "category": "api-backend",
-      "install_path": "api-backend/graphql-incremental-hydration-preflight",
-      "path": "skills/api-backend/graphql-incremental-hydration-preflight",
-      "depth": 2,
-      "description": "Use when a GraphQL @defer/@stream multipart response parses but a patch disappears after client, proxy, cache, or SSR hydration. Replay a pinned current ID-based or legacy path-based envelope offline, reject unknown shapes, and make a bounded rollout or recovery decision."
-    },
-    {
-      "name": "grpc-trailer-preservation-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/grpc-trailer-preservation-conformance",
-      "path": "skills/api-backend/grpc-trailer-preservation-conformance",
-      "depth": 2,
-      "description": "Use when gRPC status or trailing metadata disappears or changes across proxies, gateways, meshes, tunnels, or runtimes, especially for trailers-only and size-boundary failures."
-    },
-    {
-      "name": "http-content-disposition-filename-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-content-disposition-filename-conformance",
-      "path": "skills/api-backend/http-content-disposition-filename-conformance",
-      "depth": 2,
-      "description": "Use when an HTTP download gets the wrong, garbled, unsafe, or client-dependent filename—especially Content-Disposition filename/filename*, RFC 8187 percent encoding, duplicate parameters, redirects, path traversal, device names, or media-type extension mismatches."
-    },
-    {
-      "name": "http-early-hints-proxy-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-early-hints-proxy-conformance",
-      "path": "skills/api-backend/http-early-hints-proxy-conformance",
-      "depth": 2,
-      "description": "Use when HTTP 103 Early Hints may be dropped, merged, reordered, or corrupted across reverse proxies—replay bounded synthetic exchanges, compare normalized hop captures, and preserve the final response."
-    },
-    {
-      "name": "http-redirect-credential-boundary-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/http-redirect-credential-boundary-conformance",
-      "path": "skills/api-backend/http-redirect-credential-boundary-conformance",
-      "depth": 2,
-      "description": "Use when an HTTP client follows redirects and credentials are silently dropped or may cross host, scheme, or port boundaries—especially Authorization, Cookie, Proxy-Authorization, API-key headers, 301/302/303/307/308, or default-port confusion."
-    },
-    {
-      "name": "ipv6-zone-identifier-uri-portability-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/ipv6-zone-identifier-uri-portability-conformance",
-      "path": "skills/api-backend/ipv6-zone-identifier-uri-portability-conformance",
-      "depth": 2,
-      "description": "Use when scoped or link-local IPv6 input containing an interface name/index works in one CLI, URL parser, HTTP client, resolver, or OS but fails or changes in another. Classify UI, URI, socket, and wire boundaries offline before any network probe."
-    },
-    {
-      "name": "json-duplicate-member-boundary-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/json-duplicate-member-boundary-conformance",
-      "path": "skills/api-backend/json-duplicate-member-boundary-conformance",
-      "depth": 2,
-      "description": "Use when JSON authorization, signing, canonicalization, APIs, or distributed runtimes may disagree on repeated object names—inspect original bytes before lossy parsing and fail closed with scoped duplicate paths and offsets."
-    },
-    {
-      "name": "multipart-form-data-wire-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/multipart-form-data-wire-conformance",
-      "path": "skills/api-backend/multipart-form-data-wire-conformance",
-      "depth": 2,
-      "description": "Use when multipart/form-data uploads succeed in one emitter/parser but fail, truncate, or disagree through another runtime or proxy. Inspect redacted raw bytes offline, reject ambiguous framing and disposition parameters, compare normalized part trees, and make a bounded rollout decision."
-    },
-    {
-      "name": "oauth-dpop-nonce-retry-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/oauth-dpop-nonce-retry-conformance",
-      "path": "skills/api-backend/oauth-dpop-nonce-retry-conformance",
-      "depth": 2,
-      "description": "Use when OAuth DPoP clients, authorization servers, or resource servers disagree on DPoP-Nonce challenges, proactive rotation, endpoint scope, CORS exposure, concurrency, or bounded retry behavior."
-    },
-    {
-      "name": "openapi-nullability-migration-conformance",
-      "category": "api-backend",
-      "install_path": "api-backend/openapi-nullability-migration-conformance",
-      "path": "skills/api-backend/openapi-nullability-migration-conformance",
-      "depth": 2,
-      "description": "Use when OpenAPI 3.0 nullable schemas are ignored, rewritten, or generate unusable types after an OpenAPI 3.1 migration. Inventory requiredness, null acceptance, references, composition, and fixtures offline before changing a contract."
-    },
-    {
       "name": "openapi-to-application-code",
       "category": "api-backend",
       "install_path": "api-backend/openapi-to-application-code",
@@ -912,22 +832,6 @@
       "path": "skills/api-backend/typespec-create-api-plugin",
       "depth": 2,
       "description": "Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot"
-    },
-    {
-      "name": "webauthn-rpid-origin-drift-preflight",
-      "category": "api-backend",
-      "install_path": "api-backend/webauthn-rpid-origin-drift-preflight",
-      "path": "skills/api-backend/webauthn-rpid-origin-drift-preflight",
-      "depth": 2,
-      "description": "Use when WebAuthn or passkeys fail after hostname, port, proxy, RP-ID, public-URL, or native-app origin changes and the team needs a fail-closed migration and parity preflight."
-    },
-    {
-      "name": "websocket-permessage-deflate-resource-limits",
-      "category": "api-backend",
-      "install_path": "api-backend/websocket-permessage-deflate-resource-limits",
-      "path": "skills/api-backend/websocket-permessage-deflate-resource-limits",
-      "depth": 2,
-      "description": "Use when validating WebSocket permessage-deflate implementations for decompressed-size, compressed-size, expansion-ratio, fragmentation, timeout, or context-takeover resource boundaries."
     },
     {
       "name": "agent-protocol",
@@ -1850,14 +1754,6 @@
       "description": "Create managed Iceberg tables using Amazon S3 Tables (s3tables API namespace) with automatic compaction and snapshot management. Sets up table bucket, namespace, table, schema, Glue catalog registration, partitioning, IAM access control. Triggers on: create table, data lake table, analytics table, structured data storage, S3 Tables, Iceberg, Athena table, partitioning strategy, access permissions. Do NOT use for: importing files (use ingesting-into-data-lake), vector storage (use storing-and-querying-vectors), querying existing tables (use querying-data-lake), or locating existing table (use finding-data-lake-assets)."
     },
     {
-      "name": "s3-streaming-checksum-portability-conformance",
-      "category": "cloud-aws",
-      "install_path": "cloud-aws/storage/s3-streaming-checksum-portability-conformance",
-      "path": "skills/cloud-aws/storage/s3-streaming-checksum-portability-conformance",
-      "depth": 3,
-      "description": "Use when S3-compatible PutObject or UploadPart fails after an SDK change—classify aws-chunked/checksum-trailer wire modes, run disposable canaries, and verify integrity before rollout."
-    },
-    {
       "name": "securing-s3-buckets",
       "category": "cloud-aws",
       "install_path": "cloud-aws/storage/securing-s3-buckets",
@@ -2754,14 +2650,6 @@
       "description": "Use when PostgreSQL logical replication slots retain WAL, become orphaned or invalid after switchover, or must be proven synchronized and usable before failover."
     },
     {
-      "name": "postgres-transaction-pool-prepared-statement-conformance",
-      "category": "databases",
-      "install_path": "databases/postgres-transaction-pool-prepared-statement-conformance",
-      "path": "skills/databases/postgres-transaction-pool-prepared-statement-conformance",
-      "depth": 2,
-      "description": "Use when PostgreSQL clients behind PgBouncer/Supavisor fail with missing or duplicate prepared statements, especially in transaction/statement pooling, COPY, migrations, bursts, or after disabling a client statement cache."
-    },
-    {
       "name": "postgresql-code-review",
       "category": "databases",
       "install_path": "databases/postgresql-code-review",
@@ -3258,14 +3146,6 @@
       "description": "Use when preparing a release PR for a single-package GitHub library with git and the GitHub CLI, including SemVer selection and Keep a Changelog updates."
     },
     {
-      "name": "http-range-resume-integrity-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/http-range-resume-integrity-conformance",
-      "path": "skills/dev-workflow/http-range-resume-integrity-conformance",
-      "depth": 2,
-      "description": "Use when interrupted HTTP downloads resume with Range/If-Range, partial caches may be stale, or 200/206/416 and Content-Range handling could append incompatible bytes."
-    },
-    {
       "name": "make-repo-contribution",
       "category": "dev-workflow",
       "install_path": "dev-workflow/make-repo-contribution",
@@ -3306,14 +3186,6 @@
       "description": "npm registry ops: login, whoami, package availability, publish; 1Password tmux auth."
     },
     {
-      "name": "npm-platform-optional-lockfile-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/npm-platform-optional-lockfile-conformance",
-      "path": "skills/dev-workflow/npm-platform-optional-lockfile-conformance",
-      "depth": 2,
-      "description": "Use when an npm package-lock omits or misstates OS/CPU/libc-specific optional packages, npm ci fails only on another platform, or a native binary is absent after lockfile regeneration."
-    },
-    {
       "name": "pr-dashboard",
       "category": "dev-workflow",
       "install_path": "dev-workflow/pr-dashboard",
@@ -3336,14 +3208,6 @@
       "path": "skills/dev-workflow/shuffle-json-data",
       "depth": 2,
       "description": "Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries."
-    },
-    {
-      "name": "timezone-database-provenance-conformance",
-      "category": "dev-workflow",
-      "install_path": "dev-workflow/timezone-database-provenance-conformance",
-      "path": "skills/dev-workflow/timezone-database-provenance-conformance",
-      "depth": 2,
-      "description": "Use when named-zone wall times cross browsers, mobile runtimes, containers, or servers and stale or divergent tzdb rules could change offsets or persisted UTC instants."
     },
     {
       "name": "using-git-worktrees",
@@ -3522,30 +3386,6 @@
       "description": "Run incident response from detection to post-mortem"
     },
     {
-      "name": "kubernetes-cel-admission-policy-preflight",
-      "category": "devops",
-      "install_path": "devops/kubernetes-cel-admission-policy-preflight",
-      "path": "skills/devops/kubernetes-cel-admission-policy-preflight",
-      "depth": 2,
-      "description": "Use when native Kubernetes ValidatingAdmissionPolicy or CEL admission rules need fixture completeness, cost/resource checks, bootstrap-safety analysis, or an Audit/Warn-to-Deny rollout gate."
-    },
-    {
-      "name": "kubernetes-crd-storage-version-upgrade-preflight",
-      "category": "devops",
-      "install_path": "devops/kubernetes-crd-storage-version-upgrade-preflight",
-      "path": "skills/devops/kubernetes-crd-storage-version-upgrade-preflight",
-      "depth": 2,
-      "description": "Use when changing a Kubernetes CRD storage/served version, conversion webhook, stored objects, or retiring an old CRD API version requires a lossless migration and rollback gate."
-    },
-    {
-      "name": "kubernetes-gateway-backend-tls-portability",
-      "category": "devops",
-      "install_path": "devops/kubernetes-gateway-backend-tls-portability",
-      "path": "skills/devops/kubernetes-gateway-backend-tls-portability",
-      "depth": 2,
-      "description": "Use when Gateway API BackendTLSPolicy is accepted but upstream TLS fails or differs across controllers, upgrades, SAN validation, CA sources, chain depth, or implementation-native policy precedence."
-    },
-    {
       "name": "kubernetes-ssa-field-ownership-triage",
       "category": "devops",
       "install_path": "devops/kubernetes-ssa-field-ownership-triage",
@@ -3578,28 +3418,12 @@
       "description": "Create optimized multi-stage Dockerfiles for any language or framework"
     },
     {
-      "name": "no-proxy-cross-runtime-conformance",
-      "category": "devops",
-      "install_path": "devops/no-proxy-cross-runtime-conformance",
-      "path": "skills/devops/no-proxy-cross-runtime-conformance",
-      "depth": 2,
-      "description": "Use when HTTP clients disagree about NO_PROXY bypass behavior—measure curl and Python urllib routing with a local direct-versus-proxy sentinel before changing exclusions."
-    },
-    {
       "name": "observability-designer",
       "category": "devops",
       "install_path": "devops/observability-designer",
       "path": "skills/devops/observability-designer",
       "depth": 2,
       "description": "Design comprehensive observability for production systems"
-    },
-    {
-      "name": "oci-referrers-portability-conformance",
-      "category": "devops",
-      "install_path": "devops/oci-referrers-portability-conformance",
-      "path": "skills/devops/oci-referrers-portability-conformance",
-      "depth": 2,
-      "description": "Use when OCI 1.1 signatures, attestations, or SBOM referrers disappear, duplicate, or drift across registries, proxies, replication, copy tools, fallback tags, or multi-platform images."
     },
     {
       "name": "release-mac-app",
@@ -4810,14 +4634,6 @@
       "description": "Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI"
     },
     {
-      "name": "llm-streaming-tool-call-reassembly-conformance",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/llm-streaming-tool-call-reassembly-conformance",
-      "path": "skills/llm-tooling/llm-streaming-tool-call-reassembly-conformance",
-      "depth": 2,
-      "description": "Use when streamed LLM tool calls merge, truncate, collide, or execute early across OpenAI-compatible, Anthropic, or Mistral events — reassemble by stable slot, validate terminal state and schema, and gate execution offline."
-    },
-    {
       "name": "model-recommendation",
       "category": "llm-tooling",
       "install_path": "llm-tooling/model-recommendation",
@@ -4896,14 +4712,6 @@
       "path": "skills/llm-tooling/oracle",
       "depth": 2,
       "description": "Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design."
-    },
-    {
-      "name": "otel-genai-semconv-drift-validation",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/otel-genai-semconv-drift-validation",
-      "path": "skills/llm-tooling/otel-genai-semconv-drift-validation",
-      "depth": 2,
-      "description": "Use when OpenTelemetry GenAI spans or events drift across semantic-convention versions, duplicate token usage, use obsolete names, or capture model content without explicit safeguards."
     },
     {
       "name": "phoenix-cli",
@@ -5143,7 +4951,7 @@
       "install_path": "marketing-and-growth/bulkpublish-social-publishing",
       "path": "skills/marketing-and-growth/bulkpublish-social-publishing",
       "depth": 2,
-      "description": "Use when an agent needs to prepare, approve, schedule, or publish social content through BulkPublish."
+      "description": "Use when the user wants a finished social post drafted, scheduled, or published through BulkPublish, or asks to approve, reject, or retry a BulkPublish post — including a 403 APPROVAL_REQUIRED or an unconfirmed platform result."
     },
     {
       "name": "content-humanizer",
@@ -5416,14 +5224,6 @@
       "path": "skills/mcp/mcp-server-builder",
       "depth": 2,
       "description": "Build production-grade MCP (Model Context Protocol) servers from API contracts"
-    },
-    {
-      "name": "mcp-streamable-http-conformance",
-      "category": "mcp",
-      "install_path": "mcp/mcp-streamable-http-conformance",
-      "path": "skills/mcp/mcp-streamable-http-conformance",
-      "depth": 2,
-      "description": "Use when MCP Streamable HTTP clients, servers, or gateways hang, reject streams, lose SSE framing, or disagree across protocol versions — normalize a redacted transcript, validate a pinned profile offline, and plan non-destructive migration or recovery."
     },
     {
       "name": "php-mcp-server-generator",
@@ -6255,7 +6055,7 @@
       "install_path": "react-frontend/react19-source-patterns",
       "path": "skills/react-frontend/react19-source-patterns",
       "depth": 2,
-      "description": "Reference for React 19 source-file migration patterns, including API changes, ref handling, and context updates."
+      "description": "Use when migrating React source files to React 19 APIs, refs, context, and component defaults."
     },
     {
       "name": "react19-test-patterns",

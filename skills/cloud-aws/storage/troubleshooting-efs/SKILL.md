@@ -8,7 +8,7 @@ description: >
   permission errors, throughput problems, and burst credit exhaustion. Use when
   the user has an EFS file system that is not mounting, returning errors, performing
   slowly, or showing access denied.
-version: 1
+version: 1.0.1
 ---
 
 # Troubleshooting EFS
@@ -119,8 +119,9 @@ aws efs update-file-system --file-system-id fs-ID --throughput-mode elastic --re
 
 **General Purpose vs Max I/O:**
 
-- Check `PercentIOLimit` metric — if consistently >80%, consider Max I/O
-- Note: performance mode is IMMUTABLE — must create new FS and migrate
+- Check `PercentIOLimit` to see how close a General Purpose file system is to its I/O limit; sustained values near 100% require workload and configuration investigation.
+- AWS recommends General Purpose for all file systems. Max I/O is a previous-generation mode with higher per-operation latency and is unsupported for One Zone file systems or file systems using Elastic throughput.
+- Note: performance mode is immutable. Moving an existing Max I/O file system to General Purpose requires creating a new file system and migrating the data.
 
 ### 6. Category E — Encryption/KMS
 

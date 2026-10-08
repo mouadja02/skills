@@ -6,7 +6,7 @@
 
 LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM.
 
-**Total:** 49 skills.
+**Total:** 47 skills.
 
 ## Skills In This Category
 
@@ -21,7 +21,6 @@ LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Ariz
 | [`arize-link`](arize-link/SKILL.md) | `llm-tooling/arize-link` | Use when you need a deep link into the Arize UI for a specific model, monitor, trace, or dashboard — for example to cite a finding or hand a teammate the exact view. |
 | [`arize-prompt-optimization`](arize-prompt-optimization/SKILL.md) | `llm-tooling/arize-prompt-optimization` | Also use when the user wants to make their AI respond better or improve AI output quality. Covers extracting prompts from spans, gathering performance signal, and running a data-driven optimization loop using the ax CLI |
 | [`arize-trace`](arize-trace/SKILL.md) | `llm-tooling/arize-trace` | Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI |
-| [`llm-streaming-tool-call-reassembly-conformance`](llm-streaming-tool-call-reassembly-conformance/SKILL.md) | `llm-tooling/llm-streaming-tool-call-reassembly-conformance` | Use when streamed LLM tool calls merge, truncate, collide, or execute early across OpenAI-compatible, Anthropic, or Mistral events — reassemble by stable slot, validate terminal state and schema, and gate execution offline. |
 | [`model-recommendation`](model-recommendation/SKILL.md) | `llm-tooling/model-recommendation` | Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency |
 | [`multimodal-rag-architecture`](multimodal-rag-architecture/SKILL.md) | `llm-tooling/multimodal-rag-architecture` | Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence. |
 | [`nano-banana-pro`](nano-banana-pro/SKILL.md) | `llm-tooling/nano-banana-pro` | Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final. |
@@ -32,7 +31,6 @@ LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Ariz
 | [`openrouter-oauth`](openrouter-oauth/SKILL.md) | `llm-tooling/openrouter-oauth` | Implement "Sign In with OpenRouter" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys fo... |
 | [`openrouter-typescript-sdk`](openrouter-typescript-sdk/SKILL.md) | `llm-tooling/openrouter-typescript-sdk` | integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern |
 | [`oracle`](oracle/SKILL.md) | `llm-tooling/oracle` | Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design. |
-| [`otel-genai-semconv-drift-validation`](otel-genai-semconv-drift-validation/SKILL.md) | `llm-tooling/otel-genai-semconv-drift-validation` | Use when OpenTelemetry GenAI spans or events drift across semantic-convention versions, duplicate token usage, use obsolete names, or capture model content without explicit safeguards. |
 | [`phoenix-cli`](phoenix-cli/SKILL.md) | `llm-tooling/phoenix-cli` | Phoenix CLI — fetch/export traces, analyze errors, open coding axial coding review |
 | [`phoenix-evals`](phoenix-evals/SKILL.md) | `llm-tooling/phoenix-evals` | Build and run evaluators for AI/LLM applications using Phoenix. |
 | [`phoenix-tracing`](phoenix-tracing/SKILL.md) | `llm-tooling/phoenix-tracing` | OpenInference semantic conventions and instrumentation for Phoenix AI observability |

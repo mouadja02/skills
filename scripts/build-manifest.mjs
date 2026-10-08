@@ -455,16 +455,24 @@ function renderSkillsMd({ count, categories, counts_by_category, skills, repo, d
   lines.push(
     `# bash / zsh (macOS, Linux, WSL, Git Bash):`
   );
+  lines.push(`installer="$(mktemp)"`);
   lines.push(
-    `curl -fsSL https://raw.githubusercontent.com/${repo}/${default_branch}/install.sh | bash -s -- <install_path> -d <destination>`
+    `curl -fsSL https://raw.githubusercontent.com/${repo}/${default_branch}/install.sh -o "$installer"`
   );
+  lines.push(`less "$installer"  # Review the downloaded script before continuing.`);
+  lines.push(`bash "$installer" <install_path> -d <destination>`);
+  lines.push(`rm "$installer"`);
   lines.push("```");
   lines.push("");
   lines.push("```powershell");
   lines.push(`# PowerShell (Windows):`);
+  lines.push(`$installer = Join-Path ([System.IO.Path]::GetTempPath()) "skills-install.ps1"`);
   lines.push(
-    `& ([scriptblock]::Create((irm https://raw.githubusercontent.com/${repo}/${default_branch}/install.ps1))) <install_path> -Dest <destination>`
+    `Invoke-WebRequest https://raw.githubusercontent.com/${repo}/${default_branch}/install.ps1 -OutFile $installer`
   );
+  lines.push(`Get-Content $installer -Raw  # Review the downloaded script before continuing.`);
+  lines.push(`& $installer <install_path> -Dest <destination>`);
+  lines.push(`Remove-Item $installer`);
   lines.push("```");
   lines.push("");
   lines.push(
