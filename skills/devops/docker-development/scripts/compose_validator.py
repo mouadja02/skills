@@ -83,6 +83,10 @@ def parse_yaml_simple(content):
         if indent == 0 and ":" in stripped:
             key = stripped.split(":")[0].strip()
             if key == "services":
+                if stripped.split(":", 1)[1].strip():
+                    raise ValueError(
+                        "flow-style YAML services are unsupported; use block YAML or JSON"
+                    )
                 current_section = "services"
             elif key == "volumes":
                 current_section = "volumes"
@@ -151,6 +155,36 @@ def parse_yaml_simple(content):
                             svc[current_key][key] = val
 
     return result
+
+
+def parse_compose(content):
+    """Parse supported Compose input and reject unreadable shapes fail-closed."""
+    stripped = content.lstrip()
+    if not stripped:
+        raise ValueError("compose document is empty")
+
+    if stripped[0] in "[{":
+        def reject_constant(value):
+            raise ValueError(f"non-standard JSON constant is unsupported: {value}")
+
+        try:
+            parsed = json.loads(content, parse_constant=reject_constant)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"malformed JSON: {exc.msg}") from exc
+    else:
+        parsed = parse_yaml_simple(content)
+
+    if not isinstance(parsed, dict):
+        raise ValueError("compose document must be a mapping")
+    services = parsed.get("services")
+    if not isinstance(services, dict) or not services:
+        raise ValueError("compose document must contain a non-empty services mapping")
+    for name, service in services.items():
+        if not isinstance(name, str) or not name:
+            raise ValueError("service names must be non-empty strings")
+        if not isinstance(service, dict):
+            raise ValueError(f"service '{name}' must be a mapping")
+    return parsed
 
 
 def validate_compose(parsed, strict=False):
@@ -306,7 +340,7 @@ def validate_compose(parsed, strict=False):
 
 def generate_report(content, output_format="text", strict=False):
     """Generate validation report."""
-    parsed = parse_yaml_simple(content)
+    parsed = parse_compose(content)
     findings = validate_compose(parsed, strict)
     services = parsed.get("services", {})
 
@@ -378,12 +412,20 @@ def main():
         if not path.exists():
             print(f"Error: File not found: {args.composefile}", file=sys.stderr)
             sys.exit(1)
-        content = path.read_text(encoding="utf-8")
+        try:
+            content = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            print(f"Error: Cannot read compose file: {exc}", file=sys.stderr)
+            sys.exit(2)
     else:
         print("No compose file provided. Running demo validation...\n")
         content = DEMO_COMPOSE
 
-    generate_report(content, args.output, args.strict)
+    try:
+        generate_report(content, args.output, args.strict)
+    except ValueError as exc:
+        print(f"Error: Invalid or unsupported Compose input: {exc}", file=sys.stderr)
+        sys.exit(2)
 
 
 if __name__ == "__main__":

@@ -2,8 +2,9 @@
 name: "docker-development"
 description: Docker/containers — Dockerfile optimization, compose, multi-stage builds, security scanning
 license: MIT
+version: "1.0.1"
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   author: Alireza Rezvani
   category: engineering
   updated: 2026-03-16
@@ -218,6 +219,7 @@ python3 scripts/dockerfile_analyzer.py path/to/Dockerfile
 CLI utility for validating docker-compose files.
 
 **Features:**
+- JSON-form Compose support with fail-closed malformed/unsupported input handling
 - Service dependency validation
 - Healthcheck presence detection
 - Network configuration analysis
@@ -236,6 +238,16 @@ python3 scripts/compose_validator.py docker-compose.yml --output json
 
 # Strict mode (fail on warnings)
 python3 scripts/compose_validator.py docker-compose.yml --strict
+```
+
+The validator accepts its documented block-style YAML subset and JSON-form Compose
+documents. It exits with status 2 instead of reporting a clean score when input is
+empty, malformed, unreadable, or uses an unsupported services shape.
+
+Verify the parser and security regressions from the skill directory:
+
+```bash
+python3 tests/test_compose_validator.py
 ```
 
 ---
