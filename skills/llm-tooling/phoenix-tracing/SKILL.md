@@ -5,7 +5,7 @@ license: Apache-2.0
 compatibility: Requires Phoenix server. Python skills need arize-phoenix-otel; TypeScript skills need @arizeai/phoenix-otel.
 metadata:
   author: oss@arize.com
-  version: "1.0.0"
+  version: "1.0.1"
   languages: "Python, TypeScript"
 source: "https://github.com/Arize-ai/phoenix"
 attribution: "Arize-ai/phoenix by Arize AI"
@@ -135,8 +135,8 @@ references/*-typescript.md      # TypeScript implementations
 
 **Python API Documentation:**
 
-- [Python OTEL Package](https://arize-phoenix.readthedocs.io/projects/otel/en/latest/) - `arize-phoenix-otel` API reference
-- [Python Client Package](https://arize-phoenix.readthedocs.io/projects/client/en/latest/) - `arize-phoenix-client` API reference
+- [Python OTEL Package](https://arize.com/docs/phoenix/sdk-api-reference/python/arize-phoenix-otel) - `arize-phoenix-otel` API reference
+- [Python Client Package](https://arize.com/docs/phoenix/sdk-api-reference/python/arize-phoenix-client) - `arize-phoenix-client` API reference
 
 **TypeScript API Documentation:**
 
