@@ -1,7 +1,7 @@
 ---
 name: qdrant-minimize-latency
 description: Use when single-query Qdrant latency is too high and throughput is not the constraint. Covers segment count matched to CPU cores, keeping quantized vectors and HNSW in RAM, and trading recall for speed via hnsw_ef.
-version: "1.0.1"
+version: "1.0.2"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -16,9 +16,9 @@ Low latency optimization is aimed at utilising maximum resource saturation for a
 
 ## Performance Tuning for Lower Latency
 
-- Increase segment count to match CPU cores (`default_segment_number: 16`) [Minimizing latency](https://search.qdrant.tech/md/documentation/operations/optimize/?s=minimizing-latency)
+- Increase segment count to match CPU cores (`default_segment_number: 16`) [Minimizing latency](https://qdrant.tech/documentation/ops-optimization/optimize/#minimizing-latency)
 - Keep quantized vectors and HNSW in RAM (`always_ram=true`)
-- Reduce `hnsw_ef` at query time (trade recall for speed) [Search params](https://search.qdrant.tech/md/documentation/operations/optimize/?s=fine-tuning-search-parameters)
+- Reduce `hnsw_ef` at query time (trade recall for speed) [Search params](https://qdrant.tech/documentation/ops-optimization/optimize/#fine-tuning-search-parameters)
 - Use local NVMe, avoid network-attached storage
 
 ## Memory Pressure and Latency

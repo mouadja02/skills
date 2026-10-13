@@ -1,7 +1,7 @@
 ---
 name: qdrant-scaling-qps
 description: Use when Qdrant must handle more parallel queries per second and per-query latency is not the priority. Covers fewer, larger segments, quantization in RAM, and replication — the opposite tuning direction from latency.
-version: "1.0.1"
+version: "1.0.2"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 ---
@@ -18,7 +18,7 @@ High throughput favors fewer, larger segments so each query touches less overhea
 
 ## Performance Tuning for Higher RPS
 
-- Use fewer, larger segments (`default_segment_number: 2`) [Maximizing throughput](https://search.qdrant.tech/md/documentation/operations/optimize/?s=maximizing-throughput)
+- Use fewer, larger segments (`default_segment_number: 2`) [Maximizing throughput](https://qdrant.tech/documentation/ops-optimization/optimize/#maximizing-throughput)
 - Enable quantization with `always_ram=true` to reduce disk IO [Quantization](https://search.qdrant.tech/md/documentation/manage-data/quantization/)
 - Use batch search API to amortize overhead [Batch search](https://search.qdrant.tech/md/documentation/search/search/?s=batch-search-api)
 
