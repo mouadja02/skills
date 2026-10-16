@@ -1,6 +1,8 @@
 ---
 name: java-refactoring-remove-parameter
-description: 'Refactoring using Remove Parameter in Java Language'
+description: >-
+  Refactors Java code with the Remove Parameter pattern, using worked before/after examples. Use when
+  a Java method has a parameter that is unused or derivable from other state.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

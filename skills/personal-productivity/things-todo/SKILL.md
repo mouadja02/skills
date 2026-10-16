@@ -1,6 +1,8 @@
 ---
 name: things-todo
-description: "Things 3 via things CLI: add, list, search, update, delete, verify tasks."
+description: >-
+  Manages Things 3 tasks through the things CLI: add, list, search, update, delete, and verify. Use
+  for Things-backed to-dos on macOS; use reminders only when the user asks for Apple Reminders.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

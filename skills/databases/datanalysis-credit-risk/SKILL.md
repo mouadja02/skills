@@ -1,6 +1,9 @@
 ---
 name: datanalysis-credit-risk
-description: Credit risk data cleaning and variable screening pipeline for pre-loan modeling
+description: >-
+  Runs an 11-step data cleaning and variable screening pipeline for pre-loan credit risk models:
+  sample analysis, OOS split, missing-rate, IV, PSI, and correlation filters. Use when preparing raw
+  credit data for scorecard or default-prediction modeling.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

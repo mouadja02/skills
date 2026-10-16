@@ -1,6 +1,9 @@
 ---
 name: github-cache-hygiene
-description: "GitHub quota/cache hygiene: answer reads from cache first, spend live API calls only for freshness or writes."
+description: >-
+  Answers GitHub read questions from a local cache first and spends live API calls only when freshness
+  or writes matter, with freshness policies for issues, PRs, and repos. Use when agent workflows hit
+  GitHub rate limits or repeat the same API reads.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

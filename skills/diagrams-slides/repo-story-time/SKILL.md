@@ -1,6 +1,9 @@
 ---
 name: repo-story-time
-description: 'Generate a comprehensive repository summary and narrative story from commit history'
+description: >-
+  Turns a repository's commit history and code into a summary and narrative: phases, contributors,
+  patterns, and the decisions behind them. Use when someone wants to understand how a project evolved
+  or needs a repository retrospective.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

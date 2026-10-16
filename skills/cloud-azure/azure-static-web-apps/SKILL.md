@@ -1,6 +1,9 @@
 ---
 name: azure-static-web-apps
-description: Helps create, configure, and deploy Azure Static Web Apps using the SWA CLI
+description: >-
+  Creates, configures, and deploys Azure Static Web Apps with the SWA CLI, including local emulation,
+  API backends, auth simulation, and staticwebapp.config.json. Use when hosting a static frontend with
+  optional serverless APIs on Azure or debugging an SWA deployment.
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT

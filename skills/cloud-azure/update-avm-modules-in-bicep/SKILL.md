@@ -1,6 +1,9 @@
 ---
 name: update-avm-modules-in-bicep
-description: 'Update Azure Verified Modules (AVM) to latest versions in Bicep files.'
+description: >-
+  Updates Azure Verified Module (AVM) references in a Bicep file to their latest versions, applying
+  only non-breaking changes and reporting the result as a table. Use when Bicep templates pin outdated
+  AVM versions or before an infrastructure release.
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT

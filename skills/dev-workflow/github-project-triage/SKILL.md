@@ -1,6 +1,9 @@
 ---
 name: github-project-triage
-description: "GitHub issue/PR triage: summarize, assess risk/testability, inspect CI/diffs/trust, autonomous work mode."
+description: >-
+  Triages GitHub issues and PRs into maintainer-facing cards: what each is, why it matters, author
+  trust, risk, test and CI state, blockers, and next action. Use when the user says triage inside a
+  repository or needs to work through an issue or PR queue.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

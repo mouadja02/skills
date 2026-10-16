@@ -1,6 +1,9 @@
 ---
 name: gtm-operating-cadence
-description: Design meeting rhythms, metric reporting, quarterly planning, and decision-making velocity for scaling companies
+description: >-
+  Designs a company's operating cadence: meeting rhythms, metric reporting, quarterly planning, and
+  decision-making speed. Use when meetings do not produce decisions, alignment worsens as the company
+  grows, or leaders spend all day in meetings.
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

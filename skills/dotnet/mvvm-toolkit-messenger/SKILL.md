@@ -1,6 +1,9 @@
 ---
 name: mvvm-toolkit-messenger
-description: CommunityToolkit.Mvvm Messenger — WeakReference/Strong pub/sub, decoupled ViewModel comms
+description: >-
+  Uses the CommunityToolkit.Mvvm messenger for decoupled view-model communication: weak and strong
+  references, request/reply, and channel tokens. Use when view models must react to events without
+  referencing each other, or a messenger handler never fires.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

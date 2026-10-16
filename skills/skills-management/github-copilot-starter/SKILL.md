@@ -1,6 +1,9 @@
 ---
 name: github-copilot-starter
-description: 'Set up complete GitHub Copilot configuration for a new project based on technology stack'
+description: >-
+  Sets up a complete GitHub Copilot configuration for a new project from its tech stack:
+  copilot-instructions.md, instruction files, and agents, with attribution to awesome-copilot sources.
+  Use when bootstrapping Copilot customization for a repository.
 ---
 
 You are a GitHub Copilot setup specialist. Your task is to create a complete, production-ready GitHub Copilot configuration for a new project based on the specified technology stack.

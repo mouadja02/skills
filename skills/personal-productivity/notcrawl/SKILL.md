@@ -1,6 +1,9 @@
 ---
 name: notcrawl
-description: "Notion archive: desktop/API sync, Markdown export, page search, read-only SQL."
+description: >-
+  Searches and reads a local Notion archive: desktop cache or API sync, Markdown export, page search,
+  and read-only SQL. Use for questions about Notion content when a local archive or a NOTION_TOKEN is
+  available.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

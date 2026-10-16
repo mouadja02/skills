@@ -1,6 +1,9 @@
 ---
 name: domain-dns-ops
-description: "DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP verification."
+description: >-
+  Operates domains and DNS: registrars, Cloudflare zones and records, nameserver delegation, vanity
+  domains, redirects, and DNS/HTTP verification. Use when setting up or debugging DNS records,
+  redirects, or propagation.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

@@ -1,6 +1,9 @@
 ---
 name: impeccable
-description: UI critique, audit, polish — websites, dashboards, components, onboarding, empty states
+description: >-
+  Designs, critiques, audits, and polishes frontend interfaces — websites, landing pages, dashboards,
+  components, onboarding, and empty states — after loading the project's PRODUCT.md and DESIGN.md
+  context. Use when the user wants to design, redesign, review, or improve a UI.
 argument-hint: "[{{command_hint}}] [target]"
 user-invocable: true
 allowed-tools:

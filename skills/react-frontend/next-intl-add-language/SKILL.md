@@ -1,6 +1,9 @@
 ---
 name: next-intl-add-language
-description: 'Add new language to a Next.js + next-intl application'
+description: >-
+  Adds a new language to a Next.js app that uses next-intl: translates messages/en.json, registers the
+  locale in routing.ts and middleware.ts, and adds it to the language toggle. Use when localizing a
+  next-intl application into another language.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

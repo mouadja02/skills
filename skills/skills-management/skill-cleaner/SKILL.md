@@ -1,6 +1,9 @@
 ---
 name: skill-cleaner
-description: "Audit skills: loaded roots, duplicate skills, unused skills, prompt-budget costs, compact descriptions."
+description: >-
+  Audits installed skills: which roots are loaded, duplicates, unused skills, prompt-budget cost, and
+  descriptions that could be shorter. Use when trimming the skill prompt budget or deciding which
+  skills or plugins to remove.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

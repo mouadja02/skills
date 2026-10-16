@@ -1,6 +1,9 @@
 ---
 name: "cs-founder-coach"
-description: Founder/CEO leadership — archetype ID, delegation, blind spots, scaling decisions
+description: >-
+  Coaches founders and CEOs on their own development: leadership archetype, delegation, blind spots,
+  and the decisions that change as the company scales. Use when a founder is the bottleneck, struggles
+  to delegate, or is outgrowing their current way of leading.
 license: MIT
 metadata:
   version: 1.0.0

@@ -1,6 +1,8 @@
 ---
 name: java-refactoring-extract-method
-description: 'Refactoring using Extract Methods in Java Language'
+description: >-
+  Refactors Java code with the Extract Method pattern, using worked before/after examples. Use when a
+  Java method is long, mixes levels of abstraction, or repeats a block that deserves a name.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

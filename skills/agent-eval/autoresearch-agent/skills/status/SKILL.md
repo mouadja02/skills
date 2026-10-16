@@ -1,6 +1,9 @@
 ---
 name: "autoresearch-status"
-description: "Show experiment dashboard with results, active loops, and progress."
+description: >-
+  Shows the autoresearch experiment dashboard: results, active loops, and progress across all
+  experiments. Use when the user runs /ar:status or asks how running experiments or optimization loops
+  are doing.
 command: /ar:status
 ---
 

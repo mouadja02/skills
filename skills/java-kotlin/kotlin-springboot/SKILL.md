@@ -1,6 +1,9 @@
 ---
 name: kotlin-springboot
-description: 'Get best practices for developing applications with Spring Boot and Kotlin.'
+description: >-
+  Applies Spring Boot best practices for Kotlin: idiomatic Kotlin, constructor injection, data
+  classes, null safety, coroutines, and testing. Use when building or reviewing Spring Boot
+  applications written in Kotlin.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

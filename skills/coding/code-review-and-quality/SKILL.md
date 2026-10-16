@@ -1,6 +1,9 @@
 ---
 name: code-review-and-quality
-description: Conducts multi-axis code review. Use before merging any change
+description: >-
+  Conducts a multi-axis code review (correctness, readability, architecture, security, performance)
+  before merging. Use before merging any change, after finishing a feature or bug fix, when reviewing
+  code another agent or person wrote, or when asked to review a diff or pull request.
 license: MIT
 source: "https://github.com/addyosmani/agent-skills"
 attribution: "addyosmani/agent-skills by Addy Osmani"

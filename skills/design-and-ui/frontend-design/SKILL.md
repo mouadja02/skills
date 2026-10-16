@@ -1,6 +1,9 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality
+description: >-
+  Creates distinctive, production-grade frontend interfaces by committing to a bold aesthetic
+  direction (purpose, tone, typography, color, motion) before coding. Use when building web pages,
+  components, or apps where the result should not look generic or templated.
 license: Complete terms in LICENSE.txt
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"

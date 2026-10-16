@@ -1,6 +1,9 @@
 ---
 name: shuffle-json-data
-description: 'Shuffle repetitive JSON objects safely by validating schema consistency before randomising entries.'
+description: >-
+  Shuffles repetitive JSON objects safely: validates the file and schema consistency first, then
+  randomizes order without corrupting data. Use when test fixtures or datasets in JSON need reordering
+  or randomizing.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

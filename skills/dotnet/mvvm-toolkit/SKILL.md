@@ -1,6 +1,9 @@
 ---
 name: mvvm-toolkit
-description: CommunityToolkit.Mvvm — ObservableProperty, RelayCommand, NotifyPropertyChangedFor source generators
+description: >-
+  Authors and reviews view models with CommunityToolkit.Mvvm 8.x source generators:
+  ObservableProperty, RelayCommand, NotifyPropertyChangedFor, and validation. Use when writing MVVM
+  view models, properties, or commands in a .NET XAML app.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

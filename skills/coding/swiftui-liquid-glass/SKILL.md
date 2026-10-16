@@ -1,6 +1,9 @@
 ---
 name: swiftui-liquid-glass
-description: "SwiftUI Liquid Glass (iOS 26+): implement, adopt, refactor, review correctness/perf/design."
+description: >-
+  Implements, adopts, and reviews iOS 26+ Liquid Glass in SwiftUI: glassEffect, GlassEffectContainer,
+  correctness, performance, and design fit. Use when adding Liquid Glass to a SwiftUI app or
+  refactoring existing UI to the new design language.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger — originally by @Dimillian (Dimillian/Skills)"
 version: "1.0.0"

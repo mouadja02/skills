@@ -1,6 +1,9 @@
 ---
 name: cognitive-frame-shift
-description: 6-lens problem rotation — child, alien, historian, contrarian, futurist, expert
+description: >-
+  Rotates a problem through six lenses — child, alien, historian, contrarian, futurist, and domain
+  expert — to surface blind spots. Use when an analysis feels one-sided, a team is stuck in its own
+  framing, or a decision needs perspectives the room lacks.
 ---
 
 # Cognitive Frame Shift

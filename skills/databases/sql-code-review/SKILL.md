@@ -1,6 +1,9 @@
 ---
 name: sql-code-review
-description: SQL code review — security, maintainability, quality across all SQL dialects
+description: >-
+  Reviews SQL for security (injection, privileges), performance, maintainability, and quality across
+  MySQL, PostgreSQL, SQL Server, Oracle, and other dialects. Use when reviewing a query, migration,
+  stored procedure, or the SQL in a pull request.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

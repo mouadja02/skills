@@ -1,6 +1,8 @@
 ---
 name: remote-mac
-description: "Remote Mac management: Tailscale, SSH, tmux, non-interactive commands, service checks."
+description: >-
+  Runs and checks things on a remote Mac over Tailscale or SSH: non-interactive commands, tmux
+  sessions, and service checks. Use when work must happen on another Mac you are not sitting at.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

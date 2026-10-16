@@ -1,6 +1,8 @@
 ---
 name: breakdown-feature-prd
-description: 'Prompt for creating Product Requirements Documents (PRDs) for new features, based on an Epic.'
+description: >-
+  Creates a Product Requirements Document for a new feature from its parent Epic: goals, user stories,
+  requirements, and acceptance criteria. Use when breaking an Epic down into feature-level PRDs.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

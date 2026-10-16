@@ -1,6 +1,8 @@
 ---
 name: sonos
-description: "Sonos control: search, queue, playlists, rooms/groups, volume, YouTube playback."
+description: >-
+  Controls Sonos speakers: search, queue, playlists, rooms and groups, volume, and YouTube playback,
+  with speaker discovery over mDNS. Use when playing or managing music on Sonos.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

@@ -1,6 +1,9 @@
 ---
 name: mcp-deploy-manage-agents
-description: 'Skill converted from mcp-deploy-manage-agents.prompt.md'
+description: >-
+  Deploys, manages, and governs MCP-based declarative agents in Microsoft 365 through the admin
+  center: distribution, access, and organizational control. Use when rolling an MCP-based Copilot
+  agent out to an organization.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

@@ -1,6 +1,9 @@
 ---
 name: bmad-agent-tech-writer
-description: Technical documentation specialist and knowledge curator
+description: >-
+  BMad Method technical-writer persona (Paige) that turns complex concepts into task-oriented
+  documentation and diagrams. Use when the user asks to talk to Paige or the tech writer, or wants
+  BMad-style project documentation, explanations, or diagrams written.
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
 attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 license: MIT

@@ -1,6 +1,9 @@
 ---
 name: mcp-create-adaptive-cards
-description: 'Skill converted from mcp-create-adaptive-cards.prompt.md'
+description: >-
+  Adds Adaptive Card response templates to MCP-based API plugins so Microsoft 365 Copilot presents
+  data visually. Use when building or improving the responses of an MCP plugin for Microsoft 365
+  Copilot.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

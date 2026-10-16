@@ -1,6 +1,9 @@
 ---
 name: dataverse-python-quickstart
-description: 'Generate Python SDK setup + CRUD + bulk + paging snippets using official patterns.'
+description: >-
+  Generates quickstart Python snippets for the Dataverse SDK: installation, client creation with
+  InteractiveBrowserCredential, single-record CRUD, bulk create and update, and paged retrieval. Use
+  when getting started with Dataverse from Python.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

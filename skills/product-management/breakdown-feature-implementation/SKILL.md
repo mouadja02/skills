@@ -1,6 +1,9 @@
 ---
 name: breakdown-feature-implementation
-description: 'Prompt for creating detailed feature implementation plans, following Epoch monorepo structure.'
+description: >-
+  Creates a detailed technical implementation plan for a feature from its Feature PRD, laid out for a
+  front-end and back-end monorepo, and saves it under /docs/ways-of-work/plan/. Use when a feature PRD
+  is ready and engineering needs a step-by-step plan.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

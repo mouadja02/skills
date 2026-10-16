@@ -1,6 +1,9 @@
 ---
 name: phoenix-evals
-description: Build and run evaluators for AI/LLM applications using Phoenix.
+description: >-
+  Builds and runs evaluators for LLM applications with Arize Phoenix: code checks first, LLM-as-judge
+  for nuance, validated against human labels. Use when measuring LLM output quality, creating an eval
+  suite, or checking a judge against human ratings.
 license: Apache-2.0
 compatibility: Requires Phoenix server. Python skills need phoenix and openai packages; TypeScript skills need @arizeai/phoenix-client.
 metadata:

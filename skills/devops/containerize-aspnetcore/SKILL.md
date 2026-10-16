@@ -1,6 +1,8 @@
 ---
 name: containerize-aspnetcore
-description: 'Containerize an ASP.NET Core project by creating Dockerfile and .dockerfile files customized for the project.'
+description: >-
+  Containerizes an ASP.NET Core project, creating a Dockerfile and .dockerignore tailored to the
+  project. Use when packaging an ASP.NET Core app as a Docker image.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

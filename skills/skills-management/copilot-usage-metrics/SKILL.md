@@ -1,6 +1,9 @@
 ---
 name: copilot-usage-metrics
-description: Retrieve and display GitHub Copilot usage metrics for organizations and enterprises using the GitHub CLI and REST API.
+description: >-
+  Retrieves GitHub Copilot usage metrics for organizations and enterprises with the GitHub CLI and
+  REST API: adoption, active users, acceptance rates, chat usage, and per-user or per-date breakdowns.
+  Use when asked how Copilot is being used.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT

@@ -1,6 +1,8 @@
 ---
 name: csharp-nunit
-description: 'Get best practices for NUnit unit testing, including data-driven tests'
+description: >-
+  Applies NUnit best practices to C# unit tests: structure, assertions, setup/teardown, and
+  data-driven tests with TestCase and TestCaseSource. Use when writing or reviewing NUnit tests.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

@@ -1,6 +1,8 @@
 ---
 name: arch-linux-triage
-description: 'Triage and resolve Arch Linux issues with pacman, systemd, and rolling-release best practices.'
+description: >-
+  Diagnoses and fixes Arch Linux problems with pacman, systemd, and rolling-release practices. Use
+  when an Arch system has package, update, boot, or service issues.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

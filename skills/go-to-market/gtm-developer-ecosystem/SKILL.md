@@ -1,6 +1,9 @@
 ---
 name: gtm-developer-ecosystem
-description: Build and scale developer-led adoption through ecosystem programs
+description: >-
+  Builds and scales developer-led adoption through ecosystem programs: API platforms, plugins,
+  integrations, and community. Use when nobody is building on your API, a developer community is not
+  growing, or deciding between curated and open ecosystems.
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

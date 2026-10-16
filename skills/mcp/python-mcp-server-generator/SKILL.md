@@ -1,6 +1,9 @@
 ---
 name: python-mcp-server-generator
-description: 'Generate a complete MCP server project in Python with tools, resources, and proper configuration'
+description: >-
+  Generates a complete Model Context Protocol server project in Python with tools, resources, prompts,
+  and configuration. Use when creating a new MCP server in Python or exposing Python functions or an
+  API to AI assistants over MCP.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

@@ -1,6 +1,9 @@
 ---
 name: browser-use
-description: "Chrome DevTools MCP automation: existing Chrome tabs, profile-aware, no AppleScript."
+description: >-
+  Automates the user's existing signed-in Chrome profile through Chrome DevTools MCP (via mcporter):
+  inspecting pages, screenshots, forms, clicks, and running JavaScript, without AppleScript. Use when
+  a task needs a real logged-in browser tab rather than a fresh headless one.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

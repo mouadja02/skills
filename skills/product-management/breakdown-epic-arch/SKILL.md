@@ -1,6 +1,9 @@
 ---
 name: breakdown-epic-arch
-description: 'Prompt for creating the high-level technical architecture for an Epic, based on a Product Requirements Document.'
+description: >-
+  Creates a high-level technical architecture specification for an Epic from its PRD: components,
+  features, and deployment for a domain-driven, Dockerized TypeScript/Next.js Turborepo monorepo. Use
+  after an Epic PRD exists and before feature planning.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

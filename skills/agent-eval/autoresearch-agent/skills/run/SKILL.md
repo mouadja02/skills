@@ -1,6 +1,9 @@
 ---
 name: "autoresearch-run"
-description: "Run a single experiment iteration. Edit the target file, evaluate, keep or discard."
+description: >-
+  Runs exactly one autoresearch experiment iteration: review history, choose a change, edit the target
+  file, commit, evaluate, then keep or discard. Use when the user runs /ar:run or wants a single
+  manual step instead of an autonomous loop.
 command: /ar:run
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"

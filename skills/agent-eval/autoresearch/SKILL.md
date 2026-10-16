@@ -1,6 +1,9 @@
 ---
 name: autoresearch
-description: Autonomous experiment loop — goals, metrics, iterations, eval command, structured output
+description: >-
+  Runs an autonomous experiment loop on any programming task: you define the goal, metric, and eval
+  command; the agent edits code, measures, and keeps or discards each change until interrupted. Use
+  when optimizing a measurable target (speed, accuracy, size, score) by iteration.
 license: MIT
 compatibility: Requires git. The project must be a git repository. Requires terminal access to run commands.
 metadata:

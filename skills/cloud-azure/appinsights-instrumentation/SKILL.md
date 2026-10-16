@@ -1,6 +1,9 @@
 ---
 name: appinsights-instrumentation
-description: 'Instrument a webapp to send useful telemetry data to Azure App Insights'
+description: >-
+  Instruments a web app to send telemetry to Azure Application Insights: SDK setup, configuration, and
+  telemetry patterns. Use when the user wants to enable monitoring, request tracking, or logging to
+  App Insights for a web application.
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT

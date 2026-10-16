@@ -1,6 +1,10 @@
 ---
 name: gtm-enterprise-onboarding
-description: Four-phase framework for onboarding enterprise customers from contract to value realization
+description: >-
+  Onboards enterprise customers in four phases from signed contract to realized value: kickoff,
+  discovery and planning, implementation, and go-live with ongoing success. Use when an enterprise
+  customer goes live but adoption is weak, accounts churn months after go-live, or moving from POC to
+  production.
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

@@ -1,6 +1,9 @@
 ---
 name: dotnet-timezone
-description: '.NET timezone handling guidance for C# applications'
+description: >-
+  Gives production-safe time zone handling for .NET and C#: TimeZoneInfo, DateTimeOffset, IANA versus
+  Windows IDs, DST edge cases, and conversions. Use when C# code stores, converts, or displays times
+  across time zones.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

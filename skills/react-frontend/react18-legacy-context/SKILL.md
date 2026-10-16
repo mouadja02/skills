@@ -1,6 +1,9 @@
 ---
 name: react18-legacy-context
-description: React legacy context → modern Context API — contextTypes, childContextTypes migration patterns
+description: >-
+  Migrates the legacy React context API (contextTypes, childContextTypes, getChildContext) to
+  createContext, which is deprecated in 18.3.1 and removed in React 19. Use when upgrading a codebase
+  that still uses legacy context.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT

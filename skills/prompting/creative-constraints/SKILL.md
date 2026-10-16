@@ -1,6 +1,9 @@
 ---
 name: creative-constraints
-description: Artificial limits as creative fuel — eliminates lazy defaults, drives genuine innovation
+description: >-
+  Uses deliberate, artificial constraints to force original work and eliminate lazy defaults in
+  design, writing, and problem solving. Use when output keeps coming out generic, a team has too many
+  options, or a blank-page problem needs traction.
 ---
 
 # Creative Constraints

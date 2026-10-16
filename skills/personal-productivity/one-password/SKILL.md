@@ -1,6 +1,9 @@
 ---
 name: one-password
-description: "1Password CLI (op): service-account first, targeted secret read/store/inject, tmux session."
+description: >-
+  Uses the 1Password CLI (op) to read, store, and inject secrets into environment variables or config
+  files, preferring service-account auth with a tmux session fallback. Use when a task needs
+  credentials from 1Password.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

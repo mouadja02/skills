@@ -1,6 +1,10 @@
 ---
 name: mvvm-toolkit-di
-description: CommunityToolkit.Mvvm + DI — Generic Host, ViewModelLocator, scoped/transient registration
+description: >-
+  Wires CommunityToolkit.Mvvm with Microsoft.Extensions.DependencyInjection: Generic Host composition
+  root, view-model lifetimes, IMessenger registration, and view-model resolution for WPF, WinUI 3,
+  MAUI, Uno, and Avalonia. Use when setting up DI in an MVVM app or fixing "Unable to resolve service
+  for type" errors.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

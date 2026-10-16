@@ -1,6 +1,9 @@
 ---
 name: nuget-manager
-description: 'Manage NuGet packages in .NET projects/solutions'
+description: >-
+  Manages NuGet packages in .NET projects through the dotnet CLI: add, remove, and update with version
+  verification, including central package management (Directory.Packages.props). Use when adding,
+  removing, or upgrading NuGet dependencies.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

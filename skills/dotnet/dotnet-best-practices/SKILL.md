@@ -1,6 +1,9 @@
 ---
 name: dotnet-best-practices
-description: 'Ensure .NET/C# code meets best practices for the solution/project.'
+description: >-
+  Checks .NET/C# code against the solution's own conventions and general best practices: naming,
+  async, dependency injection, error handling, and tests. Use when reviewing or tidying C# code in an
+  existing .NET solution.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

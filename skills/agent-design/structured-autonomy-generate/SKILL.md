@@ -1,6 +1,9 @@
 ---
 name: structured-autonomy-generate
-description: 'Structured Autonomy Implementation Generator Prompt'
+description: >-
+  Turns a structured-autonomy PR plan (plans/{feature}/plan.md) into copy-paste-ready implementation
+  documentation with complete code for every step, saved as implementation.md. Use after a plan exists
+  and before implementation, when each step needs fully specified changes.
 source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
 attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 license: MIT

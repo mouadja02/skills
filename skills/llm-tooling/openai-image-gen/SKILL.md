@@ -1,6 +1,9 @@
 ---
 name: openai-image-gen
-description: "OpenAI Images API: batches, prompt sampler, gallery — gpt-image-1 and variants."
+description: >-
+  Generates images with the OpenAI Images API (gpt-image-1 and variants), with batch runs, a prompt
+  sampler, and an auto-generated HTML gallery to compare outputs. Use when producing several image
+  variants or comparing prompts side by side.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

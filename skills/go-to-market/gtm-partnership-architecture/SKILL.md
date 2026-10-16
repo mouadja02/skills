@@ -1,6 +1,9 @@
 ---
 name: gtm-partnership-architecture
-description: Build and scale partner ecosystems that drive revenue and platform adoption
+description: >-
+  Designs partner programs that drive revenue and platform adoption: partner tiers, recruitment,
+  co-marketing, and build-versus-partner decisions. Use when structuring a partner program from
+  scratch, scaling one, or choosing partner-led versus direct sales.
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

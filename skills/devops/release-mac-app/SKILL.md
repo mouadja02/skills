@@ -1,6 +1,9 @@
 ---
 name: release-mac-app
-description: "macOS app release: Sparkle autoupdate, notarization, GitHub Release, Homebrew cask, closeout."
+description: >-
+  Releases Sparkle-updated macOS apps end to end: build, notarization, appcast, GitHub Release,
+  Homebrew cask, and closeout checks. Use when shipping a new version of a Mac menu-bar app or
+  utility.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

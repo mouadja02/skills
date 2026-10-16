@@ -1,6 +1,9 @@
 ---
 name: dataverse-python-usecase-builder
-description: 'Generate complete solutions for specific Dataverse SDK use cases with architecture recommendations'
+description: >-
+  Designs complete Dataverse SDK solutions for a described business use case: data model, tables and
+  relationships, operations, and Python implementation. Use when turning a business need into a
+  Dataverse-backed Python solution.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

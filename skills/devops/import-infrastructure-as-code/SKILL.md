@@ -1,6 +1,9 @@
 ---
 name: import-infrastructure-as-code
-description: 'Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM)'
+description: >-
+  Imports existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules
+  (AVM), mapping dependencies between resources. Use when generating IaC from a live Azure
+  subscription or resource group, or replacing hand-written azurerm resources with AVM.
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT

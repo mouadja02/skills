@@ -1,6 +1,9 @@
 ---
 name: gtm-0-to-1-launch
-description: Launch new products from idea to first customers
+description: >-
+  Plans a 0-to-1 product launch from idea to the first 10–50 customers: channels, first-customer
+  acquisition, and early product-market-fit signals. Use when asking how to launch a product, why a
+  launch got no traction, or Product Hunt versus direct outreach.
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

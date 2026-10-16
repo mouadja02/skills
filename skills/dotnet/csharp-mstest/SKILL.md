@@ -1,6 +1,8 @@
 ---
 name: csharp-mstest
-description: 'Get best practices for MSTest 3.x/4.x unit testing, including modern assertion APIs and data-driven tests'
+description: >-
+  Applies MSTest 3.x/4.x best practices: modern assertion APIs, test lifecycle, and data-driven tests.
+  Use when writing or reviewing C# tests that use MSTest.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

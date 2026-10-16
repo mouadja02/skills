@@ -1,6 +1,10 @@
 ---
 name: "auto-memory-review"
-description: "Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics."
+description: >-
+  Analyzes auto-memory (MEMORY.md and topic files) for promotion candidates, stale entries,
+  consolidation opportunities, and health metrics. Use after a major feature or debugging session,
+  when /si:status shows MEMORY.md over 150 lines, weekly during active development, or before a new
+  project phase.
 command: /si:review
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"

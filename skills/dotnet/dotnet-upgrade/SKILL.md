@@ -1,6 +1,9 @@
 ---
 name: dotnet-upgrade
-description: 'Ready-to-use prompts for comprehensive .NET framework upgrade analysis and execution'
+description: >-
+  Provides ready-to-use prompts for analyzing and executing .NET upgrades: project classification,
+  dependency compatibility, and target framework changes. Use when planning or running a move from
+  .NET Framework or older .NET to a current version.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

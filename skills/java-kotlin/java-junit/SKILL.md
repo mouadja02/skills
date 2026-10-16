@@ -1,6 +1,8 @@
 ---
 name: java-junit
-description: 'Get best practices for JUnit 5 unit testing, including data-driven tests'
+description: >-
+  Applies JUnit 5 best practices: test structure, assertions, lifecycle, nested tests, and data-driven
+  tests with @ParameterizedTest. Use when writing or reviewing Java unit tests with JUnit 5.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

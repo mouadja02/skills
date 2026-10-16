@@ -1,6 +1,9 @@
 ---
 name: codex-debugging
-description: "Codex debugging: codex-rs core/tui/exec/cli/app-server/config."
+description: >-
+  Debugs OpenAI Codex CLI and app behavior by navigating the codex-rs codebase (core, tui, exec, cli,
+  app-server): config parsing, tool invocations, prompts, and MCP wiring. Use when Codex behaves
+  unexpectedly or a Codex runtime bug needs tracing to source.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

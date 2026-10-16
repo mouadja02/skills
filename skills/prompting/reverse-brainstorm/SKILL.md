@@ -1,6 +1,9 @@
 ---
 name: reverse-brainstorm
-description: Invert problem — brainstorm failure modes, flip into unconventional solutions
+description: >-
+  Inverts a problem: brainstorms every way to make it fail, then flips each failure into an
+  unconventional solution. Use when direct brainstorming produces obvious ideas or a team is stuck on
+  how to make something succeed.
 ---
 
 # Reverse Brainstorm

@@ -1,6 +1,9 @@
 ---
 name: dataverse-python-production-code
-description: 'Generate production-ready Python code using Dataverse SDK with error handling, optimization, and best practices'
+description: >-
+  Generates production-ready Python with the PowerPlatform Dataverse client SDK: DataverseError
+  handling, a singleton client, retry logic, and best practices. Use when writing Dataverse
+  integration code meant to run in production.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

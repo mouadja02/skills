@@ -1,6 +1,9 @@
 ---
 name: dataverse-python-advanced-patterns
-description: 'Generate production code for Dataverse SDK using advanced patterns, error handling, and optimization techniques.'
+description: >-
+  Generates production Python code for the Dataverse SDK with advanced patterns: transient-error
+  retries with backoff, batch operations, OData query optimization, table metadata, DataverseConfig
+  tuning, and cache management. Use when Dataverse Python code must be robust and efficient.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

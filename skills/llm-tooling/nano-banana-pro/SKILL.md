@@ -1,6 +1,8 @@
 ---
 name: nano-banana-pro
-description: "Gemini image gen/edit via Nano Banana: text/image input, 512-4K workflows, draft→iterate→final."
+description: >-
+  Generates and edits images with Google's Gemini image API (Nano Banana): text or image input, 512px
+  to 4K output, and a draft, iterate, final workflow. Use when creating or editing images with Gemini.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

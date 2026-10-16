@@ -1,6 +1,9 @@
 ---
 name: refactor-plan
-description: 'Create a concrete plan before starting a multi-file refactor'
+description: >-
+  Produces a concrete plan before a multi-file refactor: scope, sequence, risks, and verification for
+  each step. Use when the user asks to plan, sequence, or safely execute a refactor across several
+  files, before any code changes are made.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

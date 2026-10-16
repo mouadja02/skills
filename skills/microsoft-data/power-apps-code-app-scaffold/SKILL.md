@@ -1,6 +1,8 @@
 ---
 name: power-apps-code-app-scaffold
-description: 'Scaffold a complete Power Apps Code App project with PAC CLI setup, SDK integration, and connector configuration'
+description: >-
+  Scaffolds a complete Power Apps Code App project with PAC CLI setup, SDK integration, and connector
+  configuration, following Microsoft's guidance. Use when starting a new Power Apps Code App.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

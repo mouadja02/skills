@@ -1,6 +1,9 @@
 ---
 name: openapi-to-application-code
-description: 'Generate a complete, production-ready application from an OpenAPI specification'
+description: >-
+  Generates a complete, working application from an OpenAPI specification using the active framework's
+  conventions: models, routes, validation, and tests. Use when scaffolding a service from an existing
+  OpenAPI/Swagger spec rather than hand-writing endpoints.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

@@ -1,6 +1,9 @@
 ---
 name: mkdocs-translations
-description: 'Generate a language translation for a mkdocs documentation stack.'
+description: >-
+  Translates an MkDocs documentation site into a new language: copies docs/docs/en into the target
+  locale, translates every page, and updates mkdocs.yml. Use when adding a language or locale to an
+  MkDocs site.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

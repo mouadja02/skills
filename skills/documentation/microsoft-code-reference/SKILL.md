@@ -1,6 +1,9 @@
 ---
 name: microsoft-code-reference
-description: Look up Microsoft API references, find working code samples, and verify SDK code is correct
+description: >-
+  Looks up Microsoft API references and official code samples with the Microsoft Learn MCP tools, and
+  checks SDK code against them. Use when writing or verifying code for Azure, .NET, or other Microsoft
+  SDKs and the exact API signature or a working sample matters.
 compatibility: Works best with Microsoft Learn MCP Server (https://learn.microsoft.com/api/mcp). Can also use the mslearn CLI as a fallback.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"

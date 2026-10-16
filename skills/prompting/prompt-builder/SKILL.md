@@ -1,6 +1,9 @@
 ---
 name: prompt-builder
-description: 'Guide users through creating high-quality GitHub Copilot prompts with proper structure, tools, and best practices.'
+description: >-
+  Guides users through building high-quality GitHub Copilot prompt files: persona, task, context,
+  tools, and output format, following VS Code customization practices. Use when creating or improving
+  a Copilot .prompt.md file.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

@@ -1,6 +1,9 @@
 ---
 name: npm
-description: "npm registry ops: login, whoami, package availability, publish; 1Password tmux auth."
+description: >-
+  Handles npm registry and account tasks: npm whoami, package availability, reserving names,
+  publishing, org checks, and auth debugging, with 1Password and tmux for credentials. Use when
+  publishing to npm or diagnosing npm login problems.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

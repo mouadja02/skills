@@ -1,6 +1,9 @@
 ---
 name: "codebase-onboarding"
-description: "Generate onboarding documentation for an unfamiliar codebase"
+description: >-
+  Analyzes a codebase and generates onboarding documentation: architecture, setup, key flows, and
+  conventions. Use when onboarding a new engineer or contractor, after a refactor made docs stale,
+  before open-sourcing a project, or when documenting a service for a team wiki.
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"

@@ -1,6 +1,8 @@
 ---
 name: framework-nextjs-expert
-description: Triggers on keywords Next.js, React, Tailwind, Shadcn UI
+description: >-
+  Applies expert conventions for TypeScript, Next.js App Router, React, Shadcn UI, Radix UI, and
+  Tailwind CSS. Use when writing or reviewing Next.js or React code that uses this stack.
 ---
 
 # Next.js & React Expert

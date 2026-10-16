@@ -1,6 +1,9 @@
 ---
 name: multi-stage-dockerfile
-description: 'Create optimized multi-stage Dockerfiles for any language or framework'
+description: >-
+  Creates optimized multi-stage Dockerfiles for any language: separate build and runtime stages,
+  minimal base images, layer caching, and non-root users. Use when containerizing an application or
+  shrinking and hardening an existing image.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

@@ -1,6 +1,9 @@
 ---
 name: "dependency-auditor"
-description: "Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems"
+description: >-
+  Audits project dependencies across language ecosystems for known vulnerabilities, license conflicts,
+  transitive risks, and outdated packages, and plans safe upgrades. Use before a release, when adding
+  dependencies, or during a security or license compliance review.
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"

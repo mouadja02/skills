@@ -1,6 +1,9 @@
 ---
 name: aspnet-minimal-api-openapi
-description: 'Create ASP.NET Minimal API endpoints with proper OpenAPI documentation'
+description: >-
+  Creates ASP.NET Minimal API endpoints with correct request/response types and complete OpenAPI
+  (Swagger) documentation. Use when adding or reviewing Minimal API endpoints in .NET, or when
+  generated OpenAPI output is missing schemas, status codes, or descriptions.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

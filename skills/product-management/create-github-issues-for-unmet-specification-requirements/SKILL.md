@@ -1,6 +1,8 @@
 ---
 name: create-github-issues-for-unmet-specification-requirements
-description: 'Create GitHub Issues for unimplemented requirements from specification files using feature_request.yml template.'
+description: >-
+  Creates GitHub issues for the requirements in a specification that are not implemented yet, using
+  the feature_request.yml template. Use when auditing a spec against the code and tracking the gaps.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

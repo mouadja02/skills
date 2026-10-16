@@ -1,6 +1,9 @@
 ---
 name: foundry-agent-sync
-description: Azure AI Foundry agents via REST — create/sync prompt-based agents from local JSON manifest
+description: >-
+  Creates and syncs prompt-based agents inside Azure AI Foundry through the Agent Service REST API
+  from a local JSON manifest, so they are immediately available for invocation and evaluation. Use
+  when registering or updating Foundry agents server-side; not for scaffolding local agent code.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

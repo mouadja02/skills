@@ -1,6 +1,8 @@
 ---
 name: csharp-tunit
-description: 'Get best practices for TUnit unit testing, including data-driven tests'
+description: >-
+  Applies TUnit best practices to C# unit tests: structure, assertions, lifecycle hooks, and
+  data-driven tests. Use when writing or reviewing tests with the TUnit framework.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

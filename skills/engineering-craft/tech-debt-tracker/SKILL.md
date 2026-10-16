@@ -1,6 +1,9 @@
 ---
 name: tech-debt-tracker
-description: Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans
+description: >-
+  Scans a codebase for technical debt, scores severity, tracks trends over time, and produces
+  prioritized remediation plans. Use when the user mentions tech debt, plans cleanup or refactoring
+  sprints, or needs a debt assessment for a legacy system.
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"

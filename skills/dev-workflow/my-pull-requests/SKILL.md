@@ -1,6 +1,9 @@
 ---
 name: my-pull-requests
-description: 'List my pull requests in the current repository'
+description: >-
+  Lists the pull requests assigned to you in the current GitHub repository, with purpose, review
+  status, and failing checks plus suggested fixes. Use when asking what PRs need your attention or why
+  a PR's checks are failing.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

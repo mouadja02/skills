@@ -1,6 +1,8 @@
 ---
 name: reminders
-description: "Apple Reminders via rem CLI: add, list, search, update, complete, delete."
+description: >-
+  Manages Apple Reminders through the rem CLI: add, list, search, update, complete, and delete. Use
+  for Apple Reminders tasks on macOS; prefer things-todo when the user uses Things 3.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

@@ -1,6 +1,9 @@
 ---
 name: mcp-create-declarative-agent
-description: 'Skill converted from mcp-create-declarative-agent.prompt.md'
+description: >-
+  Creates a complete declarative agent for Microsoft 365 Copilot that connects to an MCP server to
+  reach external systems and data. Use when building a Microsoft 365 Copilot agent backed by MCP
+  tools.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

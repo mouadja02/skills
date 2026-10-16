@@ -1,6 +1,8 @@
 ---
 name: typescript-mcp-server-generator
-description: 'Generate a complete MCP server project in TypeScript with tools, resources, and proper configuration'
+description: >-
+  Generates a complete Model Context Protocol server project in TypeScript with tools, resources, and
+  configuration. Use when creating a new MCP server in TypeScript or Node.js.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

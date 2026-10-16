@@ -1,6 +1,9 @@
 ---
 name: react-audit-grep-patterns
-description: Grep scan library for React 18.3.1 / React 19 upgrade audits
+description: >-
+  Provides a verified grep command library for auditing React codebases before upgrading from React
+  16/17 to 18.3.1 or from 18 to 19, with separate scans for source files, test files, and dependency
+  peer conflicts. Use when scanning a codebase for React upgrade blockers.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT

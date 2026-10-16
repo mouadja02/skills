@@ -1,6 +1,9 @@
 ---
 name: create-agentsmd
-description: 'Prompt for generating an AGENTS.md file for a repository'
+description: >-
+  Generates a complete AGENTS.md at the repository root following the agents.md format: setup, build,
+  test, style, and PR conventions coding agents need. Use when a repo has no AGENTS.md, when
+  onboarding coding agents to a codebase, or when the existing agent instructions are stale.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

@@ -1,6 +1,8 @@
 ---
 name: mac-maintenance
-description: "macOS upkeep: brew update/upgrade, pull clean repos, empty Trash."
+description: >-
+  Runs macOS upkeep: Homebrew update and upgrade, pulling clean git repositories, and emptying the
+  Trash. Use when asked for Mac cleanup, maintenance, or a refresh of packages and repos.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

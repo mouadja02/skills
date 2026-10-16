@@ -1,6 +1,8 @@
 ---
 name: obsidian
-description: "Obsidian vault: search/read/write notes, backlinks, Bases, Canvas."
+description: >-
+  Searches, reads, and writes notes in a local Obsidian vault while preserving frontmatter and
+  wikilinks, including backlinks, Bases, and Canvas files. Use for any task on an Obsidian vault.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"

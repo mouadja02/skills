@@ -1,6 +1,8 @@
 ---
 name: dotnet-design-pattern-review
-description: 'Review the C#/.NET code for design pattern implementation and suggest improvements.'
+description: >-
+  Reviews C#/.NET code for how design patterns are implemented and suggests improvements without
+  changing code. Use when assessing whether patterns in a .NET solution are applied well.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT
