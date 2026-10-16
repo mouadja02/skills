@@ -122,7 +122,7 @@ class FundamentalAnalyst:
 
     def analyze(self, symbol: str, data: dict) -> dict:
         response = client.chat.completions.create(
-            model="anthropic/claude-sonnet-4-20250514",
+            model="anthropic/claude-sonnet-5.5",
             messages=[
                 {"role": "system", "content": self.SYSTEM},
                 {"role": "user", "content": f"Analyze {symbol}:\n{json.dumps(data)}"},
@@ -146,7 +146,7 @@ class TechnicalAnalyst:
             'volume_trend': 'increasing' if volumes[-1] > sum(volumes[-5:]) / 5 else 'decreasing',
         }
         response = client.chat.completions.create(
-            model="anthropic/claude-sonnet-4-20250514",
+            model="anthropic/claude-sonnet-5.5",
             messages=[
                 {"role": "system", "content": self.SYSTEM},
                 {"role": "user", "content": f"Analyze {symbol}:\nIndicators: {json.dumps(indicators)}\nRecent prices: {prices[-30:]}"},
@@ -162,7 +162,7 @@ class SentimentAnalyst:
 
     def analyze(self, symbol: str, news: list) -> dict:
         response = client.chat.completions.create(
-            model="anthropic/claude-sonnet-4-20250514",
+            model="anthropic/claude-sonnet-5.5",
             messages=[
                 {"role": "system", "content": self.SYSTEM},
                 {"role": "user", "content": f"Sentiment for {symbol}:\n{json.dumps(news)}"},
@@ -187,7 +187,7 @@ class PortfolioManager:
 
     def decide(self, symbol: str, analyses: dict, portfolio: dict) -> dict:
         response = client.chat.completions.create(
-            model="anthropic/claude-sonnet-4-20250514",
+            model="anthropic/claude-sonnet-5.5",
             messages=[
                 {"role": "system", "content": self.SYSTEM},
                 {"role": "user", "content": f"""

@@ -695,7 +695,7 @@ import { fromClaudeMessages, toClaudeMessage } from '@openrouter/agent';
 
 // Claude messages → OpenRouter format
 const result = client.callModel({
-  model: 'anthropic/claude-3-opus',
+  model: 'anthropic/claude-sonnet-5.5',
   input: fromClaudeMessages(claudeMessages)
 });
 
