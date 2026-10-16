@@ -9,12 +9,14 @@
 //
 // Errors fail the build. Warnings are reported and do not.
 //
-// Zero dependencies. Run with: node scripts/check-skills.mjs [--quiet]
+// Frontmatter is parsed with the `yaml` devDependency, the same way clients
+// parse it. Run with: node scripts/check-skills.mjs [--quiet]
 
 import { readdir, readFile, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join, dirname, resolve, relative, basename, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readFrontmatter } from "./lib/frontmatter.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -54,51 +56,41 @@ async function walk(dir, out = []) {
   return out;
 }
 
-// Same minimal frontmatter reader as build-manifest.mjs, kept deliberately
-// permissive: the point is to report what a client would see, not to be a
-// conforming YAML parser.
-function parseFrontmatter(raw) {
-  const content = raw.replace(/^﻿/, "").replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-  if (!content.startsWith("---")) return null;
-  const end = content.indexOf("\n---", 3);
-  if (end === -1) return null;
-  const block = content.slice(3, end).replace(/^\n/, "");
-  const lines = block.split("\n");
-  const result = {};
-  let i = 0;
-  while (i < lines.length) {
-    const match = lines[i].match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
-    if (!match) {
-      i++;
-      continue;
-    }
-    const [, key, rest] = match;
-    if (["|", ">", "|-", ">-"].includes(rest.trim())) {
-      const parts = [];
-      i++;
-      while (i < lines.length && (lines[i].startsWith("  ") || lines[i].trim() === "")) {
-        parts.push(lines[i].trim());
-        i++;
-      }
-      result[key] = parts.join(" ").trim();
-      continue;
-    }
-    let value = rest.trim();
-    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
-      value = value.slice(1, -1);
-    }
-    result[key] = value;
-    i++;
-  }
-  return { fm: result, body: content.slice(end + 4) };
+function stripFences(markdown) {
+  return markdown.replace(/^([ \t]*)(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1\2[^\n]*$/gm, "");
 }
 
 // Markdown inside fenced blocks or inline code spans is illustrative syntax, not
 // a reference we can resolve — skills legitimately document `![alt](logo.png)`.
 function stripCode(markdown) {
-  return markdown
-    .replace(/^([ \t]*)(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1\2[^\n]*$/gm, "")
-    .replace(/(`+)[^`\n]*?\1/g, "");
+  return stripFences(markdown).replace(/(`+)[^`\n]*?\1/g, "");
+}
+
+// Prose such as "see `references/checklist.md`" points the agent at a bundled
+// file without a Markdown link. Those references silently break when a skill is
+// imported without its supporting files, so resolve them too (warning only:
+// some skills name files the agent is meant to create).
+const BUNDLED_DIRS =
+  "references|reference|scripts|assets|templates|examples|agents|resources|rules|prompts|checklists|workflows|guides|patterns|schemas|evals|commands";
+const BUNDLED_REF_RE = new RegExp(
+  `(?<![\\w./-])((?:\\./)?(?:${BUNDLED_DIRS})/[\\w./-]*?[\\w-]\\.(?:md|py|sh|js|mjs|ts|json|yaml|yml|txt|html|csv|ps1|sql|toml))(?![\\w])`,
+  "g"
+);
+
+function collectBundledRefs(markdown) {
+  return [...new Set([...stripFences(markdown).matchAll(BUNDLED_REF_RE)].map((m) => m[1]))];
+}
+
+// A nested skill may lean on files its parent bundle ships.
+function resolvesInSkillOrBundle(dir, target) {
+  let current = dir;
+  for (let i = 0; i < 4; i++) {
+    if (existsSync(resolve(current, target))) return true;
+    const parent = dirname(current);
+    if (parent === SKILLS_DIR || parent === current) return false;
+    current = parent;
+  }
+  return false;
 }
 
 // Template placeholders that are documentation, not links we can resolve.
@@ -136,15 +128,20 @@ async function main() {
       errors.push(`${rel}: starts with a UTF-8 BOM (breaks strict YAML frontmatter parsers)`);
     }
 
-    const parsed = parseFrontmatter(raw);
-    if (!parsed) {
-      errors.push(`${rel}: missing or unterminated YAML frontmatter`);
+    const { data: fm, body, error } = readFrontmatter(raw);
+    if (error) {
+      errors.push(`${rel}: ${error}`);
       continue;
     }
-    const { fm, body } = parsed;
 
-    const name = fm.name || "";
-    const description = fm.description || "";
+    if (fm.name !== undefined && typeof fm.name !== "string") {
+      errors.push(`${rel}: name must be a string, got ${JSON.stringify(fm.name)}`);
+    }
+    if (fm.description !== undefined && typeof fm.description !== "string") {
+      errors.push(`${rel}: description must be a string`);
+    }
+    const name = typeof fm.name === "string" ? fm.name : "";
+    const description = typeof fm.description === "string" ? fm.description.trim() : "";
 
     if (!name) {
       errors.push(`${rel}: frontmatter is missing required field 'name'`);
@@ -181,7 +178,7 @@ async function main() {
     if (!/^#{2,}\s.*when to use/im.test(body)) {
       warnings.push(`${rel}: no "## When to Use" section`);
     }
-    if (!fm.version && !/^\s*version:/m.test(raw)) {
+    if (fm.version === undefined && fm.metadata?.version === undefined) {
       warnings.push(`${rel}: no version in frontmatter`);
     }
     if (!fm.license) {
@@ -202,6 +199,16 @@ async function main() {
       } else if (toPosix(relative(dir, resolved)).startsWith("..")) {
         warnings.push(`${rel}: link "${link}" escapes the skill folder and breaks when the skill is installed alone`);
       }
+    }
+
+    for (const ref of collectBundledRefs(body)) {
+      if (!resolvesInSkillOrBundle(dir, ref)) {
+        warnings.push(`${rel}: mentions bundled file "${ref}", which is not in the skill folder`);
+      }
+    }
+
+    if (fm.source && !fm.attribution) {
+      warnings.push(`${rel}: has a source but no attribution line`);
     }
   }
 
@@ -229,6 +236,7 @@ async function main() {
   }
 
   console.log(`OK  ${files.length} skills valid`);
+  console.log(`OK  frontmatter parses as YAML`);
   console.log(`OK  names unique, kebab-case, and matching their folders`);
   console.log(`OK  descriptions within ${DESC_MAX} chars`);
   console.log(`OK  relative links in SKILL.md resolve`);

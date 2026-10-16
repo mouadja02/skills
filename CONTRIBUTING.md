@@ -38,6 +38,16 @@ Code**, **Cursor**, and any other client that walks a directory tree of
 
    Frontmatter rules:
 
+   - The block must be valid YAML. Clients parse it with a real YAML parser and
+     drop a skill whose block fails, so `check:skills` does the same. A plain
+     value containing `: ` or starting with `@`, `` ` ``, `*`, `&`, `!`, `%`,
+     `[`, `{`, or a quote breaks parsing; use a folded scalar instead:
+
+     ```yaml
+     description: >-
+       Use when the build fails with "error: X" — explains the cause and fix.
+     ```
+
    - `name` must match the folder name, and must be lowercase `kebab-case`
      (`^[a-z0-9]+(-[a-z0-9]+)*$`). Colons, spaces, and uppercase break skill
      loading in Claude Code and Cursor.
@@ -64,7 +74,25 @@ Code**, **Cursor**, and any other client that walks a directory tree of
    - `license` — SPDX identifier (e.g. `MIT`, `Apache-2.0`). Recommended.
    - `source` — URL of the upstream repo when the skill is sourced from
      another project.
-   - `attribution` — human-readable credit line for sourced skills.
+   - `attribution` — human-readable credit line for sourced skills, in the
+     form `"owner/repo by Name"`.
+
+   Importing a skill from another project:
+
+   - Check the license first. Only import skills under a license that allows
+     redistribution and modification (MIT, Apache-2.0, BSD, MPL-2.0, CC BY,
+     CC BY-SA, …). Source-available or proprietary skills — for example
+     Anthropic's document skills (`docx`, `pdf`, `pptx`, `xlsx`) — must not be
+     copied here.
+   - Set `license`, `source`, and `attribution` in the frontmatter, and add a
+     credit line directly under it:
+     `> **Attribution:** Sourced from [owner/repo](https://github.com/owner/repo) by [Name](https://…), licensed MIT. Modified for this collection.`
+   - Copy the upstream `LICENSE` (and `NOTICE`, if the upstream has one) into
+     the skill folder. Each skill is installed and zipped on its own, so the
+     license has to travel with it.
+   - Record the upstream path and commit in
+     [`docs/third-party-sources.md`](./docs/third-party-sources.md). The
+     attribution index at the end of that file is generated from frontmatter.
 
    Body structure:
 
@@ -80,7 +108,8 @@ Code**, **Cursor**, and any other client that walks a directory tree of
 5. Run `npm run build:manifest`. This regenerates
    [`SKILLS.md`](./SKILLS.md), [`docs/manifest.json`](./docs/manifest.json),
    [`docs/manifest.tsv`](./docs/manifest.tsv), [`skills/README.md`](./skills/README.md),
-   every top-level category README, and the catalog blocks in [`README.md`](./README.md).
+   every top-level category README, the catalog blocks in [`README.md`](./README.md),
+   and the attribution index in [`docs/third-party-sources.md`](./docs/third-party-sources.md).
    Do not edit generated category READMEs by hand.
 
 ## Editing an existing skill
@@ -104,13 +133,15 @@ npm run preview     # serves docs/ at http://localhost:4173
 ```
 
 `npm run check:skills` is the skill-level linter and runs as part of `npm run
-build` and in CI. It **fails** on anything that would break a client: a missing
-or malformed `name`/`description`, a name that is not kebab-case, a name that
-does not match its folder, a duplicate name, a description over 1024 chars, a
-UTF-8 BOM, or a broken relative link in `SKILL.md`. It **warns** (without
-failing) on short descriptions, a missing `## When to Use`, missing
-`version`/`license`, duplicate folder names, and links that escape the skill
-folder. Run it with `--quiet` to see errors only.
+build` and in CI. It **fails** on anything that would break a client:
+frontmatter that is not valid YAML, a missing or malformed
+`name`/`description`, a name that is not kebab-case, a name that does not match
+its folder, a duplicate name, a description over 1024 chars, a UTF-8 BOM, or a
+broken relative link in `SKILL.md`. It **warns** (without failing) on short
+descriptions, a missing `## When to Use`, missing `version`/`license`,
+duplicate folder names, links that escape the skill folder, prose that names a
+bundled file (`references/…`, `scripts/…`) the folder does not contain, and a
+`source` without an `attribution`. Run it with `--quiet` to see errors only.
 
 ZIP generation uses the Git index as its publication allowlist and fails when
 non-ignored untracked files remain under `skills/`. This prevents local
@@ -150,7 +181,9 @@ like, including the per-skill `.zip` download buttons.
 skills/<category>/<skill>/SKILL.md     each skill
 scripts/build-manifest.mjs             generates docs/manifest.{json,tsv} + SKILLS.md
                                       + root/category README indexes
+                                      + attribution index in docs/third-party-sources.md
 scripts/check-skills.mjs               validates SKILL.md frontmatter, names, links
+scripts/lib/frontmatter.mjs            shared YAML frontmatter reader
 scripts/check-docs.mjs                 audits documentation coverage and links
 scripts/build-zips.mjs                 generates docs/zips/*.zip (CI / preview)
 scripts/preview.mjs                    static server for docs/

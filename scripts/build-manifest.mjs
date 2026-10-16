@@ -7,12 +7,14 @@
 // relative `./manifest.json` fetch; the install scripts and any external
 // consumer fetch it via raw.githubusercontent.com/.../main/docs/manifest.json.
 //
-// Zero dependencies. Run with: node scripts/build-manifest.mjs
+// Frontmatter is parsed with the `yaml` devDependency (see lib/frontmatter.mjs).
+// Run with: node scripts/build-manifest.mjs
 
 import { readdir, readFile, writeFile, mkdir, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join, relative, sep, posix } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readFrontmatter, oneLine } from "./lib/frontmatter.mjs";
 
 const REPO = "mouadja02/skills";
 const DEFAULT_BRANCH = "main";
@@ -26,6 +28,7 @@ const ROOT_README_PATH = join(ROOT, "README.md");
 const DOCS_DIR = join(ROOT, "docs");
 const MANIFEST_PATH = join(DOCS_DIR, "manifest.json");
 const MANIFEST_TSV_PATH = join(DOCS_DIR, "manifest.tsv");
+const THIRD_PARTY_PATH = join(DOCS_DIR, "third-party-sources.md");
 
 const CATEGORY_DESCRIPTIONS = {
   "agent-design": "Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces.",
@@ -96,76 +99,13 @@ async function walk(dir, out = []) {
   return out;
 }
 
-// Minimal YAML frontmatter parser. Handles:
-//   key: value
-//   key: "value"
-//   key: >
-//     multiline value
-//     more text
-//   key: |
-//     literal block
-function parseFrontmatter(rawContent) {
-  // Strip UTF-8 BOM (EF BB BF) if present — many editors write it.
-  const noBom = rawContent.replace(/^﻿/, "");
-  // Normalize CRLF -> LF so end-of-line anchors and trims behave consistently.
-  const content = noBom.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-  if (!content.startsWith("---")) return {};
-  const end = content.indexOf("\n---", 3);
-  if (end === -1) return {};
-  const block = content.slice(3, end).replace(/^\n/, "");
-  const lines = block.split("\n");
-
-  const result = {};
-  let i = 0;
-  while (i < lines.length) {
-    const line = lines[i];
-    const m = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
-    if (!m) {
-      i++;
-      continue;
-    }
-    const [, key, rawValue] = m;
-    const value = rawValue.trim();
-
-    if (value === ">" || value === "|" || value === ">-" || value === "|-") {
-      // Folded (>) joins lines with a space; literal (|) keeps newlines.
-      // Indentation is whatever indent the next non-empty line uses.
-      const folded = value.startsWith(">");
-      const collected = [];
-      let baseIndent = null;
-      i++;
-      while (i < lines.length) {
-        const next = lines[i];
-        if (next.trim() === "") {
-          collected.push("");
-          i++;
-          continue;
-        }
-        const indentMatch = next.match(/^(\s+)/);
-        if (!indentMatch) break;
-        if (baseIndent === null) baseIndent = indentMatch[1].length;
-        if (indentMatch[1].length < baseIndent) break;
-        collected.push(next.slice(baseIndent));
-        i++;
-      }
-      result[key] = folded
-        ? collected.join(" ").replace(/\s+/g, " ").trim()
-        : collected.join("\n").trimEnd();
-      continue;
-    }
-
-    // Strip surrounding quotes if present.
-    let v = value;
-    if (
-      (v.startsWith('"') && v.endsWith('"')) ||
-      (v.startsWith("'") && v.endsWith("'"))
-    ) {
-      v = v.slice(1, -1);
-    }
-    result[key] = v;
-    i++;
-  }
-  return result;
+// Repository root URL for a `source` value, so every skill imported from one
+// upstream lands in the same attribution group. Non-GitHub sources (papers,
+// documentation sites) are kept verbatim.
+function sourceKey(source) {
+  const first = String(source).split(/[;\s]+/)[0];
+  const github = first.match(/^https:\/\/github\.com\/([^/]+)\/([^/#?]+)/);
+  return github ? `https://github.com/${github[1]}/${github[2].replace(/\.git$/, "")}` : first;
 }
 
 function toPosix(p) {
@@ -194,28 +134,36 @@ async function main() {
   for (const file of files) {
     try {
       const raw = await readFile(file, "utf8");
-      const fm = parseFrontmatter(raw);
       const relPath = toPosix(relative(ROOT, file));
+      const { data: fm, error } = readFrontmatter(raw);
       const folder = relPath.replace(/\/SKILL\.md$/, "");
       const installPath = folder.replace(/^skills\//, "");
 
-      if (!fm.name) {
+      if (error) {
+        errors.push(`${relPath}: ${error}`);
+        continue;
+      }
+      if (typeof fm.name !== "string" || !fm.name) {
         errors.push(`${relPath}: missing 'name' in frontmatter`);
         continue;
       }
-      if (!fm.description) {
+      if (typeof fm.description !== "string" || !fm.description.trim()) {
         errors.push(`${relPath}: missing 'description' in frontmatter`);
         continue;
       }
 
-      skills.push({
+      const skill = {
         name: fm.name,
         category: categoryOf(installPath),
         install_path: installPath,
         path: folder,
         depth: depthOf(installPath),
-        description: fm.description,
-      });
+        description: oneLine(fm.description),
+      };
+      if (fm.license) skill.license = oneLine(fm.license);
+      if (fm.source) skill.source = oneLine(fm.source);
+      if (fm.attribution) skill.attribution = oneLine(fm.attribution);
+      skills.push(skill);
     } catch (err) {
       errors.push(`${file}: ${err.message}`);
     }
@@ -299,12 +247,20 @@ async function main() {
   const rootReadme = await readFile(ROOT_README_PATH, "utf8");
   await writeFile(ROOT_README_PATH, updateRootReadme(rootReadme, manifest), "utf8");
 
+  const thirdParty = await readFile(THIRD_PARTY_PATH, "utf8");
+  await writeFile(
+    THIRD_PARTY_PATH,
+    replaceGeneratedBlock(thirdParty, "attribution-index", renderAttributionIndex(skills), "docs/third-party-sources.md"),
+    "utf8"
+  );
+
   console.log(`OK  docs/manifest.json  (${skills.length} skills)`);
   console.log(`OK  docs/manifest.tsv   (bash-friendly)`);
   console.log(`OK  SKILLS.md           (browsable index)`);
   console.log(`OK  skills/README.md     (${categories.length} categories)`);
   console.log(`OK  skills/*/README.md   (per-category indexes)`);
   console.log(`OK  README.md            (catalog metrics + categories)`);
+  console.log(`OK  docs/third-party-sources.md (attribution index)`);
 
   if (errors.length) {
     console.error(`\n${errors.length} error(s):`);
@@ -403,13 +359,13 @@ function generatedBlock(name, body) {
   return `<!-- generated:${name}:start -->\n${body}\n<!-- generated:${name}:end -->`;
 }
 
-function replaceGeneratedBlock(content, name, body) {
+function replaceGeneratedBlock(content, name, body, file = "README.md") {
   const start = `<!-- generated:${name}:start -->`;
   const end = `<!-- generated:${name}:end -->`;
   const from = content.indexOf(start);
   const to = content.indexOf(end);
   if (from === -1 || to === -1 || to < from) {
-    throw new Error(`README.md is missing generated block '${name}'`);
+    throw new Error(`${file} is missing generated block '${name}'`);
   }
   return (
     content.slice(0, from) +
@@ -428,6 +384,50 @@ function renderRootCatalog(manifest) {
     );
   }
   return lines.join("\n");
+}
+
+// One table per upstream, built from each skill's `source`/`attribution`/
+// `license` frontmatter, so the credits page cannot drift from the skills.
+function renderAttributionIndex(skills) {
+  const groups = new Map();
+  let unsourced = 0;
+  for (const skill of skills) {
+    if (!skill.source) {
+      unsourced++;
+      continue;
+    }
+    const key = sourceKey(skill.source);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(skill);
+  }
+  const ordered = [...groups.entries()].sort(
+    (a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0])
+  );
+  const sourced = skills.length - unsourced;
+  const lines = [];
+  lines.push(
+    `${sourced} of ${skills.length} skills declare an upstream \`source\`, across ${ordered.length} sources. The remaining ${unsourced} declare no upstream source.`
+  );
+  lines.push("");
+  for (const [key, group] of ordered) {
+    const licenses = [...new Set(group.map((s) => s.license || "not declared"))].sort();
+    const credits = [...new Set(group.map((s) => s.attribution).filter(Boolean))];
+    lines.push(`### ${escapePipes(key.replace(/^https:\/\/github\.com\//, ""))}`);
+    lines.push("");
+    lines.push(`Source: ${key}`);
+    if (credits.length === 1) lines.push(`Credit: ${escapePipes(credits[0])}`);
+    lines.push(`License: ${licenses.map((l) => compactTableText(l, 80)).join("; ")}`);
+    lines.push("");
+    lines.push(`| Install path | License |`);
+    lines.push(`| --- | --- |`);
+    for (const skill of group) {
+      lines.push(
+        `| [\`${skill.install_path}\`](../${skill.path}/SKILL.md) | ${compactTableText(skill.license || "not declared", 80)} |`
+      );
+    }
+    lines.push("");
+  }
+  return lines.join("\n").trimEnd();
 }
 
 function updateRootReadme(content, manifest) {

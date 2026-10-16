@@ -54,7 +54,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          generated_paths=(README.md SKILLS.md docs/manifest.json docs/manifest.tsv skills/README.md skills/*/README.md)
+          generated_paths=(README.md SKILLS.md docs/manifest.json docs/manifest.tsv docs/third-party-sources.md skills/README.md skills/*/README.md)
           if ! git diff --exit-code -- "${generated_paths[@]}"; then
             echo "::error::Generated documentation is stale. Run npm run build:manifest and commit the results."
             exit 1
@@ -107,7 +107,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          generated_paths=(README.md SKILLS.md docs/manifest.json docs/manifest.tsv skills/README.md skills/*/README.md)
+          generated_paths=(README.md SKILLS.md docs/manifest.json docs/manifest.tsv docs/third-party-sources.md skills/README.md skills/*/README.md)
           if ! git diff --exit-code -- "${generated_paths[@]}"; then
             echo "::error::Generated documentation is stale. Run npm run build:manifest and commit the results."
             exit 1
