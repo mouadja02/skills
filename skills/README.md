@@ -4,13 +4,13 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 800 skills across 36 categories.
+**Total:** 799 skills across 36 categories.
 
 ## Categories
 
 | Category | Skills | Scope |
 | --- | ---: | --- |
-| [`agent-design`](./agent-design/) | 56 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
+| [`agent-design`](./agent-design/) | 55 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./api-backend/) | 12 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./business-strategy/) | 39 | Executive advisory, board preparation, operating systems, and strategic decision support. |

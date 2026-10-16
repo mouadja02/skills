@@ -273,10 +273,33 @@ here no longer received fixes:
 which declares no license. Without one, default copyright grants no right to redistribute, so they were
 removed. Install them from upstream directly, or re-import them here if OpenRouter adds a license.
 
-The BMad Method bundle (`agent-design/bmm-skills`) is a snapshot of BMAD v6. Upstream v7 has since
-retired the tech-writer agent, consolidated the research skills, and renamed several workflows. The
-bundle is kept whole because its module files wire those parts together; re-importing v7 is the
-recommended follow-up.
+### Re-imported: BMad Method v6.12.4
+
+The BMad Method bundle (`agent-design/bmm-skills`) was a pre-v6.7 snapshot laid out by phase
+(`1-analysis` … `4-implementation`). Upstream has since merged or retired most of those skills, so the
+bundle was replaced with the [v6.12.4 release](https://github.com/bmad-code-org/BMAD-METHOD/tree/v6.12.4)
+(commit `bab9082c`), the latest tagged release; v7 is still unreleased on `main`.
+
+- `agents/`, `plan/`, and `ship/` come from `src/bmm-skills`, and `core/` from `src/core-skills`. The core
+  module is included because the method skills call its review, research, elicitation, party-mode, and
+  help skills.
+- Upstream's `v6-shims/` forwarders and the deprecated `bmad-generate-project-context` forwarder were left
+  out. The router maps every old name to its replacement instead.
+- Skill files are unchanged apart from frontmatter credit and an attribution line. The router
+  `SKILL.md` was rewritten for the new layout.
+- The skills need `uv`, Python 3.11 or later, and the `_bmad/` folder that `npx bmad-method install`
+  creates. The router says so.
+- BMad is a trademark of BMad Code, LLC, and its [trademark guidelines](https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.12.4/TRADEMARK.md)
+  forbid implying endorsement. Each attribution line says this collection is not affiliated with or
+  endorsed by BMad Code, LLC.
+
+Removed with the old snapshot, because upstream merged or retired them: `bmad-agent-tech-writer`,
+`bmad-document-project`, `bmad-domain-research`, `bmad-market-research`, `bmad-technical-research`,
+`bmad-create-prd`, `bmad-edit-prd`, `bmad-validate-prd`, `bmad-create-ux-design`,
+`bmad-check-implementation-readiness`, `bmad-create-architecture`, `bmad-generate-project-context`,
+`bmad-checkpoint-preview`, `bmad-create-story`, `bmad-dev-story`, `bmad-quick-dev`, and
+`bmad-sprint-status`. Added from v6.12.4: `bmad-prd`, `bmad-ux`, `bmad-spec`, `bmad-architecture`,
+`bmad-project-context`, `bmad-build`, `bmad-build-auto`, `bmad-walkthrough`, and the eight core skills.
 
 ### Removed: `diagrams-slides/pptx`
 
@@ -332,7 +355,7 @@ and `skills-management/skill-smell-audit`.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-746 of 800 skills declare an upstream `source`, across 57 sources. The remaining 54 declare no upstream source.
+745 of 799 skills declare an upstream `source`, across 57 sources. The remaining 54 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -882,42 +905,41 @@ License: Complete terms in LICENSE.txt; MIT
 ### bmad-code-org/BMAD-METHOD
 
 Source: https://github.com/bmad-code-org/BMAD-METHOD
-Credit: bmad-code-org/BMAD-METHOD by BMAD Code Org
+Credit: bmad-code-org/BMAD-METHOD by BMad Code, LLC
 License: MIT
 
 | Install path | License |
 | --- | --- |
 | [`agent-design/bmm-skills`](../skills/agent-design/bmm-skills/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-agent-analyst`](../skills/agent-design/bmm-skills/1-analysis/bmad-agent-analyst/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-agent-tech-writer`](../skills/agent-design/bmm-skills/1-analysis/bmad-agent-tech-writer/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-document-project`](../skills/agent-design/bmm-skills/1-analysis/bmad-document-project/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-prfaq`](../skills/agent-design/bmm-skills/1-analysis/bmad-prfaq/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-product-brief`](../skills/agent-design/bmm-skills/1-analysis/bmad-product-brief/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/research/bmad-domain-research`](../skills/agent-design/bmm-skills/1-analysis/research/bmad-domain-research/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/research/bmad-market-research`](../skills/agent-design/bmm-skills/1-analysis/research/bmad-market-research/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/research/bmad-technical-research`](../skills/agent-design/bmm-skills/1-analysis/research/bmad-technical-research/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-agent-pm`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-agent-pm/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-agent-ux-designer`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-agent-ux-designer/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-create-prd`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-create-prd/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-create-ux-design`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-create-ux-design/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-edit-prd`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-edit-prd/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-validate-prd`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-validate-prd/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-agent-architect`](../skills/agent-design/bmm-skills/3-solutioning/bmad-agent-architect/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-check-implementation-readiness`](../skills/agent-design/bmm-skills/3-solutioning/bmad-check-implementation-readiness/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-create-architecture`](../skills/agent-design/bmm-skills/3-solutioning/bmad-create-architecture/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-create-epics-and-stories`](../skills/agent-design/bmm-skills/3-solutioning/bmad-create-epics-and-stories/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-generate-project-context`](../skills/agent-design/bmm-skills/3-solutioning/bmad-generate-project-context/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-agent-dev`](../skills/agent-design/bmm-skills/4-implementation/bmad-agent-dev/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-checkpoint-preview`](../skills/agent-design/bmm-skills/4-implementation/bmad-checkpoint-preview/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-code-review`](../skills/agent-design/bmm-skills/4-implementation/bmad-code-review/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-correct-course`](../skills/agent-design/bmm-skills/4-implementation/bmad-correct-course/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-create-story`](../skills/agent-design/bmm-skills/4-implementation/bmad-create-story/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-dev-story`](../skills/agent-design/bmm-skills/4-implementation/bmad-dev-story/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests`](../skills/agent-design/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-quick-dev`](../skills/agent-design/bmm-skills/4-implementation/bmad-quick-dev/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-retrospective`](../skills/agent-design/bmm-skills/4-implementation/bmad-retrospective/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-sprint-planning`](../skills/agent-design/bmm-skills/4-implementation/bmad-sprint-planning/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-sprint-status`](../skills/agent-design/bmm-skills/4-implementation/bmad-sprint-status/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-analyst`](../skills/agent-design/bmm-skills/agents/bmad-agent-analyst/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-architect`](../skills/agent-design/bmm-skills/agents/bmad-agent-architect/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-dev`](../skills/agent-design/bmm-skills/agents/bmad-agent-dev/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-pm`](../skills/agent-design/bmm-skills/agents/bmad-agent-pm/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-ux-designer`](../skills/agent-design/bmm-skills/agents/bmad-agent-ux-designer/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-advanced-elicitation`](../skills/agent-design/bmm-skills/core/bmad-advanced-elicitation/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-brainstorming`](../skills/agent-design/bmm-skills/core/bmad-brainstorming/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-customize`](../skills/agent-design/bmm-skills/core/bmad-customize/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-deep-recon`](../skills/agent-design/bmm-skills/core/bmad-deep-recon/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-forge-idea`](../skills/agent-design/bmm-skills/core/bmad-forge-idea/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-help`](../skills/agent-design/bmm-skills/core/bmad-help/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-party-mode`](../skills/agent-design/bmm-skills/core/bmad-party-mode/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-review`](../skills/agent-design/bmm-skills/core/bmad-review/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-architecture`](../skills/agent-design/bmm-skills/plan/bmad-architecture/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-create-epics-and-stories`](../skills/agent-design/bmm-skills/plan/bmad-create-epics-and-stories/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-prd`](../skills/agent-design/bmm-skills/plan/bmad-prd/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-prfaq`](../skills/agent-design/bmm-skills/plan/bmad-prfaq/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-product-brief`](../skills/agent-design/bmm-skills/plan/bmad-product-brief/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-project-context`](../skills/agent-design/bmm-skills/plan/bmad-project-context/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-spec`](../skills/agent-design/bmm-skills/plan/bmad-spec/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-sprint-planning`](../skills/agent-design/bmm-skills/plan/bmad-sprint-planning/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-ux`](../skills/agent-design/bmm-skills/plan/bmad-ux/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-build`](../skills/agent-design/bmm-skills/ship/bmad-build/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-build-auto`](../skills/agent-design/bmm-skills/ship/bmad-build-auto/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-code-review`](../skills/agent-design/bmm-skills/ship/bmad-code-review/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-correct-course`](../skills/agent-design/bmm-skills/ship/bmad-correct-course/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-qa-generate-e2e-tests`](../skills/agent-design/bmm-skills/ship/bmad-qa-generate-e2e-tests/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-retrospective`](../skills/agent-design/bmm-skills/ship/bmad-retrospective/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-walkthrough`](../skills/agent-design/bmm-skills/ship/bmad-walkthrough/SKILL.md) | MIT |
 
 ### addyosmani/agent-skills
 

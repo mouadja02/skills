@@ -1,156 +1,127 @@
 ---
 name: bmm-skills
 description: >-
-  Routes requests to the BMad Method (BMM) agile framework's four phases — analysis, planning,
-  solutioning, implementation — and their persona and workflow sub-skills. Use when the user mentions
-  BMad or BMM, or wants a structured agile flow from research and PRD through architecture, stories,
-  and delivery.
-version: "1.0.0"
+  Routes requests to the BMad Method (v6.12.4) agile framework: persona agents, planning skills (brief,
+  PRFAQ, PRD, UX, spec, architecture, epics, sprint planning), shipping skills (build, code review,
+  walkthrough, QA tests, retrospective), and core helpers (brainstorming, research, review, party mode).
+  Use when the user mentions BMad or BMM, names a BMad agent such as Mary, John, Sally, Winston, or
+  Amelia, or wants a structured flow from idea through PRD and architecture to built, reviewed code.
+version: "6.12.4"
 license: MIT
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
-attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+attribution: "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
 ---
 
-> **Attribution:** Adapted from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org), licensed MIT. Modified for this collection.
+> **Attribution:** The skills in this folder are sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) v6.12.4 by [BMad Code, LLC](https://github.com/bmad-code-org), licensed MIT. BMad and BMad Method are trademarks of BMad Code, LLC; this collection is not affiliated with or endorsed by it. This router was written for this collection.
 
-# BMad Method (BMM) — Master router
+# BMad Method router
 
-This is the top-level entry point for the BMad Method framework installed under `.claude/skills/bmm-skills/`. **It does not contain workflow logic.** Its job is to route the agent to the correct sub-skill folder based on the user's intent and to expose the four-phase mental model.
-
-The framework is organized in four sequential phases. Each phase produces artifacts the next phase consumes:
+This file holds no workflow logic. It routes a request to the one sub-skill that handles it. The folder
+mirrors upstream's layout:
 
 ```
-1-analysis/        → discovery, research, problem framing
-2-plan-workflows/  → PRDs, UX specs (the "what")
-3-solutioning/     → architecture, epics & stories (the "how")
-4-implementation/  → story execution, review, sprint tracking (the "ship")
+agents/   persona agents (Mary, John, Sally, Winston, Amelia)
+plan/     brief, PRFAQ, PRD, UX, spec, architecture, epics and stories, sprint planning, project context
+ship/     build, unattended build loop, code review, walkthrough, QA tests, correct course, retrospective
+core/     brainstorming, idea forging, research, review lenses, elicitation, party mode, help, customize
 ```
 
-Module-level configuration (output folders, user skill level, full agent roster with personas) lives in `module.yaml` at the root of this folder. **Read it once at the start of any BMad session** to load shared variables (`{output_folder}`, `{planning_artifacts}`, `{implementation_artifacts}`, `{project_knowledge}`).
+`module.yaml` (method) and `core/module.yaml` hold the shared settings and the agent roster.
+`module-help.csv` and `core/module-help.csv` list every skill with its menu code, phase, and what
+usually comes before and after it.
 
----
+## Before first use
 
-## How to use this index
+The sub-skills call helper scripts that the BMad installer puts in the project:
+`{project-root}/_bmad/scripts/` (`render_skill.py`, `resolve_customization.py`, `resolve_config.py`,
+`memlog.py`), run with [`uv`](https://docs.astral.sh/uv/) and Python 3.11 or later. Set a project up once with:
 
-1. Identify the user's intent (use the routing tables below).
-2. Open the matching sub-skill's `SKILL.md` and follow its instructions.
-3. Each sub-skill self-resolves its own `customize.toml` on activation — you don't need to do that here.
-4. Most sub-skills consume artifacts from earlier phases. If the user asks for phase 3 work but phase 2 artifacts are missing, surface that gap first.
+```bash
+npx bmad-method install
+```
 
-**Don't dump the whole framework into context.** Read only the sub-skill that matches the current request, plus any artifacts it needs.
+Most skills fall back to their own `customize.toml` defaults when a script is missing. `bmad-build` and
+`bmad-build-auto` do not: they stop and report the error. If `_bmad/` is absent and the user wants Build,
+tell them to run the installer first.
 
----
+## Routing
 
-## Phase 1 — Analysis (`1-analysis/`)
+1. **The user names an agent?** Load that persona skill and let it take over.
+2. **The user names an artifact or action?** Match it in the tables below.
+3. **Unsure where to start, or asks what to do next?** Load `core/bmad-help/SKILL.md`; it reads the
+   project state and recommends the next skill.
+4. **Just a code change?** `ship/bmad-build/SKILL.md` is the standard implementation flow at any size.
 
-Discovery, research, and problem framing. Outputs feed the planning phase.
+Read only the sub-skill that matches. Each one resolves its own customization when it starts.
 
-| Trigger | Sub-skill | Read |
+### Agents
+
+| Agent | Role | Skill |
 |---|---|---|
-| "Talk to Mary" / "I need the business analyst" | Persona — Mary | `1-analysis/bmad-agent-analyst/SKILL.md` |
-| "Talk to Paige" / "I need the tech writer" | Persona — Paige | `1-analysis/bmad-agent-tech-writer/SKILL.md` |
-| "Create a product brief" / "Update my product brief" | Workflow | `1-analysis/bmad-product-brief/SKILL.md` |
-| "Create a PRFAQ" / "Work backwards" / "Run the PRFAQ challenge" | Workflow | `1-analysis/bmad-prfaq/SKILL.md` |
-| "Document this project" / "Generate project docs" (brownfield) | Workflow | `1-analysis/bmad-document-project/SKILL.md` |
-| "Run market research" / "Research my competition" | Workflow | `1-analysis/research/bmad-market-research/SKILL.md` |
-| "Run domain research" / "Research this industry" | Workflow | `1-analysis/research/bmad-domain-research/SKILL.md` |
-| "Run technical research" / "Research this technology" | Workflow | `1-analysis/research/bmad-technical-research/SKILL.md` |
+| Mary 📊 | Business analyst: market research, competitive analysis, requirements | `agents/bmad-agent-analyst/SKILL.md` |
+| John 📋 | Product manager: PRDs and requirements discovery | `agents/bmad-agent-pm/SKILL.md` |
+| Sally 🎨 | UX designer and UI specialist | `agents/bmad-agent-ux-designer/SKILL.md` |
+| Winston 🏗️ | System architect: technical design | `agents/bmad-agent-architect/SKILL.md` |
+| Amelia 💻 | Senior engineer: implements stories and code changes | `agents/bmad-agent-dev/SKILL.md` |
 
-**Typical entry points:** new green-field idea → `bmad-product-brief` or `bmad-prfaq`; existing codebase the team needs to onboard → `bmad-document-project`.
+### Plan
 
----
+| Request | Skill |
+|---|---|
+| Capture a product idea in a brief | `plan/bmad-product-brief/SKILL.md` |
+| Stress-test a concept with Working Backwards (press release plus FAQ) | `plan/bmad-prfaq/SKILL.md` |
+| Create, update, or validate a PRD | `plan/bmad-prd/SKILL.md` |
+| Condense any input into a short SPEC.md, or split a spec into stories | `plan/bmad-spec/SKILL.md` |
+| UX design: DESIGN.md and EXPERIENCE.md | `plan/bmad-ux/SKILL.md` |
+| Architecture decisions document | `plan/bmad-architecture/SKILL.md` |
+| Break requirements into epics and stories | `plan/bmad-create-epics-and-stories/SKILL.md` |
+| Readiness check and sprint status file; sprint progress summary | `plan/bmad-sprint-planning/SKILL.md` |
+| Set up or refresh the repo's AGENTS.md block for agents | `plan/bmad-project-context/SKILL.md` |
 
-## Phase 2 — Planning (`2-plan-workflows/`)
+### Ship
 
-Turn the analysis into a Product Requirements Document and UX specs. Owned by John (PM) and Sally (UX).
+| Request | Skill |
+|---|---|
+| Implement a feature, story, bug fix, or change | `ship/bmad-build/SKILL.md` |
+| One iteration of an unattended build loop (only when invoked by name) | `ship/bmad-build-auto/SKILL.md` |
+| Review code changes with parallel reviewers | `ship/bmad-code-review/SKILL.md` |
+| Walk a human reviewer through a change | `ship/bmad-walkthrough/SKILL.md` |
+| Generate API and end-to-end tests for built features | `ship/bmad-qa-generate-e2e-tests/SKILL.md` |
+| Assess a significant mid-sprint change | `ship/bmad-correct-course/SKILL.md` |
+| Retrospective on a finished epic | `ship/bmad-retrospective/SKILL.md` |
 
-| Trigger | Sub-skill | Read |
-|---|---|---|
-| "Talk to John" / "I need the product manager" | Persona — John | `2-plan-workflows/bmad-agent-pm/SKILL.md` |
-| "Talk to Sally" / "I need the UX designer" | Persona — Sally | `2-plan-workflows/bmad-agent-ux-designer/SKILL.md` |
-| "Create a PRD" / "I want a new product requirements doc" | Workflow | `2-plan-workflows/bmad-create-prd/SKILL.md` |
-| "Edit this PRD" | Workflow | `2-plan-workflows/bmad-edit-prd/SKILL.md` |
-| "Validate this PRD" / "Run PRD validation" | Workflow | `2-plan-workflows/bmad-validate-prd/SKILL.md` |
-| "Create UX design" / "Plan the UX" / "Create UX specifications" | Workflow | `2-plan-workflows/bmad-create-ux-design/SKILL.md` |
+### Core
 
-**Pre-requisites:** a product brief or PRFAQ from phase 1 (not strictly required, but the PRD workflow asks for one).
+| Request | Skill |
+|---|---|
+| Brainstorm or ideate | `core/bmad-brainstorming/SKILL.md` |
+| Test a half-formed idea through probing personas | `core/bmad-forge-idea/SKILL.md` |
+| Research to support a decision (market, domain, technical) | `core/bmad-deep-recon/SKILL.md` |
+| Review a diff, PR, or document with review lenses | `core/bmad-review/SKILL.md` |
+| Push a draft further (pre-mortem, first principles, red team) | `core/bmad-advanced-elicitation/SKILL.md` |
+| Several agents discuss a topic together | `core/bmad-party-mode/SKILL.md` |
+| What to do next, or questions about BMad | `core/bmad-help/SKILL.md` |
+| Change how an installed BMad skill behaves | `core/bmad-customize/SKILL.md` |
 
----
+## Usual chain
 
-## Phase 3 — Solutioning (`3-solutioning/`)
+brief or PRFAQ → PRD (plus UX when there is a UI) → architecture → epics and stories → sprint planning
+→ build → code review → retrospective. A spec can stand in for the brief and PRD on small work. Run
+correct course when a change mid-sprint invalidates the plan.
 
-Translate the PRD + UX into technical architecture, epics and stories, and AI-agent context. Owned by Winston (architect).
+## Names from earlier v6 releases
 
-| Trigger | Sub-skill | Read |
-|---|---|---|
-| "Talk to Winston" / "I need the architect" | Persona — Winston | `3-solutioning/bmad-agent-architect/SKILL.md` |
-| "Create architecture" / "Create technical architecture" / "Create a solution design" | Workflow | `3-solutioning/bmad-create-architecture/SKILL.md` |
-| "Create the epics and stories list" | Workflow | `3-solutioning/bmad-create-epics-and-stories/SKILL.md` |
-| "Generate project context" / "Create project context" | Workflow | `3-solutioning/bmad-generate-project-context/SKILL.md` |
-| "Check implementation readiness" / "Are we ready to ship?" | Workflow | `3-solutioning/bmad-check-implementation-readiness/SKILL.md` |
+Older BMad guides use names that upstream has since merged or retired. Route them like this:
 
-**Gate to phase 4:** `bmad-check-implementation-readiness` is the last stop before development. If it surfaces gaps, loop back to phase 2 or 3 to close them.
-
----
-
-## Phase 4 — Implementation (`4-implementation/`)
-
-Execute approved stories, review, track sprints, retrospect. Owned by Amelia (dev).
-
-| Trigger | Sub-skill | Read |
-|---|---|---|
-| "Talk to Amelia" / "I need the developer" | Persona — Amelia | `4-implementation/bmad-agent-dev/SKILL.md` |
-| "Build / fix / tweak / refactor / add / modify [anything]" — any code intent | Workflow | `4-implementation/bmad-quick-dev/SKILL.md` |
-| "Create the next story" / "Create story [id]" | Workflow | `4-implementation/bmad-create-story/SKILL.md` |
-| "Implement story [file]" / "Dev this story" / "Implement next story in sprint plan" | Workflow | `4-implementation/bmad-dev-story/SKILL.md` |
-| "Run code review" / "Review this code" | Workflow | `4-implementation/bmad-code-review/SKILL.md` |
-| "Generate QA tests for [feature]" / "Create automated E2E tests" | Workflow | `4-implementation/bmad-qa-generate-e2e-tests/SKILL.md` |
-| "Run sprint planning" / "Generate sprint plan" | Workflow | `4-implementation/bmad-sprint-planning/SKILL.md` |
-| "Check sprint status" / "Show sprint status" | Workflow | `4-implementation/bmad-sprint-status/SKILL.md` |
-| "Correct course" / "Propose sprint change" | Workflow | `4-implementation/bmad-correct-course/SKILL.md` |
-| "Checkpoint" / "Human review" / "Walk me through this change" | Workflow | `4-implementation/bmad-checkpoint-preview/SKILL.md` |
-| "Run a retrospective" / "Retro the epic" | Workflow | `4-implementation/bmad-retrospective/SKILL.md` |
-
-**Quick-dev vs. full pipeline:** `bmad-quick-dev` is the catch-all for *any* code change request; it's a hardened single-pass workflow that produces a reviewable artifact. Use it when there is no formal story file. Use `bmad-create-story` → `bmad-dev-story` when the user wants the full BMad pipeline (story spec then implementation).
-
----
-
-## Agent quick map
-
-The framework defines six named personas. Each lives in a `bmad-agent-*` sub-skill that establishes identity + activation. When the user names an agent, route to the persona skill first; the persona then takes over and may invoke phase workflows.
-
-| Agent | Phase | Role | Persona skill |
-|---|---|---|---|
-| **Mary** 📊 | 1 | Business Analyst — strategic rigor, evidence-grounded | `1-analysis/bmad-agent-analyst/SKILL.md` |
-| **Paige** 📚 | 1 | Technical Writer — CommonMark/DITA/OpenAPI master | `1-analysis/bmad-agent-tech-writer/SKILL.md` |
-| **John** 📋 | 2 | Product Manager — Jobs-to-be-Done, user value first | `2-plan-workflows/bmad-agent-pm/SKILL.md` |
-| **Sally** 🎨 | 2 | UX Designer — empathy + edge-case rigor | `2-plan-workflows/bmad-agent-ux-designer/SKILL.md` |
-| **Winston** 🏗️ | 3 | System Architect — boring tech, trade-offs over verdicts | `3-solutioning/bmad-agent-architect/SKILL.md` |
-| **Amelia** 💻 | 4 | Senior Software Engineer — TDD, file paths and AC IDs | `4-implementation/bmad-agent-dev/SKILL.md` |
-
-Full persona descriptions and module configuration (output folders, language settings, user skill level prompts) are in `module.yaml`.
-
----
-
-## Conventions used by every sub-skill
-
-All BMad sub-skills follow the same path conventions. Note these once and they apply everywhere:
-
-- **Bare paths** (e.g. `references/guide.md`) resolve from the *sub-skill's* root.
-- **`{skill-root}`** resolves to the sub-skill's installed directory (where `customize.toml` lives).
-- **`{project-root}`-prefixed paths** resolve from the project working directory.
-- **`{skill-name}`** resolves to the sub-skill directory's basename.
-
-On activation, every sub-skill resolves its `customize.toml` (with optional team and user overrides under `{project-root}/_bmad/custom/`). If the resolver script is unavailable, the sub-skill's SKILL.md explains how to merge the layers manually (base → team → user, scalars override, tables deep-merge, arrays of tables key-merge, other arrays append).
-
----
-
-## Routing rules (when in doubt)
-
-1. **Agent name in the prompt?** → load that agent's persona skill, full stop. The persona handles the rest.
-2. **Action verb without an agent?** → match the verb to the trigger tables above.
-3. **"BMad" / "BMM" / "the framework" without specifics?** → ask one clarifying question: which phase or which artifact (brief, PRD, architecture, story, sprint)?
-4. **Code change without ceremony?** → `4-implementation/bmad-quick-dev/SKILL.md` — it's the framework's catch-all.
-5. **Multiple matches?** → prefer the deepest, most specific phase. If user says "create a PRD and validate it", read `bmad-create-prd` first; the user can chain `bmad-validate-prd` after.
-
-Don't preload more than one sub-skill at a time. The framework's progressive disclosure depends on it.
+| Old name | Now |
+|---|---|
+| `bmad-quick-dev`, `bmad-create-story`, `bmad-dev-story` | `ship/bmad-build` |
+| `bmad-dev-auto` | `ship/bmad-build-auto` |
+| `bmad-create-prd`, `bmad-edit-prd`, `bmad-validate-prd` | `plan/bmad-prd` |
+| `bmad-create-architecture` | `plan/bmad-architecture` |
+| `bmad-create-ux-design` | `plan/bmad-ux` |
+| `bmad-check-implementation-readiness`, `bmad-sprint-status` | `plan/bmad-sprint-planning` |
+| `bmad-checkpoint-preview` | `ship/bmad-walkthrough` |
+| `bmad-domain-research`, `bmad-market-research`, `bmad-technical-research` | `core/bmad-deep-recon` |
+| `bmad-document-project`, `bmad-generate-project-context` | `plan/bmad-project-context` |
+| `bmad-agent-tech-writer` (Paige) | retired upstream with no replacement yet; `core/bmad-review` covers editorial review |
