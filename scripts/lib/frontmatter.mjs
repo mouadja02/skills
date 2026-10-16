@@ -11,7 +11,8 @@ import { parse } from "yaml";
 const FRONTMATTER_RE = /^---\n([\s\S]*?)\n---[ \t]*(?:\n|$)/;
 
 export function normalizeNewlines(raw) {
-  return raw.replace(/^﻿/, "").replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  const noBom = raw.charCodeAt(0) === 0xfeff ? raw.slice(1) : raw;
+  return noBom.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 }
 
 // Returns { data, body, error }. `data` is null when the block is missing or

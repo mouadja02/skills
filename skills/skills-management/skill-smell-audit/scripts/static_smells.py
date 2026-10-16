@@ -19,6 +19,7 @@ import os
 import re
 import sys
 
+BOM = chr(0xFEFF)
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 FENCE_RE = re.compile(r"^([ \t]*)(`{3,}|~{3,})[^\n]*\n.*?^\1\2[^\n]*$", re.M | re.S)
 INLINE_CODE_RE = re.compile(r"(`+)[^`\n]*?\1")
@@ -131,9 +132,9 @@ def check(path):
 
     with open(path, encoding="utf-8") as handle:
         raw = handle.read()
-    if raw.startswith("﻿"):
+    if raw.startswith(BOM):
         add("loading", "error", "file starts with a UTF-8 BOM")
-    text = raw.lstrip("﻿").replace("\r\n", "\n")
+    text = raw.lstrip(BOM).replace("\r\n", "\n")
     block, body = split_frontmatter(text)
     skill_dir = os.path.dirname(os.path.abspath(path))
     if block is None:

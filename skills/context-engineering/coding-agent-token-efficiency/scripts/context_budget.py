@@ -45,7 +45,7 @@ def read(path):
 
 def skill_metadata(text):
     """Returns (name, description, body) using a small frontmatter reader."""
-    text = text.lstrip("﻿").replace("\r\n", "\n")
+    text = text.lstrip(chr(0xFEFF)).replace("\r\n", "\n")
     match = re.match(r"^---\n(.*?)\n---[ \t]*(?:\n|$)", text, re.S)
     if not match:
         return "", "", text
