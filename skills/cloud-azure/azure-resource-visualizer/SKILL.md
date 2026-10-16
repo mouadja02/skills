@@ -4,7 +4,7 @@ description: >-
   Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the
   relationships between individual resources. Use when someone needs to understand or document how
   resources in an Azure resource group fit together.
-license: Complete terms in LICENSE.txt
+license: MIT
 metadata:
   author: Tom Meschter (tom.meschter@microsoft.com)
 source: "https://github.com/microsoft/azure-skills"

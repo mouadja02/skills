@@ -8,12 +8,12 @@ argument-hint: "[{{command_hint}}] [target]"
 user-invocable: true
 allowed-tools:
   - Bash(npx impeccable *)
-license: Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for attribution.
+license: Apache-2.0
 source: "https://github.com/pbakaus/impeccable"
 attribution: "pbakaus/impeccable by Paul Bakaus"
 ---
 
-> **Attribution:** Sourced from [pbakaus/impeccable](https://github.com/pbakaus/impeccable) by [Paul Bakaus](https://paulbakaus.com), licensed Apache-2.0. Modified for this collection.
+> **Attribution:** Sourced from [pbakaus/impeccable](https://github.com/pbakaus/impeccable) by [Paul Bakaus](https://paulbakaus.com), licensed Apache-2.0. It builds on Anthropic's frontend-design skill; see `NOTICE.md` for third-party attribution. Modified for this collection.
 
 Designs and iterates production-grade frontend interfaces. Real working code, committed design choices, exceptional craft.
 
