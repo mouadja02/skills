@@ -1,6 +1,11 @@
 ---
 name: "senior-data-engineer"
-description: Data engineering — pipelines, ETL/ELT, Python/SQL/Spark, Airflow, dbt, cloud DWH
+description: >-
+  Data engineering skill for building scalable data pipelines, ETL/ELT systems, and data
+  infrastructure. Expertise in Python, SQL, Spark, Airflow, dbt, Kafka, and modern data stack.
+  Includes data modeling, pipeline orchestration, data quality, and DataOps. Use when designing data
+  architectures, building data pipelines, optimizing data workflows, implementing data governance, or
+  troubleshooting data issues.
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"

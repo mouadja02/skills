@@ -1,6 +1,8 @@
 ---
 name: bmad-agent-pm
-description: Product manager for PRD creation and requirements discovery
+description: >-
+  Product manager for PRD creation and requirements discovery. Use when the user asks to talk to John
+  or requests the product manager
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
 attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 license: MIT

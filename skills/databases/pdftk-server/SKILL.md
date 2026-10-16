@@ -1,6 +1,10 @@
 ---
 name: pdftk-server
-description: '— using the command-line tool pdftk (PDFtk Server) for working with PDF files'
+description: >-
+  Skill for using the command-line tool pdftk (PDFtk Server) for working with PDF files. Use when
+  asked to merge PDFs, split PDFs, rotate pages, encrypt or decrypt PDFs, fill PDF forms, apply
+  watermarks, stamp overlays, extract metadata, burst documents into pages, repair corrupted PDFs,
+  attach or extract files, or perform any PDF manipulation from the command line.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

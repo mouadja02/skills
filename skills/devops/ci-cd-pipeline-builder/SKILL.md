@@ -1,6 +1,9 @@
 ---
 name: "ci-cd-pipeline-builder"
-description: "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack"
+description: >-
+  Generate pragmatic CI/CD pipelines from detected project stack signals — fast baseline generation,
+  repeatable checks, environment-aware deployment stages. Use when setting up CI for a new project,
+  refactoring existing pipelines, or standardizing deployment workflows across multiple repos.
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"

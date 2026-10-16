@@ -1,6 +1,11 @@
 ---
 name: qdrant-monitoring
-description: "Guides Qdrant monitoring and observability setup"
+description: >-
+  Guides Qdrant monitoring and observability setup. Use when someone asks 'how to monitor Qdrant',
+  'what metrics to track', 'is Qdrant healthy', 'optimizer stuck', 'why is memory growing', 'requests
+  are slow', 'set up alerts', 'cluster health check', or needs to set up Prometheus, Grafana, health
+  checks, or log centralization. Also use when debugging production issues that require metric
+  analysis.
 allowed-tools:
   - Read
   - Grep

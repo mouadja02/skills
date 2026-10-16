@@ -1,6 +1,11 @@
 ---
 name: 'audit-integrity'
-description: AppSec audit integrity — output quality standards, honesty rules, continuous improvement
+description: >-
+  Enforce output quality, evidence verification, and quality gates across security audits. Use this
+  skill when you perform SAST, SCA, threat modeling, or security code reviews. Use this skill to
+  verify code locations and taint traces for all findings. Use this skill to prevent the suppression
+  of valid security findings. Use this skill to evaluate reports against quality thresholds (score ≥
+  8/10) before delivery.
 compatibility: 'Cross-platform. Works with any language or framework analyzed by AppSec agents.'
 metadata:
   version: '1.0'

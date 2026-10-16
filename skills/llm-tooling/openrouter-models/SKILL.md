@@ -1,6 +1,10 @@
 ---
 name: openrouter-models
-description: Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance
+description: >-
+  Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider
+  performance. Use when the user asks about available OpenRouter models, model pricing, model context
+  lengths, model capabilities, provider latency or uptime, throughput limits, supported parameters,
+  wants to search/filter/compare models, or find the fastest provider for a model.
 source: "https://github.com/OpenRouterTeam/skills"
 attribution: "OpenRouterTeam/skills by OpenRouter"
 ---

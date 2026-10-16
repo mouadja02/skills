@@ -1,6 +1,10 @@
 ---
 name: qdrant-model-migration
-description: "Guides embedding model migration in Qdrant without downtime"
+description: >-
+  Guides embedding model migration in Qdrant without downtime. Use when someone asks 'how to switch
+  embedding models', 'how to migrate vectors', 'how to update to a new model', 'zero-downtime model
+  change', 'how to re-embed my data', or 'can I use two models at once'. Also use when upgrading model
+  dimensions, switching providers, or A/B testing models.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 license: Apache-2.0

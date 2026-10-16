@@ -1,6 +1,10 @@
 ---
 name: qdrant-version-upgrade
-description: "Guidance on how to upgrade your Qdrant version without interrupting the availability of your application and ensuring data integrity"
+description: >-
+  Covers upgrading Qdrant server and SDKs without interrupting availability or losing data integrity.
+  Use when someone asks 'how do I upgrade Qdrant', 'can I jump from 1.15 to 1.18', 'rolling upgrade
+  without downtime', 'do I upgrade the client or the server first', 'which SDK version matches my
+  server', 'what should I check before upgrading', or 'something changed after we upgraded'.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 license: Apache-2.0

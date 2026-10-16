@@ -1,6 +1,10 @@
 ---
 name: "incident-commander"
-description: "Run incident response from detection to post-mortem"
+description: >-
+  Comprehensive incident response framework from detection through resolution and post-incident
+  review. Battle-tested SRE/DevOps practices: severity classification, timeline reconstruction,
+  structured post-incident analysis. Use when declaring an incident, coordinating multi-team response
+  during an outage, leading a post-mortem, or setting up on-call practices for a new service.
 version: "1.0.1"
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"

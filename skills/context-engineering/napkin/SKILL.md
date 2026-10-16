@@ -1,6 +1,9 @@
 ---
 name: napkin
-description: Napkin browser whiteboard — draw, sketch, annotate, diagrams, visual brainstorming
+description: >-
+  Visual whiteboard collaboration for Copilot CLI. Creates an interactive whiteboard that opens in
+  your browser — draw, sketch, add sticky notes, then share everything back with Copilot. Copilot sees
+  your drawings and text, and responds with analysis, suggestions, and ideas.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

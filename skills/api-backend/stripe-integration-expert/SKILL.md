@@ -1,6 +1,11 @@
 ---
 name: "stripe-integration-expert"
-description: "Implement production-grade Stripe integrations"
+description: >-
+  Production-grade Stripe integrations: subscriptions with trials and proration, one-time payments,
+  usage-based billing, checkout sessions, idempotent webhook handlers, customer portal, and invoicing.
+  Covers Next.js, Express, and Django patterns. Use when integrating Stripe for the first time,
+  debugging webhook reliability issues, migrating from a different payment provider, or adding
+  usage-based billing to an existing subscription product.
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
