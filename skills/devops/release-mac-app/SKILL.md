@@ -71,4 +71,5 @@ If the release requires secrets via 1Password:
 - Set `MAC_RELEASE_OP_ITEM` + `MAC_RELEASE_OP_FIELDS` in `.mac-release.env`
 - Secrets are read once via `op` inside one persistent tmux session
 - Never expose or echo secret values
-- Follow the `one-password` skill for tmux session rules
+- Prefer secrets already exported in the environment; call `op` only for fields that are missing
+- Read all missing fields in one command inside that tmux session, so 1Password prompts once per release
