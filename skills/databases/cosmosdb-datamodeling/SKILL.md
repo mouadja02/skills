@@ -1,6 +1,10 @@
 ---
 name: cosmosdb-datamodeling
-description: 'Step-by-step guide for capturing key application requirements for NoSQL use-case and produce Azure Cosmos DB Data NoSQL Model design using best practices and common patterns, artifacts_produced: "cosmosdb_requirements.md" file and "cosmosdb_data_model.md" file'
+description: >-
+  Step-by-step guide for capturing key application requirements for NoSQL use-case and produce Azure
+  Cosmos DB Data NoSQL Model design using best practices and common patterns, artifacts_produced:
+  "cosmosdb_requirements.md" file and "cosmosdb_data_model.md" file. Use when designing a new Azure
+  Cosmos DB for NoSQL data model or reviewing partition keys and document shapes.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

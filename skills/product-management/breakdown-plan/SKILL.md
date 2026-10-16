@@ -1,6 +1,9 @@
 ---
 name: breakdown-plan
-description: 'Issue Planning and Automation prompt that generates comprehensive project plans with Epic > Feature > Story/Enabler > Test hierarchy, dependencies, priorities, and automated tracking'
+description: >-
+  Issue Planning and Automation prompt that generates comprehensive project plans with Epic > Feature
+  > Story/Enabler > Test hierarchy, dependencies, priorities, and automated tracking. Use when turning
+  an epic or feature set into a tracked GitHub project plan.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

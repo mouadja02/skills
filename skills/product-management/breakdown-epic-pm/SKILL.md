@@ -1,6 +1,9 @@
 ---
 name: breakdown-epic-pm
-description: 'Prompt for creating an Epic Product Requirements Document (PRD) for a new epic. This PRD will be used as input for generating a technical architecture specification'
+description: >-
+  Prompt for creating an Epic Product Requirements Document (PRD) for a new epic. This PRD will be
+  used as input for generating a technical architecture specification. Use at the start of a new epic,
+  before architecture and feature breakdown.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

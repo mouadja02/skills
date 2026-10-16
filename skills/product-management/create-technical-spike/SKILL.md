@@ -1,6 +1,9 @@
 ---
 name: create-technical-spike
-description: 'Create time-boxed technical spike documents for researching and resolving critical development decisions before implementation'
+description: >-
+  Create time-boxed technical spike documents for researching and resolving critical development
+  decisions before implementation. Use when a decision needs research or a prototype before committing
+  to an approach.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

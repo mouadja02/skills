@@ -1,6 +1,9 @@
 ---
 name: azure-devops-cli
-description: Manage Azure DevOps resources via CLI including projects, repos, pipelines, builds, pull requests, work items, artifacts, and service endpoints
+description: >-
+  Manage Azure DevOps resources via CLI including projects, repos, pipelines, builds, pull requests,
+  work items, artifacts, and service endpoints. Use when automating or scripting Azure DevOps from the
+  command line with az devops.
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT

@@ -1,6 +1,10 @@
 ---
 name: cloud-design-patterns
-description: 'Cloud design patterns for distributed systems architecture covering 42 industry-standard patterns across reliability, performance, messaging, security, and deployment categories'
+description: >-
+  Cloud design patterns for distributed systems architecture covering 42 industry-standard patterns
+  across reliability, performance, messaging, security, and deployment categories. Use when choosing
+  architecture patterns for reliability, performance, messaging, or security in a distributed cloud
+  system.
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT

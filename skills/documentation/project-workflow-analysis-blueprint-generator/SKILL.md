@@ -5,7 +5,8 @@ description: >-
   Automatically detects project architecture patterns, technology stacks, and data flow patterns to
   generate detailed implementation blueprints covering entry points, service layers, data access,
   error handling, and testing approaches across multiple technologies including .NET, Java/Spring,
-  React, and microservices architectures.
+  React, and microservices architectures. Use when documenting how requests and data move through an
+  application end to end.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

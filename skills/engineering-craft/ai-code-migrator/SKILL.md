@@ -1,6 +1,9 @@
 ---
 name: "ai-code-migrator"
-description: "Automate large-scale codebase migrations using AI — framework upgrades, language conversions, API modernization, and dependency swaps"
+description: >-
+  Automate large-scale codebase migrations using AI — framework upgrades, language conversions, API
+  modernization, and dependency swaps. Use when planning or executing a migration that touches most of
+  a codebase.
 ---
 
 # AI Code Migrator

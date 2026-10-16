@@ -1,6 +1,9 @@
 ---
 name: refactor-method-complexity-reduce
-description: 'Refactor given method `${input:methodName}` to reduce its cognitive complexity to `${input:complexityThreshold}` or below, by extracting helper methods'
+description: >-
+  Refactor given method `${input:methodName}` to reduce its cognitive complexity to
+  `${input:complexityThreshold}` or below, by extracting helper methods. Use when a method exceeds a
+  cognitive-complexity threshold flagged by a linter or review.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

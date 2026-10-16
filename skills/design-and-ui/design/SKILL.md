@@ -7,7 +7,8 @@ description: >-
   SVG, Gemini 3.1 Pro), social photos (HTML→screenshot, multi-platform). Actions: design logo, create
   CIP, generate mockups, build slides, design banner, generate icon, create social photos, social
   media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube,
-  Instagram, Pinterest, TikTok, Threads, Google Ads.
+  Instagram, Pinterest, TikTok, Threads, Google Ads. Use for brand, logo, icon, banner, slide, or
+  social-image design work.
 argument-hint: "[design-type] [context]"
 license: MIT
 metadata:

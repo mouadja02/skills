@@ -1,10 +1,10 @@
 ---
 name: memento-flashcards
 description: >-
-  Spaced-repetition flashcard system. Create cards from facts or text,
-  chat with flashcards using free-text answers graded by the agent,
-  generate quizzes from YouTube transcripts, review due cards with
-  adaptive scheduling, and export/import decks as CSV.
+  Spaced-repetition flashcard system. Create cards from facts or text, chat with flashcards using
+  free-text answers graded by the agent, generate quizzes from YouTube transcripts, review due cards
+  with adaptive scheduling, and export/import decks as CSV. Use when the user wants to memorize
+  material, make flashcards, or review due cards.
 version: 1.0.0
 author: Memento AI
 license: MIT

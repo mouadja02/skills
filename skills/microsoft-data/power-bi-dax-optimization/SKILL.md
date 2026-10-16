@@ -1,6 +1,9 @@
 ---
 name: power-bi-dax-optimization
-description: 'Comprehensive Power BI DAX formula optimization prompt for improving performance, readability, and maintainability of DAX calculations'
+description: >-
+  Comprehensive Power BI DAX formula optimization prompt for improving performance, readability, and
+  maintainability of DAX calculations. Use when a DAX measure is slow, hard to read, or returns
+  unexpected results.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

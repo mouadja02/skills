@@ -1,6 +1,9 @@
 ---
 name: update-llms
-description: 'Update the llms.txt file in the root folder to reflect changes in documentation or specifications following the llms.txt specification at https://llmstxt.org/'
+description: >-
+  Update the llms.txt file in the root folder to reflect changes in documentation or specifications
+  following the llms.txt specification at https://llmstxt.org/. Use after documentation or
+  specifications change in a repository that has an llms.txt.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

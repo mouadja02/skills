@@ -1,6 +1,8 @@
 ---
 name: go-mcp-server-generator
-description: 'Generate a complete Go MCP server project with proper structure, dependencies, and implementation using the official github.com/modelcontextprotocol/go-sdk'
+description: >-
+  Generate a complete Go MCP server project with proper structure, dependencies, and implementation
+  using the official github.com/modelcontextprotocol/go-sdk. Use when creating an MCP server in Go.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

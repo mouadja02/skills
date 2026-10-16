@@ -1,6 +1,9 @@
 ---
 name: creating-oracle-to-postgres-master-migration-plan
-description: 'Discovers all projects in a .NET solution, classifies each for Oracle-to-PostgreSQL migration eligibility, and produces a persistent master migration plan'
+description: >-
+  Discovers all projects in a .NET solution, classifies each for Oracle-to-PostgreSQL migration
+  eligibility, and produces a persistent master migration plan. Use at the start of an
+  Oracle-to-PostgreSQL migration of a multi-project .NET solution.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

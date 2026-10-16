@@ -5,12 +5,12 @@ attribution: "Amazon Web Services - agent-toolkit-for-aws (Apache-2.0)"
 name: amazon-keyspaces
 description: >-
   Provides authoritative compatibility checks, pricing estimates, connection troubleshooting,
-  pre-warming guidance, and infrastructure mutations for Amazon Keyspaces (for Apache
-  Cassandra). Covers LWT/batch operations, secondary indexes, materialized views,
-  capacity modes, TTL, PITR, CDC, auto-scaling, multi-region keyspaces, UDTs, nodetool
-  diagnostics parsing, SQL-to-Cassandra migration, and Cassandra-to-Keyspaces migration
-  scenarios. Agents frequently produce incomplete or incorrect answers about Keyspaces
-  feature support without this skill loaded.
+  pre-warming guidance, and infrastructure mutations for Amazon Keyspaces (for Apache Cassandra).
+  Covers LWT/batch operations, secondary indexes, materialized views, capacity modes, TTL, PITR, CDC,
+  auto-scaling, multi-region keyspaces, UDTs, nodetool diagnostics parsing, SQL-to-Cassandra
+  migration, and Cassandra-to-Keyspaces migration scenarios. Agents frequently produce incomplete or
+  incorrect answers about Keyspaces feature support without this skill loaded. Use for any Amazon
+  Keyspaces question, Cassandra compatibility check, or Cassandra-to-Keyspaces migration.
 version: 1
 ---
 

@@ -1,6 +1,9 @@
 ---
 name: az-cost-optimize
-description: 'Analyze Azure resources used in the app (IaC files and/or resources in a target rg) and optimize costs - creating GitHub issues for identified optimizations'
+description: >-
+  Analyze Azure resources used in the app (IaC files and/or resources in a target rg) and optimize
+  costs - creating GitHub issues for identified optimizations. Use when an Azure bill needs reducing
+  or a resource group needs a cost review.
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT

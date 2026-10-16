@@ -3,7 +3,12 @@ license: Apache-2.0
 source: https://github.com/aws/agent-toolkit-for-aws
 attribution: "Amazon Web Services - agent-toolkit-for-aws (Apache-2.0)"
 name: aws-cloudformation
-description: Author, validate, and troubleshoot AWS CloudFormation templates. Covers template authoring with secure defaults, pre-deployment validation (cfn-lint, cfn-guard, change sets), and root-cause diagnosis of failed stacks using CloudFormation events and CloudTrail correlation.
+description: >-
+  Author, validate, and troubleshoot AWS CloudFormation templates. Covers template authoring with
+  secure defaults, pre-deployment validation (cfn-lint, cfn-guard, change sets), and root-cause
+  diagnosis of failed stacks using CloudFormation events and CloudTrail correlation. Use when writing
+  or reviewing CloudFormation templates, validating before deployment, or diagnosing a failed or
+  rolled-back stack.
 version: 1
 ---
 

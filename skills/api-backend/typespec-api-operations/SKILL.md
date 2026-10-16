@@ -1,6 +1,9 @@
 ---
 name: typespec-api-operations
-description: 'Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing, parameters, and adaptive cards'
+description: >-
+  Add GET, POST, PATCH, and DELETE operations to a TypeSpec API plugin with proper routing,
+  parameters, and adaptive cards. Use when extending an existing Microsoft 365 Copilot TypeSpec API
+  plugin with new REST operations.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

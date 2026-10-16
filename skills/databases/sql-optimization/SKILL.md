@@ -4,7 +4,8 @@ description: >-
   Universal SQL performance optimization assistant for comprehensive query tuning, indexing
   strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL
   Server, Oracle). Provides execution plan analysis, pagination optimization, batch operations, and
-  performance monitoring guidance.
+  performance monitoring guidance. Use when a query is slow, an index strategy is unclear, or database
+  performance needs analysis.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

@@ -1,6 +1,8 @@
 ---
 name: "cs-pricing-strategy"
-description: "Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and price increase strategy"
+description: >-
+  Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and
+  price increase strategy. Use when setting, changing, or explaining SaaS prices or plans.
 license: MIT
 metadata:
   version: 1.0.0

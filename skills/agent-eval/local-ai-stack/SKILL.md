@@ -1,6 +1,9 @@
 ---
 name: "local-ai-stack"
-description: "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving"
+description: >-
+  Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines,
+  and private model serving. Use when running models locally for privacy, compliance, offline use, or
+  cost, or setting up GPU-accelerated local inference and RAG.
 version: "1.0.2"
 ---
 

@@ -1,6 +1,9 @@
 ---
 name: first-ask
-description: 'Interactive, input-tool powered, task refinement workflow: interrogates scope, deliverables, constraints before carrying out the task; Requires the Joyride extension'
+description: >-
+  Interactive, input-tool powered, task refinement workflow: interrogates scope, deliverables,
+  constraints before carrying out the task; Requires the Joyride extension. Use before carrying out a
+  vague or high-stakes task in VS Code with Joyride available.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

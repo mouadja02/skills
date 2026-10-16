@@ -1,6 +1,8 @@
 ---
 name: javascript-typescript-jest
-description: 'Best practices for writing JavaScript/TypeScript tests using Jest, including mocking strategies, test structure, and common patterns'
+description: >-
+  Best practices for writing JavaScript/TypeScript tests using Jest, including mocking strategies,
+  test structure, and common patterns. Use when writing or reviewing Jest tests.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

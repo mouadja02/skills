@@ -1,6 +1,9 @@
 ---
 name: "autoresearch-loop"
-description: "Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly). Uses CronCreate for scheduling"
+description: >-
+  Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly).
+  Uses CronCreate for scheduling. Use when the user runs /ar:loop or wants an experiment to keep
+  iterating on a schedule.
 command: /ar:loop
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"

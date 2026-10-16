@@ -1,6 +1,9 @@
 ---
 name: convert-plaintext-to-md
-description: 'Convert a text-based document to markdown following instructions from prompt, or if a documented option is passed, follow the instructions for that option'
+description: >-
+  Convert a text-based document to markdown following instructions from prompt, or if a documented
+  option is passed, follow the instructions for that option. Use when a plain-text document needs to
+  become clean Markdown.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

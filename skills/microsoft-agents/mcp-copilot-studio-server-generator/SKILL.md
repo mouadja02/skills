@@ -1,6 +1,8 @@
 ---
 name: mcp-copilot-studio-server-generator
-description: 'Generate a complete MCP server implementation optimized for Copilot Studio integration with proper schema constraints and streamable HTTP support'
+description: >-
+  Generate a complete MCP server implementation optimized for Copilot Studio integration with proper
+  schema constraints and streamable HTTP support. Use when building an MCP server for Copilot Studio.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

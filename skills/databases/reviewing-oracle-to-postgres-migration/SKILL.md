@@ -1,6 +1,10 @@
 ---
 name: reviewing-oracle-to-postgres-migration
-description: 'Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral differences (empty strings, refcursors, type coercion, sorting, timestamps, concurrent transactions, etc.)'
+description: >-
+  Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral
+  differences (empty strings, refcursors, type coercion, sorting, timestamps, concurrent transactions,
+  etc.). Use when planning migration of a procedure, trigger, query, or refcursor client, and again to
+  validate the finished port.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

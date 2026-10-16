@@ -1,6 +1,9 @@
 ---
 name: publish-to-pages
-description: 'Publish presentations and web content to GitHub Pages. Converts PPTX, PDF, HTML, or Google Slides to a live GitHub Pages URL. Handles repo creation, file conversion, Pages enablement, and returns the live URL'
+description: >-
+  Publish presentations and web content to GitHub Pages. Converts PPTX, PDF, HTML, or Google Slides to
+  a live GitHub Pages URL. Handles repo creation, file conversion, Pages enablement, and returns the
+  live URL. Use when a deck or HTML page needs a public URL quickly.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

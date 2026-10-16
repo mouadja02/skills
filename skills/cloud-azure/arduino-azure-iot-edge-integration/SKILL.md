@@ -1,6 +1,10 @@
 ---
 name: arduino-azure-iot-edge-integration
-description: 'Design and implement Arduino integration with Azure IoT Hub and IoT Edge, including secure provisioning, resilient telemetry, command handling, and production guardrails'
+description: >-
+  Design and implement Arduino integration with Azure IoT Hub and IoT Edge, including secure
+  provisioning, resilient telemetry, command handling, and production guardrails. Use when connecting
+  Arduino sensors to Azure, sending MQTT telemetry to IoT Hub, adding an edge gateway, or sending
+  cloud-to-device commands.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

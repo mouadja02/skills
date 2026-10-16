@@ -1,6 +1,9 @@
 ---
 name: semantic-kernel
-description: 'Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python'
+description: >-
+  Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus
+  language-specific references for .NET and Python. Use when working on applications, plugins, or
+  function-calling flows built on Semantic Kernel.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

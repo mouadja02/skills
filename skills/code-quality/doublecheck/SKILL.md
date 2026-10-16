@@ -3,7 +3,8 @@ name: doublecheck
 description: >-
   Three-layer verification pipeline for AI output. Extracts verifiable claims, finds supporting or
   contradicting sources via web search, runs adversarial review for hallucination patterns, and
-  produces a structured verification report with source links for human review.
+  produces a structured verification report with source links for human review. Use when AI-generated
+  text with factual claims must be checked before it is published or relied on.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

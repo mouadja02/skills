@@ -1,6 +1,9 @@
 ---
 name: declarative-agents
-description: 'Complete development kit for Microsoft 365 Copilot declarative agents with three comprehensive workflows (basic, advanced, validation), TypeSpec support, and Microsoft 365 Agents Toolkit integration'
+description: >-
+  Complete development kit for Microsoft 365 Copilot declarative agents with three comprehensive
+  workflows (basic, advanced, validation), TypeSpec support, and Microsoft 365 Agents Toolkit
+  integration. Use when building, extending, or validating a Microsoft 365 Copilot declarative agent.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

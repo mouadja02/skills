@@ -1,6 +1,9 @@
 ---
 name: microsoft-agent-framework
-description: 'Create, update, refactor, explain, or review Microsoft Agent Framework solutions using shared guidance plus language-specific references for .NET and Python'
+description: >-
+  Create, update, refactor, explain, or review Microsoft Agent Framework solutions using shared
+  guidance plus language-specific references for .NET and Python. Use when working on agents or
+  workflows built with Microsoft Agent Framework.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

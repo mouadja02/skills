@@ -6,7 +6,8 @@ description: >-
   implementation patterns across multiple platforms (.NET, Java, JavaScript, React, Python). Generates
   configurable blueprints with version information, licensing details, usage patterns, coding
   conventions, and visual diagrams. Provides implementation-ready templates and maintains
-  architectural consistency for guided development.
+  architectural consistency for guided development. Use when documenting a project's technology stack
+  or onboarding someone to it.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

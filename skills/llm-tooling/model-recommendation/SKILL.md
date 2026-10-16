@@ -1,6 +1,9 @@
 ---
 name: model-recommendation
-description: 'Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency'
+description: >-
+  Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required
+  capabilities, and cost-efficiency. Use when choosing which model a Copilot chat mode or prompt file
+  should run on.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

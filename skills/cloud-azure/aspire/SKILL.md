@@ -1,6 +1,10 @@
 ---
 name: aspire
-description: 'Aspire skill covering the Aspire CLI, AppHost orchestration, service discovery, integrations, MCP server, VS Code extension, Dev Containers, GitHub Codespaces, templates, dashboard, and deployment'
+description: >-
+  Aspire skill covering the Aspire CLI, AppHost orchestration, service discovery, integrations, MCP
+  server, VS Code extension, Dev Containers, GitHub Codespaces, templates, dashboard, and deployment.
+  Use when building, running, or deploying a distributed application with Aspire, or setting up its
+  AppHost, integrations, or dashboard.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 version: "1.0.2"

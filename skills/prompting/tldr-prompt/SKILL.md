@@ -1,6 +1,9 @@
 ---
 name: tldr-prompt
-description: 'Create tldr summaries for GitHub Copilot files (prompts, agents, instructions, collections), MCP servers, or documentation from URLs and queries'
+description: >-
+  Create tldr summaries for GitHub Copilot files (prompts, agents, instructions, collections), MCP
+  servers, or documentation from URLs and queries. Use when someone needs a quick summary of a Copilot
+  customization file, an MCP server, or a docs page.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

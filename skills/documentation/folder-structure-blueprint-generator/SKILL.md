@@ -5,6 +5,7 @@ description: >-
   Auto-detects project types (.NET, Java, React, Angular, Python, Node.js, Flutter), generates
   detailed blueprints with visualization options, naming conventions, file placement patterns, and
   extension templates for maintaining consistent code organization across diverse technology stacks.
+  Use when documenting a project's folder layout or setting conventions for where new code goes.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

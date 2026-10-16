@@ -10,7 +10,7 @@ description: >-
   glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive,
   skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography,
   font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for
-  component search and examples.
+  component search and examples. Use when designing, building, or reviewing UI for web or mobile apps.
 license: MIT
 source: "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
 attribution: "nextlevelbuilder/ui-ux-pro-max-skill by Next Level Builder"

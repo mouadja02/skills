@@ -1,6 +1,9 @@
 ---
 name: webapp-testing
-description: Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs
+description: >-
+  Toolkit for interacting with and testing local web applications using Playwright. Supports verifying
+  frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser
+  logs. Use when checking or debugging a locally running web app in a real browser.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

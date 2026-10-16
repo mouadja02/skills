@@ -1,6 +1,9 @@
 ---
 name: python-azure-iot-edge-modules
-description: 'Build and operate Python Azure IoT Edge modules with robust messaging, deployment manifests, observability, and production readiness checks'
+description: >-
+  Build and operate Python Azure IoT Edge modules with robust messaging, deployment manifests,
+  observability, and production readiness checks. Use when writing, deploying, or hardening a Python
+  module for Azure IoT Edge, including telemetry filtering and offline retries.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

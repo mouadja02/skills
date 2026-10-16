@@ -3,7 +3,8 @@ name: copilot-instructions-blueprint-generator
 description: >-
   Technology-agnostic blueprint generator for creating comprehensive copilot-instructions.md files
   that guide GitHub Copilot to produce code consistent with project standards, architecture patterns,
-  and exact technology versions by analyzing existing codebase patterns and avoiding assumptions.
+  and exact technology versions by analyzing existing codebase patterns and avoiding assumptions. Use
+  when a repository needs a copilot-instructions.md that reflects its real stack and conventions.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT

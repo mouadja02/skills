@@ -5,7 +5,8 @@ description: >-
   comprehensive repository documentation. Scans .github/copilot directory files and
   copilot-instructions.md to extract project information, technology stack, architecture, development
   workflow, coding standards, and testing approaches while generating well-structured markdown
-  documentation with proper formatting, cross-references, and developer-focused content.
+  documentation with proper formatting, cross-references, and developer-focused content. Use when a
+  repository needs a new or rewritten README based on its existing docs.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

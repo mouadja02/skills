@@ -1,6 +1,9 @@
 ---
 name: power-bi-model-design-review
-description: 'Comprehensive Power BI data model design review prompt for evaluating model architecture, relationships, and optimization opportunities'
+description: >-
+  Comprehensive Power BI data model design review prompt for evaluating model architecture,
+  relationships, and optimization opportunities. Use when reviewing or redesigning a Power BI semantic
+  model.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

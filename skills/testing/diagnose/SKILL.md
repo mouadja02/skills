@@ -1,6 +1,10 @@
 ---
 name: diagnose
-description: "Perform a systematic diagnostic scan of an AI workflow across 5 quality dimensions — prompt quality, context efficiency, tool health, architecture fitness, and safety — producing a scored report with prioritized remediation actions"
+description: >-
+  Perform a systematic diagnostic scan of an AI workflow across 5 quality dimensions — prompt quality,
+  context efficiency, tool health, architecture fitness, and safety — producing a scored report with
+  prioritized remediation actions. Use when an AI workflow underperforms and you need to know where to
+  fix it first.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

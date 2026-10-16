@@ -4,10 +4,10 @@ source: https://github.com/aws/agent-toolkit-for-aws
 attribution: "Amazon Web Services - agent-toolkit-for-aws (Apache-2.0)"
 name: aws-network-monitoring
 description: >-
-  Installs, configures, and troubleshoots Network Flow Monitor agents on EC2 instances
-  to monitor network path health. Covers agent installation, IAM permissions, monitoring
-  network paths, and troubleshooting agents reporting no metrics, HTTP 403 errors, or
-  connectivity failures.
+  Installs, configures, and troubleshoots Network Flow Monitor agents on EC2 instances to monitor
+  network path health. Covers agent installation, IAM permissions, monitoring network paths, and
+  troubleshooting agents reporting no metrics, HTTP 403 errors, or connectivity failures. Use when
+  setting up Network Flow Monitor or when its agents report no metrics or fail.
 version: 1
 ---
 

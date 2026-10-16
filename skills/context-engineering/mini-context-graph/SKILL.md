@@ -1,11 +1,12 @@
 ---
 name: mini-context-graph
-description: |
-  A persistent, compounding knowledge base combining Karpathy's LLM Wiki pattern
-  with a structured knowledge graph. Ingest documents once — the LLM writes wiki
-  pages, extracts entities/relations into the graph, and stores raw content for
-  evidence retrieval. Knowledge accumulates and cross-references; it is never
-  re-derived from scratch.
+description: >-
+  A persistent, compounding knowledge base combining Karpathy's LLM Wiki pattern with a structured
+  knowledge graph. Ingest documents once — the LLM writes wiki pages, extracts entities/relations into
+  the graph, and stores raw content for evidence retrieval. Knowledge accumulates and
+  cross-references; it is never re-derived from scratch. Use when building a knowledge base from many
+  documents that should accumulate and cross-reference over time instead of being re-read each
+  session.
 source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
 attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 license: MIT

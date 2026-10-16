@@ -1,6 +1,9 @@
 ---
 name: using-streamlit-markdown
-description: Covers all Markdown features in Streamlit including GitHub-flavored syntax plus Streamlit extensions like colored text, badges, Material icons, and LaTeX
+description: >-
+  Covers all Markdown features in Streamlit including GitHub-flavored syntax plus Streamlit extensions
+  like colored text, badges, Material icons, and LaTeX. Use when formatting text in a Streamlit app
+  with st.markdown or related elements.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

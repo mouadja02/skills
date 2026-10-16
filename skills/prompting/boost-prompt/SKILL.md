@@ -1,6 +1,9 @@
 ---
 name: boost-prompt
-description: 'Interactive prompt refinement workflow: interrogates scope, deliverables, constraints; copies final markdown to clipboard; never writes code. Requires the Joyride extension'
+description: >-
+  Interactive prompt refinement workflow: interrogates scope, deliverables, constraints; copies final
+  markdown to clipboard; never writes code. Requires the Joyride extension. Use in VS Code with
+  Joyride when a prompt needs sharpening before it is used.
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

@@ -1,6 +1,9 @@
 ---
 name: vscode-ext-localization
-description: 'Guidelines for proper localization of VS Code extensions, following VS Code extension development guidelines, libraries and good practices'
+description: >-
+  Guidelines for proper localization of VS Code extensions, following VS Code extension development
+  guidelines, libraries and good practices. Use when localizing a VS Code extension or adding a new
+  language to one.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT

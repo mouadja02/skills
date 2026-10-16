@@ -1,6 +1,9 @@
 ---
 name: winapp-cli
-description: 'Windows App Development CLI (winapp) for building, packaging, signing, debugging, and UI-automating Windows applications'
+description: >-
+  Windows App Development CLI (winapp) for building, packaging, signing, debugging, and UI-automating
+  Windows applications. Use when building, packaging, signing, or testing a Windows app from the
+  command line.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 license: MIT
