@@ -4,12 +4,12 @@ description: >-
   Manage Azure DevOps resources via CLI including projects, repos, pipelines, builds, pull requests,
   work items, artifacts, and service endpoints. Use when automating or scripting Azure DevOps from the
   command line with az devops.
-source: "https://github.com/microsoft/azure-skills"
-attribution: "microsoft/azure-skills by Microsoft Azure"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Azure DevOps CLI
 

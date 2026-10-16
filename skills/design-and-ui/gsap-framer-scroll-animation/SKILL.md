@@ -14,12 +14,12 @@ description: >-
 metadata:
   author: 'Utkarsh Patrikar'
   author_url: 'https://github.com/utkarsh232005'
-source: "https://github.com/greensock/gsap-skills"
-attribution: "greensock/gsap-skills by GreenSock"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) by [GreenSock](https://greensock.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # GSAP & Framer Motion — Scroll Animations Skill
 

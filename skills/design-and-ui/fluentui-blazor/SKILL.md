@@ -8,12 +8,12 @@ description: >
   FluentDialog, FluentToast, FluentNavMenu, FluentTextField, FluentSelect,
   FluentAutocomplete, FluentDesignTheme, or any component prefixed with "Fluent".
   Also use when troubleshooting missing providers, JS interop issues, or theming.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Fluent UI Blazor — Consumer Usage Guide
 

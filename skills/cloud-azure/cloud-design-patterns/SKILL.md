@@ -5,12 +5,12 @@ description: >-
   across reliability, performance, messaging, security, and deployment categories. Use when choosing
   architecture patterns for reliability, performance, messaging, or security in a distributed cloud
   system.
-source: "https://github.com/microsoft/azure-skills"
-attribution: "microsoft/azure-skills by Microsoft Azure"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Cloud Design Patterns
 

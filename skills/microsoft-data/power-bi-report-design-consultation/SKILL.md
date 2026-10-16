@@ -4,12 +4,12 @@ description: >-
   Power BI report visualization design prompt for creating effective, user-friendly, and accessible
   reports with optimal chart selection and layout design. Use when designing or reviewing the layout
   and visuals of a Power BI report.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Power BI Report Visualization Designer
 

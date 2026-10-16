@@ -4,12 +4,12 @@ description: >-
   Generates quickstart Python snippets for the Dataverse SDK: installation, client creation with
   InteractiveBrowserCredential, single-record CRUD, bulk create and update, and paged retrieval. Use
   when getting started with Dataverse from Python.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 You are assisting with Microsoft Dataverse SDK for Python (preview).
 Generate concise Python snippets that:

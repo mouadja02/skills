@@ -4,12 +4,12 @@ description: >-
   Containerizes an ASP.NET (.NET Framework) project for Windows Docker containers, creating a
   Dockerfile and .dockerignore tailored to the project's settings. Use when moving a legacy .NET
   Framework web app into Windows containers.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # ASP.NET .NET Framework Containerization Prompt
 

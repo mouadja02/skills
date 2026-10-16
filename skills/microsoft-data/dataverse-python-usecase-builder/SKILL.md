@@ -4,12 +4,12 @@ description: >-
   Designs complete Dataverse SDK solutions for a described business use case: data model, tables and
   relationships, operations, and Python implementation. Use when turning a business need into a
   Dataverse-backed Python solution.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # System Instructions
 

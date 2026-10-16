@@ -5,12 +5,12 @@ description: >-
   operations, cost, and a phased delivery plan with concrete implementation artifacts. Use when
   planning an IoT or Smart City platform on Azure (traffic, lighting, waste, sensors) from
   requirements to a delivery roadmap.
-source: "https://github.com/microsoft/azure-skills"
-attribution: "microsoft/azure-skills by Microsoft Azure"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Azure Smart City IoT Solution Builder
 

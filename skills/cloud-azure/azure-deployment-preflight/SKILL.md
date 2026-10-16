@@ -4,12 +4,12 @@ description: >-
   Validates Azure deployments before they run: Bicep syntax, what-if previews, and permission checks.
   Use before azd up, azd provision, or az deployment, when preparing or reviewing Bicep files, or to
   preview what a deployment will change.
-source: "https://github.com/microsoft/azure-skills"
-attribution: "microsoft/azure-skills by Microsoft Azure"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Azure Deployment Preflight Validation
 

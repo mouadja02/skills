@@ -4,12 +4,12 @@ description: >-
   Manages NuGet packages in .NET projects through the dotnet CLI: add, remove, and update with version
   verification, including central package management (Directory.Packages.props). Use when adding,
   removing, or upgrading NuGet dependencies.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # NuGet Manager
 

@@ -3,12 +3,12 @@ name: dotnet-design-pattern-review
 description: >-
   Reviews C#/.NET code for how design patterns are implemented and suggests improvements without
   changing code. Use when assessing whether patterns in a .NET solution are applied well.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # .NET/C# Design Pattern Review
 

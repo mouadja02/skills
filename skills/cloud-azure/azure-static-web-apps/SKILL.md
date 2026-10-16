@@ -4,12 +4,12 @@ description: >-
   Creates, configures, and deploys Azure Static Web Apps with the SWA CLI, including local emulation,
   API backends, auth simulation, and staticwebapp.config.json. Use when hosting a static frontend with
   optional serverless APIs on Azure or debugging an SWA deployment.
-source: "https://github.com/microsoft/azure-skills"
-attribution: "microsoft/azure-skills by Microsoft Azure"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 ## Overview
 

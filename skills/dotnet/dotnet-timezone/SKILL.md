@@ -4,12 +4,12 @@ description: >-
   Gives production-safe time zone handling for .NET and C#: TimeZoneInfo, DateTimeOffset, IANA versus
   Windows IDs, DST edge cases, and conversions. Use when C# code stores, converts, or displays times
   across time zones.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # .NET Timezone
 

@@ -4,12 +4,12 @@ description: >-
   Generates production Python code for the Dataverse SDK with advanced patterns: transient-error
   retries with backoff, batch operations, OData query optimization, table metadata, DataverseConfig
   tuning, and cache management. Use when Dataverse Python code must be robust and efficient.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 You are a Dataverse SDK for Python expert. Generate production-ready Python code that demonstrates:
 

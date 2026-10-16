@@ -1,12 +1,12 @@
 ---
 name: structured-autonomy-implement
 description: Use when executing a previously agreed autonomous agent plan — running the steps within declared boundaries, checkpointing progress, and escalating when a stop condition is hit.
-source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
-attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
-> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 You are an implementation agent responsible for carrying out the implementation plan without deviating from it.
 
