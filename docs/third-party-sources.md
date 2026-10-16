@@ -364,7 +364,7 @@ change.
 | Skill | Words before → after | Moved to `references/` |
 | --- | --- | --- |
 | `code-quality/quality-playbook` | 41,770 → 6,000 | One file per phase (0–7), recheck mode, artifact contract, run-state rules, runner mode. The phase prompts in `phase_prompts/` now point at the phase files, and two stale `SKILL.md:<line>` citations were replaced with section names. |
-| `cloud-aws/database/amazon-dynamodb` | 18,531 → 5,800 | Numbered axioms (data modeling, integration, mechanics), patterns, glossary, cost estimation, live validation, iteration loop, best practices. Axiom numbers are unchanged, so citations such as "Mechanics #18" still resolve. |
+| `cloud-aws/database/amazon-dynamodb` | 20,892 → 6,200 (after re-syncing to upstream v2) | The design interview, numbered axioms (data modeling, integration, mechanics), patterns, glossary, cost estimation, live validation, iteration loop, best practices. Axiom numbers are unchanged, so citations such as "Mechanics #18" still resolve. |
 | `design-and-ui/hallmark` | 9,250 → 6,800 | Component scope, the pre-flight scan, and the `study` verb (now `references/verbs/study.md`, next to `audit.md` and `redesign.md`). |
 | `finance/dcf-model` | 6,935 → 3,300 | Correct patterns and common mistakes, Excel model structure, and the case selector. The five most common mistakes stay inline. |
 | `databases/cosmosdb-datamodeling` | 6,551 → 3,000 | The two document templates and the design patterns. |
@@ -381,6 +381,18 @@ scripts or data. Script paths use upstream's skill-relative `scripts/search.py` 
 plugin-root form, and upstream's `scripts/tests/` suite is left out because it needs the upstream
 repository layout.
 
+`cloud-aws/database/amazon-dynamodb` was first re-synced to upstream v2
+([aws/agent-toolkit-for-aws@44ba1a54](https://github.com/aws/agent-toolkit-for-aws/tree/44ba1a5451913998815111cc2d518f5c45f95ef7/skills/specialized-skills/database-skills/amazon-dynamodb)),
+which adds native vector search (`references/vector-search.md`), a guardrail for MCP-loaded versus locally
+installed copies, and updated scripts. It was then split the same way.
+
+Five skills had `license` values that were prose rather than SPDX identifiers ("Complete terms in
+LICENSE.txt"). They now name the license their bundled file holds: `azure-resource-visualizer` and
+`winmd-api-search` are MIT; `frontend-design`, `theme-factory`, and `impeccable` are Apache-2.0.
+`impeccable`'s license line pointed at a `NOTICE.md` the folder did not ship. That file is now included,
+taken from upstream at `5613891a` to match the local version. It credits Anthropic's frontend-design skill
+and ehmo's typecraft-guide-skill.
+
 `code-quality/quality-playbook` also gained the credit the October audit missed. Andrew Stellman wrote it
 in [andrewstellman/quality-playbook](https://github.com/andrewstellman/quality-playbook) (Apache-2.0) and
 contributed it to github/awesome-copilot.
@@ -394,7 +406,7 @@ contributed it to github/awesome-copilot.
 
 Source: https://github.com/github/awesome-copilot
 Credit: github/awesome-copilot by GitHub Community
-License: Apache-2.0; Complete terms in LICENSE.txt; MIT
+License: Apache-2.0; MIT
 
 | Install path | License |
 | --- | --- |
@@ -561,7 +573,7 @@ License: Apache-2.0; Complete terms in LICENSE.txt; MIT
 | [`dotnet/nuget-manager`](../skills/dotnet/nuget-manager/SKILL.md) | MIT |
 | [`dotnet/vscode-ext-commands`](../skills/dotnet/vscode-ext-commands/SKILL.md) | MIT |
 | [`dotnet/vscode-ext-localization`](../skills/dotnet/vscode-ext-localization/SKILL.md) | MIT |
-| [`dotnet/winmd-api-search`](../skills/dotnet/winmd-api-search/SKILL.md) | Complete terms in LICENSE.txt |
+| [`dotnet/winmd-api-search`](../skills/dotnet/winmd-api-search/SKILL.md) | MIT |
 | [`dotnet/winui3-migration-guide`](../skills/dotnet/winui3-migration-guide/SKILL.md) | MIT |
 | [`engineering-craft/code-tour`](../skills/engineering-craft/code-tour/SKILL.md) | MIT |
 | [`engineering-craft/game-engine`](../skills/engineering-craft/game-engine/SKILL.md) | MIT |
@@ -889,7 +901,7 @@ License: Apache-2.0
 ### steipete/agent-scripts
 
 Source: https://github.com/steipete/agent-scripts
-License: Complete terms in LICENSE.txt; MIT
+License: Apache-2.0; MIT
 
 | Install path | License |
 | --- | --- |
@@ -901,7 +913,7 @@ License: Complete terms in LICENSE.txt; MIT
 | [`coding/swiftui-liquid-glass`](../skills/coding/swiftui-liquid-glass/SKILL.md) | MIT |
 | [`coding/swiftui-performance-audit`](../skills/coding/swiftui-performance-audit/SKILL.md) | MIT |
 | [`coding/swiftui-view-refactor`](../skills/coding/swiftui-view-refactor/SKILL.md) | MIT |
-| [`design-and-ui/frontend-design`](../skills/design-and-ui/frontend-design/SKILL.md) | Complete terms in LICENSE.txt |
+| [`design-and-ui/frontend-design`](../skills/design-and-ui/frontend-design/SKILL.md) | Apache-2.0 |
 | [`dev-workflow/browser-use`](../skills/dev-workflow/browser-use/SKILL.md) | MIT |
 | [`dev-workflow/codex-debugging`](../skills/dev-workflow/codex-debugging/SKILL.md) | MIT |
 | [`dev-workflow/create-cli`](../skills/dev-workflow/create-cli/SKILL.md) | MIT |
@@ -1276,11 +1288,11 @@ License: not declared
 
 Source: https://github.com/anthropics/skills
 Credit: anthropics/skills by Anthropic
-License: Apache-2.0; Complete terms in LICENSE.txt
+License: Apache-2.0
 
 | Install path | License |
 | --- | --- |
-| [`design-and-ui/theme-factory`](../skills/design-and-ui/theme-factory/SKILL.md) | Complete terms in LICENSE.txt |
+| [`design-and-ui/theme-factory`](../skills/design-and-ui/theme-factory/SKILL.md) | Apache-2.0 |
 | [`skills-management/skill-creator`](../skills/skills-management/skill-creator/SKILL.md) | Apache-2.0 |
 
 ### hashicorp/agent-skills
@@ -1309,12 +1321,12 @@ License: Apache-2.0
 
 Source: https://github.com/microsoft/azure-skills
 Credit: microsoft/azure-skills by Microsoft Azure
-License: Complete terms in LICENSE.txt; MIT
+License: MIT
 
 | Install path | License |
 | --- | --- |
 | [`cloud-azure/appinsights-instrumentation`](../skills/cloud-azure/appinsights-instrumentation/SKILL.md) | MIT |
-| [`cloud-azure/azure-resource-visualizer`](../skills/cloud-azure/azure-resource-visualizer/SKILL.md) | Complete terms in LICENSE.txt |
+| [`cloud-azure/azure-resource-visualizer`](../skills/cloud-azure/azure-resource-visualizer/SKILL.md) | MIT |
 
 ### vercel-labs/agent-skills
 
@@ -1567,11 +1579,11 @@ License: MIT
 
 Source: https://github.com/pbakaus/impeccable
 Credit: pbakaus/impeccable by Paul Bakaus
-License: Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for att...
+License: Apache-2.0
 
 | Install path | License |
 | --- | --- |
-| [`design-and-ui/impeccable`](../skills/design-and-ui/impeccable/SKILL.md) | Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for att... |
+| [`design-and-ui/impeccable`](../skills/design-and-ui/impeccable/SKILL.md) | Apache-2.0 |
 
 ### supabase/agent-skills
 
