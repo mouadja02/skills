@@ -219,7 +219,7 @@ Primary write throughput, network saturation, or replica sized below primary.
 - [Timestream for InfluxDB Pricing](https://aws.amazon.com/timestream/pricing/)
 - [InfluxDB 3 Documentation](https://docs.influxdata.com/influxdb3/)
 - [Schema Design Best Practices](https://docs.aws.amazon.com/timestream/latest/developerguide/schema-design-best-practices.html)
-- [Processing Engine Documentation](https://docs.influxdata.com/influxdb3/cloud-dedicated/process-data/process-engine/)
+- [Processing Engine Documentation](https://docs.influxdata.com/influxdb3/enterprise/reference/processing-engine/)
 
 ## Handoff from aws-database-selection
 

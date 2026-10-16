@@ -150,7 +150,6 @@ Depending on the programming language, for each link in list below, run `#fetch 
 - [AngularJS App Style Guide](https://github.com/mgechev/angularjs-style-guide)
 - [jQuery Style Guide](https://contribute.jquery.org/style-guide/js/)
 - [JavaScript Style Guide](https://www.w3schools.com/js/js_conventions.asp)
-- [JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)
 - [Kotlin Style Guide](https://kotlinlang.org/docs/coding-conventions.html)
 - [Markdown Style Guide](https://cirosantilli.com/markdown-style-guide/)
 - [Perl Style Guide](https://perldoc.perl.org/perlstyle)

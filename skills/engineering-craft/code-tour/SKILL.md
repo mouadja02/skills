@@ -47,9 +47,9 @@ Find more with the GitHub code search: https://github.com/search?q=path%3A**%2F*
 | `directory` + `file+line` (contributor onboarding) | https://github.com/coder/code-server/blob/main/.tours/contributing.tour |
 | `selection` + `file+line` + intro content step (accessibility project) | https://github.com/a11yproject/a11yproject.com/blob/main/.tours/code-tour.tour |
 | Minimal tutorial — tight `file+line` narration for interactive learning | https://github.com/lostintangent/rock-paper-scissors/blob/master/main.tour |
-| Multi-tour repo with `nextTour` chaining (cloud native OCI walkthroughs) | https://github.com/lucasjellema/cloudnative-on-oci-2021/blob/main/.tours/introduction.tour |
-| `isPrimary: true` (marks the onboarding entry point) | https://github.com/nickvdyck/webbundlr/blob/main/.tours/getting-started.tour |
-| `pattern` instead of `line` (regex-anchored steps) | https://github.com/nickvdyck/webbundlr/blob/main/.tours/architecture.tour |
+| Multi-tour repo with `nextTour` chaining (serverless RAG chat walkthroughs) | https://github.com/Azure-Samples/serverless-chat-langchainjs/blob/main/.tours/4-query-retrieval.tour |
+| `isPrimary: true` (marks the onboarding entry point) | https://github.com/Azure-Samples/serverless-chat-langchainjs/blob/main/.tours/1-rag-overview.tour |
+| `pattern` instead of `line` (regex-anchored steps) | https://github.com/microsoft/codetour/blob/main/README.md (the `pattern` step property) |
 
 **Raw content tip:** Prefix `raw.githubusercontent.com` and drop `/blob/` for raw JSON access.
 

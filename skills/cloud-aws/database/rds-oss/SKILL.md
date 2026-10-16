@@ -62,7 +62,7 @@ If a user asks about any Aurora-specific concept, route to `amazon-aurora`. If a
 
 When a user asks to create or provision a new RDS MySQL, MariaDB, or PostgreSQL instance for production use, you MUST apply the following best practices by default:
 
-1. **Use the latest stable major version** — run `aws rds describe-db-engine-versions --engine <engine> --query "DBEngineVersions[].EngineVersion"` to find the latest. For MySQL, prefer 8.4.x over 8.0 (8.0 has an earlier end-of-standard-support date than 8.4 — see [RDS Extended Support](https://aws.amazon.com/rds/extended-support/) for dates). For PostgreSQL, use the latest major. For MariaDB, use the latest major.
+1. **Use the latest stable major version** — run `aws rds describe-db-engine-versions --engine <engine> --query "DBEngineVersions[].EngineVersion"` to find the latest. For MySQL, prefer 8.4.x over 8.0 (8.0 has an earlier end-of-standard-support date than 8.4 — see [RDS Extended Support](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html) for dates). For PostgreSQL, use the latest major. For MariaDB, use the latest major.
 2. **Enable Multi-AZ** — set `--multi-az` for automatic failover.
 3. **Enable storage encryption using a customer-managed KMS key** — set `--storage-encrypted --kms-key-id <key-arn>`. A customer-managed key gives full control over key rotation, access policies, and cross-account sharing.
 4. **Disable public access** — set `--no-publicly-accessible` to ensure the instance is not accessible from the internet.
@@ -258,5 +258,5 @@ Do NOT grant write/admin beyond the permissions listed above to work around perm
 - [RDS MySQL upgrades](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.MySQL.html) · [RDS MariaDB upgrades](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.MariaDB.html) · [RDS PostgreSQL upgrades](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html)
 - [RDS Reserved Instances](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html) · [Database Savings Plans](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html)
 - [RDS Proxy](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html) · [RDS Blue/Green Deployments](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html)
-- [RDS Extended Support](https://aws.amazon.com/rds/extended-support/)
+- [RDS Extended Support](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html)
 - [RDS Security Best Practices](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_BestPractices.Security.html)

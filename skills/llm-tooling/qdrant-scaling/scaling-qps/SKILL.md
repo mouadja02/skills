@@ -37,7 +37,7 @@ If a single node is saturated on CPU after applying the tuning above, scale hori
 
 - Shard replicas serve queries from replicated shards, distributing read load across nodes
 - Each replica adds independent query capacity without re-sharding
-- Use `replication_factor: 2+` and route reads to replicas [Distributed deployment](https://search.qdrant.tech/md/documentation/operations/distributed_deployment/?s=replication)
+- Use `replication_factor: 2+` and route reads to replicas [Distributed deployment](https://search.qdrant.tech/md/documentation/scaling/distributed_deployment/?s=replication)
 
 See also [Horizontal Scaling](https://github.com/mouadja02/skills/tree/main/skills/llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling) for general horizontal scaling guidance.
 
@@ -50,7 +50,7 @@ In this case:
 - Upgrade to provisioned IOPS or local NVMe first. See impact of disk performance to vector search in [Disk performance article](https://qdrant.tech/articles/memory-consumption/)
 - Use `io_uring` on Linux (kernel 5.11+) [io_uring article](https://qdrant.tech/articles/io_uring/)
 - In case of quantized vectors, prefer global rescoring over per-segment rescoring to reduce disk reads. Example in the [tutorial](https://search.qdrant.tech/md/documentation/tutorials-operations/large-scale-search/?s=search-query)
-- Configure higher number of search threads to parallelize disk reads. Default is `cpu_count - 1`, which is optimal for RAM-based search but may be too low for disk-based search. See [configuration reference](https://search.qdrant.tech/md/documentation/operations/configuration/?s=configuration-options)
+- Configure higher number of search threads to parallelize disk reads. Default is `cpu_count - 1`, which is optimal for RAM-based search but may be too low for disk-based search. See [configuration reference](https://search.qdrant.tech/md/documentation/ops-configuration/configuration/?s=configuration-options)
 - If still saturated, scale out horizontally (each node adds independent IOPS)
 
 

@@ -913,7 +913,7 @@ The SDK manages the CLI process lifecycle automatically. All communication happe
 - **GitHub MCP Server**: https://github.com/github/github-mcp-server
 - **MCP Servers Directory**: https://github.com/modelcontextprotocol/servers
 - **Feature Guides**: https://github.com/github/copilot-sdk/tree/main/docs/features
-- **Node.js Samples**: https://github.com/github/copilot-sdk/tree/main/nodejs/samples
+- **Node.js Samples**: https://github.com/github/copilot-sdk/tree/main/nodejs/examples
 
 ## Status
 

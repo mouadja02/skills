@@ -52,7 +52,7 @@ Present this as a multi-select checklist. Items marked **ON** are pre-selected d
 | Datetime | `openrouter:datetime` | ON |
 | Image Generation | `openrouter:image_generation` | OFF |
 
-Server tools go in the `tools` array alongside user-defined tools. No client code needed — OpenRouter executes them. Docs: [openrouter.ai/docs/guides/features/server-tools](https://openrouter.ai/docs/guides/features/server-tools/overview).
+Server tools go in the `tools` array alongside user-defined tools. No client code needed — OpenRouter executes them. Docs: [openrouter.ai/docs/guides/features/server-tools](https://openrouter.ai/docs/guides/features/server-tools).
 
 ### User-Defined Tools (client-side, generated into src/tools/)
 

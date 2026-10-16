@@ -115,18 +115,17 @@ For each file, follow these principles:
 
 **Examples:**
 ```md
-<!-- Based on: https://github.com/github/awesome-copilot/blob/main/instructions/react.instructions.md -->
+<!-- Based on: https://github.com/github/awesome-copilot/blob/main/instructions/nodejs-javascript-vitest.instructions.md -->
 ---
-applyTo: "**/*.jsx,**/*.tsx"
-description: "React development best practices"
+applyTo: "**/*.test.js,**/*.test.ts"
+description: "JavaScript testing with Vitest"
 ---
-# React Development Guidelines
+# Vitest Testing Guidelines
 ...
 ```
 
 ```md
-<!-- Inspired by: https://github.com/github/awesome-copilot/blob/main/instructions/java.instructions.md -->
-<!-- and: https://github.com/github/awesome-copilot/blob/main/instructions/spring-boot.instructions.md -->
+<!-- Inspired by: https://github.com/github/awesome-copilot/blob/main/instructions/springboot.instructions.md -->
 ---
 applyTo: "**/*.java"
 description: "Java Spring Boot development standards"
