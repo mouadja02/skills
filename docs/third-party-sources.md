@@ -265,6 +265,14 @@ here no longer received fixes:
 | `cloud-aws/networking/networkfirewall` | Deleted from aws/agent-toolkit-for-aws ([#195](https://github.com/aws/agent-toolkit-for-aws/pull/195)). |
 | `personal-productivity/one-password` | Withdrawn from steipete/agent-scripts as a private workflow. |
 
+### Removed: no license to redistribute
+
+`agent-design/create-agent-tui`, `agent-design/create-headless-agent`, `llm-tooling/openrouter-agent-migration`,
+`llm-tooling/openrouter-images`, `llm-tooling/openrouter-models`, `llm-tooling/openrouter-oauth`, and
+`llm-tooling/openrouter-typescript-sdk` came from [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills),
+which declares no license. Without one, default copyright grants no right to redistribute, so they were
+removed. Install them from upstream directly, or re-import them here if OpenRouter adds a license.
+
 The BMad Method bundle (`agent-design/bmm-skills`) is a snapshot of BMAD v6. Upstream v7 has since
 retired the tech-writer agent, consolidated the research skills, and renamed several workflows. The
 bundle is kept whole because its module files wire those parts together; re-importing v7 is the
@@ -324,7 +332,7 @@ and `skills-management/skill-smell-audit`.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-753 of 807 skills declare an upstream `source`, across 58 sources. The remaining 54 declare no upstream source.
+746 of 800 skills declare an upstream `source`, across 57 sources. The remaining 54 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1144,22 +1152,6 @@ License: MIT
 | [`engineering-craft/domain-modeling`](../skills/engineering-craft/domain-modeling/SKILL.md) | MIT |
 | [`engineering-craft/improve-codebase-architecture`](../skills/engineering-craft/improve-codebase-architecture/SKILL.md) | MIT |
 | [`skills-management/writing-for-agents`](../skills/skills-management/writing-for-agents/SKILL.md) | MIT |
-
-### OpenRouterTeam/skills
-
-Source: https://github.com/OpenRouterTeam/skills
-Credit: OpenRouterTeam/skills by OpenRouter
-License: not declared
-
-| Install path | License |
-| --- | --- |
-| [`agent-design/create-agent-tui`](../skills/agent-design/create-agent-tui/SKILL.md) | not declared |
-| [`agent-design/create-headless-agent`](../skills/agent-design/create-headless-agent/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-agent-migration`](../skills/llm-tooling/openrouter-agent-migration/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-images`](../skills/llm-tooling/openrouter-images/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-models`](../skills/llm-tooling/openrouter-models/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-oauth`](../skills/llm-tooling/openrouter-oauth/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-typescript-sdk`](../skills/llm-tooling/openrouter-typescript-sdk/SKILL.md) | not declared |
 
 ### nextlevelbuilder/ui-ux-pro-max-skill
 

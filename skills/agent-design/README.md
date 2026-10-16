@@ -6,7 +6,7 @@
 
 Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces.
 
-**Total:** 58 skills.
+**Total:** 56 skills.
 
 ## Skills In This Category
 
@@ -52,9 +52,7 @@ Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-ag
 | [`bmad-retrospective`](bmm-skills/4-implementation/bmad-retrospective/SKILL.md) | `agent-design/bmm-skills/4-implementation/bmad-retrospective` | Post-epic review to extract lessons and assess success. Use when the user says "run a retrospective" or "lets retro the epic [epic]" |
 | [`bmad-sprint-planning`](bmm-skills/4-implementation/bmad-sprint-planning/SKILL.md) | `agent-design/bmm-skills/4-implementation/bmad-sprint-planning` | Generate sprint status tracking from epics. Use when the user says "run sprint planning" or "generate sprint plan" |
 | [`bmad-sprint-status`](bmm-skills/4-implementation/bmad-sprint-status/SKILL.md) | `agent-design/bmm-skills/4-implementation/bmad-sprint-status` | Summarize sprint status and surface risks. Use when the user says "check sprint status" or "show sprint status" |
-| [`create-agent-tui`](create-agent-tui/SKILL.md) | `agent-design/create-agent-tui` | Scaffolds a complete agent TUI in TypeScript using @openrouter/agent — like create-react-app for terminal agents. Generates a customizable terminal interface with three input styles, four tool display modes, ASCII banners, streaming outp... |
 | [`create-agentsmd`](create-agentsmd/SKILL.md) | `agent-design/create-agentsmd` | Generates a complete AGENTS.md at the repository root following the agents.md format: setup, build, test, style, and PR conventions coding agents need. Use when a repo has no AGENTS.md, when onboarding coding agents to a codebase, or whe... |
-| [`create-headless-agent`](create-headless-agent/SKILL.md) | `agent-design/create-headless-agent` | Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI. Use when building an OpenRouter-based agent that runs without a terminal UI, such as a C... |
 | [`deepagents-harness`](deepagents-harness/SKILL.md) | `agent-design/deepagents-harness` | Use when designing long-horizon agents that need subagents, isolated context windows, filesystem-backed work, persistence, human approval, MCP tools, or production tracing. |
 | [`durable-agent-workflows`](durable-agent-workflows/SKILL.md) | `agent-design/durable-agent-workflows` | Use when designing retryable or crash-resilient agent workflows, especially when tools can send, charge, publish, provision, or otherwise create duplicate side effects. |
 | [`expert-trace-skill-distillation`](expert-trace-skill-distillation/SKILL.md) | `agent-design/expert-trace-skill-distillation` | Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contras... |

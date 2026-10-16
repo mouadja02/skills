@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-10-16T10:21:54.435Z",
+  "generated_at": "2026-10-16T13:30:54.199Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 807,
+  "count": 800,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -43,7 +43,7 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 58,
+    "agent-design": 56,
     "agent-eval": 24,
     "api-backend": 12,
     "business-strategy": 39,
@@ -65,7 +65,7 @@
     "finance": 7,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 48,
+    "llm-tooling": 43,
     "marketing-and-growth": 26,
     "mcp": 15,
     "messaging": 1,
@@ -513,16 +513,6 @@
       "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
     },
     {
-      "name": "create-agent-tui",
-      "category": "agent-design",
-      "install_path": "agent-design/create-agent-tui",
-      "path": "skills/agent-design/create-agent-tui",
-      "depth": 2,
-      "description": "Scaffolds a complete agent TUI in TypeScript using @openrouter/agent — like create-react-app for terminal agents. Generates a customizable terminal interface with three input styles, four tool display modes, ASCII banners, streaming output, session persistence, and configurable tools. Use when building an agent, creating a TUI, scaffolding an agent project, or building a coding assistant.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
       "name": "create-agentsmd",
       "category": "agent-design",
       "install_path": "agent-design/create-agentsmd",
@@ -532,16 +522,6 @@
       "license": "MIT",
       "source": "https://github.com/github/awesome-copilot",
       "attribution": "github/awesome-copilot by GitHub Community"
-    },
-    {
-      "name": "create-headless-agent",
-      "category": "agent-design",
-      "install_path": "agent-design/create-headless-agent",
-      "path": "skills/agent-design/create-headless-agent",
-      "depth": 2,
-      "description": "Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI. Use when building an OpenRouter-based agent that runs without a terminal UI, such as a CLI tool, HTTP service, or queue worker.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
     },
     {
       "name": "deepagents-harness",
@@ -6405,56 +6385,6 @@
       "license": "MIT",
       "source": "https://github.com/steipete/agent-scripts",
       "attribution": "steipete/agent-scripts by Peter Steinberger"
-    },
-    {
-      "name": "openrouter-agent-migration",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-agent-migration",
-      "path": "skills/llm-tooling/openrouter-agent-migration",
-      "depth": 2,
-      "description": "Use when migrating TypeScript code from `@openrouter/sdk` to the standalone `@openrouter/agent` package — moving `callModel`, `tool()`, stop conditions, format converters, and streaming helpers, and updating imports when agent features no longer resolve from the SDK.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-images",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-images",
-      "path": "skills/llm-tooling/openrouter-images",
-      "depth": 2,
-      "description": "Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, transform, or alter an existing image with a text prompt.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-models",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-models",
-      "path": "skills/llm-tooling/openrouter-models",
-      "depth": 2,
-      "description": "Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance. Use when the user asks about available OpenRouter models, model pricing, model context lengths, model capabilities, provider latency or uptime, throughput limits, supported parameters, wants to search/filter/compare models, or find the fastest provider for a model.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-oauth",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-oauth",
-      "path": "skills/llm-tooling/openrouter-oauth",
-      "depth": 2,
-      "description": "Implement \"Sign In with OpenRouter\" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-typescript-sdk",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-typescript-sdk",
-      "path": "skills/llm-tooling/openrouter-typescript-sdk",
-      "depth": 2,
-      "description": "Integrates with 300+ models through the OpenRouter TypeScript SDK and agent packages using the callModel pattern: text generation, tools, streaming, and multi-turn conversations. Use when writing TypeScript that calls models through OpenRouter.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
     },
     {
       "name": "oracle",
