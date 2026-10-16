@@ -1,7 +1,12 @@
 ---
 name: architecture-blueprint-generator
 description: Project architecture blueprint — component diagrams, tech stack docs from codebase
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Comprehensive Project Architecture Blueprint Generator
 

@@ -1,7 +1,12 @@
 ---
 name: "senior-prompt-engineer"
 description: This skill should be used when the user asks to "optimize prompts", "design prompt templates", "evaluate LLM outputs", "A/B test prompts", "version prompts", "build agentic systems", "implement RAG", "create few-shot examples", "analyze token usage", or "design AI workflows". Covers prompt engineering patterns, A/B prompt testing with regression workflows, prompt versioning and governance, LLM evaluation frameworks, agent architectures, and structured output design.
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Senior Prompt Engineer
 

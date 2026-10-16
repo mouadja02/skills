@@ -2,7 +2,11 @@
 name: theme-factory
 description: Theme styling toolkit — slides, docs, HTML pages, 10+ styles, dark/light, custom palette
 license: Complete terms in LICENSE.txt
+source: "https://github.com/anthropics/skills"
+attribution: "anthropics/skills by Anthropic"
 ---
+
+> **Attribution:** Sourced from [anthropics/skills](https://github.com/anthropics/skills) by [Anthropic](https://www.anthropic.com), licensed Apache-2.0. Modified for this collection.
 
 
 # Theme Factory Skill

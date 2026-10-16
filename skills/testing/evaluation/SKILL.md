@@ -1,7 +1,12 @@
 ---
 name: evaluation
 description: This skill should be used when the user asks to "evaluate agent performance", "build test framework", "measure agent quality", "create evaluation rubrics", or mentions LLM-as-judge, multi-dimensional evaluation, agent testing, or quality gates for agent pipelines.
+license: MIT
+source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 ---
+
+> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan), licensed MIT. Modified for this collection.
 
 # Evaluation Methods for Agent Systems
 

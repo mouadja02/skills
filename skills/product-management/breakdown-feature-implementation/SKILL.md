@@ -1,7 +1,12 @@
 ---
 name: breakdown-feature-implementation
 description: 'Prompt for creating detailed feature implementation plans, following Epoch monorepo structure.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Feature Implementation Plan Prompt
 

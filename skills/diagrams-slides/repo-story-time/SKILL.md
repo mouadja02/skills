@@ -1,7 +1,12 @@
 ---
 name: repo-story-time
 description: 'Generate a comprehensive repository summary and narrative story from commit history'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 ## Role
 

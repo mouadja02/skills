@@ -1,7 +1,12 @@
 ---
 name: create-specification
 description: 'Create a new specification file for the solution, optimized for Generative AI consumption.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create Specification
 

@@ -1,7 +1,12 @@
 ---
 name: "senior-qa"
 description: React/Next.js test generation — Jest, RTL, Playwright, E2E from component scan
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Senior QA Engineer
 

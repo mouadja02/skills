@@ -1,7 +1,12 @@
 ---
 name: refactor-plan
 description: 'Create a concrete plan before starting a multi-file refactor'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Refactor Plan
 

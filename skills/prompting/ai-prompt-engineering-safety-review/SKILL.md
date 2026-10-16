@@ -1,7 +1,12 @@
 ---
 name: ai-prompt-engineering-safety-review
 description: Prompt safety review — bias, injection, ethical risks, scored with fixes
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # AI Prompt Engineering Safety Review & Improvement
 

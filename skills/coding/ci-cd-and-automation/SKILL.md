@@ -1,7 +1,12 @@
 ---
 name: ci-cd-and-automation
 description: Use when setting up a project's CI pipeline, adding or changing automated checks, configuring deployment pipelines, or debugging CI failures. Covers quality gates, pipeline stages, and what to verify automatically on every change.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # CI/CD and Automation
 

@@ -4,7 +4,12 @@ description: AppSec audit integrity — output quality standards, honesty rules,
 compatibility: 'Cross-platform. Works with any language or framework analyzed by AppSec agents.'
 metadata:
   version: '1.0'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Audit Integrity Skill
 

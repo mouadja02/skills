@@ -2,7 +2,12 @@
 name: javax-to-jakarta-migration
 description: "Migrate Java code from javax.* to jakarta.* namespace"
 argument-hint: "File, package, or module to migrate"
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # javax → jakarta Migration Skill
 

@@ -1,7 +1,12 @@
 ---
 name: api-and-interface-design
 description: Use when designing new API endpoints, defining module boundaries or contracts between teams, creating component prop interfaces, or changing an existing public interface. Covers naming, versioning, error shapes, and designing surfaces that are hard to misuse.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # API and Interface Design
 

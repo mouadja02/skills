@@ -1,7 +1,12 @@
 ---
 name: prompt-builder
 description: 'Guide users through creating high-quality GitHub Copilot prompts with proper structure, tools, and best practices.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Professional Prompt Builder
 

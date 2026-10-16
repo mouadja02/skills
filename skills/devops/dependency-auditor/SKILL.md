@@ -1,7 +1,12 @@
 ---
 name: "dependency-auditor"
 description: "Audit project dependencies for vulnerabilities, license compliance, and tree health across multiple language ecosystems"
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Dependency Auditor
 

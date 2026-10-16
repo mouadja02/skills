@@ -1,7 +1,12 @@
 ---
 name: freecad-scripts
 description: 'writing FreeCAD Python scripts, macros, and automation'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # FreeCAD Scripts
 

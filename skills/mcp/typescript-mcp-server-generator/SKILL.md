@@ -1,7 +1,12 @@
 ---
 name: typescript-mcp-server-generator
 description: 'Generate a complete MCP server project in TypeScript with tools, resources, and proper configuration'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Generate TypeScript MCP Server
 

@@ -1,7 +1,12 @@
 ---
 name: minecraft-plugin-development
 description: Minecraft Paper/Spigot/Bukkit plugin dev — plugin.yml, commands, events, Gradle
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Minecraft Plugin Development
 

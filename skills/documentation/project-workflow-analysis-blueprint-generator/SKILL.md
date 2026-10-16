@@ -1,7 +1,12 @@
 ---
 name: project-workflow-analysis-blueprint-generator
 description: End-to-end workflow docs — CI/CD, service boundaries, data flow, auto-detect project type
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Project Workflow Documentation Generator
 

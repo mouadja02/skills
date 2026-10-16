@@ -8,7 +8,12 @@ description: |
   - Auditing dependency pinning and version policies for agent components
   - Building provenance chains for agent plugin promotion (dev → staging → production)
   - Any request like "verify plugin integrity", "generate manifest", "check supply chain", or "sign this plugin"
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Agent Supply Chain Integrity
 

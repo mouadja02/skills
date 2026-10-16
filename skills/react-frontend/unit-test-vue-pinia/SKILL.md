@@ -2,7 +2,12 @@
 name: unit-test-vue-pinia
 category: testing
 description: 'Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # unit-test-vue-pinia
 

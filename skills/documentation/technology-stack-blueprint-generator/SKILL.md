@@ -1,7 +1,12 @@
 ---
 name: technology-stack-blueprint-generator
 description: Tech stack blueprint — analyzes codebase, generates architecture docs and dependency graphs
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Comprehensive Technology Stack Blueprint Generator
 

@@ -1,7 +1,12 @@
 ---
 name: update-markdown-file-index
 description: 'Update a markdown file section with an index/table of files from a specified folder.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Update Markdown File Index
 

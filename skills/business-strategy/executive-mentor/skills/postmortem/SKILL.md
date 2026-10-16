@@ -1,7 +1,12 @@
 ---
 name: "executive-mentor-postmortem"
 description: "Use after something went wrong — a failed deal, a missed quarter, a feature that flopped, a hire that did not work out. Produces an honest, blame-free account of what happened, why, and what changes as a result."
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # /em:postmortem — Honest Analysis of What Went Wrong
 

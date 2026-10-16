@@ -1,7 +1,12 @@
 ---
 name: security-review
 description: Codebase security scan — data flow tracing, OWASP top 10, secrets, dependency CVEs
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Security Review
 

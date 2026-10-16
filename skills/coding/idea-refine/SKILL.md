@@ -2,7 +2,12 @@
 name: idea-refine
 description: Use when refining a vague idea through divergent expansion, convergent focus, and assumption stress-testing before planning or implementation.
 version: "1.0.0"
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Idea Refine
 

@@ -1,7 +1,12 @@
 ---
 name: "ci-cd-pipeline-builder"
 description: "Generate pragmatic CI/CD pipelines tailored to a repo's detected stack"
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # CI/CD Pipeline Builder
 

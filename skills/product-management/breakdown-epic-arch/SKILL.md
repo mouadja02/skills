@@ -1,7 +1,12 @@
 ---
 name: breakdown-epic-arch
 description: 'Prompt for creating the high-level technical architecture for an Epic, based on a Product Requirements Document.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Epic Architecture Specification Prompt
 

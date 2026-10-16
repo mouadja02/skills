@@ -2,7 +2,12 @@
 name: make-repo-contribution
 description: Repo contribution — read guidance, file issue, branch, commit, PR workflow
 allowed-tools: Read Edit Bash(git:*) Bash(gh issue:*) Bash(gh pr:*)
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Contribution guidelines
 

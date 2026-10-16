@@ -9,7 +9,12 @@ description: |
   - Generating a compliance report for security review or audit
   - Comparing agent framework security features against the standard
   - Any request like "is my agent OWASP compliant?", "check ASI compliance", or "agentic security audit"
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Agent OWASP ASI Compliance Check
 

@@ -1,7 +1,12 @@
 ---
 name: create-tldr-page
 description: 'Create a tldr page from documentation URLs and command examples, requiring both URL and command name.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create TLDR Page
 

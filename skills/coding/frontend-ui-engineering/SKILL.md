@@ -1,7 +1,12 @@
 ---
 name: frontend-ui-engineering
 description: "Use when building or modifying user-facing interfaces: new components and pages, responsive layouts, interactivity and state management, or fixing visual and UX issues. Covers component architecture, styling, accessibility, and state boundaries."
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Frontend UI Engineering
 

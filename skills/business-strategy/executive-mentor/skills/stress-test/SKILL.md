@@ -1,7 +1,12 @@
 ---
 name: "executive-mentor-stress-test"
 description: "Use when a business assumption needs breaking before the market breaks it — revenue projections, market size, competitive moat, hiring velocity, or customer retention."
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # /em:stress-test — Business Assumption Stress Testing
 

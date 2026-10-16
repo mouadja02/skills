@@ -1,7 +1,12 @@
 ---
 name: dotnet-mcp-builder
 description: MCP servers in C#/.NET — tools, prompts, resources, STDIO/HTTP transports, MCP Apps, OAuth, routing
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Building MCP servers in .NET
 

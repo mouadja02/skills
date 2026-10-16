@@ -1,7 +1,12 @@
 ---
 name: linkedin-post-formatter
 description: LinkedIn posts — Unicode bold/italic, visual separators, structured sections, hooks
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # LinkedIn Post Formatter
 

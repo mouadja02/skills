@@ -1,7 +1,12 @@
 ---
 name: create-github-pull-request-from-specification
 description: 'Create GitHub Pull Request for feature request from specification file using pull_request_template.md template.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create GitHub Pull Request from Specification
 

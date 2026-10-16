@@ -1,6 +1,13 @@
 ---
 name: deep-research
-description: Deep research pipeline — 13 agents, 7 modes: full, quick brief, systematic lit review, more
+description: >-
+  Use when the user asks for deep or academic research — a literature review, PRISMA systematic review or
+  meta-analysis, fact-check, evidence synthesis, APA 7 research report, or Socratic guidance to sharpen a
+  vague research question. Runs a 13-agent pipeline with full, quick, review, lit-review, fact-check,
+  socratic, and systematic-review modes.
+license: CC-BY-NC-4.0
+source: "https://github.com/Imbad0202/academic-research-skills"
+attribution: "Imbad0202/academic-research-skills by Cheng-I Wu"
 metadata:
   version: "2.9.4"
   last_updated: "2026-05-18"
@@ -11,6 +18,10 @@ metadata:
     - academic-paper
     - academic-pipeline
 ---
+
+> **Attribution:** Sourced from [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) by [Cheng-I Wu](https://github.com/Imbad0202), licensed CC BY-NC 4.0 (non-commercial use only). Modified for this collection.
+>
+> **Standalone install:** this skill is one part of an upstream suite. The companion skills and files it cites — `academic-paper`, `academic-paper-reviewer`, `academic-pipeline`, `shared/` references, `.claude/CLAUDE.md`, and `scripts/check_pipeline_integrity.py` — are not bundled here. Install them from the upstream repository if you need the full research-to-paper pipeline; the research modes below work without them.
 
 # Deep Research — Universal Academic Research Agent Team
 

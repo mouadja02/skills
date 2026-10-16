@@ -1,7 +1,12 @@
 ---
 name: spec-driven-development
 description: "Use before writing code on anything non-trivial: a new project or feature, ambiguous or incomplete requirements, a change spanning multiple modules, an architectural decision, or work over ~30 minutes. Runs a gated Specify → Plan → Tasks → Implement workflow with human review at each phase. Skip for single-line fixes."
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Spec-Driven Development
 

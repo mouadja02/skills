@@ -10,7 +10,12 @@ description: |
   - Checking for environment variable usage vs. hardcoded credentials in MCP configs
   - Any request like "is my MCP config secure?", "audit my MCP servers", or "check .mcp.json"
   keywords: [mcp, security, audit, secrets, shell-injection, supply-chain, governance]
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # MCP Security Audit
 

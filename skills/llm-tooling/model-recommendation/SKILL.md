@@ -1,7 +1,12 @@
 ---
 name: model-recommendation
 description: 'Analyze chatmode or prompt files and recommend optimal AI models based on task complexity, required capabilities, and cost-efficiency'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # AI Model Recommendation for Copilot Chat Modes and Prompts
 

@@ -2,7 +2,11 @@
 name: karpathy-guidelines
 description: Behavioral guidelines to reduce common LLM coding mistakes
 license: MIT
+source: "https://github.com/forrestchang/andrej-karpathy-skills"
+attribution: "forrestchang/andrej-karpathy-skills by Jiayuan Zhang"
 ---
+
+> **Attribution:** Sourced from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) by [Jiayuan Zhang](https://github.com/forrestchang), licensed MIT. Modified for this collection.
 
 # Karpathy Guidelines
 

@@ -5,7 +5,12 @@ description: >
   and a syllabus, and wants to prepare for an exam. Extracts key definitions,
   points, keywords, diagrams, exam-ready sentences, and practice questions
   strictly from the provided material.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # exam-ready
 

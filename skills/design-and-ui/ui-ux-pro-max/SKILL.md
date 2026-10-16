@@ -1,7 +1,12 @@
 ---
 name: ui-ux-pro-max
 description: UI/UX design — 50+ styles, 161 palettes, 57 font pairs, 99 UX patterns, grids, accessibility
+license: MIT
+source: "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+attribution: "nextlevelbuilder/ui-ux-pro-max-skill by Next Level Builder"
 ---
+
+> **Attribution:** Sourced from [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) by [Next Level Builder](https://nextlevelbuilder.io), licensed MIT. Modified for this collection.
 
 # UI/UX Pro Max - Design Intelligence
 

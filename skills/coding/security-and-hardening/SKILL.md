@@ -1,7 +1,12 @@
 ---
 name: security-and-hardening
 description: Use when building anything that accepts user input, implementing authentication or authorization, storing or transmitting sensitive data, integrating external APIs, or adding file uploads, webhooks, or callbacks. Covers input validation, secrets, authz checks, and PII and payment handling.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Security and Hardening
 

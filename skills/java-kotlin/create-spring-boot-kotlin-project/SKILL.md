@@ -1,7 +1,12 @@
 ---
 name: create-spring-boot-kotlin-project
 description: Use when scaffolding a new Spring Boot project in Kotlin — generating the project skeleton, Gradle build, package layout, and baseline configuration.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create Spring Boot Kotlin project prompt
 

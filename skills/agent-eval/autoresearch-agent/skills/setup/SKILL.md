@@ -2,7 +2,12 @@
 name: "autoresearch-setup"
 description: "Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator"
 command: /ar:setup
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # /ar:setup — Create New Experiment
 

@@ -1,7 +1,12 @@
 ---
 name: lsp-setup
 description: LSP setup for any language — go-to-definition, find-refs, hover, diagnostics
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # LSP Setup for GitHub Copilot CLI
 

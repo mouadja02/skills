@@ -1,7 +1,12 @@
 ---
 name: "senior-secops"
 description: SecOps — app security, vuln management, compliance verification, secure dev practices
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Senior SecOps Engineer
 

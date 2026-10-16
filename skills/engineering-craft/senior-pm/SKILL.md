@@ -1,7 +1,12 @@
 ---
 name: "senior-pm"
 description: Senior PM — portfolio management, stakeholder mapping, risk, earned-value reporting
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Senior Project Management Expert
 

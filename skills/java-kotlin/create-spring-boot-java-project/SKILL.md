@@ -1,7 +1,12 @@
 ---
 name: create-spring-boot-java-project
 description: Use when scaffolding a new Spring Boot project in Java — generating the project skeleton, build file, package layout, and baseline configuration.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create Spring Boot Java project prompt
 

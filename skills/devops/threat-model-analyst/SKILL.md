@@ -1,7 +1,12 @@
 ---
 name: threat-model-analyst
 description: STRIDE-A threat model — single-repo analysis or incremental update, threat matrix, mitigations
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Threat Model Analyst
 

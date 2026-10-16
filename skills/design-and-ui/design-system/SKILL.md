@@ -6,7 +6,11 @@ license: MIT
 metadata:
   author: claudekit
   version: "1.0.0"
+source: "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+attribution: "nextlevelbuilder/ui-ux-pro-max-skill by Next Level Builder"
 ---
+
+> **Attribution:** Sourced from [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) by [Next Level Builder](https://nextlevelbuilder.io), licensed MIT. Modified for this collection.
 
 # Design System
 

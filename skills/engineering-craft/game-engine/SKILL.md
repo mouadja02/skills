@@ -1,7 +1,12 @@
 ---
 name: game-engine
 description: 'building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Game Engine Skill
 

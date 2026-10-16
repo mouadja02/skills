@@ -17,7 +17,11 @@ compatibility: 'Cross-platform (Windows, macOS, Linux). Works with any GitHub Co
 metadata:
   version: "1.1"
 argument-hint: 'Optional: time range ("last 2 weeks", "this half"), category ("infrastructure"), "backfill", or "review prep"'
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Brag Sheet — Work Impact Writer
 

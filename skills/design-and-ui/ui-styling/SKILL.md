@@ -6,7 +6,11 @@ license: MIT
 metadata:
   author: claudekit
   version: "1.0.0"
+source: "https://github.com/mrgoonie/claudekit-skills"
+attribution: "mrgoonie/claudekit-skills by mrgoonie"
 ---
+
+> **Attribution:** Sourced from [mrgoonie/claudekit-skills](https://github.com/mrgoonie/claudekit-skills) by [mrgoonie](https://github.com/mrgoonie), licensed MIT. Modified for this collection.
 
 # UI Styling Skill
 

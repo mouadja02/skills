@@ -1,7 +1,12 @@
 ---
 name: draw-io-diagram-generator
 description: draw.io XML — flowcharts, architecture, sequence, ER, UML, mxGraph shapes/styles
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Draw.io Diagram Generator
 

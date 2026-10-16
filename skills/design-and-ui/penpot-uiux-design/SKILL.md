@@ -1,7 +1,12 @@
 ---
 name: penpot-uiux-design
 description: Penpot UI/UX design via MCP — frames, auto-layout, components, styles, prototype
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Penpot UI/UX Design Guide
 

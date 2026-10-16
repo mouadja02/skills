@@ -1,7 +1,12 @@
 ---
 name: folder-structure-blueprint-generator
 description: Project folder structure docs — auto-detect type, document conventions, generate diagrams
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Project Folder Structure Blueprint Generator
 

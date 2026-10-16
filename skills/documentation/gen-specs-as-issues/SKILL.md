@@ -1,7 +1,12 @@
 ---
 name: gen-specs-as-issues
 description: 'This workflow guides you through a systematic approach to identify missing features, prioritize them, and create detailed specifications for implementation'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Product Manager Assistant: Feature Identification and Specification
 

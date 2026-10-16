@@ -1,7 +1,12 @@
 ---
 name: salesforce-component-standards
 description: Salesforce LWC/Aura/VF quality standards — SLDS 2, accessibility, performance
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Salesforce Component Quality Standards
 

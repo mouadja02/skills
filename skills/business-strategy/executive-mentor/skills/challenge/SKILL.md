@@ -1,7 +1,12 @@
 ---
 name: "executive-mentor-challenge"
 description: "Use when a plan needs a pre-mortem before it is committed to — systematically surfacing the weaknesses that would kill it, so it survives contact with reality rather than being abandoned."
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # /em:challenge — Pre-Mortem Plan Analysis
 

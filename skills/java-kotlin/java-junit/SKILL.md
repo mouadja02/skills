@@ -1,7 +1,12 @@
 ---
 name: java-junit
 description: 'Get best practices for JUnit 5 unit testing, including data-driven tests'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # JUnit 5+ Best Practices
 

@@ -1,7 +1,12 @@
 ---
 name: playwright-automation-fill-in-form
 description: 'Automate filling in a form using Playwright MCP'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Automating Filling in a Form with Playwright MCP
 

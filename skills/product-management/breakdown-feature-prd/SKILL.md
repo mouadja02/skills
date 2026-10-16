@@ -1,7 +1,12 @@
 ---
 name: breakdown-feature-prd
 description: 'Prompt for creating Product Requirements Documents (PRDs) for new features, based on an Epic.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Feature PRD Prompt
 
