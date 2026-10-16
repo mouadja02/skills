@@ -4,7 +4,7 @@ description: >-
   Creates distinctive, production-grade frontend interfaces by committing to a bold aesthetic
   direction (purpose, tone, typography, color, motion) before coding. Use when building web pages,
   components, or apps where the result should not look generic or templated.
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 ---

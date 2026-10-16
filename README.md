@@ -152,3 +152,12 @@ docs/                               Pages site and machine-readable manifests
 Skills come from a mix of original work and adapted public sources. Check individual skill folders for
 license files and attribution before redistributing a selected package. See
 [`docs/third-party-sources.md`](./docs/third-party-sources.md) for repo-level imported source notes.
+
+Each skill's `license` frontmatter field names its license. Most are MIT or Apache-2.0. A few carry extra
+obligations:
+
+- **CC-BY-SA-4.0** (the Trail of Bits skills: `differential-review`, `property-based-testing`,
+  `mutation-testing`, `supply-chain-risk-auditor`): share modified versions under the same license.
+- **MPL-2.0** (`terraform-style-guide`, `terraform-test`): modified files stay under MPL-2.0.
+- **CC-BY-NC-4.0** (`deep-research`): non-commercial use only. Leave it out of any commercial
+  redistribution.
