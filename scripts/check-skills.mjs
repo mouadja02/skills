@@ -152,6 +152,11 @@ async function main() {
       if (name.length > NAME_MAX) {
         errors.push(`${rel}: name is ${name.length} chars, over the ${NAME_MAX} limit`);
       }
+      // Anthropic's skill rules reserve these words; claude.ai and the Claude API
+      // refuse to upload a skill whose name contains one.
+      if (/anthropic|claude/.test(name)) {
+        warnings.push(`${rel}: name "${name}" contains a reserved word ("anthropic"/"claude") and cannot be uploaded to claude.ai or the Claude API`);
+      }
       // Top-level skills are the installable unit and must be addressable by
       // folder. Skills nested inside a bundle may carry a namespaced name to
       // stay globally unique (see llm-tooling/qdrant-*).
