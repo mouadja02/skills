@@ -6,21 +6,20 @@
 
 Personal productivity, reminders, communication, notes, and connected tools.
 
-**Total:** 10 skills.
+**Total:** 9 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`beeper`](beeper/SKILL.md) | `personal-productivity/beeper` | Beeper local cache: contact hints, room lookup, WhatsApp/iMessage traces, FTS search. |
+| [`beeper`](beeper/SKILL.md) | `personal-productivity/beeper` | Searches the local Beeper cache across bridged chats (iMessage, WhatsApp, and others): contact lookup from vague hints, room lookup, and full-text message search. Use when finding a conversation or contact in Beeper history. |
 | [`memento-flashcards`](memento-flashcards/SKILL.md) | `personal-productivity/memento-flashcards` | Spaced-repetition flashcard system. Create cards from facts or text, chat with flashcards using free-text answers graded by the agent, generate quizzes from YouTube transcripts, review due cards with adaptive scheduling, and export/impor... |
-| [`notcrawl`](notcrawl/SKILL.md) | `personal-productivity/notcrawl` | Notion archive: desktop/API sync, Markdown export, page search, read-only SQL. |
-| [`obsidian`](obsidian/SKILL.md) | `personal-productivity/obsidian` | Obsidian vault: search/read/write notes, backlinks, Bases, Canvas. |
-| [`one-password`](one-password/SKILL.md) | `personal-productivity/one-password` | 1Password CLI (op): service-account first, targeted secret read/store/inject, tmux session. |
-| [`peekaboo`](peekaboo/SKILL.md) | `personal-productivity/peekaboo` | macOS screenshots, UI inspection, clicks, typing, app/window automation via Peekaboo. |
-| [`reminders`](reminders/SKILL.md) | `personal-productivity/reminders` | Apple Reminders via rem CLI: add, list, search, update, complete, delete. |
-| [`sonos`](sonos/SKILL.md) | `personal-productivity/sonos` | Sonos control: search, queue, playlists, rooms/groups, volume, YouTube playback. |
-| [`speaking`](speaking/SKILL.md) | `personal-productivity/speaking` | Speaking ops: conference invites, keynotes, panels, calendar/email tracking. |
-| [`things-todo`](things-todo/SKILL.md) | `personal-productivity/things-todo` | Things 3 via things CLI: add, list, search, update, delete, verify tasks. |
+| [`notcrawl`](notcrawl/SKILL.md) | `personal-productivity/notcrawl` | Searches and reads a local Notion archive: desktop cache or API sync, Markdown export, page search, and read-only SQL. Use for questions about Notion content when a local archive or a NOTION_TOKEN is available. |
+| [`obsidian`](obsidian/SKILL.md) | `personal-productivity/obsidian` | Searches, reads, and writes notes in a local Obsidian vault while preserving frontmatter and wikilinks, including backlinks, Bases, and Canvas files. Use for any task on an Obsidian vault. |
+| [`peekaboo`](peekaboo/SKILL.md) | `personal-productivity/peekaboo` | Automates macOS with Peekaboo: screenshots, UI inspection, clicks, typing, and app and window control. Use for macOS screen capture or GUI automation. |
+| [`reminders`](reminders/SKILL.md) | `personal-productivity/reminders` | Manages Apple Reminders through the rem CLI: add, list, search, update, complete, and delete. Use for Apple Reminders tasks on macOS; prefer things-todo when the user uses Things 3. |
+| [`sonos`](sonos/SKILL.md) | `personal-productivity/sonos` | Controls Sonos speakers: search, queue, playlists, rooms and groups, volume, and YouTube playback, with speaker discovery over mDNS. Use when playing or managing music on Sonos. |
+| [`speaking`](speaking/SKILL.md) | `personal-productivity/speaking` | Manages speaking opportunities: evaluating conference invitations, keynotes, and panels, and tracking them across calendar and email. Use when deciding which talks to accept or keeping speaking commitments organized. |
+| [`things-todo`](things-todo/SKILL.md) | `personal-productivity/things-todo` | Manages Things 3 tasks through the things CLI: add, list, search, update, delete, and verify. Use for Things-backed to-dos on macOS; use reminders only when the user asks for Apple Reminders. |
 
 [Back to the category index](../README.md)

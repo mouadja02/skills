@@ -6,26 +6,25 @@
 
 Prompt engineering, optimization, safety review, and creative-thinking frameworks.
 
-**Total:** 15 skills.
+**Total:** 14 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`ai-prompt-engineering-safety-review`](ai-prompt-engineering-safety-review/SKILL.md) | `prompting/ai-prompt-engineering-safety-review` | Prompt safety review — bias, injection, ethical risks, scored with fixes |
+| [`ai-prompt-engineering-safety-review`](ai-prompt-engineering-safety-review/SKILL.md) | `prompting/ai-prompt-engineering-safety-review` | Comprehensive AI prompt engineering safety review and improvement prompt. Analyzes prompts for safety, bias, security vulnerabilities, and effectiveness while providing detailed improvement recommendations with extensive frameworks, test... |
 | [`bold-ideas-generator`](bold-ideas-generator/SKILL.md) | `prompting/bold-ideas-generator` | Activates when the user asks to brainstorm, ideate, or generate ideas and wants bold, unconventional, or high-impact results. Bans incremental thinking, forces 10x-scale proposals, and explicitly rejects "safe" answers. Use when the user... |
-| [`boost-prompt`](boost-prompt/SKILL.md) | `prompting/boost-prompt` | Interactive prompt refinement workflow: interrogates scope, deliverables, constraints; copies final markdown to clipboard; never writes code. Requires the Joyride extension |
-| [`cognitive-frame-shift`](cognitive-frame-shift/SKILL.md) | `prompting/cognitive-frame-shift` | 6-lens problem rotation — child, alien, historian, contrarian, futurist, expert |
-| [`creative-constraints`](creative-constraints/SKILL.md) | `prompting/creative-constraints` | Artificial limits as creative fuel — eliminates lazy defaults, drives genuine innovation |
-| [`deep-focus-protocol`](deep-focus-protocol/SKILL.md) | `prompting/deep-focus-protocol` | Deep focus sessions — ruthless scope, batch decisions, momentum-preserving recovery |
-| [`finalize-agent-prompt`](finalize-agent-prompt/SKILL.md) | `prompting/finalize-agent-prompt` | Finalize prompt file using the role of an AI agent to polish the prompt for the end user. |
+| [`boost-prompt`](boost-prompt/SKILL.md) | `prompting/boost-prompt` | Interactive prompt refinement workflow: interrogates scope, deliverables, constraints; copies final markdown to clipboard; never writes code. Requires the Joyride extension. Use in VS Code with Joyride when a prompt needs sharpening befo... |
+| [`cognitive-frame-shift`](cognitive-frame-shift/SKILL.md) | `prompting/cognitive-frame-shift` | Rotates a problem through six lenses — child, alien, historian, contrarian, futurist, and domain expert — to surface blind spots. Use when an analysis feels one-sided, a team is stuck in its own framing, or a decision needs perspectives... |
+| [`creative-constraints`](creative-constraints/SKILL.md) | `prompting/creative-constraints` | Uses deliberate, artificial constraints to force original work and eliminate lazy defaults in design, writing, and problem solving. Use when output keeps coming out generic, a team has too many options, or a blank-page problem needs trac... |
+| [`deep-focus-protocol`](deep-focus-protocol/SKILL.md) | `prompting/deep-focus-protocol` | Structures deep-focus work sessions: ruthless scope, batched decisions, protection from context switching, and momentum-preserving recovery after interruptions. Use when planning complex or creative work that needs sustained concentration. |
+| [`finalize-agent-prompt`](finalize-agent-prompt/SKILL.md) | `prompting/finalize-agent-prompt` | Polishes a prompt file from an AI agent's perspective so it follows proven prompt practices, keeping its front matter, encoding, and Markdown structure. Use when a prompt or agent instruction file is drafted and needs a final pass before... |
 | [`first-principles-deconstruction`](first-principles-deconstruction/SKILL.md) | `prompting/first-principles-deconstruction` | Dismantles any problem down to its bedrock truths, then rebuilds solutions from scratch — ignoring industry conventions, borrowed assumptions, and "how it's always been done." Activate when the user is stuck in conventional solutions, wa... |
-| [`idea-velocity`](idea-velocity/SKILL.md) | `prompting/idea-velocity` | Rapid ideation — 50+ ideas in one pass, zero-judgment phase, quantity over quality |
+| [`idea-velocity`](idea-velocity/SKILL.md) | `prompting/idea-velocity` | Runs rapid ideation: 50+ ideas in one pass with a zero-judgment generation phase, then structured selection. Use when brainstorming needs volume and the first few obvious ideas keep crowding out better ones. |
 | [`lateral-thinking-engine`](lateral-thinking-engine/SKILL.md) | `prompting/lateral-thinking-engine` | Applies Edward de Bono's lateral thinking toolkit — random entry, provocation, alternatives, and challenge — to generate non-obvious solutions that direct linear reasoning cannot reach. Activate when the user is stuck, when all obvious s... |
-| [`prompt-builder`](prompt-builder/SKILL.md) | `prompting/prompt-builder` | Guide users through creating high-quality GitHub Copilot prompts with proper structure, tools, and best practices. |
 | [`prompt-master`](prompt-master/SKILL.md) | `prompting/prompt-master` | Use when a prompt needs writing or improving for an AI tool — clarifying the task, adding structure and constraints, supplying examples, and specifying the output format. |
-| [`reverse-brainstorm`](reverse-brainstorm/SKILL.md) | `prompting/reverse-brainstorm` | Invert problem — brainstorm failure modes, flip into unconventional solutions |
+| [`reverse-brainstorm`](reverse-brainstorm/SKILL.md) | `prompting/reverse-brainstorm` | Inverts a problem: brainstorms every way to make it fail, then flips each failure into an unconventional solution. Use when direct brainstorming produces obvious ideas or a team is stuck on how to make something succeed. |
 | [`senior-prompt-engineer`](senior-prompt-engineer/SKILL.md) | `prompting/senior-prompt-engineer` | This skill should be used when the user asks to "optimize prompts", "design prompt templates", "evaluate LLM outputs", "A/B test prompts", "version prompts", "build agentic systems", "implement RAG", "create few-shot examples", "analyze... |
-| [`tldr-prompt`](tldr-prompt/SKILL.md) | `prompting/tldr-prompt` | Create tldr summaries for GitHub Copilot files (prompts, agents, instructions, collections), MCP servers, or documentation from URLs and queries |
+| [`tldr-prompt`](tldr-prompt/SKILL.md) | `prompting/tldr-prompt` | Create tldr summaries for GitHub Copilot files (prompts, agents, instructions, collections), MCP servers, or documentation from URLs and queries. Use when someone needs a quick summary of a Copilot customization file, an MCP server, or a... |
 
 [Back to the category index](../README.md)

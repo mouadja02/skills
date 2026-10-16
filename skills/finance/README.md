@@ -12,7 +12,7 @@ Financial modeling, valuation, Excel authoring, investment analysis, and present
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`3-statement-model`](3-statement-model/SKILL.md) | `finance/3-statement-model` | Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author. |
+| [`3-statement-model`](3-statement-model/SKILL.md) | `finance/3-statement-model` | Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author. Use when building or fixin... |
 | [`comps-analysis`](comps-analysis/SKILL.md) | `finance/comps-analysis` | Build comparable company analysis in Excel — operating metrics, valuation multiples, statistical benchmarking vs peer sets. Pairs with excel-author. Use for public-company valuation, IPO pricing, sector benchmarking, or outlier detection. |
 | [`dcf-model`](dcf-model/SKILL.md) | `finance/dcf-model` | Build institutional-quality DCF valuation models in Excel — revenue projections, FCF build, WACC, terminal value, Bear/Base/Bull scenarios, 5x5 sensitivity tables. Pairs with excel-author. Use for intrinsic-value equity analysis. |
 | [`excel-author`](excel-author/SKILL.md) | `finance/excel-author` | Build auditable Excel workbooks headless with openpyxl — blue/black/green cell conventions, formulas over hardcodes, named ranges, balance checks, sensitivity tables. Use for financial models, audit outputs, reconciliations. |

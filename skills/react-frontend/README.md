@@ -6,28 +6,30 @@
 
 React, Vue, Next.js, mobile frontend frameworks, migrations, and testing.
 
-**Total:** 17 skills.
+**Total:** 19 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`framework-flutter-expert`](framework-flutter-expert/SKILL.md) | `react-frontend/framework-flutter-expert` | Use when the user asks to work on a Flutter or Dart project. Triggers on keywords Flutter, Dart, BLoC, Mobile App. |
-| [`framework-nextjs-expert`](framework-nextjs-expert/SKILL.md) | `react-frontend/framework-nextjs-expert` | Triggers on keywords Next.js, React, Tailwind, Shadcn UI |
+| [`framework-nextjs-expert`](framework-nextjs-expert/SKILL.md) | `react-frontend/framework-nextjs-expert` | Applies expert conventions for TypeScript, Next.js App Router, React, Shadcn UI, Radix UI, and Tailwind CSS. Use when writing or reviewing Next.js or React code that uses this stack. |
 | [`framework-react-native-expert`](framework-react-native-expert/SKILL.md) | `react-frontend/framework-react-native-expert` | Triggers on keywords React Native, Expo, Mobile App, iOS, Android |
-| [`framework-vue-nuxt-expert`](framework-vue-nuxt-expert/SKILL.md) | `react-frontend/framework-vue-nuxt-expert` | Triggers on keywords Vue 3, Nuxt 3, Vue.js, TailwindCSS |
-| [`javascript-typescript-jest`](javascript-typescript-jest/SKILL.md) | `react-frontend/javascript-typescript-jest` | Best practices for writing JavaScript/TypeScript tests using Jest, including mocking strategies, test structure, and common patterns |
-| [`next-intl-add-language`](next-intl-add-language/SKILL.md) | `react-frontend/next-intl-add-language` | Add new language to a Next.js + next-intl application |
-| [`react-audit-grep-patterns`](react-audit-grep-patterns/SKILL.md) | `react-frontend/react-audit-grep-patterns` | Grep scan library for React 18.3.1 / React 19 upgrade audits |
-| [`react18-batching-patterns`](react18-batching-patterns/SKILL.md) | `react-frontend/react18-batching-patterns` | React 18 automatic batching regression diagnosis and fix — class component patterns |
-| [`react18-dep-compatibility`](react18-dep-compatibility/SKILL.md) | `react-frontend/react18-dep-compatibility` | React 18.3.1 and React 19 dependency compatibility matrix. |
-| [`react18-enzyme-to-rtl`](react18-enzyme-to-rtl/SKILL.md) | `react-frontend/react18-enzyme-to-rtl` | Enzyme → React Testing Library migration patterns for React 18 |
-| [`react18-legacy-context`](react18-legacy-context/SKILL.md) | `react-frontend/react18-legacy-context` | React legacy context → modern Context API — contextTypes, childContextTypes migration patterns |
-| [`react18-lifecycle-patterns`](react18-lifecycle-patterns/SKILL.md) | `react-frontend/react18-lifecycle-patterns` | React unsafe lifecycles → safe alternatives — componentWillMount/Update/ReceiveProps |
+| [`framework-vue-nuxt-expert`](framework-vue-nuxt-expert/SKILL.md) | `react-frontend/framework-vue-nuxt-expert` | Applies expert conventions for Vue 3, Nuxt 3, TypeScript, and Tailwind CSS: Composition API, readable components, and step-by-step reasoning. Use when writing or reviewing Vue or Nuxt code. |
+| [`javascript-typescript-jest`](javascript-typescript-jest/SKILL.md) | `react-frontend/javascript-typescript-jest` | Best practices for writing JavaScript/TypeScript tests using Jest, including mocking strategies, test structure, and common patterns. Use when writing or reviewing Jest tests. |
+| [`next-intl-add-language`](next-intl-add-language/SKILL.md) | `react-frontend/next-intl-add-language` | Adds a new language to a Next.js app that uses next-intl: translates messages/en.json, registers the locale in routing.ts and middleware.ts, and adds it to the language toggle. Use when localizing a next-intl application into another lan... |
+| [`react-audit-grep-patterns`](react-audit-grep-patterns/SKILL.md) | `react-frontend/react-audit-grep-patterns` | Provides a verified grep command library for auditing React codebases before upgrading from React 16/17 to 18.3.1 or from 18 to 19, with separate scans for source files, test files, and dependency peer conflicts. Use when scanning a code... |
+| [`react18-batching-patterns`](react18-batching-patterns/SKILL.md) | `react-frontend/react18-batching-patterns` | Diagnoses and fixes React 18 automatic-batching regressions in class components, where multiple setState calls in async handlers now batch and break code that relied on intermediate renders. Use when class components misbehave after upgr... |
+| [`react18-dep-compatibility`](react18-dep-compatibility/SKILL.md) | `react-frontend/react18-dep-compatibility` | Lists minimum dependency versions compatible with React 18.3.1 and React 19. Use when checking whether a library supports a target React version, resolving peer dependency conflicts, or deciding between upgrading and legacy-peer-deps. |
+| [`react18-enzyme-to-rtl`](react18-enzyme-to-rtl/SKILL.md) | `react-frontend/react18-enzyme-to-rtl` | Provides exact Enzyme → React Testing Library migration patterns for React 18 upgrades. Use this skill whenever Enzyme tests need to be rewritten - shallow, mount, wrapper.find(), wrapper.simulate(), wrapper.prop(), wrapper.state(), wrap... |
+| [`react18-legacy-context`](react18-legacy-context/SKILL.md) | `react-frontend/react18-legacy-context` | Migrates the legacy React context API (contextTypes, childContextTypes, getChildContext) to createContext, which is deprecated in 18.3.1 and removed in React 19. Use when upgrading a codebase that still uses legacy context. |
+| [`react18-lifecycle-patterns`](react18-lifecycle-patterns/SKILL.md) | `react-frontend/react18-lifecycle-patterns` | Provides exact before/after migration patterns for the three unsafe class component lifecycle methods - componentWillMount, componentWillReceiveProps, and componentWillUpdate - targeting React 18.3.1. Use this skill whenever a class comp... |
 | [`react18-string-refs`](react18-string-refs/SKILL.md) | `react-frontend/react18-string-refs` | Provides exact migration patterns for React string refs (ref="name" + this.refs.name) to React.createRef() in class components. Use this skill whenever migrating string ref usage - including single element refs, multiple refs in a compon... |
-| [`react19-concurrent-patterns`](react19-concurrent-patterns/SKILL.md) | `react-frontend/react19-concurrent-patterns` | Preserve React 18 concurrent patterns and adopt React 19 APIs (useTransition, useDeferredValue, Suspense, use(), useOptimistic, Actions) during migration |
+| [`react19-concurrent-patterns`](react19-concurrent-patterns/SKILL.md) | `react-frontend/react19-concurrent-patterns` | Preserve React 18 concurrent patterns and adopt React 19 APIs (useTransition, useDeferredValue, Suspense, use(), useOptimistic, Actions) during migration. Use when migrating code that uses transitions, Suspense, or deferred values to Rea... |
 | [`react19-source-patterns`](react19-source-patterns/SKILL.md) | `react-frontend/react19-source-patterns` | Use when migrating React source files to React 19 APIs, refs, context, and component defaults. |
-| [`react19-test-patterns`](react19-test-patterns/SKILL.md) | `react-frontend/react19-test-patterns` | Provides before/after patterns for migrating test files to React 19 compatibility, including act() imports, Simulate removal, and StrictMode call count changes |
-| [`unit-test-vue-pinia`](unit-test-vue-pinia/SKILL.md) | `react-frontend/unit-test-vue-pinia` | Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases |
+| [`react19-test-patterns`](react19-test-patterns/SKILL.md) | `react-frontend/react19-test-patterns` | Provides before/after patterns for migrating test files to React 19 compatibility, including act() imports, Simulate removal, and StrictMode call count changes. Use when tests break after upgrading to React 19. |
+| [`unit-test-vue-pinia`](unit-test-vue-pinia/SKILL.md) | `react-frontend/unit-test-vue-pinia` | Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases. Use when creating or updating tests for components, composables, and stores; mocking Pinia with createTestingPinia; applying Vue Test Utils patterns; and enfo... |
+| [`vercel-composition-patterns`](vercel-composition-patterns/SKILL.md) | `react-frontend/vercel-composition-patterns` | React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, con... |
+| [`vercel-react-best-practices`](vercel-react-best-practices/SKILL.md) | `react-frontend/vercel-react-best-practices` | React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React... |
 
 [Back to the category index](../README.md)

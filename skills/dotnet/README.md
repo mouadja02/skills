@@ -6,30 +6,29 @@
 
 .NET, C#, WinUI, MVVM, NuGet, testing, and VS Code extension development.
 
-**Total:** 19 skills.
+**Total:** 18 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`csharp-async`](csharp-async/SKILL.md) | `dotnet/csharp-async` | Use when writing or reviewing async C# — async/await, Task and ValueTask, cancellation tokens, ConfigureAwait, deadlocks, sync-over-async, and async streams. |
-| [`csharp-docs`](csharp-docs/SKILL.md) | `dotnet/csharp-docs` | Ensure that C# types are documented with XML comments and follow best practices for documentation. |
-| [`csharp-mstest`](csharp-mstest/SKILL.md) | `dotnet/csharp-mstest` | Get best practices for MSTest 3.x/4.x unit testing, including modern assertion APIs and data-driven tests |
-| [`csharp-nunit`](csharp-nunit/SKILL.md) | `dotnet/csharp-nunit` | Get best practices for NUnit unit testing, including data-driven tests |
-| [`csharp-tunit`](csharp-tunit/SKILL.md) | `dotnet/csharp-tunit` | Get best practices for TUnit unit testing, including data-driven tests |
-| [`csharp-xunit`](csharp-xunit/SKILL.md) | `dotnet/csharp-xunit` | Get best practices for XUnit unit testing, including data-driven tests |
-| [`dotnet-best-practices`](dotnet-best-practices/SKILL.md) | `dotnet/dotnet-best-practices` | Ensure .NET/C# code meets best practices for the solution/project. |
-| [`dotnet-design-pattern-review`](dotnet-design-pattern-review/SKILL.md) | `dotnet/dotnet-design-pattern-review` | Review the C#/.NET code for design pattern implementation and suggest improvements. |
-| [`dotnet-timezone`](dotnet-timezone/SKILL.md) | `dotnet/dotnet-timezone` | .NET timezone handling guidance for C# applications |
-| [`dotnet-upgrade`](dotnet-upgrade/SKILL.md) | `dotnet/dotnet-upgrade` | Ready-to-use prompts for comprehensive .NET framework upgrade analysis and execution |
-| [`mvvm-toolkit`](mvvm-toolkit/SKILL.md) | `dotnet/mvvm-toolkit` | CommunityToolkit.Mvvm — ObservableProperty, RelayCommand, NotifyPropertyChangedFor source generators |
-| [`mvvm-toolkit-di`](mvvm-toolkit-di/SKILL.md) | `dotnet/mvvm-toolkit-di` | CommunityToolkit.Mvvm + DI — Generic Host, ViewModelLocator, scoped/transient registration |
-| [`mvvm-toolkit-messenger`](mvvm-toolkit-messenger/SKILL.md) | `dotnet/mvvm-toolkit-messenger` | CommunityToolkit.Mvvm Messenger — WeakReference/Strong pub/sub, decoupled ViewModel comms |
-| [`nuget-manager`](nuget-manager/SKILL.md) | `dotnet/nuget-manager` | Manage NuGet packages in .NET projects/solutions |
-| [`vscode-ext-commands`](vscode-ext-commands/SKILL.md) | `dotnet/vscode-ext-commands` | Guidelines for contributing commands in VS Code extensions. Indicates naming convention, visibility, localization and other relevant attributes, following VS Code extension development guidelines, libraries and good practices |
-| [`vscode-ext-localization`](vscode-ext-localization/SKILL.md) | `dotnet/vscode-ext-localization` | Guidelines for proper localization of VS Code extensions, following VS Code extension development guidelines, libraries and good practices |
-| [`winapp-cli`](winapp-cli/SKILL.md) | `dotnet/winapp-cli` | Windows App Development CLI (winapp) for building, packaging, signing, debugging, and UI-automating Windows applications |
+| [`csharp-docs`](csharp-docs/SKILL.md) | `dotnet/csharp-docs` | Documents C# types with XML documentation comments following best practices: summaries, params, returns, exceptions, and remarks. Use when public APIs lack XML docs or existing comments need improving. |
+| [`csharp-mstest`](csharp-mstest/SKILL.md) | `dotnet/csharp-mstest` | Applies MSTest 3.x/4.x best practices: modern assertion APIs, test lifecycle, and data-driven tests. Use when writing or reviewing C# tests that use MSTest. |
+| [`csharp-nunit`](csharp-nunit/SKILL.md) | `dotnet/csharp-nunit` | Applies NUnit best practices to C# unit tests: structure, assertions, setup/teardown, and data-driven tests with TestCase and TestCaseSource. Use when writing or reviewing NUnit tests. |
+| [`csharp-tunit`](csharp-tunit/SKILL.md) | `dotnet/csharp-tunit` | Applies TUnit best practices to C# unit tests: structure, assertions, lifecycle hooks, and data-driven tests. Use when writing or reviewing tests with the TUnit framework. |
+| [`csharp-xunit`](csharp-xunit/SKILL.md) | `dotnet/csharp-xunit` | Applies xUnit best practices to C# unit tests: facts and theories, fixtures, assertions, and data-driven tests with InlineData and MemberData. Use when writing or reviewing xUnit tests. |
+| [`dotnet-best-practices`](dotnet-best-practices/SKILL.md) | `dotnet/dotnet-best-practices` | Checks .NET/C# code against the solution's own conventions and general best practices: naming, async, dependency injection, error handling, and tests. Use when reviewing or tidying C# code in an existing .NET solution. |
+| [`dotnet-design-pattern-review`](dotnet-design-pattern-review/SKILL.md) | `dotnet/dotnet-design-pattern-review` | Reviews C#/.NET code for how design patterns are implemented and suggests improvements without changing code. Use when assessing whether patterns in a .NET solution are applied well. |
+| [`dotnet-timezone`](dotnet-timezone/SKILL.md) | `dotnet/dotnet-timezone` | Gives production-safe time zone handling for .NET and C#: TimeZoneInfo, DateTimeOffset, IANA versus Windows IDs, DST edge cases, and conversions. Use when C# code stores, converts, or displays times across time zones. |
+| [`dotnet-upgrade`](dotnet-upgrade/SKILL.md) | `dotnet/dotnet-upgrade` | Provides ready-to-use prompts for analyzing and executing .NET upgrades: project classification, dependency compatibility, and target framework changes. Use when planning or running a move from .NET Framework or older .NET to a current v... |
+| [`mvvm-toolkit`](mvvm-toolkit/SKILL.md) | `dotnet/mvvm-toolkit` | Authors and reviews view models with CommunityToolkit.Mvvm 8.x source generators: ObservableProperty, RelayCommand, NotifyPropertyChangedFor, and validation. Use when writing MVVM view models, properties, or commands in a .NET XAML app. |
+| [`mvvm-toolkit-di`](mvvm-toolkit-di/SKILL.md) | `dotnet/mvvm-toolkit-di` | Wires CommunityToolkit.Mvvm with Microsoft.Extensions.DependencyInjection: Generic Host composition root, view-model lifetimes, IMessenger registration, and view-model resolution for WPF, WinUI 3, MAUI, Uno, and Avalonia. Use when settin... |
+| [`mvvm-toolkit-messenger`](mvvm-toolkit-messenger/SKILL.md) | `dotnet/mvvm-toolkit-messenger` | Uses the CommunityToolkit.Mvvm messenger for decoupled view-model communication: weak and strong references, request/reply, and channel tokens. Use when view models must react to events without referencing each other, or a messenger hand... |
+| [`nuget-manager`](nuget-manager/SKILL.md) | `dotnet/nuget-manager` | Manages NuGet packages in .NET projects through the dotnet CLI: add, remove, and update with version verification, including central package management (Directory.Packages.props). Use when adding, removing, or upgrading NuGet dependencies. |
+| [`vscode-ext-commands`](vscode-ext-commands/SKILL.md) | `dotnet/vscode-ext-commands` | Guidelines for contributing commands in VS Code extensions. Indicates naming convention, visibility, localization and other relevant attributes, following VS Code extension development guidelines, libraries and good practices. Use when a... |
+| [`vscode-ext-localization`](vscode-ext-localization/SKILL.md) | `dotnet/vscode-ext-localization` | Guidelines for proper localization of VS Code extensions, following VS Code extension development guidelines, libraries and good practices. Use when localizing a VS Code extension or adding a new language to one. |
 | [`winmd-api-search`](winmd-api-search/SKILL.md) | `dotnet/winmd-api-search` | Use when you need to find or explore Windows desktop APIs from Windows Metadata (.winmd) — locating a type, namespace, method, or its signature for Win32, WinRT, or Windows App SDK work. |
-| [`winui3-migration-guide`](winui3-migration-guide/SKILL.md) | `dotnet/winui3-migration-guide` | UWP → WinUI 3 migration — API mapping, before/after snippets, App SDK equivalents |
+| [`winui3-migration-guide`](winui3-migration-guide/SKILL.md) | `dotnet/winui3-migration-guide` | Migrates UWP apps to WinUI 3 and the Windows App SDK with API mappings and before/after snippets, and checks generated code for leftover UWP patterns. Use when porting a UWP app or reviewing WinUI 3 code. |
 
 [Back to the category index](../README.md)

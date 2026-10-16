@@ -6,29 +6,31 @@
 
 Code review, refactoring, static analysis, security review, and integrity checks.
 
-**Total:** 18 skills.
+**Total:** 20 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`anti-ai-slop`](anti-ai-slop/SKILL.md) | `code-quality/anti-ai-slop` | Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content. Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics: emoji headers, "leverage", "robust", "... |
-| [`audit-integrity`](audit-integrity/SKILL.md) | `code-quality/audit-integrity` | AppSec audit integrity — output quality standards, honesty rules, continuous improvement |
-| [`codeql`](codeql/SKILL.md) | `code-quality/codeql` | CodeQL setup — GitHub Actions scanning, CLI queries, alert triage |
-| [`doublecheck`](doublecheck/SKILL.md) | `code-quality/doublecheck` | 3-layer AI output verification — claim extraction, web evidence, contradiction detection |
-| [`eyeball`](eyeball/SKILL.md) | `code-quality/eyeball` | Document analysis with source screenshots — Word doc with page images per cited passage |
-| [`github-deep-review`](github-deep-review/SKILL.md) | `code-quality/github-deep-review` | GitHub deep review: bugs, PRs, best fix, stale-or-real, read code first, evidence-first. |
-| [`grill-me`](grill-me/SKILL.md) | `code-quality/grill-me` | Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me". |
+| [`anti-ai-slop`](anti-ai-slop/SKILL.md) | `code-quality/anti-ai-slop` | Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content. Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics (emoji headers, "leverage", "robust", "... |
+| [`audit-integrity`](audit-integrity/SKILL.md) | `code-quality/audit-integrity` | Enforce output quality, evidence verification, and quality gates across security audits. Use this skill when you perform SAST, SCA, threat modeling, or security code reviews. Use this skill to verify code locations and taint traces for a... |
+| [`codeql`](codeql/SKILL.md) | `code-quality/codeql` | Comprehensive guide for setting up and configuring CodeQL code scanning via GitHub Actions workflows and the CodeQL CLI. This skill should be used when users need help with code scanning configuration, CodeQL workflow files, CodeQL CLI c... |
+| [`differential-review`](differential-review/SKILL.md) | `code-quality/differential-review` | Performs security-focused differential review of code changes. Adapts analysis depth to codebase size, uses git blame for context, calculates blast radius by counting callers, checks test coverage of modified code, and generates a markdo... |
+| [`doublecheck`](doublecheck/SKILL.md) | `code-quality/doublecheck` | Three-layer verification pipeline for AI output. Extracts verifiable claims, finds supporting or contradicting sources via web search, runs adversarial review for hallucination patterns, and produces a structured verification report with... |
+| [`eyeball`](eyeball/SKILL.md) | `code-quality/eyeball` | Document analysis with inline source screenshots. When you ask Copilot to analyze a document, Eyeball generates a Word doc where every factual claim includes a highlighted screenshot from the source material so you can verify it with you... |
+| [`find-bugs`](find-bugs/SKILL.md) | `code-quality/find-bugs` | Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch. |
+| [`github-deep-review`](github-deep-review/SKILL.md) | `code-quality/github-deep-review` | Deep, evidence-first review of GitHub bugs and PRs: reads the code before forming opinions, finds root causes, decides whether an issue is stale, duplicate, or real, and proposes the best fix. Use when an issue or PR needs real investiga... |
+| [`grilling`](grilling/SKILL.md) | `code-quality/grilling` | Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases. |
 | [`python-free-threaded-extension-readiness`](python-free-threaded-extension-readiness/SKILL.md) | `code-quality/python-free-threaded-extension-readiness` | Use when auditing a CPython C/C++/Cython/Rust extension for free-threaded Python, a `t`-suffixed ABI wheel, GIL opt-out, native race, callback crash, or free-threaded release gate. |
-| [`quality-playbook`](quality-playbook/SKILL.md) | `code-quality/quality-playbook` | Quality audit — behavioral requirements from code, spec-traced tests, coverage gaps |
+| [`quality-playbook`](quality-playbook/SKILL.md) | `code-quality/quality-playbook` | Runs a multi-phase quality audit of a codebase: derives behavioral requirements from code and docs, generates spec-traced tests, runs a three-pass code review and independent spec audits, and reconciles every bug with regression tests. U... |
 | [`receiving-code-review`](receiving-code-review/SKILL.md) | `code-quality/receiving-code-review` | Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation |
-| [`refactor`](refactor/SKILL.md) | `code-quality/refactor` | Code refactoring — extract functions, rename, decompose, reduce complexity, no behavior change |
-| [`refactor-method-complexity-reduce`](refactor-method-complexity-reduce/SKILL.md) | `code-quality/refactor-method-complexity-reduce` | Refactor given method `${input:methodName}` to reduce its cognitive complexity to `${input:complexityThreshold}` or below, by extracting helper methods |
-| [`refactor-plan`](refactor-plan/SKILL.md) | `code-quality/refactor-plan` | Create a concrete plan before starting a multi-file refactor |
+| [`refactor`](refactor/SKILL.md) | `code-quality/refactor` | Refactors code surgically without changing behavior: extract functions, rename, break up large functions and classes, reduce complexity, and remove code smells. Use when code is hard to understand or extend, or the user asks to clean up,... |
+| [`refactor-method-complexity-reduce`](refactor-method-complexity-reduce/SKILL.md) | `code-quality/refactor-method-complexity-reduce` | Refactor given method `${input:methodName}` to reduce its cognitive complexity to `${input:complexityThreshold}` or below, by extracting helper methods. Use when a method exceeds a cognitive-complexity threshold flagged by a linter or re... |
+| [`refactor-plan`](refactor-plan/SKILL.md) | `code-quality/refactor-plan` | Produces a concrete plan before a multi-file refactor: scope, sequence, risks, and verification for each step. Use when the user asks to plan, sequence, or safely execute a refactor across several files, before any code changes are made. |
 | [`requesting-code-review`](requesting-code-review/SKILL.md) | `code-quality/requesting-code-review` | Use when completing tasks, implementing major features, or before merging to verify work meets requirements |
-| [`review-and-refactor`](review-and-refactor/SKILL.md) | `code-quality/review-and-refactor` | Review and refactor code in your project according to defined instructions |
+| [`review-and-refactor`](review-and-refactor/SKILL.md) | `code-quality/review-and-refactor` | Reviews and refactors code according to the project's own instruction and guideline files, keeping behavior intact. Use when the user asks for a cleanup pass that must follow repository conventions (for example .github/instructions) rath... |
 | [`roundup`](roundup/SKILL.md) | `code-quality/roundup` | Generate personalized status briefings on demand. Pulls from your configured data sources (GitHub, email, Teams, Slack, and more), synthesizes across them, and drafts updates in your own communication style for any audience you define |
-| [`roundup-setup`](roundup-setup/SKILL.md) | `code-quality/roundup-setup` | Roundup status briefing setup — configure voice, audiences, data sources (GitHub, Jira) |
-| [`security-review`](security-review/SKILL.md) | `code-quality/security-review` | Codebase security scan — data flow tracing, OWASP top 10, secrets, dependency CVEs |
+| [`roundup-setup`](roundup-setup/SKILL.md) | `code-quality/roundup-setup` | Interactive onboarding that learns your communication style, audiences, and data sources to configure personalized status briefings. Paste in examples of updates you already write, answer a few questions, and roundup calibrates itself to... |
+| [`security-review`](security-review/SKILL.md) | `code-quality/security-review` | AI-powered codebase security scanner that reasons about code like a security researcher — tracing data flows, understanding component interactions, and catching vulnerabilities that pattern-matching tools miss. Use this skill when asked... |
 
 [Back to the category index](../README.md)
