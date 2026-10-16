@@ -92,7 +92,7 @@ For each art direction option:
    **Aspect ratios:** `1:1`, `16:9`, `9:16`, `3:4`, `4:3`, `2:3`, `3:2`
    Match to platform - e.g., Twitter header = `3:1` (use `3:2` closest), Instagram story = `9:16`
 
-   **Pro model prompt tips** (see `ai-artist` references/nano-banana-pro-examples.md):
+   **Pro model prompt tips** (see `ai-artist/references/nano-banana-pro-examples.md` in the upstream ClaudeKit `ai-artist` skill, which is not bundled here):
    - Be descriptive: style, lighting, mood, composition, color palette
    - Include art direction: "minimalist flat design", "cyberpunk neon", "editorial photography"
    - Specify no-text: "no text, no letters, no words" (text overlaid in HTML step)

@@ -594,9 +594,9 @@ python scripts/add-arrow.py my-aws-diagram.excalidraw 565 330 650 350 --label "S
 See bundled references for:
 - `references/excalidraw-schema.md` - Complete Excalidraw JSON schema
 - `references/element-types.md` - Detailed element type specifications
-- `templates/flowchart-template.json` - Basic flowchart starter
-- `templates/relationship-template.json` - Relationship diagram starter
-- `templates/mindmap-template.json` - Mind map starter
+- `templates/flowchart-template.excalidraw` - Basic flowchart starter
+- `templates/relationship-template.excalidraw` - Relationship diagram starter
+- `templates/mindmap-template.excalidraw` - Mind map starter
 - `scripts/split-excalidraw-library.py` - Tool to split `.excalidrawlib` files
 - `scripts/README.md` - Documentation for library tools
 - `scripts/.gitignore` - Prevents local Python artifacts from being committed
