@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-16T13:34:11.139Z",
+  "generated_at": "2026-10-16T13:48:15.676Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 799,
@@ -2687,7 +2687,9 @@
       "path": "skills/code-quality/quality-playbook",
       "depth": 2,
       "description": "Runs a multi-phase quality audit of a codebase: derives behavioral requirements from code and docs, generates spec-traced tests, runs a three-pass code review and independent spec audits, and reconciles every bug with regression tests. Use for a deep quality assessment of a project, not a quick PR review.",
-      "license": "Complete terms in LICENSE.txt"
+      "license": "Apache-2.0",
+      "source": "https://github.com/andrewstellman/quality-playbook",
+      "attribution": "andrewstellman/quality-playbook by Andrew Stellman"
     },
     {
       "name": "receiving-code-review",
@@ -4030,7 +4032,7 @@
       "install_path": "design-and-ui/ui-ux-pro-max",
       "path": "skills/design-and-ui/ui-ux-pro-max",
       "depth": 2,
-      "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples. Use when designing, building, or reviewing UI for web or mobile apps.",
+      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
       "license": "MIT",
       "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
       "attribution": "nextlevelbuilder/ui-ux-pro-max-skill by Next Level Builder"

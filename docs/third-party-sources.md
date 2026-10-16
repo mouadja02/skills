@@ -352,10 +352,43 @@ Three skills added at the same time were written for this repository from public
 skill cites: `context-engineering/coding-agent-token-efficiency`, `llm-tooling/llm-cost-optimization`,
 and `skills-management/skill-smell-audit`.
 
+## Oversized skills split (October 2026)
+
+A skill's whole `SKILL.md` loads every time the skill is used, so nine imported skills over 5,000
+words were restructured. Sections a run needs only at one stage moved unchanged into `references/`
+inside the same skill. Each moved section left a short stub under its original heading that says what
+the section covers and when to read it. Every moved line was checked to appear exactly once in the new
+files, and relative links in the moved text were repointed. Each skill's attribution line records the
+change.
+
+| Skill | Words before → after | Moved to `references/` |
+| --- | --- | --- |
+| `code-quality/quality-playbook` | 41,770 → 6,000 | One file per phase (0–7), recheck mode, artifact contract, run-state rules, runner mode. The phase prompts in `phase_prompts/` now point at the phase files, and two stale `SKILL.md:<line>` citations were replaced with section names. |
+| `cloud-aws/database/amazon-dynamodb` | 18,531 → 5,800 | Numbered axioms (data modeling, integration, mechanics), patterns, glossary, cost estimation, live validation, iteration loop, best practices. Axiom numbers are unchanged, so citations such as "Mechanics #18" still resolve. |
+| `design-and-ui/hallmark` | 9,250 → 6,800 | Component scope, the pre-flight scan, and the `study` verb (now `references/verbs/study.md`, next to `audit.md` and `redesign.md`). |
+| `finance/dcf-model` | 6,935 → 3,300 | Correct patterns and common mistakes, Excel model structure, and the case selector. The five most common mistakes stay inline. |
+| `databases/cosmosdb-datamodeling` | 6,551 → 3,000 | The two document templates and the design patterns. |
+| `engineering-craft/geofeed-tuner` | 6,380 → 1,800 | Phases 3–5, each read when its phase starts. An unclosed code fence that turned Phases 4–6 into one code block was also fixed; upstream has the same bug. |
+| `skills-management/skill-creator` | 5,227 → 3,800 | Description optimization and the Claude.ai and Cowork notes. |
+| `cloud-aws/migration/aws-transform` | 5,226 → 3,600 | S3 inputs, private-repository handling, and runtime-compatibility checks. |
+
+`design-and-ui/ui-ux-pro-max` (6,503 words) was re-synced from
+[nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) at
+`56ea9cf1` instead of being split, because upstream had already split it (2,197 words now). The re-sync
+also fixed a broken copy: `data` and `scripts` had been committed as one-line text files holding a
+relative symlink target (`../../../src/ui-ux-pro-max/...`), so the skill shipped without its search
+scripts or data. Script paths use upstream's skill-relative `scripts/search.py` form instead of the
+plugin-root form, and upstream's `scripts/tests/` suite is left out because it needs the upstream
+repository layout.
+
+`code-quality/quality-playbook` also gained the credit the October audit missed. Andrew Stellman wrote it
+in [andrewstellman/quality-playbook](https://github.com/andrewstellman/quality-playbook) (Apache-2.0) and
+contributed it to github/awesome-copilot.
+
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-745 of 799 skills declare an upstream `source`, across 57 sources. The remaining 54 declare no upstream source.
+746 of 799 skills declare an upstream `source`, across 58 sources. The remaining 53 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1401,6 +1434,16 @@ License: MIT
 | Install path | License |
 | --- | --- |
 | [`context-engineering/coding-agent-token-efficiency`](../skills/context-engineering/coding-agent-token-efficiency/SKILL.md) | MIT |
+
+### andrewstellman/quality-playbook
+
+Source: https://github.com/andrewstellman/quality-playbook
+Credit: andrewstellman/quality-playbook by Andrew Stellman
+License: Apache-2.0
+
+| Install path | License |
+| --- | --- |
+| [`code-quality/quality-playbook`](../skills/code-quality/quality-playbook/SKILL.md) | Apache-2.0 |
 
 ### forrestchang/andrej-karpathy-skills
 
