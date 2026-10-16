@@ -1,0 +1,29 @@
+# DynamoDB implementation patterns
+
+Moved verbatim from SKILL.md so the entry file stays small. The numbering is unchanged, so "Patterns #2" elsewhere means item 2 below. Axiom citations refer to the sibling `axioms-*.md` files in this folder.
+
+## Patterns
+
+These are concrete implementation patterns that sit alongside the axioms. They are not axioms in the "correctness/operational/cost/style" sense — they are load-bearing details that a complete design needs even when no axiom explicitly requires them. Each one is worked out in full in the reference architecture; this section is the short form so the agent recognizes when it applies.
+
+1. **Protect mutating API routes with an `IdempotencyKeys` table.** Every `POST`, `PUT`, `PATCH`, or `DELETE` that can be retried by a client (mobile network hiccup, load-balancer retry, user double-tap) must be wrapped by idempotency middleware. Shape: a dedicated table, `PK = <user_id>:<METHOD>:<path>:<client-supplied-uuid>`, attributes `status`, `response_status`, `response_body`, `expiration` (epoch seconds). The middleware does a conditional `PutItem` with `attribute_not_exists(id)` before the handler runs; on a conflict, it reads the cached response back and returns it. TTL is 24 hours; PITR off (the table is a cache). This is the mechanism that keeps a retried "create order" from double-charging a customer or double-decrementing inventory — the guarantee `TransactWriteItems` gives *within* a single call but not *across* retries.
+
+2. **Guard mutating writes with conditional expressions. Two halves — both are mandatory guidance whenever this pattern comes up.**
+
+   **Half A — `attribute_exists(<pk>)` on `UpdateItem` unless you explicitly want upsert.** `UpdateItem` defaults to *create if missing*. A `PATCH /orders/:id` with a guessed or stale `order_id` silently materializes a phantom order row — no error, no log, no recovery. Add `ConditionExpression: attribute_exists(<partition_key>)` to every `UpdateItem` that operates on a row the caller is asserting exists; catch `ConditionalCheckFailedException` and translate to 404.
+
+   **Half B — `attribute_not_exists(<pk>)` on `PutItem` when you mean "fail on overwrite."** `PutItem` defaults to *overwrite if present*. A `POST /orders` that should create a new order (or a new review, a new courier-assignment, a new uniqueness sentinel) will silently clobber an existing row keyed the same way without a guard. Add `ConditionExpression: attribute_not_exists(<partition_key>)` to every `PutItem` that should fail if the key already exists; catch `ConditionalCheckFailedException` and translate to 409 Conflict.
+
+   Conditional writes are where invariants live in the data layer. When you recommend one half, surface the other — design reviews routinely catch the missing `PutItem` guard in apps that added the `UpdateItem` guard years earlier.
+
+3. **TTL attributes are Unix epoch seconds. Three common format mistakes silently break expiration — enumerate all three whenever diagnosing a "TTL isn't deleting anything" report.** DynamoDB TTL reads the attribute as a number and interprets it as seconds since epoch. Any of the following causes TTL to silently never fire (no error, no log — the sweeper just skips the row):
+
+   1. **Milliseconds instead of seconds.** `Date.now()` in JavaScript returns milliseconds; written unchanged, the stamp is ~1000× too large and resolves to a year-50,000 timestamp that will never be in the past. Fix: `Math.floor(Date.now() / 1000)` in JS, `int(time.time())` in Python.
+   2. **ISO 8601 strings instead of numbers.** `datetime.datetime.now().isoformat()` in Python or `new Date().toISOString()` in JS produces a string like `"2026-05-13T09:45:00Z"`. DynamoDB TTL reads strings as non-numeric and skips the row entirely.
+   3. **Wrong attribute name.** TTL is configured per-table with a specific attribute name (`ttl`, `expiration`, `expires_at`, etc.). If the app writes `expires_at` but TTL is configured on `ttl`, or if a typo splits the attribute, TTL scans an attribute that doesn't exist and skips the row. Verify the configured attribute name in the table's TTL specification matches what the application writes, exactly.
+
+   Validate at write time: flag any TTL value greater than `current_time + 50 years` as a likely milliseconds-vs-seconds bug before it reaches the table. Standardize on the attribute name across the codebase. This pairs with Mechanics #12: the "filter on read" discipline still applies because even when TTL is configured correctly, deletion is eventual.
+
+4. **Do not persist a `Notifications` table for transient push/email/SMS.** The reflex to create a table for every domain noun is a trap here. If notifications are dispatched-and-forgotten — push to APNS/FCM, transactional email via SES — the correct shape is **EventBridge → SQS → NotificationLambda → delivery service**. DynamoDB is reserved for state that needs to be *queried later*. Only create a `Notifications` table if you have a genuine read access pattern against it — a per-user in-app inbox, a delivery-status dashboard, a compliance audit. Otherwise you are paying DynamoDB write cost to never read the result. Per-user inbox, if needed: `PK = user_id`, `SK = <createdAt>#<notificationId>`, TTL on older entries.
+
+5. **Plan cascade deletes as chunked `BatchWriteItem`, not a sync API call.** Deleting a parent entity in a hierarchical schema (a board, an order, a tenant, a user under GDPR) requires deleting everything keyed under it. Do it with `BatchWriteItem` (25 items per batch) paginated with `Query(..., Limit=25, LastEvaluatedKey=...)`. This is a background job, not a synchronous API response — at scale the walk is long enough to exceed a typical Lambda timeout, and partial failures must be retryable. If GDPR or regulatory deletion is a requirement of the domain, model this job explicitly as part of the design; do not assume it will fall out of the schema for free.
