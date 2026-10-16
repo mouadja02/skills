@@ -7,7 +7,7 @@ Read these files to get context:
 2. quality/EXPLORATION.md - Phase 1 findings (especially the "Candidate Bugs for Phase 2" section)
 3. quality/REQUIREMENTS.md - derived requirements and use cases
 4. quality/CONTRACTS.md - behavioral contracts
-5. SKILL.md - read the Phase 3 section ("Phase 3: Code Review and Regression Tests"). Also read references/review_protocols.md. Resolve SKILL.md and the references/ directory via the documented fallback list above; do NOT assume any single install layout.
+5. references/phase3_code_review.md - the Phase 3 section ("Phase 3: Code Review and Regression Tests"), moved out of SKILL.md. Also read references/review_protocols.md. Resolve SKILL.md and the references/ directory via the documented fallback list above; do NOT assume any single install layout.
 
 Execute Phase 3: Code Review + Regression Tests.
 Run the 3-pass code review per quality/RUN_CODE_REVIEW.md. For every confirmed bug:

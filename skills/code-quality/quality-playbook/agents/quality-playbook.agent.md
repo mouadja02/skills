@@ -145,7 +145,7 @@ Iterations typically add 40-60% more confirmed bugs on top of the baseline.
 5. **Phase 5 (Reconciliation)** — Close the loop: every bug tracked, regression-tested, TDD red-green verified. Output: `quality/BUGS.md`, TDD logs, completeness report
 6. **Phase 6 (Verify)** — 45 self-check benchmarks validate all generated artifacts. Output: final PROGRESS.md checkpoint
 
-Each phase has entry gates (prerequisites from prior phases) and exit gates (what must be true before the phase is considered complete). SKILL.md defines these gates precisely — follow them exactly.
+Each phase has entry gates (prerequisites from prior phases) and exit gates (what must be true before the phase is considered complete). SKILL.md and its phase files in references/ define these gates precisely — follow them exactly.
 
 ## Responding to user questions
 
