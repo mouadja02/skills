@@ -13,6 +13,8 @@ description: >-
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon Aurora PostgreSQL
 
 A modular toolkit for **Aurora PostgreSQL** organized as a registry of sub-skills. Each sub-skill handles one domain of Aurora PostgreSQL work. The router matches user intent to the right sub-skill, then loads only the references needed. (For Aurora MySQL, use the `amazon-aurora-mysql` skill.)

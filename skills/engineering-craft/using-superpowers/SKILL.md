@@ -3,6 +3,7 @@ name: using-superpowers
 description: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions
 source: "https://github.com/obra/superpowers"
 attribution: "obra/superpowers by Jesse Vincent"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).

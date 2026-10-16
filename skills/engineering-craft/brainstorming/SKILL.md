@@ -3,6 +3,7 @@ name: brainstorming
 description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation"
 source: "https://github.com/obra/superpowers"
 attribution: "obra/superpowers by Jesse Vincent"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).

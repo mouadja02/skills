@@ -4,6 +4,7 @@ description: "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.m
 command: /si:promote
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).

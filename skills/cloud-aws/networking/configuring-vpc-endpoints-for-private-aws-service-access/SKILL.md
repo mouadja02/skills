@@ -7,6 +7,8 @@ description: Configures VPC endpoints (interface and gateway) for private AWS se
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Configuring VPC Endpoints for Private AWS Service Access
 
 ## Overview

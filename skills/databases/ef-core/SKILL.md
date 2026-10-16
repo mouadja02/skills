@@ -3,6 +3,7 @@ name: ef-core
 description: Use when working with Entity Framework Core — modeling entities and relationships, migrations, LINQ query performance, change tracking, N+1 problems, and connection and transaction handling.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

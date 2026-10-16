@@ -4,6 +4,7 @@ description: "GitHub contributor context: identity, activity, trust, company/tea
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # GitHub Author Context

@@ -7,6 +7,8 @@ description: Creates a complete EC2 Image Builder pipeline that builds a custom 
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Creating an EC2 Image Builder Pipeline
 
 ## Overview

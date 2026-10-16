@@ -4,6 +4,7 @@ description: "1Password CLI (op): service-account first, targeted secret read/st
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # 1Password CLI

@@ -4,6 +4,7 @@ description: "Cloudflare Wrangler CLI: Workers, KV, R2, D1, tail, deploy, accoun
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Wrangler

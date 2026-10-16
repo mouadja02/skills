@@ -4,6 +4,7 @@ description: "CLI UX/spec design: args, flags, help, output, errors, config, dry
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Create CLI

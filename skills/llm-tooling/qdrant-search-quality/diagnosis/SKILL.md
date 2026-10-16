@@ -4,6 +4,7 @@ description: "Use when Qdrant search results are irrelevant or incomplete and th
 version: "1.0.2"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).

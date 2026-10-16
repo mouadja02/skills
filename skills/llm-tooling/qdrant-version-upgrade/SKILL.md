@@ -3,6 +3,7 @@ name: qdrant-version-upgrade
 description: "Guidance on how to upgrade your Qdrant version without interrupting the availability of your application and ensuring data integrity"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).

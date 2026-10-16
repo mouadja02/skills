@@ -3,6 +3,7 @@ name: power-apps-code-app-scaffold
 description: 'Scaffold a complete Power Apps Code App project with PAC CLI setup, SDK integration, and connector configuration'
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

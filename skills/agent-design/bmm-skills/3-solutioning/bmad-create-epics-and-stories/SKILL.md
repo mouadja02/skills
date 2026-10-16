@@ -3,6 +3,7 @@ name: bmad-create-epics-and-stories
 description: 'Break requirements into epics and user stories. Use when the user says "create the epics and stories list"'
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
 attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).

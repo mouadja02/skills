@@ -4,6 +4,7 @@ description: "GitHub issue/PR triage: summarize, assess risk/testability, inspec
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # GitHub Project Triage

@@ -3,6 +3,7 @@ name: azure-static-web-apps
 description: Helps create, configure, and deploy Azure Static Web Apps using the SWA CLI
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).

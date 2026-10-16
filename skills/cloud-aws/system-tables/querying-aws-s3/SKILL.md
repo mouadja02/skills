@@ -17,6 +17,8 @@ version: 1
 argument-hint: "[bucket-name|query|'configure BUCKET'|'status BUCKET']"
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Query AWS S3 System Tables
 
 ## Overview

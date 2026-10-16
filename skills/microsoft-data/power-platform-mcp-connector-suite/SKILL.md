@@ -3,6 +3,7 @@ name: power-platform-mcp-connector-suite
 description: 'Generate complete Power Platform custom connector with MCP integration for Copilot Studio - includes schema generation, troubleshooting, and validation'
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

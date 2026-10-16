@@ -12,6 +12,8 @@ metadata:
     related_skills: [native-mcp, mcporter]
 prerequisites:
   commands: [python3]
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 # FastMCP

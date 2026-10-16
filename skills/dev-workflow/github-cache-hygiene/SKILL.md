@@ -4,6 +4,7 @@ description: "GitHub quota/cache hygiene: answer reads from cache first, spend l
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # GitHub Cache Hygiene

@@ -3,7 +3,12 @@ name: bmm-skills
 description: >-
   BMad Method — AI agile framework, routes to 4-phase workflow: Analyze, Plan, Code, Review
 version: "1.0.0"
+license: MIT
+source: "https://github.com/bmad-code-org/BMAD-METHOD"
+attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
 ---
+
+> **Attribution:** Adapted from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org), licensed MIT. Modified for this collection.
 
 # BMad Method (BMM) — Master router
 

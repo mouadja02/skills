@@ -4,6 +4,7 @@ description: "Notion archive: desktop/API sync, Markdown export, page search, re
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # notcrawl

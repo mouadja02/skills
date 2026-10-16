@@ -3,6 +3,7 @@ name: azure-deployment-preflight
 description: Bicep deployment preflight — syntax validation, what-if, permission checks before azd provision
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).

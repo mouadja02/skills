@@ -7,6 +7,8 @@ source: https://github.com/Nutlope/hallmark
 attribution: "Adapted from Hallmark by Together AI contributors."
 ---
 
+> **Attribution:** Sourced from [Nutlope/hallmark](https://github.com/Nutlope/hallmark) by [Hallmark contributors](https://github.com/Nutlope/hallmark), licensed MIT. Modified for this collection.
+
 # Hallmark
 
 A design skill for AI coding assistants. Makes the UIs they generate look made, not generated.

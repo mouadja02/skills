@@ -4,6 +4,7 @@ description: "Oracle second-model review: bundle prompts/files for another AI, d
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Oracle (CLI) — Second-Model Review

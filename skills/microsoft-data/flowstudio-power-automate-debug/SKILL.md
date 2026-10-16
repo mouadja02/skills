@@ -11,6 +11,7 @@ description: >-
   expression failures. Requires a FlowStudio MCP subscription — see https://mcp.flowstudio.app
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

@@ -4,6 +4,7 @@ description: "Gemini image gen/edit via Nano Banana: text/image input, 512-4K wo
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Nano Banana Pro — Gemini Image Generation & Editing

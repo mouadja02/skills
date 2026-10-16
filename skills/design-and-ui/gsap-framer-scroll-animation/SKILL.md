@@ -16,6 +16,7 @@ metadata:
   author_url: 'https://github.com/utkarsh232005'
 source: "https://github.com/greensock/gsap-skills"
 attribution: "greensock/gsap-skills by GreenSock"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) by [GreenSock](https://greensock.com).

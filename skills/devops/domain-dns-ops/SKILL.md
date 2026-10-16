@@ -4,6 +4,7 @@ description: "DNS/domain ops: registrars, Cloudflare zones, redirects, DNS/HTTP 
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Domain/DNS Ops

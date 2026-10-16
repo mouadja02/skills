@@ -4,6 +4,7 @@ description: 'Aspire skill covering the Aspire CLI, AppHost orchestration, servi
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
 version: "1.0.2"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

@@ -4,6 +4,7 @@ description: "Obsidian vault: search/read/write notes, backlinks, Bases, Canvas.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Obsidian

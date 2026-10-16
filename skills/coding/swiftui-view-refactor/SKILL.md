@@ -5,6 +5,7 @@ source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger — originally by @Dimillian (Dimillian/Skills)"
 version: "1.0.0"
 platform: apple
+license: MIT
 ---
 
 # SwiftUI View Refactor

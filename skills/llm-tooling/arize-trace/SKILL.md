@@ -3,6 +3,7 @@ name: arize-trace
 description: "Covers exporting traces by ID, spans by ID, sessions by ID, and root-cause investigation with the ax CLI"
 source: "https://github.com/Arize-ai/arize-skills"
 attribution: "Arize-ai/arize-skills by Arize AI"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).

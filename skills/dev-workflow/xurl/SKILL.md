@@ -4,6 +4,7 @@ description: "xurl X/Twitter API CLI: install, auth, app choice, shortcuts, raw 
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.1"
+license: MIT
 ---
 
 # xurl

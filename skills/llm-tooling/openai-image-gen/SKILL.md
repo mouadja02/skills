@@ -4,6 +4,7 @@ description: "OpenAI Images API: batches, prompt sampler, gallery — gpt-image-
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # OpenAI Image Gen

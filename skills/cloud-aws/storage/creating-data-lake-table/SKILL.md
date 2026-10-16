@@ -16,6 +16,8 @@ version: 1
 argument-hint: '[table-description|schema-spec]'
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Create Data Lake Tables with Amazon S3 Tables
 
 ## Overview

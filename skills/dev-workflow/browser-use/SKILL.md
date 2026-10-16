@@ -4,6 +4,7 @@ description: "Chrome DevTools MCP automation: existing Chrome tabs, profile-awar
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Browser Use

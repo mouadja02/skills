@@ -3,6 +3,7 @@ name: react18-legacy-context
 description: React legacy context → modern Context API — contextTypes, childContextTypes migration patterns
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).

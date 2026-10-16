@@ -3,6 +3,7 @@ name: winapp-cli
 description: 'Windows App Development CLI (winapp) for building, packaging, signing, debugging, and UI-automating Windows applications'
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

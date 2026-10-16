@@ -6,6 +6,7 @@ description: >-
   background for other superpowers skills that cite `superpowers:test-driven-development`.
 source: "https://github.com/obra/superpowers"
 attribution: "obra/superpowers by Jesse Vincent"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).

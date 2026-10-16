@@ -4,6 +4,7 @@ description: "Speaking ops: conference invites, keynotes, panels, calendar/email
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Speaking

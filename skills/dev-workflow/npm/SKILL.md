@@ -4,6 +4,7 @@ description: "npm registry ops: login, whoami, package availability, publish; 1P
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # npm

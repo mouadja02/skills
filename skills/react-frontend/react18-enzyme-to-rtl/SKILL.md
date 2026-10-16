@@ -3,6 +3,7 @@ name: react18-enzyme-to-rtl
 description: Enzyme → React Testing Library migration patterns for React 18
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).

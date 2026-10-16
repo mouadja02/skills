@@ -4,6 +4,7 @@ description: "Codex debugging: codex-rs core/tui/exec/cli/app-server/config."
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Codex Debugging

@@ -3,6 +3,7 @@ name: csharp-async
 description: Use when writing or reviewing async C# — async/await, Task and ValueTask, cancellation tokens, ConfigureAwait, deadlocks, sync-over-async, and async streams.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

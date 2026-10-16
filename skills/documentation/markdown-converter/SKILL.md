@@ -4,6 +4,7 @@ description: "Markdown conversion via markitdown: PDF, Office, HTML, data, OCR, 
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Markdown Converter

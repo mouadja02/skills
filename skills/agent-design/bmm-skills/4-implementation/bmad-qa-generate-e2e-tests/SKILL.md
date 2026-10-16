@@ -3,6 +3,7 @@ name: bmad-qa-generate-e2e-tests
 description: 'Generate end to end automated tests for existing features. Use when the user says "create qa automated tests for [feature]"'
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
 attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).

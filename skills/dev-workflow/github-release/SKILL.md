@@ -10,6 +10,8 @@ attribution: Adapted from github/awesome-copilot's github-release skill.
 compatibility: "requires: gh CLI and git"
 ---
 
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
+
 # GitHub Release Skill
 
 This skill automates the full release workflow for a single-package GitHub repository,

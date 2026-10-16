@@ -3,6 +3,7 @@ name: qdrant-deployment-options
 description: "Use when choosing how to run Qdrant: local mode, Docker, Qdrant Cloud, or self-hosted Kubernetes. Narrows the choice by managed ops versus full control, acceptable network latency, and prototyping versus production."
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).

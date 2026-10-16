@@ -3,6 +3,7 @@ name: winui3-migration-guide
 description: UWP → WinUI 3 migration — API mapping, before/after snippets, App SDK equivalents
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

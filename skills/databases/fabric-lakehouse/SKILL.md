@@ -6,6 +6,7 @@ metadata:
   version: "1.0"
 source: "https://github.com/microsoft/skills-for-fabric"
 attribution: "microsoft/skills-for-fabric by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills-for-fabric](https://github.com/microsoft/skills-for-fabric) by [Microsoft](https://microsoft.com).

@@ -3,6 +3,7 @@ name: developing-with-streamlit
 description: All Streamlit tasks — apps, custom components (st.components.v2), HTML/JS/CSS integration
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [streamlit/agent-skills](https://github.com/streamlit/agent-skills) by [Streamlit](https://streamlit.io).

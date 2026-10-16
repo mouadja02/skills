@@ -7,6 +7,8 @@ description: Creates a production-ready VPC with public and private subnets acro
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Creating a Production-Ready VPC Across Multiple Availability Zones
 
 ## Overview

@@ -11,6 +11,8 @@ description: >
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # AWS Messaging & Streaming Services
 
 When answering AWS messaging and streaming questions, verify specific numbers, versions, limits, and behavioral details from service-specific skills or official AWS documentation. When uncertain, search skills or docs rather than guessing. Fabricated configuration options or incorrect version numbers are worse than admitting uncertainty.

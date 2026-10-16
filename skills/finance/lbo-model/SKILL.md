@@ -9,6 +9,8 @@ metadata:
   hermes:
     tags: [finance, valuation, lbo, private-equity, excel, openpyxl, modeling]
     related_skills: [excel-author, pptx-author, dcf-model, 3-statement-model]
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 ## Environment
