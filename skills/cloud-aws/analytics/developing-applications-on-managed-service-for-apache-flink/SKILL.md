@@ -11,8 +11,7 @@ description: >-
   for the CLI/SDK only; `kinesisanalytics` for IAM, Service Quotas, CloudWatch, and
   the trust principal — two-phase IaC deploys, snapshot lifecycle, Flink 1.x→2.x migration)
   that override generic Flink knowledge.
-
-Triggers — activate on any of: Flink, MSF, Managed Flink, KinesisAnalytics(V2),
+  Triggers — activate on any of: Flink, MSF, Managed Flink, KinesisAnalytics(V2),
   KPU, ParallelismPerKPU, savepoint, checkpoint, operator UID, FlinkKinesisConsumer,
   KinesisStreamsSource, KafkaSource, IcebergSink, EFO, CreateApplication, UpdateApplication,
   CreateApplicationSnapshot, Kryo, RocksDB, Iceberg streaming, EXACTLY_ONCE, watermark,

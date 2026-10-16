@@ -1,7 +1,10 @@
 ---
 name: openrouter-agent-migration
-description: @openrouter/sdk → @openrouter/agent — callModel, tool(), stop conditions migration
-version: 1.0.0
+description: >-
+  Use when migrating TypeScript code from `@openrouter/sdk` to the standalone `@openrouter/agent` package —
+  moving `callModel`, `tool()`, stop conditions, format converters, and streaming helpers, and updating
+  imports when agent features no longer resolve from the SDK.
+version: "1.0.0"
 source: "https://github.com/OpenRouterTeam/skills"
 attribution: "OpenRouterTeam/skills by OpenRouter"
 ---
