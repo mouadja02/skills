@@ -13,3 +13,5 @@ Interview me relentlessly about every aspect of this plan until we reach a share
 Ask the questions one at a time.
 
 If a question can be answered by exploring the codebase, explore the codebase instead.
+
+**Related skill:** `grilling` is the current upstream version of this interview. It asks in numbered rounds and dispatches sub-agents to look up facts instead of asking the user.
