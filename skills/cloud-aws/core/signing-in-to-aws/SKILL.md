@@ -7,6 +7,8 @@ description: |
   Gets AWS credentials for CLI/SDK access via `aws login`. Activates when a developer needs to authenticate to AWS for local development, when an AWS operation fails due to missing or expired credentials, or when someone asks about setting up AWS access. Triggers: "set up AWS", "configure AWS", "aws login", "get credentials", "authenticate", "session expired", "token expired", "no credentials", "AccessDeniedException" with no configured credentials.
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Sign In — Get CLI/SDK Credentials
 
 Help developers get AWS credentials for local development using `aws login`. This provides short-term, auto-rotating credentials that refresh every 15 minutes and remain valid for up to 12 hours.

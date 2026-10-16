@@ -1,6 +1,10 @@
 ---
 name: "agile-product-owner"
-description: Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking
+description: >-
+  Agile product ownership for backlog management and sprint execution. Covers user story writing,
+  acceptance criteria, sprint planning, and velocity tracking. Use when writing user stories, creating
+  acceptance criteria, planning sprints, estimating story points, breaking down epics, or prioritizing
+  the backlog.
 triggers:
   - write user story
   - create acceptance criteria
@@ -14,7 +18,12 @@ triggers:
   - user story template
   - sprint capacity
   - velocity tracking
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Agile Product Owner
 

@@ -20,6 +20,8 @@ description: >
   (use aws-serverless), direct Bedrock without Amplify AI Kit (use bedrock).
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # AWS Amplify Gen2
 
 Build and deploy full-stack applications using AWS Amplify Gen2's TypeScript

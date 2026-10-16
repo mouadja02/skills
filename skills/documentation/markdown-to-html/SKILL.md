@@ -1,7 +1,19 @@
 ---
 name: markdown-to-html
-description: Markdown → HTML — marked.js/pandoc compatible; custom stylesheets, GFM extensions
+description: >-
+  Convert Markdown files to HTML similar to `marked.js`, `pandoc`, `gomarkdown/markdown`, or similar
+  tools; or writing custom script to convert markdown to html and/or working on web template systems
+  like `jekyll/jekyll`, `gohugoio/hugo`, or similar web templating systems that utilize markdown
+  documents, converting them to html. Use when asked to "convert markdown to html", "transform md to
+  html", "render markdown", "generate html from markdown", or when working with .md files and/or web a
+  templating system that converts markdown to HTML output. Supports CLI and Node.js workflows with
+  GFM, CommonMark, and standard Markdown flavors.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Markdown to HTML Conversion
 
@@ -890,7 +902,7 @@ Configure markdown in `hugo.toml`:
 ### [`gomarkdown/markdown`](references/gomarkdown.md)
 
 - Official documentation: <https://pkg.go.dev/github.com/gomarkdown/markdown>
-- Advanced configuration: <https://pkg.go.dev/github.com/gomarkdown/markdown@v0.0.0-20250810172220-2e2c11897d1a/html>
+- Advanced configuration: <https://pkg.go.dev/github.com/gomarkdown/markdown/html>
 - Markdown processing: <https://blog.kowalczyk.info/article/cxn3/advanced-markdown-processing-in-go.html>
 - GitHub repository: <https://github.com/gomarkdown/markdown>
 
@@ -912,5 +924,4 @@ Configure markdown in `hugo.toml`:
 
 - Official documentation: <https://gohugo.io/documentation/>
 - All Settings: <https://gohugo.io/configuration/all/>
-- Editor Plugins: <https://gohugo.io/tools/editors/>
 - GitHub repository: <https://github.com/gohugoio/hugo>

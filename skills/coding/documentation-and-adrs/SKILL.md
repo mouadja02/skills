@@ -1,7 +1,12 @@
 ---
 name: documentation-and-adrs
 description: Use when making an architectural decision, choosing between competing approaches, adding or changing a public API, shipping a user-facing behavior change, or repeatedly explaining the same thing. Captures the why — context, constraints, alternatives — as ADRs and project docs. Not for restating obvious code.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Documentation and ADRs
 

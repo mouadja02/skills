@@ -1,11 +1,15 @@
 ---
 name: vscode-ext-commands
-description: 'Guidelines for contributing commands in VS Code extensions. Indicates naming convention, visibility, localization and other relevant attributes, following VS Code extension development guidelines, libraries and good practices'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Guidelines for contributing commands in VS Code extensions. Indicates naming convention, visibility,
+  localization and other relevant attributes, following VS Code extension development guidelines,
+  libraries and good practices. Use when adding or reviewing commands in a VS Code extension.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # VS Code extension command contribution
 

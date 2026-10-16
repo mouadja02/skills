@@ -1,7 +1,11 @@
 ---
 name: creative-ideation
 title: Creative Ideation — Routed Library of Creative Methods
-description: "Generate ideas via named methods from creative practice."
+description: >-
+  Generates ideas with named methods from creative practice (SCAMPER, lateral provocations,
+  constraints, pataphysics, and more), routed to the user's situation. Use for open-ended generative
+  or selective requests: "I want to make or start something", "I'm stuck", "inspire me", "make this
+  weirder", "help me pick", or inventing a research question.
 version: 2.1.0
 author: SHL0MS
 license: MIT
@@ -11,6 +15,8 @@ metadata:
     tags: [Creative, Ideation, Brainstorming, Methods, Inspiration]
     category: creative
     requires_toolsets: []
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 # Creative Ideation

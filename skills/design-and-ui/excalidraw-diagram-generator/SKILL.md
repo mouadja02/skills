@@ -1,7 +1,12 @@
 ---
 name: excalidraw-diagram-generator
 description: 'Generate Excalidraw diagrams from natural language descriptions. Use when asked to "create a diagram", "make a flowchart", "visualize a process", "draw a system architecture", "create a mind map", or "generate an Excalidraw file". Supports flowcharts, relationship diagrams, mind maps, and system architecture diagrams. Outputs .excalidraw JSON files that can be opened directly in Excalidraw.'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Excalidraw Diagram Generator
 
@@ -589,9 +594,9 @@ python scripts/add-arrow.py my-aws-diagram.excalidraw 565 330 650 350 --label "S
 See bundled references for:
 - `references/excalidraw-schema.md` - Complete Excalidraw JSON schema
 - `references/element-types.md` - Detailed element type specifications
-- `templates/flowchart-template.json` - Basic flowchart starter
-- `templates/relationship-template.json` - Relationship diagram starter
-- `templates/mindmap-template.json` - Mind map starter
+- `templates/flowchart-template.excalidraw` - Basic flowchart starter
+- `templates/relationship-template.excalidraw` - Relationship diagram starter
+- `templates/mindmap-template.excalidraw` - Mind map starter
 - `scripts/split-excalidraw-library.py` - Tool to split `.excalidrawlib` files
 - `scripts/README.md` - Documentation for library tools
 - `scripts/.gitignore` - Prevents local Python artifacts from being committed

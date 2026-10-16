@@ -1,7 +1,12 @@
 ---
 name: debugging-and-error-recovery
 description: Guides systematic root-cause debugging. Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error. Use when you need a systematic approach to finding and fixing the root cause rather than guessing.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Debugging and Error Recovery
 

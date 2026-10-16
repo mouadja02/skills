@@ -1,7 +1,15 @@
 ---
 name: create-architectural-decision-record
-description: 'Create an Architectural Decision Record (ADR) document for AI-optimized decision documentation.'
+description: >-
+  Creates an Architectural Decision Record (ADR) with structured context, decision, alternatives, and
+  consequences, formatted for both AI agents and human readers. Use when recording a significant
+  technical decision.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create Architectural Decision Record
 

@@ -11,11 +11,12 @@ description: >-
   a compliance report, offboard a maker, or any task that involves writing
   governance metadata to flows. Requires a FlowStudio for Teams or MCP Pro+
   subscription — see https://mcp.flowstudio.app
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Power Automate Governance with FlowStudio MCP
 

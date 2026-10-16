@@ -1,7 +1,12 @@
 ---
 name: performance-optimization
 description: "Use when performance budgets or SLAs exist, users or monitoring report slowness, Core Web Vitals fall below thresholds, a change may have caused a regression, or a feature handles large datasets or high traffic. Measure-first workflow: profile, fix the proven bottleneck, re-measure. Not for speculative optimization."
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Performance Optimization
 

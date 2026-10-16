@@ -1,11 +1,15 @@
 ---
 name: typespec-create-agent
-description: 'Generate a complete TypeSpec declarative agent with instructions, capabilities, and conversation starters for Microsoft 365 Copilot'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Generate a complete TypeSpec declarative agent with instructions, capabilities, and conversation
+  starters for Microsoft 365 Copilot. Use when creating a Microsoft 365 Copilot declarative agent
+  defined in TypeSpec.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create TypeSpec Declarative Agent
 

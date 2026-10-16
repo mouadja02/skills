@@ -1,8 +1,15 @@
 ---
 name: refactor
-description: Code refactoring — extract functions, rename, decompose, reduce complexity, no behavior change
+description: >-
+  Refactors code surgically without changing behavior: extract functions, rename, break up large
+  functions and classes, reduce complexity, and remove code smells. Use when code is hard to
+  understand or extend, or the user asks to clean up, refactor, or improve existing code.
 license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Refactor
 

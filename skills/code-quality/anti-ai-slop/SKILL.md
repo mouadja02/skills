@@ -1,6 +1,12 @@
 ---
 name: anti-ai-slop
-description: Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content. Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics: emoji headers, "leverage", "robust", "seamless", "delve", defensive bloat, type-hint overkill, marketing prose, "Whether you're X or Y", verbose error messages, and the rest of the AI tells catalogued from cpython, requests, flask, git, ripgrep, express, kubernetes, serde, go stdlib, and other pre-2020 reference repos. Triggers on "anti-ai", "human-style", "professional code", "clean code", "no slop", "write it like a human", or any time the agent is producing code/docs that should look hand-written.
+description: >-
+  Use when writing, editing, or reviewing code, READMEs, docs, commits, changelogs, or any repo content.
+  Pre-2020 human style — terse, opinionated, restrained, with project voice. Blocks the LLM tics (emoji
+  headers, "leverage", "robust", "seamless", "delve", defensive bloat, type-hint overkill, marketing prose,
+  "Whether you're X or Y", verbose error messages) catalogued from cpython, requests, flask, git, ripgrep,
+  express, kubernetes, serde, and the Go stdlib. Triggers on "anti-ai", "human-style", "no slop", "write it
+  like a human", or any time code/docs should look hand-written.
 ---
 
 # Anti-AI-Slop

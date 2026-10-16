@@ -1,7 +1,16 @@
 ---
 name: ai-team-orchestration
-description: Multi-agent dev team — parallel AI agents, roles, coordination, project kickoff
+description: >-
+  Bootstraps and runs a multi-agent development team with roles (dev, QA, DevOps), parallel work, and
+  sprint plans that survive context resets. Use when kicking off a project with parallel AI agents,
+  writing brainstorm prompts that produce real debate, planning sprints across chats, or recovering
+  from context overflow mid-sprint.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # AI Team Orchestration
 

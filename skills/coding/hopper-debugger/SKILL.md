@@ -1,10 +1,14 @@
 ---
 name: hopper-debugger
-description: "Hopper Disassembler debugging: macOS/iOS binaries, ObjC/Swift symbols, dyld, LLDB."
+description: >-
+  Reverse-engineers and debugs macOS and iOS binaries with Hopper Disassembler and LLDB: ObjC/Swift
+  symbols, dyld loading, framework internals, and crash investigation from disassembly. Use when
+  private API behavior or a runtime crash needs to be understood at the binary level.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
 platform: macos
+license: MIT
 ---
 
 # Hopper Debugger

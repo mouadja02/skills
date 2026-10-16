@@ -1,7 +1,15 @@
 ---
 name: review-and-refactor
-description: 'Review and refactor code in your project according to defined instructions'
+description: >-
+  Reviews and refactors code according to the project's own instruction and guideline files, keeping
+  behavior intact. Use when the user asks for a cleanup pass that must follow repository conventions
+  (for example .github/instructions) rather than generic best practices.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 ## Role
 

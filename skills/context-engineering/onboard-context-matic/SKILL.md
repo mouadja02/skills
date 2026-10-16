@@ -1,7 +1,18 @@
 ---
 name: onboard-context-matic
-description: Context-matic MCP server tour — APIs, endpoints, capabilities walkthrough
+description: >-
+  Interactive onboarding tour for the context-matic MCP server. Walks the user through what the server
+  does, shows all available APIs, lets them pick one to explore, explains it in their project
+  language, demonstrates model_search and endpoint_search live, and ends with a menu of things the
+  user can ask the agent to do. USE FOR: first-time setup; "what can this MCP do?"; "show me the
+  available APIs"; "onboard me"; "how do I use the context-matic server"; "give me a tour". DO NOT USE
+  FOR: actually integrating an API end-to-end (use integrate-context-matic instead).
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Onboarding: ContextMatic MCP
 

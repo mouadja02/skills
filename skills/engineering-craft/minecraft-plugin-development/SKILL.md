@@ -1,7 +1,18 @@
 ---
 name: minecraft-plugin-development
-description: Minecraft Paper/Spigot/Bukkit plugin dev — plugin.yml, commands, events, Gradle
+description: >-
+  Use this skill when building or modifying Minecraft server plugins for Paper, Spigot, or Bukkit,
+  including plugin.yml setup, commands, listeners, schedulers, player state, team or arena systems,
+  persistent progression, economy or profile data, configuration files, Adventure text, and
+  version-safe API usage. Trigger for requests like "build a Minecraft plugin", "add a Paper command",
+  "fix a Bukkit listener", "create plugin.yml", "implement a minigame mechanic", "add a perk or quest
+  system", or "debug server plugin behavior".
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Minecraft Plugin Development
 

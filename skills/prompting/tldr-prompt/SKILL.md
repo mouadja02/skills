@@ -1,7 +1,15 @@
 ---
 name: tldr-prompt
-description: 'Create tldr summaries for GitHub Copilot files (prompts, agents, instructions, collections), MCP servers, or documentation from URLs and queries'
+description: >-
+  Create tldr summaries for GitHub Copilot files (prompts, agents, instructions, collections), MCP
+  servers, or documentation from URLs and queries. Use when someone needs a quick summary of a Copilot
+  customization file, an MCP server, or a docs page.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # TLDR Prompt
 
@@ -57,11 +65,11 @@ considered **Ambiguous Queries**
     * Prompts, agents, instructions, collections → Search workspace first
       - If no relevant files found, check https://github.com/github/awesome-copilot and resolve to
       https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/{{folder}}/{{filename}}
-      (e.g., https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/prompts/java-junit.prompt.md)
+      (e.g., https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/skills/java-junit/SKILL.md)
     * MCP servers → Prioritize https://modelcontextprotocol.io/ and
     https://code.visualstudio.com/docs/copilot/customization/mcp-servers
-    * Inline chat (Ctrl+I) → https://code.visualstudio.com/docs/copilot/inline-chat
-    * Chat view/general → https://code.visualstudio.com/docs/copilot/ and
+    * Inline chat (Ctrl+I) → https://code.visualstudio.com/docs/copilot/chat/inline-chat
+    * Chat view/general → https://code.visualstudio.com/docs/copilot/overview and
     https://docs.github.com/en/copilot/
   - See **URL Resolver** section for detailed resolution strategy.
 
@@ -79,12 +87,12 @@ resolve to:
      `prompts` folders is irrelevant to query → Search https://github.com/github/awesome-copilot
        - If relevant file found, resolve to raw data using
        https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/{{folder}}/{{filename}}
-       (e.g., https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/prompts/java-junit.prompt.md)
+       (e.g., https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/skills/java-junit/SKILL.md)
    - MCP servers → https://modelcontextprotocol.io/ or
    https://code.visualstudio.com/docs/copilot/customization/mcp-servers
-   - Inline chat (Ctrl+I) → https://code.visualstudio.com/docs/copilot/inline-chat
-   - Chat tools/agents → https://code.visualstudio.com/docs/copilot/chat/
-   - General Copilot → https://code.visualstudio.com/docs/copilot/ or
+   - Inline chat (Ctrl+I) → https://code.visualstudio.com/docs/copilot/chat/inline-chat
+   - Chat tools/agents → https://code.visualstudio.com/docs/copilot/chat/copilot-chat
+   - General Copilot → https://code.visualstudio.com/docs/copilot/overview or
    https://docs.github.com/en/copilot/
 
 2. **Search strategy**:
@@ -179,12 +187,12 @@ From the search results, I'll produce a tldr output for each file found.
 ```text
 I'll check https://github.com/github/awesome-copilot
 Found:
-- https://github.com/github/awesome-copilot/blob/main/prompts/java-docs.prompt.md
-- https://github.com/github/awesome-copilot/blob/main/prompts/java-junit.prompt.md
+- https://github.com/github/awesome-copilot/blob/main/skills/java-docs/SKILL.md
+- https://github.com/github/awesome-copilot/blob/main/skills/java-junit/SKILL.md
 
 Now let me fetch the raw content:
-- https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/prompts/java-docs.prompt.md
-- https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/prompts/java-junit.prompt.md
+- https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/skills/java-docs/SKILL.md
+- https://raw.githubusercontent.com/github/awesome-copilot/refs/heads/main/skills/java-junit/SKILL.md
 
 I'll create a tldr summary for each prompt file.
 ```

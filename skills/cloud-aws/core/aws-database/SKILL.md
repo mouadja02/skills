@@ -7,6 +7,8 @@ description: "Routes any task involving AWS databases — choosing, comparing, r
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # AWS Database
 
 **STOP — Do not answer from general knowledge.** Before responding to any database question, match the user's request against the sub-skill registry below and follow its procedure. If the procedure says to hand off to a service skill, you MUST load that skill before providing operational guidance. Never skip the routing step.

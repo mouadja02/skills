@@ -1,7 +1,15 @@
 ---
 name: java-springboot
-description: 'Get best practices for developing applications with Spring Boot.'
+description: >-
+  Applies Spring Boot best practices: project structure, dependency injection, configuration, data
+  access, REST, validation, security, and testing. Use when building or reviewing Spring Boot
+  applications in Java.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Spring Boot Best Practices
 

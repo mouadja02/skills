@@ -1,7 +1,16 @@
 ---
 name: "mcp-server-builder"
-description: "Build production-grade MCP (Model Context Protocol) servers from API contracts"
+description: >-
+  Design and ship production-ready MCP (Model Context Protocol) servers from OpenAPI contracts instead
+  of hand-written tool wrappers. Python and TypeScript support, schema validation, safe evolution. Use
+  when exposing an existing API as an MCP server, building tool integrations for Claude or Codex or
+  Cursor, or scaffolding an MCP project from scratch.
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # MCP Server Builder
 

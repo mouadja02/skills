@@ -1,7 +1,15 @@
 ---
 name: add-educational-comments
-description: 'Add educational comments to the file specified, or prompt asking for file to comment if one is not provided.'
+description: >-
+  Adds educational comments to a code file so it becomes a learning resource, asking for the file
+  (with a list of close matches) if none is given. Use when preparing code for learners, onboarding,
+  or teaching.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Add Educational Comments
 

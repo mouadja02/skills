@@ -1,8 +1,12 @@
 ---
 name: react18-batching-patterns
-description: React 18 automatic batching regression diagnosis and fix — class component patterns
+description: >-
+  Diagnoses and fixes React 18 automatic-batching regressions in class components, where multiple
+  setState calls in async handlers now batch and break code that relied on intermediate renders. Use
+  when class components misbehave after upgrading to React 18.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).

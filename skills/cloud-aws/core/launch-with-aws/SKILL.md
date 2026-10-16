@@ -7,6 +7,8 @@ description: "Migrates vibe-coded web applications to AWS. Handles the full work
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Launch with AWS
 
 Drives an AWS migration end-to-end using CLI scripts. Takes a user's web application, analyzes it, generates a migration plan with cost estimate, and delivers deployable [AWS Blocks](https://docs.aws.amazon.com/blocks/latest/devguide/what-is-blocks.html) infrastructure code.

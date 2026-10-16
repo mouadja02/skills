@@ -1,8 +1,17 @@
 ---
 name: msstore-cli
-description: 'Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store'
+description: >-
+  Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store.
+  Use when asked to configure Store credentials, list Store apps, check submission status, publish
+  submissions, manage package flights, set up CI/CD for Store publishing, or integrate with Partner
+  Center. Supports Windows App SDK/WinUI, UWP, .NET MAUI, Flutter, Electron, React Native, and PWA
+  applications.
 license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Microsoft Store Developer CLI (msstore)
 

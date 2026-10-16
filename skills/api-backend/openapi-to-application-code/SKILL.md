@@ -1,11 +1,15 @@
 ---
 name: openapi-to-application-code
-description: 'Generate a complete, production-ready application from an OpenAPI specification'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Generates a complete, working application from an OpenAPI specification using the active framework's
+  conventions: models, routes, validation, and tests. Use when scaffolding a service from an existing
+  OpenAPI/Swagger spec rather than hand-writing endpoints.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Generate Application from OpenAPI Spec
 

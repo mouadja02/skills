@@ -1,8 +1,12 @@
 ---
 name: react18-dep-compatibility
-description: 'React 18.3.1 and React 19 dependency compatibility matrix.'
+description: >-
+  Lists minimum dependency versions compatible with React 18.3.1 and React 19. Use when checking
+  whether a library supports a target React version, resolving peer dependency conflicts, or deciding
+  between upgrading and legacy-peer-deps.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).

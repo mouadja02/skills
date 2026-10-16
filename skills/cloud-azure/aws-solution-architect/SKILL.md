@@ -1,7 +1,16 @@
 ---
 name: "aws-solution-architect"
-description: Design AWS architectures for startups using serverless patterns and IaC templates
+description: >-
+  Design AWS architectures for startups using serverless patterns and IaC templates. Use when asked to
+  design serverless architecture, create CloudFormation templates, optimize AWS costs, set up CI/CD
+  pipelines, or migrate to AWS. Covers Lambda, API Gateway, DynamoDB, ECS, Aurora, and cost
+  optimization.
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # AWS Solution Architect
 

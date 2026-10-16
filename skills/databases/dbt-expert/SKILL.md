@@ -1,6 +1,9 @@
 ---
 name: dbt-expert
-description: dbt — models, schema.yml, sources, tests, macros, YAML generation, best practices
+description: >-
+  Writes and reviews dbt projects targeting Snowflake: models, schema.yml metadata, sources, tests,
+  macros, and project structure. Use when building or reviewing dbt models, generating dbt YAML, or
+  applying dbt best practices.
 ---
 
 # dbt Expert

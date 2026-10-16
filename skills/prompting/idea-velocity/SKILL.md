@@ -1,6 +1,9 @@
 ---
 name: idea-velocity
-description: Rapid ideation — 50+ ideas in one pass, zero-judgment phase, quantity over quality
+description: >-
+  Runs rapid ideation: 50+ ideas in one pass with a zero-judgment generation phase, then structured
+  selection. Use when brainstorming needs volume and the first few obvious ideas keep crowding out
+  better ones.
 ---
 
 # Idea Velocity

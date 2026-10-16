@@ -1,7 +1,15 @@
 ---
 name: playwright-generate-test
-description: 'Generate a Playwright test based on a scenario using Playwright MCP'
+description: >-
+  Generates a Playwright test from a described scenario by first performing the steps with the
+  Playwright MCP server, then writing and running the test. Use when turning a user journey into a
+  working Playwright test.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Test Generation with Playwright MCP
 

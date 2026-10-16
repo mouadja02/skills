@@ -2,11 +2,11 @@
 name: winmd-api-search
 description: Use when you need to find or explore Windows desktop APIs from Windows Metadata (.winmd) — locating a type, namespace, method, or its signature for Win32, WinRT, or Windows App SDK work.
 license: Complete terms in LICENSE.txt
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # WinMD API Search
 

@@ -1,10 +1,14 @@
 ---
 name: native-app-performance
-description: "Native macOS/iOS app performance: xctrace, Time Profiler, traces, hotspot analysis — CLI-only."
+description: >-
+  Profiles native macOS and iOS apps from the command line only: xctrace recording, Time Profiler
+  samples, hotspot ranking, and symbolication with atos and vmmap. Use for headless or SSH-based
+  performance analysis without opening the Instruments GUI.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.1"
 platform: apple
+license: MIT
 ---
 
 # Native App Performance (CLI-only)

@@ -1,7 +1,16 @@
 ---
 name: codeql
-description: CodeQL setup — GitHub Actions scanning, CLI queries, alert triage
+description: >-
+  Comprehensive guide for setting up and configuring CodeQL code scanning via GitHub Actions workflows
+  and the CodeQL CLI. This skill should be used when users need help with code scanning configuration,
+  CodeQL workflow files, CodeQL CLI commands, SARIF output, security analysis setup, or
+  troubleshooting CodeQL analysis.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # CodeQL Code Scanning
 

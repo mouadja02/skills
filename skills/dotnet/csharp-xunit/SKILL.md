@@ -1,11 +1,14 @@
 ---
 name: csharp-xunit
-description: 'Get best practices for XUnit unit testing, including data-driven tests'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Applies xUnit best practices to C# unit tests: facts and theories, fixtures, assertions, and
+  data-driven tests with InlineData and MemberData. Use when writing or reviewing xUnit tests.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # XUnit Best Practices
 

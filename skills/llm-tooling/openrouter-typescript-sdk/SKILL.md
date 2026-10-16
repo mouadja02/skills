@@ -1,6 +1,9 @@
 ---
 name: openrouter-typescript-sdk
-description: integrating with 300+ AI models through the OpenRouter TypeScript SDK and Agent packages using the callModel pattern
+description: >-
+  Integrates with 300+ models through the OpenRouter TypeScript SDK and agent packages using the
+  callModel pattern: text generation, tools, streaming, and multi-turn conversations. Use when writing
+  TypeScript that calls models through OpenRouter.
 version: 2.0.0
 source: "https://github.com/OpenRouterTeam/skills"
 attribution: "OpenRouterTeam/skills by OpenRouter"
@@ -692,7 +695,7 @@ import { fromClaudeMessages, toClaudeMessage } from '@openrouter/agent';
 
 // Claude messages → OpenRouter format
 const result = client.callModel({
-  model: 'anthropic/claude-3-opus',
+  model: 'anthropic/claude-sonnet-5.5',
   input: fromClaudeMessages(claudeMessages)
 });
 

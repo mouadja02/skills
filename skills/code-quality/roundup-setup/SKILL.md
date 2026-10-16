@@ -1,7 +1,16 @@
 ---
 name: roundup-setup
-description: Roundup status briefing setup — configure voice, audiences, data sources (GitHub, Jira)
+description: >-
+  Interactive onboarding that learns your communication style, audiences, and data sources to
+  configure personalized status briefings. Paste in examples of updates you already write, answer a
+  few questions, and roundup calibrates itself to your workflow. Use the first time Roundup is used,
+  or to recalibrate its style and sources.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Roundup Setup
 

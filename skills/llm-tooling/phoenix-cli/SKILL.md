@@ -1,6 +1,9 @@
 ---
 name: phoenix-cli
-description: Phoenix CLI — fetch/export traces, analyze errors, open coding axial coding review
+description: >-
+  Uses the Phoenix CLI (px) to list, fetch, export, annotate, and add notes to traces, analyze errors,
+  and run open and axial coding reviews. Use when inspecting or reviewing LLM traces stored in Arize
+  Phoenix from the terminal.
 license: Apache-2.0
 compatibility: Requires Node.js (for npx) or global install of @arizeai/phoenix-cli. Optionally requires jq for JSON processing.
 metadata:

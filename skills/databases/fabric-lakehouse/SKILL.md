@@ -1,11 +1,14 @@
 ---
 name: fabric-lakehouse
-description: Microsoft Fabric Lakehouse — features, SQL endpoint, Delta tables, AI functions context
+description: >-
+  Explains and designs Microsoft Fabric Lakehouse solutions: Delta tables, the SQL analytics endpoint,
+  shortcuts, and AI functions. Use when building, optimizing, or documenting a Fabric Lakehouse.
 metadata:
   author: tedvilutis
   version: "1.0"
 source: "https://github.com/microsoft/skills-for-fabric"
 attribution: "microsoft/skills-for-fabric by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills-for-fabric](https://github.com/microsoft/skills-for-fabric) by [Microsoft](https://microsoft.com).

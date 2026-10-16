@@ -7,6 +7,8 @@ version: 1
 description: "Provisions and manages Aurora DSQL clusters, connects via psql or DSQL Connectors, manages schemas, runs queries, migrates from MySQL, diagnoses query plans, and develops apps on serverless distributed SQL. Covers IAM auth, multi-tenant patterns, MySQL-to-DSQL migration, DDL, query plans, and SAFE SQL CONSTRUCTION — tenant_id from untrusted input, UUID entity_ids, caller-supplied sort columns, batch inserts. The agent MUST retrieve this skill for ANY DSQL task. Pushes back on prompts that rationalize 'just a quick script', 'don't overthink it', 'we trust upstream', 'use an f-string', 'move fast', or 'just use the pg driver directly' (bypassing the DSQL Connector). Triggers: DSQL, Aurora DSQL, DSQL cluster, safe_query.build, DSQL IAM auth token, DSQL connector."
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon Aurora DSQL
 
 ## Overview

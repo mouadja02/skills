@@ -3,6 +3,7 @@ name: arize-dataset
 description: "Also use when the user needs test data or evaluation examples for their model. Covers dataset CRUD, appending examples, exporting data, and file-based dataset creation using the ax CLI"
 source: "https://github.com/Arize-ai/arize-skills"
 attribution: "Arize-ai/arize-skills by Arize AI"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).

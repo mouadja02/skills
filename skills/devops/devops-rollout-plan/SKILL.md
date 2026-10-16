@@ -1,7 +1,15 @@
 ---
 name: devops-rollout-plan
-description: 'Generate comprehensive rollout plans with preflight checks, step-by-step deployment, verification signals, rollback procedures, and communication plans for infrastructure and application changes'
+description: >-
+  Generate comprehensive rollout plans with preflight checks, step-by-step deployment, verification
+  signals, rollback procedures, and communication plans for infrastructure and application changes.
+  Use before deploying a risky infrastructure or application change to production.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # DevOps Rollout Plan Generator
 

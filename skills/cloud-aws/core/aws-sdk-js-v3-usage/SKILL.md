@@ -7,6 +7,8 @@ description: |
   AWS SDK for JavaScript v3 development patterns. Use when writing JavaScript or TypeScript code that uses AWS services via @aws-sdk/* packages (aws-sdk-js-v3), or when asked about schemas, runtime validation, serialization, or code generation in the context of the JS/TS AWS SDK.
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 > Do not use emojis in any code, comments, or output when this skill is active.
 
 # AWS SDK for JavaScript v3

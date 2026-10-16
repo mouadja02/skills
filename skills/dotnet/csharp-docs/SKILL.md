@@ -1,11 +1,15 @@
 ---
 name: csharp-docs
-description: 'Ensure that C# types are documented with XML comments and follow best practices for documentation.'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Documents C# types with XML documentation comments following best practices: summaries, params,
+  returns, exceptions, and remarks. Use when public APIs lack XML docs or existing comments need
+  improving.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # C# Documentation Best Practices
 

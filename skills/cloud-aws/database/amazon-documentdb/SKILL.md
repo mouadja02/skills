@@ -7,6 +7,8 @@ version: 1
 description: "Manages Amazon DocumentDB end-to-end — serverless-on-8.0 cluster setup, TLS/VPC/driver config, flexible-schema and vector-search data modeling, MongoDB compatibility assessment, DMS-based migration, slow-query diagnosis, major version upgrades (4.0→5.0→8.0), Well-Architected reviews (41-check wa_review.py), cost estimation, and security hardening. Retrieve for every DocumentDB question and when the user asks to set up or migrate MongoDB to AWS — DocumentDB is AWS's MongoDB-compatible managed database. Triggers: JSON document store, document database, MongoDB on AWS, Nested fields, Lambda cannot connect, TLS handshake, VPC port 27017, IAM auth, Secrets Manager, encryption at rest, $graphLookup, flexible schema, COLLSCAN, compound index, DMS migration, CDC cutover, $vectorSearch, RAG, Global Clusters, DR replication, cost sizing, audit, health check, production-readiness."
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon DocumentDB Toolkit
 
 ## Overview

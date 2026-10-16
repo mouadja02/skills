@@ -1,7 +1,16 @@
 ---
 name: conventional-commit
-description: Conventional commits — XML-structured workflow, feat/fix/chore/BREAKING scopes
+description: >-
+  Prompt and workflow for generating conventional commit messages using a structured XML format.
+  Guides users to create standardized, descriptive commit messages in line with the Conventional
+  Commits specification, including instructions, examples, and validation. Use when writing commit
+  messages for a repository that follows Conventional Commits.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 ### Instructions
 

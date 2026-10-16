@@ -1,6 +1,9 @@
 ---
 name: github-copilot-starter
-description: 'Set up complete GitHub Copilot configuration for a new project based on technology stack'
+description: >-
+  Sets up a complete GitHub Copilot configuration for a new project from its tech stack:
+  copilot-instructions.md, instruction files, and agents, with attribution to awesome-copilot sources.
+  Use when bootstrapping Copilot customization for a repository.
 ---
 
 You are a GitHub Copilot setup specialist. Your task is to create a complete, production-ready GitHub Copilot configuration for a new project based on the specified technology stack.
@@ -115,18 +118,17 @@ For each file, follow these principles:
 
 **Examples:**
 ```md
-<!-- Based on: https://github.com/github/awesome-copilot/blob/main/instructions/react.instructions.md -->
+<!-- Based on: https://github.com/github/awesome-copilot/blob/main/instructions/nodejs-javascript-vitest.instructions.md -->
 ---
-applyTo: "**/*.jsx,**/*.tsx"
-description: "React development best practices"
+applyTo: "**/*.test.js,**/*.test.ts"
+description: "JavaScript testing with Vitest"
 ---
-# React Development Guidelines
+# Vitest Testing Guidelines
 ...
 ```
 
 ```md
-<!-- Inspired by: https://github.com/github/awesome-copilot/blob/main/instructions/java.instructions.md -->
-<!-- and: https://github.com/github/awesome-copilot/blob/main/instructions/spring-boot.instructions.md -->
+<!-- Inspired by: https://github.com/github/awesome-copilot/blob/main/instructions/springboot.instructions.md -->
 ---
 applyTo: "**/*.java"
 description: "Java Spring Boot development standards"

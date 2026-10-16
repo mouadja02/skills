@@ -1,6 +1,10 @@
 ---
 name: quality-playbook
-description: Quality audit — behavioral requirements from code, spec-traced tests, coverage gaps
+description: >-
+  Runs a multi-phase quality audit of a codebase: derives behavioral requirements from code and docs,
+  generates spec-traced tests, runs a three-pass code review and independent spec audits, and
+  reconciles every bug with regression tests. Use for a deep quality assessment of a project, not a
+  quick PR review.
 license: Complete terms in LICENSE.txt
 metadata:
   version: 1.5.6

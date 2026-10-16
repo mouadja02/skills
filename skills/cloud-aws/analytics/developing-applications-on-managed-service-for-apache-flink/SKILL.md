@@ -11,14 +11,15 @@ description: >-
   for the CLI/SDK only; `kinesisanalytics` for IAM, Service Quotas, CloudWatch, and
   the trust principal — two-phase IaC deploys, snapshot lifecycle, Flink 1.x→2.x migration)
   that override generic Flink knowledge.
-
-Triggers — activate on any of: Flink, MSF, Managed Flink, KinesisAnalytics(V2),
+  Triggers — activate on any of: Flink, MSF, Managed Flink, KinesisAnalytics(V2),
   KPU, ParallelismPerKPU, savepoint, checkpoint, operator UID, FlinkKinesisConsumer,
   KinesisStreamsSource, KafkaSource, IcebergSink, EFO, CreateApplication, UpdateApplication,
   CreateApplicationSnapshot, Kryo, RocksDB, Iceberg streaming, EXACTLY_ONCE, watermark,
   CDC binlog/WAL, Glue/S3 Tables, AWS/KinesisAnalytics CloudWatch.
 version: 1
 ---
+
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
 
 # Managed Service for Apache Flink
 

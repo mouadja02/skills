@@ -1,6 +1,9 @@
 ---
 name: docker-management
-description: Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization.
+description: >-
+  Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging,
+  cleanup, and Dockerfile optimization. Use when running, debugging, or cleaning up Docker containers
+  or Compose stacks.
 version: 1.0.0
 author: sprmn24
 license: MIT
@@ -10,6 +13,8 @@ metadata:
     tags: [docker, containers, devops, infrastructure, compose, images, volumes, networks, debugging]
     category: devops
     requires_toolsets: [terminal]
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 # Docker Management

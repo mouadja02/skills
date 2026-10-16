@@ -3,9 +3,16 @@ license: Apache-2.0
 source: https://github.com/aws/agent-toolkit-for-aws
 attribution: "Amazon Web Services - agent-toolkit-for-aws (Apache-2.0)"
 name: dms-schema-conversion
-description: Handles the full DMS Schema Conversion lifecycle including creating migration projects, converting database schemas to a target engine, running compatibility assessments, navigating metadata trees, exporting converted DDL to S3, applying schema changes to a target database, and converting SQL statements between database engines.
+description: >-
+  Handles the full DMS Schema Conversion lifecycle including creating migration projects, converting
+  database schemas to a target engine, running compatibility assessments, navigating metadata trees,
+  exporting converted DDL to S3, applying schema changes to a target database, and converting SQL
+  statements between database engines. Use when converting a database schema to another engine with
+  AWS DMS Schema Conversion.
 version: 2
 ---
+
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
 
 # DMS Schema Conversion
 

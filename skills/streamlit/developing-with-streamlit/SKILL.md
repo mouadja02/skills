@@ -1,8 +1,12 @@
 ---
 name: developing-with-streamlit
-description: All Streamlit tasks — apps, custom components (st.components.v2), HTML/JS/CSS integration
+description: >-
+  Handles every Streamlit task: creating, editing, and debugging apps, session state, performance
+  (caching, fragments), visual design, custom components (st.components.v2), HTML/JS/CSS integration,
+  and deployment locally or to Snowflake. Use whenever the request involves a Streamlit app.
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [streamlit/agent-skills](https://github.com/streamlit/agent-skills) by [Streamlit](https://streamlit.io).

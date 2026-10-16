@@ -1,9 +1,13 @@
 ---
 name: "auto-memory-status"
-description: "Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations."
+description: >-
+  Shows a memory health dashboard: line counts, topic files, capacity, stale entries, and
+  recommendations across all memory systems. Use when the user runs /si:status or asks how large or
+  healthy the project's agent memory is.
 command: /si:status
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).

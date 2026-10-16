@@ -1,10 +1,14 @@
 ---
 name: beeper
-description: "Beeper local cache: contact hints, room lookup, WhatsApp/iMessage traces, FTS search."
+description: >-
+  Searches the local Beeper cache across bridged chats (iMessage, WhatsApp, and others): contact
+  lookup from vague hints, room lookup, and full-text message search. Use when finding a conversation
+  or contact in Beeper history.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
 platform: macos
+license: MIT
 ---
 
 # Beeper

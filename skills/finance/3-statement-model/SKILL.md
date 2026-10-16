@@ -1,6 +1,9 @@
 ---
 name: 3-statement-model
-description: Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author.
+description: >-
+  Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A
+  roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with
+  excel-author. Use when building or fixing a linked financial statement model in Excel.
 version: 1.0.0
 author: Anthropic (adapted by Nous Research)
 license: Apache-2.0
@@ -9,6 +12,8 @@ metadata:
   hermes:
     tags: [finance, three-statement, income-statement, balance-sheet, cash-flow, excel, openpyxl, modeling]
     related_skills: [excel-author, pptx-author, dcf-model, lbo-model]
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 ## Environment

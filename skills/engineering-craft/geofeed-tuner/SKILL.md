@@ -13,7 +13,11 @@ metadata:
   author: Sid Mathur <support@getfastah.com>
   version: "0.0.10"
 compatibility: Requires Python 3
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed Apache-2.0. Modified for this collection.
 
 # Geofeed Tuner – Create Better IP Geolocation Feeds
 

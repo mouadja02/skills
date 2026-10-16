@@ -7,6 +7,8 @@ description: Designs, reviews, and debugs DynamoDB data layers from design axiom
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # DynamoDB Axioms
 
 This document is a set of design axioms for DynamoDB applications. It is intended to be read by an agent with no other context about the application and used to produce a defensible data-layer design.

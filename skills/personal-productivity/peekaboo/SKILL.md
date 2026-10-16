@@ -1,10 +1,13 @@
 ---
 name: peekaboo
-description: "macOS screenshots, UI inspection, clicks, typing, app/window automation via Peekaboo."
+description: >-
+  Automates macOS with Peekaboo: screenshots, UI inspection, clicks, typing, and app and window
+  control. Use for macOS screen capture or GUI automation.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
 platform: macos
+license: MIT
 ---
 
 # Peekaboo

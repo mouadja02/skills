@@ -1,8 +1,14 @@
 ---
 name: arize-evaluator
-description: Arize LLM judge — evaluators, hallucination/faithfulness/relevance scorers, eval runs
+description: >-
+  Handles LLM-as-judge and code evaluator workflows on Arize including creating/updating evaluators,
+  running evaluations on spans or experiments, managing tasks, trigger-run operations, column mapping,
+  and continuous monitoring. Use when the user mentions create evaluator, LLM judge, code evaluator,
+  hallucination, faithfulness, correctness, relevance, run eval, score spans, score experiment,
+  trigger-run, column mapping, continuous monitoring, or improve evaluator prompt.
 source: "https://github.com/Arize-ai/arize-skills"
 attribution: "Arize-ai/arize-skills by Arize AI"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).

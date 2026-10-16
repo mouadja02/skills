@@ -1,7 +1,17 @@
 ---
 name: folder-structure-blueprint-generator
-description: Project folder structure docs — auto-detect type, document conventions, generate diagrams
+description: >-
+  Comprehensive technology-agnostic prompt for analyzing and documenting project folder structures.
+  Auto-detects project types (.NET, Java, React, Angular, Python, Node.js, Flutter), generates
+  detailed blueprints with visualization options, naming conventions, file placement patterns, and
+  extension templates for maintaining consistent code organization across diverse technology stacks.
+  Use when documenting a project's folder layout or setting conventions for where new code goes.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Project Folder Structure Blueprint Generator
 

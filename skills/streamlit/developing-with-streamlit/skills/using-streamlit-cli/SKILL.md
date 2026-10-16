@@ -1,8 +1,12 @@
 ---
 name: using-streamlit-cli
-description: Documents Streamlit CLI commands for running apps, managing configuration, and diagnostics
+description: >-
+  Runs Streamlit apps and manages configuration and diagnostics with the Streamlit CLI: streamlit run,
+  config options, and environment checks. Use when starting, configuring, or troubleshooting how a
+  Streamlit app is launched.
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [streamlit/agent-skills](https://github.com/streamlit/agent-skills) by [Streamlit](https://streamlit.io).

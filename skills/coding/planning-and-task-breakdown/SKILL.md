@@ -1,7 +1,12 @@
 ---
 name: planning-and-task-breakdown
 description: Use when a task feels too large or vague to start, a spec needs breaking into implementable units, work must be parallelized across agents or sessions, or implementation order is unclear. Produces ordered tasks with acceptance criteria. Skip when the spec already contains well-defined tasks.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Planning and Task Breakdown
 

@@ -1,12 +1,22 @@
 ---
 name: banner-design
-description: Banner design — social, ads, heroes, print. Art direction with AI-generated assets
+description: >-
+  Design banners for social media, ads, website heroes, creative assets, and print. Multiple art
+  direction options with optional generated or supplied visuals. Actions: design, create, generate
+  banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero,
+  print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro,
+  glassmorphism, 3D, neon, duotone, editorial, collage. Use when the user asks for a banner, cover
+  image, ad creative, or website hero image.
 argument-hint: "[platform] [style] [dimensions]"
 license: MIT
 metadata:
   author: claudekit
   version: "1.0.0"
+source: "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+attribution: "nextlevelbuilder/ui-ux-pro-max-skill by Next Level Builder"
 ---
+
+> **Attribution:** Sourced from [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) by [Next Level Builder](https://nextlevelbuilder.io), licensed MIT. Modified for this collection.
 
 # Banner Design - Multi-Format Creative Banner System
 
@@ -88,7 +98,7 @@ For each art direction option:
    **Aspect ratios:** `1:1`, `16:9`, `9:16`, `3:4`, `4:3`, `2:3`, `3:2`
    Match to platform - e.g., Twitter header = `3:1` (use `3:2` closest), Instagram story = `9:16`
 
-   **Pro model prompt tips** (see `ai-artist` references/nano-banana-pro-examples.md):
+   **Pro model prompt tips** (see `ai-artist/references/nano-banana-pro-examples.md` in the upstream ClaudeKit `ai-artist` skill, which is not bundled here):
    - Be descriptive: style, lighting, mood, composition, color palette
    - Include art direction: "minimalist flat design", "cyberpunk neon", "editorial photography"
    - Specify no-text: "no text, no letters, no words" (text overlaid in HTML step)

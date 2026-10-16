@@ -3,6 +3,7 @@ name: qdrant-sliding-time-window
 description: Use when Qdrant holds time-series or recency-bounded data and old points should age out. Covers sliding time-window collection patterns so storage stays bounded.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
@@ -16,7 +17,7 @@ Three strategies: **shard rotation** (recommended), **collection rotation** (whe
 
 ## Shard Rotation (Recommended)
 
-Use when: data has natural time boundaries (daily, weekly, monthly). Preferred because queries span all time periods in one request without application-level fan-out. [User-defined sharding](https://search.qdrant.tech/md/documentation/operations/distributed_deployment/?s=user-defined-sharding)
+Use when: data has natural time boundaries (daily, weekly, monthly). Preferred because queries span all time periods in one request without application-level fan-out. [User-defined sharding](https://search.qdrant.tech/md/documentation/scaling/distributed_deployment/?s=user-defined-sharding)
 
 1. Create a collection with user-defined sharding enabled
 2. Create one shard key per time period (e.g., `2025-01`, `2025-02`, ..., `2025-06`)

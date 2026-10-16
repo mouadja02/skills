@@ -3,6 +3,7 @@ name: bmad-prfaq
 description: Working Backwards PRFAQ challenge to forge product concepts. Use when the user requests to 'create a PRFAQ', 'work backwards', or 'run the PRFAQ challenge'.
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
 attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).

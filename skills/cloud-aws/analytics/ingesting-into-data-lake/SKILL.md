@@ -20,6 +20,8 @@ version: 1
 argument-hint: '[source-path|connection-name|table-name] [--target s3-tables|iceberg|parquet]'
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Ingest into Data Lake
 
 Move data from a source into a queryable table in the data lake. This skill assumes the source connection (if one is needed) already exists. For Glue connection setup or troubleshooting, delegate to `connecting-to-data-source`.

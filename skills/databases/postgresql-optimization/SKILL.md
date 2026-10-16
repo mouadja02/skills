@@ -1,7 +1,16 @@
 ---
 name: postgresql-optimization
-description: PostgreSQL optimization — unique features, advanced types, exclusive capabilities
+description: >-
+  PostgreSQL-specific development assistant focusing on unique PostgreSQL features, advanced data
+  types, and PostgreSQL-exclusive capabilities. Covers JSONB operations, array types, custom types,
+  range/geometric types, full-text search, window functions, and PostgreSQL extensions ecosystem. Use
+  when writing or tuning PostgreSQL-specific SQL or choosing PostgreSQL features for a design.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # PostgreSQL Development Assistant
 

@@ -1,7 +1,12 @@
 ---
 name: "executive-mentor-board-prep"
 description: "Use when preparing for a board meeting and the goal is to survive the adversarial version of it — anticipating every hard question, knowing which numbers must be cold, and shaping a narrative that acknowledges weakness without losing the room."
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # /em:board-prep — Board Meeting Preparation
 

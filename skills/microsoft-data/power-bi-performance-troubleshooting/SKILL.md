@@ -1,11 +1,15 @@
 ---
 name: power-bi-performance-troubleshooting
-description: 'Systematic Power BI performance troubleshooting prompt for identifying, diagnosing, and resolving performance issues in Power BI models, reports, and queries'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Systematic Power BI performance troubleshooting prompt for identifying, diagnosing, and resolving
+  performance issues in Power BI models, reports, and queries. Use when a Power BI report, visual, or
+  refresh is slow.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Power BI Performance Troubleshooting Guide
 

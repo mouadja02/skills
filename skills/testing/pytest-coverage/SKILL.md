@@ -1,7 +1,14 @@
 ---
 name: pytest-coverage
-description: 'Run pytest tests with coverage, discover lines missing coverage, and increase coverage to 100%.'
+description: >-
+  Runs pytest with coverage, finds the lines missing coverage with annotated reports, and adds tests
+  until coverage reaches 100%. Use when raising Python test coverage or finding untested code paths.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 The goal is for the tests to cover all lines of code.
 

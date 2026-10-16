@@ -1,9 +1,13 @@
 ---
 name: "autoresearch-resume"
-description: "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating."
+description: >-
+  Resumes a paused or context-limited autoresearch experiment: checks out the experiment branch, reads
+  the results history, and continues iterating. Use when the user runs /ar:resume or wants to pick up
+  an experiment where it stopped.
 command: /ar:resume
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).

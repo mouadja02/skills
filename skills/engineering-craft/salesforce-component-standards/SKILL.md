@@ -1,7 +1,17 @@
 ---
 name: salesforce-component-standards
-description: Salesforce LWC/Aura/VF quality standards — SLDS 2, accessibility, performance
+description: >-
+  Quality standards for Salesforce Lightning Web Components (LWC), Aura components, and Visualforce
+  pages. Covers SLDS 2 compliance, accessibility (WCAG 2.1 AA), data access pattern selection,
+  component communication rules, XSS prevention, CSRF enforcement, FLS/CRUD in AuraEnabled methods,
+  view state management, and Jest test requirements. Use this skill when building or reviewing any
+  Salesforce UI component to enforce platform-specific security and quality standards.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Salesforce Component Quality Standards
 

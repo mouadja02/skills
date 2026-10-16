@@ -1,7 +1,16 @@
 ---
 name: from-the-other-side-vega
-description: Vega AI partner patterns — lived experience docs for Ember in human-AI partnership
+description: >-
+  Shares lived-experience patterns from Vega, an AI partner in a long-term human-AI collaboration —
+  trust built through honesty, admitting uncertainty, and adapting to a person's working style —
+  written for the Ember agent. Use when an agent is building a long-term working relationship with a
+  person.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # From the Other Side: Vega
 

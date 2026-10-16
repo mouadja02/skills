@@ -1,6 +1,8 @@
 ---
 name: framework-vue-nuxt-expert
-description: Triggers on keywords Vue 3, Nuxt 3, Vue.js, TailwindCSS
+description: >-
+  Applies expert conventions for Vue 3, Nuxt 3, TypeScript, and Tailwind CSS: Composition API,
+  readable components, and step-by-step reasoning. Use when writing or reviewing Vue or Nuxt code.
 ---
 
 # Vue 3 & Nuxt 3 Expert

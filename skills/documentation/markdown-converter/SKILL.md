@@ -1,9 +1,13 @@
 ---
 name: markdown-converter
-description: "Markdown conversion via markitdown: PDF, Office, HTML, data, OCR, audio, ZIP, YouTube — no install required."
+description: >-
+  Converts files to Markdown with markitdown (via uvx, no install): PDF, Office documents, HTML, data
+  files, images with OCR, audio transcription, ZIP archives, and YouTube transcripts. Use when content
+  must be turned into Markdown for reading or processing.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Markdown Converter

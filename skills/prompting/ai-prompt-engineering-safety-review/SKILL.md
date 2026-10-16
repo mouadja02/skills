@@ -1,7 +1,16 @@
 ---
 name: ai-prompt-engineering-safety-review
-description: Prompt safety review — bias, injection, ethical risks, scored with fixes
+description: >-
+  Comprehensive AI prompt engineering safety review and improvement prompt. Analyzes prompts for
+  safety, bias, security vulnerabilities, and effectiveness while providing detailed improvement
+  recommendations with extensive frameworks, testing methodologies, and educational content. Use
+  before deploying a prompt or system prompt that will face real users.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # AI Prompt Engineering Safety Review & Improvement
 

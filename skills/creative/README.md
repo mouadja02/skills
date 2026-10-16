@@ -13,6 +13,6 @@ Creative ideation, concept visualization, generative methods, and reusable desig
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`concept-diagrams`](concept-diagrams/SKILL.md) | `creative/concept-diagrams` | Generate flat, minimal light/dark-aware SVG diagrams as standalone HTML files, using a unified educational visual language with 9 semantic color ramps, sentence-case typography, and automatic dark mode. Best suited for educational and no... |
-| [`creative-ideation`](creative-ideation/SKILL.md) | `creative/creative-ideation` | Generate ideas via named methods from creative practice. |
+| [`creative-ideation`](creative-ideation/SKILL.md) | `creative/creative-ideation` | Generates ideas with named methods from creative practice (SCAMPER, lateral provocations, constraints, pataphysics, and more), routed to the user's situation. Use for open-ended generative or selective requests: "I want to make or start... |
 
 [Back to the category index](../README.md)

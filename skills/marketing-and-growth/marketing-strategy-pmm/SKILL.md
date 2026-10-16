@@ -1,6 +1,12 @@
 ---
 name: "marketing-strategy-pmm"
-description: Product marketing — positioning, GTM strategy, competitive intelligence, and product launches
+description: >-
+  Product marketing skill for positioning, GTM strategy, competitive intelligence, and product
+  launches. Use when the user asks about product positioning, go-to-market planning, competitive
+  analysis, target audience definition, ICP definition, market research, launch plans, or sales
+  enablement. Covers April Dunford positioning, ICP definition, competitive battlecards, launch
+  playbooks, and international market entry. Produces deliverables including positioning statements,
+  battlecard documents, launch plans, and go-to-market strategies.
 triggers:
   - product marketing
   - PMM
@@ -13,7 +19,12 @@ triggers:
   - market entry
   - sales enablement
   - win loss analysis
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Marketing Strategy & PMM
 

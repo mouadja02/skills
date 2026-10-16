@@ -1,9 +1,13 @@
 ---
 name: github-deep-review
-description: "GitHub deep review: bugs, PRs, best fix, stale-or-real, read code first, evidence-first."
+description: >-
+  Deep, evidence-first review of GitHub bugs and PRs: reads the code before forming opinions, finds
+  root causes, decides whether an issue is stale, duplicate, or real, and proposes the best fix. Use
+  when an issue or PR needs real investigation rather than a summary.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # GitHub Deep Review

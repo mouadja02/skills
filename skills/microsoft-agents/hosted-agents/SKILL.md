@@ -1,11 +1,12 @@
 ---
 name: hosted-agents
 description: This skill should be used when the user asks to "build background agent", "create hosted coding agent", "set up sandboxed execution", "implement multiplayer agent", or mentions background agents, sandboxed VMs, agent infrastructure, Modal sandboxes, self-spawning agents, or remote coding environments.
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan), licensed MIT. Modified for this collection.
 
 # Hosted Agent Infrastructure
 

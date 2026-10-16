@@ -1,6 +1,9 @@
 ---
 name: snowflake-sql
-description: Snowflake SQL — QUALIFY, FLATTEN, VARIANT/OBJECT/ARRAY, tasks, streams, stages
+description: >-
+  Writes and reviews Snowflake-specific SQL: QUALIFY, FLATTEN, VARIANT/OBJECT/ARRAY handling, streams,
+  tasks, stages, and warehouse-aware patterns. Use when generic SQL is not enough on Snowflake —
+  semi-structured data, incremental pipelines, or Snowflake DDL.
 ---
 
 # Snowflake SQL Expert

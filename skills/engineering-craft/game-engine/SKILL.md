@@ -1,7 +1,17 @@
 ---
 name: game-engine
-description: 'building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript'
+description: >-
+  Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and
+  JavaScript. Use when asked to create games, build game engines, implement game physics, handle
+  collision detection, set up game loops, manage sprites, add game controls, or work with 2D/3D
+  rendering. Covers techniques for platformers, breakout-style games, maze games, tilemaps, audio,
+  multiplayer via WebRTC, and publishing games.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Game Engine Skill
 

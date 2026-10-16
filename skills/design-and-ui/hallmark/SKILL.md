@@ -1,11 +1,16 @@
 ---
 name: hallmark
-description: "Anti-AI-slop design — greenfield pages, audits, redesigns, and design extraction from URLs or screenshots"
+description: >-
+  Applies opinionated anti-AI-slop design rules so generated UIs look made, not generated: greenfield
+  pages, audits, redesigns, and design extraction from URLs or screenshots. Use when designing or
+  reviewing a web UI that must avoid templated, generic AI aesthetics.
 version: 1.0.1
 license: MIT
 source: https://github.com/Nutlope/hallmark
 attribution: "Adapted from Hallmark by Together AI contributors."
 ---
+
+> **Attribution:** Sourced from [Nutlope/hallmark](https://github.com/Nutlope/hallmark) by [Hallmark contributors](https://github.com/Nutlope/hallmark), licensed MIT. Modified for this collection.
 
 # Hallmark
 

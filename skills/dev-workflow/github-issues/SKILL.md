@@ -1,7 +1,20 @@
 ---
 name: github-issues
-description: GitHub issues via MCP — bug reports, features, milestones, labels, bulk operations
+description: >-
+  Create, update, and manage GitHub issues using MCP tools. Use this skill when users want to create
+  bug reports, feature requests, or task issues, update existing issues, add
+  labels/assignees/milestones, manage repository labels, set issue fields (dates, priority, custom
+  fields), set issue types, manage issue workflows, link issues, add dependencies, or track
+  blocked-by/blocking relationships. Triggers on requests like "create an issue", "file a bug",
+  "request a feature", "update issue X", "set the priority", "set the start date", "create a label",
+  "rename a label", "list repo labels", "link issues", "add dependency", "blocked by", "blocking", or
+  any GitHub issue management task.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # GitHub Issues
 

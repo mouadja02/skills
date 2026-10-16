@@ -1,7 +1,17 @@
 ---
 name: performance-review-writer
-description: Performance reviews, self-assessments, peer reviews — written in your own voice
+description: >-
+  Draft performance reviews, self-assessments, peer reviews, and upward feedback in your own voice.
+  Analyzes your contributions, emails, and meeting history via WorkIQ, then produces honest,
+  impact-focused drafts using the STAR format. USE FOR: write my performance review, draft
+  self-assessment, peer review, 360 feedback, annual review, mid-year review, upward feedback, write
+  review for colleague, performance appraisal.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Performance Review Writer
 

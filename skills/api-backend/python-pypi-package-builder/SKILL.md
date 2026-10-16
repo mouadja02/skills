@@ -1,7 +1,18 @@
 ---
 name: python-pypi-package-builder
-description: Build, test, lint, version, publish Python library to PyPI — all build tool flavors
+description: >-
+  End-to-end skill for building, testing, linting, versioning, and publishing a production-grade
+  Python library to PyPI. Covers all four build backends (setuptools+setuptools_scm, hatchling, flit,
+  poetry), PEP 440 versioning, semantic versioning, dynamic git-tag versioning, OOP/SOLID design, type
+  hints (PEP 484/526/544/561), Trusted Publishing (OIDC), and the full PyPA packaging flow. Use for:
+  creating Python packages, pip-installable SDKs, CLI tools, framework plugins, pyproject.toml setup,
+  py.typed, setuptools_scm, semver, mypy, pre-commit, GitHub Actions CI/CD, or PyPI publishing.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Python PyPI Package Builder Skill
 

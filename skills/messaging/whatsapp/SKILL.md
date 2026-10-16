@@ -1,9 +1,13 @@
 ---
 name: whatsapp
-description: "WhatsApp router: history/search/read/send — archive-first vs live, safety rules."
+description: >-
+  Routes WhatsApp work to the right tool: wacrawl for read-only local history and search, wacli for
+  live sync, sending, and chat or group changes, with safety rules for sending. Use for any WhatsApp
+  history, search, read, or send request.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # WhatsApp

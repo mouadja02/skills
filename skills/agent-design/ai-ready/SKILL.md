@@ -1,8 +1,12 @@
 ---
 name: ai-ready
-description: AI-ready repo — AGENTS.md, copilot-instructions.md, CI workflows, issue templates
+description: >-
+  Installs John Papa's ai-ready skill, which makes a repository AI-ready by generating AGENTS.md,
+  copilot-instructions.md, CI workflows, and issue templates. Use when the user asks to make a repo
+  AI-ready or set up AI agent configuration for a project.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).

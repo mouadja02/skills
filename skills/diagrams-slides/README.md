@@ -6,25 +6,24 @@
 
 Diagrams, presentations, meeting artifacts, and professional visual communication.
 
-**Total:** 14 skills.
+**Total:** 13 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`codebase-diagrams-and-slides`](codebase-diagrams-and-slides/SKILL.md) | `diagrams-slides/codebase-diagrams-and-slides` | Turns any codebase into branded, presentation-ready SVG diagrams and an optional smooth animated HTML slide deck. Analyzes a repository in any language (Markdown, Python, Rust, dbt, SQL, JS/TS, Java, Go, ...), extracts its architecture /... |
-| [`draw-io-diagram-generator`](draw-io-diagram-generator/SKILL.md) | `diagrams-slides/draw-io-diagram-generator` | draw.io XML — flowcharts, architecture, sequence, ER, UML, mxGraph shapes/styles |
-| [`drawio`](drawio/SKILL.md) | `diagrams-slides/drawio` | Generate draw.io diagrams as .drawio files and export to PNG/SVG/PDF with embedded XML |
-| [`email-drafter`](email-drafter/SKILL.md) | `diagrams-slides/email-drafter` | Professional email drafting — matches personal voice from sent-email analysis |
+| [`draw-io-diagram-generator`](draw-io-diagram-generator/SKILL.md) | `diagrams-slides/draw-io-diagram-generator` | Use when creating, editing, or generating draw.io diagram files (.drawio, .drawio.svg, .drawio.png). Covers mxGraph XML authoring, shape libraries, style strings, flowcharts, system architecture, sequence diagrams, ER diagrams, UML class... |
+| [`drawio`](drawio/SKILL.md) | `diagrams-slides/drawio` | Generates draw.io diagrams as native .drawio files and exports them to PNG, SVG, or PDF with the diagram XML embedded so they stay editable. Use when a diagram must be editable in draw.io or embedded in Word documents. |
+| [`email-drafter`](email-drafter/SKILL.md) | `diagrams-slides/email-drafter` | Draft and review professional emails that match your personal writing style. Analyzes your sent emails for tone, greeting, structure, and sign-off patterns via WorkIQ, then generates context-aware drafts for any recipient. USE FOR: draft... |
 | [`html-slides-creator`](html-slides-creator/SKILL.md) | `diagrams-slides/html-slides-creator` | Generate polished reveal.js HTML presentations from a codebase — analyses repo, plans narrative, writes slides with branding, code demos, architecture diagrams, and speaker notes. Invoke when user says "create slides", "build a presentat... |
 | [`investor-pitch-deck-designer`](investor-pitch-deck-designer/SKILL.md) | `diagrams-slides/investor-pitch-deck-designer` | Triggers on keywords pitch deck, VC pitch, investor presentation, fundraising deck |
-| [`linkedin-post-formatter`](linkedin-post-formatter/SKILL.md) | `diagrams-slides/linkedin-post-formatter` | LinkedIn posts — Unicode bold/italic, visual separators, structured sections, hooks |
-| [`meeting-minutes`](meeting-minutes/SKILL.md) | `diagrams-slides/meeting-minutes` | Generate concise, actionable meeting minutes for internal meetings. Includes metadata, attendees, agenda, decisions, action items (owner + due date), and follow-up steps |
-| [`performance-review-writer`](performance-review-writer/SKILL.md) | `diagrams-slides/performance-review-writer` | Performance reviews, self-assessments, peer reviews — written in your own voice |
-| [`plantuml-ascii`](plantuml-ascii/SKILL.md) | `diagrams-slides/plantuml-ascii` | Generate ASCII art diagrams using PlantUML text mode |
-| [`pptx`](pptx/SKILL.md) | `diagrams-slides/pptx` | PowerPoint (.pptx) — create, edit, convert, extract, present; any pptx task |
-| [`repo-story-time`](repo-story-time/SKILL.md) | `diagrams-slides/repo-story-time` | Generate a comprehensive repository summary and narrative story from commit history |
-| [`slides`](slides/SKILL.md) | `diagrams-slides/slides` | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies |
+| [`linkedin-post-formatter`](linkedin-post-formatter/SKILL.md) | `diagrams-slides/linkedin-post-formatter` | Format and draft compelling LinkedIn posts using Unicode bold/italic styling, visual separators, structured sections, and engagement-optimized patterns. USE FOR: draft LinkedIn post, format text for LinkedIn, create social media post, wr... |
+| [`meeting-minutes`](meeting-minutes/SKILL.md) | `diagrams-slides/meeting-minutes` | Generate concise, actionable meeting minutes for internal meetings. Includes metadata, attendees, agenda, decisions, action items (owner + due date), and follow-up steps. Use after an internal meeting when notes or a transcript need turn... |
+| [`performance-review-writer`](performance-review-writer/SKILL.md) | `diagrams-slides/performance-review-writer` | Draft performance reviews, self-assessments, peer reviews, and upward feedback in your own voice. Analyzes your contributions, emails, and meeting history via WorkIQ, then produces honest, impact-focused drafts using the STAR format. USE... |
+| [`plantuml-ascii`](plantuml-ascii/SKILL.md) | `diagrams-slides/plantuml-ascii` | Generate ASCII art diagrams using PlantUML text mode. Use when user asks to create ASCII diagrams, text-based diagrams, terminal-friendly diagrams, or mentions plantuml ascii, text diagram, ascii art diagram. Supports: Converting PlantUM... |
+| [`repo-story-time`](repo-story-time/SKILL.md) | `diagrams-slides/repo-story-time` | Turns a repository's commit history and code into a summary and narrative: phases, contributors, patterns, and the decisions behind them. Use when someone wants to understand how a project evolved or needs a repository retrospective. |
+| [`slides`](slides/SKILL.md) | `diagrams-slides/slides` | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. Use when a presentation should be built as an HTML deck rather than a PowerPoint file. |
 | [`svg-diagrams`](svg-diagrams/SKILL.md) | `diagrams-slides/svg-diagrams` | Also use when the user wants to visualize agent workflows, ETL pipelines, dbt lineage, API flows, or system integrations. If the words diagram, chart, flow, architecture, visualize, or draw appear in a visual context — use this skill |
 
 [Back to the category index](../README.md)

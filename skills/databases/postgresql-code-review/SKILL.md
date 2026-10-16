@@ -1,7 +1,16 @@
 ---
 name: postgresql-code-review
-description: PostgreSQL code review — PG-specific best practices, anti-patterns, quality standards
+description: >-
+  PostgreSQL-specific code review assistant focusing on PostgreSQL best practices, anti-patterns, and
+  unique quality standards. Covers JSONB operations, array usage, custom types, schema design,
+  function optimization, and PostgreSQL-exclusive security features like Row Level Security (RLS). Use
+  when reviewing SQL, schema, or functions written for PostgreSQL.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # PostgreSQL Code Review Assistant
 

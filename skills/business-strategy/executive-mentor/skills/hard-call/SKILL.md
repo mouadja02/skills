@@ -1,7 +1,15 @@
 ---
 name: "executive-mentor-hard-call"
-description: "/em -hard-call — Framework for Decisions With No Good Options"
+description: >-
+  /em:hard-call — Framework for decisions with no good options. Use when every option is painful and a
+  structured 10/10/10 + regret-minimization pass is needed — e.g. choosing between a layoff and a down
+  round, or killing a beloved product line.
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # /em:hard-call — Framework for Decisions With No Good Options
 

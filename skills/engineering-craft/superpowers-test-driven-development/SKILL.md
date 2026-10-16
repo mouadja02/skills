@@ -1,8 +1,12 @@
 ---
 name: superpowers-test-driven-development
-description: Use when implementing any feature or bugfix, before writing implementation code — the strict superpowers RED-GREEN-REFACTOR discipline: write the test, watch it fail, then write minimal code to pass. Required background for other superpowers skills that cite `superpowers:test-driven-development`.
+description: >-
+  Use when implementing any feature or bugfix, before writing implementation code — the strict superpowers
+  RED-GREEN-REFACTOR discipline: write the test, watch it fail, then write minimal code to pass. Required
+  background for other superpowers skills that cite `superpowers:test-driven-development`.
 source: "https://github.com/obra/superpowers"
 attribution: "obra/superpowers by Jesse Vincent"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).

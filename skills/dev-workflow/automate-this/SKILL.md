@@ -1,7 +1,16 @@
 ---
 name: automate-this
-description: Automate from screen recording — extract frames/audio, produce working scripts
+description: >-
+  Analyze a screen recording of a manual process and produce targeted, working automation scripts.
+  Extracts frames and audio narration from video files, reconstructs the step-by-step workflow, and
+  proposes automation at multiple complexity levels using tools already installed on the user machine.
+  Use when someone shares a screen recording of a repetitive task they want automated.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Automate This
 

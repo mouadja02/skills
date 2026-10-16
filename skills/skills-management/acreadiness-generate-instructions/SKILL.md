@@ -1,9 +1,14 @@
 ---
 name: acreadiness-generate-instructions
-description: AgentRC instruction file generator — .github/copilot-instructions.md, custom paths
+description: >-
+  Generate tailored AI agent instruction files via AgentRC instructions command. Produces
+  .github/copilot-instructions.md (default, recommended for Copilot in VS Code) plus optional per-area
+  .instructions.md files with applyTo globs for monorepos. Use after running /acreadiness-assess to
+  close gaps in the AI Tooling pillar.
 argument-hint: "[--output .github/copilot-instructions.md|AGENTS.md] [--strategy flat|nested] [--areas | --area <name>] [--apply-to <glob>] [--claude-md] [--dry-run]"
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).

@@ -1,7 +1,15 @@
 ---
 name: create-llms
-description: 'Create an llms.txt file from scratch based on repository structure following the llms.txt specification at https://llmstxt.org/'
+description: >-
+  Create an llms.txt file from scratch based on repository structure following the llms.txt
+  specification at https://llmstxt.org/. Use when a repository has no llms.txt and should be easier
+  for LLMs to navigate.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create LLMs.txt File from Repository Structure
 

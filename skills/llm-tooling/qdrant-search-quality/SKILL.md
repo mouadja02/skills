@@ -1,12 +1,17 @@
 ---
 name: qdrant-search-quality
-description: "Diagnoses and improves Qdrant search relevance"
+description: >-
+  Diagnoses and improves Qdrant search relevance by separating embedding-model, data/chunking,
+  configuration, and query-strategy causes; links to diagnosis and search-strategy sub-skills. Use
+  when search results are bad, irrelevant, or missing expected matches, or when precision or recall is
+  low.
 allowed-tools:
   - Read
   - Grep
   - Glob
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).

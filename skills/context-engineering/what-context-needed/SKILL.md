@@ -1,11 +1,15 @@
 ---
 name: what-context-needed
-description: 'Ask Copilot what files it needs to see before answering a question'
-source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
-attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
+description: >-
+  Makes the agent list the files it needs to see before answering a question about the codebase,
+  instead of guessing. Use when a question depends on code the agent has not read yet, or when earlier
+  answers were confidently wrong about the code.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # What Context Do You Need?
 

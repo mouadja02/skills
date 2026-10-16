@@ -9,11 +9,12 @@ description: >-
   JSON, update an existing flow's actions, patch a flow definition, add actions
   to a flow, wire up connections, or generate a workflow definition from scratch.
   Requires a FlowStudio MCP subscription — see https://mcp.flowstudio.app
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Build & Deploy Power Automate Flows with FlowStudio MCP
 

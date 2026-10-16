@@ -1,7 +1,12 @@
 ---
 name: using-agent-skills
 description: Use when unsure which engineering-workflow skill applies to the task at hand. Routes from development phase — idea, spec, plan, implement, test, review, ship — to the right skill, and shows how they chain together across a feature or bugfix.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Using Agent Skills
 

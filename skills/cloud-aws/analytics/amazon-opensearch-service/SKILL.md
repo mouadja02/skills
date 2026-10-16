@@ -7,6 +7,8 @@ description: Amazon OpenSearch Service and Serverless across five capabilities �
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon OpenSearch Service — the unified skill
 
 This skill answers anything about Amazon OpenSearch Service or Serverless across five capabilities. **Step 0 below routes the question to ONE capability** and points at that capability's entry-point reference. Everything else — when to dispatch, sub-references, capability-specific facts, cross-capability links — lives in the entry-point reference for that capability.

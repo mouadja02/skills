@@ -7,6 +7,8 @@ description: "Evaluates, configures, and migrates workloads to AWS Lambda Manage
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # AWS Lambda Managed Instances (LMI)
 
 Runs Lambda functions on EC2 instances in the user's account while AWS manages provisioning, patching, scaling, routing, and load balancing. Combines Lambda's developer experience with EC2's pricing and hardware options.

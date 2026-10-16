@@ -1,6 +1,9 @@
 ---
 name: building-streamlit-custom-components-v2
-description: Builds bidirectional Streamlit Custom Components v2 (CCv2) using `st.components.v2.component`
+description: >-
+  Builds bidirectional Streamlit Custom Components v2 (CCv2) with st.components.v2.component: frontend
+  in React, Svelte, Vue, or plain JS, bundling with Vite, asset_dir, and pyproject.toml manifests. Use
+  when the user mentions CCv2 or needs a custom interactive Streamlit component.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

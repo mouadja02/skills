@@ -120,7 +120,7 @@ ScrollTrigger.batch(".card", {
 });
 ```
 
-See [ScrollTrigger.batch()](https://gsap.com/docs/v3/Plugins/ScrollTrigger/static.batch/) in the GSAP docs.
+See [ScrollTrigger.batch()](https://gsap.com/docs/v3/Plugins/ScrollTrigger/static.batch()) in the GSAP docs.
 
 ## ScrollTrigger.scrollerProxy()
 
@@ -151,7 +151,7 @@ ScrollTrigger.scrollerProxy(document.body, {
 scrollbar.addListener(ScrollTrigger.update);
 ```
 
-See [ScrollTrigger.scrollerProxy()](https://gsap.com/docs/v3/Plugins/ScrollTrigger/static.scrollerProxy/) in the GSAP docs.
+See [ScrollTrigger.scrollerProxy()](https://gsap.com/docs/v3/Plugins/ScrollTrigger/static.scrollerProxy()) in the GSAP docs.
 
 ## Scrub
 

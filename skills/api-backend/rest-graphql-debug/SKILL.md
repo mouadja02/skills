@@ -1,6 +1,10 @@
 ---
 name: rest-graphql-debug
-description: "Debug REST/GraphQL APIs: status codes, auth, schemas, repro."
+description: >-
+  Debugs REST and GraphQL APIs: unexpected status codes or bodies, auth failures (401/403, OAuth, API
+  keys), schema mismatches, rate limits, pagination, and webhooks. Use when a request works in Postman
+  but not in code, an integration test fails, or a callback misbehaves; not for UI rendering or DB
+  tuning.
 version: 1.2.0
 author: eren-karakus0
 license: MIT
@@ -9,6 +13,8 @@ metadata:
     tags: [api, rest, graphql, http, debugging, testing, curl, integration]
     category: software-development
     related_skills: [systematic-debugging, test-driven-development]
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 # API Testing & Debugging

@@ -1,7 +1,18 @@
 ---
 name: project-workflow-analysis-blueprint-generator
-description: End-to-end workflow docs — CI/CD, service boundaries, data flow, auto-detect project type
+description: >-
+  Comprehensive technology-agnostic prompt generator for documenting end-to-end application workflows.
+  Automatically detects project architecture patterns, technology stacks, and data flow patterns to
+  generate detailed implementation blueprints covering entry points, service layers, data access,
+  error handling, and testing approaches across multiple technologies including .NET, Java/Spring,
+  React, and microservices architectures. Use when documenting how requests and data move through an
+  application end to end.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Project Workflow Documentation Generator
 

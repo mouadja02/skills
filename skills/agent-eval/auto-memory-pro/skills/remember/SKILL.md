@@ -1,9 +1,13 @@
 ---
 name: "auto-memory-remember"
-description: "Explicitly save important knowledge to auto-memory with timestamp and context"
+description: >-
+  Saves an important piece of knowledge to auto-memory with a timestamp and context. Use when the user
+  runs /si:remember or says to remember something, or when a hard-won debugging insight, project
+  convention, tool gotcha, or architecture decision should not depend on automatic capture.
 command: /si:remember
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).

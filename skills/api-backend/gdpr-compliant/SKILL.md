@@ -1,7 +1,19 @@
 ---
 name: gdpr-compliant
-description: GDPR-compliant engineering — API design, data modeling, consent, retention, audit trails
+description: >-
+  Apply GDPR-compliant engineering practices across your codebase. Use this skill whenever you are
+  designing APIs, writing data models, building authentication flows, implementing logging, handling
+  user data, writing retention/deletion jobs, designing cloud infrastructure, or reviewing pull
+  requests for privacy compliance. Trigger this skill for any task involving personal data, user
+  accounts, cookies, analytics, emails, audit logs, encryption, pseudonymization, anonymization, data
+  exports, breach response, CI/CD pipelines that process real data, or any question framed as "is this
+  GDPR-compliant?". Inspired by CNIL developer guidance and GDPR Articles 5, 25, 32, 33, 35.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # GDPR Engineering Skill
 
@@ -13,7 +25,6 @@ Inspired by CNIL developer guidance and GDPR Articles 5, 25, 32, 33, 35.
 For deep dives, read the reference files in `references/`:
 - `references/data-rights.md` — user rights endpoints, DSR workflow, RoPA
 - `references/security.md` — encryption, hashing, secrets, anonymization
-- `references/operations.md` — cloud, CI/CD, incident response, architecture patterns
 
 ---
 

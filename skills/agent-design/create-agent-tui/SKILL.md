@@ -1,6 +1,11 @@
 ---
 name: create-agent-tui
-description: Agent TUI scaffolding in TypeScript — @openrouter/agent, interactive terminal UI
+description: >-
+  Scaffolds a complete agent TUI in TypeScript using @openrouter/agent — like create-react-app for
+  terminal agents. Generates a customizable terminal interface with three input styles, four tool
+  display modes, ASCII banners, streaming output, session persistence, and configurable tools. Use
+  when building an agent, creating a TUI, scaffolding an agent project, or building a coding
+  assistant.
 source: "https://github.com/OpenRouterTeam/skills"
 attribution: "OpenRouterTeam/skills by OpenRouter"
 ---

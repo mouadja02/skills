@@ -1,12 +1,19 @@
 ---
 name: impeccable
-description: UI critique, audit, polish — websites, dashboards, components, onboarding, empty states
+description: >-
+  Designs, critiques, audits, and polishes frontend interfaces — websites, landing pages, dashboards,
+  components, onboarding, and empty states — after loading the project's PRODUCT.md and DESIGN.md
+  context. Use when the user wants to design, redesign, review, or improve a UI.
 argument-hint: "[{{command_hint}}] [target]"
 user-invocable: true
 allowed-tools:
   - Bash(npx impeccable *)
 license: Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for attribution.
+source: "https://github.com/pbakaus/impeccable"
+attribution: "pbakaus/impeccable by Paul Bakaus"
 ---
+
+> **Attribution:** Sourced from [pbakaus/impeccable](https://github.com/pbakaus/impeccable) by [Paul Bakaus](https://paulbakaus.com), licensed Apache-2.0. Modified for this collection.
 
 Designs and iterates production-grade frontend interfaces. Real working code, committed design choices, exceptional craft.
 

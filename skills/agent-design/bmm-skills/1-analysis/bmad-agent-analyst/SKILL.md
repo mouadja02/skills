@@ -1,8 +1,11 @@
 ---
 name: bmad-agent-analyst
-description: Strategic business analyst and requirements expert
+description: >-
+  Business analyst for market research, competitive analysis, and requirements. Use when the user asks
+  to talk to Mary or requests the business analyst
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
 attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).

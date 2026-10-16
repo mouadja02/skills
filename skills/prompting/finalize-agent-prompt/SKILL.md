@@ -1,7 +1,15 @@
 ---
 name: finalize-agent-prompt
-description: 'Finalize prompt file using the role of an AI agent to polish the prompt for the end user.'
+description: >-
+  Polishes a prompt file from an AI agent's perspective so it follows proven prompt practices, keeping
+  its front matter, encoding, and Markdown structure. Use when a prompt or agent instruction file is
+  drafted and needs a final pass before use.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Finalize Agent Prompt
 

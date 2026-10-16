@@ -1,7 +1,15 @@
 ---
 name: memory-merger
-description: 'Merges mature lessons from a domain memory file into its instruction file'
+description: >-
+  Merges mature lessons from a domain memory file into its instruction file. Syntax: `/memory-merger
+  >domain [scope]` where scope is `global` (default), `user`, `workspace`, or `ws`. Use when a domain
+  memory file has accumulated lessons that should become permanent instructions.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Memory Merger
 

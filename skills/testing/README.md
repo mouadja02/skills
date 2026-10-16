@@ -6,23 +6,24 @@
 
 Testing, QA, Playwright, pytest, debugging, and evaluation strategy.
 
-**Total:** 12 skills.
+**Total:** 13 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
 | [`advanced-evaluation`](advanced-evaluation/SKILL.md) | `testing/advanced-evaluation` | This skill should be used when the user asks to "implement LLM-as-judge", "compare model outputs", "create evaluation rubrics", "mitigate evaluation bias", or mentions direct scoring, pairwise comparison, position bias, evaluation pipeli... |
-| [`diagnose`](diagnose/SKILL.md) | `testing/diagnose` | Perform a systematic diagnostic scan of an AI workflow across 5 quality dimensions — prompt quality, context efficiency, tool health, architecture fitness, and safety — producing a scored report with prioritized remediation actions |
+| [`diagnose`](diagnose/SKILL.md) | `testing/diagnose` | Perform a systematic diagnostic scan of an AI workflow across 5 quality dimensions — prompt quality, context efficiency, tool health, architecture fitness, and safety — producing a scored report with prioritized remediation actions. Use... |
 | [`evaluation`](evaluation/SKILL.md) | `testing/evaluation` | This skill should be used when the user asks to "evaluate agent performance", "build test framework", "measure agent quality", "create evaluation rubrics", or mentions LLM-as-judge, multi-dimensional evaluation, agent testing, or quality... |
 | [`exam-ready`](exam-ready/SKILL.md) | `testing/exam-ready` | Activate this skill when a student provides study material (PDF or pasted notes) and a syllabus, and wants to prepare for an exam. Extracts key definitions, points, keywords, diagrams, exam-ready sentences, and practice questions strictl... |
-| [`playwright-automation-fill-in-form`](playwright-automation-fill-in-form/SKILL.md) | `testing/playwright-automation-fill-in-form` | Automate filling in a form using Playwright MCP |
-| [`playwright-explore-website`](playwright-explore-website/SKILL.md) | `testing/playwright-explore-website` | Website exploration for testing using Playwright MCP |
-| [`playwright-generate-test`](playwright-generate-test/SKILL.md) | `testing/playwright-generate-test` | Generate a Playwright test based on a scenario using Playwright MCP |
-| [`polyglot-test-agent`](polyglot-test-agent/SKILL.md) | `testing/polyglot-test-agent` | Generates comprehensive, workable unit tests for any programming language using a multi-agent pipeline |
-| [`pytest-coverage`](pytest-coverage/SKILL.md) | `testing/pytest-coverage` | Run pytest tests with coverage, discover lines missing coverage, and increase coverage to 100%. |
+| [`mutation-testing`](mutation-testing/SKILL.md) | `testing/mutation-testing` | Configures mewt or muton campaigns, analyzes surviving mutants, and investigates bugs exposed by testing gaps. Use when setting up mutation testing, reviewing campaign results, identifying equivalent mutants, or finding bugs from survivi... |
+| [`playwright-automation-fill-in-form`](playwright-automation-fill-in-form/SKILL.md) | `testing/playwright-automation-fill-in-form` | Automates filling in a web form with the Playwright MCP server: navigating, locating fields, entering values, and submitting. Use when a form must be completed in a real browser through Playwright MCP tools. |
+| [`playwright-explore-website`](playwright-explore-website/SKILL.md) | `testing/playwright-explore-website` | Explores a website with the Playwright MCP server to identify key user flows and functionality to test. Use before writing end-to-end tests for an unfamiliar site or app. |
+| [`playwright-generate-test`](playwright-generate-test/SKILL.md) | `testing/playwright-generate-test` | Generates a Playwright test from a described scenario by first performing the steps with the Playwright MCP server, then writing and running the test. Use when turning a user journey into a working Playwright test. |
+| [`property-based-testing`](property-based-testing/SKILL.md) | `testing/property-based-testing` | Writes, reviews, and debugs property-based tests — Hypothesis, fast-check, proptest, jqwik, rapid, and Echidna or Medusa for Solidity invariants. Use whenever tests should cover a whole input domain instead of a hand-picked list of examp... |
+| [`pytest-coverage`](pytest-coverage/SKILL.md) | `testing/pytest-coverage` | Runs pytest with coverage, finds the lines missing coverage with annotated reports, and adds tests until coverage reaches 100%. Use when raising Python test coverage or finding untested code paths. |
 | [`scoutqa-test`](scoutqa-test/SKILL.md) | `testing/scoutqa-test` | This skill should be used when the user asks to "test this website", "run exploratory testing", "check for accessibility issues", "verify the login flow works", "find bugs on this page", or requests automated QA testing. Triggers on web... |
 | [`systematic-debugging`](systematic-debugging/SKILL.md) | `testing/systematic-debugging` | Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes |
-| [`webapp-testing`](webapp-testing/SKILL.md) | `testing/webapp-testing` | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs |
+| [`webapp-testing`](webapp-testing/SKILL.md) | `testing/webapp-testing` | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs. Use when checking or debugging a... |
 
 [Back to the category index](../README.md)

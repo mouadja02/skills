@@ -1,9 +1,12 @@
 ---
 name: "auto-memory-promote"
-description: "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement."
+description: >-
+  Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent
+  enforcement. Use when the user runs /si:promote or asks to make a learned behavior permanent.
 command: /si:promote
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).

@@ -1,7 +1,15 @@
 ---
 name: create-implementation-plan
-description: 'Create a new implementation plan file for new features, refactoring existing code or upgrading packages, design, architecture or infrastructure'
+description: >-
+  Create a new implementation plan file for new features, refactoring existing code or upgrading
+  packages, design, architecture or infrastructure. Use before starting a feature, refactor, upgrade,
+  or infrastructure change that needs a written plan.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create Implementation Plan
 

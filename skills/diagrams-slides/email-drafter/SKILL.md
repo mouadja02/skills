@@ -1,7 +1,16 @@
 ---
 name: email-drafter
-description: Professional email drafting — matches personal voice from sent-email analysis
+description: >-
+  Draft and review professional emails that match your personal writing style. Analyzes your sent
+  emails for tone, greeting, structure, and sign-off patterns via WorkIQ, then generates context-aware
+  drafts for any recipient. USE FOR: draft email, write email, compose email, reply email, follow-up
+  email, analyze email tone, email style.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Email Drafter
 

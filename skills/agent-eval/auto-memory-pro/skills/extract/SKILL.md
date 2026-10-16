@@ -1,9 +1,13 @@
 ---
 name: "auto-memory-extract"
-description: "Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples"
+description: >-
+  Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md,
+  reference docs, and examples. Use when the user runs /si:extract or asks to package a recurring
+  solution from memory into a skill.
 command: /si:extract
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani).

@@ -1,7 +1,19 @@
 ---
 name: technology-stack-blueprint-generator
-description: Tech stack blueprint — analyzes codebase, generates architecture docs and dependency graphs
+description: >-
+  Comprehensive technology stack blueprint generator that analyzes codebases to create detailed
+  architectural documentation. Automatically detects technology stacks, programming languages, and
+  implementation patterns across multiple platforms (.NET, Java, JavaScript, React, Python). Generates
+  configurable blueprints with version information, licensing details, usage patterns, coding
+  conventions, and visual diagrams. Provides implementation-ready templates and maintains
+  architectural consistency for guided development. Use when documenting a project's technology stack
+  or onboarding someone to it.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Comprehensive Technology Stack Blueprint Generator
 

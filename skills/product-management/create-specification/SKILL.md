@@ -1,7 +1,15 @@
 ---
 name: create-specification
-description: 'Create a new specification file for the solution, optimized for Generative AI consumption.'
+description: >-
+  Creates a specification file for a solution component — requirements, constraints, and interfaces —
+  structured to be unambiguous for generative AI. Use when starting a feature or component that needs
+  a written spec before implementation.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create Specification
 

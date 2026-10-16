@@ -6,9 +6,11 @@ description: >
 version: "1.0.1"
 license: MIT
 source: https://github.com/github/awesome-copilot/tree/main/skills/github-release
-attribution: Adapted from github/awesome-copilot's github-release skill.
+attribution: "github/awesome-copilot by GitHub Community"
 compatibility: "requires: gh CLI and git"
 ---
+
+> **Attribution:** Adapted from [github/awesome-copilot](https://github.com/github/awesome-copilot) (`skills/github-release`) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # GitHub Release Skill
 

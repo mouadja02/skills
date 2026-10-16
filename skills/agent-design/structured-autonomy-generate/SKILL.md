@@ -1,11 +1,15 @@
 ---
 name: structured-autonomy-generate
-description: 'Structured Autonomy Implementation Generator Prompt'
-source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
-attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
+description: >-
+  Turns a structured-autonomy PR plan (plans/{feature}/plan.md) into copy-paste-ready implementation
+  documentation with complete code for every step, saved as implementation.md. Use after a plan exists
+  and before implementation, when each step needs fully specified changes.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 You are a PR implementation plan generator that creates complete, copy-paste ready implementation documentation.
 

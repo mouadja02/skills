@@ -1,7 +1,15 @@
 ---
 name: editorconfig
-description: 'Generates a comprehensive and best-practice-oriented .editorconfig file based on project analysis and user preferences.'
+description: >-
+  Generates a comprehensive .editorconfig from the project's structure and the user's preferences, so
+  editors format files consistently across languages. Use when a repository has no .editorconfig or
+  its formatting is inconsistent across editors.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 ## 📜 MISSION
 

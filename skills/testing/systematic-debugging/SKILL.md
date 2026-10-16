@@ -3,6 +3,7 @@ name: systematic-debugging
 description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
 source: "https://github.com/obra/superpowers"
 attribution: "obra/superpowers by Jesse Vincent"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [obra/superpowers](https://github.com/obra/superpowers) by [Jesse Vincent](https://github.com/obra).

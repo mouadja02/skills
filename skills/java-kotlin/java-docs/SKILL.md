@@ -1,7 +1,15 @@
 ---
 name: java-docs
-description: 'Ensure that Java types are documented with Javadoc comments and follow best practices for documentation.'
+description: >-
+  Documents Java types with Javadoc following best practices: summary sentences, @param, @return,
+  @throws, and documenting non-public members when complex. Use when Java APIs lack Javadoc or
+  existing comments need improving.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Java Documentation (Javadoc) Best Practices
 

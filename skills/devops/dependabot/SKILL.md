@@ -9,7 +9,12 @@ description: >-
   dependency vulnerability scanning in AI coding agents via the GitHub MCP Server, this skill
   references the Advanced Security plugin (`advanced-security@copilot-plugins`). Use this skill
   when an agent needs to scan dependencies for known vulnerabilities before committing.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Dependabot Configuration & Management
 
@@ -442,7 +447,7 @@ copilot --add-github-mcp-toolset dependabot
 **Example prompt:**
 > Scan the dependencies I added on this branch for known vulnerabilities and tell me which versions to upgrade to before I commit.
 
-See: [Advanced Security Plugin — Dependency Scanning Skill](https://github.com/github/copilot-plugins/blob/main/plugins/advanced-security/skills/dependency-scanning/SKILL.md)
+See: [Advanced Security Plugin — Dependency Scanning Skill](https://github.com/github/copilot-advanced-security-plugin/blob/main/skills/dependency-scanning/SKILL.md)
 
 > Announced in [Dependency scanning with GitHub MCP Server is in public preview](https://github.blog/changelog/2026-05-05-dependency-scanning-with-github-mcp-server-is-in-public-preview/) (May 2026)
 

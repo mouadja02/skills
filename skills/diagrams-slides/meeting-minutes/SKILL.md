@@ -1,7 +1,15 @@
 ---
 name: meeting-minutes
-description: 'Generate concise, actionable meeting minutes for internal meetings. Includes metadata, attendees, agenda, decisions, action items (owner + due date), and follow-up steps'
+description: >-
+  Generate concise, actionable meeting minutes for internal meetings. Includes metadata, attendees,
+  agenda, decisions, action items (owner + due date), and follow-up steps. Use after an internal
+  meeting when notes or a transcript need turning into minutes.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Meeting Minutes Skill — Short Internal Meetings
 

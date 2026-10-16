@@ -12,6 +12,6 @@ Messaging integrations and relay workflows.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`whatsapp`](whatsapp/SKILL.md) | `messaging/whatsapp` | WhatsApp router: history/search/read/send — archive-first vs live, safety rules. |
+| [`whatsapp`](whatsapp/SKILL.md) | `messaging/whatsapp` | Routes WhatsApp work to the right tool: wacrawl for read-only local history and search, wacli for live sync, sending, and chat or group changes, with safety rules for sending. Use for any WhatsApp history, search, read, or send request. |
 
 [Back to the category index](../README.md)

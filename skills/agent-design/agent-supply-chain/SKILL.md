@@ -8,7 +8,12 @@ description: |
   - Auditing dependency pinning and version policies for agent components
   - Building provenance chains for agent plugin promotion (dev → staging → production)
   - Any request like "verify plugin integrity", "generate manifest", "check supply chain", or "sign this plugin"
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Agent Supply Chain Integrity
 
@@ -336,4 +341,4 @@ Add to your GitHub Actions workflow:
 - [OpenSSF SLSA](https://slsa.dev/) — Supply-chain Levels for Software Artifacts
 - [npm Provenance](https://docs.npmjs.com/generating-provenance-statements) — Sigstore-based package provenance
 - [Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit) — Includes integrity verification and plugin signing
-- [OWASP ASI-09: Supply Chain Integrity](https://owasp.org/www-project-agentic-ai-threats/)
+- [OWASP ASI-09: Supply Chain Integrity](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)

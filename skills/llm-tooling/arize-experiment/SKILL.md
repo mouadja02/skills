@@ -1,8 +1,12 @@
 ---
 name: arize-experiment
-description: Arize experiments — create, run, analyze. A/B eval, model comparison (GPT-4, Claude)
+description: >-
+  Creates, runs, and analyzes Arize experiments with the ax CLI: run a model over a dataset version,
+  attach evaluations, export runs, and compare results. Use when evaluating or comparing LLM or prompt
+  variants against a dataset on Arize.
 source: "https://github.com/Arize-ai/arize-skills"
 attribution: "Arize-ai/arize-skills by Arize AI"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).

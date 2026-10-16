@@ -1,7 +1,12 @@
 ---
 name: git-workflow-and-versioning
 description: Use on every code change — commit structure, branching, history hygiene, and versioning. Apply when committing work, opening or splitting a branch, writing commit messages, cutting a release, or recovering from a bad history state.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Git Workflow and Versioning
 

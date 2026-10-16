@@ -6,24 +6,26 @@
 
 Skill authoring, discovery, cleanup, Copilot configuration, and terse interaction modes.
 
-**Total:** 13 skills.
+**Total:** 15 skills.
 
 ## Skills In This Category
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`acreadiness-assess`](acreadiness-assess/SKILL.md) | `skills-management/acreadiness-assess` | AgentRC readiness assessment — static HTML dashboard at reports/index.html |
-| [`acreadiness-generate-instructions`](acreadiness-generate-instructions/SKILL.md) | `skills-management/acreadiness-generate-instructions` | AgentRC instruction file generator — .github/copilot-instructions.md, custom paths |
-| [`acreadiness-policy`](acreadiness-policy/SKILL.md) | `skills-management/acreadiness-policy` | Help the user pick, write, or apply an AgentRC policy. Policies customise readiness scoring by disabling irrelevant checks, overriding impact/level, setting pass-rate thresholds, or chaining org baselines with team overrides |
-| [`copilot-instructions-blueprint-generator`](copilot-instructions-blueprint-generator/SKILL.md) | `skills-management/copilot-instructions-blueprint-generator` | copilot-instructions.md blueprint generator — GitHub Copilot guidance file |
-| [`copilot-sdk`](copilot-sdk/SKILL.md) | `skills-management/copilot-sdk` | Build agentic applications with GitHub Copilot SDK |
-| [`copilot-usage-metrics`](copilot-usage-metrics/SKILL.md) | `skills-management/copilot-usage-metrics` | Retrieve and display GitHub Copilot usage metrics for organizations and enterprises using the GitHub CLI and REST API. |
+| [`acreadiness-assess`](acreadiness-assess/SKILL.md) | `skills-management/acreadiness-assess` | Run the AgentRC readiness assessment on the current repository and produce a static HTML dashboard at reports/index.html. Wraps `npx github:microsoft/agentrc readiness` and hands off rendering to the @ai-readiness-reporter custom agent.... |
+| [`acreadiness-generate-instructions`](acreadiness-generate-instructions/SKILL.md) | `skills-management/acreadiness-generate-instructions` | Generate tailored AI agent instruction files via AgentRC instructions command. Produces .github/copilot-instructions.md (default, recommended for Copilot in VS Code) plus optional per-area .instructions.md files with applyTo globs for mo... |
+| [`acreadiness-policy`](acreadiness-policy/SKILL.md) | `skills-management/acreadiness-policy` | Help the user pick, write, or apply an AgentRC policy. Policies customise readiness scoring by disabling irrelevant checks, overriding impact/level, setting pass-rate thresholds, or chaining org baselines with team overrides. Use when th... |
+| [`copilot-instructions-blueprint-generator`](copilot-instructions-blueprint-generator/SKILL.md) | `skills-management/copilot-instructions-blueprint-generator` | Technology-agnostic blueprint generator for creating comprehensive copilot-instructions.md files that guide GitHub Copilot to produce code consistent with project standards, architecture patterns, and exact technology versions by analyzi... |
+| [`copilot-sdk`](copilot-sdk/SKILL.md) | `skills-management/copilot-sdk` | Build agentic applications with GitHub Copilot SDK. Use when embedding AI agents in apps, creating custom tools, implementing streaming responses, managing sessions, connecting to MCP servers, or creating custom agents. Triggers on Copil... |
+| [`copilot-usage-metrics`](copilot-usage-metrics/SKILL.md) | `skills-management/copilot-usage-metrics` | Retrieves GitHub Copilot usage metrics for organizations and enterprises with the GitHub CLI and REST API: adoption, active users, acceptance rates, chat usage, and per-user or per-date breakdowns. Use when asked how Copilot is being used. |
 | [`find-skills`](find-skills/SKILL.md) | `skills-management/find-skills` | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This skill should be used when the user is l... |
-| [`github-copilot-starter`](github-copilot-starter/SKILL.md) | `skills-management/github-copilot-starter` | Set up complete GitHub Copilot configuration for a new project based on technology stack |
-| [`make-skill-template`](make-skill-template/SKILL.md) | `skills-management/make-skill-template` | Create new Agent Skills for GitHub Copilot from prompts or by duplicating this template. Use when asked to "create a skill", "make a new skill", "scaffold a skill", or when building specialized AI capabilities with bundled resources. Gen... |
-| [`microsoft-skill-creator`](microsoft-skill-creator/SKILL.md) | `skills-management/microsoft-skill-creator` | Create agent skills for Microsoft technologies using Learn MCP tools |
-| [`skill-cleaner`](skill-cleaner/SKILL.md) | `skills-management/skill-cleaner` | Audit skills: loaded roots, duplicate skills, unused skills, prompt-budget costs, compact descriptions. |
-| [`skill-creator`](skill-creator/SKILL.md) | `skills-management/skill-creator` | Create, modify, benchmark skills — from scratch, existing docs, or URLs |
+| [`github-copilot-starter`](github-copilot-starter/SKILL.md) | `skills-management/github-copilot-starter` | Sets up a complete GitHub Copilot configuration for a new project from its tech stack: copilot-instructions.md, instruction files, and agents, with attribution to awesome-copilot sources. Use when bootstrapping Copilot customization for... |
+| [`microsoft-skill-creator`](microsoft-skill-creator/SKILL.md) | `skills-management/microsoft-skill-creator` | Create agent skills for Microsoft technologies using Learn MCP tools. Use when users want to create a skill that teaches agents about any Microsoft technology, library, framework, or service (Azure, .NET, M365, VS Code, Bicep, etc.). Inv... |
+| [`skill-cleaner`](skill-cleaner/SKILL.md) | `skills-management/skill-cleaner` | Audits installed skills: which roots are loaded, duplicates, unused skills, prompt-budget cost, and descriptions that could be shorter. Use when trimming the skill prompt budget or deciding which skills or plugins to remove. |
+| [`skill-creator`](skill-creator/SKILL.md) | `skills-management/skill-creator` | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with va... |
+| [`skill-scanner`](skill-scanner/SKILL.md) | `skills-management/skill-scanner` | Scan agent skills for security issues. Use when asked to "scan a skill", "audit a skill", "review skill security", "check skill for injection", "validate SKILL.md", or assess whether an agent skill is safe to install. Checks for prompt i... |
+| [`skill-smell-audit`](skill-smell-audit/SKILL.md) | `skills-management/skill-smell-audit` | Use when reviewing, linting, or improving a SKILL.md or a whole skills library for authoring quality — a skill that under-triggers, gets skipped mid-workflow, or behaves differently run to run, or before publishing or importing skills. R... |
+| [`writing-for-agents`](writing-for-agents/SKILL.md) | `skills-management/writing-for-agents` | Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md. |
 | [`writing-skills`](writing-skills/SKILL.md) | `skills-management/writing-skills` | Use when creating new skills, editing existing skills, or verifying skills work before deployment |
 
 [Back to the category index](../README.md)

@@ -1,8 +1,13 @@
 ---
 name: qdrant-model-migration
-description: "Guides embedding model migration in Qdrant without downtime"
+description: >-
+  Guides embedding model migration in Qdrant without downtime. Use when someone asks 'how to switch
+  embedding models', 'how to migrate vectors', 'how to update to a new model', 'zero-downtime model
+  change', 'how to re-embed my data', or 'can I use two models at once'. Also use when upgrading model
+  dimensions, switching providers, or A/B testing models.
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
@@ -72,7 +77,7 @@ Use when: dataset is large and re-embedding is the bottleneck.
 
 - Use `update_mode: insert` (v1.17+) for safe idempotent migration [Update mode](https://search.qdrant.tech/md/documentation/manage-data/points/?s=update-mode)
 - Scroll the old collection with `with_vectors=False`, re-embed in batches, upsert into new collection
-- Upload in parallel batches (64-256 points per request, 2-4 parallel streams) [Bulk upload](https://search.qdrant.tech/md/documentation/tutorials-develop/bulk-upload/)
+- Upload in parallel batches (64-256 points per request, 2-4 parallel streams) [Bulk upload](https://search.qdrant.tech/md/documentation/manage-data/bulk-upload/)
 - Disable HNSW during bulk load (set `indexing_threshold_kb` very high, restore after)
 - For Qdrant Cloud inference, switching models is a config change, not a pipeline change [Inference docs](https://search.qdrant.tech/md/documentation/inference/)
 

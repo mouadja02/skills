@@ -7,6 +7,8 @@ description: Sets up notification channels for CloudWatch alarms using SNS topic
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Setting Up CloudWatch Alarm Notifications
 
 ## Overview

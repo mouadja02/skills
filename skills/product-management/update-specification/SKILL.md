@@ -1,7 +1,15 @@
 ---
 name: update-specification
-description: 'Update an existing specification file for the solution, optimized for Generative AI consumption based on new requirements or updates to any existing code'
+description: >-
+  Update an existing specification file for the solution, optimized for Generative AI consumption
+  based on new requirements or updates to any existing code. Use when requirements or code change
+  after a specification was written.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Update Specification
 

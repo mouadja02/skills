@@ -7,6 +7,8 @@ description: Builds, deploys, manages, debugs, configures, and optimizes serverl
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # AWS Serverless
 
 Domain expertise for building serverless applications on AWS: Lambda, API Gateway, Step Functions, EventBridge, event source mappings, concurrency, cold starts, deployment, and troubleshooting.

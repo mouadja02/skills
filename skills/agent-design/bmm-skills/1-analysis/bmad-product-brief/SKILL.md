@@ -1,8 +1,12 @@
 ---
 name: bmad-product-brief
-description: Create or update product briefs through guided or autonomous discovery
+description: >-
+  Creates, updates, or validates a BMad product brief through guided discovery, artifact analysis, and
+  web research, or autonomously with --autonomous. Use when the user wants help producing, editing, or
+  validating a product brief before writing a PRD.
 source: "https://github.com/bmad-code-org/BMAD-METHOD"
 attribution: "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by [BMAD Code Org](https://github.com/bmad-code-org).

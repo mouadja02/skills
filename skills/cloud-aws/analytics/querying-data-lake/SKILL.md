@@ -13,6 +13,8 @@ version: 1
 argument-hint: '[SQL-query|query-name|workgroup-name|catalog-name|''profile TABLE_NAME'']'
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Query Data Lake
 
 Execute SQL queries on Amazon Athena across default and federated catalogs (Glue, S3 Tables, Redshift) with workgroup selection, statement classification, and error recovery.

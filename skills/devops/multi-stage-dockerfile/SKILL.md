@@ -1,11 +1,15 @@
 ---
 name: multi-stage-dockerfile
-description: 'Create optimized multi-stage Dockerfiles for any language or framework'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Creates optimized multi-stage Dockerfiles for any language: separate build and runtime stages,
+  minimal base images, layer caching, and non-root users. Use when containerizing an application or
+  shrinking and hardening an existing image.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 Your goal is to help me create efficient multi-stage Dockerfiles that follow best practices, resulting in smaller, more secure container images.
 

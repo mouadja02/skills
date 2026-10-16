@@ -7,6 +7,8 @@ version: 1
 description: Diagnoses and resolves Amazon RDS for Oracle connectivity, authentication, networking, and driver troubleshooting. Applicable to any RDS-for-Oracle question including connecting a Python Lambda to RDS Oracle in a VPC with pooling and cold-start optimization, EKS pods to RDS Oracle via the Secrets Manager CSI driver with IRSA and SecretProviderClass, ORA-12170 cross-VPC timeouts from EC2, DPI-1047 cannot-locate-64-bit-Oracle-Client errors, and Oracle Connection Manager (CMAN) on EC2 as a proxy with HA across two AZs. Covers python-oracledb thin vs thick mode, init_oracle_client, RDS Proxy does NOT support RDS Oracle, port 1521, VPC peering, Transit Gateway, Kerberos with AWS Managed Microsoft AD, SSL/TLS/NNE, SSM port forwarding, EC2/ECS Fargate/EKS/Lambda, SQL Developer/DBeaver/Toad/SQLcl, and Secrets Manager.
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon RDS for Oracle — Connectivity
 
 ## Safety guidance

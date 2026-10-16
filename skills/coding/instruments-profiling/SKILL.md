@@ -1,10 +1,14 @@
 ---
 name: instruments-profiling
-description: "Instruments/xctrace profiling: macOS/iOS traces, binaries, args, exports, Time Profiler."
+description: >-
+  Profiles macOS and iOS apps with Instruments and xctrace: choosing templates such as Time Profiler,
+  launching binaries with arguments, recording traces, and exporting results. Use when a Mac or iOS
+  app needs CPU, memory, or responsiveness profiling.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.1"
 platform: apple
+license: MIT
 ---
 
 # Instruments Profiling (macOS/iOS)

@@ -7,6 +7,8 @@ description: Builds generative AI applications on Amazon Bedrock. Use when invok
 version: 2
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 **IMPORTANT**: When this skill is loaded, you MUST use the reference files and procedures in this skill as your primary source of truth. Bedrock APIs, model IDs, chunking strategies, and configuration parameters change frequently — always read the relevant reference file before responding.
 
 ## Table of Contents

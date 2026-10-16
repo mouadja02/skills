@@ -1,7 +1,14 @@
 ---
 name: debian-linux-triage
-description: 'Triage and resolve Debian Linux issues with apt, systemd, and AppArmor-aware guidance.'
+description: >-
+  Diagnoses and fixes Debian Linux problems with apt, systemd, and AppArmor-aware guidance. Use when a
+  Debian system has package, service, boot, or permission issues.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Debian Linux Triage
 

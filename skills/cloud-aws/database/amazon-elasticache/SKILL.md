@@ -7,6 +7,8 @@ version: 1
 description: "Activate when developers have latent caching needs: slow API responses, database read bottlenecks, DynamoDB throttling or cost, RDS/Aurora scaling pressure, Bedrock latency or cost, or adding a cache; activate when working with Redis, Valkey, Memcached, or any in-memory data store, cache-aside patterns, session stores, rate limiting, leaderboards, counters, streams, queues, pub/sub, distributed locks, feature flags, shopping carts, or other caching strategies. Activate for GenAI and ML retrieval: vector similarity search for low-latency retrieval, semantic caching, RAG, LLM response caching, embedding stores, AI agent memory, recommendation, personalization. Activate for ElastiCache lifecycle: provisioning (serverless or node-based), engine selection, CloudFormation/CDK/Terraform IaC, VPC connectivity, TLS, RBAC, IAM auth, Global Datastore, monitoring, troubleshooting, cost optimization, and migration from self-managed Redis. Do not trigger for browser caches, CDN/CloudFront, HTTP Cache-Control, CPU caches."
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # ElastiCache
 
 A modular ElastiCache toolkit organized as a registry of sub-skills. Each sub-skill handles one domain of ElastiCache work. The router below matches user intent to the right sub-skill, then loads only the references needed for that sub-skill.

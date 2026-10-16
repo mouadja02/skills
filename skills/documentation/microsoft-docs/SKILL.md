@@ -1,8 +1,12 @@
 ---
 name: microsoft-docs
-description: Query Microsoft docs — Azure, .NET, Agent Framework, Aspire, Copilot, Microsoft 365
+description: >-
+  Queries Microsoft documentation for Azure, .NET, Agent Framework, Aspire, Copilot, and Microsoft
+  365, routing to the right tool for content outside learn.microsoft.com. Use when answering questions
+  that depend on current Microsoft product docs.
 source: "https://github.com/microsoft/skills"
 attribution: "microsoft/skills by Microsoft"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).

@@ -1,11 +1,15 @@
 ---
 name: typespec-create-api-plugin
-description: 'Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Generates a complete TypeSpec API plugin for Microsoft 365 Copilot that calls external REST APIs,
+  with operations, authentication, and Adaptive Card responses. Use when building a Microsoft 365
+  Copilot API plugin with TypeSpec.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Create TypeSpec API Plugin
 

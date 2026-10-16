@@ -1,6 +1,9 @@
 ---
 name: gtm-product-led-growth
-description: Build self-serve acquisition and expansion motions
+description: >-
+  Designs product-led growth motions: self-serve acquisition, freemium-to-paid conversion, activation,
+  and expansion. Use when choosing PLG versus sales-led, when freemium conversion is weak, or when
+  planning bottom-up adoption for developer tools or B2B SaaS.
 license: MIT
 metadata:
   author: Smit Patel (https://linkedin.com/in/smitkpatel)

@@ -1,15 +1,19 @@
 ---
 name: azure-pricing
-description: 'Fetches real-time Azure retail pricing using the Azure Retail Prices API (prices.azure.com) and estimates Copilot Studio agent credit consumption'
+description: >-
+  Fetches real-time Azure retail pricing using the Azure Retail Prices API (prices.azure.com) and
+  estimates Copilot Studio agent credit consumption. Use when asked what an Azure service costs, to
+  compare regions or SKUs, to estimate a workload, or about reserved, savings plan, or spot pricing.
 compatibility: Requires internet access to prices.azure.com and learn.microsoft.com. No authentication needed.
 metadata:
   author: anthonychu
   version: "1.2"
-source: "https://github.com/microsoft/azure-skills"
-attribution: "microsoft/azure-skills by Microsoft Azure"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Azure Pricing Skill
 

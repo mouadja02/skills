@@ -1,7 +1,15 @@
 ---
 name: write-coding-standards-from-file
-description: 'Write a coding standards document for a project using the coding styles from the file(s) and/or folder(s) passed as arguments in the prompt'
+description: >-
+  Write a coding standards document for a project using the coding styles from the file(s) and/or
+  folder(s) passed as arguments in the prompt. Use when a project needs written coding standards that
+  match how its code is already written.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Write Coding Standards From File
 
@@ -145,7 +153,6 @@ Depending on the programming language, for each link in list below, run `#fetch 
 - [AngularJS App Style Guide](https://github.com/mgechev/angularjs-style-guide)
 - [jQuery Style Guide](https://contribute.jquery.org/style-guide/js/)
 - [JavaScript Style Guide](https://www.w3schools.com/js/js_conventions.asp)
-- [JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)
 - [Kotlin Style Guide](https://kotlinlang.org/docs/coding-conventions.html)
 - [Markdown Style Guide](https://cirosantilli.com/markdown-style-guide/)
 - [Perl Style Guide](https://perldoc.perl.org/perlstyle)

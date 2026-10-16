@@ -7,6 +7,8 @@ description: "Provisions, scales, and operates Amazon EC2 virtual-machine worklo
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon EC2 Compute
 
 Best experience with the AWS MCP server; also works with the AWS CLI alone — no hard dependency on either.

@@ -1,7 +1,17 @@
 ---
 name: sql-optimization
-description: SQL performance optimization — query tuning, indexing, explain plans, all dialects
+description: >-
+  Universal SQL performance optimization assistant for comprehensive query tuning, indexing
+  strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL
+  Server, Oracle). Provides execution plan analysis, pagination optimization, batch operations, and
+  performance monitoring guidance. Use when a query is slow, an index strategy is unclear, or database
+  performance needs analysis.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # SQL Performance Optimization Assistant
 

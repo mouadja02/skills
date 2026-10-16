@@ -1,7 +1,15 @@
 ---
 name: mcp-cli
-description: Interface for MCP (Model Context Protocol) servers via CLI
+description: >-
+  Interface for MCP (Model Context Protocol) servers via CLI. Use when you need to interact with
+  external tools, APIs, or data sources through MCP servers, list available MCP servers/tools, or call
+  MCP tools from command line.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # MCP-CLI
 

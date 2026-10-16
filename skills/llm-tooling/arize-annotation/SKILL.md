@@ -1,8 +1,13 @@
 ---
 name: arize-annotation
-description: Arize annotations — label schema configs, review queues, human feedback workflows
+description: >-
+  Creates and manages annotation configs (categorical, continuous, freeform label schemas) and
+  annotation queues (human review workflows) on Arize. Applies human annotations to project spans via
+  the Python SDK. Use when the user mentions annotation config, annotation queue, label schema, human
+  feedback, bulk annotate spans, update_annotations, labeling queue, annotate record, or human review.
 source: "https://github.com/Arize-ai/arize-skills"
 attribution: "Arize-ai/arize-skills by Arize AI"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).

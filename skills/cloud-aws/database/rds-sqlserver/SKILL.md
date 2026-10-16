@@ -7,6 +7,8 @@ version: 1
 description: Provides connectivity, authentication, and troubleshooting guidance for Amazon RDS for SQL Server. Applicable when users ask about SSMS times out connecting from EC2, Cannot generate SSPI context with Windows auth, connect RDS SQL Server from Lambda with pymssql, auth_scheme shows NTLM instead of KERBEROS on ECS Fargate, SSM tunnel to RDS SQL Server from laptop, port 1433 security group, TrustServerCertificate=True for localhost tunnels, SPN MSSQLSvc, AWS Managed Microsoft AD, CNAME not RDS endpoint for Kerberos, tds_version='7.4', encryption='require', port-as-string for pymssql, Secrets Manager credential caching in Lambda, error 18456 login failed. Covers Python (pymssql, pyodbc), .NET (Microsoft.Data.SqlClient), Java (JDBC mssql-jdbc), Node.js (tedious), IAM auth via RDS Proxy, and VPC/ECS/EKS/Lambda deployment.
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon RDS for SQL Server
 
 ## Safety guidance

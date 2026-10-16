@@ -1,6 +1,9 @@
 ---
 name: create-headless-agent
-description: Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI
+description: >-
+  Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API
+  servers, queue workers, and pipelines. No terminal UI. Use when building an OpenRouter-based agent
+  that runs without a terminal UI, such as a CLI tool, HTTP service, or queue worker.
 source: "https://github.com/OpenRouterTeam/skills"
 attribution: "OpenRouterTeam/skills by OpenRouter"
 ---
@@ -52,7 +55,7 @@ Present this as a multi-select checklist. Items marked **ON** are pre-selected d
 | Datetime | `openrouter:datetime` | ON |
 | Image Generation | `openrouter:image_generation` | OFF |
 
-Server tools go in the `tools` array alongside user-defined tools. No client code needed — OpenRouter executes them. Docs: [openrouter.ai/docs/guides/features/server-tools](https://openrouter.ai/docs/guides/features/server-tools/overview).
+Server tools go in the `tools` array alongside user-defined tools. No client code needed — OpenRouter executes them. Docs: [openrouter.ai/docs/guides/features/server-tools](https://openrouter.ai/docs/guides/features/server-tools).
 
 ### User-Defined Tools (client-side, generated into src/tools/)
 

@@ -1,19 +1,20 @@
 ---
 name: flowstudio-power-automate-mcp
 description: >-
-  Foundation skill for Power Automate via FlowStudio MCP — auth setup, the
-  reusable MCP helper (Python + Node.js), tool discovery via `list_skills` /
-  `tool_search`, and oversized-response handling. Load this skill first when
-  connecting an agent to Power Automate. For specialized workflows, load
-  `flowstudio-power-automate-build`, `flowstudio-power-automate-debug`, `flowstudio-power-automate-monitoring`
-  (Pro+), or `flowstudio-power-automate-governance` (Pro+) — each contains the workflow
-  narrative, this skill provides the plumbing they all rely on. Requires a
-  FlowStudio MCP subscription or compatible server — see https://mcp.flowstudio.app
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+  Foundation skill for Power Automate via FlowStudio MCP — auth setup, the reusable MCP helper (Python
+  + Node.js), tool discovery via `list_skills` / `tool_search`, and oversized-response handling. Load
+  this skill first when connecting an agent to Power Automate. For specialized workflows, load
+  `flowstudio-power-automate-build`, `flowstudio-power-automate-debug`,
+  `flowstudio-power-automate-monitoring` (Pro+), or `flowstudio-power-automate-governance` (Pro+) —
+  each contains the workflow narrative, this skill provides the plumbing they all rely on. Requires a
+  FlowStudio MCP subscription or compatible server — see https://mcp.flowstudio.app. Use first for any
+  Power Automate task done through the FlowStudio MCP server.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Power Automate via FlowStudio MCP — Foundation
 

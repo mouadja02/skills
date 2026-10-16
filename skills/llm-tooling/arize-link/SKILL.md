@@ -3,6 +3,7 @@ name: arize-link
 description: Use when you need a deep link into the Arize UI for a specific model, monitor, trace, or dashboard — for example to cite a finding or hand a teammate the exact view.
 source: "https://github.com/Arize-ai/arize-skills"
 attribution: "Arize-ai/arize-skills by Arize AI"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).

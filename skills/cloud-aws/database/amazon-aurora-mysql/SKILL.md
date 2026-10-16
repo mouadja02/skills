@@ -13,6 +13,8 @@ description: >-
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon Aurora MySQL
 
 A modular toolkit for **Aurora MySQL** organized as a registry of sub-skills. Each sub-skill handles one domain of Aurora MySQL work. The router matches user intent to the right sub-skill, then loads only the references needed. (For Aurora PostgreSQL — and its express-configuration quick-start — use the `amazon-aurora-postgresql` skill.)

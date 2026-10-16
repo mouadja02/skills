@@ -1,7 +1,17 @@
 ---
 name: doubt-driven-development
-description: Subjects every non-trivial decision to a fresh-context adversarial review before it stands
+description: >-
+  Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when
+  you want every assumption cross-examined before proceeding, when stress-testing a plan for hidden
+  failure modes, when correctness matters more than speed, when working in unfamiliar code, when
+  stakes are high (production auth, security-sensitive logic, a high-stakes migration, irreversible
+  operations), or any time a confident output would be cheaper to verify now than to debug later.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Doubt-Driven Development
 

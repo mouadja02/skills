@@ -6,7 +6,7 @@
 
 AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analytics/data lake, storage, networking, IAM, CDK/CloudFormation, cost, and observability.
 
-**Total:** 84 skills.
+**Total:** 83 skills.
 
 ## Skills In This Category
 
@@ -66,7 +66,6 @@ AWS services and agentic workflows: Bedrock, Lambda/serverless, databases, analy
 | [`creating-production-vpc-multi-az`](networking/creating-production-vpc-multi-az/SKILL.md) | `cloud-aws/networking/creating-production-vpc-multi-az` | Creates a production-ready VPC with public and private subnets across multiple Availability Zones, including internet gateway, NAT gateways, route tables, and security groups following AWS Well-Architected principles. Use when deploying... |
 | [`directconnect`](networking/directconnect/SKILL.md) | `cloud-aws/networking/directconnect` | Configures AWS Direct Connect: choosing a connection model (dedicated, hosted, or a link aggregation group) and completing the cross connect; creating private, public, and transit virtual interfaces and bringing up BGP; reaching many VPC... |
 | [`enabling-lambda-vpc-internet-access`](networking/enabling-lambda-vpc-internet-access/SKILL.md) | `cloud-aws/networking/enabling-lambda-vpc-internet-access` | Enables internet access for AWS Lambda functions deployed in VPC subnets by creating NAT Gateway infrastructure, configuring public/private subnet routing, and updating security groups. Use when a VPC-attached Lambda function cannot reac... |
-| [`networkfirewall`](networking/networkfirewall/SKILL.md) | `cloud-aws/networking/networkfirewall` | Configures AWS Network Firewall, the managed stateful VPC firewall: deploying a firewall and routing traffic through its endpoints; centralizing inspection for many VPCs with a transit gateway-attached firewall that keeps stateful flows... |
 | [`route53`](networking/route53/SKILL.md) | `cloud-aws/networking/route53` | Use when configuring or diagnosing Amazon Route 53 records, routing policies, health checks, DNS Firewall, Profiles, or Resolver. Route custom-domain DNS-to-CloudFront work to the linked routing-traffic-with-route53-and-cloudfront skill;... |
 | [`routing-traffic-with-route53-and-cloudfront`](networking/routing-traffic-with-route53-and-cloudfront/SKILL.md) | `cloud-aws/networking/routing-traffic-with-route53-and-cloudfront` | Use when routing a custom domain to Amazon CloudFront with Route 53 alias A/AAAA records, alternate domain names, ACM certificates, and IPv6. Coordinates readiness, DNS cutover, verification, and rollback across both services. |
 | [`shieldadvanced`](networking/shieldadvanced/SKILL.md) | `cloud-aws/networking/shieldadvanced` | Configures AWS Shield Advanced for enhanced Distributed Denial of Service (DDoS) protection: subscribing accounts and adding resource protections, enabling automatic application layer (layer 7) mitigation through AWS WAF, configuring hea... |

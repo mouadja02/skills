@@ -1,7 +1,12 @@
 ---
 name: project-development
 description: This skill should be used when the user asks to "start an LLM project", "design batch pipeline", "evaluate task-model fit", "structure agent project", or mentions pipeline architecture, agent-assisted development, cost estimation, or choosing between LLM and traditional approaches.
+license: MIT
+source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
 ---
+
+> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan), licensed MIT. Modified for this collection.
 
 # Project Development Methodology
 

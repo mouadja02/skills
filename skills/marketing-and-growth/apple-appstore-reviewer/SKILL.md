@@ -1,7 +1,15 @@
 ---
 name: apple-appstore-reviewer
-description: 'Serves as a reviewer of the codebase with instructions on looking for Apple App Store optimizations or rejection reasons'
+description: >-
+  Serves as a reviewer of the codebase with instructions on looking for Apple App Store optimizations
+  or rejection reasons. Use before submitting an iOS or macOS app to the App Store, or after a
+  rejection.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Apple App Store Review Specialist
 

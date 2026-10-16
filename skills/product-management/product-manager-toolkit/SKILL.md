@@ -1,7 +1,16 @@
 ---
 name: "product-manager-toolkit"
-description: product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies
+description: >-
+  Comprehensive toolkit for product managers including RICE prioritization, customer interview
+  analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use when prioritizing
+  features, synthesizing user research, writing requirement documentation, or developing product
+  strategy.
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Product Manager Toolkit
 

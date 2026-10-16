@@ -3,6 +3,7 @@ name: qdrant-deployment-options
 description: "Use when choosing how to run Qdrant: local mode, Docker, Qdrant Cloud, or self-hosted Kubernetes. Narrows the choice by managed ops versus full control, acceptable network latency, and prototyping versus production."
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
+license: Apache-2.0
 ---
 
 > **Attribution:** Sourced from [qdrant/skills](https://github.com/qdrant/skills) by [Qdrant](https://qdrant.tech).
@@ -27,7 +28,7 @@ Use when: you need full control over infrastructure, data residency, or custom c
 
 - Docker is the default deployment. Full Qdrant Open Source feature set, minimal setup. [Quick start](https://search.qdrant.tech/md/documentation/quickstart/?s=download-and-run)
 - You own operations: upgrades, backups, scaling, monitoring
-- Must set up distributed mode manually for multi-node clusters [Distributed deployment](https://search.qdrant.tech/md/documentation/operations/distributed_deployment/)
+- Must set up distributed mode manually for multi-node clusters [Distributed deployment](https://search.qdrant.tech/md/documentation/scaling/distributed_deployment/)
 - Consider Hybrid Cloud if you want Qdrant Cloud management on your infrastructure [Hybrid Cloud](https://search.qdrant.tech/md/documentation/hybrid-cloud/)
 
 

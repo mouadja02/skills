@@ -1,10 +1,14 @@
 ---
 name: ssh-doctor
-description: "SSH triage: Remote Login, launchd sshd, pre-auth closes, stale sessions, macOS."
+description: >-
+  Triages SSH on macOS: Remote Login settings, launchd sshd, connections closed before auth, and stale
+  sessions. Use when SSH to a Mac connects then drops, Remote Login looks enabled but is unusable, or
+  Mac SSH needs diagnosis.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
 platform: macos
+license: MIT
 ---
 
 # SSH Doctor

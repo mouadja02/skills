@@ -1,7 +1,18 @@
 ---
 name: readme-blueprint-generator
-description: README.md generator — install, usage, API, contribution sections from project structure
+description: >-
+  Intelligent README.md generation prompt that analyzes project documentation structure and creates
+  comprehensive repository documentation. Scans .github/copilot directory files and
+  copilot-instructions.md to extract project information, technology stack, architecture, development
+  workflow, coding standards, and testing approaches while generating well-structured markdown
+  documentation with proper formatting, cross-references, and developer-focused content. Use when a
+  repository needs a new or rewritten README based on its existing docs.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # README Generator Prompt
 

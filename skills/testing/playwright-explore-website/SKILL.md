@@ -1,7 +1,14 @@
 ---
 name: playwright-explore-website
-description: 'Website exploration for testing using Playwright MCP'
+description: >-
+  Explores a website with the Playwright MCP server to identify key user flows and functionality to
+  test. Use before writing end-to-end tests for an unfamiliar site or app.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Website Exploration for Testing
 

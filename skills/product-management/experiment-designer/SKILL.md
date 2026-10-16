@@ -1,8 +1,15 @@
 ---
 name: experiment-designer
-description: A/B and multivariate experiments — hypothesis, sample size, ICE priority, stats significance
+description: >-
+  Use when planning product experiments, writing testable hypotheses, estimating sample size,
+  prioritizing tests, or interpreting A/B outcomes with practical statistical rigor.
 version: "1.0.0"
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Adapted from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Experiment Designer
 

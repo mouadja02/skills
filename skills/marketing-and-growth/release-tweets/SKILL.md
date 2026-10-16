@@ -1,9 +1,13 @@
 ---
 name: release-tweets
-description: "Release tweets/social copy: draft from changelog, tags, npm/appcast, artifacts — X/Twitter announcements."
+description: >-
+  Drafts release tweets and social copy from changelogs, tags, npm or appcast data, and release
+  artifacts: launch tweets, threads, and X announcements. Use when announcing a shipped version; this
+  skill writes release copy, not the release itself.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Release Tweets

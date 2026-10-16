@@ -1,6 +1,9 @@
 ---
 name: using-streamlit-session-state
-description: Using st.session_state to manage state across Streamlit reruns
+description: >-
+  Manages state across Streamlit reruns with st.session_state: initialization, widget keys, callbacks,
+  and common pitfalls. Use when values reset on every interaction, widgets lose input, or a multi-step
+  Streamlit flow needs to remember data.
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"

@@ -1,7 +1,16 @@
 ---
 name: quasi-coder
-description: 'Expert 10x engineer — interpreting and implementing code from shorthand, quasi-code, and natural language descriptions'
+description: >-
+  Expert 10x engineer skill for interpreting and implementing code from shorthand, quasi-code, and
+  natural language descriptions. Use when collaborators provide incomplete code snippets, pseudo-code,
+  or descriptions with potential typos or incorrect terminology. Excels at translating non-technical
+  or semi-technical descriptions into production-quality code.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Quasi-Coder Skill
 

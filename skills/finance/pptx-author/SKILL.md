@@ -9,6 +9,8 @@ metadata:
   hermes:
     tags: [powerpoint, pptx, python-pptx, presentation, finance]
     related_skills: [excel-author, powerpoint]
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 # pptx-author

@@ -1,8 +1,12 @@
 ---
 name: react19-test-patterns
-description: 'Provides before/after patterns for migrating test files to React 19 compatibility, including act() imports, Simulate removal, and StrictMode call count changes'
+description: >-
+  Provides before/after patterns for migrating test files to React 19 compatibility, including act()
+  imports, Simulate removal, and StrictMode call count changes. Use when tests break after upgrading
+  to React 19.
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).

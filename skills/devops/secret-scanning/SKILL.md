@@ -1,7 +1,18 @@
 ---
 name: secret-scanning
-description: GitHub secret scanning — push protection, custom patterns, alert remediation
+description: >-
+  Guide for configuring and managing GitHub secret scanning, push protection, custom patterns, and
+  secret alert remediation. For pre-commit secret scanning in AI coding agents via the GitHub MCP
+  Server, this skill references the Advanced Security plugin (`advanced-security@copilot-plugins`).
+  Use this skill when enabling secret scanning, setting up push protection, defining custom patterns,
+  triaging alerts, resolving blocked pushes, or when an agent needs to scan code for secrets before
+  committing.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Secret Scanning
 
@@ -226,7 +237,7 @@ For scanning code changes for secrets inside an AI coding agent before committin
 - In Copilot Chat, open **Chat: Plugins** (or use `@agentPlugins`) and install the `advanced-security` plugin
 - Then run `/secret-scanning` in Copilot Chat
 
-See: [Advanced Security Plugin — Secret Scanning Skill](https://github.com/github/copilot-plugins/blob/main/plugins/advanced-security/skills/secret-scanning/SKILL.md)
+See: [Advanced Security Plugin — Secret Scanning Skill](https://github.com/github/copilot-advanced-security-plugin/blob/main/skills/secret-scanning/SKILL.md)
 
 > Announced in [Secret scanning in AI coding agents via the GitHub MCP Server](https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server/) (March 2026)
 

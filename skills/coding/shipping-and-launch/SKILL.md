@@ -1,7 +1,12 @@
 ---
 name: shipping-and-launch
 description: Use when deploying to production, releasing a significant user-facing change, migrating data or infrastructure, or opening a beta. Covers the pre-launch checklist, staged rollout, monitoring, and rollback planning for deployments that carry risk.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Shipping and Launch
 

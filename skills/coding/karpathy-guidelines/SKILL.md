@@ -1,8 +1,15 @@
 ---
 name: karpathy-guidelines
-description: Behavioral guidelines to reduce common LLM coding mistakes
+description: >-
+  Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or
+  refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define
+  verifiable success criteria.
 license: MIT
+source: "https://github.com/forrestchang/andrej-karpathy-skills"
+attribution: "forrestchang/andrej-karpathy-skills by Jiayuan Zhang"
 ---
+
+> **Attribution:** Sourced from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) by [Jiayuan Zhang](https://github.com/forrestchang), licensed MIT. Modified for this collection.
 
 # Karpathy Guidelines
 

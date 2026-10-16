@@ -1,7 +1,12 @@
 ---
 name: code-simplification
 description: Use when working code feels heavier than it needs to be — deeply nested logic, long functions, unclear names, duplication after a merge, or a review that flagged complexity. Reduces complexity while preserving behavior exactly. Not for code you do not yet understand, or code you are about to rewrite.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Code Simplification
 

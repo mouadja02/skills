@@ -13,7 +13,11 @@ metadata:
     - Security & compliance config detection
     - Performance testing markers
 argument-hint: 'Optional: specific area to focus on, e.g. "architecture only", "testing and concerns"'
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Acquire Codebase Knowledge
 

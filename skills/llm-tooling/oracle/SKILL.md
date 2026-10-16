@@ -1,9 +1,13 @@
 ---
 name: oracle
-description: "Oracle second-model review: bundle prompts/files for another AI, debug, refactor, design."
+description: >-
+  Gets a second-model review by bundling a prompt and selected repository files into one request for
+  another AI (API or browser), for debugging, refactoring, or design questions. Use when an
+  independent model's opinion would help; treat its answer as advisory.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
+license: MIT
 ---
 
 # Oracle (CLI) — Second-Model Review

@@ -1,11 +1,15 @@
 ---
 name: context-map
-description: 'Generate a map of all files relevant to a task before making changes'
-source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
-attribution: "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
+description: >-
+  Maps the files relevant to a task before any edit: files to modify, dependencies that may need
+  updates, test files, reference patterns to follow, and risks such as API, migration, or config
+  changes. Use at the start of a non-trivial change in an unfamiliar codebase.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) by [Muratcan Koylan](https://github.com/muratcankoylan).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Context Map
 

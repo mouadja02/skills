@@ -16,6 +16,8 @@ category: communication
 metadata:
   hermes:
     tags: [communication, decision-making, proposals, trade-offs]
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 # 1-3-1 Communication Rule

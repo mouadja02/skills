@@ -1,7 +1,18 @@
 ---
 name: code-exemplars-blueprint-generator
-description: Code exemplar docs — scans for patterns, creates customizable AI training prompts
+description: >-
+  Technology-agnostic prompt generator that creates customizable AI prompts for scanning codebases and
+  identifying high-quality code exemplars. Supports multiple programming languages (.NET, Java,
+  JavaScript, TypeScript, React, Angular, Python) with configurable analysis depth, categorization
+  methods, and documentation formats to establish coding standards and maintain consistency across
+  development teams. Use when a team wants a curated set of reference implementations for agents or
+  new developers to follow.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Code Exemplars Blueprint Generator
 

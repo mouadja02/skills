@@ -1,12 +1,17 @@
 ---
 name: aspire
-description: 'Aspire skill covering the Aspire CLI, AppHost orchestration, service discovery, integrations, MCP server, VS Code extension, Dev Containers, GitHub Codespaces, templates, dashboard, and deployment'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Aspire skill covering the Aspire CLI, AppHost orchestration, service discovery, integrations, MCP
+  server, VS Code extension, Dev Containers, GitHub Codespaces, templates, dashboard, and deployment.
+  Use when building, running, or deploying a distributed application with Aspire, or setting up its
+  AppHost, integrations, or dashboard.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 version: "1.0.2"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Aspire — Polyglot Distributed-App Orchestration
 

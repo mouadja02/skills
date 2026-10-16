@@ -1,7 +1,19 @@
 ---
 name: penpot-uiux-design
-description: Penpot UI/UX design via MCP — frames, auto-layout, components, styles, prototype
+description: >-
+  Comprehensive guide for creating professional UI/UX designs in Penpot using MCP tools. Use this
+  skill when: (1) Creating new UI/UX designs for web, mobile, or desktop applications, (2) Building
+  design systems with components and tokens, (3) Designing dashboards, forms, navigation, or landing
+  pages, (4) Applying accessibility standards and best practices, (5) Following platform guidelines
+  (iOS, Android, Material Design), (6) Reviewing or improving existing Penpot designs for usability.
+  Triggers: "design a UI", "create interface", "build layout", "design dashboard", "create form",
+  "design landing page", "make it accessible", "design system", "component library".
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Penpot UI/UX Design Guide
 

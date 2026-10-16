@@ -7,6 +7,8 @@ description: Establishes VPC peering connections between two VPCs for direct pri
 version: 1
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Connecting VPCs with Peering
 
 ## Overview

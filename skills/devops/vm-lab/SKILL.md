@@ -1,10 +1,14 @@
 ---
 name: vm-lab
-description: "Parallels macOS VM lab: GUI automation testing, Peekaboo, TCC, two-way validation."
+description: >-
+  Runs a clean Parallels macOS VM lab to test GUI automation, TCC permission prompts, screenshots,
+  clicking, and typing, verifying from outside the guest (two-way validation). Use when a macOS
+  automation tool must be tested on a fresh system.
 source: "https://github.com/steipete/agent-scripts"
 attribution: "steipete/agent-scripts by Peter Steinberger"
 version: "1.0.0"
 platform: macos
+license: MIT
 ---
 
 # VM Lab

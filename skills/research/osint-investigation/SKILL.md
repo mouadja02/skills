@@ -1,6 +1,12 @@
 ---
 name: osint-investigation
-description: Public-records OSINT investigation framework — SEC EDGAR filings, USAspending contracts, Senate lobbying, OFAC sanctions, ICIJ offshore leaks, NYC property records (ACRIS), OpenCorporates registries, CourtListener court records, Wayback Machine archives, Wikipedia + Wikidata, GDELT news monitoring. Entity resolution across sources, cross-link analysis, timing correlation, evidence chains. Python stdlib only.
+description: >-
+  Public-records OSINT investigation framework — SEC EDGAR filings, USAspending contracts, Senate
+  lobbying, OFAC sanctions, ICIJ offshore leaks, NYC property records (ACRIS), OpenCorporates
+  registries, CourtListener court records, Wayback Machine archives, Wikipedia + Wikidata, GDELT news
+  monitoring. Entity resolution across sources, cross-link analysis, timing correlation, evidence
+  chains. Python stdlib only. Use when researching a company, person, or entity through public records
+  and sanctions, lobbying, contract, court, or property data.
 version: 0.1.0
 platforms: [linux, macos, windows]
 author: Hermes Agent (adapted from ShinMegamiBoson/OpenPlanter, MIT)
@@ -9,6 +15,9 @@ metadata:
     tags: [osint, investigation, public-records, sec, sanctions, corporate-registry, property, courts, due-diligence, journalism]
     category: research
     related_skills: [domain-intel, arxiv]
+license: MIT
+source: "https://github.com/NousResearch/hermes-agent"
+attribution: "NousResearch/hermes-agent by Nous Research"
 ---
 
 # OSINT Investigation — Public Records Cross-Reference

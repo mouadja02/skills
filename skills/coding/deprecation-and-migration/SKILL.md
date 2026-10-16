@@ -1,7 +1,12 @@
 ---
 name: deprecation-and-migration
 description: Use when replacing an old system, API, or library, sunsetting a feature, consolidating duplicate implementations, removing dead code nobody owns, or deciding whether to maintain a legacy system versus migrate off it. Covers deprecation timelines, migration paths, and safe removal.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Deprecation and Migration
 

@@ -1,7 +1,16 @@
 ---
 name: documentation-writer
-description: 'Diátaxis Documentation Expert. An expert technical writer specializing in creating high-quality software documentation, guided by the principles and structure of the Diátaxis technical documentation authoring framework'
+description: >-
+  Diátaxis Documentation Expert. An expert technical writer specializing in creating high-quality
+  software documentation, guided by the principles and structure of the Diátaxis technical
+  documentation authoring framework. Use when writing or restructuring tutorials, how-to guides,
+  reference, or explanation docs.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Diátaxis Documentation Expert
 

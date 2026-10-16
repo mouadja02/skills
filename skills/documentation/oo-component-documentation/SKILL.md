@@ -1,7 +1,15 @@
 ---
 name: oo-component-documentation
-description: 'Create or update standardized object-oriented component documentation using a shared template plus mode-specific guidance for new and existing docs'
+description: >-
+  Create or update standardized object-oriented component documentation using a shared template plus
+  mode-specific guidance for new and existing docs. Use when documenting or refreshing the docs for a
+  class, module, or component.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # OO Component Documentation
 

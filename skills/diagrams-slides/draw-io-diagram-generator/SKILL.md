@@ -1,7 +1,17 @@
 ---
 name: draw-io-diagram-generator
-description: draw.io XML — flowcharts, architecture, sequence, ER, UML, mxGraph shapes/styles
+description: >-
+  Use when creating, editing, or generating draw.io diagram files (.drawio, .drawio.svg, .drawio.png).
+  Covers mxGraph XML authoring, shape libraries, style strings, flowcharts, system architecture,
+  sequence diagrams, ER diagrams, UML class diagrams, network topology, layout strategy, the
+  hediet.vscode-drawio VS Code extension, and the full agent workflow from request to a ready-to-open
+  file.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Draw.io Diagram Generator
 

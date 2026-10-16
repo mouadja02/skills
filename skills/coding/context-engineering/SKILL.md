@@ -1,7 +1,12 @@
 ---
 name: context-engineering
 description: Use when starting a coding session, setting up a project for AI-assisted development, switching between parts of a codebase, or when agent output quality degrades — hallucinated APIs, wrong patterns, ignored project conventions. Structures what the agent loads and when.
+license: MIT
+source: "https://github.com/addyosmani/agent-skills"
+attribution: "addyosmani/agent-skills by Addy Osmani"
 ---
+
+> **Attribution:** Sourced from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by [Addy Osmani](https://github.com/addyosmani), licensed MIT. Modified for this collection.
 
 # Context Engineering
 

@@ -1,6 +1,11 @@
 ---
 name: "senior-security"
-description: Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and penetration testing. Includes STRIDE analysis, OWASP guidance, cryptography patterns, and security scanning tools
+description: >-
+  Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and
+  penetration testing. Includes STRIDE analysis, OWASP guidance, cryptography patterns, and security
+  scanning tools. Use when the user asks about security reviews, threat analysis, vulnerability
+  assessments, secure coding practices, security audits, attack surface analysis, CVE remediation, or
+  security best practices.
 triggers:
   - security architecture
   - threat modeling
@@ -14,7 +19,12 @@ triggers:
   - secret scanning
   - security audit
   - zero trust
+license: MIT
+source: "https://github.com/alirezarezvani/claude-skills"
+attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 ---
+
+> **Attribution:** Sourced from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) by [Alireza Rezvani](https://github.com/alirezarezvani), licensed MIT. Modified for this collection.
 
 # Senior Security Engineer
 

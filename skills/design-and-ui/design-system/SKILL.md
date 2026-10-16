@@ -1,12 +1,19 @@
 ---
 name: design-system
-description: Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation
+description: >-
+  Token architecture, component specifications, and slide generation. Three-layer tokens
+  (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic
+  slide creation. Use for design tokens, systematic design, brand-compliant presentations.
 argument-hint: "[component or token]"
 license: MIT
 metadata:
   author: claudekit
   version: "1.0.0"
+source: "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+attribution: "nextlevelbuilder/ui-ux-pro-max-skill by Next Level Builder"
 ---
+
+> **Attribution:** Sourced from [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) by [Next Level Builder](https://nextlevelbuilder.io), licensed MIT. Modified for this collection.
 
 # Design System
 

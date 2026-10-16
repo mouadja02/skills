@@ -1,7 +1,15 @@
 ---
 name: ruff-recursive-fix
-description: Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively, review each change, and resolve remaining findings with targeted edits or user decisions
+description: >-
+  Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively,
+  review each change, and resolve remaining findings with targeted edits or user decisions. Use when
+  cleaning up Ruff lint findings across a Python codebase.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Ruff Recursive Fix
 

@@ -1,7 +1,14 @@
 ---
 name: fedora-linux-triage
-description: 'Triage and resolve Fedora issues with dnf, systemd, and SELinux-aware guidance.'
+description: >-
+  Diagnoses and fixes Fedora Linux problems with Fedora tooling: dnf, systemd, journalctl, and
+  SELinux-aware guidance. Use when a Fedora system has package, service, boot, or permission issues.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Fedora Linux Triage
 

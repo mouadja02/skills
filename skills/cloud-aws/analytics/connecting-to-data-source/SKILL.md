@@ -17,6 +17,8 @@ version: 1
 argument-hint: '[source-type|connection-name|hostname]'
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Connect to Data Source
 
 Register an external data source with AWS Glue so downstream skills (ingesting-into-data-lake) can move data from it. A Glue connection stores the network config, driver, and credential reference for one source. Create once per source, reuse across jobs.

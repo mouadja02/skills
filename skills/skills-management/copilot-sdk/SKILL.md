@@ -1,9 +1,14 @@
 ---
 name: copilot-sdk
-description: Build agentic applications with GitHub Copilot SDK
+description: >-
+  Build agentic applications with GitHub Copilot SDK. Use when embedding AI agents in apps, creating
+  custom tools, implementing streaming responses, managing sessions, connecting to MCP servers, or
+  creating custom agents. Triggers on Copilot SDK, GitHub SDK, agentic app, embed Copilot,
+  programmable agent, MCP server, custom agent.
 version: "1.0.0"
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
@@ -912,7 +917,7 @@ The SDK manages the CLI process lifecycle automatically. All communication happe
 - **GitHub MCP Server**: https://github.com/github/github-mcp-server
 - **MCP Servers Directory**: https://github.com/modelcontextprotocol/servers
 - **Feature Guides**: https://github.com/github/copilot-sdk/tree/main/docs/features
-- **Node.js Samples**: https://github.com/github/copilot-sdk/tree/main/nodejs/samples
+- **Node.js Samples**: https://github.com/github/copilot-sdk/tree/main/nodejs/examples
 
 ## Status
 

@@ -1,8 +1,15 @@
 ---
 name: theme-factory
-description: Theme styling toolkit — slides, docs, HTML pages, 10+ styles, dark/light, custom palette
+description: >-
+  Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML
+  landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact
+  that has been creating, or can generate a new theme on-the-fly.
 license: Complete terms in LICENSE.txt
+source: "https://github.com/anthropics/skills"
+attribution: "anthropics/skills by Anthropic"
 ---
+
+> **Attribution:** Sourced from [anthropics/skills](https://github.com/anthropics/skills) by [Anthropic](https://www.anthropic.com), licensed Apache-2.0. Modified for this collection.
 
 
 # Theme Factory Skill

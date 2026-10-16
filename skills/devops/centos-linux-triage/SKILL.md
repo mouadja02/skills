@@ -1,7 +1,15 @@
 ---
 name: centos-linux-triage
-description: 'Triage and resolve CentOS issues using RHEL-compatible tooling, SELinux-aware practices, and firewalld.'
+description: >-
+  Diagnoses and fixes CentOS problems with RHEL-compatible tooling, SELinux-aware practices, and
+  firewalld. Use when a CentOS or RHEL-family system has package, service, permission, or network
+  issues.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # CentOS Linux Triage
 

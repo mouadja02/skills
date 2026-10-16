@@ -1,6 +1,9 @@
 ---
 name: etl-to-dbt
-description: ETL/ELT → dbt migration — Informatica/PowerBI mappings, transformation logic, YAML
+description: >-
+  Converts ETL pipeline metadata (Informatica IICS, PowerCenter XML, and similar) into clean dbt
+  models, SQL, and YAML rather than a mechanical one-to-one translation. Use when migrating legacy ETL
+  mappings to dbt.
 ---
 
 # ETL to dbt Migration

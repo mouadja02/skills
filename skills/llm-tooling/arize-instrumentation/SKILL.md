@@ -1,8 +1,13 @@
 ---
 name: arize-instrumentation
-description: Arize AX tracing — 2-phase: codebase analysis → instrumentation with user confirmation
+description: >-
+  Use when the user wants to add Arize AX tracing or OpenTelemetry/OpenInference instrumentation to an LLM
+  or agent application. Runs a two-phase flow: read-only codebase analysis (frameworks, entry points, LLM
+  providers), then instrumentation after the user confirms the plan. Covers Python, TypeScript/JavaScript,
+  and Java apps.
 source: "https://github.com/Arize-ai/arize-skills"
 attribution: "Arize-ai/arize-skills by Arize AI"
+license: MIT
 ---
 
 > **Attribution:** Sourced from [Arize-ai/arize-skills](https://github.com/Arize-ai/arize-skills) by [Arize AI](https://arize.com).

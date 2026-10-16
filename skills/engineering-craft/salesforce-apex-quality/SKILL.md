@@ -1,7 +1,17 @@
 ---
 name: salesforce-apex-quality
-description: Apex quality — bulk-safe SOQL/DML, sharing model, governor limits, test coverage
+description: >-
+  Apex code quality guardrails for Salesforce development. Enforces bulk-safety rules (no SOQL/DML in
+  loops), sharing model requirements, CRUD/FLS security, SOQL injection prevention, PNB test coverage
+  (Positive / Negative / Bulk), and modern Apex idioms. Use this skill when reviewing or generating
+  Apex classes, trigger handlers, batch jobs, or test classes to catch governor limit risks, security
+  gaps, and quality issues before deployment.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Salesforce Apex Quality Guardrails
 

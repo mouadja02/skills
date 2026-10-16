@@ -9,11 +9,12 @@ description: >-
   fix a broken Power Automate flow, diagnose a timeout, trace a DynamicOperationRequestFailure,
   check connector auth errors, read error details from a run, or troubleshoot
   expression failures. Requires a FlowStudio MCP subscription — see https://mcp.flowstudio.app
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Power Automate Debugging with FlowStudio MCP
 

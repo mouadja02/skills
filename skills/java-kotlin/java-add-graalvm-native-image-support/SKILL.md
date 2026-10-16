@@ -1,7 +1,15 @@
 ---
 name: java-add-graalvm-native-image-support
-description: 'GraalVM Native Image expert that adds native image support to Java applications, builds the project, analyzes build errors, applies fixes, and iterates until successful compilation using Oracle best practices'
+description: >-
+  GraalVM Native Image expert that adds native image support to Java applications, builds the project,
+  analyzes build errors, applies fixes, and iterates until successful compilation using Oracle best
+  practices. Use when a Java application should compile to a GraalVM native image.
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # GraalVM Native Image Agent
 

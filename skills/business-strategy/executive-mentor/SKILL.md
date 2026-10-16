@@ -1,6 +1,10 @@
 ---
 name: "executive-mentor"
-description: "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal board meetings, dissects decisions with no good options, and forces honest post-mortems"
+description: >-
+  Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal
+  board meetings, dissects decisions with no good options, and forces honest post-mortems. Use when a
+  plan needs hard scrutiny, a board meeting is coming, a painful decision has been avoided, or a
+  failure needs an honest post-mortem.
 license: MIT
 metadata:
   version: 1.0.0

@@ -1,11 +1,19 @@
 ---
 name: premium-frontend-ui
-description: 'GitHub Copilot to craft immersive, high-performance web experiences with advanced motion, typography, and architectural craftsmanship'
+description: >-
+  GitHub Copilot to craft immersive, high-performance web experiences with advanced motion,
+  typography, and architectural craftsmanship. Use when a web page should feel premium and immersive
+  rather than standard.
 version: '1.0.0'
 metadata:
   author: 'Utkarsh Patrikar'
   author_url: 'https://github.com/utkarsh232005'
+license: MIT
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
 ---
+
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # Immersive Frontend UI Craftsmanship
 

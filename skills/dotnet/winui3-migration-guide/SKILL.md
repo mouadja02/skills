@@ -1,11 +1,15 @@
 ---
 name: winui3-migration-guide
-description: UWP → WinUI 3 migration — API mapping, before/after snippets, App SDK equivalents
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Migrates UWP apps to WinUI 3 and the Windows App SDK with API mappings and before/after snippets,
+  and checks generated code for leftover UWP patterns. Use when porting a UWP app or reviewing WinUI 3
+  code.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # WinUI 3 Migration Guide
 

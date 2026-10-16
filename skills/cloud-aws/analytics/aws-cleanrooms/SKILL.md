@@ -6,6 +6,9 @@ name: aws-cleanrooms
 description: Troubleshoots and debugs AWS Clean Rooms collaboration issues related to IAM roles, S3 bucket policies, KMS keys, Lake Formation permissions, and CloudWatch logging for custom ML model training and inference jobs. Use when a customer reports permission failures, access errors, or log publishing issues in Clean Rooms.
 version: 1
 ---
+
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # AWS Clean Rooms
 
 ## Overview

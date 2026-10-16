@@ -6,6 +6,9 @@ name: rds-db2
 version: "2.0.1"
 description: Provisions, connects, migrates, and operates Amazon RDS for Db2. Applies when provisioning with IBM customer and site IDs (License Manager, BYOL, GovCloud), connecting over TLS, fixing SQL30082N after Secrets Manager rotation, migration from Db2 LUW (Linux, AIX, Windows, AS400) or z/OS mainframe (ADB2GEN, Q Replication), choosing code page/collation (EBCDIC, CCSID), S3 backup/restore, Multi-AZ and cross-region standby replicas, RDSADMIN procedures, customer-managed KMS BYOK, self-managed Active Directory Kerberos, Db2 audit to S3, minimum IAM, or colocation.
 ---
+
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # Amazon RDS for Db2
 
 ## Overview
@@ -208,19 +211,19 @@ Surface these controls when advising on any production RDS for Db2 deployment. T
 - Blog — Mainframe DDL conversion (z/OS to RDS for Db2): https://aws.amazon.com/blogs/database/migrating-tables-from-ibm-db2-for-z-os-to-amazon-rds-for-db2/
 - Blog — Code page and collation for mainframe migration: https://aws.amazon.com/blogs/database/choosing-the-right-code-page-and-collation-for-migration-from-mainframe-db2-to-amazon-rds-for-db2/
 - Blog — Bring your own customer-managed KMS key for RDS for Db2 (DBBLOG-5188): https://aws.amazon.com/blogs/database/bring-your-own-key-to-amazon-rds-for-db2-with-a-customer-managed-kms-key/
-- Blog — Self-managed Active Directory with Kerberos for RDS for Db2: https://aws.amazon.com/blogs/database/use-kerberos-authentication-with-a-self-managed-active-directory-for-amazon-rds-for-db2/
+- Blog — Self-managed Active Directory with Kerberos for RDS for Db2: https://aws.amazon.com/blogs/database/enable-self-managed-ad-kerberos-authentication-with-amazon-rds-for-db2/
 
 ### Related topics (cited resources, not yet routed sub-skills)
 
 These adjacent topics are not expanded into routed references in this iteration. Each is discoverable through the cited resource below.
 
-- Reverse log shipping for RDS for Db2 (DBBLOG-5352): https://aws.amazon.com/blogs/database/implement-reverse-log-shipping-for-amazon-rds-for-db2/
+- Reverse log shipping for RDS for Db2 (DBBLOG-5352): https://aws.amazon.com/blogs/database/synchronizing-a-backup-on-premises-db2-server-with-amazon-rds-for-db2/
 - Multi-account connectivity: workspace source `04-db2-client/RDS-Db2-Multiple-Account-Connectivity/`
 - Terraform provisioning: workspace source `04-db2-client/RDS-Db2-Terraform/`
 - CIS compliance: workspace source `04-db2-client/CIS-Compliance/`
 - db2mon monitoring: workspace source `04-db2-client/db2mon_RDS/`
 - Compression savings: workspace source `04-db2-client/Compression-Savings/`
-- Migration prerequisite check (DBBLOG-5048): https://aws.amazon.com/blogs/database/migrate-from-ibm-db2-to-amazon-rds-for-db2-using-a-migration-prerequisite-check/
+- Migration prerequisite check (DBBLOG-5048): https://aws.amazon.com/blogs/database/restore-self-managed-db2-linux-databases-in-amazon-rds-for-db2/
 - Load from S3: workspace source `04-db2-client/load-from-s3/`
 - Sample Java stored procedures: workspace source `04-db2-client/sample-java-sp/`
 

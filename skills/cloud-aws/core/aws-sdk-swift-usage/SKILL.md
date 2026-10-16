@@ -7,6 +7,8 @@ description: |
   AWS SDK for Swift development patterns. Use when writing Swift code that uses AWS services via aws-sdk-swift package.
 ---
 
+> **Attribution:** Sourced from [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) by [Amazon Web Services](https://aws.amazon.com), licensed Apache-2.0. Modified for this collection.
+
 # AWS SDK for Swift
 
 ## Async Code Structure

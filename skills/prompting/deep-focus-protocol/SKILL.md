@@ -1,6 +1,9 @@
 ---
 name: deep-focus-protocol
-description: Deep focus sessions — ruthless scope, batch decisions, momentum-preserving recovery
+description: >-
+  Structures deep-focus work sessions: ruthless scope, batched decisions, protection from context
+  switching, and momentum-preserving recovery after interruptions. Use when planning complex or
+  creative work that needs sustained concentration.
 ---
 
 # Deep Focus Protocol

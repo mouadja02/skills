@@ -1,11 +1,15 @@
 ---
 name: entra-agent-user
-description: 'Create Agent Users in Microsoft Entra ID from Agent Identities, enabling AI agents to act as digital workers with user identity capabilities in Microsoft 365 and Azure environments'
-source: "https://github.com/microsoft/skills"
-attribution: "microsoft/skills by Microsoft"
+description: >-
+  Create Agent Users in Microsoft Entra ID from Agent Identities, enabling AI agents to act as digital
+  workers with user identity capabilities in Microsoft 365 and Azure environments. Use when an AI
+  agent needs its own user identity in Microsoft 365 or Azure.
+source: "https://github.com/github/awesome-copilot"
+attribution: "github/awesome-copilot by GitHub Community"
+license: MIT
 ---
 
-> **Attribution:** Sourced from [microsoft/skills](https://github.com/microsoft/skills) by [Microsoft](https://microsoft.com).
+> **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 # SKILL: Creating Agent Users in Microsoft Entra Agent ID
 
