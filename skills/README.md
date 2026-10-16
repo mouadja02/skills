@@ -4,13 +4,13 @@
 
 This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit it by hand.
 
-**Total:** 807 skills across 36 categories.
+**Total:** 799 skills across 36 categories.
 
 ## Categories
 
 | Category | Skills | Scope |
 | --- | ---: | --- |
-| [`agent-design`](./agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
+| [`agent-design`](./agent-design/) | 55 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./api-backend/) | 12 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./business-strategy/) | 39 | Executive advisory, board preparation, operating systems, and strategic decision support. |
@@ -32,7 +32,7 @@ This index is generated from `SKILL.md` frontmatter by `scripts/build-manifest.m
 | [`finance`](./finance/) | 7 | Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows. |
 | [`go-to-market`](./go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
-| [`llm-tooling`](./llm-tooling/) | 48 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
+| [`llm-tooling`](./llm-tooling/) | 43 | LLM observability, evaluation, serving, vector search, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
 | [`mcp`](./mcp/) | 15 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./messaging/) | 1 | Messaging integrations and relay workflows. |

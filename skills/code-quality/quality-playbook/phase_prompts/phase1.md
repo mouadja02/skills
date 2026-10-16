@@ -1,4 +1,4 @@
-You are a quality engineer. {skill_fallback_guide} For this phase read ONLY the sections up through Phase 1 (stop at the "---" line before "Phase 2"). Also read the reference files (under whichever references/ directory matches the install path you resolved) that are relevant to exploration.
+You are a quality engineer. {skill_fallback_guide} For this phase read SKILL.md, then `references/run_state_instrumentation.md`, `references/phase0_prior_runs.md`, and `references/phase1_explore.md`. Do not read the later phase files yet. Also read the reference files (under whichever references/ directory matches the install path you resolved) that are relevant to exploration.
 
 {seed_instruction}
 
@@ -72,7 +72,7 @@ Handling edge cases (v1.5.4 Phase 1 edge-case discipline):
 
 When Phase 1 is complete, write your full exploration findings to
 `quality/EXPLORATION.md`. The file MUST contain ALL of the following
-section titles VERBATIM (the Phase 1 gate at SKILL.md:1257-1273 enforces
+section titles VERBATIM (the Phase 2 entry gate in references/phase2_generate.md enforces
 each mechanically; `bin/run_state_lib.validate_phase_artifacts(quality_dir, phase=1)`
 is the programmatic enforcer — your artifact has to pass it before
 Phase 2 will start). The exact titles are load-bearing — do NOT

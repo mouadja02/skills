@@ -53,7 +53,7 @@ const CATEGORY_DESCRIPTIONS = {
   finance: "Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows.",
   "go-to-market": "Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG.",
   "java-kotlin": "Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows.",
-  "llm-tooling": "LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM.",
+  "llm-tooling": "LLM observability, evaluation, serving, vector search, Phoenix, Arize, Qdrant, and vLLM.",
   "marketing-and-growth": "Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth.",
   mcp: "Model Context Protocol server generation, tooling, deployment, and security.",
   messaging: "Messaging integrations and relay workflows.",

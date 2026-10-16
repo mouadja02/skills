@@ -265,10 +265,41 @@ here no longer received fixes:
 | `cloud-aws/networking/networkfirewall` | Deleted from aws/agent-toolkit-for-aws ([#195](https://github.com/aws/agent-toolkit-for-aws/pull/195)). |
 | `personal-productivity/one-password` | Withdrawn from steipete/agent-scripts as a private workflow. |
 
-The BMad Method bundle (`agent-design/bmm-skills`) is a snapshot of BMAD v6. Upstream v7 has since
-retired the tech-writer agent, consolidated the research skills, and renamed several workflows. The
-bundle is kept whole because its module files wire those parts together; re-importing v7 is the
-recommended follow-up.
+### Removed: no license to redistribute
+
+`agent-design/create-agent-tui`, `agent-design/create-headless-agent`, `llm-tooling/openrouter-agent-migration`,
+`llm-tooling/openrouter-images`, `llm-tooling/openrouter-models`, `llm-tooling/openrouter-oauth`, and
+`llm-tooling/openrouter-typescript-sdk` came from [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills),
+which declares no license. Without one, default copyright grants no right to redistribute, so they were
+removed. Install them from upstream directly, or re-import them here if OpenRouter adds a license.
+
+### Re-imported: BMad Method v6.12.4
+
+The BMad Method bundle (`agent-design/bmm-skills`) was a pre-v6.7 snapshot laid out by phase
+(`1-analysis` … `4-implementation`). Upstream has since merged or retired most of those skills, so the
+bundle was replaced with the [v6.12.4 release](https://github.com/bmad-code-org/BMAD-METHOD/tree/v6.12.4)
+(commit `bab9082c`), the latest tagged release; v7 is still unreleased on `main`.
+
+- `agents/`, `plan/`, and `ship/` come from `src/bmm-skills`, and `core/` from `src/core-skills`. The core
+  module is included because the method skills call its review, research, elicitation, party-mode, and
+  help skills.
+- Upstream's `v6-shims/` forwarders and the deprecated `bmad-generate-project-context` forwarder were left
+  out. The router maps every old name to its replacement instead.
+- Skill files are unchanged apart from frontmatter credit and an attribution line. The router
+  `SKILL.md` was rewritten for the new layout.
+- The skills need `uv`, Python 3.11 or later, and the `_bmad/` folder that `npx bmad-method install`
+  creates. The router says so.
+- BMad is a trademark of BMad Code, LLC, and its [trademark guidelines](https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.12.4/TRADEMARK.md)
+  forbid implying endorsement. Each attribution line says this collection is not affiliated with or
+  endorsed by BMad Code, LLC.
+
+Removed with the old snapshot, because upstream merged or retired them: `bmad-agent-tech-writer`,
+`bmad-document-project`, `bmad-domain-research`, `bmad-market-research`, `bmad-technical-research`,
+`bmad-create-prd`, `bmad-edit-prd`, `bmad-validate-prd`, `bmad-create-ux-design`,
+`bmad-check-implementation-readiness`, `bmad-create-architecture`, `bmad-generate-project-context`,
+`bmad-checkpoint-preview`, `bmad-create-story`, `bmad-dev-story`, `bmad-quick-dev`, and
+`bmad-sprint-status`. Added from v6.12.4: `bmad-prd`, `bmad-ux`, `bmad-spec`, `bmad-architecture`,
+`bmad-project-context`, `bmad-build`, `bmad-build-auto`, `bmad-walkthrough`, and the eight core skills.
 
 ### Removed: `diagrams-slides/pptx`
 
@@ -321,16 +352,61 @@ Three skills added at the same time were written for this repository from public
 skill cites: `context-engineering/coding-agent-token-efficiency`, `llm-tooling/llm-cost-optimization`,
 and `skills-management/skill-smell-audit`.
 
+## Oversized skills split (October 2026)
+
+A skill's whole `SKILL.md` loads every time the skill is used, so nine imported skills over 5,000
+words were restructured. Sections a run needs only at one stage moved unchanged into `references/`
+inside the same skill. Each moved section left a short stub under its original heading that says what
+the section covers and when to read it. Every moved line was checked to appear exactly once in the new
+files, and relative links in the moved text were repointed. Each skill's attribution line records the
+change.
+
+| Skill | Words before → after | Moved to `references/` |
+| --- | --- | --- |
+| `code-quality/quality-playbook` | 41,770 → 6,000 | One file per phase (0–7), recheck mode, artifact contract, run-state rules, runner mode. The phase prompts in `phase_prompts/` now point at the phase files, and two stale `SKILL.md:<line>` citations were replaced with section names. |
+| `cloud-aws/database/amazon-dynamodb` | 20,892 → 6,200 (after re-syncing to upstream v2) | The design interview, numbered axioms (data modeling, integration, mechanics), patterns, glossary, cost estimation, live validation, iteration loop, best practices. Axiom numbers are unchanged, so citations such as "Mechanics #18" still resolve. |
+| `design-and-ui/hallmark` | 9,250 → 6,800 | Component scope, the pre-flight scan, and the `study` verb (now `references/verbs/study.md`, next to `audit.md` and `redesign.md`). |
+| `finance/dcf-model` | 6,935 → 3,300 | Correct patterns and common mistakes, Excel model structure, and the case selector. The five most common mistakes stay inline. |
+| `databases/cosmosdb-datamodeling` | 6,551 → 3,000 | The two document templates and the design patterns. |
+| `engineering-craft/geofeed-tuner` | 6,380 → 1,800 | Phases 3–5, each read when its phase starts. An unclosed code fence that turned Phases 4–6 into one code block was also fixed; upstream has the same bug. |
+| `skills-management/skill-creator` | 5,227 → 3,800 | Description optimization and the Claude.ai and Cowork notes. |
+| `cloud-aws/migration/aws-transform` | 5,226 → 3,600 | S3 inputs, private-repository handling, and runtime-compatibility checks. |
+
+`design-and-ui/ui-ux-pro-max` (6,503 words) was re-synced from
+[nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) at
+`56ea9cf1` instead of being split, because upstream had already split it (2,197 words now). The re-sync
+also fixed a broken copy: `data` and `scripts` had been committed as one-line text files holding a
+relative symlink target (`../../../src/ui-ux-pro-max/...`), so the skill shipped without its search
+scripts or data. Script paths use upstream's skill-relative `scripts/search.py` form instead of the
+plugin-root form, and upstream's `scripts/tests/` suite is left out because it needs the upstream
+repository layout.
+
+`cloud-aws/database/amazon-dynamodb` was first re-synced to upstream v2
+([aws/agent-toolkit-for-aws@44ba1a54](https://github.com/aws/agent-toolkit-for-aws/tree/44ba1a5451913998815111cc2d518f5c45f95ef7/skills/specialized-skills/database-skills/amazon-dynamodb)),
+which adds native vector search (`references/vector-search.md`), a guardrail for MCP-loaded versus locally
+installed copies, and updated scripts. It was then split the same way.
+
+Five skills had `license` values that were prose rather than SPDX identifiers ("Complete terms in
+LICENSE.txt"). They now name the license their bundled file holds: `azure-resource-visualizer` and
+`winmd-api-search` are MIT; `frontend-design`, `theme-factory`, and `impeccable` are Apache-2.0.
+`impeccable`'s license line pointed at a `NOTICE.md` the folder did not ship. That file is now included,
+taken from upstream at `5613891a` to match the local version. It credits Anthropic's frontend-design skill
+and ehmo's typecraft-guide-skill.
+
+`code-quality/quality-playbook` also gained the credit the October audit missed. Andrew Stellman wrote it
+in [andrewstellman/quality-playbook](https://github.com/andrewstellman/quality-playbook) (Apache-2.0) and
+contributed it to github/awesome-copilot.
+
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-753 of 807 skills declare an upstream `source`, across 58 sources. The remaining 54 declare no upstream source.
+746 of 799 skills declare an upstream `source`, across 58 sources. The remaining 53 declare no upstream source.
 
 ### github/awesome-copilot
 
 Source: https://github.com/github/awesome-copilot
 Credit: github/awesome-copilot by GitHub Community
-License: Apache-2.0; Complete terms in LICENSE.txt; MIT
+License: Apache-2.0; MIT
 
 | Install path | License |
 | --- | --- |
@@ -497,7 +573,7 @@ License: Apache-2.0; Complete terms in LICENSE.txt; MIT
 | [`dotnet/nuget-manager`](../skills/dotnet/nuget-manager/SKILL.md) | MIT |
 | [`dotnet/vscode-ext-commands`](../skills/dotnet/vscode-ext-commands/SKILL.md) | MIT |
 | [`dotnet/vscode-ext-localization`](../skills/dotnet/vscode-ext-localization/SKILL.md) | MIT |
-| [`dotnet/winmd-api-search`](../skills/dotnet/winmd-api-search/SKILL.md) | Complete terms in LICENSE.txt |
+| [`dotnet/winmd-api-search`](../skills/dotnet/winmd-api-search/SKILL.md) | MIT |
 | [`dotnet/winui3-migration-guide`](../skills/dotnet/winui3-migration-guide/SKILL.md) | MIT |
 | [`engineering-craft/code-tour`](../skills/engineering-craft/code-tour/SKILL.md) | MIT |
 | [`engineering-craft/game-engine`](../skills/engineering-craft/game-engine/SKILL.md) | MIT |
@@ -825,7 +901,7 @@ License: Apache-2.0
 ### steipete/agent-scripts
 
 Source: https://github.com/steipete/agent-scripts
-License: Complete terms in LICENSE.txt; MIT
+License: Apache-2.0; MIT
 
 | Install path | License |
 | --- | --- |
@@ -837,7 +913,7 @@ License: Complete terms in LICENSE.txt; MIT
 | [`coding/swiftui-liquid-glass`](../skills/coding/swiftui-liquid-glass/SKILL.md) | MIT |
 | [`coding/swiftui-performance-audit`](../skills/coding/swiftui-performance-audit/SKILL.md) | MIT |
 | [`coding/swiftui-view-refactor`](../skills/coding/swiftui-view-refactor/SKILL.md) | MIT |
-| [`design-and-ui/frontend-design`](../skills/design-and-ui/frontend-design/SKILL.md) | Complete terms in LICENSE.txt |
+| [`design-and-ui/frontend-design`](../skills/design-and-ui/frontend-design/SKILL.md) | Apache-2.0 |
 | [`dev-workflow/browser-use`](../skills/dev-workflow/browser-use/SKILL.md) | MIT |
 | [`dev-workflow/codex-debugging`](../skills/dev-workflow/codex-debugging/SKILL.md) | MIT |
 | [`dev-workflow/create-cli`](../skills/dev-workflow/create-cli/SKILL.md) | MIT |
@@ -874,42 +950,41 @@ License: Complete terms in LICENSE.txt; MIT
 ### bmad-code-org/BMAD-METHOD
 
 Source: https://github.com/bmad-code-org/BMAD-METHOD
-Credit: bmad-code-org/BMAD-METHOD by BMAD Code Org
+Credit: bmad-code-org/BMAD-METHOD by BMad Code, LLC
 License: MIT
 
 | Install path | License |
 | --- | --- |
 | [`agent-design/bmm-skills`](../skills/agent-design/bmm-skills/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-agent-analyst`](../skills/agent-design/bmm-skills/1-analysis/bmad-agent-analyst/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-agent-tech-writer`](../skills/agent-design/bmm-skills/1-analysis/bmad-agent-tech-writer/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-document-project`](../skills/agent-design/bmm-skills/1-analysis/bmad-document-project/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-prfaq`](../skills/agent-design/bmm-skills/1-analysis/bmad-prfaq/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/bmad-product-brief`](../skills/agent-design/bmm-skills/1-analysis/bmad-product-brief/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/research/bmad-domain-research`](../skills/agent-design/bmm-skills/1-analysis/research/bmad-domain-research/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/research/bmad-market-research`](../skills/agent-design/bmm-skills/1-analysis/research/bmad-market-research/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/1-analysis/research/bmad-technical-research`](../skills/agent-design/bmm-skills/1-analysis/research/bmad-technical-research/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-agent-pm`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-agent-pm/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-agent-ux-designer`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-agent-ux-designer/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-create-prd`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-create-prd/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-create-ux-design`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-create-ux-design/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-edit-prd`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-edit-prd/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/2-plan-workflows/bmad-validate-prd`](../skills/agent-design/bmm-skills/2-plan-workflows/bmad-validate-prd/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-agent-architect`](../skills/agent-design/bmm-skills/3-solutioning/bmad-agent-architect/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-check-implementation-readiness`](../skills/agent-design/bmm-skills/3-solutioning/bmad-check-implementation-readiness/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-create-architecture`](../skills/agent-design/bmm-skills/3-solutioning/bmad-create-architecture/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-create-epics-and-stories`](../skills/agent-design/bmm-skills/3-solutioning/bmad-create-epics-and-stories/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/3-solutioning/bmad-generate-project-context`](../skills/agent-design/bmm-skills/3-solutioning/bmad-generate-project-context/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-agent-dev`](../skills/agent-design/bmm-skills/4-implementation/bmad-agent-dev/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-checkpoint-preview`](../skills/agent-design/bmm-skills/4-implementation/bmad-checkpoint-preview/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-code-review`](../skills/agent-design/bmm-skills/4-implementation/bmad-code-review/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-correct-course`](../skills/agent-design/bmm-skills/4-implementation/bmad-correct-course/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-create-story`](../skills/agent-design/bmm-skills/4-implementation/bmad-create-story/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-dev-story`](../skills/agent-design/bmm-skills/4-implementation/bmad-dev-story/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests`](../skills/agent-design/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-quick-dev`](../skills/agent-design/bmm-skills/4-implementation/bmad-quick-dev/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-retrospective`](../skills/agent-design/bmm-skills/4-implementation/bmad-retrospective/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-sprint-planning`](../skills/agent-design/bmm-skills/4-implementation/bmad-sprint-planning/SKILL.md) | MIT |
-| [`agent-design/bmm-skills/4-implementation/bmad-sprint-status`](../skills/agent-design/bmm-skills/4-implementation/bmad-sprint-status/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-analyst`](../skills/agent-design/bmm-skills/agents/bmad-agent-analyst/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-architect`](../skills/agent-design/bmm-skills/agents/bmad-agent-architect/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-dev`](../skills/agent-design/bmm-skills/agents/bmad-agent-dev/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-pm`](../skills/agent-design/bmm-skills/agents/bmad-agent-pm/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/agents/bmad-agent-ux-designer`](../skills/agent-design/bmm-skills/agents/bmad-agent-ux-designer/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-advanced-elicitation`](../skills/agent-design/bmm-skills/core/bmad-advanced-elicitation/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-brainstorming`](../skills/agent-design/bmm-skills/core/bmad-brainstorming/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-customize`](../skills/agent-design/bmm-skills/core/bmad-customize/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-deep-recon`](../skills/agent-design/bmm-skills/core/bmad-deep-recon/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-forge-idea`](../skills/agent-design/bmm-skills/core/bmad-forge-idea/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-help`](../skills/agent-design/bmm-skills/core/bmad-help/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-party-mode`](../skills/agent-design/bmm-skills/core/bmad-party-mode/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/core/bmad-review`](../skills/agent-design/bmm-skills/core/bmad-review/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-architecture`](../skills/agent-design/bmm-skills/plan/bmad-architecture/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-create-epics-and-stories`](../skills/agent-design/bmm-skills/plan/bmad-create-epics-and-stories/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-prd`](../skills/agent-design/bmm-skills/plan/bmad-prd/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-prfaq`](../skills/agent-design/bmm-skills/plan/bmad-prfaq/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-product-brief`](../skills/agent-design/bmm-skills/plan/bmad-product-brief/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-project-context`](../skills/agent-design/bmm-skills/plan/bmad-project-context/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-spec`](../skills/agent-design/bmm-skills/plan/bmad-spec/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-sprint-planning`](../skills/agent-design/bmm-skills/plan/bmad-sprint-planning/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/plan/bmad-ux`](../skills/agent-design/bmm-skills/plan/bmad-ux/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-build`](../skills/agent-design/bmm-skills/ship/bmad-build/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-build-auto`](../skills/agent-design/bmm-skills/ship/bmad-build-auto/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-code-review`](../skills/agent-design/bmm-skills/ship/bmad-code-review/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-correct-course`](../skills/agent-design/bmm-skills/ship/bmad-correct-course/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-qa-generate-e2e-tests`](../skills/agent-design/bmm-skills/ship/bmad-qa-generate-e2e-tests/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-retrospective`](../skills/agent-design/bmm-skills/ship/bmad-retrospective/SKILL.md) | MIT |
+| [`agent-design/bmm-skills/ship/bmad-walkthrough`](../skills/agent-design/bmm-skills/ship/bmad-walkthrough/SKILL.md) | MIT |
 
 ### addyosmani/agent-skills
 
@@ -1145,22 +1220,6 @@ License: MIT
 | [`engineering-craft/improve-codebase-architecture`](../skills/engineering-craft/improve-codebase-architecture/SKILL.md) | MIT |
 | [`skills-management/writing-for-agents`](../skills/skills-management/writing-for-agents/SKILL.md) | MIT |
 
-### OpenRouterTeam/skills
-
-Source: https://github.com/OpenRouterTeam/skills
-Credit: OpenRouterTeam/skills by OpenRouter
-License: not declared
-
-| Install path | License |
-| --- | --- |
-| [`agent-design/create-agent-tui`](../skills/agent-design/create-agent-tui/SKILL.md) | not declared |
-| [`agent-design/create-headless-agent`](../skills/agent-design/create-headless-agent/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-agent-migration`](../skills/llm-tooling/openrouter-agent-migration/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-images`](../skills/llm-tooling/openrouter-images/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-models`](../skills/llm-tooling/openrouter-models/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-oauth`](../skills/llm-tooling/openrouter-oauth/SKILL.md) | not declared |
-| [`llm-tooling/openrouter-typescript-sdk`](../skills/llm-tooling/openrouter-typescript-sdk/SKILL.md) | not declared |
-
 ### nextlevelbuilder/ui-ux-pro-max-skill
 
 Source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
@@ -1229,11 +1288,11 @@ License: not declared
 
 Source: https://github.com/anthropics/skills
 Credit: anthropics/skills by Anthropic
-License: Apache-2.0; Complete terms in LICENSE.txt
+License: Apache-2.0
 
 | Install path | License |
 | --- | --- |
-| [`design-and-ui/theme-factory`](../skills/design-and-ui/theme-factory/SKILL.md) | Complete terms in LICENSE.txt |
+| [`design-and-ui/theme-factory`](../skills/design-and-ui/theme-factory/SKILL.md) | Apache-2.0 |
 | [`skills-management/skill-creator`](../skills/skills-management/skill-creator/SKILL.md) | Apache-2.0 |
 
 ### hashicorp/agent-skills
@@ -1262,12 +1321,12 @@ License: Apache-2.0
 
 Source: https://github.com/microsoft/azure-skills
 Credit: microsoft/azure-skills by Microsoft Azure
-License: Complete terms in LICENSE.txt; MIT
+License: MIT
 
 | Install path | License |
 | --- | --- |
 | [`cloud-azure/appinsights-instrumentation`](../skills/cloud-azure/appinsights-instrumentation/SKILL.md) | MIT |
-| [`cloud-azure/azure-resource-visualizer`](../skills/cloud-azure/azure-resource-visualizer/SKILL.md) | Complete terms in LICENSE.txt |
+| [`cloud-azure/azure-resource-visualizer`](../skills/cloud-azure/azure-resource-visualizer/SKILL.md) | MIT |
 
 ### vercel-labs/agent-skills
 
@@ -1387,6 +1446,16 @@ License: MIT
 | Install path | License |
 | --- | --- |
 | [`context-engineering/coding-agent-token-efficiency`](../skills/context-engineering/coding-agent-token-efficiency/SKILL.md) | MIT |
+
+### andrewstellman/quality-playbook
+
+Source: https://github.com/andrewstellman/quality-playbook
+Credit: andrewstellman/quality-playbook by Andrew Stellman
+License: Apache-2.0
+
+| Install path | License |
+| --- | --- |
+| [`code-quality/quality-playbook`](../skills/code-quality/quality-playbook/SKILL.md) | Apache-2.0 |
 
 ### forrestchang/andrej-karpathy-skills
 
@@ -1510,11 +1579,11 @@ License: MIT
 
 Source: https://github.com/pbakaus/impeccable
 Credit: pbakaus/impeccable by Paul Bakaus
-License: Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for att...
+License: Apache-2.0
 
 | Install path | License |
 | --- | --- |
-| [`design-and-ui/impeccable`](../skills/design-and-ui/impeccable/SKILL.md) | Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for att... |
+| [`design-and-ui/impeccable`](../skills/design-and-ui/impeccable/SKILL.md) | Apache-2.0 |
 
 ### supabase/agent-skills
 

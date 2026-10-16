@@ -6,7 +6,7 @@ Read these files to get context:
 1. quality/PROGRESS.md - run metadata, phase status, BUG tracker
 2. quality/REQUIREMENTS.md - derived requirements
 3. quality/BUGS.md - bugs found in Phase 3 (code review)
-4. SKILL.md - read the Phase 4 section ("Phase 4: Spec Audit and Triage"). Also read references/spec_audit.md. Resolve SKILL.md and the references/ directory via the documented fallback list above; do NOT assume any single install layout.
+4. references/phase4_spec_audit.md - the Phase 4 section ("Phase 4: Spec Audit and Triage"), moved out of SKILL.md. Also read references/spec_audit.md. Resolve SKILL.md and the references/ directory via the documented fallback list above; do NOT assume any single install layout.
 
 Execute Phase 4: Spec Audit + Triage + Layer-2 semantic citation check.
 

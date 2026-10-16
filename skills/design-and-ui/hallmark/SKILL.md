@@ -10,7 +10,7 @@ source: https://github.com/Nutlope/hallmark
 attribution: "Adapted from Hallmark by Together AI contributors."
 ---
 
-> **Attribution:** Sourced from [Nutlope/hallmark](https://github.com/Nutlope/hallmark) by [Hallmark contributors](https://github.com/Nutlope/hallmark), licensed MIT. Modified for this collection.
+> **Attribution:** Sourced from [Nutlope/hallmark](https://github.com/Nutlope/hallmark) by [Hallmark contributors](https://github.com/Nutlope/hallmark), licensed MIT. Modified for this collection: the component-scope rules, the pre-flight scan details, and the `study` verb were moved unchanged into `references/`.
 
 # Hallmark
 
@@ -65,145 +65,13 @@ These four disciplines are **not** verb-specific. They apply to default Design, 
 
 ## When the brief is a component, not a page
 
-Before entering the full Design flow, **check scope**. If any of these fire, run the Component-scope flow instead — most day-to-day dev requests are component-shaped, not page-shaped, and the page-level apparatus (macrostructure, hero enrichment, footer archetype, project memory) is wrong for them.
-
-**Component-scope signals:**
-
-- The brief names a single UI element: *a button · an input · a card · a modal · a dropdown · a tooltip · a select · a checkbox · a switch · a tab strip · a chip · a badge · a banner · a snackbar · a popover · a slider · a date picker · an avatar*.
-- The brief is short (≤ 30 words) and refers to one element.
-- The target file is a single component (e.g., `./Button.tsx`, `./components/Input.css`, `app/components/Card.vue`).
-- The user explicitly says *"just the X"*, *"only the Y"*, *"this one element"*, *"a single ___"*.
-
-If two signals fire, route component. If only the page flow fires (multi-section brief, "build me a landing page"), stay in Design flow.
-
-### What Component-scope keeps from the page flow
-
-- **Step 0 · Pre-flight scan** — same. Read existing tokens, fonts, framework, microinteraction stance. A button on a Geist-bodied Tailwind project must adopt those tokens, not invent new ones.
-- **Step 1 · Genre detection** — same. Editorial / modern-minimal / atmospheric / playful. The component inherits its surroundings' genre (silent default to editorial when unknown).
-- **Step 2.6 · Theme route** — same. If a `tokens.css` or `design.md` exists, the component uses those tokens. Otherwise it asks "is there a system to follow, or should I pick one?" — defaulting to *catalog* if the user is silent.
-- **2+1 font discipline** — same.
-- **State discipline — STRICTER.** Every interactive component MUST ship code for **all 8 states**: default · hover · `:focus-visible` · `:active` · disabled · loading · error · success. The 8-state checklist in [`interaction-and-states.md`](references/interaction-and-states.md) is mandatory, not advisory.
-- **Slop test — universal-only subset.** Run the visual / microinteraction / contrast (gates 46–50) / a11y / typography gates. Skip the diversification gates (no `.hallmark/log.json` entry — components don't rotate) and skip the layout-safety gates that assume a full page.
-
-### What Component-scope skips
-
-- **Step 2 · Macrostructure pick.** Components don't have macrostructures. State this explicitly: *"Component-scope: skipping macrostructure."*
-- **Nav and footer archetype picks.** N1–N9 and Ft1–Ft8 are page-scope only. A component is one element; it has no nav, no footer. Skip both.
-- **Hero polish patterns (HP1–HP4).** Page-scope only. A button or card has no hero.
-- **Step 4 · Enrichment.** No hero illustration, no demo video, no abstract background. The component IS the artifact.
-- **Step 5 · Multi-section preview.** Replaced by the 8-state demo wrapper (below).
-- **Project-memory append.** No `.hallmark/log.json` entry for component runs. The diversification rule doesn't apply.
-
-### What Component-scope emits
-
-**Two files, side by side:**
-
-1. **The component artifact** — a single self-contained file matching the project's conventions:
-   - React / Vue / Svelte: `Button.tsx` / `Button.vue` / `Button.svelte`
-   - Vanilla web: `button.css` + `button.html`
-   - Tailwind: a `.tsx` with `className` chains AND a `tokens.css` if missing
-   - The component consumes Hallmark tokens by name (`var(--color-accent)`), never inlines OKLCH values.
-
-2. **An 8-state demo wrapper** — `<ComponentName>.preview.html` (or `.preview.tsx`). A small standalone page that renders the component in **all 8 states** stacked vertically, each labelled. The user opens it once, sees the component working, then deletes it. The wrapper is not part of production code. Format:
-
-   ```
-   ┌──── Button — 8 states ────────────────────────┐
-   │                                                │
-   │ default       [ Click me                  ]    │
-   │ hover         [ Click me                  ]    │  ← .is-hover forces :hover styling
-   │ focus         [ Click me                  ]    │  ← .is-focus forces :focus-visible
-   │ active        [ Click me                  ]    │  ← .is-active forces :active
-   │ disabled      [ Click me                  ]    │  ← disabled attr
-   │ loading       [ ⌛ Working…                ]    │  ← data-state="loading"
-   │ error         [ ⚠ Try again               ]    │  ← data-state="error"
-   │ success       [ ✓ Saved                   ]    │  ← data-state="success"
-   │                                                │
-   └────────────────────────────────────────────────┘
-   ```
-
-   Each labelled row uses a class (e.g. `.is-hover`) that the component's CSS targets in addition to the real pseudo-class, so all 8 states render at once on the demo page. Example:
-
-   ```css
-   .btn:hover, .btn.is-hover { background: var(--color-paper-3); }
-   .btn:focus-visible, .btn.is-focus { outline: 2px solid var(--color-focus); }
-   .btn:active, .btn.is-active { transform: translateY(1px); }
-   ```
-
-### Stamp format for component output
-
-Components stamp differently from pages:
-
-```css
-/* Hallmark · component: <type> · genre: <genre> · theme: <theme>
- * states: default · hover · focus · active · disabled · loading · error · success
- * contrast: pass (46–50)
- */
-```
-
-The `component:` prefix tells future Hallmark runs this artifact is component-scoped and shouldn't trigger page-level diversification rules. The `states:` line is a checklist — every state listed must have actual styling in the file.
-
-### When in doubt — ask once
-
-If the brief is ambiguous between component and page (e.g. *"design a pricing section"* — could be one card, could be a whole page), ask one short question: *"One pricing card, or the whole pricing page?"* Default to **component** if the user doesn't engage — single-artifact output is cheaper to redirect than a multi-section page.
-
----
+Before entering the design flow, **check scope**. Signals: the brief names a single UI element (a button, input, card, modal, dropdown, and so on); it is 30 words or fewer and refers to one element; the target file is a single component; or the user says "just the X" or "only the Y". If two signals fire, read [`references/component-scope.md`](references/component-scope.md) and run the component-scope flow instead. It says which design-flow steps still apply, which are skipped, what to emit, and the stamp format. A multi-section brief or "build me a landing page" stays in the design flow.
 
 ## Design flow (default)
 
 ### 0. Pre-flight scan
 
-If the project already has code — a `package.json`, a `tailwind.config.*`, an `index.html`, any CSS — Hallmark should **read it before asking the user anything**. Stomping on an established palette or font stack is the difference between a skill the user keeps and a skill the user uninstalls.
-
-**Six signal sources, scanned in order:**
-
-0. **`design.md`** — at the project root (or `DESIGN.md`). If present, this is the **locked design system for the project** — written by a previous `hallmark redesign` run on the whole app, or by hand. **Read it first; it overrides everything else.** Subsequent picks (genre, theme, type, motion) defer to it. The diversification rule is *inverted* on `design.md`-managed projects: pages must share the system, not differ from each other. See [`verbs/redesign.md`](references/verbs/redesign.md) § Multi-page flow for how the file is produced and amended.
-1. **Font stack** — `package.json` for `next/font`, `@fontsource/*`, `expo-google-fonts`, `geist`; any `<link rel="stylesheet" href="...fonts.googleapis.com/...">` in HTML / layout files; `tailwind.config.{js,ts}` `theme.extend.fontFamily`; `@import url("fonts.googleapis.com/...")` in any stylesheet.
-2. **Palette** — OKLCH / HSL / hex values inside `:root` blocks; `tailwind.config` `theme.extend.colors`; any `tokens.json`, `design-tokens.{json,yaml}`, or DTCG-shaped file.
-3. **Microinteraction stance** — `package.json` dependencies for `framer-motion`, `gsap`, `motion`, `lenis`, `lottie-react`, `@react-spring/*`, `auto-animate`. Any one of those = "motion-on" project. None = "motion-cut" project.
-4. **Spacing scale** — Tailwind `theme.extend.spacing`; CSS `--space-*` custom-property pattern; presence of a 4-pt or 8-pt scale.
-5. **Framework** — Next.js (`next` in deps), Astro (`astro`), Vue (`vue`), Svelte / SvelteKit (`svelte` / `@sveltejs/kit`), Remix (`@remix-run/*`), or vanilla HTML.
-
-**Output format** — emit this block once, before Step 1, with file:line citations so the user can verify what you found:
-
-```
-Pre-flight findings:
-· Font stack: Geist + Geist Mono (next/font, package.json L23)
-· Palette: OKLCH custom properties (app/globals.css :root)
-· Motion: framer-motion 11 installed (package.json L41)
-· Spacing: Tailwind extend.spacing (4-pt scale, tailwind.config.ts L18)
-· Framework: Next.js 15 (app router)
-
-Hallmark will preserve: font stack, palette, spacing scale.
-Hallmark will introduce: macrostructure, microinteraction discipline,
-slop-test gates, hero enrichment recipe.
-
-If you want Hallmark to override any preserved item, say so.
-```
-
-**Persistence.** Write the findings to `.hallmark/preflight.json` once. On subsequent runs, *re-use* the cached findings unless either:
-- the user says "refresh pre-flight" (or "scan again", "re-scan"), or
-- `package.json` / `tailwind.config.*` mtimes are newer than `preflight.json`.
-
-If the cache is re-used, emit a one-line note instead of the full block: *"Pre-flight cached (last scan: 2026-04-30). Say 'refresh pre-flight' to re-scan."*
-
-**Edge cases:**
-
-- **`design.md` found** → emit *"`design.md` detected at project root — this is a system-managed project. Reading the locked design system; subsequent picks defer to it."* Then read the file in full and use it as the source of truth for genre / theme / typography / spacing / motion / CTA voice. Skip Step 1's catalog/custom dispatch; the system is already chosen. Proceed to macrostructure pick (Step 2) within the family `design.md` allows for this page's type.
-- **No signals found** (vanilla HTML project, empty repo, scratch directory) → silent. One line only: *"No pre-flight signals — proceeding with full Hallmark stack."*
-- **Conflicting signals** (e.g. `framer-motion` installed but no `motion.div` usage anywhere; or `Geist` import in `package.json` but `font-family: Inter` hard-coded in CSS) → flag the conflict explicitly: *"Conflict: Geist imported via next/font but a hard-coded `font-family: Inter` in app/globals.css L4. I'll preserve next/font Geist; please confirm or remove the Inter declaration."*
-- **Empty project** (no `package.json`, no `index.html`) → silent.
-- **The user said "ignore the existing project"** → skip pre-flight entirely; emit *"Pre-flight skipped at user request."* and proceed to Step 1.
-
-**Two more sample outputs** for the model to imitate:
-
-*Vanilla HTML project, motion-cut:*
-> *Pre-flight findings: vanilla HTML, no framework detected. No motion library, no Tailwind, no design tokens. Hallmark will introduce: full token system, macrostructure, microinteraction discipline, slop-test gates. Nothing to preserve.*
-
-*Astro + Tailwind + DTCG tokens already present:*
-> *Pre-flight findings: Astro 5 (astro.config.mjs L1) · Tailwind v4 with @theme inline tokens (src/styles/global.css L3) · `tokens.json` at project root (DTCG format, 12 colour tokens, 6 font tokens). No motion library detected.*
-> *Hallmark will preserve: Tailwind tokens, the `tokens.json` file (won't overwrite). Hallmark will introduce: macrostructure, microinteraction discipline, slop-test gates. Motion stance: motion-cut (no framer-motion / motion / gsap detected).*
-
-The pre-flight block is the user's accountability line: *"here's what I noticed about your project before I touched anything."* Skipping it is the fastest way to lose the user's trust.
+If the project already has code, read it before asking the user anything. Scan, in order: `design.md` or `DESIGN.md` at the root (a locked design system that overrides everything else), the font stack, the palette, motion libraries, the spacing scale, and the framework. Emit one "Pre-flight findings" block with file:line citations, saying what Hallmark will preserve and what it will introduce, and cache it in `.hallmark/preflight.json`. Read [`references/preflight-scan.md`](references/preflight-scan.md) for the exact block format, the cache rules, edge cases (no signals, conflicting signals, "ignore the existing project"), and sample outputs.
 
 ### 1. Design-context gate
 
@@ -490,69 +358,7 @@ Load [`references/verbs/redesign.md`](references/verbs/redesign.md) and follow i
 
 ## `hallmark study`
 
-The user has supplied a reference — either an attached screenshot or a URL to a live page — of a design they admire. They want to learn from it — its shape, its type, its rhythm — and apply that *DNA* to their own content. They do not want a pixel-faithful copy.
-
-**Critical position:** `study` extracts structure, not pixels. It names the macrostructure, the archetypes, the type-pairing, the colour anchor, and (in image mode) the rhythm. It produces a *diagnosis report* before any code, then offers to rebuild the user's content using the extracted DNA. Pixel-cloning is not a feature.
-
-**Always read [`references/study.md`](references/study.md) before invoking this verb.** That file contains the source-mode detection rules, the extraction protocol (vision-pass for image mode, HTML/CSS-pass for URL mode), the structured-fields schema, the refusal heuristics (both image-mode and URL-mode refuse lists), the junk-or-blocked detection for URLs, and the type-role vocabulary. Do not work from intuition.
-
-### Source-mode detection
-
-If the user's input starts with `http://` or `https://` → **URL mode**. Otherwise → **image mode**. Same verb, same diagnosis output, different signal sources. The two modes share the schema and the diagnosis shape; they differ on what each extraction step can know — see `study.md` § Source mode.
-
-### Pipeline
-
-1. **Refuse-or-proceed check.** Before extracting anything (and in URL mode, **before WebFetch fires**), run the refusal heuristics in `study.md`. Image mode checks the image's content; URL mode runs the URL refuse list (themeforest, framer.com/templates, webflow.com/templates, gumroad UI-kit listings, dribbble shots, behance galleries, disclosed competitors). Ambiguous sources get one short question: *"Is this your own work, a public reference for inspiration, or someone else's live site?"*
-
-2. **Extraction pass.**
-   - **Image mode:** vision-pass on the attached capture per `study.md` § Five-step protocol.
-   - **URL mode:** WebFetch the URL, then parse the returned HTML and any linked stylesheets. If the response trips any junk-or-blocked signal (auth wall, SPA shell, non-2xx response, no styling signal, < 1 KB body), **fall back** — emit the screenshot-fallback message from `study.md` § Junk-or-blocked detection and stop. Do not silently degrade.
-   
-   Output the structured-fields schema in `study.md` § The structured fields. URL mode fills the mode-conditional fields (`display_face`, `body_face`, `paper_value`, `accent_value`, `motion_library`) with exact values; image mode leaves those null.
-
-3. **Diagnosis report.** Return a one-page "this is what you're looking at" using the matching template (image-mode template or URL-mode template) from `study.md` § The diagnosis report. Names the macrostructure, names the archetypes, points at the type pairing (with exact font names in URL mode), identifies anti-patterns the user should *not* carry over. URL-mode diagnoses must also call out the rhythm blind spot.
-
-4. **Confirmation question.** Ask: *"Adopt this DNA wholesale, or change one axis? For example, I could keep the macrostructure but pick a theme that better matches your tone."* The diagnosis report's last line **also** surfaces the `design.md` emission CTA — *"Or — say `lock the DNA` if you want a portable `design.md` of this DNA."* Wait for the user's answer before doing anything.
-
-5. **Branch on the user's response:**
-   - **"Build with this DNA"** → run the build step below. Pick the closest matching theme from the catalog. Stamp the comment with the inferred macrostructure + archetypes + theme + source mode. The user's content goes in; the source's content does not.
-   - **"Lock the DNA"** (or any other emission trigger phrase per `study.md` § Trigger phrases) → emit a portable `design.md` of the DNA per `study.md` § Emitting a `design.md` from `study`. **In URL mode, run the attestation step first** — ask whether the source is (a) user's own, (b) public reference for the user's brand, or (c) something else. (c) refuses emission; (a) and (b) write the file with a `## Provenance` block recording the answer. **Image mode emits without asking** — the user owns the screenshot. The emitted file becomes the project's locked system; subsequent runs defer to it.
-   - **"Just the diagnosis was enough"** / silence → stop. The diagnosis is a complete deliverable.
-
-### Output contract for `study`
-
-When `study` produces code, the macrostructure stamp must include a `studied: yes` flag, the theme picked, and the source mode. Image mode example:
-
-```css
-/* Hallmark · macrostructure: Marquee Hero · H1 hero knobs: size=xxl, alignment=left-bias
- * theme: Studio · accent: forest-green ~3% · studied: yes · DNA-source: image (user reference)
- */
-```
-
-URL mode example — additionally records the URL and any exact-fonts / exact-colours that informed the build:
-
-```css
-/* Hallmark · macrostructure: Marquee Hero · H1 hero knobs: size=xxl, alignment=left-bias
- * theme: Studio · accent: forest-green ~3% · studied: yes · DNA-source: url
- * source-url: https://example.com/  ·  observed-fonts: Inter Tight + Inter
- * observed-accent: oklch(58% 0.16 35)  ·  rhythm: unknown (URL mode)
- */
-```
-
-The stamp signals to future Hallmark runs that this page's structure was extracted, not invented. That matters for the audit verb: a `studied: yes` page is audited *more* leniently for "Specimen fall-through" (the user explicitly chose this DNA) but *more* strictly for "did you actually use the extracted DNA, or did you drift back to defaults?"
-
-### Limits to spell out to the user
-
-When you return the diagnosis, name the limits explicitly:
-
-- **Fonts:** in image mode, the skill names a *role* and proposes one or two real candidates from the canon — visual font ID is unreliable. In URL mode, the skill names the *exact* fonts the page loads (via `@font-face`, Google Fonts, `next/font`). The role still drives the rebuild — Hallmark may pick a different specific face for the user's content.
-- **Imagery:** the skill never copies the source's photography. It generates structurally-equivalent placeholders or asks for the user's own assets.
-- **Theme drift is allowed.** If the source is a Specimen and the user's content is a SaaS landing page, the skill picks a different theme. The DNA is the macrostructure + archetype + colour-anchor + type-pairing — not the dress.
-- **Rhythm is the URL-mode blind spot.** HTML alone can't tell you whether the visual rhythm reads generous or templated. URL-mode diagnoses always state this and offer a screenshot fallback if it matters.
-
-If `references/study.md` cannot be loaded for any reason, refuse the verb politely and direct the user to `hallmark redesign` with a written description of what they want from the source.
-
----
+Load [`references/verbs/study.md`](references/verbs/study.md) and follow it. It also requires [`references/study.md`](references/study.md). `study` extracts a reference design's structure, not its pixels.
 
 ## Output contract & scope
 

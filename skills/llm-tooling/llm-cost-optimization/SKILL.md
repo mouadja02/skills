@@ -173,8 +173,7 @@ Next: <approval or eval needed>
 ## Related skills
 
 `coding-agent-token-efficiency`, `context-compression`, `agentic-eval`, `eval-driven-dev`,
-`openrouter-models` (cross-provider price and latency lookup), `amazon-bedrock` (Bedrock pricing,
-caching, and batch specifics).
+`amazon-bedrock` (Bedrock pricing, caching, and batch specifics).
 
 ## Sources
 

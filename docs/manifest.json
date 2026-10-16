@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-10-16T10:21:54.435Z",
+  "generated_at": "2026-10-16T14:13:04.595Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 807,
+  "count": 799,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -43,7 +43,7 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 58,
+    "agent-design": 55,
     "agent-eval": 24,
     "api-backend": 12,
     "business-strategy": 39,
@@ -65,7 +65,7 @@
     "finance": 7,
     "go-to-market": 11,
     "java-kotlin": 11,
-    "llm-tooling": 48,
+    "llm-tooling": 43,
     "marketing-and-growth": 26,
     "mcp": 15,
     "messaging": 1,
@@ -177,350 +177,329 @@
       "install_path": "agent-design/bmm-skills",
       "path": "skills/agent-design/bmm-skills",
       "depth": 2,
-      "description": "Routes requests to the BMad Method (BMM) agile framework's four phases — analysis, planning, solutioning, implementation — and their persona and workflow sub-skills. Use when the user mentions BMad or BMM, or wants a structured agile flow from research and PRD through architecture, stories, and delivery.",
+      "description": "Routes requests to the BMad Method (v6.12.4) agile framework: persona agents, planning skills (brief, PRFAQ, PRD, UX, spec, architecture, epics, sprint planning), shipping skills (build, code review, walkthrough, QA tests, retrospective), and core helpers (brainstorming, research, review, party mode). Use when the user mentions BMad or BMM, names a BMad agent such as Mary, John, Sally, Winston, or Amelia, or wants a structured flow from idea through PRD and architecture to built, reviewed code.",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
       "name": "bmad-agent-analyst",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/bmad-agent-analyst",
-      "path": "skills/agent-design/bmm-skills/1-analysis/bmad-agent-analyst",
+      "install_path": "agent-design/bmm-skills/agents/bmad-agent-analyst",
+      "path": "skills/agent-design/bmm-skills/agents/bmad-agent-analyst",
       "depth": 4,
       "description": "Business analyst for market research, competitive analysis, and requirements. Use when the user asks to talk to Mary or requests the business analyst",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-agent-tech-writer",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/bmad-agent-tech-writer",
-      "path": "skills/agent-design/bmm-skills/1-analysis/bmad-agent-tech-writer",
-      "depth": 4,
-      "description": "BMad Method technical-writer persona (Paige) that turns complex concepts into task-oriented documentation and diagrams. Use when the user asks to talk to Paige or the tech writer, or wants BMad-style project documentation, explanations, or diagrams written.",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-document-project",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/bmad-document-project",
-      "path": "skills/agent-design/bmm-skills/1-analysis/bmad-document-project",
-      "depth": 4,
-      "description": "Document brownfield projects for AI context. Use when the user says \"document this project\" or \"generate project docs\"",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-prfaq",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/bmad-prfaq",
-      "path": "skills/agent-design/bmm-skills/1-analysis/bmad-prfaq",
-      "depth": 4,
-      "description": "Working Backwards PRFAQ challenge to forge product concepts. Use when the user requests to 'create a PRFAQ', 'work backwards', or 'run the PRFAQ challenge'.",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-product-brief",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/bmad-product-brief",
-      "path": "skills/agent-design/bmm-skills/1-analysis/bmad-product-brief",
-      "depth": 4,
-      "description": "Creates, updates, or validates a BMad product brief through guided discovery, artifact analysis, and web research, or autonomously with --autonomous. Use when the user wants help producing, editing, or validating a product brief before writing a PRD.",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-domain-research",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/research/bmad-domain-research",
-      "path": "skills/agent-design/bmm-skills/1-analysis/research/bmad-domain-research",
-      "depth": 5,
-      "description": "Conduct domain and industry research. Use when the user says wants to do domain research for a topic or industry",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-market-research",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/research/bmad-market-research",
-      "path": "skills/agent-design/bmm-skills/1-analysis/research/bmad-market-research",
-      "depth": 5,
-      "description": "Conduct market research on competition and customers. Use when the user says they need market research",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-technical-research",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/1-analysis/research/bmad-technical-research",
-      "path": "skills/agent-design/bmm-skills/1-analysis/research/bmad-technical-research",
-      "depth": 5,
-      "description": "Conduct technical research on technologies and architecture. Use when the user says they would like to do or produce a technical research report",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-agent-pm",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/2-plan-workflows/bmad-agent-pm",
-      "path": "skills/agent-design/bmm-skills/2-plan-workflows/bmad-agent-pm",
-      "depth": 4,
-      "description": "Product manager for PRD creation and requirements discovery. Use when the user asks to talk to John or requests the product manager",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-agent-ux-designer",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/2-plan-workflows/bmad-agent-ux-designer",
-      "path": "skills/agent-design/bmm-skills/2-plan-workflows/bmad-agent-ux-designer",
-      "depth": 4,
-      "description": "UX designer and UI specialist. Use when the user asks to talk to Sally or requests the UX designer.",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-create-prd",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/2-plan-workflows/bmad-create-prd",
-      "path": "skills/agent-design/bmm-skills/2-plan-workflows/bmad-create-prd",
-      "depth": 4,
-      "description": "Create a PRD from scratch. Use when the user says \"lets create a product requirements document\" or \"I want to create a new PRD\"",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-create-ux-design",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/2-plan-workflows/bmad-create-ux-design",
-      "path": "skills/agent-design/bmm-skills/2-plan-workflows/bmad-create-ux-design",
-      "depth": 4,
-      "description": "Plan UX patterns and design specifications. Use when the user says \"lets create UX design\" or \"create UX specifications\" or \"help me plan the UX\"",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-edit-prd",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/2-plan-workflows/bmad-edit-prd",
-      "path": "skills/agent-design/bmm-skills/2-plan-workflows/bmad-edit-prd",
-      "depth": 4,
-      "description": "Edit an existing PRD. Use when the user says \"edit this PRD\".",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-validate-prd",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/2-plan-workflows/bmad-validate-prd",
-      "path": "skills/agent-design/bmm-skills/2-plan-workflows/bmad-validate-prd",
-      "depth": 4,
-      "description": "Validate a PRD against standards. Use when the user says \"validate this PRD\" or \"run PRD validation\"",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
       "name": "bmad-agent-architect",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/3-solutioning/bmad-agent-architect",
-      "path": "skills/agent-design/bmm-skills/3-solutioning/bmad-agent-architect",
+      "install_path": "agent-design/bmm-skills/agents/bmad-agent-architect",
+      "path": "skills/agent-design/bmm-skills/agents/bmad-agent-architect",
       "depth": 4,
-      "description": "System architect and technical design leader. Use when the user asks to talk to Winston or requests the architect.",
+      "description": "System architect and technical design leader. Use when the user asks to talk to Winston or requests the architect",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-check-implementation-readiness",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/3-solutioning/bmad-check-implementation-readiness",
-      "path": "skills/agent-design/bmm-skills/3-solutioning/bmad-check-implementation-readiness",
-      "depth": 4,
-      "description": "Validate PRD, UX, Architecture and Epics specs are complete. Use when the user says \"check implementation readiness\".",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-create-architecture",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/3-solutioning/bmad-create-architecture",
-      "path": "skills/agent-design/bmm-skills/3-solutioning/bmad-create-architecture",
-      "depth": 4,
-      "description": "Create architecture solution design decisions for AI agent consistency. Use when the user says \"lets create architecture\" or \"create technical architecture\" or \"create a solution design\"",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-create-epics-and-stories",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/3-solutioning/bmad-create-epics-and-stories",
-      "path": "skills/agent-design/bmm-skills/3-solutioning/bmad-create-epics-and-stories",
-      "depth": 4,
-      "description": "Break requirements into epics and user stories. Use when the user says \"create the epics and stories list\"",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
-    },
-    {
-      "name": "bmad-generate-project-context",
-      "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/3-solutioning/bmad-generate-project-context",
-      "path": "skills/agent-design/bmm-skills/3-solutioning/bmad-generate-project-context",
-      "depth": 4,
-      "description": "Create project-context.md with AI rules. Use when the user says \"generate project context\" or \"create project context\"",
-      "license": "MIT",
-      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
       "name": "bmad-agent-dev",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-agent-dev",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-agent-dev",
+      "install_path": "agent-design/bmm-skills/agents/bmad-agent-dev",
+      "path": "skills/agent-design/bmm-skills/agents/bmad-agent-dev",
       "depth": 4,
       "description": "Senior software engineer who implements stories and code changes. Use when the user asks to talk to Amelia or requests the developer agent",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-checkpoint-preview",
+      "name": "bmad-agent-pm",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-checkpoint-preview",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-checkpoint-preview",
+      "install_path": "agent-design/bmm-skills/agents/bmad-agent-pm",
+      "path": "skills/agent-design/bmm-skills/agents/bmad-agent-pm",
       "depth": 4,
-      "description": "LLM-assisted human-in-the-loop review. Make sense of a change, focus attention where it matters, test. Use when the user says \"checkpoint\", \"human review\", or \"walk me through this change\".",
+      "description": "Product manager for PRD creation and requirements discovery. Use when the user asks to talk to John or requests the product manager",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-code-review",
+      "name": "bmad-agent-ux-designer",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-code-review",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-code-review",
+      "install_path": "agent-design/bmm-skills/agents/bmad-agent-ux-designer",
+      "path": "skills/agent-design/bmm-skills/agents/bmad-agent-ux-designer",
       "depth": 4,
-      "description": "Review code changes adversarially using parallel review layers (Blind Hunter, Edge Case Hunter, Acceptance Auditor) with structured triage into actionable categories. Use when the user says \"run code review\" or \"review this code\"",
+      "description": "UX designer and UI specialist. Use when the user asks to talk to Sally or requests the UX designer",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-correct-course",
+      "name": "bmad-advanced-elicitation",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-correct-course",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-correct-course",
+      "install_path": "agent-design/bmm-skills/core/bmad-advanced-elicitation",
+      "path": "skills/agent-design/bmm-skills/core/bmad-advanced-elicitation",
       "depth": 4,
-      "description": "Manage significant changes during sprint execution. Use when the user says \"correct course\" or \"propose sprint change\"",
+      "description": "Push the LLM to reconsider, refine, and improve its recent output. Use when user asks for deeper critique or mentions a known deeper critique method, e.g. socratic, first principles, pre-mortem, red team",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-create-story",
+      "name": "bmad-brainstorming",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-create-story",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-create-story",
+      "install_path": "agent-design/bmm-skills/core/bmad-brainstorming",
+      "path": "skills/agent-design/bmm-skills/core/bmad-brainstorming",
       "depth": 4,
-      "description": "Creates a dedicated story file with all the context the agent will need to implement it later. Use when the user says \"create the next story\" or \"create story [story identifier]\"",
+      "description": "Facilitate a brainstorming session using diverse creative techniques. Use when the user says 'help me brainstorm' or 'help me ideate'",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-dev-story",
+      "name": "bmad-customize",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-dev-story",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-dev-story",
+      "install_path": "agent-design/bmm-skills/core/bmad-customize",
+      "path": "skills/agent-design/bmm-skills/core/bmad-customize",
       "depth": 4,
-      "description": "Execute story implementation following a context filled story spec file. Use when the user says \"dev this story [story file]\" or \"implement the next story in the sprint plan\"",
+      "description": "Authors and updates customization overrides for installed BMad skills. Use when the user says 'customize bmad', 'override a skill', 'change agent behavior', or 'customize a workflow'",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-qa-generate-e2e-tests",
+      "name": "bmad-deep-recon",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-qa-generate-e2e-tests",
+      "install_path": "agent-design/bmm-skills/core/bmad-deep-recon",
+      "path": "skills/agent-design/bmm-skills/core/bmad-deep-recon",
       "depth": 4,
-      "description": "Generate end to end automated tests for existing features. Use when the user says \"create qa automated tests for [feature]\"",
+      "description": "Research a topic to support a decision, three ways: draft a research prompt for the user to run in their own tool (ChatGPT, Gemini, Grok, Perplexity, …), turn a finished research report into a short summary with cited sources that other skills can use directly, or run the research here with parallel web searches. Built-in research types: market, domain, technical, competitive, user-voice, academic-lit; also supports choosing between candidates, and custom types via overrides. Use when the user says \"deep recon\", \"research this\", \"draft a research prompt\", \"process this research report\", \"market research\", \"domain research\", \"technical research\", \"competitor research\", \"literature review\", or \"help me choose between\"",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-quick-dev",
+      "name": "bmad-forge-idea",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-quick-dev",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-quick-dev",
+      "install_path": "agent-design/bmm-skills/core/bmad-forge-idea",
+      "path": "skills/agent-design/bmm-skills/core/bmad-forge-idea",
       "depth": 4,
-      "description": "Implements any user intent, requirement, story, bug fix or change request by producing clean working code artifacts that follow the project's existing architecture, patterns and conventions. Use when the user wants to build, fix, tweak, refactor, add or modify any code, component or feature.",
+      "description": "Test a half-formed idea in a questioning conversation, with different personas probing its weak points, until the user can act on it or drop it with confidence. Optionally writes a short brief for planning skills to build on. Use when the user says 'forge an idea', 'pressure-test this idea', 'stress-test my thinking', or 'harden this idea'",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-retrospective",
+      "name": "bmad-help",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-retrospective",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-retrospective",
+      "install_path": "agent-design/bmm-skills/core/bmad-help",
+      "path": "skills/agent-design/bmm-skills/core/bmad-help",
       "depth": 4,
-      "description": "Post-epic review to extract lessons and assess success. Use when the user says \"run a retrospective\" or \"lets retro the epic [epic]\"",
+      "description": "Analyzes current state and user query to answer BMad questions or recommend the next skill(s) to use. Use when user asks for help, bmad help, what to do next, or what to start with in BMad",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-party-mode",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/core/bmad-party-mode",
+      "path": "skills/agent-design/bmm-skills/core/bmad-party-mode",
+      "depth": 4,
+      "description": "Orchestrates lively group discussions between installed BMAD agents or custom personas, and helps author custom parties. Use when the user requests party mode, a roundtable, or multiple agent perspectives — or wants to create/configure a party, define personas, or build an AI focus-group panel",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-review",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/core/bmad-review",
+      "path": "skills/agent-design/bmm-skills/core/bmad-review",
+      "depth": 4,
+      "description": "Runs one or more installed review lenses — adversarial critique, edge cases, verification gaps, structure, prose — and reports triaged findings. Use when, and only when, the user asks you to review a diff, a pull request, or an artifact — code or documents, one or many — and actually says \"review\"; an explicit skill:bmad-review directive from another skill counts as that ask. A request to act on feedback from an earlier review is a change, not a review. Never invoke this uninvited, including on edits you just made.",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-architecture",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/plan/bmad-architecture",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-architecture",
+      "depth": 4,
+      "description": "Work out and record the architecture decisions that keep separately built parts of a system consistent, in a short architecture document. Creates, updates, or validates one; works from a spec, a raw idea, or an existing codebase. Use when the user says \"create the architecture\", \"create technical architecture\", \"architecture spine\", or \"create a solution design\"",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-create-epics-and-stories",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/plan/bmad-create-epics-and-stories",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-create-epics-and-stories",
+      "depth": 4,
+      "description": "Break requirements into epics and user stories. Use when the user says \"create the epics and stories list\"",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-prd",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/plan/bmad-prd",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-prd",
+      "depth": 4,
+      "description": "Create, update, or validate a PRD. Use when the user wants help producing, editing, or validating a PRD",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-prfaq",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/plan/bmad-prfaq",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-prfaq",
+      "depth": 4,
+      "description": "Test a product concept with Amazon's Working Backwards method: write the press release for the finished product first, then answer hard customer and stakeholder questions, ending in a complete PRFAQ document. Use when the user requests to 'create a PRFAQ', 'work backwards', or 'run the PRFAQ challenge'",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-product-brief",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/plan/bmad-product-brief",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-product-brief",
+      "depth": 4,
+      "description": "Create, update, or validate a product brief. Use when the user wants help producing, editing, or validating a brief",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-project-context",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/plan/bmad-project-context",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-project-context",
+      "depth": 4,
+      "description": "Set up, adopt, refresh, or audit a repository's agent instructions (the AGENTS.md block) so AI agents work well in that repo. Also records observed agent mistakes as pitfalls. Use when invoked by name",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-spec",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/plan/bmad-spec",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-spec",
+      "depth": 4,
+      "description": "Condense any input — an idea, brief, PRD, transcript, or mixed notes — into a short spec: SPEC.md plus supporting files that downstream skills build from. Also updates and validates existing specs, and can break a spec into stories. Use when the user says \"create a spec\", \"distill this into a spec\", \"validate this spec\", \"update the spec\", or \"break this into stories\"",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
       "name": "bmad-sprint-planning",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-sprint-planning",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-sprint-planning",
+      "install_path": "agent-design/bmm-skills/plan/bmad-sprint-planning",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-sprint-planning",
       "depth": 4,
-      "description": "Generate sprint status tracking from epics. Use when the user says \"run sprint planning\" or \"generate sprint plan\"",
+      "description": "Check that planning is complete enough to implement, then generate the sprint status file from the epics. Can also summarize sprint progress and validate or repair the tracking file. Use when the user says \"run sprint planning\", \"generate sprint plan\", \"check implementation readiness\", \"show sprint status\", \"validate sprint status\", or \"fix sprint status\"",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "bmad-sprint-status",
+      "name": "bmad-ux",
       "category": "agent-design",
-      "install_path": "agent-design/bmm-skills/4-implementation/bmad-sprint-status",
-      "path": "skills/agent-design/bmm-skills/4-implementation/bmad-sprint-status",
+      "install_path": "agent-design/bmm-skills/plan/bmad-ux",
+      "path": "skills/agent-design/bmm-skills/plan/bmad-ux",
       "depth": 4,
-      "description": "Summarize sprint status and surface risks. Use when the user says \"check sprint status\" or \"show sprint status\"",
+      "description": "Capture the user's UX vision in two documents: DESIGN.md for how the product looks and EXPERIENCE.md for how it behaves. Use when the user says \"lets create UX design\" or \"create UX specifications\" or \"help me plan the UX\"",
       "license": "MIT",
       "source": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "attribution": "bmad-code-org/BMAD-METHOD by BMAD Code Org"
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
-      "name": "create-agent-tui",
+      "name": "bmad-build",
       "category": "agent-design",
-      "install_path": "agent-design/create-agent-tui",
-      "path": "skills/agent-design/create-agent-tui",
-      "depth": 2,
-      "description": "Scaffolds a complete agent TUI in TypeScript using @openrouter/agent — like create-react-app for terminal agents. Generates a customizable terminal interface with three input styles, four tool display modes, ASCII banners, streaming output, session persistence, and configurable tools. Use when building an agent, creating a TUI, scaffolding an agent project, or building a coding assistant.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
+      "install_path": "agent-design/bmm-skills/ship/bmad-build",
+      "path": "skills/agent-design/bmm-skills/ship/bmad-build",
+      "depth": 4,
+      "description": "Turns implementation work into working code, reviewed and verified. Use when the user delegates a feature, story, bug fix, or meaningful change; a bare story or issue link counts. Skip obvious, low-risk mechanical maintenance such as small ignore-file, typo-only, formatting-only, or configuration-hygiene edits. Explicit BMAD requests always qualify. Do not volunteer for user-directed interactive edits or version-control operations that only record existing work.",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-build-auto",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/ship/bmad-build-auto",
+      "path": "skills/agent-design/bmm-skills/ship/bmad-build-auto",
+      "depth": 4,
+      "description": "One iteration of an unattended development loop. Use when invoked by name",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-code-review",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/ship/bmad-code-review",
+      "path": "skills/agent-design/bmm-skills/ship/bmad-code-review",
+      "depth": 4,
+      "description": "Review code changes with several independent reviewers in parallel, then triage and present the findings. Use when the user says \"run code review\" or \"review this code\"",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-correct-course",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/ship/bmad-correct-course",
+      "path": "skills/agent-design/bmm-skills/ship/bmad-correct-course",
+      "depth": 4,
+      "description": "Assess the impact of a significant change during sprint execution across the PRD, epics, architecture, and UX documents, and produce a sprint change proposal. Use when the user says \"correct course\" or \"propose sprint change\"",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-qa-generate-e2e-tests",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/ship/bmad-qa-generate-e2e-tests",
+      "path": "skills/agent-design/bmm-skills/ship/bmad-qa-generate-e2e-tests",
+      "depth": 4,
+      "description": "Generate automated API and end-to-end tests for implemented features. Use when the user says \"create qa automated tests for [feature]\"",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-retrospective",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/ship/bmad-retrospective",
+      "path": "skills/agent-design/bmm-skills/ship/bmad-retrospective",
+      "depth": 4,
+      "description": "Review a completed epic against the evidence it left behind — spec, stories, diffs, commits, sprint status — and produce a retrospective with sourced findings, action items, and an acceptance decision. Use when the user says \"run a retrospective\" or \"lets retro the epic [epic]\". Supports -H/--headless",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
+    },
+    {
+      "name": "bmad-walkthrough",
+      "category": "agent-design",
+      "install_path": "agent-design/bmm-skills/ship/bmad-walkthrough",
+      "path": "skills/agent-design/bmm-skills/ship/bmad-walkthrough",
+      "depth": 4,
+      "description": "Walk the user through reviewing a change: what it is for, what to look at closely, and how to test it. Use when the user says \"walkthrough\", \"walk me through this change\", or \"human review\"",
+      "license": "MIT",
+      "source": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "attribution": "bmad-code-org/BMAD-METHOD by BMad Code, LLC"
     },
     {
       "name": "create-agentsmd",
@@ -532,16 +511,6 @@
       "license": "MIT",
       "source": "https://github.com/github/awesome-copilot",
       "attribution": "github/awesome-copilot by GitHub Community"
-    },
-    {
-      "name": "create-headless-agent",
-      "category": "agent-design",
-      "install_path": "agent-design/create-headless-agent",
-      "path": "skills/agent-design/create-headless-agent",
-      "depth": 2,
-      "description": "Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI. Use when building an OpenRouter-based agent that runs without a terminal UI, such as a CLI tool, HTTP service, or queue worker.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
     },
     {
       "name": "deepagents-harness",
@@ -1853,7 +1822,7 @@
       "install_path": "cloud-aws/database/amazon-dynamodb",
       "path": "skills/cloud-aws/database/amazon-dynamodb",
       "depth": 3,
-      "description": "Designs, reviews, and debugs DynamoDB data layers from design axioms — enumerates access patterns, chooses partition/sort keys and GSIs, decides single-table vs. multi-table, configures Streams, Global Tables, TTL, and zero-ETL integrations to OpenSearch/Redshift/SageMaker Lakehouse, and produces a defensible data-layer design with a monthly cost estimate and optional live validation. Applies whenever a user is designing, reviewing, or refactoring anything backed by DynamoDB — schemas, access patterns, GSIs, single- vs. multi-table choices, Streams consumers, transactional outboxes, Global Tables, zero-ETL pipelines — even when they don't say \"axioms\" or \"design review.\" Also applies when debugging hot partitions, throttling, unbounded Scans, LWW conflicts, or surprise bills on DynamoDB workloads.",
+      "description": "Designs, reviews, and debugs DynamoDB data layers from design axioms — enumerates access patterns, chooses partition/sort keys and GSIs, decides single-table vs. multi-table, configures Streams, Global Tables, TTL, vector indexes for similarity search, and zero-ETL integrations to OpenSearch/Redshift/SageMaker Lakehouse, and produces a defensible data-layer design with a monthly cost estimate and optional live validation. Applies whenever a user is designing, reviewing, or refactoring anything backed by DynamoDB — schemas, access patterns, GSIs, single- vs. multi-table choices, Streams consumers, transactional outboxes, Global Tables, zero-ETL pipelines, or storing embeddings and running semantic/vector similarity search with SearchVectors on items already in DynamoDB — even when they don't say \"axioms\" or \"design review.\" Also applies when debugging hot partitions, throttling, unbounded Scans, LWW conflicts, or surprise bills on DynamoDB workloads.",
       "license": "Apache-2.0",
       "source": "https://github.com/aws/agent-toolkit-for-aws",
       "attribution": "Amazon Web Services - agent-toolkit-for-aws (Apache-2.0)"
@@ -2536,7 +2505,7 @@
       "path": "skills/cloud-azure/azure-resource-visualizer",
       "depth": 2,
       "description": "Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources. Use when someone needs to understand or document how resources in an Azure resource group fit together.",
-      "license": "Complete terms in LICENSE.txt",
+      "license": "MIT",
       "source": "https://github.com/microsoft/azure-skills",
       "attribution": "microsoft/azure-skills by Microsoft Azure"
     },
@@ -2718,7 +2687,9 @@
       "path": "skills/code-quality/quality-playbook",
       "depth": 2,
       "description": "Runs a multi-phase quality audit of a codebase: derives behavioral requirements from code and docs, generates spec-traced tests, runs a three-pass code review and independent spec audits, and reconciles every bug with regression tests. Use for a deep quality assessment of a project, not a quick PR review.",
-      "license": "Complete terms in LICENSE.txt"
+      "license": "Apache-2.0",
+      "source": "https://github.com/andrewstellman/quality-playbook",
+      "attribution": "andrewstellman/quality-playbook by Andrew Stellman"
     },
     {
       "name": "receiving-code-review",
@@ -3857,7 +3828,7 @@
       "path": "skills/design-and-ui/frontend-design",
       "depth": 2,
       "description": "Creates distinctive, production-grade frontend interfaces by committing to a bold aesthetic direction (purpose, tone, typography, color, motion) before coding. Use when building web pages, components, or apps where the result should not look generic or templated.",
-      "license": "Complete terms in LICENSE.txt",
+      "license": "Apache-2.0",
       "source": "https://github.com/steipete/agent-scripts",
       "attribution": "steipete/agent-scripts by Peter Steinberger"
     },
@@ -3978,7 +3949,7 @@
       "path": "skills/design-and-ui/impeccable",
       "depth": 2,
       "description": "Designs, critiques, audits, and polishes frontend interfaces — websites, landing pages, dashboards, components, onboarding, and empty states — after loading the project's PRODUCT.md and DESIGN.md context. Use when the user wants to design, redesign, review, or improve a UI.",
-      "license": "Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for attribution.",
+      "license": "Apache-2.0",
       "source": "https://github.com/pbakaus/impeccable",
       "attribution": "pbakaus/impeccable by Paul Bakaus"
     },
@@ -4040,7 +4011,7 @@
       "path": "skills/design-and-ui/theme-factory",
       "depth": 2,
       "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
-      "license": "Complete terms in LICENSE.txt",
+      "license": "Apache-2.0",
       "source": "https://github.com/anthropics/skills",
       "attribution": "anthropics/skills by Anthropic"
     },
@@ -4061,7 +4032,7 @@
       "install_path": "design-and-ui/ui-ux-pro-max",
       "path": "skills/design-and-ui/ui-ux-pro-max",
       "depth": 2,
-      "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples. Use when designing, building, or reviewing UI for web or mobile apps.",
+      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
       "license": "MIT",
       "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
       "attribution": "nextlevelbuilder/ui-ux-pro-max-skill by Next Level Builder"
@@ -5496,7 +5467,7 @@
       "path": "skills/dotnet/winmd-api-search",
       "depth": 2,
       "description": "Use when you need to find or explore Windows desktop APIs from Windows Metadata (.winmd) — locating a type, namespace, method, or its signature for Win32, WinRT, or Windows App SDK work.",
-      "license": "Complete terms in LICENSE.txt",
+      "license": "MIT",
       "source": "https://github.com/github/awesome-copilot",
       "attribution": "github/awesome-copilot by GitHub Community"
     },
@@ -6405,56 +6376,6 @@
       "license": "MIT",
       "source": "https://github.com/steipete/agent-scripts",
       "attribution": "steipete/agent-scripts by Peter Steinberger"
-    },
-    {
-      "name": "openrouter-agent-migration",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-agent-migration",
-      "path": "skills/llm-tooling/openrouter-agent-migration",
-      "depth": 2,
-      "description": "Use when migrating TypeScript code from `@openrouter/sdk` to the standalone `@openrouter/agent` package — moving `callModel`, `tool()`, stop conditions, format converters, and streaming helpers, and updating imports when agent features no longer resolve from the SDK.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-images",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-images",
-      "path": "skills/llm-tooling/openrouter-images",
-      "depth": 2,
-      "description": "Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, transform, or alter an existing image with a text prompt.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-models",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-models",
-      "path": "skills/llm-tooling/openrouter-models",
-      "depth": 2,
-      "description": "Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance. Use when the user asks about available OpenRouter models, model pricing, model context lengths, model capabilities, provider latency or uptime, throughput limits, supported parameters, wants to search/filter/compare models, or find the fastest provider for a model.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-oauth",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-oauth",
-      "path": "skills/llm-tooling/openrouter-oauth",
-      "depth": 2,
-      "description": "Implement \"Sign In with OpenRouter\" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
-    },
-    {
-      "name": "openrouter-typescript-sdk",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/openrouter-typescript-sdk",
-      "path": "skills/llm-tooling/openrouter-typescript-sdk",
-      "depth": 2,
-      "description": "Integrates with 300+ models through the OpenRouter TypeScript SDK and agent packages using the callModel pattern: text generation, tools, streaming, and multi-turn conversations. Use when writing TypeScript that calls models through OpenRouter.",
-      "source": "https://github.com/OpenRouterTeam/skills",
-      "attribution": "OpenRouterTeam/skills by OpenRouter"
     },
     {
       "name": "oracle",

@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **807 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **799 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -56,7 +56,7 @@ This table is generated from `docs/manifest.json`.
 <!-- generated:category-catalog:start -->
 | Category | Skills | Scope |
 | --- | ---: | --- |
-| [`agent-design`](./skills/agent-design/) | 58 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
+| [`agent-design`](./skills/agent-design/) | 55 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./skills/agent-eval/) | 24 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./skills/api-backend/) | 12 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./skills/business-strategy/) | 39 | Executive advisory, board preparation, operating systems, and strategic decision support. |
@@ -78,7 +78,7 @@ This table is generated from `docs/manifest.json`.
 | [`finance`](./skills/finance/) | 7 | Financial modeling, valuation, Excel authoring, investment analysis, and presentation workflows. |
 | [`go-to-market`](./skills/go-to-market/) | 11 | Launch planning, positioning, pricing, partnerships, enterprise sales, and PLG. |
 | [`java-kotlin`](./skills/java-kotlin/) | 11 | Java, Kotlin, Spring Boot, testing, refactoring, and migration workflows. |
-| [`llm-tooling`](./skills/llm-tooling/) | 48 | LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM. |
+| [`llm-tooling`](./skills/llm-tooling/) | 43 | LLM observability, evaluation, serving, vector search, Phoenix, Arize, Qdrant, and vLLM. |
 | [`marketing-and-growth`](./skills/marketing-and-growth/) | 26 | Marketing strategy, content, acquisition, SEO, CRO, and lifecycle growth. |
 | [`mcp`](./skills/mcp/) | 15 | Model Context Protocol server generation, tooling, deployment, and security. |
 | [`messaging`](./skills/messaging/) | 1 | Messaging integrations and relay workflows. |
@@ -152,3 +152,12 @@ docs/                               Pages site and machine-readable manifests
 Skills come from a mix of original work and adapted public sources. Check individual skill folders for
 license files and attribution before redistributing a selected package. See
 [`docs/third-party-sources.md`](./docs/third-party-sources.md) for repo-level imported source notes.
+
+Each skill's `license` frontmatter field names its license. Most are MIT or Apache-2.0. A few carry extra
+obligations:
+
+- **CC-BY-SA-4.0** (the Trail of Bits skills: `differential-review`, `property-based-testing`,
+  `mutation-testing`, `supply-chain-risk-auditor`): share modified versions under the same license.
+- **MPL-2.0** (`terraform-style-guide`, `terraform-test`): modified files stay under MPL-2.0.
+- **CC-BY-NC-4.0** (`deep-research`): non-commercial use only. Leave it out of any commercial
+  redistribution.
