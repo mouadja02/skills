@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 807 skills across 36 categories.
+**Total:** 800 skills across 36 categories.
 
 ## Install one skill
 
@@ -30,7 +30,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`agent-design`](#agent-design) | 58 |
+| [`agent-design`](#agent-design) | 56 |
 | [`agent-eval`](#agent-eval) | 24 |
 | [`api-backend`](#api-backend) | 12 |
 | [`business-strategy`](#business-strategy) | 39 |
@@ -52,7 +52,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`finance`](#finance) | 7 |
 | [`go-to-market`](#go-to-market) | 11 |
 | [`java-kotlin`](#java-kotlin) | 11 |
-| [`llm-tooling`](#llm-tooling) | 48 |
+| [`llm-tooling`](#llm-tooling) | 43 |
 | [`marketing-and-growth`](#marketing-and-growth) | 26 |
 | [`mcp`](#mcp) | 15 |
 | [`messaging`](#messaging) | 1 |
@@ -111,9 +111,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`bmad-retrospective`](./skills/agent-design/bmm-skills/4-implementation/bmad-retrospective/SKILL.md) | `agent-design/bmm-skills/4-implementation/bmad-retrospective` | Post-epic review to extract lessons and assess success. Use when the user says "run a retrospective" or "lets retro the epic [epic]" |
 | [`bmad-sprint-planning`](./skills/agent-design/bmm-skills/4-implementation/bmad-sprint-planning/SKILL.md) | `agent-design/bmm-skills/4-implementation/bmad-sprint-planning` | Generate sprint status tracking from epics. Use when the user says "run sprint planning" or "generate sprint plan" |
 | [`bmad-sprint-status`](./skills/agent-design/bmm-skills/4-implementation/bmad-sprint-status/SKILL.md) | `agent-design/bmm-skills/4-implementation/bmad-sprint-status` | Summarize sprint status and surface risks. Use when the user says "check sprint status" or "show sprint status" |
-| [`create-agent-tui`](./skills/agent-design/create-agent-tui/SKILL.md) | `agent-design/create-agent-tui` | Scaffolds a complete agent TUI in TypeScript using @openrouter/agent — like create-react-app for terminal agents. Generates a customizable terminal interface with three input styles, four tool display modes, ASCII banners, streaming output, session persistence, and configurable tools. Use when building an agent, creating a TUI, scaffolding an agent project, or building a coding assistant. |
 | [`create-agentsmd`](./skills/agent-design/create-agentsmd/SKILL.md) | `agent-design/create-agentsmd` | Generates a complete AGENTS.md at the repository root following the agents.md format: setup, build, test, style, and PR conventions coding agents need. Use when a repo has no AGENTS.md, when onboarding coding agents to a codebase, or when the existing agent instructions are stale. |
-| [`create-headless-agent`](./skills/agent-design/create-headless-agent/SKILL.md) | `agent-design/create-headless-agent` | Scaffolds a headless agent in TypeScript using @openrouter/agent and Bun — for CLI tools, API servers, queue workers, and pipelines. No terminal UI. Use when building an OpenRouter-based agent that runs without a terminal UI, such as a CLI tool, HTTP service, or queue worker. |
 | [`deepagents-harness`](./skills/agent-design/deepagents-harness/SKILL.md) | `agent-design/deepagents-harness` | Use when designing long-horizon agents that need subagents, isolated context windows, filesystem-backed work, persistence, human approval, MCP tools, or production tracing. |
 | [`durable-agent-workflows`](./skills/agent-design/durable-agent-workflows/SKILL.md) | `agent-design/durable-agent-workflows` | Use when designing retryable or crash-resilient agent workflows, especially when tools can send, charge, publish, provision, or otherwise create duplicate side effects. |
 | [`expert-trace-skill-distillation`](./skills/agent-design/expert-trace-skill-distillation/SKILL.md) | `agent-design/expert-trace-skill-distillation` | Use when turning expert materials, execution traces, repository evidence, or long-form documents into an inspectable, correctable, and empirically verified agent skill. Covers source governance, capability-vs-behavior separation, contrastive induction from successes and failures, intervention testing, versioning, rollback, and task-conditioned vs. reusable-library evaluation. |
@@ -767,11 +765,6 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`multimodal-rag-architecture`](./skills/llm-tooling/multimodal-rag-architecture/SKILL.md) | `llm-tooling/multimodal-rag-architecture` | Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence. |
 | [`nano-banana-pro`](./skills/llm-tooling/nano-banana-pro/SKILL.md) | `llm-tooling/nano-banana-pro` | Generates and edits images with Google's Gemini image API (Nano Banana): text or image input, 512px to 4K output, and a draft, iterate, final workflow. Use when creating or editing images with Gemini. |
 | [`openai-image-gen`](./skills/llm-tooling/openai-image-gen/SKILL.md) | `llm-tooling/openai-image-gen` | Generates images with the OpenAI Images API (gpt-image-1 and variants), with batch runs, a prompt sampler, and an auto-generated HTML gallery to compare outputs. Use when producing several image variants or comparing prompts side by side. |
-| [`openrouter-agent-migration`](./skills/llm-tooling/openrouter-agent-migration/SKILL.md) | `llm-tooling/openrouter-agent-migration` | Use when migrating TypeScript code from `@openrouter/sdk` to the standalone `@openrouter/agent` package — moving `callModel`, `tool()`, stop conditions, format converters, and streaming helpers, and updating imports when agent features no longer resolve from the SDK. |
-| [`openrouter-images`](./skills/llm-tooling/openrouter-images/SKILL.md) | `llm-tooling/openrouter-images` | Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, transform, or alter an existing image with a text prompt. |
-| [`openrouter-models`](./skills/llm-tooling/openrouter-models/SKILL.md) | `llm-tooling/openrouter-models` | Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance. Use when the user asks about available OpenRouter models, model pricing, model context lengths, model capabilities, provider latency or uptime, throughput limits, supported parameters, wants to search/filter/compare models, or find the fastest provider for a model. |
-| [`openrouter-oauth`](./skills/llm-tooling/openrouter-oauth/SKILL.md) | `llm-tooling/openrouter-oauth` | Implement "Sign In with OpenRouter" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys for browser-based apps. No client registration, no backend, no secrets required. |
-| [`openrouter-typescript-sdk`](./skills/llm-tooling/openrouter-typescript-sdk/SKILL.md) | `llm-tooling/openrouter-typescript-sdk` | Integrates with 300+ models through the OpenRouter TypeScript SDK and agent packages using the callModel pattern: text generation, tools, streaming, and multi-turn conversations. Use when writing TypeScript that calls models through OpenRouter. |
 | [`oracle`](./skills/llm-tooling/oracle/SKILL.md) | `llm-tooling/oracle` | Gets a second-model review by bundling a prompt and selected repository files into one request for another AI (API or browser), for debugging, refactoring, or design questions. Use when an independent model's opinion would help; treat its answer as advisory. |
 | [`phoenix-cli`](./skills/llm-tooling/phoenix-cli/SKILL.md) | `llm-tooling/phoenix-cli` | Uses the Phoenix CLI (px) to list, fetch, export, annotate, and add notes to traces, analyze errors, and run open and axial coding reviews. Use when inspecting or reviewing LLM traces stored in Arize Phoenix from the terminal. |
 | [`phoenix-evals`](./skills/llm-tooling/phoenix-evals/SKILL.md) | `llm-tooling/phoenix-evals` | Builds and runs evaluators for LLM applications with Arize Phoenix: code checks first, LLM-as-judge for nuance, validated against human labels. Use when measuring LLM output quality, creating an eval suite, or checking a judge against human ratings. |

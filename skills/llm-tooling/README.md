@@ -6,7 +6,7 @@
 
 LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Arize, Qdrant, and vLLM.
 
-**Total:** 48 skills.
+**Total:** 43 skills.
 
 ## Skills In This Category
 
@@ -26,11 +26,6 @@ LLM observability, evaluation, serving, vector search, OpenRouter, Phoenix, Ariz
 | [`multimodal-rag-architecture`](multimodal-rag-architecture/SKILL.md) | `llm-tooling/multimodal-rag-architecture` | Use when designing or auditing RAG over PDFs, images, tables, charts, equations, video frames, or heterogeneous documents where text-only chunking loses important evidence. |
 | [`nano-banana-pro`](nano-banana-pro/SKILL.md) | `llm-tooling/nano-banana-pro` | Generates and edits images with Google's Gemini image API (Nano Banana): text or image input, 512px to 4K output, and a draft, iterate, final workflow. Use when creating or editing images with Gemini. |
 | [`openai-image-gen`](openai-image-gen/SKILL.md) | `llm-tooling/openai-image-gen` | Generates images with the OpenAI Images API (gpt-image-1 and variants), with batch runs, a prompt sampler, and an auto-generated HTML gallery to compare outputs. Use when producing several image variants or comparing prompts side by side. |
-| [`openrouter-agent-migration`](openrouter-agent-migration/SKILL.md) | `llm-tooling/openrouter-agent-migration` | Use when migrating TypeScript code from `@openrouter/sdk` to the standalone `@openrouter/agent` package — moving `callModel`, `tool()`, stop conditions, format converters, and streaming helpers, and updating imports when agent features n... |
-| [`openrouter-images`](openrouter-images/SKILL.md) | `llm-tooling/openrouter-images` | Generate images from text prompts and edit existing images using OpenRouter's image generation models. Use when the user asks to create, generate, or make an image, picture, or illustration from a description, or wants to edit, modify, t... |
-| [`openrouter-models`](openrouter-models/SKILL.md) | `llm-tooling/openrouter-models` | Query OpenRouter for available AI models, pricing, capabilities, throughput, and provider performance. Use when the user asks about available OpenRouter models, model pricing, model context lengths, model capabilities, provider latency o... |
-| [`openrouter-oauth`](openrouter-oauth/SKILL.md) | `llm-tooling/openrouter-oauth` | Implement "Sign In with OpenRouter" using OAuth PKCE — framework-agnostic, no SDK or client registration required. Use when the user wants to add OpenRouter login, authentication, sign-in buttons, OAuth, or AI model inference API keys fo... |
-| [`openrouter-typescript-sdk`](openrouter-typescript-sdk/SKILL.md) | `llm-tooling/openrouter-typescript-sdk` | Integrates with 300+ models through the OpenRouter TypeScript SDK and agent packages using the callModel pattern: text generation, tools, streaming, and multi-turn conversations. Use when writing TypeScript that calls models through Open... |
 | [`oracle`](oracle/SKILL.md) | `llm-tooling/oracle` | Gets a second-model review by bundling a prompt and selected repository files into one request for another AI (API or browser), for debugging, refactoring, or design questions. Use when an independent model's opinion would help; treat it... |
 | [`phoenix-cli`](phoenix-cli/SKILL.md) | `llm-tooling/phoenix-cli` | Uses the Phoenix CLI (px) to list, fetch, export, annotate, and add notes to traces, analyze errors, and run open and axial coding reviews. Use when inspecting or reviewing LLM traces stored in Arize Phoenix from the terminal. |
 | [`phoenix-evals`](phoenix-evals/SKILL.md) | `llm-tooling/phoenix-evals` | Builds and runs evaluators for LLM applications with Arize Phoenix: code checks first, LLM-as-judge for nuance, validated against human labels. Use when measuring LLM output quality, creating an eval suite, or checking a judge against hu... |

@@ -29,8 +29,7 @@ Activate when:
 - Deciding whether a Rich-only CLI is sufficient or a Textual application is justified
 - Reviewing a Python coding-agent TUI for rendering, input, accessibility, or test gaps
 
-For a generic TypeScript/OpenRouter scaffold, use `create-agent-tui` instead. This skill is specifically
-for the Python/Rich implementation path.
+This skill is specifically for the Python/Rich implementation path.
 
 ## Source Boundary
 
