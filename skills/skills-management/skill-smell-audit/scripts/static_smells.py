@@ -37,7 +37,12 @@ TIME_RE = re.compile(
     r"|until (?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* 20\d\d)",
     re.I,
 )
-TRIGGER_RE = re.compile(r"\b(use (?:when|for|to|this|it|whenever)|when (?:the|a|an|you|user)|trigger|activate|invoke)", re.I)
+TRIGGER_RE = re.compile(
+    r"\b(use (?:when|for|to|this|it|whenever|before|after|on|in|at|during|if|while|only|first)"
+    r"|when (?:the|a|an|you|user|working|building|asked|creating|writing)"
+    r"|trigger|activate|invoke|appl(?:y|ies|icable) (?:to|when|for|on)|handles any|for any )",
+    re.I,
+)
 FIRST_PERSON_RE = re.compile(r"^(?:i|we|you)\b|\b(?:i can|i will|i'll|you can|you should|let me)\b", re.I)
 PLAIN_UNSAFE_RE = re.compile(r"^[@`*&!%|>\[{]|: |\s#")
 # Documentation placeholders, not references to resolve.
