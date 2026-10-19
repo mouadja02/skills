@@ -41,6 +41,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Test skill subprocess boundaries
+        run: node --test scripts/test-skill-subprocesses.mjs
+
       - name: Generate manifests and documentation indexes
         run: npm run build:manifest
 
@@ -93,6 +96,9 @@ jobs:
           cache: "npm"
 
       - run: npm ci
+
+      - name: Test skill subprocess boundaries
+        run: node --test scripts/test-skill-subprocesses.mjs
 
       - name: Generate manifests and documentation indexes
         run: npm run build:manifest
