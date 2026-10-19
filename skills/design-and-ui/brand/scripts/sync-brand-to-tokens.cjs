@@ -11,7 +11,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
 // Paths
 const BRAND_GUIDELINES = 'docs/brand-guidelines.md';
@@ -250,7 +250,7 @@ function main() {
   const generateScript = path.resolve(process.cwd(), GENERATE_TOKENS_SCRIPT);
   if (fs.existsSync(generateScript)) {
     try {
-      execSync(`node ${generateScript} --config ${DESIGN_TOKENS_JSON} -o ${DESIGN_TOKENS_CSS}`, {
+      execFileSync(process.execPath, [generateScript, '--config', DESIGN_TOKENS_JSON, '-o', DESIGN_TOKENS_CSS], {
         cwd: process.cwd(),
         stdio: 'inherit'
       });

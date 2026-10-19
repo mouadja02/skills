@@ -149,6 +149,8 @@ docs/                               Pages site and machine-readable manifests
 
 ## License
 
+See [`LICENSE`](./LICENSE) for the collection licensing scope.
+
 Skills come from a mix of original work and adapted public sources. Check individual skill folders for
 license files and attribution before redistributing a selected package. See
 [`docs/third-party-sources.md`](./docs/third-party-sources.md) for repo-level imported source notes.

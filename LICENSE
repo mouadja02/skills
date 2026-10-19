@@ -1,0 +1,13 @@
+License information
+===================
+
+This repository is a collection of separately licensed skill packages. It does
+not have a single license that overrides those packages' terms.
+
+For each skill, consult its SKILL.md license and attribution fields and the
+LICENSE and NOTICE files shipped in that skill's folder. Those notices and any
+upstream copyright statements continue to apply to adapted files.
+
+See docs/third-party-sources.md for the source and attribution index and the
+README.md License section for an overview. Do not infer a redistribution grant
+for a file that has no applicable license notice; ask its copyright holder.
