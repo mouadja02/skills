@@ -367,12 +367,12 @@ MAX_RETRIES = 2
 MAX_FILE_SIZE_BYTES = 500_000
 MAX_FILE_SIZE_LABEL = "500KB"
 
-ENV_ANTHROPIC_API_KEY = "ANTHROPIC_API_KEY"
+ANTHROPIC_API_KEY_ENV = "ANTHROPIC_API_KEY"
 ENV_COMPRESS_PROVIDER = "CAVEMAN_COMPRESS_PROVIDER"
 ENV_COMPRESS_MODEL = "CAVEMAN_COMPRESS_MODEL"
 ENV_FALLBACK_MODEL = "CAVEMAN_MODEL"
 ENV_COMPRESS_ENDPOINT = "CAVEMAN_COMPRESS_ENDPOINT"
-ENV_COMPRESS_API_KEY = "CAVEMAN_COMPRESS_API_KEY"
+COMPRESS_API_KEY_ENV = "CAVEMAN_COMPRESS_API_KEY"
 
 PROVIDER_CLAUDE = "claude"
 PROVIDER_ANTHROPIC = "anthropic"
@@ -545,10 +545,10 @@ def run_cli(
 
 
 def call_anthropic_sdk(prompt: str) -> str:
-    api_key = os.environ.get(ENV_ANTHROPIC_API_KEY)
+    api_key = os.environ.get(ANTHROPIC_API_KEY_ENV)
     if not api_key:
         raise RuntimeError(
-            f"{ENV_ANTHROPIC_API_KEY} is required for provider "
+            f"{ANTHROPIC_API_KEY_ENV} is required for provider "
             f"'{PROVIDER_ANTHROPIC}'"
         )
     try:
@@ -681,7 +681,7 @@ def call_openai_compat(prompt: str) -> str:
         data=json.dumps(body).encode("utf-8"),
         headers={"Content-Type": "application/json"},
     )
-    api_key = os.environ.get(ENV_COMPRESS_API_KEY)
+    api_key = os.environ.get(COMPRESS_API_KEY_ENV)
     if api_key:
         # Unredirected: urllib copies ordinary headers onto a redirect, even
         # one to another host.
@@ -737,7 +737,7 @@ def call_claude(prompt: str) -> str:
         return call_openai_compat(prompt)
     if provider == PROVIDER_ANTHROPIC:
         return call_anthropic_sdk(prompt)
-    if os.environ.get(ENV_ANTHROPIC_API_KEY):
+    if os.environ.get(ANTHROPIC_API_KEY_ENV):
         try:
             return call_anthropic_sdk(prompt)
         except AnthropicSdkUnavailable:

@@ -191,7 +191,8 @@ Review the following code snippet for security vulnerabilities:
 
 ```python
 def login(username, password):
-    query = f"SELECT * FROM users WHERE username='{username}' AND password='{password}'"
+    # Deliberately unsafe interpolation for this review exercise.
+    query = "SELECT * FROM users WHERE username='%s' AND password='%s'" % (username, password)
     result = db.execute(query)
     return result
 ```

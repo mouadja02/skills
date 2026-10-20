@@ -1,6 +1,8 @@
 """Formatting helpers for CRUD tool responses."""
 
 from datetime import datetime, timezone
+import json
+
 from typing import Any, Dict, List, Optional
 
 from di_capture import CodeCapture, capture_from_response
@@ -239,7 +241,7 @@ ARN: {config.get('ARN', 'N/A')}
 
     if next_token_response:
         output += (
-            f'\nPAGINATION: More results available. Use next_token="{next_token_response}" '
+            f'\nPAGINATION: More results available. Use next_token={json.dumps(next_token_response)} '
             "to retrieve next page."
         )
 

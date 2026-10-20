@@ -560,7 +560,7 @@ if __name__ == "__main__":
             id="user123",
             name="Alice Developer",
             email="alice@example.com",
-            github_token="gho_user_token"
+            github_token="example-github-token"
         )
 
         # User starts typing -- predictively warm a sandbox

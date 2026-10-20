@@ -44,6 +44,9 @@ jobs:
       - name: Test skill subprocess boundaries
         run: node --test scripts/test-skill-subprocesses.mjs
 
+      - name: Test detector coverage and pagination formatting
+        run: python3 -m unittest scripts/test_skill_scan_regressions.py
+
       - name: Generate manifests and documentation indexes
         run: npm run build:manifest
 
@@ -99,6 +102,9 @@ jobs:
 
       - name: Test skill subprocess boundaries
         run: node --test scripts/test-skill-subprocesses.mjs
+
+      - name: Test detector coverage and pagination formatting
+        run: python3 -m unittest scripts/test_skill_scan_regressions.py
 
       - name: Generate manifests and documentation indexes
         run: npm run build:manifest

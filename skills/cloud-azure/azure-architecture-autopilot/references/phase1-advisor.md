@@ -821,7 +821,7 @@ Therefore, `@secure()` parameter handling follows these rules:
    az deployment group what-if `
      --template-file main.bicep `
      --parameters main.parameters.json `
-     --parameters sqlAdminPassword='user-input-value'
+     --parameters sqlAdminPassword=$env:SQL_ADMIN_PASSWORD
    ```
 3. **Do NOT use `.bicepparam` and `--parameters` simultaneously in a deployment command**
    ```

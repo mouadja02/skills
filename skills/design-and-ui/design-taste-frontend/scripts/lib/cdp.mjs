@@ -158,7 +158,7 @@ export class Page {
   }
 
   // Evaluates a function (serialised) or an expression string in the page and returns its JSON value.
-  async eval(fnOrExpr, arg) {
+  async evaluate(fnOrExpr, arg) {
     const expression = typeof fnOrExpr === 'function'
       ? `(${fnOrExpr.toString()})(${arg === undefined ? '' : JSON.stringify(arg)})`
       : fnOrExpr;

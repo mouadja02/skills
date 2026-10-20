@@ -90,7 +90,7 @@ resource "aws_s3_bucket" "data" {
 resource "aws_db_instance" "main" {
   engine               = "mysql"
   instance_class       = "db.t3.micro"
-  password             = "hardcoded-password"
+  password             = "example-hardcoded-password"
   publicly_accessible  = true
   skip_final_snapshot  = true
 }

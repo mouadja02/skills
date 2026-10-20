@@ -134,7 +134,7 @@ Secrets Manager format in buildspec: `secret-id:json-key:version-stage:version-i
 ```yaml
 env:
   parameter-store:
-    API_KEY: "/myapp/api-key"
+    SERVICE_ENDPOINT: "/myapp/service-endpoint"
   secrets-manager:
     DB_PASS: "myapp/db-creds:password"
 ```

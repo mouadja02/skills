@@ -85,8 +85,8 @@ DANGEROUS_SCRIPT_PATTERNS: list[tuple[str, str, str]] = [
     (r"(?i)open\s*\(.*(\.env|credentials|\.netrc|\.pgpass|\.my\.cnf)", "Sensitive file access", "high"),
     (r"(?i)os\.environ\s*\[.*(?:KEY|SECRET|TOKEN|PASSWORD|CREDENTIAL)", "Environment secret access", "medium"),
     # Dangerous execution
-    (r"\beval\s*\(", "eval() usage", "high"),
-    (r"\bexec\s*\(", "exec() usage", "high"),
+    (r"\beval\s*\(", "Dynamic expression evaluation", "high"),
+    (r"\bexec\s*\(", "Dynamic statement execution", "high"),
     (r"(?i)subprocess.*shell\s*=\s*True", "Shell execution with shell=True", "high"),
     (r"(?i)os\.(system|popen|exec[lv]p?e?)\s*\(", "OS command execution", "high"),
     (r"(?i)__import__\s*\(", "Dynamic import", "medium"),

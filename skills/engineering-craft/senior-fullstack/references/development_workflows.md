@@ -99,7 +99,7 @@ CMD ["node", "dist/index.js"]
 # .env.local (development)
 DATABASE_URL="postgresql://user:pass@localhost:5432/app_dev"
 REDIS_URL="redis://localhost:6379"
-JWT_SECRET="development-secret-change-in-prod"
+JWT_SECRET="$(openssl rand -hex 32)"
 LOG_LEVEL="debug"
 
 # .env.test

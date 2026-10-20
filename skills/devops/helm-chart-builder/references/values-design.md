@@ -215,7 +215,7 @@ volumeMounts: []
 ```yaml
 # BAD — secret visible in chart package, git history, Helm release
 database:
-  password: "mysecretpassword"
+  password: "example-hardcoded-password"
   apiKey: "sk-abc123"
 
 # GOOD — empty defaults with documentation

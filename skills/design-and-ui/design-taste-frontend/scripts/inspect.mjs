@@ -79,7 +79,7 @@ const MOTION_RECORDER = `(() => {
 async function sheet(frames, cols, cellW, cellH, path) {
   const rows = Math.ceil(frames.length / cols);
   await helper.setViewport({ width: cols * cellW, height: rows * cellH, dsf: 1 });
-  await helper.eval((a) => {
+  await helper.evaluate((a) => {
     document.body.style.cssText = `margin:0;background:#888;display:grid;grid-template-columns:repeat(${a.cols},${a.cellW}px)`;
     document.body.innerHTML = a.frames.map((s) => `<img src="data:image/jpeg;base64,${s}" style="width:${a.cellW}px;height:${a.cellH}px;display:block;outline:1px solid #888">`).join('');
     return Promise.all([...document.images].map((i) => i.decode().catch(() => {})));
@@ -94,29 +94,29 @@ try {
     const page = await browser.newPage({ width: w, height: h, dsf: 1, mobile: w < 600 });
     await page.send('Page.addScriptToEvaluateOnNewDocument', { source: MOTION_RECORDER }).catch(() => {});
     const how = await page.goto(url, { timeoutMs: 30000, settleMs: 600 });
-    await page.eval('document.fonts.ready.then(() => true)').catch(() => {});
+    await page.evaluate('document.fonts.ready.then(() => true)').catch(() => {});
     await sleep(1400); // let the load choreography finish before judging the first screen
     const fold = join(outDir, `${label}-fold.jpg`);
     await page.screenshot({ path: fold, quality: 82 });
-    const metrics = await page.eval(probe);
+    const metrics = await page.evaluate(probe);
 
     // walk the page one screen at a time so scroll reveals fire, photographing each screen
     const frames = [readFileSync(fold).toString('base64')];
-    const frameChecks = [await page.eval(frame).catch(() => null)];
+    const frameChecks = [await page.evaluate(frame).catch(() => null)];
     const screens = Math.min(11, Math.max(0, Math.ceil(metrics.page.height / h) - 1));
     for (let i = 1; i <= screens; i++) {
-      await page.eval(`window.scrollTo({ top: ${i * h}, behavior: 'instant' })`).catch(() => {});
+      await page.evaluate(`window.scrollTo({ top: ${i * h}, behavior: 'instant' })`).catch(() => {});
       await page.wheel(2);
       await sleep(650);
       frames.push(await page.screenshot({ quality: 78 }));
-      frameChecks.push(await page.eval(frame).catch(() => null));
-      await page.eval('window.__motionSample && window.__motionSample()').catch(() => {});
+      frameChecks.push(await page.evaluate(frame).catch(() => null));
+      await page.evaluate('window.__motionSample && window.__motionSample()').catch(() => {});
     }
-    const motion = await page.eval('window.__motion ? window.__motion() : null').catch(() => null);
+    const motion = await page.evaluate('window.__motion ? window.__motion() : null').catch(() => null);
     // re-measure after everything has revealed (catches content that only exists post-reveal)
-    await page.eval(`window.scrollTo({ top: 0, behavior: 'instant' })`).catch(() => {});
+    await page.evaluate(`window.scrollTo({ top: 0, behavior: 'instant' })`).catch(() => {});
     await sleep(350);
-    const after = await page.eval(probe).catch(() => metrics);
+    const after = await page.evaluate(probe).catch(() => metrics);
     const m = after.headings.length >= metrics.headings.length ? after : metrics;
 
     const cols = w >= 1100 ? 2 : w >= 600 ? 3 : 4;

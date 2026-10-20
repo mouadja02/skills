@@ -30,7 +30,7 @@ def memory_backend() -> MemoryBackend:
 @pytest.fixture
 def client(memory_backend: MemoryBackend) -> YourClient:
     return YourClient(
-        api_key="test-key",
+        api_key="example-test-key",
         backend=memory_backend,
     )
 ```

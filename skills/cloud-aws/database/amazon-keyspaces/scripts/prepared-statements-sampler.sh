@@ -28,7 +28,7 @@ shopt -s expand_aliases
 #   3. ./scripts/prepared-statements-sampler.sh <host> <port> --ssl > prepared_statements.ndjson
 #
 # Alternatively, set CQLSH_PASSWORD environment variable (less secure than cqlshrc but avoids CLI args):
-#   export CQLSH_PASSWORD="$PASSWORD"
+#   export CQLSH_PASSWORD="${PASSWORD}"
 #   ./scripts/prepared-statements-sampler.sh <host> <port> -u "serviceuser" --ssl > prepared_statements.ndjson
 #
 # NEVER pass passwords via -p on the command line — they are visible in process listings.
