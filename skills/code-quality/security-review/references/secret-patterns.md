@@ -157,7 +157,7 @@ ARG API_KEY=actual-value
 ### Terraform — flag these:
 ```hcl
 # Hardcoded sensitive values (should use var or data source)
-password = "hardcoded-password"
+password = "example-hardcoded-password"
 access_key = "AKIAIOSFODNN7EXAMPLE"
 ```
 

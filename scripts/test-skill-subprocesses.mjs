@@ -5,10 +5,37 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { Page } from '../skills/design-and-ui/design-taste-frontend/scripts/lib/cdp.mjs';
 
 const root = process.env.SKILLS_TEST_ROOT || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const { isGeneratedFile } = await import(pathToFileURL(path.join(root,
   'skills/design-and-ui/impeccable/scripts/is-generated.mjs')));
+
+test('CDP evaluation preserves argument serialization and returned values', async () => {
+  let request;
+  const page = Object.create(Page.prototype);
+  page.send = async (...args) => {
+    request = args;
+    return { result: { value: { ok: true } } };
+  };
+  const argument = 'quotes" and \\ paths';
+  const fn = (value) => value.length;
+  assert.deepEqual(await page.evaluate(fn, argument), { ok: true });
+  assert.equal(request[0], 'Runtime.evaluate');
+  assert.equal(request[1].expression, `(${fn.toString()})(${JSON.stringify(argument)})`);
+  assert.equal(request[1].awaitPromise, true);
+  assert.equal(request[1].returnByValue, true);
+  assert.equal(request[2], 30000);
+});
+
+test('CDP evaluation passes expressions through and propagates browser exceptions', async () => {
+  const page = Object.create(Page.prototype);
+  page.send = async (_method, params) => {
+    assert.equal(params.expression, 'document.title');
+    return { exceptionDetails: { text: 'browser error' } };
+  };
+  await assert.rejects(page.evaluate('document.title'), /browser error/);
+});
 
 function temporaryProject(t) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'skills-subprocess-'));

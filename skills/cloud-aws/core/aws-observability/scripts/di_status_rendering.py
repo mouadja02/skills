@@ -1,5 +1,7 @@
 """Formatting helpers for status tool responses."""
 
+import json
+
 from typing import Any, Dict, List, Optional
 
 from di_constants import SNAPSHOT_SIGNAL_TYPE, resolve_snapshot_log_group
@@ -67,7 +69,7 @@ LOCATION:
     next_token_response = data.get("NextToken")
     if next_token_response:
         output += (
-            f'\nPAGINATION: More results available. Use next_token="{next_token_response}" '
+            f'\nPAGINATION: More results available. Use next_token={json.dumps(next_token_response)} '
             "to retrieve next page."
         )
 

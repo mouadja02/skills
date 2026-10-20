@@ -117,7 +117,7 @@ class SecurityScanner:
         (r'exec\s*\(\s*[^)]*(?:user|input|param|request)',
          'exec() with potential user input'),
         (r'eval\s*\(\s*[^)]*(?:user|input|param|request)',
-         'eval() with potential user input'),
+         'Dynamic expression evaluation with potential user input'),
     ]
 
     # Path traversal patterns

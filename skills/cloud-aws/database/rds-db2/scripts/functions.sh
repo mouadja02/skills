@@ -197,7 +197,7 @@ db2_use() {
     local file_password
     file_password=$(grep "^${selected} " "$HOME/.need_password" 2>/dev/null | cut -d' ' -f2-)
     if [ -n "$file_password" ] && [ "$file_password" != "replace this with the master user password" ]; then
-      password="$file_password"
+      password="${file_password}"
       log_warning "Password loaded from ~/.need_password (dev/test only — use --manage-master-user-password in production)"
     fi
   fi
@@ -208,7 +208,7 @@ db2_use() {
 
   export DB_INSTANCE_ID="$selected"
   export MASTER_USER_NAME="$master_user"
-  export MASTER_USER_PASSWORD="$password"
+  export MASTER_USER_PASSWORD="${password}"
   export DB_DSN="$tcp_dsn"
   export DB_SSL_DSN="$ssl_dsn"
 

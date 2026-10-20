@@ -1,0 +1,30 @@
+name: Catalog security scan
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    name: Scan skill collection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      # Match the scanner pinned by awesome-ai-plugins, with a severity gate
+      # as well as its score threshold. Keep repository policy overrides off.
+      - uses: hashgraph-online/ai-plugin-scanner-action@caba2e96aa8ad2feb6cf6fca52442b52e22e779f # v1.2.635
+        with:
+          plugin_dir: .
+          min_score: 80
+          fail_on_severity: high
+          trust_repository_policy: false
+          online: false
+          pr_comment: off

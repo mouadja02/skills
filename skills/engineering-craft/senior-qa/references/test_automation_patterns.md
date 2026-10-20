@@ -160,6 +160,7 @@ Factories create test data with sensible defaults, reducing boilerplate and impr
 interface User {
   id: string;
   email: string;
+  password: string; // Synthetic fixture data; never reuse for real accounts.
   name: string;
   role: 'admin' | 'user' | 'guest';
   createdAt: Date;
@@ -175,6 +176,7 @@ export function createUser(overrides: Partial<User> = {}): User {
   return {
     id: `user-${++idCounter}`,
     email: `user${idCounter}@example.com`,
+    password: "example-test-password",
     name: `Test User ${idCounter}`,
     role: 'user',
     createdAt: new Date('2024-01-01'),
@@ -347,7 +349,7 @@ export const test = base.extend<AuthFixtures>({
     await page.request.post('/api/auth/login', {
       data: {
         email: testUser.email,
-        password: 'testpassword',
+        password: testUser.password,
       },
     });
 
@@ -364,7 +366,7 @@ export const test = base.extend<AuthFixtures>({
     await page.request.post('/api/auth/login', {
       data: {
         email: admin.email,
-        password: 'adminpassword',
+        password: admin.password,
       },
     });
 

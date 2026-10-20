@@ -2,7 +2,7 @@
 
 // TODO: Move configuration to separate file
 const API_BASE_URL = "https://api.example.com";
-const API_KEY = "abc123def456"; // FIXME: Should be in environment
+const API_KEY = "example-api-key"; // FIXME: Should be in environment
 
 // Global variables - should be encapsulated
 var userCache = {};
