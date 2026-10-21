@@ -19,6 +19,12 @@
     For category and glob modes, -Dest is a parent folder; each matched
     skill is placed in its own subfolder underneath it.
 
+    Installs from main use the manifest and ZIPs of the deployed catalog, so
+    the plan and the files always come from the same build. Every archive is
+    downloaded and checked before anything is written; if one is missing or
+    incomplete, the whole install switches to the branch's source tarball.
+    Other branches use the branch manifest and tarball.
+
 .PARAMETER Selector
     The selector string (alias: -Skill). See DESCRIPTION.
 
@@ -220,10 +226,34 @@ function Install-Skill {
         [System.IO.Compression.ZipFile]::ExtractToDirectory($ZipPath, $Destination)
     }
 
+    # The plan and the files it installs must come from one snapshot. On main,
+    # read the manifest that Pages deploys next to the ZIPs; otherwise (another
+    # branch, or no deployed manifest) read the branch manifest and install
+    # from that branch's tarball.
+    function Get-SkillCatalog {
+        if ($Branch -eq 'main') {
+            Write-Host "==> Fetching deployed manifest from $($pagesBase.TrimEnd('/'))" -ForegroundColor Cyan
+            try {
+                $deployed = Invoke-SkillRestMethod -Uri "$($pagesBase.TrimEnd('/'))/manifest.json"
+                if ($deployed.skills) {
+                    return [pscustomobject]@{ Manifest = $deployed; UseArchives = $true }
+                }
+            } catch {
+                # Not deployed, or a local preview without the Pages manifest.
+            }
+            Write-Host "==> Deployed manifest unavailable; using $repo@$Branch and its tarball" -ForegroundColor Yellow
+        }
+        Write-Host "==> Fetching manifest from $repo@$Branch" -ForegroundColor Cyan
+        [pscustomobject]@{ Manifest = (Invoke-SkillRestMethod -Uri $manifestUrl); UseArchives = $false }
+    }
+
     function Get-SkillZipBase {
         if ($downloadBase) { return $downloadBase }
         try {
             $summary = Invoke-SkillRestMethod -Uri "$($pagesBase.TrimEnd('/'))/zips/_summary.json"
+            if ($summary.generated_at) {
+                Write-Host "==> Deployed catalog snapshot: $($summary.generated_at)" -ForegroundColor Cyan
+            }
             if ($summary.public_base_url) {
                 return [string]$summary.public_base_url.TrimEnd('/')
             }
@@ -262,7 +292,7 @@ function Install-Skill {
     }
 
     if ($List -or $ListCategories) {
-        $manifest = Invoke-SkillRestMethod -Uri $manifestUrl
+        $manifest = (Get-SkillCatalog).Manifest
         if ($ListCategories) {
             $manifest.skills |
                 Group-Object category |
@@ -292,8 +322,8 @@ function Install-Skill {
         throw "Invalid selector: $Selector"
     }
 
-    Write-Host "==> Fetching manifest from $repo@$Branch" -ForegroundColor Cyan
-    $manifest = Invoke-SkillRestMethod -Uri $manifestUrl
+    $catalog = Get-SkillCatalog
+    $manifest = $catalog.Manifest
 
     # --- Resolve selector ----------------------------------------------------
     $mode = $null
@@ -399,7 +429,10 @@ function Install-Skill {
         return
     }
 
-    # --- Download -----------------------------------------------------------
+    # --- Stage sources, then install -----------------------------------------
+    # Every source is downloaded, extracted and checked under $tmp before
+    # anything under -Dest is written. An unavailable or incomplete archive
+    # switches the whole plan to the tarball; nothing falls back after a write.
     $tmp = Join-Path ([System.IO.Path]::GetTempPath()) ("skills-" + [guid]::NewGuid().ToString('N'))
     New-Item -ItemType Directory -Force -Path $tmp | Out-Null
     $tarball = Join-Path $tmp 'repo.tar.gz'
@@ -407,12 +440,13 @@ function Install-Skill {
     New-Item -ItemType Directory -Force -Path $extract | Out-Null
 
     try {
-        if ($Branch -eq 'main' -and ($mode -in @('single', 'category', 'glob', 'all'))) {
+        $staged = $null
+        if ($catalog.UseArchives) {
             $zipBase = Get-SkillZipBase
             try {
+                $zipStage = New-Object System.Collections.Generic.List[object]
                 if ($mode -eq 'glob') {
                     Write-Host "==> Downloading $($plan.Count) per-skill ZIP(s) from $zipBase" -ForegroundColor Cyan
-                    $zipPlan = New-Object System.Collections.Generic.List[object]
                     $n = 0
                     foreach ($entry in $plan) {
                         $n++
@@ -425,105 +459,85 @@ function Install-Skill {
                         if (-not (Test-Path -LiteralPath $src)) {
                             throw "missing in ZIP: $($entry.InstallPath)"
                         }
-                        $zipPlan.Add([pscustomobject]@{ InstallPath = $entry.InstallPath; Source = $src; Target = $entry.Target })
+                        $zipStage.Add([pscustomobject]@{ InstallPath = $entry.InstallPath; Source = $src; Target = $entry.Target })
                     }
+                } else {
+                    $zip = Join-Path $tmp 'scoped.zip'
+                    $zipPath = switch ($mode) {
+                        'single'   { "zips/skill/$Selector.zip" }
+                        'category' { "zips/category/$cat.zip" }
+                        'all'      { "zips/all.zip" }
+                    }
+                    $zipExtract = Join-Path $tmp 'scoped-extract'
 
-                    foreach ($entry in $zipPlan) {
-                        if ((Test-Path -LiteralPath $entry.Target) -and $Force) {
-                            Remove-Item -LiteralPath $entry.Target -Recurse -Force
+                    Write-Host "==> Downloading scoped ZIP from $zipBase/$zipPath" -ForegroundColor Cyan
+                    Download-SkillZip -BaseUrl $zipBase -RelativePath $zipPath -OutFile $zip
+                    New-Item -ItemType Directory -Force -Path $zipExtract | Out-Null
+                    Expand-SkillZip -ZipPath $zip -Destination $zipExtract
+
+                    $sourceRoot = switch ($mode) {
+                        'single'   { Split-Path $Selector -Leaf }
+                        'category' { $cat }
+                        'all'      { 'skills' }
+                    }
+                    foreach ($entry in $plan) {
+                        if ($mode -eq 'single') {
+                            $src = Join-Path $zipExtract $sourceRoot
+                        } elseif ($mode -eq 'category') {
+                            $relative = $entry.InstallPath.Substring($cat.Length + 1)
+                            $src = Join-Path (Join-Path $zipExtract $sourceRoot) ($relative -replace '/', [IO.Path]::DirectorySeparatorChar)
+                        } else {
+                            $src = Join-Path (Join-Path $zipExtract $sourceRoot) ($entry.InstallPath -replace '/', [IO.Path]::DirectorySeparatorChar)
                         }
-                        $parent = [System.IO.Path]::GetDirectoryName($entry.Target)
-                        if ($parent -and -not (Test-Path -LiteralPath $parent)) {
-                            New-Item -ItemType Directory -Force -Path $parent | Out-Null
+                        if (-not (Test-Path -LiteralPath $src)) {
+                            throw "missing in ZIP: $($entry.InstallPath)"
                         }
-                        Copy-Item -LiteralPath $entry.Source -Destination $entry.Target -Recurse -Force
-                        Write-Host "  - $($entry.InstallPath) -> $($entry.Target)"
+                        $zipStage.Add([pscustomobject]@{ InstallPath = $entry.InstallPath; Source = $src; Target = $entry.Target })
                     }
-
-                    Write-Host "==> Done. Installed $($plan.Count) skill(s) under $Dest" -ForegroundColor Green
-                    return
                 }
-
-                $zip = Join-Path $tmp 'scoped.zip'
-                $zipPath = switch ($mode) {
-                    'single'   { "zips/skill/$Selector.zip" }
-                    'category' { "zips/category/$cat.zip" }
-                    'all'      { "zips/all.zip" }
-                }
-                $zipExtract = Join-Path $tmp 'scoped-extract'
-
-                Write-Host "==> Downloading scoped ZIP from $zipBase/$zipPath" -ForegroundColor Cyan
-                Download-SkillZip -BaseUrl $zipBase -RelativePath $zipPath -OutFile $zip
-                New-Item -ItemType Directory -Force -Path $zipExtract | Out-Null
-                Expand-SkillZip -ZipPath $zip -Destination $zipExtract
-
-                $sourceRoot = switch ($mode) {
-                    'single'   { Split-Path $Selector -Leaf }
-                    'category' { $cat }
-                    'all'      { 'skills' }
-                }
-                Write-Host "==> Installing $($plan.Count) skill(s) from scoped ZIP" -ForegroundColor Cyan
-                foreach ($entry in $plan) {
-                    if ($mode -eq 'single') {
-                        $src = Join-Path $zipExtract $sourceRoot
-                    } elseif ($mode -eq 'category') {
-                        $relative = $entry.InstallPath.Substring($cat.Length + 1)
-                        $src = Join-Path (Join-Path $zipExtract $sourceRoot) ($relative -replace '/', [IO.Path]::DirectorySeparatorChar)
-                    } else {
-                        $src = Join-Path (Join-Path $zipExtract $sourceRoot) ($entry.InstallPath -replace '/', [IO.Path]::DirectorySeparatorChar)
-                    }
-
-                    if (-not (Test-Path -LiteralPath $src)) {
-                        throw "missing in ZIP: $($entry.InstallPath)"
-                    }
-                    if ((Test-Path -LiteralPath $entry.Target) -and $Force) {
-                        Remove-Item -LiteralPath $entry.Target -Recurse -Force
-                    }
-                    $parent = [System.IO.Path]::GetDirectoryName($entry.Target)
-                    if ($parent -and -not (Test-Path -LiteralPath $parent)) {
-                        New-Item -ItemType Directory -Force -Path $parent | Out-Null
-                    }
-                    Copy-Item -LiteralPath $src -Destination $entry.Target -Recurse -Force
-                    Write-Host "  - $($entry.InstallPath) -> $($entry.Target)"
-                }
-
-                Write-Host "==> Done. Installed $($plan.Count) skill(s) under $Dest" -ForegroundColor Green
-                return
+                $staged = $zipStage
             } catch {
                 if ($_.Exception.Message -like 'checksum mismatch*') { throw }
-                Write-Host "==> Scoped ZIP unavailable; falling back to $repo@$Branch tarball" -ForegroundColor Yellow
+                Write-Host "==> Prebuilt ZIPs unavailable or incomplete ($($_.Exception.Message)); falling back to $repo@$Branch tarball" -ForegroundColor Yellow
             }
         }
 
-        Write-Host "==> Downloading $repo@$Branch tarball" -ForegroundColor Cyan
-        if (-not (Get-Command tar -ErrorAction SilentlyContinue)) {
-            throw "tar.exe is required for the tarball fallback (built into Windows 10 1803+ and PowerShell Core)."
-        }
-        Invoke-SkillWebRequest -Uri $tarballUrl -OutFile $tarball
-
-        Write-Host "==> Extracting" -ForegroundColor Cyan
-        $prevErrAction = $ErrorActionPreference
-        $ErrorActionPreference = 'Continue'
-        try {
-            & tar -xzf $tarball -C $extract
-            if ($LASTEXITCODE -ne 0) { throw "tar failed with exit code $LASTEXITCODE" }
-        } finally {
-            $ErrorActionPreference = $prevErrAction
-        }
-
-        $repoName = $repo.Split('/')[-1]
-        $topDir = Join-Path $extract "$repoName-$Branch"
-        $skillsRoot = Join-Path $topDir 'skills'
-        if (-not (Test-Path -LiteralPath $skillsRoot)) {
-            throw "Unexpected tarball layout: $skillsRoot not found"
-        }
-
-        Write-Host "==> Installing $($plan.Count) skill(s)" -ForegroundColor Cyan
-        foreach ($entry in $plan) {
-            $src = Join-Path $skillsRoot ($entry.InstallPath -replace '/', [IO.Path]::DirectorySeparatorChar)
-            if (-not (Test-Path -LiteralPath $src)) {
-                throw "missing in tarball: skills/$($entry.InstallPath)"
+        if ($null -eq $staged) {
+            Write-Host "==> Downloading $repo@$Branch tarball" -ForegroundColor Cyan
+            if (-not (Get-Command tar -ErrorAction SilentlyContinue)) {
+                throw "tar.exe is required for the tarball fallback (built into Windows 10 1803+ and PowerShell Core)."
             }
+            Invoke-SkillWebRequest -Uri $tarballUrl -OutFile $tarball
+
+            Write-Host "==> Extracting" -ForegroundColor Cyan
+            $prevErrAction = $ErrorActionPreference
+            $ErrorActionPreference = 'Continue'
+            try {
+                & tar -xzf $tarball -C $extract
+                if ($LASTEXITCODE -ne 0) { throw "tar failed with exit code $LASTEXITCODE" }
+            } finally {
+                $ErrorActionPreference = $prevErrAction
+            }
+
+            $repoName = $repo.Split('/')[-1]
+            $topDir = Join-Path $extract "$repoName-$Branch"
+            $skillsRoot = Join-Path $topDir 'skills'
+            if (-not (Test-Path -LiteralPath $skillsRoot)) {
+                throw "Unexpected tarball layout: $skillsRoot not found"
+            }
+
+            $staged = New-Object System.Collections.Generic.List[object]
+            foreach ($entry in $plan) {
+                $src = Join-Path $skillsRoot ($entry.InstallPath -replace '/', [IO.Path]::DirectorySeparatorChar)
+                if (-not (Test-Path -LiteralPath $src)) {
+                    throw "missing in tarball: skills/$($entry.InstallPath) (nothing was installed)"
+                }
+                $staged.Add([pscustomobject]@{ InstallPath = $entry.InstallPath; Source = $src; Target = $entry.Target })
+            }
+        }
+
+        Write-Host "==> Installing $($staged.Count) skill(s)" -ForegroundColor Cyan
+        foreach ($entry in $staged) {
             if ((Test-Path -LiteralPath $entry.Target) -and $Force) {
                 Remove-Item -LiteralPath $entry.Target -Recurse -Force
             }
@@ -533,7 +547,7 @@ function Install-Skill {
             if ($parent -and -not (Test-Path -LiteralPath $parent)) {
                 New-Item -ItemType Directory -Force -Path $parent | Out-Null
             }
-            Copy-Item -LiteralPath $src -Destination $entry.Target -Recurse -Force
+            Copy-Item -LiteralPath $entry.Source -Destination $entry.Target -Recurse -Force
             Write-Host "  - $($entry.InstallPath) -> $($entry.Target)"
         }
 

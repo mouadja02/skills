@@ -82,10 +82,18 @@ OPTIONS
   --list-categories         List every category with its skill count.
   -h, --help                Show this help and exit.
 
+SOURCES
+  Installs from main use the manifest and ZIPs of the deployed catalog, so
+  the plan and the files always come from the same build. Every archive is
+  downloaded and checked before anything is written; if one is missing or
+  incomplete, the whole install switches to the branch's source tarball.
+  Other branches, or a missing unzip, use the branch manifest and tarball.
+
 ENVIRONMENT
   SKILLS_REPO        Override the source repo (default: mouadja02/skills).
   SKILLS_BRANCH      Override the default branch (default: main).
-  SKILLS_PAGES_BASE  Override the Pages base URL used for ZIP metadata.
+  SKILLS_PAGES_BASE  Override the Pages base URL used for the deployed
+                     manifest and ZIP metadata.
   SKILLS_DOWNLOAD_BASE
                      Override the public ZIP base URL, for example an S3
                      or CloudFront URL.
@@ -155,8 +163,24 @@ done
 
 # --- Help / list paths --------------------------------------------------------
 
+# The plan and the files it installs must come from one snapshot. On main,
+# read the manifest that Pages deploys next to the ZIPs; otherwise (another
+# branch, no unzip, or no deployed manifest) read the branch manifest and
+# install from that branch's tarball.
+ARCHIVE_SNAPSHOT=0
+
 fetch_manifest_tsv() {
-  local tsv="$1"
+  local tsv="$1" header=""
+  if [ "$BRANCH" = "main" ] && command -v unzip >/dev/null 2>&1; then
+    echo "==> Fetching deployed manifest from ${PAGES_BASE%/}" >&2
+    if curl -fsSL "${PAGES_BASE%/}/manifest.tsv" -o "$tsv" 2>/dev/null \
+      && IFS=$'\t' read -r header _ < "$tsv" && [ "$header" = "install_path" ]; then
+      ARCHIVE_SNAPSHOT=1
+      return
+    fi
+    echo "==> Deployed manifest unavailable; using ${REPO}@${BRANCH} and its tarball" >&2
+  fi
+  echo "==> Fetching manifest from ${REPO}@${BRANCH}" >&2
   curl -fsSL "${RAW_BASE}/${BRANCH}/docs/manifest.tsv" -o "$tsv" \
     || die "failed to fetch docs/manifest.tsv from ${RAW_BASE}/${BRANCH}/docs/manifest.tsv"
 }
@@ -307,21 +331,17 @@ target_for() {
   esac
 }
 
-can_use_scoped_zip() {
-  [ "$BRANCH" = "main" ] || return 1
-  [ "$MODE" = "single" ] || [ "$MODE" = "category" ] || [ "$MODE" = "glob" ] || [ "$MODE" = "all" ]
-  command -v unzip >/dev/null 2>&1 || return 1
-}
-
 resolve_zip_base() {
   if [ -n "$DOWNLOAD_BASE" ]; then
     ZIP_BASE="${DOWNLOAD_BASE%/}"
     return
   fi
 
-  local summary base
+  local summary base snapshot
   summary="$(curl -fsSL "${PAGES_BASE%/}/zips/_summary.json" 2>/dev/null || true)"
   base="$(printf '%s\n' "$summary" | sed -n 's/.*"public_base_url"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -n 1)"
+  snapshot="$(printf '%s\n' "$summary" | sed -n 's/.*"generated_at"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -n 1)"
+  [ -z "$snapshot" ] || echo "==> Deployed catalog snapshot: $snapshot" >&2
   if [ -n "$base" ]; then
     ZIP_BASE="${base%/}"
   else
@@ -366,55 +386,71 @@ download_zip() {
   verify_zip "$url" "$out"
 }
 
-install_from_zip_root() {
-  local zip="$1" root="$2" source_root="$3"
-  local zip_extract="$root/extract"
+# Staging downloads and extracts every source under $tmpdir and records
+# "<install_path> TAB <source> TAB <target>" in $staged_file. Nothing under
+# the destination is touched until install_staged runs, so a failed or
+# incomplete source can fall back or abort without leaving partial output.
 
-  mkdir -p "$zip_extract"
-  unzip -q "$zip" -d "$zip_extract"
+# Returns non-zero if any ZIP is unavailable or lacks a planned skill.
+stage_from_zips() {
+  local root="$1" zip_path="" zip_root="" src n=0
+  mkdir -p "$root" || return 1
+  : > "$staged_file"
+
+  case "$MODE" in
+    single)   zip_path="zips/skill/${SELECTOR}.zip"; zip_root="$(basename "$SELECTOR")" ;;
+    category) zip_path="zips/category/${CAT}.zip";  zip_root="$CAT" ;;
+    all)      zip_path="zips/all.zip";              zip_root="skills" ;;
+  esac
+  if [ -n "$zip_path" ]; then
+    echo "==> Downloading scoped ZIP from ${ZIP_BASE}/${zip_path}" >&2
+    download_zip "$zip_path" "$root/scoped.zip" || return 1
+    unzip -q "$root/scoped.zip" -d "$root/scoped" || return 1
+  else
+    echo "==> Downloading $count per-skill ZIP(s) from ${ZIP_BASE}" >&2
+  fi
 
   while IFS=$'\t' read -r ip target; do
     case "$MODE" in
-      single)
-        src="$zip_extract/$(basename "$ip")"
-        ;;
-      category)
-        src="$zip_extract/$source_root/${ip#${CAT}/}"
-        ;;
-      all)
-        src="$zip_extract/skills/$ip"
-        ;;
-      *)
-        die "ZIP install is only supported for single, category, or all mode"
+      single)   src="$root/scoped/$zip_root" ;;
+      category) src="$root/scoped/$zip_root/${ip#${CAT}/}" ;;
+      all)      src="$root/scoped/$zip_root/$ip" ;;
+      glob)
+        n=$((n + 1))
+        download_zip "zips/skill/${ip}.zip" "$root/skill-$n.zip" || return 1
+        unzip -q "$root/skill-$n.zip" -d "$root/skill-$n" || return 1
+        src="$root/skill-$n/$(basename "$ip")"
         ;;
     esac
-
-    [ -d "$src" ] || die "missing in ZIP: $ip"
-    if [ -e "$target" ] && [ "$FORCE" -eq 1 ]; then
-      rm -rf -- "$target"
+    if [ ! -d "$src" ]; then
+      echo "==> missing in ZIP: $ip" >&2
+      return 1
     fi
-    mkdir -p -- "$(dirname "$target")"
-    cp -r "$src" "$target"
-    echo "  - $ip -> $target" >&2
+    printf '%s\t%s\t%s\n' "$ip" "$src" "$target" >> "$staged_file"
   done < "$plan_file"
 }
 
-install_from_skill_zips() {
-  local root="$1" zip_plan="$root/zip-plan.txt" n=0
-  mkdir -p "$root"
-  : > "$zip_plan"
+# Dies, before anything is installed, if the tarball lacks a planned skill.
+stage_from_tarball() {
+  local root="$1" tarball="$1/repo.tar.gz" extract_dir="$1/extract" topdir src
+  require_cmd tar
+  echo "==> Downloading ${REPO}@${BRANCH} tarball" >&2
+  mkdir -p "$extract_dir"
+  curl -fsSL "${TARBALL_BASE}/${BRANCH}" -o "$tarball" \
+    || die "failed to download tarball"
+  tar -xzf "$tarball" -C "$extract_dir"
+  topdir="$extract_dir/$(basename "$REPO")-${BRANCH}"
+  [ -d "$topdir/skills" ] || die "unexpected tarball layout: $topdir/skills not found"
 
+  : > "$staged_file"
   while IFS=$'\t' read -r ip target; do
-    n=$((n + 1))
-    local zip="$root/skill-$n.zip" zip_extract="$root/skill-$n"
-    download_zip "zips/skill/${ip}.zip" "$zip" || return 1
-    mkdir -p "$zip_extract"
-    unzip -q "$zip" -d "$zip_extract"
-    local src="$zip_extract/$(basename "$ip")"
-    [ -d "$src" ] || die "missing in ZIP: $ip"
-    printf '%s\t%s\t%s\n' "$ip" "$src" "$target" >> "$zip_plan"
+    src="$topdir/skills/$ip"
+    [ -d "$src" ] || die "missing in tarball: skills/$ip (nothing was installed)"
+    printf '%s\t%s\t%s\n' "$ip" "$src" "$target" >> "$staged_file"
   done < "$plan_file"
+}
 
+install_staged() {
   while IFS=$'\t' read -r ip src target; do
     if [ -e "$target" ] && [ "$FORCE" -eq 1 ]; then
       rm -rf -- "$target"
@@ -422,7 +458,7 @@ install_from_skill_zips() {
     mkdir -p -- "$(dirname "$target")"
     cp -r "$src" "$target"
     echo "  - $ip -> $target" >&2
-  done < "$zip_plan"
+  done < "$staged_file"
 }
 
 # --- Main flow ----------------------------------------------------------------
@@ -431,7 +467,6 @@ tmpdir="$(mktemp -d 2>/dev/null || mktemp -d -t skills)"
 trap 'rm -rf "$tmpdir"' EXIT
 
 manifest_tsv="$tmpdir/manifest.tsv"
-echo "==> Fetching manifest from ${REPO}@${BRANCH}" >&2
 fetch_manifest_tsv "$manifest_tsv"
 
 resolve_selector "$SELECTOR" "$manifest_tsv"
@@ -466,73 +501,22 @@ if [ "$DRY_RUN" -eq 1 ]; then
   exit 0
 fi
 
-# Prefer the prebuilt ZIP artifacts for scoped installs. This avoids
-# downloading and extracting the entire repository for one skill or category.
-if can_use_scoped_zip; then
+# Prefer the prebuilt ZIP artifacts: they avoid downloading and extracting the
+# entire repository for one skill or category. Stage every source before
+# writing, so an incomplete archive switches the whole plan to the tarball.
+staged_file="$tmpdir/staged.txt"
+staged=0
+if [ "$ARCHIVE_SNAPSHOT" -eq 1 ]; then
   resolve_zip_base
-  zip="$tmpdir/scoped.zip"
-  case "$MODE" in
-    single)
-      zip_path="zips/skill/${SELECTOR}.zip"
-      zip_root="$(basename "$SELECTOR")"
-      ;;
-    category)
-      zip_path="zips/category/${CAT}.zip"
-      zip_root="$CAT"
-      ;;
-    all)
-      zip_path="zips/all.zip"
-      zip_root="skills"
-      ;;
-    glob)
-      echo "==> Downloading $count per-skill ZIP(s) from ${ZIP_BASE}" >&2
-      if install_from_skill_zips "$tmpdir/scoped-skills"; then
-        echo "==> Done. Installed $count skill(s) under $DEST" >&2
-        exit 0
-      fi
-      echo "==> Scoped ZIPs unavailable; falling back to ${REPO}@${BRANCH} tarball" >&2
-      ;;
-  esac
-
-  if [ "$MODE" != "glob" ]; then
-    echo "==> Downloading scoped ZIP from ${ZIP_BASE}/${zip_path}" >&2
-  fi
-  if [ "$MODE" != "glob" ] && download_zip "$zip_path" "$zip"; then
-    echo "==> Installing $count skill(s) from scoped ZIP" >&2
-    install_from_zip_root "$zip" "$tmpdir/scoped" "$zip_root"
-    echo "==> Done. Installed $count skill(s) under $DEST" >&2
-    exit 0
-  fi
-
-  if [ "$MODE" != "glob" ]; then
-    echo "==> Scoped ZIP unavailable; falling back to ${REPO}@${BRANCH} tarball" >&2
+  if stage_from_zips "$tmpdir/zips"; then
+    staged=1
+  else
+    echo "==> Prebuilt ZIPs unavailable or incomplete; falling back to ${REPO}@${BRANCH} tarball" >&2
   fi
 fi
+[ "$staged" -eq 1 ] || stage_from_tarball "$tmpdir/tarball"
 
-# Download tarball once and extract everything to temp.
-require_cmd tar
-echo "==> Downloading ${REPO}@${BRANCH} tarball" >&2
-tarball="$tmpdir/repo.tar.gz"
-curl -fsSL "${TARBALL_BASE}/${BRANCH}" -o "$tarball" \
-  || die "failed to download tarball"
-
-extract_dir="$tmpdir/extract"
-mkdir -p "$extract_dir"
-tar -xzf "$tarball" -C "$extract_dir"
-topdir="$extract_dir/$(basename "$REPO")-${BRANCH}"
-[ -d "$topdir/skills" ] || die "unexpected tarball layout: $topdir/skills not found"
-
-# Copy each selected skill into its target.
 echo "==> Installing $count skill(s)" >&2
-while IFS=$'\t' read -r ip target; do
-  src="$topdir/skills/$ip"
-  [ -d "$src" ] || die "missing in tarball: skills/$ip"
-  if [ -e "$target" ] && [ "$FORCE" -eq 1 ]; then
-    rm -rf -- "$target"
-  fi
-  mkdir -p -- "$(dirname "$target")"
-  cp -r "$src" "$target"
-  echo "  - $ip -> $target" >&2
-done < "$plan_file"
+install_staged
 
 echo "==> Done. Installed $count skill(s) under $DEST" >&2

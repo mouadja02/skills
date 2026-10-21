@@ -130,6 +130,7 @@ git add -- skills/<reviewed-path>  # stage only intentional new skill files
 npm run check:skills # validate frontmatter, names, and links (fast)
 npm run build       # regenerates docs, audits coverage, builds and checks zips
 npm run preview     # serves docs/ at http://localhost:4173
+node --test scripts/test-installers.mjs  # after changing install.sh or install.ps1
 ```
 
 `npm run check:skills` is the skill-level linter and runs as part of `npm run
@@ -187,6 +188,7 @@ scripts/lib/frontmatter.mjs            shared YAML frontmatter reader
 scripts/check-docs.mjs                 audits documentation coverage and links
 scripts/build-zips.mjs                 generates docs/zips/*.zip (CI / preview)
 scripts/preview.mjs                    static server for docs/
+scripts/test-installers.mjs            runs both installers against a loopback catalog
 install.sh / install.ps1               one-line installers (root for curl URL)
 docs/                                  GitHub Pages site
 .github/workflows/                     CI: build-manifest + deploy-pages

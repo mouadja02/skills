@@ -4,8 +4,9 @@
 // hand-browseable SKILLS.md at the repo root.
 //
 // Single source of truth: docs/manifest.json. The Pages site reads it via a
-// relative `./manifest.json` fetch; the install scripts and any external
-// consumer fetch it via raw.githubusercontent.com/.../main/docs/manifest.json.
+// relative `./manifest.json` fetch, and the install scripts read the deployed
+// copy beside the ZIPs it describes. Branch installs and external consumers
+// fetch it via raw.githubusercontent.com/.../<branch>/docs/manifest.json.
 //
 // Frontmatter is parsed with the `yaml` devDependency (see lib/frontmatter.mjs).
 // Run with: node scripts/build-manifest.mjs

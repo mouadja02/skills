@@ -32,7 +32,9 @@ Remove-Item $installer
 ```
 
 Selectors may be an exact install path, a category, a quoted glob, or `--all` / `-All`. Use
-`--dry-run` / `-DryRun` to preview an installation.
+`--dry-run` / `-DryRun` to preview an installation. Installs from `main` plan against the manifest of
+the deployed site and copy from the ZIPs of that same deployment. Every archive is checked before anything is
+written; if one is missing or incomplete, the whole install switches to the source tarball.
 
 Skills may also be installed from the Pages ZIP artifacts:
 
