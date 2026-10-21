@@ -17,6 +17,7 @@ import { existsSync } from "node:fs";
 import { join, dirname, resolve, relative, basename, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFrontmatter } from "./lib/frontmatter.mjs";
+import { excludedReason, gitPublicationAllowlist } from "./lib/archive-policy.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -217,6 +218,14 @@ async function main() {
     }
   }
 
+  // ZIPs drop residue such as caches and credentials, but the tarball fallback
+  // and clones ship every tracked file. Fail on tracked residue here so all
+  // routes deliver the same package.
+  for (const file of [...gitPublicationAllowlist(ROOT).files].sort()) {
+    const reason = excludedReason(file);
+    if (reason) errors.push(`${file}: tracked but excluded from every package (${reason}); remove it from Git`);
+  }
+
   for (const [name, paths] of byName) {
     if (paths.length > 1) {
       errors.push(`duplicate skill name "${name}" in: ${paths.join(", ")}`);
@@ -245,6 +254,7 @@ async function main() {
   console.log(`OK  names unique, kebab-case, and matching their folders`);
   console.log(`OK  descriptions within ${DESC_MAX} chars`);
   console.log(`OK  relative links in SKILL.md resolve`);
+  console.log(`OK  no tracked files excluded by the archive policy`);
   if (warnings.length) console.log(`--  ${warnings.length} warning(s) (non-blocking)`);
 }
 
