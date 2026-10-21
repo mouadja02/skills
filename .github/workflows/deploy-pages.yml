@@ -47,6 +47,9 @@ jobs:
       - name: Test installers end to end
         run: node --test scripts/test-installers.mjs
 
+      - name: Test MCP install route
+        run: node --test scripts/test-skills-mcp.mjs
+
       - name: Test detector coverage and pagination formatting
         run: python3 -m unittest scripts/test_skill_scan_regressions.py
 
@@ -108,6 +111,9 @@ jobs:
 
       - name: Test installers end to end
         run: node --test scripts/test-installers.mjs
+
+      - name: Test MCP install route
+        run: node --test scripts/test-skills-mcp.mjs
 
       - name: Test detector coverage and pagination formatting
         run: python3 -m unittest scripts/test_skill_scan_regressions.py

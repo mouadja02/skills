@@ -131,6 +131,7 @@ npm run check:skills # validate frontmatter, names, and links (fast)
 npm run build       # regenerates docs, audits coverage, builds and checks zips
 npm run preview     # serves docs/ at http://localhost:4173
 node --test scripts/test-installers.mjs  # after changing install.sh or install.ps1
+node --test scripts/test-skills-mcp.mjs  # after changing skills-mcp.mjs or the archive policy
 ```
 
 `npm run check:skills` is the skill-level linter and runs as part of `npm run
