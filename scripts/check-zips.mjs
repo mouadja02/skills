@@ -2,12 +2,12 @@
 // Verifies generated ZIP coverage, integrity, checksums, safe paths, and hygiene.
 
 import { createHash } from "node:crypto";
-import { execFileSync } from "node:child_process";
 import { readFile, readdir, lstat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { basename, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import AdmZip from "adm-zip";
+import { excludedReason, gitPublicationAllowlist } from "./lib/archive-policy.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -15,66 +15,16 @@ const ZIPS_DIR = join(ROOT, "docs", "zips");
 const MANIFEST_PATH = join(ROOT, "docs", "manifest.json");
 const SUMMARY_PATH = join(ZIPS_DIR, "_summary.json");
 const SKILLS_DIR = join(ROOT, "skills");
-const FORBIDDEN_DIRS = new Set([
-  "__pycache__",
-  ".pytest_cache",
-  ".ruff_cache",
-  ".mypy_cache",
-  ".cache",
-  ".tmp",
-  ".git",
-  ".idea",
-  ".direnv",
-  ".aws",
-  ".ssh",
-  ".gnupg",
-  ".kube",
-  ".tox",
-  ".nox",
-  "node_modules",
-  ".venv",
-  "venv",
-]);
-const FORBIDDEN_FILES = new Set([
-  ".DS_Store",
-  "Thumbs.db",
-  "desktop.ini",
-  ".env",
-  ".envrc",
-  ".coverage",
-  ".npmrc",
-  ".pypirc",
-  ".netrc",
-  ".git-credentials",
-  ".authinfo",
-  "credentials.json",
-  "service-account.json",
-  "application_default_credentials.json",
-  "secrets.json",
-  "id_rsa",
-  "id_ed25519",
-]);
-const SAFE_ENV_TEMPLATES = new Set([".env.example", ".env.sample", ".env.template"]);
-const SENSITIVE_DATA_FILE = /^(?:token|access-token|refresh-token|password|passwd|secret|credentials?|api-key|apikey|private-key)(?:\.(?:txt|json|ya?ml|ini|conf|cfg))?$/i;
 let TRACKED_FILES = new Set();
 let TRACKED_DIRS = new Set();
 
-function gitPaths(args) {
-  const output = execFileSync("git", args, { cwd: ROOT, encoding: "buffer" });
-  return output.toString("utf8").split("\0").filter(Boolean).map((path) => path.replaceAll("\\", "/"));
-}
-
 function initializeGitAllowlist() {
-  const untracked = gitPaths(["ls-files", "-z", "--others", "--exclude-standard", "--", "skills"]);
+  const { files, dirs, untracked } = gitPublicationAllowlist(ROOT);
   if (untracked.length) {
     throw new Error(`Refusing to audit with untracked skill files: ${JSON.stringify(untracked.slice(0, 20))}`);
   }
-  TRACKED_FILES = new Set(gitPaths(["ls-files", "-z", "--cached", "--", "skills"]));
-  TRACKED_DIRS = new Set(["skills"]);
-  for (const file of TRACKED_FILES) {
-    const parts = file.split("/");
-    for (let index = 1; index < parts.length; index++) TRACKED_DIRS.add(parts.slice(0, index).join("/"));
-  }
+  TRACKED_FILES = files;
+  TRACKED_DIRS = dirs;
 }
 
 function toPosix(path) {
@@ -85,18 +35,8 @@ function forbiddenMember(name) {
   if (!name || name.includes("\\") || name.startsWith("/") || /^[A-Za-z]:/.test(name)) {
     return "absolute, empty, or non-POSIX path";
   }
-  const segments = name.split("/").filter(Boolean);
-  if (segments.includes("..")) return "path traversal";
-  if (segments.some((segment) => FORBIDDEN_DIRS.has(segment.toLowerCase()))) return "excluded directory";
-  const file = segments.at(-1) || "";
-  const lowerFile = file.toLowerCase();
-  if (FORBIDDEN_FILES.has(lowerFile)) return "excluded file";
-  if (SENSITIVE_DATA_FILE.test(lowerFile)) return "credential-like filename";
-  if (/\.(?:py[co]|sw[op]|tmp|log|pem|key|p12|pfx|tfstate)$/i.test(lowerFile) || lowerFile.includes(".tfstate.")) {
-    return "cache, credential, state, log, or temporary file";
-  }
-  if (lowerFile.startsWith(".env.") && !SAFE_ENV_TEMPLATES.has(lowerFile)) return "environment file";
-  return null;
+  if (name.split("/").includes("..")) return "path traversal";
+  return excludedReason(name);
 }
 
 async function listFiles(dir, out = []) {
@@ -192,16 +132,25 @@ async function expectedArchiveMembers(archivePath, manifest, errors) {
     for (const entry of entries) {
       const localPath = join(localDir, entry.name);
       const zipPath = `${zipDir}/${entry.name}`;
-      if (forbiddenMember(zipPath)) continue;
+      const repoPath = toPosix(relative(ROOT, localPath));
+      const reason = forbiddenMember(zipPath);
+      if (reason) {
+        // Packages must equal the skill's tracked files. Tracked residue is
+        // dropped from every archive, so report it rather than skip it.
+        if (TRACKED_FILES.has(repoPath) || TRACKED_DIRS.has(repoPath)) {
+          errors.push(`${archivePath}: tracked path is excluded from packages (${reason}): ${repoPath}`);
+        }
+        continue;
+      }
       const stats = await lstat(localPath);
       if (stats.isSymbolicLink()) {
         errors.push(`${archivePath}: source contains symbolic link ${zipPath}`);
       } else if (stats.isDirectory()) {
-        if (!TRACKED_DIRS.has(toPosix(relative(ROOT, localPath)))) continue;
+        if (!TRACKED_DIRS.has(repoPath)) continue;
         expected.add(`${zipPath}/`);
         await walk(localPath, zipPath);
       } else if (stats.isFile()) {
-        if (!TRACKED_FILES.has(toPosix(relative(ROOT, localPath)))) continue;
+        if (!TRACKED_FILES.has(repoPath)) continue;
         expected.add(zipPath);
       } else {
         errors.push(`${archivePath}: source contains special file ${zipPath}`);

@@ -8,10 +8,14 @@
 import { createInterface } from "node:readline";
 import { execFile } from "node:child_process";
 import {
-  cp,
+  copyFile,
+  lstat,
   mkdir,
+  mkdtemp,
   readdir,
   readFile,
+  rename,
+  rm,
   stat,
 } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -26,9 +30,10 @@ import {
 } from "node:path";
 import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
+import { excludedReason, gitPublicationAllowlist } from "./lib/archive-policy.mjs";
 
 const SERVER_NAME = "repo-skills";
-const SERVER_VERSION = "0.2.0";
+const SERVER_VERSION = "0.3.0";
 const DEFAULT_PROTOCOL_VERSION = "2025-06-18";
 const MAX_LIST_LIMIT = 100;
 const DEFAULT_DOC_CHARS = 24000;
@@ -253,7 +258,7 @@ const TOOLS = [
     name: "install_skill",
     title: "Copy Skill To Workspace",
     description:
-      "Copy one skill folder into a workspace skills directory. Use only after the user or host approves file writes. Refuses to overwrite unless overwrite is true.",
+      "Copy one skill's published files (Git-tracked, without local residue) into a workspace skills directory. Needs an exact install path or name; partial names return candidates instead. Use only after the user or host approves file writes. Refuses to overwrite unless overwrite is true, and overwrite replaces the whole folder.",
     inputSchema: {
       type: "object",
       additionalProperties: false,
@@ -261,7 +266,7 @@ const TOOLS = [
       properties: {
         skill: {
           type: "string",
-          description: "Skill name or install path.",
+          description: "Exact install path or skill name, for example coding/test-driven-development.",
         },
         destination: {
           type: "string",
@@ -434,7 +439,10 @@ function toSkillSummary(skill) {
   };
 }
 
-async function resolveSkill(skillRef) {
+// Returns { skill, matchedBy }. Read tools accept a unique substring and report
+// matchedBy "substring"; install passes exactOnly so a partial name such as
+// "mcp-builder" never silently installs a different skill.
+async function resolveSkill(skillRef, { exactOnly = false } = {}) {
   const manifest = await loadManifest();
   const wanted = normalizeForSearch(skillRef);
   if (!wanted) throw new Error("skill is required");
@@ -444,7 +452,7 @@ async function resolveSkill(skillRef) {
       skill.install_path.toLowerCase() === wanted ||
       skill.name.toLowerCase() === wanted
   );
-  if (exact.length === 1) return exact[0];
+  if (exact.length === 1) return { skill: exact[0], matchedBy: "exact" };
 
   if (exact.length > 1) {
     throw new Error(
@@ -461,7 +469,15 @@ async function resolveSkill(skillRef) {
       skill.name.toLowerCase().includes(wanted)
   );
 
-  if (partial.length === 1) return partial[0];
+  if (exactOnly && partial.length) {
+    throw new Error(
+      `No exact match for skill "${skillRef}". Pass an exact install_path or name. Did you mean: ${partial
+        .map((x) => x.install_path)
+        .slice(0, 10)
+        .join(", ")}?`
+    );
+  }
+  if (partial.length === 1) return { skill: partial[0], matchedBy: "substring" };
   if (partial.length > 1) {
     throw new Error(
       `Ambiguous skill "${skillRef}". Use install_path. Matches: ${partial
@@ -601,7 +617,7 @@ async function toolSearchSkills(args) {
 }
 
 async function toolGetSkill(args) {
-  const skill = await resolveSkill(args?.skill);
+  const { skill, matchedBy } = await resolveSkill(args?.skill);
   const skillDir = join(ROOT, skill.path);
   const raw = await readFile(join(skillDir, "SKILL.md"), "utf8");
   const maxChars = Math.max(0, Math.min(8000, args?.preview_chars ?? 2000));
@@ -610,6 +626,7 @@ async function toolGetSkill(args) {
 
   return {
     skill: toSkillSummary(skill),
+    matched_by: matchedBy,
     root: skill.path,
     files,
     preview: preview.text,
@@ -620,13 +637,14 @@ async function toolGetSkill(args) {
 }
 
 async function toolReadSkillDoc(args) {
-  const skill = await resolveSkill(args?.skill);
+  const { skill, matchedBy } = await resolveSkill(args?.skill);
   const raw = await readFile(join(ROOT, skill.path, "SKILL.md"), "utf8");
   const maxChars = Math.min(120000, Math.max(1000, args?.max_chars ?? DEFAULT_DOC_CHARS));
   const doc = truncateText(raw, maxChars);
 
   return {
     skill: toSkillSummary(skill),
+    matched_by: matchedBy,
     document: "SKILL.md",
     text: doc.text,
     truncated: doc.truncated,
@@ -650,10 +668,11 @@ async function toolReadCategoryDoc(args) {
 }
 
 async function toolListSkillFiles(args) {
-  const skill = await resolveSkill(args?.skill);
+  const { skill, matchedBy } = await resolveSkill(args?.skill);
   const files = await walkFiles(join(ROOT, skill.path));
   return {
     skill: toSkillSummary(skill),
+    matched_by: matchedBy,
     files,
     next_step:
       "Call read_skill_file for specific references or scripts. Call read_skill_doc for SKILL.md.",
@@ -661,7 +680,7 @@ async function toolListSkillFiles(args) {
 }
 
 async function toolReadSkillFile(args) {
-  const skill = await resolveSkill(args?.skill);
+  const { skill, matchedBy } = await resolveSkill(args?.skill);
   const skillDir = join(ROOT, skill.path);
   const target = safeJoin(skillDir, args?.relative_path);
   if (!existsSync(target)) throw new Error(`File not found: ${args.relative_path}`);
@@ -673,14 +692,68 @@ async function toolReadSkillFile(args) {
 
   return {
     skill: toSkillSummary(skill),
+    matched_by: matchedBy,
     document: args.relative_path,
     text: doc.text,
     truncated: doc.truncated,
   };
 }
 
+function isSameOrInside(child, parent) {
+  const fold = (path) => (process.platform === "win32" ? path.toLowerCase() : path);
+  const c = fold(child);
+  const p = fold(parent);
+  return c === p || c.startsWith(p.endsWith(sep) ? p : p + sep);
+}
+
+// Lists the files a skill publishes, relative to its folder: Git-tracked files
+// minus archive-policy residue, the same set scripts/build-zips.mjs packs.
+// Outside a Git checkout only the exclusion policy can be applied.
+async function publishedSkillFiles(skill) {
+  const source = join(ROOT, skill.path);
+  let allowlist = null;
+  if (await isGitRepo()) {
+    allowlist = gitPublicationAllowlist(ROOT, skill.path);
+    if (!allowlist.files.has(`${skill.path}/SKILL.md`)) {
+      throw new Error(
+        `Refusing to install ${skill.install_path}: its SKILL.md is not tracked in the Git index of ${ROOT}. Stage the skill first.`
+      );
+    }
+  }
+
+  const files = [];
+  async function walk(dir) {
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const full = join(dir, entry.name);
+      const repoPath = relative(ROOT, full).split(sep).join("/");
+      if (excludedReason(repoPath)) continue;
+      const info = await lstat(full);
+      if (info.isSymbolicLink()) {
+        throw new Error(`Refusing to install symbolic link: ${repoPath}`);
+      } else if (info.isDirectory()) {
+        if (!allowlist || allowlist.dirs.has(repoPath)) await walk(full);
+      } else if (info.isFile()) {
+        if (!allowlist || allowlist.files.has(repoPath)) {
+          files.push(relative(source, full).split(sep).join("/"));
+        }
+      } else {
+        throw new Error(`Refusing to install special file: ${repoPath}`);
+      }
+    }
+  }
+  await walk(source);
+
+  return {
+    files: files.sort(),
+    selection: allowlist ? "git-index" : "exclusion-policy",
+    skippedUntracked: (allowlist?.untracked || [])
+      .map((path) => path.slice(skill.path.length + 1))
+      .slice(0, 20),
+  };
+}
+
 async function toolInstallSkill(args) {
-  const skill = await resolveSkill(args?.skill);
+  const { skill } = await resolveSkill(args?.skill, { exactOnly: true });
   const destination = args?.destination;
   if (!destination || typeof destination !== "string") {
     throw new Error("destination is required");
@@ -694,24 +767,59 @@ async function toolInstallSkill(args) {
     ? join(destinationRoot, ...skill.install_path.split("/"))
     : join(destinationRoot, basename(skill.path));
 
-  if (existsSync(target) && !args?.overwrite) {
+  if (isSameOrInside(target, source) || isSameOrInside(source, target)) {
+    throw new Error(`Destination overlaps the skill source: ${target}`);
+  }
+  const replacing = existsSync(target);
+  if (replacing && !args?.overwrite) {
     throw new Error(
       `Destination exists: ${target}. Pass overwrite=true to replace it.`
     );
   }
 
-  await mkdir(dirname(target), { recursive: true });
-  await cp(source, target, {
-    recursive: true,
-    force: Boolean(args?.overwrite),
-    errorOnExist: !args?.overwrite,
-  });
+  const { files, selection, skippedUntracked } = await publishedSkillFiles(skill);
+
+  // Stage the copy beside the target, then swap it in with renames. An
+  // overwrite never merges with the old install, and a failed copy keeps it.
+  const parent = dirname(target);
+  await mkdir(parent, { recursive: true });
+  const staging = await mkdtemp(join(parent, `.${basename(target)}.install-`));
+  const previous = `${staging}.previous`;
+  let cleanupWarning;
+  try {
+    for (const file of files) {
+      const to = join(staging, ...file.split("/"));
+      await mkdir(dirname(to), { recursive: true });
+      await copyFile(join(source, ...file.split("/")), to);
+    }
+    if (replacing) {
+      await rename(target, previous);
+      try {
+        await rename(staging, target);
+      } catch (error) {
+        await rename(previous, target);
+        throw error;
+      }
+      await rm(previous, { recursive: true, force: true }).catch((error) => {
+        cleanupWarning = `Installed, but could not remove the previous copy at ${previous}: ${error.message}`;
+      });
+    } else {
+      await rename(staging, target);
+    }
+  } finally {
+    await rm(staging, { recursive: true, force: true });
+  }
 
   return {
     skill: toSkillSummary(skill),
     copied_from: source,
     copied_to: target,
     overwrite: Boolean(args?.overwrite),
+    replaced: replacing,
+    file_selection: selection,
+    files_copied: files.length,
+    skipped_untracked: skippedUntracked,
+    ...(cleanupWarning ? { warning: cleanupWarning } : {}),
   };
 }
 

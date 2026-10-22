@@ -131,14 +131,17 @@ npm run check:skills # validate frontmatter, names, and links (fast)
 npm run build       # regenerates docs, audits coverage, builds and checks zips
 npm run preview     # serves docs/ at http://localhost:4173
 node --test scripts/test-installers.mjs  # after changing install.sh or install.ps1
+node --test scripts/test-skills-mcp.mjs  # after changing skills-mcp.mjs or the archive policy
 ```
 
 `npm run check:skills` is the skill-level linter and runs as part of `npm run
 build` and in CI. It **fails** on anything that would break a client:
 frontmatter that is not valid YAML, a missing or malformed
 `name`/`description`, a name that is not kebab-case, a name that does not match
-its folder, a duplicate name, a description over 1024 chars, a UTF-8 BOM, or a
-broken relative link in `SKILL.md`. It **warns** (without failing) on short
+its folder, a duplicate name, a description over 1024 chars, a UTF-8 BOM, a
+broken relative link in `SKILL.md`, or a tracked file that packages never ship
+(caches, `.env` files, credentials, coverage databases; see
+`scripts/lib/archive-policy.mjs`). It **warns** (without failing) on short
 descriptions, a missing `## When to Use`, missing `version`/`license`,
 duplicate folder names, links that escape the skill folder, prose that names a
 bundled file (`references/…`, `scripts/…`) the folder does not contain, and a
@@ -185,6 +188,7 @@ scripts/build-manifest.mjs             generates docs/manifest.{json,tsv} + SKIL
                                       + attribution index in docs/third-party-sources.md
 scripts/check-skills.mjs               validates SKILL.md frontmatter, names, links
 scripts/lib/frontmatter.mjs            shared YAML frontmatter reader
+scripts/lib/archive-policy.mjs         files a package publishes (ZIPs, MCP install)
 scripts/check-docs.mjs                 audits documentation coverage and links
 scripts/build-zips.mjs                 generates docs/zips/*.zip (CI / preview)
 scripts/preview.mjs                    static server for docs/

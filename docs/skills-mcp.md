@@ -163,6 +163,12 @@ This creates:
 C:/path/to/project/.claude/skills/coding/nasa-inspired-coding-rules
 ```
 
+`install_skill` follows the same rules as the published ZIPs:
+
+- `skill` must be an exact `install_path` or skill name. A partial name such as `mcp-builder` returns an error listing candidate install paths and writes nothing. The read tools still accept a unique partial name and report `"matched_by": "substring"` when they used one.
+- Only the skill's published files are copied: files tracked in the Git index, minus local residue such as `.env`, caches, `node_modules/`, and credential files. Untracked files are left out and listed under `skipped_untracked`. If the server root is not a Git checkout, only the residue rules apply (`"file_selection": "exclusion-policy"`).
+- `"overwrite": true` replaces the whole destination folder. The new copy is staged beside it and swapped in, so files from an older version do not survive, and a failed copy leaves the previous install in place.
+
 ## Available Tools
 
 | Tool | Use |
@@ -175,7 +181,7 @@ C:/path/to/project/.claude/skills/coding/nasa-inspired-coding-rules
 | `read_category_doc` | Reads one category's `README.md`. |
 | `list_skill_files` | Lists bundled files for one skill. |
 | `read_skill_file` | Reads a supporting file inside one skill folder. |
-| `install_skill` | Copies one skill folder into a target workspace directory. |
+| `install_skill` | Copies one skill's published files into a target workspace directory. Needs an exact install path or name. |
 
 ## Manual Smoke Test
 
@@ -230,6 +236,9 @@ Auto-refresh behavior:
 | Auto-refresh fails offline | Set `SKILLS_MCP_AUTO_REFRESH=false` for offline sessions. |
 | Skill name is ambiguous | Use the full `install_path`, for example `coding/test-driven-development`. |
 | `install_skill` says destination exists | Pick another destination or pass `"overwrite": true`. |
+| `install_skill` says there is no exact match | Pick one of the listed install paths, or use `search_skills`, then pass the full `install_path`. |
+| `install_skill` says `SKILL.md` is not tracked | The skill is new or local. Stage it with `git add -- skills/<install_path>` first. |
+| A file you added to a skill was not installed | Only files tracked by Git are installed. Stage the file, or remove it if it is local residue. |
 | Agent loads too much context | Tell it to use `list_categories`, `list_skills`, and `get_skill` before `read_skill_doc`. |
 | Paths fail on Windows | Use absolute paths with forward slashes or escaped backslashes in JSON. |
 
