@@ -7,6 +7,7 @@ description: >-
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 license: MIT
+version: "1.0.0"
 ---
 
 > **Attribution:** Sourced from [microsoft/azure-skills](https://github.com/microsoft/azure-skills) by [Microsoft Azure](https://azure.microsoft.com).
@@ -25,6 +26,7 @@ The app in the workspace must be one of these kinds
 
 - An ASP.NET Core app hosted in Azure
 - A Node.js app hosted in Azure
+- A Python app hosted in Azure
 
 ## Guidelines
 
