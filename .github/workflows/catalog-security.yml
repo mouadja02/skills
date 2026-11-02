@@ -20,7 +20,7 @@ jobs:
           persist-credentials: false
       # Match the scanner pinned by awesome-ai-plugins, with a severity gate
       # as well as its score threshold. Keep repository policy overrides off.
-      - uses: hashgraph-online/ai-plugin-scanner-action@caba2e96aa8ad2feb6cf6fca52442b52e22e779f # v1.2.635
+      - uses: hashgraph-online/ai-plugin-scanner-action@1f9b9bc71e70952f37c2e87142a5db6237fd8b53 # v1.2.812
         with:
           plugin_dir: .
           min_score: 80
