@@ -6,7 +6,7 @@
 
 Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL, and dbt.
 
-**Total:** 25 skills.
+**Total:** 26 skills.
 
 ## Skills In This Category
 
@@ -20,6 +20,7 @@ Database design, SQL optimization, migrations, analytics, Snowflake, PostgreSQL,
 | [`database-designer`](database-designer/SKILL.md) | `databases/database-designer` | Use when designing a new relational schema or auditing an existing one — normalization, keys and constraints, indexing strategy, and spotting modeling problems before they reach production. |
 | [`datanalysis-credit-risk`](datanalysis-credit-risk/SKILL.md) | `databases/datanalysis-credit-risk` | Runs an 11-step data cleaning and variable screening pipeline for pre-loan credit risk models: sample analysis, OOS split, missing-rate, IV, PSI, and correlation filters. Use when preparing raw credit data for scorecard or default-predic... |
 | [`dbt-expert`](dbt-expert/SKILL.md) | `databases/dbt-expert` | Writes and reviews dbt projects targeting Snowflake: models, schema.yml metadata, sources, tests, macros, and project structure. Use when building or reviewing dbt models, generating dbt YAML, or applying dbt best practices. |
+| [`dbt-model-contracts`](dbt-model-contracts/SKILL.md) | `databases/dbt-model-contracts` | Use when adding or repairing dbt model contracts — generating data_type declarations from manifest.json and catalog.json, preserving existing column tests and docs, and validating a contract before it is enforced in CI. |
 | [`ef-core`](ef-core/SKILL.md) | `databases/ef-core` | Use when working with Entity Framework Core — modeling entities and relationships, migrations, LINQ query performance, change tracking, N+1 problems, and connection and transaction handling. |
 | [`etl-to-dbt`](etl-to-dbt/SKILL.md) | `databases/etl-to-dbt` | Converts ETL pipeline metadata (Informatica IICS, PowerCenter XML, and similar) into clean dbt models, SQL, and YAML rather than a mechanical one-to-one translation. Use when migrating legacy ETL mappings to dbt. |
 | [`fabric-lakehouse`](fabric-lakehouse/SKILL.md) | `databases/fabric-lakehouse` | Explains and designs Microsoft Fabric Lakehouse solutions: Delta tables, the SQL analytics endpoint, shortcuts, and AI functions. Use when building, optimizing, or documenting a Fabric Lakehouse. |
