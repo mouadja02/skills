@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-10-16T14:13:04.595Z",
+  "generated_at": "2026-11-05T11:07:24.124Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 799,
+  "count": 800,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -54,7 +54,7 @@
     "communication": 1,
     "context-engineering": 21,
     "creative": 2,
-    "databases": 25,
+    "databases": 26,
     "design-and-ui": 34,
     "dev-workflow": 29,
     "devops": 44,
@@ -3516,6 +3516,15 @@
       "path": "skills/databases/dbt-expert",
       "depth": 2,
       "description": "Writes and reviews dbt projects targeting Snowflake: models, schema.yml metadata, sources, tests, macros, and project structure. Use when building or reviewing dbt models, generating dbt YAML, or applying dbt best practices."
+    },
+    {
+      "name": "dbt-model-contracts",
+      "category": "databases",
+      "install_path": "databases/dbt-model-contracts",
+      "path": "skills/databases/dbt-model-contracts",
+      "depth": 2,
+      "description": "Use when adding or repairing dbt model contracts — generating data_type declarations from manifest.json and catalog.json, preserving existing column tests and docs, and validating a contract before it is enforced in CI.",
+      "license": "MIT"
     },
     {
       "name": "ef-core",
