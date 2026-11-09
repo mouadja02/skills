@@ -8,7 +8,7 @@
 # A selector is one of:
 #   * an exact install path        engineering-craft/superpowers-test-driven-development
 #   * a category name              engineering-craft
-#   * a glob pattern (quoted)      "*bmad*"  "ai-agents/bmad*"  "*-advisor"
+#   * a glob pattern (quoted)      "*bmad*"  "agent-design/bmm-skills/*"  "*-advisor"
 #
 # See `install.sh --help` for full usage.
 
@@ -44,17 +44,17 @@ USAGE
 SELECTORS
   An exact install path  install one skill
       engineering-craft/superpowers-test-driven-development
-      ai-agents/bmm-skills/1-analysis/bmad-prfaq
+      agent-design/bmm-skills/plan/bmad-prfaq
 
   A category name        install every skill in that category
-      engineering-craft        (29 skills)
+      engineering-craft
       communication            (1 skill)
       finance                  (7 skills)
-      business-strategy        (60 skills)
+      business-strategy
 
   A glob pattern         install every install_path that matches
       "*bmad*"                 every skill whose path contains "bmad"
-      "ai-agents/*"            every direct child of ai-agents/
+      "agent-eval*"            every install_path starting with agent-eval
       "*-advisor"              every install_path ending in "-advisor"
 
   All skills            install every skill, preserving category paths
@@ -116,7 +116,7 @@ EXAMPLES
   install.sh --all -d ~/.claude/skills
 
   # see what would happen
-  install.sh "ai-agents/*" -d ~/.claude/skills/ai --dry-run
+  install.sh "agent-eval*" -d ~/.claude/skills/ai --dry-run
 
   # browse what's available
   install.sh --list-categories

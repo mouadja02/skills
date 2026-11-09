@@ -296,8 +296,8 @@ function emptyStateHTML() {
 // pasted. These are real, runnable examples instead.
 const ANATOMY = {
   one: {
-    selector: "code-quality/code-review",
-    dest: (h) => h.destBash("code-review"),
+    selector: "coding/code-review-and-quality",
+    dest: (h) => h.destBash("code-review-and-quality"),
     note: "An exact install path installs that one skill.",
   },
   cat: {
@@ -309,8 +309,8 @@ const ANATOMY = {
     },
   },
   glob: {
-    selector: '"*rag*"',
-    dest: (h) => h.destBash("rag-skills"),
+    selector: '"*-advisor"',
+    dest: (h) => h.destBash("advisors"),
     note: "A quoted glob installs every install path that matches. Quote it so your shell doesn’t expand it first.",
   },
 };

@@ -188,7 +188,7 @@ ${installSnippet}
 Skill selector formats:
 - Single skill: \`engineering-craft/superpowers-test-driven-development\`
 - Whole category: \`engineering-craft\`
-- Glob pattern: \`"ai-agents/*"\` or \`"*mcp*"\`
+- Glob pattern: \`"agent-eval*"\` or \`"*mcp*"\`
 
 User's selected tool destination(s):
 ${destLines}
@@ -201,7 +201,7 @@ ${index}
 ## Response style
 - Be concise, helpful, and friendly
 - When listing skills, show 3–8 relevant ones with a one-line description each
-- Mention skills with their exact selector, e.g. \`engineering-craft/refactor-code\`, so the UI can link them
+- Mention skills with their exact selector, e.g. \`code-quality/refactor\`, so the UI can link them
 - Always include install commands when relevant — use the bash variant by default
 - For debugging help, ask one clarifying question at a time
 - Format code blocks correctly with the right language tag

@@ -11,7 +11,7 @@
       * a category name       -> install every skill in that category
             engineering-craft
       * a glob pattern        -> install every install_path that matches
-            "*bmad*"   "ai-agents/*"   "*-advisor"
+            "*bmad*"   "agent-eval*"   "*-advisor"
       * -All                 -> install every skill, preserving category paths
 
     For single-skill mode the -Dest you pass can be the skill folder or an
@@ -81,7 +81,7 @@
     Install-Skill -All -Dest $HOME\.claude\skills
 
 .EXAMPLE
-    Install-Skill "ai-agents/*" -Dest $HOME\.claude\skills\ai -DryRun
+    Install-Skill "agent-eval*" -Dest $HOME\.claude\skills\ai -DryRun
 
 .EXAMPLE
     $installer = Join-Path ([System.IO.Path]::GetTempPath()) "skills-install.ps1"
