@@ -731,7 +731,8 @@ configure_dsn() {
   for i in "${!DB_INSTANCES[@]}"; do
     local DB_INSTANCE_IDENTIFIER="${DB_INSTANCES[$i]}"
     local MASTER_USER_NAME="${MASTER_USER_NAMES[$i]}"
-    local MASTER_USER_PASSWORD="${MASTER_USER_PASSWORDS[$i]}"
+    local MASTER_USER_PASSWORD
+    printf -v MASTER_USER_PASSWORD '%s' "${MASTER_USER_PASSWORDS[$i]}"
     local SUFFIX; [ ${#DB_INSTANCES[@]} -eq 1 ] && SUFFIX="" || SUFFIX="$i"
 
     log_info "============================================================================"
@@ -900,7 +901,8 @@ main() {
   # Uses printf %q to safely escape special characters in the password.
   local last=$((${#DB_INSTANCES[@]} - 1))
   export MASTER_USER_NAME="${MASTER_USER_NAMES[$last]}"
-  export MASTER_USER_PASSWORD="${MASTER_USER_PASSWORDS[$last]}"
+  printf -v MASTER_USER_PASSWORD '%s' "${MASTER_USER_PASSWORDS[$last]}"
+  export MASTER_USER_PASSWORD
   # Default DSN priority: Kerberos SSL > local SSL > TCP
   DB_INSTANCE_IDENTIFIER="${DB_INSTANCES[$last]}"
   get_param_group_name

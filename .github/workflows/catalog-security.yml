@@ -18,8 +18,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
         with:
           persist-credentials: false
-      # Match the scanner pinned by awesome-ai-plugins, with a severity gate
-      # as well as its score threshold. Keep repository policy overrides off.
+      # Pin the scanner to a reviewed commit and enforce both its severity gate
+      # and score threshold. Keep repository policy overrides off.
       - uses: hashgraph-online/ai-plugin-scanner-action@9b169fc65d09b24726b66d70b3563ab563158b58 # v1.2.816
         with:
           plugin_dir: .
