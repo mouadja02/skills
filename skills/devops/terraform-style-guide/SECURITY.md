@@ -106,7 +106,7 @@ Then, follow this priority order for managing sensitive attributes:
 
      data_json = jsonencode(
        {
-         password = "${random_password.password.result}",
+         password = random_password.password.result,
        }
      )
    }
@@ -124,7 +124,7 @@ Then, follow this priority order for managing sensitive attributes:
 
      data_json_wo = jsonencode(
        {
-         password = "${ephemeral.random_password.password.result}",
+         password = ephemeral.random_password.password.result,
        }
      )
      data_json_wo_version = 1

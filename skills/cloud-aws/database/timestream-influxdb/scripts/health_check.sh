@@ -32,7 +32,7 @@ if ! [[ "$PORT" =~ ^[0-9]{1,5}$ ]] || [ "$PORT" -lt 1 ] || [ "$PORT" -gt 65535 ]
 fi
 
 # Token: prefer env var or file over positional arg (avoids exposure in ps/history)
-TOKEN="${POSITIONAL[2]:-${INFLUXDB_TOKEN:-}}"
+printf -v TOKEN '%s' "${POSITIONAL[2]:-${INFLUXDB_TOKEN:-}}"
 if [ -z "$TOKEN" ] && [ -f "${HOME}/.influxdb_token" ]; then
   TOKEN=$(cat "${HOME}/.influxdb_token")
 fi

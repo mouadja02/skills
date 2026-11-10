@@ -8,7 +8,8 @@
 # avoid exposure in shell history, terminal logs, or CI/CD output.
 set -euo pipefail
 
-SECRET="${1:?Usage: get_token.sh <secret-arn-or-name> <region>}"
+: "${1:?Usage: get_token.sh <secret-arn-or-name> <region>}"
+SECRET="$1"
 REGION="${2:?Usage: get_token.sh <secret-arn-or-name> <region>}"
 TOKEN_FILE="${3:-${HOME}/.influxdb_token}"
 
