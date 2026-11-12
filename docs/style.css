@@ -878,6 +878,9 @@ h1 .accent-word {
   color: var(--accent);
   background: var(--accent-bg-strong);
 }
+/* #00767f on the active pill's #d0e4e7 measures 4.08:1; this shade is 5.63:1. */
+[data-theme="light"] .cat.active,
+[data-theme="light"] .cat.active .cnt { color: #005f66; }
 
 .sort-wrap {
   display: flex;
@@ -1142,19 +1145,19 @@ h1 .accent-word {
 .card[data-cat-color="11"] .card-category, .cat[data-cat-color="11"] .cat-dot { color: #4ade80; }
 .card[data-cat-color="12"] .card-category, .cat[data-cat-color="12"] .cat-dot { color: #38bdf8; }
 
-[data-theme="light"] .card[data-cat-color="0"] .card-category, [data-theme="light"] .cat[data-cat-color="0"] .cat-dot { color: #00a8b3; }
-[data-theme="light"] .card[data-cat-color="1"] .card-category, [data-theme="light"] .cat[data-cat-color="1"] .cat-dot { color: #059669; }
+[data-theme="light"] .card[data-cat-color="0"] .card-category, [data-theme="light"] .cat[data-cat-color="0"] .cat-dot { color: #007c85; }
+[data-theme="light"] .card[data-cat-color="1"] .card-category, [data-theme="light"] .cat[data-cat-color="1"] .cat-dot { color: #047857; }
 [data-theme="light"] .card[data-cat-color="2"] .card-category, [data-theme="light"] .cat[data-cat-color="2"] .cat-dot { color: #b45309; }
 [data-theme="light"] .card[data-cat-color="3"] .card-category, [data-theme="light"] .cat[data-cat-color="3"] .cat-dot { color: #2563eb; }
 [data-theme="light"] .card[data-cat-color="4"] .card-category, [data-theme="light"] .cat[data-cat-color="4"] .cat-dot { color: #db2777; }
-[data-theme="light"] .card[data-cat-color="5"] .card-category, [data-theme="light"] .cat[data-cat-color="5"] .cat-dot { color: #ea580c; }
-[data-theme="light"] .card[data-cat-color="6"] .card-category, [data-theme="light"] .cat[data-cat-color="6"] .cat-dot { color: #0d9488; }
+[data-theme="light"] .card[data-cat-color="5"] .card-category, [data-theme="light"] .cat[data-cat-color="5"] .cat-dot { color: #c2410c; }
+[data-theme="light"] .card[data-cat-color="6"] .card-category, [data-theme="light"] .cat[data-cat-color="6"] .cat-dot { color: #0f766e; }
 [data-theme="light"] .card[data-cat-color="7"] .card-category, [data-theme="light"] .cat[data-cat-color="7"] .cat-dot { color: #9333ea; }
 [data-theme="light"] .card[data-cat-color="8"] .card-category, [data-theme="light"] .cat[data-cat-color="8"] .cat-dot { color: #a16207; }
 [data-theme="light"] .card[data-cat-color="9"] .card-category, [data-theme="light"] .cat[data-cat-color="9"] .cat-dot { color: #4f46e5; }
 [data-theme="light"] .card[data-cat-color="10"] .card-category, [data-theme="light"] .cat[data-cat-color="10"] .cat-dot { color: #dc2626; }
-[data-theme="light"] .card[data-cat-color="11"] .card-category, [data-theme="light"] .cat[data-cat-color="11"] .cat-dot { color: #16a34a; }
-[data-theme="light"] .card[data-cat-color="12"] .card-category, [data-theme="light"] .cat[data-cat-color="12"] .cat-dot { color: #0284c7; }
+[data-theme="light"] .card[data-cat-color="11"] .card-category, [data-theme="light"] .cat[data-cat-color="11"] .cat-dot { color: #15803d; }
+[data-theme="light"] .card[data-cat-color="12"] .card-category, [data-theme="light"] .cat[data-cat-color="12"] .cat-dot { color: #0369a1; }
 
 /* ==========================================================================
    Skeleton loaders
@@ -1886,10 +1889,18 @@ h1 .accent-word {
   border-left: 1px solid var(--border-strong);
   box-shadow: -8px 0 40px rgba(0, 0, 0, 0.4);
   transform: translateX(100%);
-  transition: transform var(--dur-slow) var(--ease-out);
+  /* Hidden panels leave the tab order and accessibility tree; the flip waits
+     for the slide-out to finish so the panel does not vanish mid-transition. */
+  visibility: hidden;
+  transition: transform var(--dur-slow) var(--ease-out),
+              visibility 0s linear var(--dur-slow);
   overflow: hidden;
 }
-.skill-detail.open { transform: translateX(0); }
+.skill-detail.open {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform var(--dur-slow) var(--ease-out), visibility 0s;
+}
 
 /* Prevent background scroll while panel is open */
 body.sd-open { overflow: hidden; }
@@ -2432,6 +2443,8 @@ body.sd-open { overflow: hidden; }
   color: var(--text-faint);
 }
 .anatomy-choice.active .anatomy-choice-eg { color: inherit; opacity: 0.75; }
+/* The 0.75 opacity drops #00767f to about 3.2:1 on #f0f7f7; full opacity is 4.96:1. */
+[data-theme="light"] .anatomy-choice.active .anatomy-choice-eg { opacity: 1; }
 .anatomy-code {
   position: relative;
   margin: 0 18px;
