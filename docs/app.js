@@ -11,6 +11,24 @@ const HARNESS_KEY = "skills:harnesses";
 const PICKS_KEY = "skills:picks";
 const SKELETON_COUNT = 9;
 
+// localStorage can throw (site data blocked, some privacy modes, sandboxed
+// embeds). Fall back to an in-memory copy so the catalog still works for the
+// session; it just won't remember sort, theme, tools or picks across visits.
+const memoryStore = new Map();
+const storage = {
+  get(key) {
+    try {
+      const value = localStorage.getItem(key);
+      if (value !== null) return value;
+    } catch {}
+    return memoryStore.has(key) ? memoryStore.get(key) : null;
+  },
+  set(key, value) {
+    memoryStore.set(key, String(value));
+    try { localStorage.setItem(key, value); } catch {}
+  },
+};
+
 // Cards render a page at a time. Rendering all 810 built ~45k DOM nodes and
 // ~13k tab stops, which made the grid unusable with a keyboard and pushed the
 // document past 95,000px.
@@ -88,7 +106,7 @@ const TASK_ROUTES = [
 
 function loadStoredHarnesses() {
   try {
-    const stored = JSON.parse(localStorage.getItem(HARNESS_KEY));
+    const stored = JSON.parse(storage.get(HARNESS_KEY));
     if (Array.isArray(stored) && stored.length) return stored;
   } catch {}
   return ["claude-code"];
@@ -96,7 +114,7 @@ function loadStoredHarnesses() {
 
 function loadStoredPicks() {
   try {
-    const stored = JSON.parse(localStorage.getItem(PICKS_KEY));
+    const stored = JSON.parse(storage.get(PICKS_KEY));
     if (Array.isArray(stored)) return stored.filter((s) => typeof s === "string");
   } catch {}
   return [];
@@ -109,7 +127,7 @@ const state = {
   filterCategory: null,
   filterRoute: null,
   recommendedSkillNames: null,
-  sort: localStorage.getItem(SORT_KEY) || "name",
+  sort: storage.get(SORT_KEY) || "name",
   catColor: new Map(),
   selectedHarnesses: loadStoredHarnesses(),
   picks: loadStoredPicks(),
@@ -124,7 +142,7 @@ const state = {
    ========================================================================== */
 
 function initTheme() {
-  const stored = localStorage.getItem(THEME_KEY);
+  const stored = storage.get(THEME_KEY);
   const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
   const initial = stored || (prefersLight ? "light" : "dark");
   applyTheme(initial);
@@ -132,13 +150,13 @@ function initTheme() {
   $("#themeToggle")?.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme") || "dark";
     applyTheme(current === "dark" ? "light" : "dark");
-    localStorage.setItem(THEME_KEY, document.documentElement.getAttribute("data-theme"));
+    storage.set(THEME_KEY, document.documentElement.getAttribute("data-theme"));
   });
 
   // Follow system if user hasn't picked manually.
   if (!stored) {
     window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
-      if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? "light" : "dark");
+      if (!storage.get(THEME_KEY)) applyTheme(e.matches ? "light" : "dark");
     });
   }
 }
@@ -206,7 +224,7 @@ async function init() {
   $("#sortBy").value = state.sort;
   $("#sortBy").addEventListener("change", (e) => {
     state.sort = e.target.value;
-    localStorage.setItem(SORT_KEY, state.sort);
+    storage.set(SORT_KEY, state.sort);
     render();
   });
 
@@ -1046,7 +1064,7 @@ function firstSentence(text) {
    ========================================================================== */
 
 function savePicks() {
-  try { localStorage.setItem(PICKS_KEY, JSON.stringify(state.picks)); } catch {}
+  storage.set(PICKS_KEY, JSON.stringify(state.picks));
 }
 
 function togglePick(installPath) {
@@ -1356,7 +1374,7 @@ function renderHarnesses() {
       showToast("Keep at least one tool selected — the commands need a destination.");
       return;
     }
-    localStorage.setItem(HARNESS_KEY, JSON.stringify(state.selectedHarnesses));
+    storage.set(HARNESS_KEY, JSON.stringify(state.selectedHarnesses));
     $$(".harness", bar).forEach((b) => {
       const active = state.selectedHarnesses.includes(b.dataset.harnessId);
       b.classList.toggle("active", active);
