@@ -33,7 +33,7 @@ st.dataframe(df)
 - Handles reconnection
 - Works with st.secrets
 
-## Caller's rights connection (Streamlit 1.53+)
+## Caller's rights connection (Streamlit 1.53.1+)
 
 For apps running in Snowpark Container Services or Snowflake serverless compute with caller's rights
 enabled, use the caller's-rights connection name to run queries with the viewer's permissions instead
