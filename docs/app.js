@@ -1593,6 +1593,7 @@ function openSkillDetail(skill) {
   if (filesEl) filesEl.innerHTML = "";
 
   panel.setAttribute("aria-hidden", "false");
+  panel.inert = false;
   panel.classList.add("open");
   document.getElementById("skillDetailOverlay")?.classList.add("visible");
   document.body.classList.add("sd-open");
@@ -1651,6 +1652,7 @@ function closeSkillDetail() {
   const panel = document.getElementById("skillDetail");
   if (!panel) return;
   panel.setAttribute("aria-hidden", "true");
+  panel.inert = true;
   panel.classList.remove("open");
   document.getElementById("skillDetailOverlay")?.classList.remove("visible");
   document.body.classList.remove("sd-open");
