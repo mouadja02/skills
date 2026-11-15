@@ -400,7 +400,7 @@ contributed it to github/awesome-copilot.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-746 of 800 skills declare an upstream `source`, across 58 sources. The remaining 54 declare no upstream source.
+747 of 801 skills declare an upstream `source`, across 59 sources. The remaining 54 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1456,6 +1456,16 @@ License: Apache-2.0
 | Install path | License |
 | --- | --- |
 | [`code-quality/quality-playbook`](../skills/code-quality/quality-playbook/SKILL.md) | Apache-2.0 |
+
+### dbt-labs/dbt-agent-skills
+
+Source: https://github.com/dbt-labs/dbt-agent-skills
+Credit: Adapted from dbt-labs/dbt-agent-skills, adding-dbt-unit-test, commit b8facde20b7a92c40ce3e6b86b71c4b92aa44040; see LICENSE.
+License: Apache-2.0
+
+| Install path | License |
+| --- | --- |
+| [`databases/dbt-unit-testing`](../skills/databases/dbt-unit-testing/SKILL.md) | Apache-2.0 |
 
 ### forrestchang/andrej-karpathy-skills
 

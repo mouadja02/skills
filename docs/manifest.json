@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-05T11:07:24.124Z",
+  "generated_at": "2026-11-15T17:01:57.403Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 800,
+  "count": 801,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -54,7 +54,7 @@
     "communication": 1,
     "context-engineering": 21,
     "creative": 2,
-    "databases": 26,
+    "databases": 27,
     "design-and-ui": 34,
     "dev-workflow": 29,
     "devops": 44,
@@ -3525,6 +3525,17 @@
       "depth": 2,
       "description": "Use when adding or repairing dbt model contracts — generating data_type declarations from manifest.json and catalog.json, preserving existing column tests and docs, and validating a contract before it is enforced in CI.",
       "license": "MIT"
+    },
+    {
+      "name": "dbt-unit-testing",
+      "category": "databases",
+      "install_path": "databases/dbt-unit-testing",
+      "path": "skills/databases/dbt-unit-testing",
+      "depth": 2,
+      "description": "Use when adding fixture-driven unit tests for dbt SQL model logic, fixing a transformation bug, or developing a model test-first. Covers complete dependency mocks, incremental and ephemeral cases, safe development execution, and CI handoff. For column uniqueness or null checks alone, use ordinary dbt data tests.",
+      "license": "Apache-2.0",
+      "source": "https://github.com/dbt-labs/dbt-agent-skills",
+      "attribution": "Adapted from dbt-labs/dbt-agent-skills, adding-dbt-unit-test, commit b8facde20b7a92c40ce3e6b86b71c4b92aa44040; see LICENSE."
     },
     {
       "name": "ef-core",

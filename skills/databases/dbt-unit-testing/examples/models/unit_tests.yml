@@ -1,0 +1,58 @@
+unit_tests:
+  - name: revenue_full_refresh_business_rules
+    model: fct_order_revenue
+    overrides:
+      macros:
+        is_incremental: false
+    given:
+      - input: ref('int_payments')
+        format: sql
+        rows: |
+          select 1 as payment_id, 10 as order_id, cast(20 as decimal(12,2)) as amount, 'settled' as status, cast('2026-01-01' as timestamp) as paid_at
+          union all select 2, 10, -5, 'settled', cast('2026-01-02' as timestamp)
+          union all select 3, 10, 99, 'pending', cast('2026-01-03' as timestamp)
+          union all select 4, 20, 7, 'settled', cast('2026-01-01' as timestamp)
+          union all select 5, 30, 50, 'pending', cast('2026-01-02' as timestamp)
+    expect:
+      rows:
+        - {order_id: 10, revenue: 15}
+        - {order_id: 20, revenue: 7}
+        - {order_id: 30, revenue: 0}
+
+  - name: revenue_incremental_recomputes_changed_order
+    model: fct_order_revenue
+    overrides:
+      macros:
+        is_incremental: true
+    given:
+      - input: ref('int_payments')
+        format: sql
+        rows: |
+          select 1 as payment_id, 10 as order_id, cast(20 as decimal(12,2)) as amount, 'settled' as status, cast('2026-01-01' as timestamp) as paid_at
+          union all select 2, 10, 5, 'settled', cast('2026-01-04' as timestamp)
+          union all select 3, 20, 7, 'settled', cast('2026-01-01' as timestamp)
+      - input: this
+        rows:
+          - {order_id: 10, revenue: 20, last_payment_at: '2026-01-03 00:00:00'}
+    expect:
+      rows:
+        - {order_id: 10, revenue: 25}
+
+  - name: revenue_incremental_includes_timestamp_ties
+    model: fct_order_revenue
+    overrides:
+      macros:
+        is_incremental: true
+    given:
+      - input: ref('int_payments')
+        format: sql
+        rows: |
+          select 1 as payment_id, 10 as order_id, cast(20 as decimal(12,2)) as amount, 'settled' as status, cast('2026-01-03' as timestamp) as paid_at
+          union all select 2, 20, 7, 'settled', cast('2026-01-03' as timestamp)
+      - input: this
+        rows:
+          - {order_id: 10, revenue: 20, last_payment_at: '2026-01-03 00:00:00'}
+    expect:
+      rows:
+        - {order_id: 10, revenue: 20}
+        - {order_id: 20, revenue: 7}
