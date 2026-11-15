@@ -2288,7 +2288,8 @@ body.sd-open { overflow: hidden; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .skill-detail { transition: none; }
+  .skill-detail,
+  .skill-detail.open { transition: none; }
   .sd-overlay { transition: none; }
   .sd-dot { animation: none; opacity: 0.6; }
 }
