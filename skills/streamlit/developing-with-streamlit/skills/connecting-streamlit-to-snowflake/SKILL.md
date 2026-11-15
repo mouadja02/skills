@@ -1,6 +1,7 @@
 ---
 name: connecting-streamlit-to-snowflake
 description: Use when a Streamlit app must read from or write to Snowflake — st.connection, secrets handling, caching query results, and Streamlit in Snowflake considerations.
+version: "1.0.0"
 license: Apache-2.0
 source: "https://github.com/streamlit/agent-skills"
 attribution: "streamlit/agent-skills by Streamlit"
@@ -32,13 +33,18 @@ st.dataframe(df)
 - Handles reconnection
 - Works with st.secrets
 
-## Caller's rights connection (Streamlit 1.53+)
+## Caller's rights connection (Streamlit 1.53.1+)
 
-For apps running in Snowflake, use caller's rights to run queries with the viewer's permissions instead of the app owner's:
+For apps running in Snowpark Container Services or Snowflake serverless compute with caller's rights
+enabled, use the caller's-rights connection name to run queries with the viewer's permissions instead
+of the app owner's:
 
 ```python
-conn = st.connection("snowflake", type="snowflake-callers-rights")
+conn = st.connection("snowflake-callers-rights")
 ```
+
+This connection type is unavailable in a local environment. Switch explicitly to
+`st.connection("snowflake")` for local development rather than silently falling back.
 
 This is useful when:
 - Different users should see different data based on their Snowflake roles
@@ -112,8 +118,8 @@ session = conn.session()
 # Write a dataframe
 session.write_pandas(df, "MY_TABLE", auto_create_table=True)
 
-# Execute statements
-session.sql("INSERT INTO logs VALUES (:ts, :msg)", params={...}).collect()
+# Execute statements (Snowpark Session.sql supports qmark bind variables)
+session.sql("INSERT INTO logs VALUES (?, ?)", params=[timestamp, message]).collect()
 ```
 
 ## Multiple connections
