@@ -1,0 +1,8 @@
+dbt_unit_testing_demo:
+  target: demo
+  outputs:
+    demo:
+      type: duckdb
+      path: "{{ env_var('DBT_DEMO_PATH') }}"
+      schema: dbt_skill_demo
+      threads: 1
