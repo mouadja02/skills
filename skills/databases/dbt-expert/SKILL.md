@@ -4,11 +4,23 @@ description: >-
   Writes and reviews dbt projects targeting Snowflake: models, schema.yml metadata, sources, tests,
   macros, and project structure. Use when building or reviewing dbt models, generating dbt YAML, or
   applying dbt best practices.
+version: "1.1.0"
 ---
 
 # dbt Expert
 
 You are working with dbt (data build tool) targeting Snowflake. Apply production-grade patterns at every level — clean SQL, thorough YAML metadata, sensible tests, and a project structure that scales.
+
+## When to Use
+
+- Build or review a dbt project that targets Snowflake.
+- Choose a model materialization or incremental strategy.
+- Author model/source YAML, data tests, snapshots, or macros.
+- Diagnose project structure, lineage, freshness, or compilation issues.
+
+For fixture-driven tests of model business logic, use the separately installed
+`dbt-unit-testing` skill. For ordinary uniqueness, null, relationship, or accepted-
+value checks against materialized data, stay with dbt data tests.
 
 ---
 
@@ -20,8 +32,11 @@ You are working with dbt (data build tool) targeting Snowflake. Apply production
 | `table` | Stable staging/intermediate layers queried often |
 | `incremental` | Large fact tables — only process new/changed rows |
 | `ephemeral` | CTEs you want to reuse across models — no physical table |
-| `snapshot` | Slowly changing dimensions (SCD Type 2) |
-| `dynamic_table` | Snowflake-native: auto-refresh on a lag, no dbt run needed |
+| `dynamic_table` | Snowflake-native managed refresh; check adapter-version support and configuration limits |
+
+Snapshots are separate dbt resources for SCD Type 2 history, not ordinary model
+materializations. Use `dbt snapshot`/`dbt build` and preserve their history; do not
+handle snapshots like replaceable tables or incremental models.
 
 Configure at the model level (override project defaults):
 ```sql
@@ -48,24 +63,40 @@ from {{ source('raw', 'events') }}
 {% endif %}
 ```
 
-**delete+insert** — for partitioned tables without a reliable unique key
+**delete+insert** — replace complete rows for selected `unique_key` values
 ```sql
 {{ config(
     materialized='incremental',
     unique_key=['date_day', 'account_id'],
-    incremental_strategy='delete+insert',
-    partition_by={'field': 'date_day', 'data_type': 'date'}
+    incremental_strategy='delete+insert'
 ) }}
 ```
+
+`partition_by` is not a Snowflake model config. Use `cluster_by` when clustering
+supports the access pattern. A `unique_key` still needs to identify the rows to
+delete; without a reliable replacement key, redesign the load rather than assume
+that `delete+insert` is partition-aware.
 
 **append** — event logs, audit tables where duplicates are acceptable
 ```sql
 {{ config(materialized='incremental', incremental_strategy='append') }}
 ```
 
-**insert_overwrite** — replace entire partitions (Snowflake dynamic partition pruning)
+**insert_overwrite** — on Snowflake this intentionally overwrites the entire table,
+not selected partitions. Do not copy partition-overwrite guidance from BigQuery,
+Spark, or Databricks. Use only when full-table overwrite without dropping the
+relation is the intended operation, and verify adapter-version support first.
 
-**On schema changes:** always add `on_schema_change='sync_all_columns'` for production incremental models — silently ignoring schema drift causes silent data loss.
+**microbatch** — large time-series datasets that need bounded batches, lookback,
+and backfills. Verify the dbt Core/adapter version and configure `event_time` and
+`batch_size`; on Snowflake the batch replacement behavior is adapter-specific.
+
+**On schema changes:** choose `ignore`, `fail`, `append_new_columns`, or
+`sync_all_columns` deliberately. `sync_all_columns` adds, drops, and changes
+top-level columns; it does not backfill historical rows and can make destructive
+schema changes. Prefer `fail` when drift requires review. Check current
+`dbt-snowflake` compatibility before using `sync_all_columns`, especially with
+collated string columns.
 
 ---
 
@@ -133,10 +164,11 @@ sources:
   - name: salesforce
     database: RAW_DB
     schema: SALESFORCE
-    freshness:
-      warn_after: {count: 12, period: hour}
-      error_after: {count: 24, period: hour}
-    loaded_at_field: _loaded_at
+    config:
+      freshness:
+        warn_after: {count: 12, period: hour}
+        error_after: {count: 24, period: hour}
+      loaded_at_field: _loaded_at
     tables:
       - name: account
         identifier: ACCOUNT  # actual table name if different
@@ -315,7 +347,9 @@ When generating dbt YAML files from code (e.g., from ETL metadata), follow these
 - `identifier` field in sources is only needed when the dbt model name differs from the actual table name
 - Freshness config only belongs on sources, not models
 - `ref()` creates lineage — always use it instead of hardcoding table names
-- `source()` for raw tables — never `ref()` a staging model that wraps a source
+- Use `source()` in the first model that reads a declared external/raw relation.
+  Downstream models should normally use `ref()` to consume that staging model;
+  do not bypass established staging logic by reading the raw source again.
 
 ---
 
@@ -330,3 +364,14 @@ dbt docs generate && dbt docs serve  # Browse lineage DAG
 dbt source freshness               # Check source staleness
 dbt list --select tag:daily        # Find all models tagged daily
 ```
+
+## Verification
+
+- Run `dbt parse` with the project's pinned dbt Core and `dbt-snowflake` versions.
+- Run `dbt compile --select <changed-model>` against an explicit development target.
+- For incremental changes, test full-refresh and incremental paths, inspect the
+  compiled strategy SQL, and verify the `unique_key`, lookback, late-arrival, and
+  schema-change policy with synthetic data before production.
+- Run the project's unit/data tests and inspect the exact selected resources.
+- Recheck the current dbt Snowflake configuration and incremental-strategy docs;
+  strategy behavior and version gates change over time.
