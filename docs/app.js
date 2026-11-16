@@ -1396,7 +1396,9 @@ function onHarnessChange() {
    URL State — share by link
    ========================================================================== */
 
-function updateUrl() {
+// The address for the current view: the active filters, plus the open skill
+// while the detail panel is showing one.
+function currentViewUrl() {
   const params = new URLSearchParams();
   if (state.filterCategory) params.set("cat", state.filterCategory);
   if (state.filterRoute) params.set("route", state.filterRoute);
@@ -1408,8 +1410,16 @@ function updateUrl() {
     });
     params.set("skills", paths.join(","));
   }
+  if (sdSkill) params.set("skill", sdSkill.install_path);
   const qs = params.toString();
-  history.replaceState(null, "", qs ? `${location.pathname}?${qs}` : location.pathname);
+  return qs ? `${location.pathname}?${qs}` : location.pathname;
+}
+
+// Filters rewrite the current history entry instead of adding one, so typing in
+// the search box does not fill the Back button. The entry's state is passed
+// through: it is what marks an entry opened by the detail panel.
+function updateUrl() {
+  history.replaceState(history.state, "", currentViewUrl());
 }
 
 function applyUrlState() {
@@ -1432,36 +1442,32 @@ function applyUrlState() {
     syncCategoryButtons();
   }
 
+  // `filterToSkills` renders the grid itself when it finds a match.
+  let rendered = false;
   if (skillsParam) {
     const paths = skillsParam.split(",").map((s) => s.trim()).filter(Boolean);
-    if (filterToSkills(paths)) return;
+    rendered = filterToSkills(paths);
   }
 
-  if (skillParam) {
-    const skill = findSkill(skillParam);
-    if (skill) {
-      state.filterText = skill.name.toLowerCase();
+  if (!rendered) {
+    if (qParam) {
+      state.filterText = qParam.toLowerCase();
       const input = $("#search");
-      if (input) input.value = skill.name;
+      if (input) input.value = qParam;
       $("#searchClear")?.classList.remove("hidden");
     }
-  } else if (qParam) {
-    state.filterText = qParam.toLowerCase();
-    const input = $("#search");
-    if (input) input.value = qParam;
-    $("#searchClear")?.classList.remove("hidden");
+    render();
   }
 
-  render();
-
-  if (skillParam) {
-    const skill = findSkill(skillParam);
-    if (skill) {
-      setTimeout(() => {
-        $("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
-        highlightSkillCard(skill.name);
-      }, 150);
-    }
+  // `?skill=` opens that skill's detail panel over the catalog; it does not
+  // change the filters behind it.
+  const skill = skillParam ? findSkill(skillParam) : null;
+  if (skill) {
+    // render() has just rewritten the address without `skill`. Opening from a
+    // link takes over the current history entry instead of adding one: no click
+    // has happened yet, and browsers may skip entries a page adds without user
+    // activation, which would turn Escape (a Back) into leaving the site.
+    openSkillDetail(skill, { push: false });
   }
 }
 
@@ -1565,13 +1571,28 @@ function slugify(s) {
 const sdCache = new Map();
 let sdReturnFocus = null;
 let sdSkill = null;
+// True between asking the browser to go Back (to close the panel) and the
+// popstate that confirms it, so a second Escape cannot go Back twice.
+let sdBackPending = false;
 
-function openSkillDetail(skill) {
+// History-entry markers for the panel. "pushed": opening the panel added this
+// entry (from a click), so Back closes it and Forward reopens it. "landed": the
+// page was opened on a ?skill= link and the panel took over the landing entry,
+// so closing it rewrites the address in place and Back leaves as it always did.
+const SD_PUSHED = { skillDetail: "pushed" };
+const SD_LANDED = { skillDetail: "landed" };
+
+// A click on a card pushes an entry for the panel. `push: false` opens it on the
+// entry the browser is already on: a ?skill= landing, a reload, Back or Forward.
+function openSkillDetail(skill, { push = true } = {}) {
   const panel = document.getElementById("skillDetail");
   if (!panel) return;
 
+  // Keep the original opener when a Forward/Back swaps skills under an open panel.
+  if (!sdSkill) sdReturnFocus = document.activeElement;
   sdSkill = skill;
-  sdReturnFocus = document.activeElement;
+  if (push) history.pushState(SD_PUSHED, "", currentViewUrl());
+  else history.replaceState(history.state?.skillDetail ? history.state : SD_LANDED, "", currentViewUrl());
 
   const { repo, default_branch } = state.manifest;
 
@@ -1648,19 +1669,74 @@ function refreshOpenDetailInstall() {
   renderDetailInstall(sdSkill, state.manifest.repo, state.manifest.default_branch);
 }
 
+// Close button, overlay and Escape. When opening the panel added a history entry
+// the close is a Back: the popstate handler then does the closing, so every way
+// of leaving the panel (including the browser's own Back) ends the same way and
+// leaves no stray entry behind. A panel opened on the landing entry closes in
+// place (see SD_LANDED).
 function closeSkillDetail() {
+  if (!sdSkill) return;
+  if (history.state?.skillDetail === "pushed") {
+    if (sdBackPending) return;
+    sdBackPending = true;
+    history.back();
+    // popstate is what closes the panel; if the browser never delivers it, do
+    // not leave the panel stuck open.
+    setTimeout(() => {
+      if (!sdBackPending) return;
+      sdBackPending = false;
+      hideSkillDetail();
+    }, 500);
+    return;
+  }
+  hideSkillDetail();
+  history.replaceState(null, "", currentViewUrl());
+}
+
+function hideSkillDetail() {
   const panel = document.getElementById("skillDetail");
   if (!panel) return;
+  const skill = sdSkill;
+  const opener = sdReturnFocus;
   panel.setAttribute("aria-hidden", "true");
   panel.inert = true;
   panel.classList.remove("open");
   document.getElementById("skillDetailOverlay")?.classList.remove("visible");
   document.body.classList.remove("sd-open");
-  // Return focus to whatever opened the panel so the keyboard position in the
-  // grid is not lost.
-  if (sdReturnFocus?.isConnected) sdReturnFocus.focus({ preventScroll: true });
   sdReturnFocus = null;
   sdSkill = null;
+  // Return focus to whatever opened the panel so the keyboard position in the
+  // grid is not lost. A panel opened from a link or by Forward has no opener (or
+  // the grid was re-rendered under it): land on the skill's card when it is on
+  // screen, otherwise at the start of the catalog.
+  if (opener?.isConnected && opener !== document.body) {
+    opener.focus({ preventScroll: true });
+    return;
+  }
+  const card = skill && $(`.card[data-skill-path="${cssEscape(skill.install_path)}"] .card-open`);
+  if (card) {
+    card.focus();
+    return;
+  }
+  const browse = $("#browse");
+  if (browse) {
+    if (!browse.hasAttribute("tabindex")) browse.setAttribute("tabindex", "-1");
+    browse.focus({ preventScroll: true });
+  }
+}
+
+// Back and Forward: make the panel match the address. Only `skill` matters —
+// filters are rewritten in place, never pushed — so hash-only changes and
+// entries for the same skill are no-ops.
+function syncSkillDetailToUrl() {
+  sdBackPending = false;
+  const ref = new URLSearchParams(location.search).get("skill");
+  const skill = ref ? findSkill(ref) : null;
+  if (!skill) {
+    if (sdSkill) hideSkillDetail();
+    return;
+  }
+  if (sdSkill?.install_path !== skill.install_path) openSkillDetail(skill, { push: false });
 }
 
 function bindSkillDetail() {
@@ -1675,6 +1751,21 @@ function bindSkillDetail() {
 
   panel?.querySelector(".sd-share")?.addEventListener("click", () => {
     if (sdSkill) copyShareUrl(getSkillShareUrl(sdSkill));
+  });
+
+  window.addEventListener("popstate", syncSkillDetailToUrl);
+
+  // A "#heading" link in the rendered Markdown scrolls to that heading inside the
+  // panel (the page's own ids would otherwise win). When the heading is not
+  // found the link keeps its default: the file's page on GitHub.
+  panel?.addEventListener("click", (e) => {
+    const link = e.target.closest?.("a[data-sd-anchor]");
+    if (!link) return;
+    const scope = link.closest(".sd-file-md, .sd-content");
+    const heading = scope && [...scope.querySelectorAll("[id]")].find((el) => el.id === link.dataset.sdAnchor);
+    if (!heading) return;
+    e.preventDefault();
+    heading.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   document.addEventListener("keydown", (e) => {
@@ -1708,9 +1799,11 @@ async function fetchSkillDetail(skill, repo, branch) {
   if (!contentEl) return;
 
   const key = skill.install_path;
+  // Relative links in SKILL.md resolve against this file's page on GitHub.
+  const mdBase = { repo, branch, path: `${skill.path}/SKILL.md` };
   if (sdCache.has(key)) {
     const { markdown, files } = sdCache.get(key);
-    contentEl.innerHTML = sdMdToHtml(markdown);
+    contentEl.innerHTML = sdMdToHtml(markdown, mdBase);
     bindSdCopy(contentEl);
     renderSdFiles(filesEl, files, repo, branch);
     return;
@@ -1721,7 +1814,7 @@ async function fetchSkillDetail(skill, repo, branch) {
     const res = await fetch(rawUrl);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const markdown = await res.text();
-    contentEl.innerHTML = sdMdToHtml(markdown);
+    contentEl.innerHTML = sdMdToHtml(markdown, mdBase);
     bindSdCopy(contentEl);
 
     // Folder listing — best-effort via GitHub API
@@ -1840,7 +1933,8 @@ function bindSdTree(root, repo, branch) {
       const text = await r.text();
       body.dataset.loaded = "1";
       if (isMd) {
-        body.innerHTML = `<div class="sd-file-md">${sdMdToHtml(text)}</div>`;
+        // Links in a bundled file are relative to that file, not the skill root.
+        body.innerHTML = `<div class="sd-file-md">${sdMdToHtml(text, { repo, branch, path: btn.dataset.path })}</div>`;
         bindSdCopy(body);
       } else {
         body.innerHTML = `<pre class="sd-file-raw"><code>${escapeHtml(text)}</code></pre>`;
@@ -1876,33 +1970,125 @@ function bindSdCopy(root) {
 
 /* ---------- Markdown → HTML renderer for skill content ---------- */
 
-function sdMdToHtml(md) {
+// Only these link targets may become anchors. javascript:, data:, vbscript:,
+// file: and the rest are rendered as plain text.
+const SD_LINK_PROTOCOLS = new Set(["http:", "https:", "mailto:"]);
+
+function sdSafeDecode(s) {
+  try { return decodeURIComponent(s); } catch { return s; }
+}
+
+// Resolve the target of a Markdown link written in the file at `base.path`
+// (repo-relative; `base` is { repo, branch, path }). Returns { href, anchor } or
+// null when the link must not become an anchor.
+//
+// The decision is made on the parsed URL, never on the raw text, so case,
+// whitespace or encoding tricks in a scheme cannot get past the allowlist.
+// Repository-relative links resolve against the file's own GitHub page, so
+// `references/x.md` opens that file on GitHub (the site has no such path), and
+// a link that climbs out of the repository's tree is refused.
+function sdLinkHref(raw, base) {
+  let target = String(raw).trim();
+  const titled = target.match(/^(\S+)\s+(?:"[^"]*"|'[^']*')$/);
+  if (titled) target = titled[1];
+  if (target.startsWith("<") && target.endsWith(">")) target = target.slice(1, -1).trim();
+  if (!target) return null;
+
+  let absolute = null;
+  try { absolute = new URL(target); } catch { /* no scheme: a repository-relative link */ }
+  if (absolute) {
+    return SD_LINK_PROTOCOLS.has(absolute.protocol) ? { href: absolute.href, anchor: null } : null;
+  }
+
+  if (!base?.repo || !base.branch || !base.path) return null;
+  const root = `https://github.com/${base.repo}/blob/${base.branch}/`;
+  try {
+    const resolved = new URL(target, root + base.path.split("/").map(encodeURIComponent).join("/"));
+    if (!resolved.href.startsWith(root)) return null;
+    // A same-file "#heading" link can jump inside the panel (see
+    // bindSkillDetail); the GitHub URL stays as the fallback.
+    const anchor = target.startsWith("#") ? slugify(sdSafeDecode(target.slice(1))) : "";
+    return { href: resolved.href, anchor: anchor || null };
+  } catch {
+    return null;
+  }
+}
+
+// Inline spans that must not be touched by emphasis markers: code spans, and
+// links (whose label may itself hold code spans). Label and URL lengths are
+// bounded so a line of unmatched "[" costs a bounded scan per bracket instead of
+// a scan to the end of the line; a longer label is shown as plain text.
+const SD_INLINE_TOKEN = /`([^`\n]+)`|\[((?:[^\]\n`]|`[^`\n]{1,200}`){1,1000})\]\(([^)\n]{1,2000})\)/g;
+const SD_CODE_SPAN = /`([^`\n]+)`/g;
+
+// Placeholders for spans lifted out of a line before emphasis runs: a marker,
+// the span's index, a marker. Private-use code points never occur in the text.
+const SD_MARK_OPEN = String.fromCharCode(0xe000);
+const SD_MARK_CLOSE = String.fromCharCode(0xe001);
+const SD_MARKED = new RegExp(SD_MARK_OPEN + "([0-9]+)" + SD_MARK_CLOSE, "g");
+
+// Emphasis on text that is already HTML-escaped.
+function sdEmphasis(s) {
+  return s
+    .replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*([^*\n]+)\*/g, "<em>$1</em>")
+    .replace(/_([^_\n]+)_/g, "<em>$1</em>");
+}
+
+// Render Markdown to HTML for the detail panel. `base` ({ repo, branch, path })
+// says where the Markdown lives so its relative links can be resolved; without
+// it, relative links are shown as plain text.
+function sdMdToHtml(md, base = null) {
   // Strip YAML frontmatter
   const src = md.replace(/^---[\s\S]*?---\n?/, "").trim();
   const lines = src.split("\n");
   const out = [];
   let i = 0;
 
-  // Inline formatting (applied to already-escaped text)
-  const inlineFmt = (raw) => {
-    // Split on code spans first to avoid processing their content
-    return raw.split(/(`[^`\n]+`)/g).map((part, idx) => {
-      if (idx % 2 === 1) {
-        // Code span — escape and wrap
-        return `<code class="sd-ic">${escapeHtml(part.slice(1, -1))}</code>`;
+  // Inline formatting. Code spans and links are lifted out first (held behind
+  // private-use markers) so emphasis cannot rewrite a URL — `_` in a file name
+  // used to become <em> inside the href — and so each URL and label is
+  // HTML-escaped exactly once. Emphasis then runs over the whole string, which
+  // keeps `**[bold link](url)**` working.
+  const fmt = (raw, withLinks) => {
+    const held = [];
+    const hold = (html) => `${SD_MARK_OPEN}${held.push(html) - 1}${SD_MARK_CLOSE}`;
+    const lifted = raw.split(SD_MARK_OPEN).join("").split(SD_MARK_CLOSE).join("").replace(
+      withLinks ? SD_INLINE_TOKEN : SD_CODE_SPAN,
+      (_, code, label, url) => {
+        if (code !== undefined) return hold(`<code class="sd-ic">${escapeHtml(code)}</code>`);
+        const text = fmt(label, false);
+        const link = sdLinkHref(url, base);
+        if (!link) return hold(text);
+        const anchor = link.anchor ? ` data-sd-anchor="${escapeHtml(link.anchor)}"` : "";
+        return hold(`<a href="${escapeHtml(link.href)}"${anchor} target="_blank" rel="noopener">${text}</a>`);
       }
-      let s = escapeHtml(part);
-      s = s.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
-      s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-      s = s.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
-      s = s.replace(/_([^_\n]+)_/g, "<em>$1</em>");
-      s = s.replace(/\[([^\]\n]+)\]\(([^)\n]+)\)/g,
-        (_, text, url) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`);
-      return s;
-    }).join("");
+    );
+    return sdEmphasis(escapeHtml(lifted)).replace(SD_MARKED, (_, n) => held[Number(n)]);
+  };
+  const inlineFmt = (raw) => fmt(raw, true);
+
+  // A table starts at a "| … |" line followed by a "|---|---|" separator row.
+  // Used by both the table branch and the paragraph loop so they agree on
+  // where a table begins; a "|" line that is not one is ordinary text.
+  const isTableStart = (idx) => {
+    const t = lines[idx].trim();
+    return t.startsWith("|") && t.endsWith("|") &&
+      idx + 1 < lines.length && /^\|[\s\-:|]+\|$/.test(lines[idx + 1].trim());
   };
 
+  let progressed = -1;
   while (i < lines.length) {
+    // Progress guard: this loop runs on the page's main thread, so a branch
+    // that consumes nothing would freeze the tab. Emit the line as text instead.
+    if (i === progressed) {
+      out.push(`<p class="sd-p">${inlineFmt(lines[i])}</p>`);
+      i++;
+      continue;
+    }
+    progressed = i;
+
     const line = lines[i];
     const trim = line.trim();
 
@@ -1945,8 +2131,7 @@ function sdMdToHtml(md) {
     }
 
     // ── Table ────────────────────────────────────────────────────────────
-    if (trim.startsWith("|") && trim.endsWith("|") &&
-        i + 1 < lines.length && /^\|[\s\-:|]+\|$/.test(lines[i + 1].trim())) {
+    if (isTableStart(i)) {
       const tLines = [];
       while (i < lines.length && lines[i].trim().startsWith("|")) {
         tLines.push(lines[i]);
@@ -2016,13 +2201,20 @@ function sdMdToHtml(md) {
     if (!trim) { i++; continue; }
 
     // ── Paragraph ────────────────────────────────────────────────────────
+    // The first line is always taken: every block opener was handled above, so
+    // reaching here means it is text. Only later lines can end the paragraph.
+    // (A "|" line that is not a table used to end it before taking any line,
+    // so the outer loop never advanced.)
     const pLines = [];
+    const pStart = i;
     while (i < lines.length) {
       const t = lines[i].trim();
       if (!t) break;
-      if (/^#{1,4}\s/.test(t) || t.startsWith("```") || t.startsWith(">")) break;
-      if (/^\s*[-*+] /.test(lines[i]) || /^\d+\.\s/.test(t)) break;
-      if (t.startsWith("|") || t === "---" || t === "***") break;
+      if (i > pStart) {
+        if (/^#{1,4}\s/.test(t) || t.startsWith("```") || t.startsWith(">")) break;
+        if (/^\s*[-*+] /.test(lines[i]) || /^\d+\.\s/.test(t)) break;
+        if (isTableStart(i) || t === "---" || t === "***") break;
+      }
       pLines.push(lines[i]);
       i++;
     }
