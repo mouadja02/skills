@@ -7,6 +7,7 @@ description: >-
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
+version: "1.1.0"
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
@@ -20,8 +21,11 @@ commands, or validation in apps that use `CommunityToolkit.Mvvm` 8.x.
 > pub/sub patterns. Load **`mvvm-toolkit-di`** for
 > `Microsoft.Extensions.DependencyInjection` integration.
 
-> **Quick recap.** `[ObservableProperty]` on private fields in `partial`
-> classes; `[RelayCommand]` on instance methods; inherit from
+> **Quick recap.** On CommunityToolkit.Mvvm 8.4+, use an
+> `[ObservableProperty]` partial property when the project uses the .NET 9
+> SDK and C# preview language mode required by Toolkit 8.4;
+> keep the field form for older language versions. WinUI 3 AOT requires the
+> partial-property form. Use `[RelayCommand]` on instance methods; inherit from
 > `ObservableObject` (or `ObservableValidator` for input forms,
 > `ObservableRecipient` when using `IMessenger`).
 
@@ -31,7 +35,7 @@ commands, or validation in apps that use `CommunityToolkit.Mvvm` 8.x.
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 </ItemGroup>
 ```
 
@@ -48,8 +52,10 @@ using CommunityToolkit.Mvvm.Input;             // [RelayCommand], RelayCommand, 
 
 > **Universal rule.** Every type that uses `[ObservableProperty]` or
 > `[RelayCommand]` — and every enclosing type, if nested — must be
-> declared `partial`. Without it, the generators emit
-> `MVVMTK0008` / `MVVMTK0042`.
+> declared `partial`. A non-partial containing type triggers `MVVMTK0008`.
+> `MVVMTK0042` instead recommends converting an observable field to a
+> partial property; `MVVMTK0045` warns that the field form is not AOT-safe
+> in WinRT scenarios such as WinUI 3.
 
 ---
 
@@ -57,11 +63,11 @@ using CommunityToolkit.Mvvm.Input;             // [RelayCommand], RelayCommand, 
 
 | Attribute | Applied to | Generates |
 |-----------|-----------|-----------|
-| `[ObservableProperty]` | private field | Public `INotifyPropertyChanged` property + `OnXxxChanging`/`OnXxxChanged` partial-method hooks |
-| `[NotifyPropertyChangedFor(nameof(Other))]` | observable field | Also raises `PropertyChanged` for the listed property |
-| `[NotifyCanExecuteChangedFor(nameof(MyCommand))]` | observable field | Calls `MyCommand.NotifyCanExecuteChanged()` on change |
-| `[NotifyDataErrorInfo]` | observable field on `ObservableValidator` | Calls `ValidateProperty(value)` from the setter |
-| `[NotifyPropertyChangedRecipients]` | observable field on `ObservableRecipient` | `Broadcast(old, new)` after the change |
+| `[ObservableProperty]` | partial property (.NET 9 SDK + C# preview for Toolkit 8.4) or field | Implements the property/notification setter + `OnXxxChanging`/`OnXxxChanged` partial-method hooks |
+| `[NotifyPropertyChangedFor(nameof(Other))]` | observable property or field | Also raises `PropertyChanged` for the listed property |
+| `[NotifyCanExecuteChangedFor(nameof(MyCommand))]` | observable property or field | Calls `MyCommand.NotifyCanExecuteChanged()` on change |
+| `[NotifyDataErrorInfo]` | observable property or field on `ObservableValidator` | Calls `ValidateProperty(value)` from the setter |
+| `[NotifyPropertyChangedRecipients]` | observable property or field on `ObservableRecipient` | `Broadcast(old, new)` after the change |
 | `[RelayCommand]` | instance method | Lazy `RelayCommand` / `AsyncRelayCommand` exposed as `IRelayCommand` / `IAsyncRelayCommand` |
 | `[RelayCommand(CanExecute = nameof(CanX))]` | instance method | Wires `CanExecute` to a method or property |
 | `[RelayCommand(IncludeCancelCommand = true)]` | async method with `CancellationToken` | Also generates `XxxCancelCommand` |
@@ -86,8 +92,18 @@ the full attribute reference with generated-code samples.
 public partial class ContactViewModel : ObservableObject
 {
     [ObservableProperty]
-    private string? name;
+    public partial string? Name { get; set; }
 }
+```
+
+In Toolkit 8.4, the partial-property form requires the .NET 9 SDK and C#
+preview language mode. It is preferred because analyzers,
+other generators, and WinRT AOT tooling can see the declared property. For a
+project pinned to an older language version, the compatible field form remains:
+
+```csharp
+[ObservableProperty]
+private string? name; // generates public Name
 ```
 
 ### Hooks: `OnXxxChanging` / `OnXxxChanged`
@@ -225,16 +241,20 @@ validator surface area.
 ## Top pitfalls
 
 1. **Forgetting `partial`.** Class (and every enclosing type) must be
-   `partial`. Compile error `MVVMTK0008` / `MVVMTK0042`.
-2. **PascalCase field name.** `[ObservableProperty] private string Name;`
+   `partial`. The containing-type error is `MVVMTK0008`.
+2. **Using field syntax in a WinUI 3 AOT app.** `MVVMTK0045` warns that
+   generated field-backed properties are not CsWinRT AOT-compatible. Use
+   `[ObservableProperty] public partial T Name { get; set; }` with the
+   required .NET 9 SDK and C# preview language mode.
+3. **PascalCase field name.** `[ObservableProperty] private string Name;`
    collides with the generated property. Use `name`, `_name`, or `m_name`.
-3. **`async void` on `[RelayCommand]`.** The generator only wraps
+4. **`async void` on `[RelayCommand]`.** The generator only wraps
    `Task`-returning methods as `IAsyncRelayCommand`. `async void` becomes
    a sync `RelayCommand` and exceptions are unobserved. Always return
    `Task`.
-4. **Forgetting `[NotifyCanExecuteChangedFor]`.** The Save button stays
+5. **Forgetting `[NotifyCanExecuteChangedFor]`.** The Save button stays
    disabled even though `CanSave()` would now return `true`.
-5. **Mutating the same reference held by an `[ObservableProperty]`
+6. **Mutating the same reference held by an `[ObservableProperty]`
    field.** `EqualityComparer<T>.Default` returns `true`, no notification
    fires. Replace the instance instead of mutating it.
 

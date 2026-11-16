@@ -4,15 +4,32 @@ Complete attribute reference for `CommunityToolkit.Mvvm` 8.x source
 generators, with the code each one produces.
 
 > **Universal rule.** Every type that uses one of these attributes — and
-> every enclosing type, if nested — must be declared `partial`. The
-> generators emit a sibling partial class declaration; without `partial`,
-> the compiler reports `MVVMTK0008` / `MVVMTK0042`.
+> every enclosing type, if nested — must be declared `partial`. A
+> non-partial containing type triggers `MVVMTK0008`. `MVVMTK0042` is the
+> separate recommendation to convert an observable field to a partial
+> property.
 
 ---
 
 ## `[ObservableProperty]`
 
-Generates an observable property from a private field.
+Implements an observable partial property, or generates one from a field.
+On CommunityToolkit.Mvvm 8.4, prefer the partial-property form when the
+project uses the required .NET 9 SDK and C# preview language mode:
+
+```csharp
+using CommunityToolkit.Mvvm.ComponentModel;
+
+public partial class SampleViewModel : ObservableObject
+{
+    [ObservableProperty]
+    public partial string? Name { get; set; }
+}
+```
+
+It is visible to analyzers and other generators and is required for WinUI 3
+AOT compatibility. Use the field form when the project is pinned to an older
+C# language version:
 
 ```csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -54,6 +71,7 @@ partial void OnNameChanged(string? oldValue, string? newValue);
 
 ### Naming
 
+- Partial property `Name` → implemented property `Name`
 - Field `name` → property `Name`
 - Field `_name` → property `Name`
 - Field `m_name` → property `Name`
@@ -75,7 +93,8 @@ partial void OnSelectedItemChanging(ChildViewModel? oldValue, ChildViewModel? ne
 }
 ```
 
-The hook methods are `partial` with no body declaration — you cannot add
+Both forms generate the same hook names. The hook methods are `partial` with
+no body declaration — you cannot add
 an explicit accessibility (no `public`/`private`).
 
 ---
