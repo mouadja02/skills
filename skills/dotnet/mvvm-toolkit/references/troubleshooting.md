@@ -15,7 +15,8 @@ The generators emit numbered diagnostics. The most common ones:
 | `MVVMTK0017` | `[NotifyDataErrorInfo]` used outside `ObservableValidator` | Inherit from `ObservableValidator` or remove the attribute |
 | `MVVMTK0018` | `[NotifyPropertyChangedRecipients]` used outside `ObservableRecipient` | Inherit from `ObservableRecipient` or remove the attribute |
 | `MVVMTK0030` | `[ObservableProperty]` used in a type that does not implement `INotifyPropertyChanged` (and the class-level `[INotifyPropertyChanged]` / `[ObservableObject]` attributes are also missing) | Inherit from `ObservableObject` or apply `[INotifyPropertyChanged]` / `[ObservableObject]` to the type |
-| `MVVMTK0042` | The `[ObservableProperty]` field belongs to a generic type without proper `partial` declarations | Same fix as `MVVMTK0008` (add `partial`) |
+| `MVVMTK0042` | An `[ObservableProperty]` field can be converted to a partial property | With Toolkit 8.4's .NET 9 SDK and C# preview prerequisites, prefer `[ObservableProperty] public partial T Name { get; set; }`; otherwise keep the field form |
+| `MVVMTK0045` | An `[ObservableProperty]` field is not AOT-compatible in a WinRT scenario such as WinUI 3 | Use the supported partial-property form so CsWinRT can generate the required marshalling code |
 
 Search the full table at:
 <https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/generators/errors/>

@@ -12,33 +12,48 @@ container used by ASP.NET Core, Worker services, and the .NET Generic Host.
 
 ## Recommended composition root (Generic Host)
 
+For new projects, use `Host.CreateApplicationBuilder()`. This WPF example
+shows the complete host lifetime; adapt the same sequence to the equivalent
+startup and exit hooks on other XAML frameworks. Remove WPF's `StartupUri`,
+then wire `Startup="Application_Startup"` and `Exit="Application_Exit"` on
+the `Application` element.
+
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 public partial class App : Application
 {
-    public IHost Host { get; }
+    private IHost? host;
 
-    public App()
+    private async void Application_Startup(object sender, StartupEventArgs e)
     {
-        Host = Microsoft.Extensions.Hosting.Host
-            .CreateDefaultBuilder()
-            .ConfigureServices((_, services) =>
-            {
-                services.AddSingleton<IFilesService, FilesService>();
-                services.AddSingleton<ISettingsService, SettingsService>();
-                services.AddSingleton<IMessenger>(WeakReferenceMessenger.Default);
+        HostApplicationBuilder builder = Host.CreateApplicationBuilder();
+        builder.Services.AddSingleton<IFilesService, FilesService>();
+        builder.Services.AddSingleton<ISettingsService, SettingsService>();
+        builder.Services.AddSingleton<IMessenger>(WeakReferenceMessenger.Default);
+        builder.Services.AddSingleton<ShellViewModel>();
+        builder.Services.AddSingleton<MainWindow>();
+        builder.Services.AddTransient<ContactViewModel>();
 
-                services.AddSingleton<ShellViewModel>();
-                services.AddTransient<ContactViewModel>();
-                services.AddTransient<EditorViewModel>();
-            })
-            .Build();
+        host = builder.Build();
+        await host.StartAsync();
+
+        host.Services.GetRequiredService<MainWindow>().Show();
     }
 
     public static T GetService<T>() where T : class =>
-        ((App)Current).Host.Services.GetRequiredService<T>();
+        ((App)Current).host?.Services.GetRequiredService<T>()
+        ?? throw new InvalidOperationException("The application host has not started.");
+
+    private async void Application_Exit(object sender, ExitEventArgs e)
+    {
+        if (host is not null)
+        {
+            await host.StopAsync();
+            host.Dispose();
+        }
+    }
 }
 ```
 
@@ -49,8 +64,8 @@ Generic Host benefits:
 - Hosted services (`IHostedService`) for background work
 - Scope validation in development builds
 
-> On WPF and Windows Forms, integrate the host lifetime with the
-> application lifetime — see
+> Building the host alone does not start `IHostedService` instances. Start it
+> before resolving the UI root, then stop and dispose it on exit. See
 > [Use the .NET Generic Host in a WPF app](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/how-to-use-host-builder).
 
 ---
@@ -269,6 +284,9 @@ class you can pass through DI, prefer constructor injection.
    Indicates a service-locator pattern. Inject the specific dependencies
    you need.
 5. **Forgetting to wire scope validation in development.** Use
-   `Host.CreateDefaultBuilder()` (which sets `ValidateScopes` and
+   `Host.CreateApplicationBuilder()` (which sets `ValidateScopes` and
    `ValidateOnBuild` in development) so registration mistakes fail at
    startup, not at first use.
+6. **Building but never starting the host.** `Build()` creates the service
+   provider, but hosted services do not run until `StartAsync()`. Pair it
+   with `StopAsync()` and `Dispose()` in the application exit hook.

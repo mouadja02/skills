@@ -8,6 +8,7 @@ description: >-
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
+version: "1.1.0"
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
@@ -18,10 +19,11 @@ The MVVM Toolkit deliberately ships **no DI container** — it composes with
 `Microsoft.Extensions.DependencyInjection`, the same container ASP.NET
 Core, Worker services, and the .NET Generic Host use.
 
-> **TL;DR.** Build the service provider once at startup (prefer
-> `Host.CreateDefaultBuilder()`). Register services and ViewModels.
-> Inject through constructors. Avoid `Ioc.Default.GetService<T>()`
-> in user code.
+> **TL;DR.** For a new project, build one host with
+> `Host.CreateApplicationBuilder()`, start it before resolving UI objects,
+> then stop and dispose it from the application exit hook. Register services
+> and ViewModels once, inject through constructors, and avoid
+> `Ioc.Default.GetService<T>()` in user code.
 
 ---
 
@@ -43,6 +45,12 @@ skill. For Messenger pub/sub see **`mvvm-toolkit-messenger`**.
 
 ## Recommended composition root (Generic Host)
 
+This WPF example shows the complete lifetime. Map the same build/start and
+stop/dispose sequence to the startup and exit hooks of WinUI 3, MAUI, Uno, or
+Avalonia. Remove WPF's `StartupUri` so it does not construct the window outside
+DI, then wire `Startup="Application_Startup"` and
+`Exit="Application_Exit"` on the `Application` element.
+
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -50,27 +58,36 @@ using CommunityToolkit.Mvvm.Messaging;
 
 public partial class App : Application
 {
-    public IHost Host { get; }
+    private IHost? host;
 
-    public App()
+    private async void Application_Startup(object sender, StartupEventArgs e)
     {
-        Host = Microsoft.Extensions.Hosting.Host
-            .CreateDefaultBuilder()
-            .ConfigureServices((_, services) =>
-            {
-                services.AddSingleton<IFilesService, FilesService>();
-                services.AddSingleton<ISettingsService, SettingsService>();
-                services.AddSingleton<IMessenger>(WeakReferenceMessenger.Default);
+        HostApplicationBuilder builder = Host.CreateApplicationBuilder();
+        builder.Services.AddSingleton<IFilesService, FilesService>();
+        builder.Services.AddSingleton<ISettingsService, SettingsService>();
+        builder.Services.AddSingleton<IMessenger>(WeakReferenceMessenger.Default);
+        builder.Services.AddSingleton<ShellViewModel>();
+        builder.Services.AddSingleton<MainWindow>();
+        builder.Services.AddTransient<ContactViewModel>();
 
-                services.AddSingleton<ShellViewModel>();
-                services.AddTransient<ContactViewModel>();
-                services.AddTransient<EditorViewModel>();
-            })
-            .Build();
+        host = builder.Build();
+        await host.StartAsync();
+
+        host.Services.GetRequiredService<MainWindow>().Show();
     }
 
     public static T GetService<T>() where T : class =>
-        ((App)Current).Host.Services.GetRequiredService<T>();
+        ((App)Current).host?.Services.GetRequiredService<T>()
+        ?? throw new InvalidOperationException("The application host has not started.");
+
+    private async void Application_Exit(object sender, ExitEventArgs e)
+    {
+        if (host is not null)
+        {
+            await host.StopAsync();
+            host.Dispose();
+        }
+    }
 }
 ```
 
@@ -81,8 +98,8 @@ Generic Host benefits:
 - Hosted services (`IHostedService`) for background work
 - Scope validation in development builds
 
-> WPF and Windows Forms must integrate the host lifetime with the app
-> lifetime — see
+> Desktop UI apps must integrate the host lifetime with the app lifetime;
+> building a host does not start `IHostedService` instances. See
 > [Use the .NET Generic Host in a WPF app](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/how-to-use-host-builder).
 
 ### Without Generic Host
@@ -274,10 +291,13 @@ the DI container can construct, prefer constructor injection.
    container — singletons aren't shared. Build once at startup.
 4. **Capturing `IServiceProvider` in long-lived objects.** Indicates a
    service-locator pattern. Inject the specific dependencies you need.
-5. **No scope validation in development.** Use `Host.CreateDefaultBuilder()`
+5. **No scope validation in development.** Use `Host.CreateApplicationBuilder()`
    (which sets `ValidateScopes` and `ValidateOnBuild` in development) so
    registration mistakes fail at startup, not at first use.
-6. **Resolving scoped services from the root provider.** They're
+6. **Building but never starting the host.** `Build()` creates the service
+   provider, but `IHostedService` instances do not run until `StartAsync()`.
+   Pair it with `StopAsync()` and disposal in the application exit hook.
+7. **Resolving scoped services from the root provider.** They're
    effectively promoted to singleton lifetime — the warning is silent
    without scope validation. Either change the lifetime or resolve from
    an explicit `IServiceScope`.
