@@ -59,6 +59,12 @@ jobs:
       - name: Test light-theme contrast
         run: node --test scripts/test-docs-contrast.mjs
 
+      - name: Test skill detail Markdown renderer
+        run: node --test scripts/test-skill-detail-renderer.mjs
+
+      - name: Test skill detail links and history
+        run: node --test scripts/test-skill-detail-history.mjs
+
       - name: Test detector coverage and pagination formatting
         run: python3 -m unittest scripts/test_skill_scan_regressions.py
 
@@ -132,6 +138,12 @@ jobs:
 
       - name: Test light-theme contrast
         run: node --test scripts/test-docs-contrast.mjs
+
+      - name: Test skill detail Markdown renderer
+        run: node --test scripts/test-skill-detail-renderer.mjs
+
+      - name: Test skill detail links and history
+        run: node --test scripts/test-skill-detail-history.mjs
 
       - name: Test detector coverage and pagination formatting
         run: python3 -m unittest scripts/test_skill_scan_regressions.py
