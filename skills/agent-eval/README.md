@@ -6,7 +6,7 @@
 
 Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.
 
-**Total:** 24 skills.
+**Total:** 25 skills.
 
 ## Skills In This Category
 
@@ -36,5 +36,6 @@ Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecy
 | [`rag-evaluation-matrix`](rag-evaluation-matrix/SKILL.md) | `agent-eval/rag-evaluation-matrix` | Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost. |
 | [`semantic-kernel`](semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python. Use when working on applications, plugins, or function-calling flows built on Semantic Ke... |
 | [`skill-lifecycle-optimization`](skill-lifecycle-optimization/SKILL.md) | `agent-eval/skill-lifecycle-optimization` | Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstracti... |
+| [`skillevaluator-operations`](skillevaluator-operations/SKILL.md) | `agent-eval/skillevaluator-operations` | Use when validating, comparing, or release-gating agent skills with NVIDIA SkillEvaluator — choose a static, overlap, harness, or live A/B tier; forecast dependencies and cost; run with explicit isolation and permission gates; and report... |
 
 [Back to the category index](../README.md)

@@ -397,10 +397,25 @@ and ehmo's typecraft-guide-skill.
 in [andrewstellman/quality-playbook](https://github.com/andrewstellman/quality-playbook) (Apache-2.0) and
 contributed it to github/awesome-copilot.
 
+## NVIDIA SkillEvaluator
+
+Source repository: https://github.com/NVIDIA/SkillEvaluator
+
+The local `agent-eval/skillevaluator-operations` package adapts the upstream
+`skills/skillevaluator/` operational workflow at commit
+`d99d30403f33aebe96b2c9ae75d80cce1cc05515` for SkillEvaluator 0.9.0. It keeps
+tier selection, dependency and permission gates, live-evaluation isolation, and
+truthful report semantics while condensing version-specific command references.
+The CLI remains an external pinned dependency; no upstream executable code is
+vendored.
+
+License: Apache-2.0. The package carries the upstream LICENSE and an attribution
+NOTICE.
+
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-747 of 801 skills declare an upstream `source`, across 59 sources. The remaining 54 declare no upstream source.
+748 of 802 skills declare an upstream `source`, across 60 sources. The remaining 54 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1584,6 +1599,16 @@ License: MIT
 | Install path | License |
 | --- | --- |
 | [`design-and-ui/hallmark`](../skills/design-and-ui/hallmark/SKILL.md) | MIT |
+
+### NVIDIA/SkillEvaluator
+
+Source: https://github.com/NVIDIA/SkillEvaluator
+Credit: NVIDIA/SkillEvaluator by NVIDIA Corporation
+License: Apache-2.0
+
+| Install path | License |
+| --- | --- |
+| [`agent-eval/skillevaluator-operations`](../skills/agent-eval/skillevaluator-operations/SKILL.md) | Apache-2.0 |
 
 ### pbakaus/impeccable
 
