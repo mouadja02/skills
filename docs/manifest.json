@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-15T17:01:57.403Z",
+  "generated_at": "2026-11-17T11:13:13.121Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 801,
+  "count": 802,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -44,7 +44,7 @@
   ],
   "counts_by_category": {
     "agent-design": 55,
-    "agent-eval": 24,
+    "agent-eval": 25,
     "api-backend": 12,
     "business-strategy": 39,
     "cloud-aws": 83,
@@ -913,6 +913,17 @@
       "description": "Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstraction layer, test per model and harness, canary changes, and roll back regressions.",
       "source": "https://arxiv.org/abs/2605.27760; https://arxiv.org/abs/2605.27366; https://arxiv.org/abs/2605.30723; https://arxiv.org/abs/2605.30621; https://arxiv.org/abs/2605.31408; https://arxiv.org/abs/2605.23657",
       "attribution": "Derived from SkillGrad, MUSE-Autoskill, MASA, Harness Updating Is Not Harness Benefit, SkillsBench granularity study, and OpenSkillEval"
+    },
+    {
+      "name": "skillevaluator-operations",
+      "category": "agent-eval",
+      "install_path": "agent-eval/skillevaluator-operations",
+      "path": "skills/agent-eval/skillevaluator-operations",
+      "depth": 2,
+      "description": "Use when validating, comparing, or release-gating agent skills with NVIDIA SkillEvaluator — choose a static, overlap, harness, or live A/B tier; forecast dependencies and cost; run with explicit isolation and permission gates; and report exact evidence without overstating skipped tiers.",
+      "license": "Apache-2.0",
+      "source": "https://github.com/NVIDIA/SkillEvaluator/tree/d99d30403f33aebe96b2c9ae75d80cce1cc05515/skills/skillevaluator",
+      "attribution": "NVIDIA/SkillEvaluator by NVIDIA Corporation"
     },
     {
       "name": "aspnet-minimal-api-openapi",

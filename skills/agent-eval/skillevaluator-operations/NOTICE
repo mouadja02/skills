@@ -1,0 +1,11 @@
+SkillEvaluator Operations
+
+This package is adapted from NVIDIA SkillEvaluator.
+
+Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Upstream source:
+https://github.com/NVIDIA/SkillEvaluator/tree/d99d30403f33aebe96b2c9ae75d80cce1cc05515/skills/skillevaluator
+
+The adapted documentation has been modified for this collection. NVIDIA's
+trademarks are used only to identify the upstream project.

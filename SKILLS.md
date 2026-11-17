@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 801 skills across 36 categories.
+**Total:** 802 skills across 36 categories.
 
 ## Install one skill
 
@@ -31,7 +31,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | Category | Skills |
 | --- | ---: |
 | [`agent-design`](#agent-design) | 55 |
-| [`agent-eval`](#agent-eval) | 24 |
+| [`agent-eval`](#agent-eval) | 25 |
 | [`api-backend`](#api-backend) | 12 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 83 |
@@ -155,6 +155,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`rag-evaluation-matrix`](./skills/agent-eval/rag-evaluation-matrix/SKILL.md) | `agent-eval/rag-evaluation-matrix` | Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost. |
 | [`semantic-kernel`](./skills/agent-eval/semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python. Use when working on applications, plugins, or function-calling flows built on Semantic Kernel. |
 | [`skill-lifecycle-optimization`](./skills/agent-eval/skill-lifecycle-optimization/SKILL.md) | `agent-eval/skill-lifecycle-optimization` | Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstraction layer, test per model and harness, canary changes, and roll back regressions. |
+| [`skillevaluator-operations`](./skills/agent-eval/skillevaluator-operations/SKILL.md) | `agent-eval/skillevaluator-operations` | Use when validating, comparing, or release-gating agent skills with NVIDIA SkillEvaluator — choose a static, overlap, harness, or live A/B tier; forecast dependencies and cost; run with explicit isolation and permission gates; and report exact evidence without overstating skipped tiers. |
 
 ## api-backend
 
