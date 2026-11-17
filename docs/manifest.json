@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-17T11:13:13.121Z",
+  "generated_at": "2026-11-17T19:08:32.017Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 802,
@@ -8071,7 +8071,7 @@
       "install_path": "react-frontend/next-intl-add-language",
       "path": "skills/react-frontend/next-intl-add-language",
       "depth": 2,
-      "description": "Adds a new language to a Next.js app that uses next-intl: translates messages/en.json, registers the locale in routing.ts and middleware.ts, and adds it to the language toggle. Use when localizing a next-intl application into another language.",
+      "description": "Use when adding a locale to a Next.js application that uses next-intl—updates message catalogs, centralized routing, request loading, locale navigation, and version-appropriate proxy or middleware wiring.",
       "license": "MIT",
       "source": "https://github.com/github/awesome-copilot",
       "attribution": "github/awesome-copilot by GitHub Community"
