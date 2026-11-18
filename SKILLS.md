@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 802 skills across 36 categories.
+**Total:** 803 skills across 36 categories.
 
 ## Install one skill
 
@@ -31,7 +31,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | Category | Skills |
 | --- | ---: |
 | [`agent-design`](#agent-design) | 55 |
-| [`agent-eval`](#agent-eval) | 25 |
+| [`agent-eval`](#agent-eval) | 26 |
 | [`api-backend`](#api-backend) | 12 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 83 |
@@ -131,6 +131,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Skill | Install path | Description |
 | --- | --- | --- |
+| [`agent-memory-governance-evaluation`](./skills/agent-eval/agent-memory-governance-evaluation/SKILL.md) | `agent-eval/agent-memory-governance-evaluation` | Use when comparing persistent agent memory backends or changing recall, retention, correction, deletion, or isolation policy. Designs a synthetic, license-aware governance campaign; holds the agent/model constant; verifies traces and lifecycle effects; and returns per-dimension release evidence instead of one score. |
 | [`agent-trajectory-diagnostics`](./skills/agent-eval/agent-trajectory-diagnostics/SKILL.md) | `agent-eval/agent-trajectory-diagnostics` | Use when diagnosing agent benchmarks or runtime failures from trajectories instead of aggregate pass rates. Builds shared action-observation decision landscapes, identifies productive cores and trap regions, profiles Access/Trap/Repair behavior, and designs conservative trap-triggered recovery experiments. |
 | [`agentic-eval`](./skills/agent-eval/agentic-eval/SKILL.md) | `agent-eval/agentic-eval` | Patterns and techniques for evaluating and improving AI agent outputs. Use this skill when: - Implementing self-critique and reflection loops - Building evaluator-optimizer pipelines for quality-critical generation - Creating test-driven code refinement workflows - Designing rubric-based or LLM-as-judge evaluation systems - Adding iterative improvement to agent outputs (code, reports, analysis) - Measuring and improving agent response quality |
 | [`auto-memory-pro`](./skills/agent-eval/auto-memory-pro/SKILL.md) | `agent-eval/auto-memory-pro` | Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Claude has learned about your project, (2) graduating a pattern from notes to enforced rules, (3) turning a debugging solution into a skill, (4) checking memory health and capacity |
