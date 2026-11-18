@@ -415,7 +415,7 @@ NOTICE.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-748 of 802 skills declare an upstream `source`, across 60 sources. The remaining 54 declare no upstream source.
+749 of 803 skills declare an upstream `source`, across 61 sources. The remaining 54 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1451,6 +1451,16 @@ License: MIT
 | Install path | License |
 | --- | --- |
 | [`skills-management/skill-smell-audit`](../skills/skills-management/skill-smell-audit/SKILL.md) | MIT |
+
+### https://arxiv.org/abs/2611.20144
+
+Source: https://arxiv.org/abs/2611.20144
+Credit: Original workflow informed by HEAMS by Goel et al. and recurring Mem0/LangGraph lifecycle failures
+License: MIT
+
+| Install path | License |
+| --- | --- |
+| [`agent-eval/agent-memory-governance-evaluation`](../skills/agent-eval/agent-memory-governance-evaluation/SKILL.md) | MIT |
 
 ### https://code.claude.com/docs/en/costs
 

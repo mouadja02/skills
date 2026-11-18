@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-17T19:08:32.017Z",
+  "generated_at": "2026-11-18T11:25:51.645Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 802,
+  "count": 803,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -44,7 +44,7 @@
   ],
   "counts_by_category": {
     "agent-design": 55,
-    "agent-eval": 25,
+    "agent-eval": 26,
     "api-backend": 12,
     "business-strategy": 39,
     "cloud-aws": 83,
@@ -661,6 +661,17 @@
       "path": "skills/agent-design/trading-agent-builder",
       "depth": 2,
       "description": "Builds AI-powered trading and financial analysis agents with multi-agent LLM architectures: research pipelines, sentiment signals, portfolio optimization, backtesting, risk guardrails, and market monitoring. Use when designing or implementing an LLM-based trading or market-analysis system."
+    },
+    {
+      "name": "agent-memory-governance-evaluation",
+      "category": "agent-eval",
+      "install_path": "agent-eval/agent-memory-governance-evaluation",
+      "path": "skills/agent-eval/agent-memory-governance-evaluation",
+      "depth": 2,
+      "description": "Use when comparing persistent agent memory backends or changing recall, retention, correction, deletion, or isolation policy. Designs a synthetic, license-aware governance campaign; holds the agent/model constant; verifies traces and lifecycle effects; and returns per-dimension release evidence instead of one score.",
+      "license": "MIT",
+      "source": "https://arxiv.org/abs/2611.20144; https://github.com/milatechtransfer/heams",
+      "attribution": "Original workflow informed by HEAMS by Goel et al. and recurring Mem0/LangGraph lifecycle failures"
     },
     {
       "name": "agent-trajectory-diagnostics",
