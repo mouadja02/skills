@@ -1,14 +1,10 @@
 ---
 name: "senior-data-scientist"
 description: >-
-  World-class senior data scientist skill specialising in statistical modeling, experiment design,
-  causal inference, and predictive analytics. Covers A/B testing (sample sizing, two-proportion
-  z-tests, Bonferroni correction), difference-in-differences, feature engineering pipelines
-  (Scikit-learn, XGBoost), cross-validated model evaluation (AUC-ROC, AUC-PR, SHAP), and MLflow
-  experiment tracking — using Python (NumPy, Pandas, Scikit-learn), R, and SQL. Use when designing or
-  analysing controlled experiments, building and evaluating classification or regression models,
-  performing causal analysis on observational data, engineering features for structured tabular
-  datasets, or translating statistical findings into data-driven business decisions.
+  Use when designing binary A/B tests, fitting leakage-safe tabular feature transforms, evaluating
+  binary probability predictions, or reviewing causal and statistical assumptions for data-science
+  decisions.
+version: "1.1.0"
 license: MIT
 source: "https://github.com/alirezarezvani/claude-skills"
 attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
@@ -18,219 +14,122 @@ attribution: "alirezarezvani/claude-skills by Alireza Rezvani"
 
 # Senior Data Scientist
 
-World-class senior data scientist skill for production-grade AI/ML/Data systems.
+Produce reviewable experiment, feature-engineering, and model-evaluation artifacts instead of relying on notebook-only output. The bundled runners use only the Python standard library and fail closed on malformed or unsafe inputs.
 
-## Core Workflows
+## When to Use
 
-### 1. Design an A/B Test
+- Size a fixed-horizon binary A/B test from a baseline rate and relative minimum detectable effect.
+- Fit numeric and categorical transforms on a training partition without learning from holdout rows.
+- Evaluate binary probability predictions with threshold metrics, ROC AUC, average precision, and Brier score.
+- Review experiment or causal-inference assumptions before communicating a business conclusion.
 
-```python
-import numpy as np
-from scipy import stats
+Do not use these helpers for sequential testing, clustered randomization, survival outcomes, multiclass evaluation, or causal identification without adapting the statistical design.
 
-def calculate_sample_size(baseline_rate, mde, alpha=0.05, power=0.8):
-    """
-    Calculate required sample size per variant.
-    baseline_rate: current conversion rate (e.g. 0.10)
-    mde: minimum detectable effect (relative, e.g. 0.05 = 5% lift)
-    """
-    p1 = baseline_rate
-    p2 = baseline_rate * (1 + mde)
-    effect_size = abs(p2 - p1) / np.sqrt((p1 * (1 - p1) + p2 * (1 - p2)) / 2)
-    z_alpha = stats.norm.ppf(1 - alpha / 2)
-    z_beta = stats.norm.ppf(power)
-    n = ((z_alpha + z_beta) / effect_size) ** 2
-    return int(np.ceil(n))
+## Prerequisites
 
-def analyze_experiment(control, treatment, alpha=0.05):
-    """
-    Run two-proportion z-test and return structured results.
-    control/treatment: dicts with 'conversions' and 'visitors'.
-    """
-    p_c = control["conversions"] / control["visitors"]
-    p_t = treatment["conversions"] / treatment["visitors"]
-    pooled = (control["conversions"] + treatment["conversions"]) / (control["visitors"] + treatment["visitors"])
-    se = np.sqrt(pooled * (1 - pooled) * (1 / control["visitors"] + 1 / treatment["visitors"]))
-    z = (p_t - p_c) / se
-    p_value = 2 * (1 - stats.norm.cdf(abs(z)))
-    ci_low = (p_t - p_c) - stats.norm.ppf(1 - alpha / 2) * se
-    ci_high = (p_t - p_c) + stats.norm.ppf(1 - alpha / 2) * se
-    return {
-        "lift": (p_t - p_c) / p_c,
-        "p_value": p_value,
-        "significant": p_value < alpha,
-        "ci_95": (ci_low, ci_high),
-    }
+- Python 3.10 or newer.
+- UTF-8 JSON inputs containing no secrets or production identifiers.
+- A pre-registered metric, analysis unit, exclusion policy, and stopping rule for experiments.
 
-# --- Experiment checklist ---
-# 1. Define ONE primary metric and pre-register secondary metrics.
-# 2. Calculate sample size BEFORE starting: calculate_sample_size(0.10, 0.05)
-# 3. Randomise at the user (not session) level to avoid leakage.
-# 4. Run for at least 1 full business cycle (typically 2 weeks).
-# 5. Check for sample ratio mismatch: abs(n_control - n_treatment) / expected < 0.01
-# 6. Analyze with analyze_experiment() and report lift + CI, not just p-value.
-# 7. Apply Bonferroni correction if testing multiple metrics: alpha / n_metrics
+## How to Run
+
+Run commands from this skill directory. Outputs are written atomically. Existing output files are preserved unless `--force` is explicitly passed.
+
+```bash
+python3 scripts/experiment_designer.py \
+  --input experiment-spec.json --output experiment-design.json
+python3 scripts/feature_engineering_pipeline.py \
+  --input feature-spec.json --output transformed-features.json
+python3 scripts/model_evaluation_suite.py \
+  --input predictions.json --output evaluation.json
+python3 tests/test_workflows.py
 ```
 
-### 2. Build a Feature Engineering Pipeline
+A successful command exits `0`, writes valid JSON, and prints a compact completion record. Validation or existing-output failures exit `2` and do not publish a partial output.
 
-```python
-import pandas as pd
-import numpy as np
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.impute import SimpleImputer
-from sklearn.compose import ColumnTransformer
+## Quick Reference
 
-def build_feature_pipeline(numeric_cols, categorical_cols, date_cols=None):
-    """
-    Returns a fitted-ready ColumnTransformer for structured tabular data.
-    """
-    numeric_pipeline = Pipeline([
-        ("impute", SimpleImputer(strategy="median")),
-        ("scale",  StandardScaler()),
-    ])
-    categorical_pipeline = Pipeline([
-        ("impute", SimpleImputer(strategy="most_frequent")),
-        ("encode", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
-    ])
-    transformers = [
-        ("num", numeric_pipeline, numeric_cols),
-        ("cat", categorical_pipeline, categorical_cols),
-    ]
-    return ColumnTransformer(transformers, remainder="drop")
+### Experiment input
 
-def add_time_features(df, date_col):
-    """Extract cyclical and lag features from a datetime column."""
-    df = df.copy()
-    df[date_col] = pd.to_datetime(df[date_col])
-    df["dow_sin"] = np.sin(2 * np.pi * df[date_col].dt.dayofweek / 7)
-    df["dow_cos"] = np.cos(2 * np.pi * df[date_col].dt.dayofweek / 7)
-    df["month_sin"] = np.sin(2 * np.pi * df[date_col].dt.month / 12)
-    df["month_cos"] = np.cos(2 * np.pi * df[date_col].dt.month / 12)
-    df["is_weekend"] = (df[date_col].dt.dayofweek >= 5).astype(int)
-    return df
-
-# --- Feature engineering checklist ---
-# 1. Never fit transformers on the full dataset — fit on train, transform test.
-# 2. Log-transform right-skewed numeric features before scaling.
-# 3. For high-cardinality categoricals (>50 levels), use target encoding or embeddings.
-# 4. Generate lag/rolling features BEFORE the train/test split to avoid leakage.
-# 5. Document each feature's business meaning alongside its code.
-```
-
-### 3. Train, Evaluate, and Select a Prediction Model
-
-```python
-from sklearn.model_selection import StratifiedKFold, cross_validate
-from sklearn.metrics import make_scorer, roc_auc_score, average_precision_score
-import xgboost as xgb
-import mlflow
-
-SCORERS = {
-    "roc_auc":  make_scorer(roc_auc_score, needs_proba=True),
-    "avg_prec": make_scorer(average_precision_score, needs_proba=True),
+```json
+{
+  "baseline_rate": 0.10,
+  "relative_mde": 0.10,
+  "alpha": 0.05,
+  "power": 0.80
 }
-
-def evaluate_model(model, X, y, cv=5):
-    """
-    Cross-validate and return mean ± std for each scorer.
-    Use StratifiedKFold for classification to preserve class balance.
-    """
-    cv_results = cross_validate(
-        model, X, y,
-        cv=StratifiedKFold(n_splits=cv, shuffle=True, random_state=42),
-        scoring=SCORERS,
-        return_train_score=True,
-    )
-    summary = {}
-    for metric in SCORERS:
-        test_scores = cv_results[f"test_{metric}"]
-        summary[metric] = {"mean": test_scores.mean(), "std": test_scores.std()}
-        # Flag overfitting: large gap between train and test score
-        train_mean = cv_results[f"train_{metric}"].mean()
-        summary[metric]["overfit_gap"] = train_mean - test_scores.mean()
-    return summary
-
-def train_and_log(model, X_train, y_train, X_test, y_test, run_name):
-    """Train model and log all artefacts to MLflow."""
-    with mlflow.start_run(run_name=run_name):
-        model.fit(X_train, y_train)
-        proba = model.predict_proba(X_test)[:, 1]
-        metrics = {
-            "roc_auc":  roc_auc_score(y_test, proba),
-            "avg_prec": average_precision_score(y_test, proba),
-        }
-        mlflow.log_params(model.get_params())
-        mlflow.log_metrics(metrics)
-        mlflow.sklearn.log_model(model, "model")
-        return metrics
-
-# --- Model evaluation checklist ---
-# 1. Always report AUC-PR alongside AUC-ROC for imbalanced datasets.
-# 2. Check overfit_gap > 0.05 as a warning sign of overfitting.
-# 3. Calibrate probabilities (Platt scaling / isotonic) before production use.
-# 4. Compute SHAP values to validate feature importance makes business sense.
-# 5. Run a baseline (e.g. DummyClassifier) and verify the model beats it.
-# 6. Log every run to MLflow — never rely on notebook output for comparison.
 ```
 
-### 4. Causal Inference: Difference-in-Differences
+The result reports per-variant and total sample sizes for an equal-allocation, two-sided, two-proportion z-test. `relative_mde` is relative lift: `0.10` moves a `0.10` baseline to `0.11`.
 
-```python
-import statsmodels.formula.api as smf
+### Feature input
 
-def diff_in_diff(df, outcome, treatment_col, post_col, controls=None):
-    """
-    Estimate ATT via OLS DiD with optional covariates.
-    df must have: outcome, treatment_col (0/1), post_col (0/1).
-    Returns the interaction coefficient (treatment × post) and its p-value.
-    """
-    covariates = " + ".join(controls) if controls else ""
-    formula = (
-        f"{outcome} ~ {treatment_col} * {post_col}"
-        + (f" + {covariates}" if covariates else "")
-    )
-    result = smf.ols(formula, data=df).fit(cov_type="HC3")
-    interaction = f"{treatment_col}:{post_col}"
-    return {
-        "att":     result.params[interaction],
-        "p_value": result.pvalues[interaction],
-        "ci_95":   result.conf_int().loc[interaction].tolist(),
-        "summary": result.summary(),
-    }
-
-# --- Causal inference checklist ---
-# 1. Validate parallel trends in pre-period before trusting DiD estimates.
-# 2. Use HC3 robust standard errors to handle heteroskedasticity.
-# 3. For panel data, cluster SEs at the unit level (add groups= param to fit).
-# 4. Consider propensity score matching if groups differ at baseline.
-# 5. Report the ATT with confidence interval, not just statistical significance.
+```json
+{
+  "records": [
+    {"age": 20, "country": "FR", "observed_at": "2026-01-05T00:00:00Z"},
+    {"age": 30, "country": "US", "observed_at": "2026-01-06T00:00:00Z"},
+    {"age": null, "country": "FR", "observed_at": "2026-01-07T00:00:00Z"}
+  ],
+  "split_index": 2,
+  "numeric": ["age"],
+  "categorical": ["country"],
+  "datetime": ["observed_at"]
+}
 ```
+
+Rows before `split_index` are the training partition. Medians, scaling parameters, modes, and categorical vocabularies are fitted only there. Holdout-only categories map to an explicit `__unknown` indicator. Datetimes produce cyclical day-of-week and month features.
+
+### Model input
+
+```json
+{
+  "y_true": [0, 0, 1, 1],
+  "y_score": [0.10, 0.40, 0.35, 0.80],
+  "threshold": 0.50
+}
+```
+
+Both classes must be present. The result includes a confusion matrix, accuracy, precision, recall, F1, ROC AUC with tied-score handling, average precision, and Brier score.
+
+## Procedure
+
+1. **Freeze the decision.** Write the decision, primary metric, unit of analysis, target population, exclusions, and stopping rule before examining outcomes.
+2. **Validate provenance.** Confirm timestamps, assignment keys, labels, and joins. Reject duplicate units, post-treatment features, and unexplained missingness.
+3. **Design before observing.** For a binary fixed-horizon experiment, run `experiment_designer.py` and review every stated assumption. Add expected attrition outside the statistical minimum.
+4. **Split before fitting transforms.** Establish a temporal or group-aware partition first. Pass that boundary as `split_index`; never fit imputers, vocabularies, scalers, target encoders, lag windows, or feature selection on holdout outcomes.
+5. **Keep target-dependent work inside resampling.** If using scikit-learn later, place learned preprocessing and feature selection inside the pipeline evaluated by each fold. Grouped or temporal data requires matching splitters, not shuffled random folds.
+6. **Evaluate probabilities and decisions separately.** Run `model_evaluation_suite.py`, then compare threshold metrics, ranking metrics, and calibration. Report prevalence and uncertainty; do not select a model from ROC AUC alone.
+7. **Check identification for causal claims.** Randomization supports causal interpretation only when assignment and interference assumptions hold. Difference-in-differences additionally needs defensible parallel trends, correct timing, and uncertainty clustered at the assignment unit when appropriate.
+8. **Write the decision record.** Include the frozen question, data window, exclusions, assumptions, effect size with interval, sensitivity checks, failure modes, and the exact artifact hashes used for review.
+
+## Pitfalls
+
+- **Peeking:** repeated fixed-horizon significance checks inflate false positives. Use a pre-specified sequential design if interim decisions are required.
+- **Sample-ratio mismatch:** compare observed allocation with the randomization contract using a formal goodness-of-fit test; a fixed percentage imbalance rule is not universal.
+- **Leakage:** computing rolling, lag, imputation, encoding, scaling, or selection parameters before the split can leak future or holdout information.
+- **Cross-validation drift:** modern scikit-learn scorers should use named scorers or `response_method="predict_proba"`; avoid stale `needs_proba` examples.
+- **Causal overreach:** propensity matching does not repair unmeasured confounding, and a regression coefficient is not automatically an average treatment effect.
+- **Silent overwrite:** do not pass `--force` until the prior artifact is archived or its replacement is intentional and reviewable.
+
+## Verification
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 tests/test_workflows.py
+```
+
+Require all six tests to execute. Then inspect each output as JSON and verify:
+
+- experiment totals equal twice the per-variant size and assumptions match the intended design;
+- feature parameters exclude holdout-only values and unknown categories are explicit;
+- prediction lengths match, probabilities are finite and bounded, and both classes are present;
+- invalid inputs create no output; and
+- an existing output remains byte-for-byte unchanged without `--force`.
+
+The helpers produce deterministic synthetic-analysis artifacts; they do not replace domain review, production data validation, confidence intervals for every metric, or a full statistical package.
 
 ## Reference Documentation
 
-- **Statistical Methods:** `references/statistical_methods_advanced.md`
-- **Experiment Design Frameworks:** `references/experiment_design_frameworks.md`
-- **Feature Engineering Patterns:** `references/feature_engineering_patterns.md`
-
-## Common Commands
-
-```bash
-# Testing & linting
-python -m pytest tests/ -v --cov=src/
-python -m black src/ && python -m pylint src/
-
-# Training & evaluation
-python scripts/train.py --config prod.yaml
-python scripts/evaluate.py --model best.pth
-
-# Deployment
-docker build -t service:v1 .
-kubectl apply -f k8s/
-helm upgrade service ./charts/
-
-# Monitoring & health
-kubectl logs -f deployment/service
-python scripts/health_check.py
-```
+- [Statistical methods](references/statistical_methods_advanced.md)
+- [Experiment design frameworks](references/experiment_design_frameworks.md)
+- [Feature engineering patterns](references/feature_engineering_patterns.md)
