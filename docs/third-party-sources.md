@@ -415,7 +415,7 @@ NOTICE.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-749 of 803 skills declare an upstream `source`, across 61 sources. The remaining 54 declare no upstream source.
+749 of 804 skills declare an upstream `source`, across 61 sources. The remaining 55 declare no upstream source.
 
 ### github/awesome-copilot
 

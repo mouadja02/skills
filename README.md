@@ -1,7 +1,7 @@
 # skills
 
 <!-- generated:catalog-metrics:start -->
-A curated collection of **803 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
+A curated collection of **804 Agent Skills** across **36 categories** for Claude Code, Cursor, and other clients that discover `SKILL.md` files recursively.
 <!-- generated:catalog-metrics:end -->
 
 Each skill is a reusable instruction package with YAML frontmatter and an agent-readable body. Category
@@ -58,7 +58,7 @@ This table is generated from `docs/manifest.json`.
 <!-- generated:category-catalog:start -->
 | Category | Skills | Scope |
 | --- | ---: | --- |
-| [`agent-design`](./skills/agent-design/) | 55 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
+| [`agent-design`](./skills/agent-design/) | 56 | Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces. |
 | [`agent-eval`](./skills/agent-eval/) | 26 | Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement. |
 | [`api-backend`](./skills/api-backend/) | 12 | API design, backend implementation, OpenAPI, TypeSpec, FastAPI, and integrations. |
 | [`business-strategy`](./skills/business-strategy/) | 39 | Executive advisory, board preparation, operating systems, and strategic decision support. |
