@@ -82,15 +82,16 @@ function writeZip(outPath, entries) {
 //   raw/main/docs/manifest.{tsv,json}   source manifest (raw.githubusercontent.com)
 //   pages/{manifest.*,zips/**}          the deployed snapshot (GitHub Pages)
 //   tarball/main                        codeload tarball of the source tree
-function buildFixture(t, { raw, pages, archived = pages, tarball = raw, pagesManifest = true }) {
+function buildFixture(t, { raw, pages, archived = pages, tarball = raw, pagesManifest = true, branch = 'main' }) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'skills-installer-'));
   assert.equal(path.dirname(dir), path.resolve(os.tmpdir()));
   t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
 
   const rawManifest = manifestFor(raw, '2026-02-02T00:00:00.000Z');
-  fs.mkdirSync(path.join(dir, 'raw/main/docs'), { recursive: true });
-  fs.writeFileSync(path.join(dir, 'raw/main/docs/manifest.json'), rawManifest.json);
-  fs.writeFileSync(path.join(dir, 'raw/main/docs/manifest.tsv'), rawManifest.tsv);
+  const rawDocs = path.join(dir, 'raw', ...branch.split('/'), 'docs');
+  fs.mkdirSync(rawDocs, { recursive: true });
+  fs.writeFileSync(path.join(rawDocs, 'manifest.json'), rawManifest.json);
+  fs.writeFileSync(path.join(rawDocs, 'manifest.tsv'), rawManifest.tsv);
 
   const pagesDir = path.join(dir, 'pages');
   const pagesSnapshot = manifestFor(pages, '2026-01-01T00:00:00.000Z');
@@ -114,11 +115,14 @@ function buildFixture(t, { raw, pages, archived = pages, tarball = raw, pagesMan
   }
   writeZip(path.join(pagesDir, 'zips/all.zip'), [[archiveSrc, 'skills']]);
 
+  // codeload names the top folder <repo>-<branch> with every "/" turned into "-".
   const tarSrc = path.join(dir, 'tar-src');
-  fs.mkdirSync(path.join(tarSrc, 'skills-main/skills'), { recursive: true });
-  writeTree(path.join(tarSrc, 'skills-main/skills'), tarball);
-  fs.mkdirSync(path.join(dir, 'tarball'));
-  execFileSync('tar', ['-czf', '../tarball/main', 'skills-main'], { cwd: tarSrc });
+  const topDir = `skills-${branch.replace(/\//g, '-')}`;
+  fs.mkdirSync(path.join(tarSrc, topDir, 'skills'), { recursive: true });
+  writeTree(path.join(tarSrc, topDir, 'skills'), tarball);
+  const tarballFile = path.join(dir, 'tarball', ...branch.split('/'));
+  fs.mkdirSync(path.dirname(tarballFile), { recursive: true });
+  execFileSync('tar', ['-czf', path.relative(tarSrc, tarballFile), topDir], { cwd: tarSrc });
 
   return dir;
 }
@@ -145,7 +149,7 @@ function shellPath(shell, p) {
 }
 
 const POWERSHELL_FLAGS = {
-  '-d': '-Dest', '--all': '-All', '--dry-run': '-DryRun', '--flat': '-Flat', '--force': '-Force', '--list': '-List',
+  '-d': '-Dest', '--all': '-All', '--branch': '-Branch', '--dry-run': '-DryRun', '--flat': '-Flat', '--force': '-Force', '--list': '-List',
 };
 
 // args use install.sh spelling; PowerShell gets the equivalent parameters.
@@ -266,6 +270,14 @@ for (const shell of shells) {
     const result = await runInstaller(shell, base, ['alpha', '-d', dest]);
     assert.equal(result.code, 0, result.output);
     assert.deepEqual(listTree(dest), expectedTree(dest, { one: 'alpha/one', probe: PROBE, two: 'alpha/two' }));
+  });
+
+  test(`${shell}: --branch installs from a branch whose name contains a slash`, async (t) => {
+    const base = await serve(t, buildFixture(t, { raw: BASE_SKILLS, pages: BASE_SKILLS, branch: 'feature/x' }));
+    const dest = scratchDest(t);
+    const result = await runInstaller(shell, base, ['alpha', '-d', dest, '--branch', 'feature/x']);
+    assert.equal(result.code, 0, result.output);
+    assert.deepEqual(listTree(dest), expectedTree(dest, { one: 'alpha/one', two: 'alpha/two' }));
   });
 
   test(`${shell}: single skill and --all install from their scoped ZIPs`, async (t) => {
