@@ -16,6 +16,7 @@ import { existsSync } from "node:fs";
 import { join, relative, sep, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFrontmatter, oneLine } from "./lib/frontmatter.mjs";
+import { extractSearchFields } from "./lib/catalog-search-index.mjs";
 
 const REPO = "mouadja02/skills";
 const DEFAULT_BRANCH = "main";
@@ -29,6 +30,7 @@ const ROOT_README_PATH = join(ROOT, "README.md");
 const DOCS_DIR = join(ROOT, "docs");
 const MANIFEST_PATH = join(DOCS_DIR, "manifest.json");
 const MANIFEST_TSV_PATH = join(DOCS_DIR, "manifest.tsv");
+const SEARCH_INDEX_PATH = join(DOCS_DIR, "search-index.json");
 const THIRD_PARTY_PATH = join(DOCS_DIR, "third-party-sources.md");
 
 const CATEGORY_DESCRIPTIONS = {
@@ -130,13 +132,14 @@ async function main() {
 
   const files = await walk(SKILLS_DIR);
   const skills = [];
+  const searchFields = new Map();
   const errors = [];
 
   for (const file of files) {
     try {
       const raw = await readFile(file, "utf8");
       const relPath = toPosix(relative(ROOT, file));
-      const { data: fm, error } = readFrontmatter(raw);
+      const { data: fm, body, error } = readFrontmatter(raw);
       const folder = relPath.replace(/\/SKILL\.md$/, "");
       const installPath = folder.replace(/^skills\//, "");
 
@@ -164,6 +167,7 @@ async function main() {
       if (fm.license) skill.license = oneLine(fm.license);
       if (fm.source) skill.source = oneLine(fm.source);
       if (fm.attribution) skill.attribution = oneLine(fm.attribution);
+      searchFields.set(installPath, extractSearchFields(fm, body));
       skills.push(skill);
     } catch (err) {
       errors.push(`${file}: ${err.message}`);
@@ -213,6 +217,8 @@ async function main() {
 
   const json = JSON.stringify(manifest, null, 2) + "\n";
   await writeFile(MANIFEST_PATH, json, "utf8");
+  const searchIndex = Object.fromEntries(skills.map(({ install_path }) => [install_path, searchFields.get(install_path)]));
+  await writeFile(SEARCH_INDEX_PATH, JSON.stringify({ version: 1, skills: searchIndex }) + "\n", "utf8");
 
   // TSV: install_path \t category \t name \t description (one skill per line).
   // Used by install.sh because pure-bash JSON parsing isn't portable. Tabs and
@@ -257,6 +263,7 @@ async function main() {
 
   console.log(`OK  docs/manifest.json  (${skills.length} skills)`);
   console.log(`OK  docs/manifest.tsv   (bash-friendly)`);
+  console.log(`OK  docs/search-index.json  (${skills.length} skills)`);
   console.log(`OK  SKILLS.md           (browsable index)`);
   console.log(`OK  skills/README.md     (${categories.length} categories)`);
   console.log(`OK  skills/*/README.md   (per-category indexes)`);

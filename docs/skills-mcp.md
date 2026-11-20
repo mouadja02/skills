@@ -7,7 +7,7 @@ Keep this server local by default. It is a stdio MCP server: your MCP client sta
 ## What You Get
 
 - Compact category and skill discovery.
-- Search across skill names, install paths, and descriptions.
+- Rank skills by name, install path, description, usage, and selected YAML metadata.
 - On-demand reads of `SKILL.md`, category docs, and bundled reference files.
 - A guided workflow that nudges agents to narrow first and read full docs last.
 - Optional copying of selected skills into a workspace skills directory.
@@ -175,7 +175,7 @@ C:/path/to/project/.claude/skills/coding/nasa-inspired-coding-rules
 | --- | --- |
 | `list_categories` | Start here. Returns category names and counts. |
 | `list_skills` | Lists compact skill metadata for one category. Supports filtering and pagination. |
-| `search_skills` | Searches all skill names, install paths, and descriptions. |
+| `search_skills` | Ranks skills by query relevance and accepts optional `keywords` for synonyms and related terms. |
 | `get_skill` | Returns one skill's metadata, file list, and short preview. |
 | `read_skill_doc` | Reads one selected skill's `SKILL.md`. |
 | `read_category_doc` | Reads one category's `README.md`. |
