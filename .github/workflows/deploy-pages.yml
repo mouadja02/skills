@@ -53,6 +53,9 @@ jobs:
       - name: Test published install examples
         run: node --test scripts/test-examples.mjs
 
+      - name: Test tracked shebang scripts are executable
+        run: node --test scripts/test-script-modes.mjs
+
       - name: Test catalog renders when localStorage is blocked
         run: node --test scripts/test-app-storage.mjs
 
@@ -132,6 +135,9 @@ jobs:
 
       - name: Test published install examples
         run: node --test scripts/test-examples.mjs
+
+      - name: Test tracked shebang scripts are executable
+        run: node --test scripts/test-script-modes.mjs
 
       - name: Test catalog renders when localStorage is blocked
         run: node --test scripts/test-app-storage.mjs

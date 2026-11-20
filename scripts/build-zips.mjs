@@ -20,7 +20,7 @@ import { existsSync } from "node:fs";
 import { dirname, join, posix, basename, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import AdmZip from "adm-zip";
-import { excludedReason, gitPublicationAllowlist } from "./lib/archive-policy.mjs";
+import { excludedReason, gitIndexModes, gitPublicationAllowlist } from "./lib/archive-policy.mjs";
 
 // AdmZip serializes DOS timestamp fields in the process timezone. Pinning TZ
 // makes identical source produce identical bytes on every host.
@@ -40,6 +40,7 @@ const FIXED_ZIP_TIME = new Date("1980-01-01T00:00:00.000Z");
 
 let TRACKED_FILES = new Set();
 let TRACKED_DIRS = new Set();
+let INDEX_MODES = new Map();
 
 function initializeGitAllowlist() {
   const { files, dirs, untracked } = gitPublicationAllowlist(ROOT);
@@ -48,6 +49,7 @@ function initializeGitAllowlist() {
   }
   TRACKED_FILES = files;
   TRACKED_DIRS = dirs;
+  INDEX_MODES = gitIndexModes(ROOT);
 }
 
 function repoRelative(path) {
@@ -89,7 +91,11 @@ async function addLocalFolderSafe(zip, localRoot, zipRoot) {
         await walk(localPath, zipPath);
       } else if (stats.isFile()) {
         if (!TRACKED_FILES.has(repoRelative(localPath))) continue;
-        zip.addFile(zipPath, await readFile(localPath), "", stats);
+        // Member mode comes from the Git index (#138), so a Windows build host
+        // without the exec bit still ships tracked scripts as 0755.
+        const indexMode = INDEX_MODES.get(repoRelative(localPath));
+        const fileAttr = indexMode === "100755" ? 0o755 : 0o644;
+        zip.addFile(zipPath, await readFile(localPath), "", fileAttr);
         normalizeEntryTime(zip, zipPath);
       } else {
         throw new Error(`Refusing to archive special file: ${localPath}`);
