@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-18T19:09:43.302Z",
+  "generated_at": "2026-11-20T11:12:30.868Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 803,
+  "count": 804,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -43,7 +43,7 @@
     "testing"
   ],
   "counts_by_category": {
-    "agent-design": 55,
+    "agent-design": 56,
     "agent-eval": 26,
     "api-backend": 12,
     "business-strategy": 39,
@@ -590,6 +590,15 @@
       "description": "Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer.",
       "source": "https://rich.readthedocs.io/en/stable/; https://github.com/Textualize/rich; https://github.com/Textualize/textual; https://github.com/batrachianai/toad",
       "attribution": "Derived from official Rich documentation and repository examples, official Textual materials, the Toad repository as an architecture reference, and a user-supplied Claude Code TUI visual report"
+    },
+    {
+      "name": "silent-api-result-invariant-enforcement",
+      "category": "agent-design",
+      "install_path": "agent-design/silent-api-result-invariant-enforcement",
+      "path": "skills/agent-design/silent-api-result-invariant-enforcement",
+      "depth": 2,
+      "description": "Use when HTTP 200 tool results may silently violate the query—derive exact invariants, recheck, withhold invalid values, and gate final answers on verified observations.",
+      "license": "MIT"
     },
     {
       "name": "smolagents-code-agents",
