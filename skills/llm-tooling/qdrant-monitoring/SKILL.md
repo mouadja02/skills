@@ -6,10 +6,7 @@ description: >-
   are slow', 'set up alerts', 'cluster health check', or needs to set up Prometheus, Grafana, health
   checks, or log centralization. Also use when debugging production issues that require metric
   analysis.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
+allowed-tools: "Read Grep Glob"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 license: Apache-2.0
@@ -26,9 +23,9 @@ Qdrant monitoring allows tracking performance and health of your deployment, and
 
 ## Monitoring Setup
 
-Prometheus scraping, health probes, Hybrid Cloud specifics, alerting, and log centralization. [Monitoring Setup](setup/SKILL.md)
+Prometheus scraping, health probes, Hybrid Cloud specifics, alerting, and log centralization. [Monitoring Setup](qdrant-monitoring-setup/SKILL.md)
 
 
 ## Debugging with Metrics
 
-Optimizer stuck, memory growth, slow requests. Using metrics to diagnose active production issues. [Debugging with Metrics](debugging/SKILL.md)
+Optimizer stuck, memory growth, slow requests. Using metrics to diagnose active production issues. [Debugging with Metrics](qdrant-monitoring-debugging/SKILL.md)

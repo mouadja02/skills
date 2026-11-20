@@ -12,10 +12,15 @@ dotnet add package Oracle.ManagedDataAccess.Core
 using Oracle.ManagedDataAccess.Client;
 
 // Password is fetched from AWS Secrets Manager at runtime; see connection-auth.md section (b) — via AWS Secrets Manager
-var connString = "User Id=dbadmin;Password=<from-secrets-manager>;" +
-    "Data Source=mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL;";
+var settings = new OracleConnectionStringBuilder
+{
+    UserID = "dbadmin",
+    Password = Environment.GetEnvironmentVariable("ORACLE_DB_PASSWORD")
+        ?? throw new InvalidOperationException("Set ORACLE_DB_PASSWORD before starting."),
+    DataSource = "mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL"
+};
 
-using var conn = new OracleConnection(connString);
+using var conn = new OracleConnection(settings.ConnectionString);
 conn.Open();
 
 using var cmd = conn.CreateCommand();
@@ -36,9 +41,15 @@ var ds = "(DESCRIPTION="
        + "(CONNECT_DATA=(SERVICE_NAME=ORCL)))";
 
 // Full with options
-var connString = "User Id=dbadmin;Password=<from-secrets-manager>;" +
-    "Data Source=mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL;" +
-    "Connection Timeout=15;";
+var options = new OracleConnectionStringBuilder
+{
+    UserID = "dbadmin",
+    Password = Environment.GetEnvironmentVariable("ORACLE_DB_PASSWORD")
+        ?? throw new InvalidOperationException("Set ORACLE_DB_PASSWORD before starting."),
+    DataSource = "mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL",
+    ConnectionTimeout = 15
+};
+var connString = options.ConnectionString;
 ```
 
 ## Pooling (built-in, on by default)

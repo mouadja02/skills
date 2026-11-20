@@ -373,7 +373,7 @@ class LLMMonitor:
 SYSTEM_PROMPT = """
 You are a dbt model generator. Given an Informatica mapping, produce a valid dbt project.
 
-ALWAYS respond with valid JSON matching this schema:
+Format successful responses as JSON matching this schema:
 {schema_json}
 
 Rules:

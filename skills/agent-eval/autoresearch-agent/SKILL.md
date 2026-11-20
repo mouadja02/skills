@@ -127,7 +127,7 @@ You are the loop. The scripts handle setup and evaluation — you handle the cre
 ### Before Starting
 1. Read `.autoresearch/{domain}/{name}/config.cfg` to get:
    - `target` — the file you edit
-   - `evaluate_cmd` — the command that measures your changes
+   - `evaluate_cmd` — the executable and arguments that measure your changes. Pass a quoted command line or a JSON argument array to `--eval`; place pipelines and redirects in a reviewed evaluator script.
    - `metric` — the metric name to look for in eval output
    - `metric_direction` — "lower" or "higher" is better
    - `time_budget_minutes` — max time per evaluation
@@ -140,7 +140,7 @@ You are the loop. The scripts handle setup and evaluation — you handle the cre
 2. Decide ONE change to the target file. One variable per experiment.
 3. Edit the target file
 4. Commit: `git add {target} && git commit -m "experiment: {description}"`
-5. Evaluate: `python scripts/run_experiment.py --experiment {domain}/{name} --single`
+5. Record the full experiment commit SHA and its parent SHA, then evaluate with `--expected-commit {commit_sha} --expected-parent {parent_sha}`. Without both, failures and discards are left for manual review. A pending rollback is logged as `rollback_pending`, returns a nonzero exit code, and requires the loop to stop.
 6. Read the output — it prints KEEP, DISCARD, or CRASH with the metric value
 7. Go to step 1
 
@@ -148,14 +148,15 @@ You are the loop. The scripts handle setup and evaluation — you handle the cre
 - Running the eval command with timeout
 - Parsing the metric from eval output
 - Comparing to previous best
-- Reverting the commit on failure (`git reset --hard HEAD~1`)
+- Reverting a failed or discarded experiment with a new commit only when the expected commit, parent, branch, target, and clean tracked worktree are verified; otherwise leaving it for manual review
 - Logging the result to results.tsv
 
 ### Starting an Experiment
 
 ```bash
 # Single iteration (the agent calls this repeatedly)
-python scripts/run_experiment.py --experiment engineering/api-speed --single
+python scripts/run_experiment.py --experiment engineering/api-speed --single \
+  --expected-commit <full-commit-sha> --expected-parent <full-parent-sha>
 
 # Dry run (test setup before starting)
 python scripts/run_experiment.py --experiment engineering/api-speed --dry-run
@@ -219,7 +220,13 @@ The user's existing subscription covers the cost:
 - Codex CLI (ChatGPT Pro) → unlimited Codex calls
 - Gemini CLI (free tier) → free evaluation calls
 
-### Custom Evaluators
+### Migrating existing evaluation commands
+
+Commands run directly without a shell. Existing simple commands continue to work using POSIX quoting. For arguments containing punctuation, spaces, JSON, or Windows paths, use a JSON array in `evaluate_cmd`, for example `evaluate_cmd: ["python", "evaluate.py", "--filter", "a|b"]`. The same JSON array can be supplied to `--eval`. Quote or escape literal shell punctuation in command-line form.
+
+Existing commands containing pipelines, redirects, or chained commands must be moved into a reviewed evaluator script. For example, replace `python measure.py | python summarize.py` with a reviewed Python script that starts both processes explicitly, connects their streams, checks both exit codes, and prints the same metric; set `evaluate_cmd` to `["python", "evaluate_pipeline.py"]`. Review the script before running it, preserve the evaluator's metric and behavior, and establish a new baseline if its measurement changes. Do not change a running experiment's evaluator silently: changing measurement can invalidate comparisons with previous results.
+
+## Custom Evaluators
 
 If no built-in evaluator fits, the user writes their own `evaluate.py`. Only requirement: it must print `metric_name: value` to stdout.
 

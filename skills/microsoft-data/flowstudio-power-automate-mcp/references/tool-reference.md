@@ -62,11 +62,11 @@ Response: wrapper object with `connections` array.
   "connections": [
     {
       "id": "shared-office365-9f9d2c8e-55f1-49c9-9f9c-1c45d1fbbdce",
-      "displayName": "user@contoso.com",
+      "displayName": "user@example.com",
       "connectorName": "shared_office365",
       "environment": "Default-26e65220-...",
       "createdBy": "User Name",
-      "authenticatedUser": "user@contoso.com",
+      "authenticatedUser": "user@example.com",
       "overallStatus": "Connected",
       "statuses": [{"status": "Connected"}],
       "createdTime": "2024-03-12T21:23:55.206815Z",
@@ -189,8 +189,8 @@ Response: single flow metadata from cache (selected fields).
   "complexity": "{...}",
   "actions": 42,
   "connections": ["sharepointonline", "office365"],
-  "owners": ["user@contoso.com"],
-  "createdBy": "user@contoso.com"
+  "owners": ["user@example.com"],
+  "createdBy": "user@example.com"
 }
 ```
 
@@ -588,7 +588,7 @@ tool schemas cannot tell you.
 - Runs are returned newest-first.
 
 ### Teams `PostMessageToConversation` (via `update_live_flow`)
-- **"Chat with Flow bot"**: `body/recipient` = `"user@domain.com;"` (string with trailing semicolon).
+- **"Chat with Flow bot"**: `body/recipient` = `"user@example.com;"` (string with trailing semicolon).
 - **"Channel"**: `body/recipient` = `{"groupId": "...", "channelId": "..."}` (object).
 - `poster`: `"Flow bot"` for Workflows bot identity, `"User"` for user identity.
 

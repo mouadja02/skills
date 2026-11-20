@@ -40,7 +40,7 @@ GUARDRAIL spans represent safety and policy checks (content moderation, PII dete
 ```json
 {
   "openinference.span.kind": "GUARDRAIL",
-  "input.value": "My SSN is 123-45-6789",
+  "input.value": "[REDACTED: sensitive identifier]",
   "output.value": "FLAGGED",
   "metadata.guardrail_type": "pii_detection",
   "metadata.detected_pii": "[\"ssn\"]",

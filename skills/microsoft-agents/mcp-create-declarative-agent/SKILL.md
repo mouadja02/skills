@@ -101,7 +101,7 @@ Generate the following project structure using Microsoft 365 Agents Toolkit:
   "name_for_human": "Service Name",
   "description_for_human": "Description for users",
   "description_for_model": "Description for AI model",
-  "contact_email": "support@company.com",
+  "contact_email": "support@example.com",
   "namespace": "serviceName",
   "capabilities": {
     "conversation_starters": [

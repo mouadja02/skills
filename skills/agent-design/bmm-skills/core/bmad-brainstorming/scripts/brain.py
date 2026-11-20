@@ -223,7 +223,7 @@ def category_style(cat: str) -> tuple[str, str]:
     style = _CATEGORY_STYLES.get(cat)
     if style and style.get("hue"):
         return style["hue"], style.get("glyph") or _FALLBACK_GLYPH
-    deg = int(hashlib.md5(cat.encode("utf-8")).hexdigest(), 16) % 360
+    deg = int(hashlib.md5(cat.encode("utf-8"), usedforsecurity=False).hexdigest(), 16) % 360
     return _hsl_hex(deg, 0.58, 0.52), _FALLBACK_GLYPH
 
 

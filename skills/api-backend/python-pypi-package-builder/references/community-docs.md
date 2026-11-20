@@ -169,7 +169,7 @@ and a minimal reproducible example.
 Do NOT open a public GitHub issue for security vulnerabilities.
 
 Report via: GitHub private security reporting (preferred)
-or email: security@yourdomain.com
+or email: security@example.com
 
 Include:
 - Description of the vulnerability

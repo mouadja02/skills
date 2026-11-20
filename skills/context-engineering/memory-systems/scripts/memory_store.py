@@ -225,7 +225,7 @@ class PropertyGraph:
         Use when: adding a new entity to the graph that does not need
         identity deduplication (prefer get_or_create_node otherwise).
         """
-        node_id: str = hashlib.md5(f"{label}{datetime.now().isoformat()}".encode()).hexdigest()[:16]
+        node_id: str = hashlib.md5(f"{label}{datetime.now().isoformat()}".encode(), usedforsecurity=False).hexdigest()[:16]
 
         self.nodes[node_id] = {
             "id": node_id,
@@ -258,7 +258,7 @@ class PropertyGraph:
             raise ValueError(f"Unknown target node: {target_id}")
 
         edge_id: str = hashlib.md5(
-            f"{source_id}{rel_type}{target_id}{datetime.now().isoformat()}".encode()
+            f"{source_id}{rel_type}{target_id}{datetime.now().isoformat()}".encode(), usedforsecurity=False
         ).hexdigest()[:16]
 
         self.edges[edge_id] = {

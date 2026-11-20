@@ -486,10 +486,10 @@ The `body/recipient` parameter format depends on the `location` value:
 
 | Location | `body/recipient` format | Example |
 |---|---|---|
-| **Chat with Flow bot** | Plain email string with **trailing semicolon** | `"user@contoso.com;"` |
+| **Chat with Flow bot** | Plain email string with **trailing semicolon** | `"user@example.com;"` |
 | **Channel** | Object with `groupId` and `channelId` | `{"groupId": "...", "channelId": "..."}` |
 
-> **Common mistake**: passing `{"to": "user@contoso.com"}` for "Chat with Flow bot"
+> **Common mistake**: passing `{"to": "user@example.com"}` for "Chat with Flow bot"
 > returns a 400 `GraphUserDetailNotFound` error. The API expects a plain string.
 
 ---

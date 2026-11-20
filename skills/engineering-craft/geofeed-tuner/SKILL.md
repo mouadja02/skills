@@ -23,7 +23,7 @@ attribution: "github/awesome-copilot by GitHub Community"
 
 This skill helps you create and improve IP geolocation feeds in CSV format by:
 - Ensuring your CSV is well-formed and consistent
-- Checking alignment with [RFC 8805](references/rfc8805.txt) (the industry standard)
+- Checking alignment with [RFC 8805](https://www.rfc-editor.org/rfc/rfc8805.html) (the industry standard)
 - Applying **opinionated best practices** learned from real-world deployments
 - Suggesting improvements for accuracy, completeness, and privacy
 
@@ -102,7 +102,7 @@ The plan MUST:
 
 ### Phase 1: Understand the Standard
 
-The key requirements from RFC 8805 that this skill enforces are summarized below. **Use this summary as your working reference.** Only consult the full [RFC 8805 text](references/rfc8805.txt) for edge cases, ambiguous situations, or when the user asks a standards question not covered here.
+The key requirements from RFC 8805 that this skill enforces are summarized below. **Use this summary as your working reference.** Consult the full [RFC 8805 text](https://www.rfc-editor.org/rfc/rfc8805.html) for edge cases, ambiguous situations, or standards questions the summary does not cover.
 
 #### RFC 8805 Key Facts
 

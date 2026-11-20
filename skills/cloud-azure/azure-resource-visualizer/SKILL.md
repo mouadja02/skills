@@ -6,7 +6,7 @@ description: >-
   resources in an Azure resource group fit together.
 license: MIT
 metadata:
-  author: Tom Meschter (tom.meschter@microsoft.com)
+  author: "Tom Meschter <tom.meschter@microsoft.com>"
 source: "https://github.com/microsoft/azure-skills"
 attribution: "microsoft/azure-skills by Microsoft Azure"
 ---

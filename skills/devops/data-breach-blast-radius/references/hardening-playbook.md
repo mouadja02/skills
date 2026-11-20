@@ -150,7 +150,7 @@ connectionString\s*=\s*["'][^"']+["']
 **Fix pattern:**
 ```python
 # VULNERABLE
-DATABASE_URL = "postgresql://user:p@ssw0rd@prod-db.example.com/mydb"
+# A database URI with embedded credentials would expose the password in source control.
 
 # SECURE
 import os

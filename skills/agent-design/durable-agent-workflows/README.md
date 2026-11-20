@@ -6,10 +6,10 @@ Design and build fault-tolerant AI agent workflows that survive crashes, resume 
 
 ```typescript
 // Temporal: each step is automatically retried and checkpointed
-const plan = await callLLM({ prompt: `Research plan for: ${topic}` });
+const plan = await callLLM({ prompt: 'Research plan for: ' + topic });
 const sources = await Promise.all(plan.queries.map(q => searchWeb(q)));
 const approved = await notifyHuman({ message: 'Proceed?', timeout: '24h' });
-const report = await callLLM({ prompt: `Synthesize: ${JSON.stringify(sources)}` });
+const report = await callLLM({ prompt: 'Synthesize: ' + JSON.stringify(sources) });
 ```
 
 ## Core Patterns

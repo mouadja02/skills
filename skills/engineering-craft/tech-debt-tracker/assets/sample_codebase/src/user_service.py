@@ -5,13 +5,14 @@ User service module with various tech debt examples
 
 import hashlib
 import json
+import os
 import time
 import re
 from typing import Dict, List, Any, Optional
 
-# TODO: Move this to configuration file
-DATABASE_URL = "postgresql://user:password123@localhost:5432/mydb"
-API_KEY = "sk-1234567890abcdef"  # FIXME: This should be in environment variables
+# Settings are injected by the caller for local examples.
+DATABASE_URL = os.environ.get("DATABASE_URL")
+API_KEY = os.environ.get("USER_SERVICE_API_KEY")
 
 
 class UserService:

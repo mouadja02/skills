@@ -358,7 +358,7 @@ def validate_context_structure(context: Dict[str, Any]) -> Dict[str, Any]:
     seen_content: set[str] = set()
     for section, content in context.items():
         content_str = str(content)[:1000]
-        content_hash = hashlib.md5(content_str.encode()).hexdigest()
+        content_hash = hashlib.md5(content_str.encode(), usedforsecurity=False).hexdigest()
         if content_hash in seen_content:
             issues.append(f"Potential duplicate content in {section}")
         seen_content.add(content_hash)

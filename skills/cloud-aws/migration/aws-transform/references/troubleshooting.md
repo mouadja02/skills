@@ -56,7 +56,7 @@ aws secretsmanager put-secret-value --secret-id "atx/github-token" --region "$RE
 **4. Is it the right credential type for the URL?**
 
 - HTTPS URLs (`https://github.com/...`) need `atx/github-token` (PAT)
-- SSH URLs (`git@github.com:...`) need `atx/ssh-key` (SSH private key)
+- SSH URLs (`ssh://git@<git-host>/org/repo.git`) need `atx/ssh-key` (SSH private key)
 If the user provided SSH URLs but only has a PAT stored (or vice versa), guide
 them to set up the correct credential type.
 

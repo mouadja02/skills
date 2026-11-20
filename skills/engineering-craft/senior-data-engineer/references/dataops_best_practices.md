@@ -420,7 +420,7 @@ class DataQualityValidator:
 contract:
   name: orders
   version: "2.0.0"
-  owner: data-platform@company.com
+  owner: data-platform@example.com
   team: Data Engineering
   slack_channel: "#data-platform-alerts"
 
@@ -521,19 +521,19 @@ versioning:
 consumers:
   - name: analytics-dashboard
     team: Analytics
-    contact: analytics@company.com
+    contact: analytics@example.com
     usage: "Daily KPI dashboards"
     required_fields: ["order_id", "customer_id", "total_amount", "created_at"]
 
   - name: ml-churn-prediction
     team: ML Platform
-    contact: ml-team@company.com
+    contact: ml-team@example.com
     usage: "Customer churn prediction model"
     required_fields: ["customer_id", "created_at", "total_amount"]
 
   - name: finance-reporting
     team: Finance
-    contact: finance@company.com
+    contact: finance@example.com
     usage: "Revenue reconciliation"
     required_fields: ["order_id", "total_amount", "status"]
 

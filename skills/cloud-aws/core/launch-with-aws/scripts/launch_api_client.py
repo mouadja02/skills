@@ -13,6 +13,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Any, Dict, Optional
+from urllib.parse import urlsplit
 
 import boto3
 import botocore.loaders
@@ -156,8 +157,16 @@ def create_upload_url() -> Any:
         raise _client_error_to_api_error(err, "POST", "/api/uploads") from err
 
 
+class NoUploadRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise ApiError(code, "PUT", "(presigned S3 upload)", "Unexpected redirect")
+
+
 def put_archive(upload_url: str, archive: bytes) -> None:
     """Upload zip bytes to a presigned S3 PUT URL."""
+    target = urlsplit(upload_url)
+    if target.scheme != "https" or not target.hostname or target.username is not None:
+        raise ValueError("Expected an HTTPS upload URL without embedded user information")
     req = urllib.request.Request(
         upload_url,
         data=archive,
@@ -165,7 +174,8 @@ def put_archive(upload_url: str, archive: bytes) -> None:
         method="PUT",
     )
     try:
-        with urllib.request.urlopen(req, timeout=UPLOAD_TIMEOUT_SECS):
+        opener = urllib.request.build_opener(NoUploadRedirect())
+        with opener.open(req, timeout=UPLOAD_TIMEOUT_SECS):
             pass
     except urllib.error.HTTPError as err:
         raise ApiError(err.code, "PUT", "(presigned S3 upload)", err.read().decode()) from err

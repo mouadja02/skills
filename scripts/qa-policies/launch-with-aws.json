@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": ".env\"",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    },
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": ".env.local\"",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    },
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": ".env.production\"",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    },
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": ".env.development\"",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    },
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": "credentials.json",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    },
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": ".git-credentials",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    },
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": ".netrc",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    },
+    {
+      "id": "PE3",
+      "path": "scripts/archive.py",
+      "message": ".npmrc",
+      "reason": "Reviewed: filename appears in the archive exclusion set, which prevents uploading sensitive files."
+    }
+  ]
+}

@@ -8,16 +8,16 @@ review_loop_iteration: 0 # incremented by step-04 before each review loopback
 context: [] # optional: `{project-root}/`-prefixed paths to project-wide standards/docs the implementation agent should load. Keep short — only what isn't already distilled into the spec body.
 ---
 
-<!-- Target: 900–1300 tokens. Above 1600 = high risk of context rot.
-     Never over-specify "how" — use boundaries + examples instead.
-     Cohesive cross-layer stories (DB+BE+UI) stay in ONE file.
-     IMPORTANT: Remove all HTML comments when filling this template. -->
+> **Template guidance:** Target: 900–1300 tokens. Above 1600 = high risk of context rot.
+> Never over-specify "how" — use boundaries + examples instead.
+> Cohesive cross-layer stories (DB+BE+UI) stay in ONE file.
+> IMPORTANT: Remove all HTML comments when filling this template.
 
 <frozen-after-approval reason="human-owned intent — do not modify unless human renegotiates">
 
 ## Intent
 
-<!-- What is broken or missing, and why it matters. Then the high-level approach — the "what", not the "how". -->
+> **Template guidance:** What is broken or missing, and why it matters. Then the high-level approach — the "what", not the "how".
 
 **Problem:** ONE_TO_TWO_SENTENCES
 
@@ -25,8 +25,8 @@ context: [] # optional: `{project-root}/`-prefixed paths to project-wide standar
 
 ## Boundaries & Constraints
 
-<!-- Two tiers: Always = invariant rules. Never = out of scope + forbidden approaches. -->
-<!-- If step-02's route gate reported all facts clean (route: 'oneshot'), DELETE THIS ENTIRE SECTION. -->
+> **Template guidance:** Two tiers: Always = invariant rules. Never = out of scope + forbidden approaches.
+> **Template guidance:** If step-02's route gate reported all facts clean (route: 'oneshot'), DELETE THIS ENTIRE SECTION.
 
 **Always:** INVARIANT_RULES
 
@@ -34,7 +34,7 @@ context: [] # optional: `{project-root}/`-prefixed paths to project-wide standar
 
 ## I/O & Edge-Case Matrix
 
-<!-- If no meaningful I/O scenarios exist, DELETE THIS ENTIRE SECTION. Do not write "N/A" or "None". -->
+> **Template guidance:** If no meaningful I/O scenarios exist, DELETE THIS ENTIRE SECTION. Do not write "N/A" or "None".
 
 | Scenario | Input / State | Expected Output / Behavior | Error Handling |
 |----------|--------------|---------------------------|----------------|
@@ -45,28 +45,28 @@ context: [] # optional: `{project-root}/`-prefixed paths to project-wide standar
 
 ## Open Questions
 
-<!-- One entry per intent gap: something the request does not say, the code cannot settle,
-     and the user would notice in the result. Choices the user would not notice are yours. State the choice, the defensible
-     options, and each option's consequence. The spec cannot leave `draft` while any entry
-     remains: when the human answers, record the decision inside <frozen-after-approval> and
-     delete the entry. When no entries remain, DELETE THIS ENTIRE SECTION. -->
+> **Template guidance:** One entry per intent gap: something the request does not say, the code cannot settle,
+> and the user would notice in the result. Choices the user would not notice are yours. State the choice, the defensible
+> options, and each option's consequence. The spec cannot leave `draft` while any entry
+> remains: when the human answers, record the decision inside <frozen-after-approval> and
+> delete the entry. When no entries remain, DELETE THIS ENTIRE SECTION.
 
 - CHOICE — options: OPTION_A (CONSEQUENCE_A) / OPTION_B (CONSEQUENCE_B)
 
 ## Code Map
 
-<!-- Agent-populated during planning. Annotated paths prevent blind codebase searching. -->
-<!-- If step-02's route gate reported all facts clean (route: 'oneshot'), DELETE THIS ENTIRE SECTION. -->
+> **Template guidance:** Agent-populated during planning. Annotated paths prevent blind codebase searching.
+> **Template guidance:** If step-02's route gate reported all facts clean (route: 'oneshot'), DELETE THIS ENTIRE SECTION.
 
 - `FILE` -- ROLE_OR_RELEVANCE
 - `FILE` -- ROLE_OR_RELEVANCE
 
 ## Tasks & Acceptance
 
-<!-- Tasks: backtick-quoted file path -- action -- rationale. Prefer one task per file; group tightly-coupled changes when splitting would be artificial. -->
-<!-- If an I/O Matrix is present, include a task to unit-test its edge cases. -->
-<!-- AC covers system-level behaviors not captured by the I/O Matrix. Do not duplicate I/O scenarios here. -->
-<!-- If step-02's route gate reported all facts clean (route: 'oneshot'), DELETE THIS ENTIRE SECTION. -->
+> **Template guidance:** Tasks: backtick-quoted file path -- action -- rationale. Prefer one task per file; group tightly-coupled changes when splitting would be artificial.
+> **Template guidance:** If an I/O Matrix is present, include a task to unit-test its edge cases.
+> **Template guidance:** AC covers system-level behaviors not captured by the I/O Matrix. Do not duplicate I/O scenarios here.
+> **Template guidance:** If step-02's route gate reported all facts clean (route: 'oneshot'), DELETE THIS ENTIRE SECTION.
 
 **Execution:**
 - [ ] `FILE` -- ACTION -- RATIONALE
@@ -76,33 +76,33 @@ context: [] # optional: `{project-root}/`-prefixed paths to project-wide standar
 
 ## Implementation Notes
 
-<!-- Agent-owned. Append-only during implementation: decisions made, files touched, surprises
-     encountered. Leave empty at planning time; never delete this section. -->
+> **Template guidance:** Agent-owned. Append-only during implementation: decisions made, files touched, surprises
+> encountered. Leave empty at planning time; never delete this section.
 
 ## Spec Change Log
 
-<!-- Append-only. Populated by step-04 during review loops. Do not modify or delete existing entries.
-     Each entry records: what finding triggered the change, what was amended, what known-bad state
-     the amendment avoids, and any KEEP instructions (what worked well and must survive re-derivation).
-     Empty until the first bad_spec loopback. -->
+> **Template guidance:** Append-only. Populated by step-04 during review loops. Do not modify or delete existing entries.
+> Each entry records: what finding triggered the change, what was amended, what known-bad state
+> the amendment avoids, and any KEEP instructions (what worked well and must survive re-derivation).
+> Empty until the first bad_spec loopback.
 
 ## Review Triage Log
 
-<!-- Append-only. Populated by step-04 on every review pass: one row per reviewer finding —
-     verdict (high/medium/low/false/maybe-false) with its evidence: the refutation for
-     false, what would settle it for maybe-false. Empty until the first review pass. -->
+> **Template guidance:** Append-only. Populated by step-04 on every review pass: one row per reviewer finding —
+> verdict (high/medium/low/false/maybe-false) with its evidence: the refutation for
+> false, what would settle it for maybe-false. Empty until the first review pass.
 
 ## Design Notes
 
-<!-- If the approach is straightforward, DELETE THIS ENTIRE SECTION. Do not write "N/A" or "None". -->
-<!-- Design rationale and golden examples only when non-obvious. Keep examples to 5–10 lines. -->
+> **Template guidance:** If the approach is straightforward, DELETE THIS ENTIRE SECTION. Do not write "N/A" or "None".
+> **Template guidance:** Design rationale and golden examples only when non-obvious. Keep examples to 5–10 lines.
 
 DESIGN_RATIONALE_AND_EXAMPLES
 
 ## Verification
 
-<!-- If no build, test, or lint commands apply, DELETE THIS ENTIRE SECTION. Do not write "N/A" or "None". -->
-<!-- How the agent confirms its own work. Prefer CLI commands. When no CLI check applies, state what to inspect manually. -->
+> **Template guidance:** If no build, test, or lint commands apply, DELETE THIS ENTIRE SECTION. Do not write "N/A" or "None".
+> **Template guidance:** How the agent confirms its own work. Prefer CLI commands. When no CLI check applies, state what to inspect manually.
 
 **Commands:**
 - `COMMAND` -- expected: SUCCESS_CRITERIA

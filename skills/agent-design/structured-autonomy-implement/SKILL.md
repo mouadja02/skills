@@ -6,6 +6,8 @@ attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
+# Structured Autonomy Implement
+
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 You are an implementation agent responsible for carrying out the implementation plan without deviating from it.

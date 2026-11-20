@@ -171,7 +171,7 @@ Look for patterns like:
 API_KEY = "sk-..."
 password = "hunter2"
 SECRET = "abc123"
-private_key = "-----BEGIN RSA PRIVATE KEY-----"
+# Treat embedded private key material as a credential leak.
 aws_secret_access_key = "wJalrXUtn..."
 ```
 

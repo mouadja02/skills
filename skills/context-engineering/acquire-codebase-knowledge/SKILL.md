@@ -4,7 +4,7 @@ description: 'Use this skill when the user explicitly asks to map, document, or 
 license: MIT
 compatibility: 'Cross-platform. Requires Python 3.8+ and git. Run scripts/scan.py from the target project root.'
 metadata:
-  version: "1.3"
+  version: "1.3.0"
   enhancements:
     - Multi-language manifest detection (25+ languages supported)
     - CI/CD pipeline detection (10+ platforms)

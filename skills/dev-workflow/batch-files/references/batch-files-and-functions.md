@@ -30,7 +30,7 @@
 
 **GenChr** — Generate any ASCII/Unicode character (0-255) as a .chr file using `MAKECAB` with the `reserveperfoldersize` trick. Handle codepage switching with `CHCP`.
 
-**StampMe** — Rename file with date/time stamp using Robocopy timestamp parsing. Output format: `filename-YYYY-MM-DD@HH-MM-SS.ext`. Supports drag-and-drop (pass filename as %1).
+**StampMe** — Rename a file with a timestamp parsed by Robocopy. In the output filename, an `@` separates the ISO date from the hyphen-separated time. Drag-and-drop passes the filename as `%1`.
 
 **StrLen** — Calculate string length using binary search with `FOR` loop testing positions 4096, 2048, 1024...1. O(log n) performance. Returns length via variable or echo.
 
@@ -72,7 +72,7 @@
 
 ## Networking and Security
 
-**Slow Network Browsing** — Desktop.ini parsing slows folder listing; check with `NET FILE | Find "desktop.ini"` on file server. Fix: delete non-essential desktop.ini files or remove READ_ONLY permission. Corrupted profile permissions: rename `C:\Users\<profile>\AppData\Local\Microsoft\Windows` from another admin account. Network shortcuts on Desktop/Start menu cause slow refresh when resource unavailable; use `explorer /e, \\Server\Share` shortcut instead.
+**Slow Network Browsing** — Desktop.ini parsing slows folder listing; check with `NET FILE | Find "desktop.ini"` on file server. Fix: delete non-essential desktop.ini files or remove READ_ONLY permission. For corrupted profile permissions, back up the affected profile folder and follow the documented recovery procedure from an authorized administrator account. Network shortcuts on Desktop/Start menu cause slow refresh when resource unavailable; use `explorer /e, \\Server\Share` shortcut instead.
 
 **LAN Manager Authentication** — Controls NTLM authentication levels 0-5 via `HKLM\SYSTEM\CurrentControlSet\Control\LSA\LMCompatibilityLevel`. NTLMv1 removed in Win11 24H2 and Server 2025. Default level 3 for current OS. Level 0-1: send LM+NTLM. Level 2: send NTLM only. Level 3+: send NTLMv2 only. Levels 4-5 on DC: refuse NTLMv1/LM responses. Increasing above 3 on server can lock out old clients.
 

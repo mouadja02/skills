@@ -5,10 +5,7 @@ description: >-
   optimization, and hardware considerations. Use when planning Qdrant configuration or capacity
   changes to improve search speed, indexing time, or memory use; for a live slowdown, use
   qdrant-monitoring.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
+allowed-tools: "Read Grep Glob"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 license: Apache-2.0

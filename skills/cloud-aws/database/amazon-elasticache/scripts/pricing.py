@@ -26,6 +26,19 @@ _CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".pricing_
 _CACHE_FILE = os.path.join(_CACHE_DIR, "elasticache_pricing.json")
 
 
+
+class _PricingRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Keep AWS pricing redirects on the same HTTPS origin."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        from urllib.parse import urlsplit
+
+        parsed = urlsplit(newurl)
+        if (parsed.scheme != "https" or parsed.netloc != "pricing.us-east-1.amazonaws.com"):
+            raise ValueError("Pricing redirect must stay on the AWS pricing HTTPS origin")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def _cache_is_fresh() -> bool:
     """Check if local cache exists and is younger than CACHE_MAX_AGE_SECONDS."""
     if not os.path.exists(_CACHE_FILE):
@@ -40,7 +53,7 @@ def _fetch_and_cache() -> dict:
     print("Fetching live ElastiCache pricing from AWS...", file=sys.stderr)
     try:
         req = urllib.request.Request(BULK_PRICING_URL)
-        with urllib.request.urlopen(req, timeout=60) as resp:
+        with urllib.request.build_opener(_PricingRedirectHandler()).open(req, timeout=60) as resp:
             raw = resp.read()
     except Exception as e:
         raise RuntimeError(

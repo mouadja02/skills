@@ -21,7 +21,7 @@ Imported from `optional-skills/` on the `main` branch:
 | `creative/concept-diagrams` | `optional-skills/creative/concept-diagrams` |
 | `creative/creative-ideation` | `optional-skills/creative/creative-ideation` |
 | `devops/docker-management` | `optional-skills/devops/docker-management` |
-| `finance/3-statement-model` | `optional-skills/finance/3-statement-model` |
+| `finance/three-statement-model` | `optional-skills/finance/3-statement-model` |
 | `finance/comps-analysis` | `optional-skills/finance/comps-analysis` |
 | `finance/dcf-model` | `optional-skills/finance/dcf-model` |
 | `finance/excel-author` | `optional-skills/finance/excel-author` |
@@ -415,7 +415,7 @@ NOTICE.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-749 of 804 skills declare an upstream `source`, across 61 sources. The remaining 55 declare no upstream source.
+748 of 804 skills declare an upstream `source`, across 60 sources. The remaining 56 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -717,16 +717,16 @@ License: MIT
 | Install path | License |
 | --- | --- |
 | [`agent-eval/auto-memory-pro`](../skills/agent-eval/auto-memory-pro/SKILL.md) | MIT |
-| [`agent-eval/auto-memory-pro/skills/extract`](../skills/agent-eval/auto-memory-pro/skills/extract/SKILL.md) | MIT |
-| [`agent-eval/auto-memory-pro/skills/promote`](../skills/agent-eval/auto-memory-pro/skills/promote/SKILL.md) | MIT |
-| [`agent-eval/auto-memory-pro/skills/remember`](../skills/agent-eval/auto-memory-pro/skills/remember/SKILL.md) | MIT |
-| [`agent-eval/auto-memory-pro/skills/review`](../skills/agent-eval/auto-memory-pro/skills/review/SKILL.md) | MIT |
-| [`agent-eval/auto-memory-pro/skills/status`](../skills/agent-eval/auto-memory-pro/skills/status/SKILL.md) | MIT |
+| [`agent-eval/auto-memory-pro/skills/auto-memory-extract`](../skills/agent-eval/auto-memory-pro/skills/auto-memory-extract/SKILL.md) | MIT |
+| [`agent-eval/auto-memory-pro/skills/auto-memory-promote`](../skills/agent-eval/auto-memory-pro/skills/auto-memory-promote/SKILL.md) | MIT |
+| [`agent-eval/auto-memory-pro/skills/auto-memory-remember`](../skills/agent-eval/auto-memory-pro/skills/auto-memory-remember/SKILL.md) | MIT |
+| [`agent-eval/auto-memory-pro/skills/auto-memory-review`](../skills/agent-eval/auto-memory-pro/skills/auto-memory-review/SKILL.md) | MIT |
+| [`agent-eval/auto-memory-pro/skills/auto-memory-status`](../skills/agent-eval/auto-memory-pro/skills/auto-memory-status/SKILL.md) | MIT |
 | [`agent-eval/autoresearch-agent`](../skills/agent-eval/autoresearch-agent/SKILL.md) | MIT |
-| [`agent-eval/autoresearch-agent/skills/loop`](../skills/agent-eval/autoresearch-agent/skills/loop/SKILL.md) | MIT |
-| [`agent-eval/autoresearch-agent/skills/resume`](../skills/agent-eval/autoresearch-agent/skills/resume/SKILL.md) | MIT |
-| [`agent-eval/autoresearch-agent/skills/run`](../skills/agent-eval/autoresearch-agent/skills/run/SKILL.md) | MIT |
-| [`agent-eval/autoresearch-agent/skills/setup`](../skills/agent-eval/autoresearch-agent/skills/setup/SKILL.md) | MIT |
+| [`agent-eval/autoresearch-agent/skills/autoresearch-loop`](../skills/agent-eval/autoresearch-agent/skills/autoresearch-loop/SKILL.md) | MIT |
+| [`agent-eval/autoresearch-agent/skills/autoresearch-resume`](../skills/agent-eval/autoresearch-agent/skills/autoresearch-resume/SKILL.md) | MIT |
+| [`agent-eval/autoresearch-agent/skills/autoresearch-run`](../skills/agent-eval/autoresearch-agent/skills/autoresearch-run/SKILL.md) | MIT |
+| [`agent-eval/autoresearch-agent/skills/autoresearch-setup`](../skills/agent-eval/autoresearch-agent/skills/autoresearch-setup/SKILL.md) | MIT |
 | [`api-backend/stripe-integration-expert`](../skills/api-backend/stripe-integration-expert/SKILL.md) | MIT |
 | [`business-strategy/agent-protocol`](../skills/business-strategy/agent-protocol/SKILL.md) | MIT |
 | [`business-strategy/board-deck-builder`](../skills/business-strategy/board-deck-builder/SKILL.md) | MIT |
@@ -751,11 +751,11 @@ License: MIT
 | [`business-strategy/culture-architect`](../skills/business-strategy/culture-architect/SKILL.md) | MIT |
 | [`business-strategy/decision-logger`](../skills/business-strategy/decision-logger/SKILL.md) | MIT |
 | [`business-strategy/executive-mentor`](../skills/business-strategy/executive-mentor/SKILL.md) | MIT |
-| [`business-strategy/executive-mentor/skills/board-prep`](../skills/business-strategy/executive-mentor/skills/board-prep/SKILL.md) | MIT |
-| [`business-strategy/executive-mentor/skills/challenge`](../skills/business-strategy/executive-mentor/skills/challenge/SKILL.md) | MIT |
-| [`business-strategy/executive-mentor/skills/hard-call`](../skills/business-strategy/executive-mentor/skills/hard-call/SKILL.md) | MIT |
-| [`business-strategy/executive-mentor/skills/postmortem`](../skills/business-strategy/executive-mentor/skills/postmortem/SKILL.md) | MIT |
-| [`business-strategy/executive-mentor/skills/stress-test`](../skills/business-strategy/executive-mentor/skills/stress-test/SKILL.md) | MIT |
+| [`business-strategy/executive-mentor/skills/executive-mentor-board-prep`](../skills/business-strategy/executive-mentor/skills/executive-mentor-board-prep/SKILL.md) | MIT |
+| [`business-strategy/executive-mentor/skills/executive-mentor-challenge`](../skills/business-strategy/executive-mentor/skills/executive-mentor-challenge/SKILL.md) | MIT |
+| [`business-strategy/executive-mentor/skills/executive-mentor-hard-call`](../skills/business-strategy/executive-mentor/skills/executive-mentor-hard-call/SKILL.md) | MIT |
+| [`business-strategy/executive-mentor/skills/executive-mentor-postmortem`](../skills/business-strategy/executive-mentor/skills/executive-mentor-postmortem/SKILL.md) | MIT |
+| [`business-strategy/executive-mentor/skills/executive-mentor-stress-test`](../skills/business-strategy/executive-mentor/skills/executive-mentor-stress-test/SKILL.md) | MIT |
 | [`business-strategy/internal-narrative`](../skills/business-strategy/internal-narrative/SKILL.md) | MIT |
 | [`business-strategy/intl-expansion`](../skills/business-strategy/intl-expansion/SKILL.md) | MIT |
 | [`business-strategy/ma-playbook`](../skills/business-strategy/ma-playbook/SKILL.md) | MIT |
@@ -1047,21 +1047,21 @@ License: Apache-2.0
 | [`llm-tooling/qdrant-deployment-options`](../skills/llm-tooling/qdrant-deployment-options/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-model-migration`](../skills/llm-tooling/qdrant-model-migration/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-monitoring`](../skills/llm-tooling/qdrant-monitoring/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-monitoring/debugging`](../skills/llm-tooling/qdrant-monitoring/debugging/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-monitoring/setup`](../skills/llm-tooling/qdrant-monitoring/setup/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-monitoring/qdrant-monitoring-debugging`](../skills/llm-tooling/qdrant-monitoring/qdrant-monitoring-debugging/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-monitoring/qdrant-monitoring-setup`](../skills/llm-tooling/qdrant-monitoring/qdrant-monitoring-setup/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-performance-optimization`](../skills/llm-tooling/qdrant-performance-optimization/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-performance-optimization/indexing-performance-optimization`](../skills/llm-tooling/qdrant-performance-optimization/indexing-performance-optimization/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-performance-optimization/memory-usage-optimization`](../skills/llm-tooling/qdrant-performance-optimization/memory-usage-optimization/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-performance-optimization/search-speed-optimization`](../skills/llm-tooling/qdrant-performance-optimization/search-speed-optimization/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-scaling`](../skills/llm-tooling/qdrant-scaling/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/minimize-latency`](../skills/llm-tooling/qdrant-scaling/minimize-latency/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/scaling-data-volume`](../skills/llm-tooling/qdrant-scaling/scaling-data-volume/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling`](../skills/llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window`](../skills/llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling`](../skills/llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling`](../skills/llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/scaling-qps`](../skills/llm-tooling/qdrant-scaling/scaling-qps/SKILL.md) | Apache-2.0 |
-| [`llm-tooling/qdrant-scaling/scaling-query-volume`](../skills/llm-tooling/qdrant-scaling/scaling-query-volume/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-minimize-latency`](../skills/llm-tooling/qdrant-scaling/qdrant-minimize-latency/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-scaling-data-volume`](../skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/horizontal-scaling`](../skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/horizontal-scaling/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-sliding-time-window`](../skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-sliding-time-window/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-vertical-scaling`](../skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-vertical-scaling/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/tenant-scaling`](../skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/tenant-scaling/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-scaling-qps`](../skills/llm-tooling/qdrant-scaling/qdrant-scaling-qps/SKILL.md) | Apache-2.0 |
+| [`llm-tooling/qdrant-scaling/qdrant-scaling-query-volume`](../skills/llm-tooling/qdrant-scaling/qdrant-scaling-query-volume/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-search-quality`](../skills/llm-tooling/qdrant-search-quality/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-search-quality/diagnosis`](../skills/llm-tooling/qdrant-search-quality/diagnosis/SKILL.md) | Apache-2.0 |
 | [`llm-tooling/qdrant-search-quality/search-strategies`](../skills/llm-tooling/qdrant-search-quality/search-strategies/SKILL.md) | Apache-2.0 |
@@ -1107,13 +1107,13 @@ License: Apache-2.0; MIT
 | [`creative/concept-diagrams`](../skills/creative/concept-diagrams/SKILL.md) | MIT |
 | [`creative/creative-ideation`](../skills/creative/creative-ideation/SKILL.md) | MIT |
 | [`devops/docker-management`](../skills/devops/docker-management/SKILL.md) | MIT |
-| [`finance/3-statement-model`](../skills/finance/3-statement-model/SKILL.md) | Apache-2.0 |
 | [`finance/comps-analysis`](../skills/finance/comps-analysis/SKILL.md) | Apache-2.0 |
 | [`finance/dcf-model`](../skills/finance/dcf-model/SKILL.md) | Apache-2.0 |
 | [`finance/excel-author`](../skills/finance/excel-author/SKILL.md) | Apache-2.0 |
 | [`finance/lbo-model`](../skills/finance/lbo-model/SKILL.md) | Apache-2.0 |
 | [`finance/merger-model`](../skills/finance/merger-model/SKILL.md) | Apache-2.0 |
 | [`finance/pptx-author`](../skills/finance/pptx-author/SKILL.md) | Apache-2.0 |
+| [`finance/three-statement-model`](../skills/finance/three-statement-model/SKILL.md) | Apache-2.0 |
 | [`mcp/fastmcp`](../skills/mcp/fastmcp/SKILL.md) | MIT |
 | [`personal-productivity/memento-flashcards`](../skills/personal-productivity/memento-flashcards/SKILL.md) | MIT |
 | [`research/osint-investigation`](../skills/research/osint-investigation/SKILL.md) | MIT |
@@ -1531,16 +1531,6 @@ License: not declared
 | --- | --- |
 | [`agent-design/smolagents-code-agents`](../skills/agent-design/smolagents-code-agents/SKILL.md) | not declared |
 
-### Imbad0202/academic-research-skills
-
-Source: https://github.com/Imbad0202/academic-research-skills
-Credit: Imbad0202/academic-research-skills by Cheng-I Wu
-License: CC-BY-NC-4.0
-
-| Install path | License |
-| --- | --- |
-| [`context-engineering/deep-research`](../skills/context-engineering/deep-research/SKILL.md) | CC-BY-NC-4.0 |
-
 ### langchain-ai/deepagents
 
 Source: https://github.com/langchain-ai/deepagents
@@ -1697,7 +1687,7 @@ License: not declared
 
 | Install path | License |
 | --- | --- |
-| [`agent-design/rich-claude-code-tui-clone`](../skills/agent-design/rich-claude-code-tui-clone/SKILL.md) | not declared |
+| [`agent-design/rich-agent-cli`](../skills/agent-design/rich-agent-cli/SKILL.md) | not declared |
 
 ### https://www.swebench.com/verified.html
 

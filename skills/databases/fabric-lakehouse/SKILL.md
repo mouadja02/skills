@@ -5,7 +5,7 @@ description: >-
   shortcuts, and AI functions. Use when building, optimizing, or documenting a Fabric Lakehouse.
 metadata:
   author: tedvilutis
-  version: "1.0"
+  version: "1.0.0"
 source: "https://github.com/microsoft/skills-for-fabric"
 attribution: "microsoft/skills-for-fabric by Microsoft"
 license: MIT

@@ -198,7 +198,7 @@ Access trigger data: `@triggerBody()?['ID']`, `@triggerBody()?['Title']`, etc.
     },
     "parameters": {
       "folderId": "Inbox",
-      "to": "monitored@contoso.com",
+      "to": "monitored@example.com",
       "isHTML": true
     },
     "subscribe": {

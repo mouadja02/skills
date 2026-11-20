@@ -266,7 +266,7 @@
       "name": "email-info",
       "email_configs": [
         {
-          "to": "team-notifications@company.com",
+          "to": "team-notifications@example.com",
           "subject": "Info Alert: {{ .GroupLabels.alertname }}",
           "body": "{{ range .Alerts }}{{ .Annotations.description }}{{ end }}"
         }

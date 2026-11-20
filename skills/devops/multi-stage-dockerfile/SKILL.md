@@ -9,6 +9,8 @@ attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
+# Multi Stage Dockerfile
+
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 Your goal is to help me create efficient multi-stage Dockerfiles that follow best practices, resulting in smaller, more secure container images.

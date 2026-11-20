@@ -305,7 +305,7 @@ If you use Sentry or Linear, add the MCP config to `.mcp.json`...
 
 ### What to NEVER Include
 
-- **Absolute paths** - Never include user-specific paths like `/home/user/scripts/foo` or `/Users/name/bin/bar`
+- **Absolute paths** - Use project-relative paths so permissions remain portable across contributor machines.
 - **Custom scripts** - Never include project scripts that may have side effects (e.g., `./scripts/deploy.sh`)
 - **Alternative package managers** - If the project uses pnpm, do NOT include npm/yarn commands
 - **Commands that modify state** - No install, build, run, write, or delete commands

@@ -265,16 +265,18 @@ app.include_router(router, prefix="/api")
 async def health_check():
     return {{"status": "healthy"}}
 ''',
-        "config.py": '''from pydantic_settings import BaseSettings
+        "config.py": '''from pathlib import Path
 from typing import List
 
-class Settings(BaseSettings):
-    DATABASE_URL: str = "postgresql://user:pass@localhost:5432/db"
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:5173"]
-    SECRET_KEY: str = "change-me-in-production"
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-    class Config:
-        env_file = ".env"
+class Settings(BaseSettings):
+    DATABASE_URL: str = Field(min_length=1)
+    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:5173"]
+    SECRET_KEY: str = Field(min_length=32)
+
+    model_config = SettingsConfigDict(env_file=Path(__file__).resolve().parents[2] / ".env", extra="ignore")
 
 settings = Settings()
 ''',
@@ -626,8 +628,10 @@ export default config;
         "next.config.js": '''/** @type {import('next').NextConfig} */
 module.exports = { reactStrictMode: true };
 ''',
-        ".env.example": '''DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
-SECRET_KEY="your-secret-here"
+        ".env.example": '''# Set a local database URL and a randomly generated app secret before starting.
+DATABASE_URL=
+POSTGRES_PASSWORD=
+SECRET_KEY=
 ''',
         ".gitignore": '''node_modules/
 .next/
@@ -646,7 +650,7 @@ services:
     image: postgres:15-alpine
     environment:
       POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: ${{POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}}
       POSTGRES_DB: {project_name}
     ports:
       - "5432:5432"
@@ -773,6 +777,7 @@ def get_next_steps(template: str, name: str) -> List[str]:
         "nextjs": [f"cd {name}", "npm install", "cp .env.example .env.local", "npm run dev"],
         "fastapi-react": [
             f"cd {name}",
+            "Copy .env.example to .env and set DATABASE_URL, POSTGRES_PASSWORD, and SECRET_KEY",
             "docker-compose up -d db",
             "cd backend && pip install -r requirements.txt && uvicorn app.main:app --reload",
             "cd frontend && npm install && npm run dev"

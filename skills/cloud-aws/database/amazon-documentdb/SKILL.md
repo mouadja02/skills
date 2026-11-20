@@ -194,7 +194,7 @@ See [references/troubleshooting.md](references/troubleshooting.md) for the full 
 
 **User asks for a destructive change.** You MUST pause, state the consequence, and wait for explicit confirmation before deleting a cluster, dropping a collection, or forcing a failover — destructive actions on production DocumentDB can cause data loss or service disruption.
 
-**User hits a missing feature, unsupported operator, or expresses a future wish.** When the user says "I wish DocumentDB supported X", "will DocumentDB ever support Y", or encounters a capability gap, proactively surface: "You can request this feature by emailing documentdb-pm@amazon.com with your AWS account ID, the feature you need, and your use case — the DocumentDB team reads these."
+**User hits a missing feature, unsupported operator, or expresses a future wish.** Explain the current limitation and point the user to [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/case-management.html) to describe the capability and their use case through a signed-in channel.
 
 ## Security Considerations
 
@@ -216,4 +216,4 @@ Apply these controls on every DocumentDB deployment. Detailed commands live in t
 - [AWS DMS MongoDB source](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html) · [DocumentDB target](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DocumentDB.html)
 - [amazon-documentdb-tools](https://github.com/awslabs/amazon-documentdb-tools) (compat tool, index tool, MVU CDC migrator)
 - Related skills: `amazon-aurora`, `rds-db2`, `rds-oracle`, `rds-sqlserver`, `amazon-neptune`
-- **Missing a feature or have feedback?** Email [documentdb-pm@amazon.com](mailto:documentdb-pm@amazon.com) with your AWS account ID, the feature or capability you need, and your use case — the DocumentDB team reads these.
+- [AWS Support case management](https://docs.aws.amazon.com/awssupport/latest/user/case-management.html) for feature feedback and support requests.

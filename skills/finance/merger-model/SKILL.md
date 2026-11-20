@@ -8,7 +8,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [finance, m-and-a, merger, accretion-dilution, excel, openpyxl, modeling, investment-banking]
-    related_skills: [excel-author, pptx-author, dcf-model, 3-statement-model]
+    related_skills: [excel-author, pptx-author, dcf-model, three-statement-model]
 source: "https://github.com/NousResearch/hermes-agent"
 attribution: "NousResearch/hermes-agent by Nous Research"
 ---

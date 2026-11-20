@@ -33,3 +33,18 @@ desktop.ini
 # ....
 scripts/reorganize.ps1
 scripts/create-readmes.ps1
+
+# Azure architecture autopilot development files
+/skills/cloud-azure/azure-architecture-autopilot/**/*.egg-info/
+/skills/cloud-azure/azure-architecture-autopilot/evals/outputs/
+/skills/cloud-azure/azure-architecture-autopilot/workspace/
+/skills/cloud-azure/azure-architecture-autopilot/output/
+/skills/cloud-azure/azure-architecture-autopilot/**/*.png
+/skills/cloud-azure/azure-architecture-autopilot/**/*.svg
+!/skills/cloud-azure/azure-architecture-autopilot/assets/*.png
+!/skills/cloud-azure/azure-architecture-autopilot/assets/*.svg
+/skills/cloud-azure/azure-architecture-autopilot/**/sample_*.html
+/skills/cloud-azure/azure-architecture-autopilot/**/.env
+/skills/cloud-azure/azure-architecture-autopilot/**/*.local
+/skills/cloud-azure/azure-architecture-autopilot/**/*.skill
+/skills/cloud-azure/azure-architecture-autopilot/dev/

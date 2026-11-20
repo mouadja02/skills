@@ -124,7 +124,7 @@ default_args = {
     'owner': 'data-team',
     'depends_on_past': False,
     'email_on_failure': True,
-    'email': ['data-alerts@company.com'],
+    'email': ['data-alerts@example.com'],
     'retries': 2,
     'retry_delay': timedelta(minutes=5),
 }
@@ -510,7 +510,7 @@ models:
 contract:
   name: "orders-data-contract"
   version: "1.0.0"
-  owner: data-team@company.com
+  owner: data-team@example.com
 
 schema:
   type: object

@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 # --- CONFIGURE THESE ---
-COMMAND = "python src/module.py"  # Command to measure
+COMMAND = ["python", "src/module.py"]  # Command to measure
 # --- END CONFIG ---
 
 system = platform.system()
@@ -15,8 +15,8 @@ system = platform.system()
 if system == "Linux":
     # Use /usr/bin/time for peak RSS
     result = subprocess.run(
-        f"/usr/bin/time -v {COMMAND}",
-        shell=True, capture_output=True, text=True, timeout=300
+        ["/usr/bin/time", "-v", *COMMAND],
+        capture_output=True, text=True, timeout=300
     )
     output = result.stderr
     for line in output.splitlines():
@@ -32,8 +32,8 @@ if system == "Linux":
 elif system == "Darwin":
     # macOS: use /usr/bin/time -l
     result = subprocess.run(
-        f"/usr/bin/time -l {COMMAND}",
-        shell=True, capture_output=True, text=True, timeout=300
+        ["/usr/bin/time", "-l", *COMMAND],
+        capture_output=True, text=True, timeout=300
     )
     output = result.stderr
     for line in output.splitlines():

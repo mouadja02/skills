@@ -15,24 +15,21 @@ license: MIT
 
 Manage Azure DevOps resources using the Azure CLI with the Azure DevOps extension.
 
-**CLI Version:** 2.81.0 (current as of 2025)
-
 ## Prerequisites
 
-```bash
-# Install Azure CLI
-brew install azure-cli  # macOS
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash  # Linux
+Install Azure CLI using [Microsoft’s platform-specific instructions](https://learn.microsoft.com/cli/azure/install-azure-cli). On Linux, use the signed package repository for your distribution.
 
+```bash
 # Install Azure DevOps extension
+az version
 az extension add --name azure-devops
 ```
 
 ## Authentication
 
 ```bash
-# Login with PAT token
-az devops login --organization https://dev.azure.com/{org} --token YOUR_PAT_TOKEN
+# At the credential prompt, enter a PAT scoped to the operations you need.
+az devops login --organization https://dev.azure.com/{org}
 
 # Set default organization and project (avoids repeating --org/--project)
 # Note: Legacy URL https://{org}.visualstudio.com should be replaced with https://dev.azure.com/{org}

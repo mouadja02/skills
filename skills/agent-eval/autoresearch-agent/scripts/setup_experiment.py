@@ -19,11 +19,14 @@ Usage:
 """
 
 import argparse
+import json
 import shutil
 import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
+
+from eval_command import parse_eval_command
 
 DOMAINS = ["engineering", "marketing", "content", "prompts", "custom"]
 
@@ -44,11 +47,11 @@ config.yaml
 
 
 def run_cmd(cmd, cwd=None, timeout=None):
-    """Run shell command, return (returncode, stdout, stderr)."""
-    result = subprocess.run(
-        cmd, shell=True, capture_output=True, text=True,
-        cwd=cwd, timeout=timeout
-    )
+    """Run an argument array and return its exit code, stdout, and stderr."""
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, cwd=cwd, timeout=timeout)
+    except OSError as exc:
+        return 127, "", str(exc)
     return result.returncode, result.stdout.strip(), result.stderr.strip()
 
 
@@ -287,6 +290,10 @@ def main():
     # Validate required args for setup
     if not all([args.domain, args.name, args.target, args.eval_cmd, args.metric]):
         parser.error("Required: --domain, --name, --target, --eval, --metric")
+    try:
+        eval_args = parse_eval_command(args.eval_cmd)
+    except ValueError as exc:
+        parser.error(str(exc))
 
     root = get_autoresearch_root(args.scope, project_root)
 
@@ -332,7 +339,7 @@ def main():
                       args.target, args.metric, args.direction, args.constraints)
     print("  Created program.md")
 
-    create_config(experiment_dir, args.target, args.eval_cmd,
+    create_config(experiment_dir, args.target, json.dumps(eval_args),
                   args.metric, args.direction, args.time_budget)
     print("  Created config.cfg")
 
@@ -348,7 +355,7 @@ def main():
 
     # Test evaluation command
     print(f"\n  Testing evaluation: {args.eval_cmd}")
-    code, out, err = run_cmd(args.eval_cmd, cwd=str(project_root), timeout=60)
+    code, out, err = run_cmd(eval_args, cwd=str(project_root), timeout=60)
     if code != 0:
         print(f"  Warning: eval command failed (exit {code})")
         if err:

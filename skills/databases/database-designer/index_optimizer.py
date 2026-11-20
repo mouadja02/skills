@@ -501,7 +501,7 @@ class IndexOptimizer:
     def _generate_recommendation_id(self, table: str, columns: List[str], suffix: str = "") -> str:
         """Generate unique recommendation ID."""
         content = f"{table}_{'_'.join(sorted(columns))}_{suffix}"
-        return hashlib.md5(content.encode()).hexdigest()[:8]
+        return hashlib.md5(content.encode(), usedforsecurity=False).hexdigest()[:8]
     
     def _estimate_benefit(self, selectivity: float, frequency: int) -> str:
         """Estimate performance benefit of index."""

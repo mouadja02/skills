@@ -113,6 +113,8 @@ Almost every AI-generated description falls into one of these:
 
 ## `pyproject.toml` patterns
 
+The following real-project excerpts use placeholder email addresses.
+
 ### Real human example — Flask
 
 ```toml
@@ -124,7 +126,7 @@ readme = "README.rst"
 license = {text = "BSD-3-Clause"}
 requires-python = ">= 3.9"
 authors = [
-    {name = "Pallets", email = "contact@palletsprojects.com"},
+    {name = "Pallets", email = "contact@example.com"},
 ]
 keywords = ["web", "framework", "wsgi", "jinja"]
 classifiers = [
@@ -175,9 +177,9 @@ That's it. The rest is in `pyproject.toml`. This is *the* signal of a project th
   "name": "express",
   "description": "Fast, unopinionated, minimalist web framework for node",
   "version": "4.18.2",
-  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "author": "TJ Holowaychuk <author@example.com>",
   "contributors": [
-    "Aaron Heckmann <aaron.heckmann+github@gmail.com>",
+    "Aaron Heckmann <contributor@example.com>",
     "...",
   ],
   "license": "MIT",
@@ -225,7 +227,7 @@ What this gets right:
   "name": "n",
   "version": "9.2.0",
   "description": "Interactively Manage Your Node.js Versions",
-  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "author": "TJ Holowaychuk <author@example.com>",
   "license": "MIT",
   "bin": {"n": "bin/n"},
   "files": ["bin/n"],

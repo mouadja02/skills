@@ -1017,7 +1017,7 @@ SELECT * FROM orders_v1;
 # contracts/orders_contract.yaml
 name: orders
 version: "2.0.0"
-owner: data-team@company.com
+owner: data-team@example.com
 
 schema:
   order_id:

@@ -1,10 +1,7 @@
 ---
 name: qdrant-scaling
 description: Use when a Qdrant deployment needs to scale and the strategy is not yet chosen. Start here to identify what you are scaling for — data volume, query throughput (QPS), query latency, or query volume — then routes to the matching strategy with its tradeoffs.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
+allowed-tools: "Read Grep Glob"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 license: Apache-2.0
@@ -28,7 +25,7 @@ Each pulls toward different strategies. Scaling for throughput and latency are o
 ## Scaling Data Volume
 
 This becomes relevant when volume of the dataset exceeds the capacity of a single node.
-Read more about scaling for data volume in [Scaling Data Volume](scaling-data-volume/SKILL.md)
+Read more about scaling for data volume in [Scaling Data Volume](qdrant-scaling-data-volume/SKILL.md)
 
 
 ## Scaling for Query Throughput
@@ -36,14 +33,14 @@ Read more about scaling for data volume in [Scaling Data Volume](scaling-data-vo
 If your system needs to handle more parallel queries than a single node can handle,
  then you need to scale for query throughput.
 
-Read more about scaling for query throughput in [Scaling for Query Throughput](scaling-qps/SKILL.md)
+Read more about scaling for query throughput in [Scaling for Query Throughput](qdrant-scaling-qps/SKILL.md)
 
 ## Scaling for Query Latency
 
 Latency of a single query is determined by the slowest component in the query execution path.
 It is in sometimes correlated with throughput, but not always. It might require different strategies for scaling.
 
-Read more about scaling for query latency in [Scaling for Query Latency](minimize-latency/SKILL.md)
+Read more about scaling for query latency in [Scaling for Query Latency](qdrant-minimize-latency/SKILL.md)
 
 
 ## Scaling for Query Volume
@@ -53,4 +50,4 @@ If the query volume is too high, it can cause performance issues and increase la
 
 Tuning for query volume is opposite might require special strategies. 
 
-Read more about scaling for query volume in [Scaling for Query Volume](scaling-query-volume/SKILL.md)
+Read more about scaling for query volume in [Scaling for Query Volume](qdrant-scaling-query-volume/SKILL.md)

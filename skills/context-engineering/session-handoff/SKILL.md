@@ -13,6 +13,8 @@ attribution: "mattpocock/skills by Matt Pocock"
 version: "1.0.0"
 ---
 
+# Session Handoff
+
 > **Attribution:** Sourced from [mattpocock/skills](https://github.com/mattpocock/skills) by [Matt Pocock](https://github.com/mattpocock), licensed MIT. Modified for this collection (upstream name: `handoff`).
 
 Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS (`$TMPDIR`, else `/tmp`; `%TEMP%` on Windows) - not the current workspace.

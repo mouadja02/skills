@@ -137,14 +137,16 @@ Status should show **`kerberos-enabled`**.
 
 ### Step 4 — create the DB user (UPPERCASE, IDENTIFIED EXTERNALLY)
 
+Replace each placeholder with the uppercase Kerberos principal, including its username, at sign, and realm.
+
 ```sql
--- For an on-prem AD user joedoe@onprem.local
-CREATE USER "JOEDOE@ONPREM.LOCAL" IDENTIFIED EXTERNALLY;
-GRANT CREATE SESSION TO "JOEDOE@ONPREM.LOCAL";
+-- For a user in your on-premises Active Directory realm
+CREATE USER "<ON_PREM_REALM_PRINCIPAL>" IDENTIFIED EXTERNALLY;
+GRANT CREATE SESSION TO "<ON_PREM_REALM_PRINCIPAL>";
 
 -- For an AWS Managed AD user
-CREATE USER "JOEDOE@AD.MYAWS.COM" IDENTIFIED EXTERNALLY;
-GRANT CREATE SESSION TO "JOEDOE@AD.MYAWS.COM";
+CREATE USER "<MANAGED_AD_REALM_PRINCIPAL>" IDENTIFIED EXTERNALLY;
+GRANT CREATE SESSION TO "<MANAGED_AD_REALM_PRINCIPAL>";
 ```
 
 Username **must be uppercase** and the realm suffix is required.

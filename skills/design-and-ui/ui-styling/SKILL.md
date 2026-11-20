@@ -16,7 +16,7 @@ source: "https://github.com/mrgoonie/claudekit-skills"
 attribution: "mrgoonie/claudekit-skills by mrgoonie"
 ---
 
-> **Attribution:** Sourced from [mrgoonie/claudekit-skills](https://github.com/mrgoonie/claudekit-skills) by [mrgoonie](https://github.com/mrgoonie), licensed MIT. Modified for this collection.
+> **Attribution and license provenance:** Sourced from [mrgoonie/claudekit-skills](https://github.com/mrgoonie/claudekit-skills) by [mrgoonie](https://github.com/mrgoonie); modified for this collection. The upstream skill manifest declares MIT, while its skill directory also contains an Apache 2.0 [LICENSE.txt](LICENSE.txt). Their intended scopes are not clear from those files; upstream clarification is needed. The bundled fonts have separate copyright and SIL Open Font License notices in `canvas-fonts/`.
 
 # UI Styling Skill
 

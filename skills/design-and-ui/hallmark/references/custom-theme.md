@@ -213,7 +213,7 @@ Custom runs extend the existing schema with a `theme_axes` field and an optional
   "brief": "Coffeebox · subscription" }
 ```
 
-Catalog entries continue to record `theme: <name>` and skip `theme_axes` (the catalog's axes are looked up from [`tokens.css`](../../site/css/tokens.css)). Step 2.5 logic uses the same diversification check on both — for catalog entries it reads the axes from tokens.css; for custom entries it reads them from the entry.
+Catalog entries continue to record `theme: <name>` and skip `theme_axes` (the catalog's axes are looked up from [`tokens.css`](../site/css/tokens.css)). Step 2.5 logic uses the same diversification check on both — for catalog entries it reads the axes from tokens.css; for custom entries it reads them from the entry.
 
 When rotating, **a custom run that follows another custom run must differ on at least one axis from the previous custom** — same rule as catalog-vs-catalog. A custom run that follows a catalog run must differ on at least one axis from the catalog's axes. The diversification rule is theme-route-blind.
 
@@ -321,7 +321,7 @@ The vibe names two hues: *moss* (greenish, ~140°) and *soft pink* (warm, ~350°
 ## What custom does **not** do (worth restating)
 
 1. **Does not invent themes that ignore the rules.** Every paper L band, accent chroma cap, neutral-tinting requirement, font ban, and slop-test gate carries forward. The freedom is the *combination* — not the rules.
-2. **Does not save themes for reuse.** A custom run is per-output. The skill does not write back to [`tokens.css`](../../site/css/tokens.css). If the user wants a permanent theme, they paste the custom palette into tokens.css themselves and name it.
+2. **Does not save themes for reuse.** A custom run is per-output. The skill does not write back to [`tokens.css`](../site/css/tokens.css). If the user wants a permanent theme, they paste the custom palette into tokens.css themselves and name it.
 3. **Does not ask multiple follow-up questions.** One vibe answer (+ optional anchor) is enough. The audience/use/tone from Step 1 plus the brief plus the macrostructure pick already give the model 80 % of the signal.
 4. **Does not relax the diversification rule.** Custom entries declare their three axes the same way catalog entries do; the rotation rule fires on both, theme-route-blind.
 5. **Does not bypass the Step 5 preview.** The custom palette + pairing surface in plain text *before* any code is emitted, so the user can redirect early.

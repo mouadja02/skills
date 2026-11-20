@@ -358,7 +358,7 @@ See `references/compliance_requirements.md` for full control mappings. Run `comp
 
 ```python
 # BAD: Hardcoded secret
-API_KEY = "sk-1234567890abcdef"
+# Avoid assigning a live API credential as a source-code literal.
 
 # GOOD: Environment variable
 import os

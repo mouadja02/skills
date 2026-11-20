@@ -183,7 +183,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgres://user:pass@db:5432/mydb
+      - DATABASE_URL=${DATABASE_URL:?Provide the database URI}
     depends_on:
       db:
         condition: service_healthy

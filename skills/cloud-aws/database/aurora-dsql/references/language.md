@@ -122,7 +122,7 @@ For per-driver `example_preferred.py` files and pool/TLS/token-refresh examples,
 **Tokio-Postgres** (lower-level async)
 
 - Only reach for raw `tokio-postgres` when the `aurora-dsql-sqlx-connector` doesn't fit the runtime. Implement periodic token refresh with `tokio::spawn`.
-- Connection format: `postgres://admin:{token}@{endpoint}:5432/postgres?sslmode=verify-full&application_name=<app-name>/<model-id>`
+- Configure the driver with the cluster endpoint, port `5432`, database `postgres`, TLS mode `verify-full`, and application name `<app-name>/<model-id>`. Pass the database username and a freshly generated IAM token as separate authentication settings.
 
 ### Elixir
 

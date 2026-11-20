@@ -67,7 +67,7 @@ if (missing.length || extra.length || placeholderMismatch.length) {
   console.error(JSON.stringify({missing, extra, placeholderMismatch}, null, 2));
   process.exit(1);
 }
-console.log(`Message key and placeholder parity: ${source.size}/${target.size}`);
+console.log('Message key and placeholder parity: %d/%d', source.size, target.size);
 NODE
 ```
 
@@ -79,7 +79,7 @@ Treat the routing configuration as the source of truth. A proxy or middleware th
 
 If the project also validates route parameters, generates static parameters, emits alternate metadata, or builds a sitemap from a separate static list, either derive those values from `routing.locales` or update and test the deliberate secondary contract.
 
-## 4. Verify request-time message loading
+## 4. Verify messages load for each request
 
 Inspect the function passed to `getRequestConfig`. Confirm that it:
 

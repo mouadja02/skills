@@ -54,7 +54,7 @@ correct mxGraph XML structure. All generated files open immediately in the
   ext install hediet.vscode-drawio
   ```
 - **Supported file extensions**: `.drawio`, `.drawio.svg`, `.drawio.png`
-- **Python 3.8+** (optional) — for the validation and shape-insertion scripts in `scripts/`
+- **Python 3.9+ and `defusedxml`** (optional) — for the validation and shape-insertion scripts in `scripts/`. Install the parser in your project environment with `python -m pip install defusedxml`.
 
 ---
 

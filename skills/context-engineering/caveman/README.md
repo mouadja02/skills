@@ -64,5 +64,5 @@ megacave:
 ## See also
 
 - [`SKILL.md`](./SKILL.md): full LLM-facing instructions
-- [`../ultracave/`](../ultracave/) and [`../megacave/`](../megacave/): the sibling skills
+- The `ultracave` and `megacave` sibling skills are available in the [upstream plugin](https://github.com/JuliusBrussee/caveman).
 - [Caveman README](../../README.md): repo overview, install, benchmarks

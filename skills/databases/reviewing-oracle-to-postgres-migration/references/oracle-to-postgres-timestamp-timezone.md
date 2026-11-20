@@ -109,8 +109,13 @@ INSERT INTO audit_log (created_at) VALUES (CURRENT_TIMESTAMP);
 Regardless of role or database defaults, set the session timezone explicitly when opening a connection. This guarantees consistent behavior independent of server configuration:
 
 ```csharp
-// Npgsql connection string approach
-var connString = "Host=localhost;Database=mydb;Username=app;Password=...;Timezone=UTC";
+// Supply the base connection string through the environment.
+var baseConnectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING")
+    ?? throw new InvalidOperationException("POSTGRES_CONNECTION_STRING is required");
+var connString = new NpgsqlConnectionStringBuilder(baseConnectionString)
+{
+    Timezone = "UTC"
+}.ConnectionString;
 
 // Or: apply via NpgsqlDataSourceBuilder
 var dataSource = new NpgsqlDataSourceBuilder(connString)

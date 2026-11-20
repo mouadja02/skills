@@ -193,7 +193,7 @@ Enable failure alerts on all critical flows:
 1. list_store_flows(monitor=true)
 2. For each active flow: split id, get_store_flow
 3. If critical=true and rule_notify_onfail is false, update_store_flow(...,
-   rule_notify_onfail=true, rule_notify_email="oncall@contoso.com")
+   rule_notify_onfail=true, rule_notify_email="oncall@example.com")
 
 Enable missing-run detection for scheduled flows:
 1. list_store_flows(monitor=true)

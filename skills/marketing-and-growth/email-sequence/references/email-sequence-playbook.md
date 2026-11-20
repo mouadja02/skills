@@ -124,7 +124,7 @@ Key emails:
 6. Advanced tip (day 10-12)
 7. Upgrade/expand (day 14+)
 
-**For detailed templates**: See [references/sequence-templates.md](references/sequence-templates.md)
+Use these sequences as templates. Adapt the audience, timing, and call to action to the campaign.
 
 ---
 
@@ -167,7 +167,7 @@ Key emails:
 - Industry news roundup
 - Pricing updates
 
-**For detailed email type reference**: See [references/email-types.md](references/email-types.md)
+Select the email type that matches the recipient’s stage and the action you want them to take.
 
 ---
 
@@ -204,6 +204,6 @@ Key emails:
 - One clear primary CTA per email
 - Button text: Action + outcome
 
-**For detailed copy, personalization, and testing guidelines**: See [references/copy-guidelines.md](references/copy-guidelines.md)
+Apply these copy and personalization guidelines before testing subject lines, timing, and calls to action.
 
 ---

@@ -110,7 +110,7 @@ STACK_TEMPLATES = {
         "dirs": ["app/api", "app/models", "app/services", "app/core", "tests", "alembic"],
         "files": {
             "app/__init__.py": "",
-            "app/main.py": "from fastapi import FastAPI\nfrom app.core.config import settings\n\napp = FastAPI(title=settings.PROJECT_NAME)\n\n@app.get('/health')\ndef health(): return {'status': 'ok'}\n",
+            "app/main.py": "from fastapi import FastAPI\nfrom app.core.config import settings\n\napp = FastAPI(title=settings.PROJECT_NAME)\n\ndef health(): return {'status': 'ok'}\n\napp.add_api_route('/health', health, methods=['GET'])\n",
             "app/core/__init__.py": "",
             "app/core/config.py": "from pydantic_settings import BaseSettings\n\nclass Settings(BaseSettings):\n    PROJECT_NAME: str = 'API'\n    DATABASE_URL: str = 'sqlite:///./app.db'\n    class Config:\n        env_file = '.env'\n\nsettings = Settings()\n",
         }
@@ -190,14 +190,15 @@ def generate_env_example(config: Dict[str, Any]) -> str:
         "PORT=3000",
         "",
         "# Database",
+        "# Set the connection URI for the selected database before starting.",
     ]
     db = config.get("database", "postgresql")
     if db == "postgresql":
-        lines.extend(["DATABASE_URL=postgresql://user:password@localhost:5432/mydb", ""])
+        lines.extend(["DATABASE_URL=", ""])
     elif db == "mongodb":
         lines.extend(["MONGODB_URI=mongodb://localhost:27017/mydb", ""])
     elif db == "mysql":
-        lines.extend(["DATABASE_URL=mysql://user:password@localhost:3306/mydb", ""])
+        lines.extend(["DATABASE_URL=", ""])
 
     if config.get("auth"):
         lines.extend([

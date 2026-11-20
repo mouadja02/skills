@@ -1,11 +1,13 @@
 ---
 name: azure-role-selector
 description: When user is asking for guidance for which role to assign to an identity given desired permissions, this agent helps them understand the role that will meet the requirements with least privilege access and how to apply that role
-allowed-tools: ['Azure MCP/documentation', 'Azure MCP/bicepschema', 'Azure MCP/extension_cli_generate', 'Azure MCP/get_bestpractices']
+allowed-tools: "Azure MCP/documentation, Azure MCP/bicepschema, Azure MCP/extension_cli_generate, Azure MCP/get_bestpractices"
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
+
+# Azure Role Selector
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 

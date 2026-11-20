@@ -13,6 +13,7 @@ import urllib.error
 import urllib.request
 import zipfile
 from typing import Optional, Set, Tuple
+from urllib.parse import urlsplit
 
 from launch_config import GITHUB_ZIPBALL_TIMEOUT_SECS, MAX_ARCHIVE_BYTES
 
@@ -285,6 +286,15 @@ def zip_local_repo(path: str, root_name: str) -> bytes:
     return data
 
 
+class GitHubArchiveRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        target = urlsplit(newurl)
+        if (target.scheme != "https" or target.hostname not in {"api.github.com", "codeload.github.com"}
+                or target.username is not None or target.port not in (None, 443)):
+            raise ArchiveError("Unexpected GitHub archive redirect destination")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def download_github_zip(url: str) -> bytes:
     """Download a public GitHub repo's default-branch archive."""
     parsed = parse_github_url(url)
@@ -295,8 +305,9 @@ def download_github_zip(url: str) -> bytes:
     zipball = f"https://api.github.com/repos/{owner}/{repo}/zipball"
     req = urllib.request.Request(zipball, headers={"Accept": "application/vnd.github+json"})
     try:
-        with urllib.request.urlopen(req, timeout=GITHUB_ZIPBALL_TIMEOUT_SECS) as resp:
-            data = resp.read()
+        opener = urllib.request.build_opener(GitHubArchiveRedirect())
+        with opener.open(req, timeout=GITHUB_ZIPBALL_TIMEOUT_SECS) as resp:
+            data = resp.read(MAX_ARCHIVE_BYTES + 1)
     except urllib.error.HTTPError as err:
         if err.code in (401, 403, 404):
             raise ArchiveError(
@@ -310,7 +321,6 @@ def download_github_zip(url: str) -> bytes:
 
     if len(data) > MAX_ARCHIVE_BYTES:
         raise ArchiveError(
-            f"Downloaded archive is {len(data) // (1024 * 1024)} MiB, exceeding "
-            f"the {MAX_ARCHIVE_BYTES // (1024 * 1024)} MiB limit."
+            f"Downloaded archive exceeds the {MAX_ARCHIVE_BYTES // (1024 * 1024)} MiB limit."
         )
     return data

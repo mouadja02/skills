@@ -104,7 +104,7 @@ def check_secrets(mcp_config: dict) -> list[dict]:
       "command": "node",
       "args": ["server.js", "--api-key", "sk-abc123realkey456"],
       "env": {
-        "DB_URL": "postgresql://admin:password123@prod-db:5432/main"
+        "DB_URL": "[credential-bearing connection string omitted]"
       }
     }
   }

@@ -557,8 +557,8 @@ def build_escalation_path(
     template = ESCALATION_TEMPLATES.get(level, ESCALATION_TEMPLATES["SEV4"])
 
     on_call = context.get("on_call", {})
-    primary = on_call.get("primary", "on-call-primary@company.com")
-    secondary = on_call.get("secondary", "on-call-secondary@company.com")
+    primary = on_call.get("primary", "on-call-primary@example.com")
+    secondary = on_call.get("secondary", "on-call-secondary@example.com")
 
     immediate: List[str] = []
     for role in template["initial_notify"]:

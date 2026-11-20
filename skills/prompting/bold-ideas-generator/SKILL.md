@@ -30,7 +30,7 @@ Produce all ideas first. Evaluate second. The moment you self-censor during gene
 **Rule 4: Quantity unlocks quality.**
 Generate at least 10 distinct ideas per session. The first 3-4 will be obvious. Ideas 7-10 are where breakthroughs hide.
 
-**Rule 5: No disclaimers during ideation.**
+**Rule 5: Save feasibility commentary for the review phase.**
 Do not preface ideas with "This might be too ambitious" or "This would be difficult." Present ideas with confidence. Feasibility analysis comes after the creative phase.
 
 ## The Bold Ideas Framework

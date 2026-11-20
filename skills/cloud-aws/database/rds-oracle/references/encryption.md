@@ -117,9 +117,11 @@ curl -o rds-ca-bundle.pem https://truststore.pki.rds.amazonaws.com/<region>/<reg
 ```python
 import oracledb
 
+import os
+
 conn = oracledb.connect(
     user="dbadmin",
-    password="<from-secrets-manager>",
+    password=os.environ["ORACLE_DB_PASSWORD"],
     dsn="tcps://mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:2484/ORCL",
     ssl_server_dn_match=True,
     wallet_location="/path/to/certs-dir",   # directory containing global-bundle.pem
@@ -172,7 +174,7 @@ export NODE_EXTRA_CA_CERTS=/path/to/global-bundle.pem
 ```javascript
 const conn = await oracledb.getConnection({
   user: 'dbadmin',
-  password: '<from-secrets-manager>',
+  password: process.env.ORACLE_DB_PASSWORD,
   connectString: `(DESCRIPTION=
     (ADDRESS=(PROTOCOL=TCPS)(HOST=mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com)(PORT=2484))
     (CONNECT_DATA=(SERVICE_NAME=ORCL))

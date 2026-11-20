@@ -52,7 +52,7 @@ rm -f /tmp/rds-cert-*.pem
 
 SQL Developer does NOT support Windows in-memory tickets (`OSMSFT:`). Use a file-based cache.
 
-1. `okinit joedoe@AD.MYAWS.COM` — generate ticket file.
+1. `okinit <user>@<realm>` — generate ticket file.
 2. Tools → Preferences → Database → **Advanced**:
    - **Kerberos Configuration File**: `/etc/krb5.conf` (or `C:\Oracle_Home\krb5.conf`)
    - **Kerberos Credential Cache**: `/tmp/kerbcache`
@@ -132,7 +132,7 @@ SQLNET.KERBEROS5_CONF_MIT = TRUE
 SQLNET.KERBEROS5_CC_NAME = /tmp/kerbcache
 ```
 
-`okinit joedoe@AD.MYAWS.COM`, then in Toad leave **User** blank, **Connect As: Normal**.
+`okinit <user>@<realm>`, then in Toad leave **User** blank, **Connect As: Normal**.
 
 ### Troubleshooting
 
@@ -154,7 +154,7 @@ brew install --cask sqlcl   # macOS
 ### Basic connection (never pass password on CLI)
 
 ```bash
-sql admin@mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL
+sql "$ORACLE_USER@$ORACLE_DSN"  # Set these to your database username and service address.
 # prompts for password
 ```
 
@@ -170,7 +170,7 @@ sql admin@"(DESCRIPTION=(ADDRESS=(PROTOCOL=TCPS)(HOST=mydb.xxxxxxxxxxxx.us-east-
 Requires thick mode (Oracle Client). Set `ORACLE_HOME`, `okinit <user@REALM>`, then:
 
 ```bash
-sql /@mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL
+sql "$ORACLE_USER@$ORACLE_DSN"  # Set these to your database username and service address.
 ```
 
 ### Verification queries
@@ -209,7 +209,7 @@ brew install instantclient-sqlplus instantclient-basic
 
 ```bash
 sqlplus /nolog
-SQL> CONNECT admin@mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL
+SQL> CONNECT <db-user>@<service-alias>
 ```
 
 TLS: use a full TCPS descriptor after `CONNECT admin@"(DESCRIPTION=...)`" with Oracle Wallet configured in `sqlnet.ora`.

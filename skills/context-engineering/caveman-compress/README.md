@@ -35,7 +35,7 @@ or `%LOCALAPPDATA%\caveman-compress\backups\<parent-dir-name>\` on Windows. Edit
 
 ## Benchmarks
 
-The five fixture pairs in [`tests/caveman-compress/`](../../tests/caveman-compress/),
+The five fixture pairs in the [upstream project](https://github.com/JuliusBrussee/caveman) under `tests/caveman-compress/`,
 counted with tiktoken o200k. Reproduce with
 `uv run --with tiktoken python skills/caveman-compress/scripts/benchmark.py`.
 

@@ -4,11 +4,7 @@ description: >-
   Lists Qdrant's official client SDKs (Python, JavaScript/TypeScript, Rust, Go, .NET, Java) with
   installation and usage pointers. Use when connecting an application to Qdrant and choosing or
   setting up the client library.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
+allowed-tools: "Read Grep Glob Bash"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 license: Apache-2.0

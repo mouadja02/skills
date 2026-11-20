@@ -120,7 +120,7 @@ ConnectionStrings__<resource-name>=<connection-string>
 Examples:
 ```
 ConnectionStrings__cache=localhost:6379
-ConnectionStrings__catalog=Host=localhost;Port=5432;Database=catalog;Username=postgres;Password=...
+# Inject ConnectionStrings__catalog from the .NET local secret store or your deployment secret provider.
 ConnectionStrings__messaging=amqp://guest:guest@localhost:5672
 ```
 

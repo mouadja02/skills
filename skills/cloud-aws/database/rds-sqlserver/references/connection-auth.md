@@ -36,7 +36,9 @@ Best practice: don't use the master user for applications. Create scoped logins:
 
 ```sql
 -- As master user, create app login
-CREATE LOGIN app_user WITH PASSWORD = 'strong-password-here';
+-- Replace <app-login-password> at run time with a value from your secrets manager;
+-- keep the real value out of scripts, shell history, and logs.
+CREATE LOGIN app_user WITH PASSWORD = '<app-login-password>';
 
 -- Create user in app database
 USE mydb;

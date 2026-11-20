@@ -79,19 +79,19 @@ This isn't therapy. It's preparation.
 ## Commands in Detail
 
 ### `/em:challenge <plan>`
-Takes any plan — roadmap, GTM, hiring, fundraising — and finds what breaks first. Identifies assumptions, rates confidence, maps dependencies. Output: numbered vulnerabilities with severity (Critical / High / Medium). See `skills/challenge/SKILL.md`
+Takes any plan — roadmap, GTM, hiring, fundraising — and finds what breaks first. Identifies assumptions, rates confidence, maps dependencies. Output: numbered vulnerabilities with severity (Critical / High / Medium). See `skills/executive-mentor-challenge/SKILL.md`
 
 ### `/em:board-prep <agenda>`
-48 hours before investors. What are the 10 hardest questions? What data do you need cold? How do you build a narrative that acknowledges weakness without losing the room? Prepares you for the adversarial board, not the friendly one. See `skills/board-prep/SKILL.md`
+48 hours before investors. What are the 10 hardest questions? What data do you need cold? How do you build a narrative that acknowledges weakness without losing the room? Prepares you for the adversarial board, not the friendly one. See `skills/executive-mentor-board-prep/SKILL.md`
 
 ### `/em:hard-call <decision>`
-Reversibility test. 10/10/10 framework. Stakeholder impact mapping. Communication planning. For decisions with no good answer — only less bad ones. See `skills/hard-call/SKILL.md`
+Reversibility test. 10/10/10 framework. Stakeholder impact mapping. Communication planning. For decisions with no good answer — only less bad ones. See `skills/executive-mentor-hard-call/SKILL.md`
 
 ### `/em:stress-test <assumption>`
-"$5B market." "$2M ARR by December." "3-year moat." Every plan is built on assumptions. Surfaces counter-evidence, models the downside, proposes the hedge. See `skills/stress-test/SKILL.md`
+"$5B market." "$2M ARR by December." "3-year moat." Every plan is built on assumptions. Surfaces counter-evidence, models the downside, proposes the hedge. See `skills/executive-mentor-stress-test/SKILL.md`
 
 ### `/em:postmortem <event>`
-Lost deal. Failed feature. Missed quarter. No blame sessions, no whitewash. 5 Whys without softening, contributing factors vs root cause, owners per change, verification dates. See `skills/postmortem/SKILL.md`
+Lost deal. Failed feature. Missed quarter. No blame sessions, no whitewash. 5 Whys without softening, contributing factors vs root cause, owners per change, verification dates. See `skills/executive-mentor-postmortem/SKILL.md`
 
 ## Agents & References
 

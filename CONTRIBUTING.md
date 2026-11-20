@@ -148,6 +148,8 @@ duplicate folder names, links that escape the skill folder, prose that names a
 bundled file (`references/…`, `scripts/…`) the folder does not contain, and a
 `source` without an `attribution`. Run it with `--quiet` to see errors only.
 
+When addressing a SkillEvaluator finding, verify the affected skill’s normal workflow with a representative input. Keep legitimate safety checks such as finding and excluding `.env` files. Record a confirmed false positive with its source evidence and the narrowest applicable exception.
+
 ZIP generation uses the Git index as its publication allowlist and fails when
 non-ignored untracked files remain under `skills/`. This prevents local
 credential or editor residue from entering downloadable archives; stage only

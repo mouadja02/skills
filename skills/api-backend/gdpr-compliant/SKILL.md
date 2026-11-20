@@ -143,7 +143,7 @@ For deep dives, read the reference files in `references/`:
 - Enforce log retention — purge automatically after the defined period.
 
 **SHOULD**
-- Log **events** not data: `"User {UserId} updated email"` not `"Email changed from a@b.com to c@d.com"`.
+- Log **events** not data: `"User {UserId} updated email"` not `"Email changed from user@example.com to other@example.com"`.
 - Use structured logging (JSON) with `userId` as an internal identifier, not the email address.
 - Separate audit logs (sensitive access, admin actions) from application logs — different retention and ACLs.
 

@@ -42,16 +42,16 @@ Choose format based on file types and existing content:
 ```markdown
 ## Files in ${folder}
 
-- [filename.ext](path/to/filename.ext) - Description
-- [filename2.ext](path/to/filename2.ext) - Description
+- [SKILL.md](SKILL.md) - Instructions
+- [LICENSE](LICENSE) - License terms
 ```
 
 ### Option 2: Detailed Table
 
 | File | Type | Description |
 |------|------|-------------|
-| [filename.ext](path/to/filename.ext) | Extension | Description |
-| [filename2.ext](path/to/filename2.ext) | Extension | Description |
+| [SKILL.md](SKILL.md) | Markdown | Instructions |
+| [LICENSE](LICENSE) | Text | License terms |
 
 ### Option 3: Categorized Sections
 

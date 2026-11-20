@@ -58,7 +58,7 @@ You MUST fill in the placeholders during Step 3 (Translate Schema). You MUST emi
 - [ ] `number_of_shards` / `number_of_replicas` come from Step 5 (Estimate Sizing).
 - [ ] Every Solr field has an explicit `properties` entry. You MUST NOT rely on dynamic mapping for production fields because dynamic mapping causes type conflicts.
 - [ ] Solr `uniqueKey` is mapped to a `keyword` field AND set as `_id` on every index request.
-- [ ] Date `"format"` matches the on-the-wire encoding — `strict_date_optional_time` for ISO-8601 strings (default), `epoch_millis` for long integers, or both (`strict_date_optional_time||epoch_millis`) per [solr-transformation-rules](../references/solr-transformation-rules.md).
+- [ ] Date `"format"` matches the on-the-wire encoding — `strict_date_optional_time` for ISO-8601 strings (default), `epoch_millis` for long integers, or both (`strict_date_optional_time||epoch_millis`) per the [schema conversion guide](../references/assessment-shape-schema-conversion.md).
 - [ ] Solr geo strings (`"lat,lon"`) are converted to `geo_point` objects.
 - [ ] Solr internal fields (`_version_`, `_root_`, `_nest_path_`) are stripped before indexing.
 - [ ] Field names containing dots (e.g. `product.id`) are renamed to use underscores.
