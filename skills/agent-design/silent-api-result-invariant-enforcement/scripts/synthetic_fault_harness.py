@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
@@ -215,7 +216,7 @@ def main() -> int:
     try:
         _atomic_write(args.output, build_report(modes))
     except (OSError, TypeError, ValueError) as error:
-        print(f"error: {error}", file=__import__("sys").stderr)
+        print(f"error: {error}", file=sys.stderr)
         return 2
     return 0
 
