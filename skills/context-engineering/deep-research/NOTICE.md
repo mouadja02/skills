@@ -1,0 +1,3 @@
+# Provenance
+
+This package is a newly authored replacement for the previously bundled deep-research skill. The earlier package came from Cheng-I Wu's [academic-research-skills](https://github.com/Imbad0202/academic-research-skills) and was distributed under CC BY-NC 4.0. Its files and terms remain in repository history; the prior license is not changed or relicensed. This replacement is distributed under the MIT License in this directory. It preserves the skill name and broad mode labels for continuity, but does not include the prior package's agent files, templates, examples, or reference library.

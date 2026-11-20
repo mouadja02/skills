@@ -137,6 +137,13 @@ Then, follow this priority order for managing sensitive attributes:
 
    ```hcl
    # Good
+   # Set TF_VAR_postgres_connection_url to the complete Vault connection URL,
+   # including Vault's username and password template placeholders.
+   variable "postgres_connection_url" {
+     type      = string
+     sensitive = true
+   }
+
    ephemeral "vault_kv_secret_v2" "db_secret" {
      mount = vault_mount.kvv2.path
      mount_id = vault_mount.kvv2.id
@@ -149,7 +156,7 @@ Then, follow this priority order for managing sensitive attributes:
      allowed_roles = ["*"]
 
      postgresql {
-       connection_url = "postgresql://{{username}}:{{password}}@localhost:5432/postgres"
+       connection_url = var.postgres_connection_url
        password_authentication = ""
        username = "postgres"
        password_wo = tostring(ephemeral.vault_kv_secret_v2.db_secret.data.password)
