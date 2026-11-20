@@ -73,7 +73,7 @@ Then do exactly ONE iteration:
 - Review results.tsv: what worked, what failed, what hasn't been tried
 - Edit the target file with ONE change (strategy escalation based on run count)
 - Commit: git add {target} && git commit -m "experiment: {description}"
-- Evaluate: python {skill_path}/scripts/run_experiment.py --experiment {domain}/{name} --single
+- Evaluate: python {skill_path}/scripts/run_experiment.py --experiment {domain}/{name} --single --expected-commit {commit_sha} --expected-parent {parent_sha}
 - Read the output (KEEP/DISCARD/CRASH)
 
 Rules:
@@ -128,3 +128,5 @@ When user runs `/ar:loop stop {experiment}`:
 - **3-day auto-expiry**: CronCreate jobs expire after 3 days. For longer experiments, the user must re-run `/ar:loop` to restart. Results persist — the new loop picks up where the old one left off.
 - **One loop per experiment**: Don't start multiple loops for the same experiment.
 - **Concurrent experiments**: Multiple experiments can loop simultaneously ONLY if they're on different git branches (which they are by default — each experiment gets `autoresearch/{domain}/{name}`).
+
+For automatic rollback, pass `--expected-commit <full-commit-sha> --expected-parent <full-parent-sha>` for the experiment commit. The runner checks the experiment branch, exact parent, target-only change and clean tracked worktree before creating a revert commit. Without these checks rollback is left for manual review.

@@ -7,8 +7,8 @@ import sys
 import time
 
 # --- CONFIGURE THESE ---
-BUILD_CMD = "npm run build"    # or: docker build -t test .
-CLEAN_CMD = ""                 # optional: npm run clean (run before each build)
+BUILD_CMD = ["npm", "run", "build"]
+CLEAN_CMD = []                  # Optional: ["npm", "run", "clean"] before each build
 RUNS = 3                       # Number of builds to average
 # --- END CONFIG ---
 
@@ -17,10 +17,10 @@ times = []
 for i in range(RUNS):
     # Clean if configured
     if CLEAN_CMD:
-        subprocess.run(CLEAN_CMD, shell=True, capture_output=True, timeout=60)
+        subprocess.run(CLEAN_CMD, capture_output=True, timeout=60)
 
     t0 = time.perf_counter()
-    result = subprocess.run(BUILD_CMD, shell=True, capture_output=True, timeout=600)
+    result = subprocess.run(BUILD_CMD, capture_output=True, timeout=600)
     elapsed = time.perf_counter() - t0
 
     if result.returncode != 0:

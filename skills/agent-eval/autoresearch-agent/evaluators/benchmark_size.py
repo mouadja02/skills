@@ -15,15 +15,15 @@ TARGET_FILE = "dist/main.js"
 
 # Option 3: Docker image (uncomment to use)
 # DOCKER_IMAGE = "myapp:latest"
-# DOCKER_BUILD_CMD = "docker build -t myapp:latest ."
+# DOCKER_BUILD_CMD = ["docker", "build", "-t", "myapp:latest", "."]
 
 # Option 4: Build first, then measure (uncomment to use)
-# BUILD_CMD = "npm run build"
+# BUILD_CMD = ["npm", "run", "build"]
 # --- END CONFIG ---
 
 # Build if needed
 if "BUILD_CMD" in dir() or "BUILD_CMD" in globals():
-    result = subprocess.run(BUILD_CMD, shell=True, capture_output=True)
+    result = subprocess.run(BUILD_CMD, capture_output=True)
     if result.returncode != 0:
         print(f"Build failed: {result.stderr.decode()[:200]}", file=sys.stderr)
         sys.exit(1)
@@ -31,10 +31,10 @@ if "BUILD_CMD" in dir() or "BUILD_CMD" in globals():
 # Measure
 if "DOCKER_IMAGE" in dir() or "DOCKER_IMAGE" in globals():
     if "DOCKER_BUILD_CMD" in dir():
-        subprocess.run(DOCKER_BUILD_CMD, shell=True, capture_output=True)
+        subprocess.run(DOCKER_BUILD_CMD, capture_output=True)
     result = subprocess.run(
-        f"docker image inspect {DOCKER_IMAGE} --format '{{{{.Size}}}}'",
-        shell=True, capture_output=True, text=True
+        ["docker", "image", "inspect", "--format", "{{.Size}}", "--", DOCKER_IMAGE],
+        capture_output=True, text=True
     )
     try:
         size_bytes = int(result.stdout.strip())

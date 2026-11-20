@@ -175,6 +175,20 @@ def _fetch_instance_pricing(region: str) -> dict[str, float]:
     return prices
 
 
+import urllib.request
+
+class _PricingRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Keep AWS pricing redirects on the same HTTPS origin."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        from urllib.parse import urlsplit
+
+        parsed = urlsplit(newurl)
+        if (parsed.scheme != "https" or parsed.netloc != "pricing.us-east-1.amazonaws.com"):
+            raise ValueError("Pricing redirect must stay on the AWS pricing HTTPS origin")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def _fetch_instance_pricing_bulk(region: str) -> dict[str, float]:
     """Fetch on-demand Aurora PostgreSQL pricing from the public AWS Bulk Pricing CSV.
 
@@ -185,14 +199,17 @@ def _fetch_instance_pricing_bulk(region: str) -> dict[str, float]:
     """
     import csv
     import io
-    import urllib.request
+    import re
+
+    if not re.fullmatch(r"[a-z]{2}(?:-[a-z0-9]+)+-[0-9]+", region):
+        raise ValueError("Invalid AWS region identifier")
 
     url = (
         f"https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/"
         f"current/{region}/index.csv"
     )
     req = urllib.request.Request(url, headers={"Accept-Encoding": "identity"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    with urllib.request.build_opener(_PricingRedirectHandler()).open(req, timeout=30) as resp:
         # CSV has metadata rows before the header; find the header row
         raw = resp.read().decode("utf-8")
 

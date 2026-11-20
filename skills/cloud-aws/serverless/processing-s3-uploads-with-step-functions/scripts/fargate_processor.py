@@ -3,12 +3,13 @@ import json
 import boto3
 import os
 import sys
+import tempfile
 
 s3_client = boto3.client('s3')
 
 def process_file(bucket, key):
     # Download the file
-    local_path = f"/tmp/{os.path.basename(key)}"
+    local_path = os.path.join(tempfile.mkdtemp(prefix="s3-object-"), "object")
     s3_client.download_file(bucket, key, local_path)
     print(f"Downloaded s3://{bucket}/{key} to {local_path}")
 

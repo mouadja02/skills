@@ -8,7 +8,7 @@ import sys
 import time
 
 # --- CONFIGURE THESE ---
-COMMAND = "python src/module.py"  # Command to benchmark
+COMMAND = ["python", "src/module.py"]  # Command to benchmark
 RUNS = 5                          # Number of runs
 WARMUP = 1                        # Warmup runs (not counted)
 # --- END CONFIG ---
@@ -17,12 +17,12 @@ times = []
 
 # Warmup
 for _ in range(WARMUP):
-    subprocess.run(COMMAND, shell=True, capture_output=True, timeout=120)
+    subprocess.run(COMMAND, capture_output=True, timeout=120)
 
 # Benchmark
 for i in range(RUNS):
     t0 = time.perf_counter()
-    result = subprocess.run(COMMAND, shell=True, capture_output=True, timeout=120)
+    result = subprocess.run(COMMAND, capture_output=True, timeout=120)
     elapsed = (time.perf_counter() - t0) * 1000  # ms
 
     if result.returncode != 0:

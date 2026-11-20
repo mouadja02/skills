@@ -70,7 +70,7 @@ git add {target}
 git commit -m "experiment: {short description of what changed}"
 
 python {skill_path}/scripts/run_experiment.py \
-  --experiment {domain}/{name} --single
+  --experiment {domain}/{name} --single --expected-commit {commit_sha} --expected-parent {parent_sha}
 ```
 
 ### Step 6: Report result
@@ -90,3 +90,5 @@ After every 10th experiment (check results.tsv line count), update the Strategy 
 - NEVER modify the evaluator (evaluate.py). It's ground truth.
 - Simplicity wins. Equal performance with simpler code is an improvement.
 - No new dependencies.
+
+For automatic rollback, pass `--expected-commit <full-commit-sha> --expected-parent <full-parent-sha>` for the experiment commit. The runner checks the experiment branch, exact parent, target-only change and clean tracked worktree before creating a revert commit. Without these checks rollback is left for manual review.

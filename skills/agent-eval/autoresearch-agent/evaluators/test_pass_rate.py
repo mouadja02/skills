@@ -7,10 +7,10 @@ import subprocess
 import sys
 
 # --- CONFIGURE THESE ---
-TEST_CMD = "pytest tests/ --tb=no -q"  # Test command
+TEST_CMD = ["pytest", "tests/", "--tb=no", "-q"]  # Executable and arguments
 # --- END CONFIG ---
 
-result = subprocess.run(TEST_CMD, shell=True, capture_output=True, text=True, timeout=300)
+result = subprocess.run(TEST_CMD, capture_output=True, text=True, timeout=300)
 output = result.stdout + "\n" + result.stderr
 
 # Try to parse pytest output: "X passed, Y failed, Z errors"

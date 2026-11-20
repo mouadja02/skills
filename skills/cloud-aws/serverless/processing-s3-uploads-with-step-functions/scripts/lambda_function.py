@@ -1,6 +1,7 @@
 import json
 import boto3
 import os
+import tempfile
 
 s3_client = boto3.client('s3')
 
@@ -20,9 +21,8 @@ def lambda_handler(event, context):
     if size > 512 * 1024 * 1024:
         raise ValueError('File too large for Lambda processing')
 
-    # Download the file to /tmp
-    local_path = f"/tmp/{os.path.basename(key)}"
-    try:
+    with tempfile.TemporaryDirectory(prefix="s3-object-") as workspace:
+        local_path = os.path.join(workspace, "object")
         s3_client.download_file(bucket, key, local_path)
         print(f"Downloaded s3://{bucket}/{key} to {local_path}")
 
@@ -35,12 +35,6 @@ def lambda_handler(event, context):
             'file_size_on_disk': os.path.getsize(local_path)
         }
         print(f"File metadata: {json.dumps(metadata)}")
-    finally:
-        try:
-            os.remove(local_path)
-        except OSError:
-            pass
-
     return {
         'statusCode': 200,
         'body': metadata

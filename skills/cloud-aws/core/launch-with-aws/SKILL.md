@@ -198,7 +198,17 @@ python3 scripts/launch_with_aws.py get-launch-download-url <launch-id>
 
 ```bash
 python3 scripts/launch_with_aws.py list-launches
-python3 scripts/launch_with_aws.py delete-launch <launch-id>
+```
+
+Before deleting, identify the exact launch ID and present the user with the
+target and that this action deletes the launch through the Launch with AWS
+service. Wait for explicit confirmation of that specific deletion; a missing
+or ambiguous response is not approval. Do not imply that deployed AWS resources
+are deleted or retained unless that behavior has been verified. After approval,
+repeat the confirmed ID in the command, including for noninteractive use:
+
+```bash
+python3 scripts/launch_with_aws.py delete-launch <launch-id> --confirm-delete <launch-id>
 ```
 
 ### 9. Post-Migration: Apply Migrated Code Locally

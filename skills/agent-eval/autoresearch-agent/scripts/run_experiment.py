@@ -19,6 +19,8 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+from eval_command import parse_eval_command
+
 
 def find_autoresearch_root():
     """Find .autoresearch/ in project or user home."""
@@ -83,21 +85,21 @@ def get_best_metric(experiment_dir, direction):
 
 
 def run_evaluation(project_root, eval_cmd, time_budget_minutes, log_file):
-    """Run evaluation with time limit. Output goes to log_file.
-
-    Note: shell=True is intentional here — eval_cmd is user-provided and
-    may contain pipes, redirects, or chained commands.
-    """
+    """Run the evaluator directly and save output to the log."""
     hard_limit = time_budget_minutes * 60 * 2.5
     t0 = time.time()
     try:
         with open(log_file, "w") as lf:
-            result = subprocess.run(
-                eval_cmd, shell=True,
-                stdout=lf, stderr=subprocess.STDOUT,
-                cwd=str(project_root),
-                timeout=hard_limit
-            )
+            try:
+                result = subprocess.run(
+                    parse_eval_command(eval_cmd),
+                    stdout=lf, stderr=subprocess.STDOUT,
+                    cwd=str(project_root),
+                    timeout=hard_limit,
+                )
+            except (OSError, ValueError) as exc:
+                print(f"Evaluation command could not start: {exc}", file=lf)
+                return 127, time.time() - t0
         elapsed = time.time() - t0
         return result.returncode, elapsed
     except subprocess.TimeoutExpired:
@@ -162,7 +164,40 @@ def read_last_lines(filepath, n=5):
     return "\n".join(lines[-n:])
 
 
-def run_single(project_root, experiment_dir, config, exp_num, dry_run=False, description=None):
+def rollback_experiment(project_root, experiment, target, expected_commit, expected_parent):
+    """Revert only a verified, single-target experiment commit; never rewrite history."""
+    if not expected_commit or not expected_parent:
+        return False, "Supply --expected-commit and --expected-parent to authorize rollback"
+    root = str(project_root)
+    def git(*args):
+        return run_git(list(args), cwd=root)
+    code, head, _ = git("rev-parse", "--verify", "HEAD")
+    if code or head != expected_commit:
+        return False, "HEAD does not match the expected full commit SHA"
+    code, branch, _ = git("symbolic-ref", "--quiet", "--short", "HEAD")
+    if code or branch != f"autoresearch/{experiment}":
+        return False, "Current branch is not the experiment branch"
+    code, parents, _ = git("rev-list", "--parents", "-n", "1", head)
+    if code or parents.split() != [head, expected_parent]:
+        return False, "Commit does not have the expected single parent"
+    code, status, _ = git("status", "--porcelain", "--untracked-files=no")
+    if code or status:
+        return False, "Tracked worktree or index is not clean"
+    target_path = (project_root / target).resolve()
+    try:
+        relative = target_path.relative_to(project_root.resolve()).as_posix()
+    except ValueError:
+        return False, "Target is outside the project"
+    code, changed, _ = git("diff-tree", "--no-commit-id", "--name-only", "-r", "--no-renames", head)
+    if code or changed.splitlines() != [relative]:
+        return False, "Commit does not change exactly the configured target"
+    code, _, error = git("revert", "--no-edit", head)
+    if code:
+        return False, f"Git revert failed; inspect repository state: {error}"
+    return True, "Created a revert commit"
+
+
+def run_single(project_root, experiment_dir, config, exp_num, dry_run=False, description=None, experiment=None, expected_commit=None, expected_parent=None):
     """Run one experiment iteration."""
     direction = config.get("metric_direction", "lower")
     metric_grep = config.get("metric_grep", "^metric:")
@@ -191,30 +226,37 @@ def run_single(project_root, experiment_dir, config, exp_num, dry_run=False, des
 
     commit = get_current_commit(str(project_root))
 
+    def rollback():
+        ok, message = rollback_experiment(project_root, experiment, config.get("target", ""), expected_commit, expected_parent)
+        print(f"  Rollback: {message}")
+        return ok
+
     # Timeout
     if ret_code == -1:
         print(f"  TIMEOUT after {elapsed:.0f}s — discarding")
-        run_git(["checkout", "--", "."], cwd=str(project_root))
-        run_git(["reset", "--hard", "HEAD~1"], cwd=str(project_root))
-        log_result(experiment_dir, commit, None, "crash", f"timeout_{elapsed:.0f}s")
-        return "crash"
+        rolled_back = rollback()
+        status = "crash" if rolled_back else "rollback_pending"
+        log_result(experiment_dir, commit, None, status, f"timeout_{elapsed:.0f}s")
+        return status
 
     # Crash
     if ret_code != 0:
         tail = read_last_lines(log_file, 5)
         print(f"  CRASH (exit {ret_code}) after {elapsed:.0f}s")
         print(f"  Last output: {tail[:200]}")
-        run_git(["reset", "--hard", "HEAD~1"], cwd=str(project_root))
-        log_result(experiment_dir, commit, None, "crash", f"exit_{ret_code}")
-        return "crash"
+        rolled_back = rollback()
+        status = "crash" if rolled_back else "rollback_pending"
+        log_result(experiment_dir, commit, None, status, f"exit_{ret_code}")
+        return status
 
     # Extract metric
     metric_val = extract_metric(log_file, metric_grep)
     if metric_val is None:
         print(f"  Could not parse {metric_name} from run.log")
-        run_git(["reset", "--hard", "HEAD~1"], cwd=str(project_root))
-        log_result(experiment_dir, commit, None, "crash", "metric_parse_failed")
-        return "crash"
+        rolled_back = rollback()
+        status = "crash" if rolled_back else "rollback_pending"
+        log_result(experiment_dir, commit, None, status, "metric_parse_failed")
+        return status
 
     delta = ""
     if best is not None:
@@ -230,11 +272,11 @@ def run_single(project_root, experiment_dir, config, exp_num, dry_run=False, des
         return "keep"
     else:
         print(f"  DISCARD — no improvement")
-        run_git(["reset", "--hard", "HEAD~1"], cwd=str(project_root))
+        rolled_back = rollback()
         best_str = f"{best:.4f}" if best is not None else "?"
-        log_result(experiment_dir, commit, metric_val, "discard",
+        log_result(experiment_dir, commit, metric_val, "discard" if rolled_back else "rollback_pending",
                    f"no_improvement_{metric_val:.4f}_vs_{best_str}")
-        return "discard"
+        return "discard" if rolled_back else "rollback_pending"
 
 
 def main():
@@ -244,6 +286,8 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Show what would happen")
     parser.add_argument("--description", help="Description of the change (auto-generated from git diff if omitted)")
     parser.add_argument("--path", default=".", help="Project root")
+    parser.add_argument("--expected-commit", help="Full SHA of the experiment commit authorized for rollback")
+    parser.add_argument("--expected-parent", help="Full SHA of its expected parent")
     args = parser.parse_args()
 
     project_root = Path(args.path).resolve()
@@ -273,7 +317,11 @@ def main():
     print(f"  Mode: {'dry-run' if args.dry_run else 'single'}")
 
     exp_num = get_experiment_count(experiment_dir) + 1
-    run_single(project_root, experiment_dir, config, exp_num, args.dry_run, args.description)
+    result = run_single(project_root, experiment_dir, config, exp_num, args.dry_run, args.description,
+                        args.experiment, args.expected_commit, args.expected_parent)
+    if result == "rollback_pending":
+        print("  ROLLBACK PENDING ? stop the loop and review the repository.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

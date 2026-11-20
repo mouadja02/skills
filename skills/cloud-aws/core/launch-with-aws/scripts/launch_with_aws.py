@@ -123,8 +123,10 @@ def cmd_list_launches() -> None:
     _ok(api.list_launches())
 
 
-def cmd_delete_launch(launch_id: str) -> None:
-    """Delete a launch."""
+def cmd_delete_launch(launch_id: str, flag: str, confirmed_id: str) -> None:
+    """Delete one explicitly confirmed launch."""
+    if not launch_id.strip() or flag != "--confirm-delete" or confirmed_id != launch_id:
+        _fail("Deletion requires --confirm-delete followed by the exact launch ID")
     api.delete_launch(launch_id)
     _ok({"deleted": True, "id": launch_id})
 
@@ -197,7 +199,7 @@ COMMANDS: dict[str, tuple[Callable[..., Any], int]] = {
     "create-launch": (cmd_create_launch, 1),
     "get-launch": (cmd_get_launch, 1),
     "list-launches": (cmd_list_launches, 0),
-    "delete-launch": (cmd_delete_launch, 1),
+    "delete-launch": (cmd_delete_launch, 3),
     "refine-plan": (cmd_refine_plan, 1),
     "start-launch-execution": (cmd_start_launch_execution, 1),
     "get-launch-status": (cmd_get_launch_status, 1),

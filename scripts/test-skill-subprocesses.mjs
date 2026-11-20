@@ -56,6 +56,33 @@ test('git ignore detection treats shell substitutions as literal filenames', (t)
   assert.equal(isGeneratedFile('source.txt', { cwd }), false);
 });
 
+test('Launch with AWS excludes dotenv files even when Git tracks them', (t) => {
+  const cwd = temporaryProject(t);
+  fs.mkdirSync(path.join(cwd, 'nested'));
+  fs.writeFileSync(path.join(cwd, '.env'), 'FIXTURE_ONLY=1\n');
+  fs.writeFileSync(path.join(cwd, 'nested/.env.production'), 'FIXTURE_ONLY=2\n');
+  fs.writeFileSync(path.join(cwd, 'nested/.ENV.local'), 'FIXTURE_ONLY=3\n');
+  fs.writeFileSync(path.join(cwd, 'nested/source.txt'), 'ordinary project file\n');
+
+  const python = process.platform === 'win32' ? 'python' : 'python3';
+  const command = [
+    'import io, json, sys, zipfile',
+    'sys.path.insert(0, sys.argv[1])',
+    'from archive import zip_local_repo',
+    'with zipfile.ZipFile(io.BytesIO(zip_local_repo(sys.argv[2], "project"))) as archive:',
+    '    print(json.dumps(sorted(archive.namelist())))',
+  ].join('\n');
+  const skillScripts = path.join(root, 'skills/cloud-aws/core/launch-with-aws/scripts');
+  function archiveEntries() {
+    return JSON.parse(execFileSync(python, ['-B', '-c', command, skillScripts, cwd], { encoding: 'utf8' }));
+  }
+
+  assert.deepEqual(archiveEntries(), ['project/nested/source.txt']);
+  execFileSync('git', ['init', '--quiet', cwd]);
+  execFileSync('git', ['-C', cwd, 'add', '--force', '--', '.env', 'nested']);
+  assert.deepEqual(archiveEntries(), ['project/nested/source.txt']);
+});
+
 test('brand generator runs from paths containing spaces and shell metacharacters', (t) => {
   const dir = temporaryProject(t);
   const cwd = path.join(dir, 'brand project & literal $tokens');

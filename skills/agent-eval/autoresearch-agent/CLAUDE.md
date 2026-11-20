@@ -64,3 +64,5 @@ Reads results history, checks out the branch, and continues where you left off.
 **One change per experiment. Measure everything. Compound improvements.**
 
 The agent never modifies the evaluator. The evaluator is ground truth.
+
+For automatic rollback, pass `--expected-commit <full-commit-sha> --expected-parent <full-parent-sha>` for the experiment commit. The runner checks the experiment branch, exact parent, target-only change and clean tracked worktree before creating a revert commit. Without these checks rollback is left for manual review.

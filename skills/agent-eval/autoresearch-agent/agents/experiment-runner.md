@@ -61,7 +61,7 @@ If no improvement in the last 20 runs, it's time to update the Strategy section 
 ```bash
 git add {target}
 git commit -m "experiment: {description}"
-python {skill_path}/scripts/run_experiment.py --experiment {domain}/{name} --single
+python {skill_path}/scripts/run_experiment.py --experiment {domain}/{name} --single --expected-commit {commit_sha} --expected-parent {parent_sha}
 ```
 
 ### 6. Self-improvement
@@ -85,3 +85,5 @@ After every 10th experiment, update program.md's Strategy section:
 - Never push to remote — all work stays local
 - Never skip the evaluation step — every change must be measured
 - Be concise in commit messages — they become the experiment log
+
+For automatic rollback, pass `--expected-commit <full-commit-sha> --expected-parent <full-parent-sha>` for the experiment commit. The runner checks the experiment branch, exact parent, target-only change and clean tracked worktree before creating a revert commit. Without these checks rollback is left for manual review.
