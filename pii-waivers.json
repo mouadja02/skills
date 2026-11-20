@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "waivers": [
+    {
+      "id": "sbom-purl-line-4",
+      "category": "emails",
+      "file": "skills/devops/sbom-package-identity-vulnerability-matching/tests/fixtures/edge.json",
+      "line": 4,
+      "evidence_sha256": "3610294e38b90ce4473236eb5f1337bf308de0260bc7cb77b6175a5b324f8a8e",
+      "reason": "Package URL version in matching fixture, not an email address.",
+      "owner": "skills-maintainers",
+      "created": "2026-11-20",
+      "expires": "2027-02-18"
+    },
+    {
+      "id": "sbom-purl-line-9",
+      "category": "emails",
+      "file": "skills/devops/sbom-package-identity-vulnerability-matching/tests/fixtures/edge.json",
+      "line": 9,
+      "evidence_sha256": "3610294e38b90ce4473236eb5f1337bf308de0260bc7cb77b6175a5b324f8a8e",
+      "reason": "Package URL version in matching fixture, not an email address.",
+      "owner": "skills-maintainers",
+      "created": "2026-11-20",
+      "expires": "2027-02-18"
+    },
+    {
+      "id": "git-ssh-fixture",
+      "category": "emails",
+      "file": "skills/devops/supply-chain-risk-auditor/scripts/test_sources.py",
+      "line": 41,
+      "evidence_sha256": "4771f42cf2abaa1fb9697af3925c3bc0924ceac5e724f00f1762833b075cfa14",
+      "reason": "SSH Git transport user and host in parser test, not a contact address.",
+      "owner": "skills-maintainers",
+      "created": "2026-11-20",
+      "expires": "2027-02-18"
+    },
+    {
+      "id": "graph-users-manager",
+      "category": "personal_paths",
+      "file": "skills/microsoft-agents/entra-agent-user/SKILL.md",
+      "line": 160,
+      "evidence_sha256": "63b377b270dec5fc8f37d824e8c023a39a8a6bfbffa1ec130f73a6d5f7843892",
+      "reason": "Microsoft Graph API route with an ID placeholder, not a local path.",
+      "owner": "skills-maintainers",
+      "created": "2026-11-20",
+      "expires": "2027-02-18"
+    },
+    {
+      "id": "graph-users-license",
+      "category": "personal_paths",
+      "file": "skills/microsoft-agents/entra-agent-user/SKILL.md",
+      "line": 219,
+      "evidence_sha256": "63b377b270dec5fc8f37d824e8c023a39a8a6bfbffa1ec130f73a6d5f7843892",
+      "reason": "Microsoft Graph API route with an ID placeholder, not a local path.",
+      "owner": "skills-maintainers",
+      "created": "2026-11-20",
+      "expires": "2027-02-18"
+    }
+  ]
+}
