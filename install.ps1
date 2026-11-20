@@ -513,15 +513,13 @@ function Install-Skill {
             $prevErrAction = $ErrorActionPreference
             $ErrorActionPreference = 'Continue'
             try {
-                & tar -xzf $tarball -C $extract
+                & tar -xzf $tarball -C $extract --strip-components=1
                 if ($LASTEXITCODE -ne 0) { throw "tar failed with exit code $LASTEXITCODE" }
             } finally {
                 $ErrorActionPreference = $prevErrAction
             }
 
-            $repoName = $repo.Split('/')[-1]
-            $topDir = Join-Path $extract "$repoName-$Branch"
-            $skillsRoot = Join-Path $topDir 'skills'
+            $skillsRoot = Join-Path $extract 'skills'
             if (-not (Test-Path -LiteralPath $skillsRoot)) {
                 throw "Unexpected tarball layout: $skillsRoot not found"
             }

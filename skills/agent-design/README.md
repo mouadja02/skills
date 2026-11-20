@@ -6,7 +6,7 @@
 
 Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-agent interfaces.
 
-**Total:** 55 skills.
+**Total:** 56 skills.
 
 ## Skills In This Category
 
@@ -60,6 +60,7 @@ Agent architecture, orchestration, harnesses, safety, scaffolding, and coding-ag
 | [`mcp-tool-routing`](mcp-tool-routing/SKILL.md) | `agent-design/mcp-tool-routing` | Use when designing scalable MCP tool routing, dynamic tool retrieval, agent-tool graphs, tool inventory indexing, or routing policies for agents with many available tools. |
 | [`multi-agent-patterns`](multi-agent-patterns/SKILL.md) | `agent-design/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs,... |
 | [`rich-agent-cli`](rich-agent-cli/SKILL.md) | `agent-design/rich-agent-cli` | Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, f... |
+| [`silent-api-result-invariant-enforcement`](silent-api-result-invariant-enforcement/SKILL.md) | `agent-design/silent-api-result-invariant-enforcement` | Use when HTTP 200 tool results may silently violate the query—derive exact invariants, recheck, withhold invalid values, and gate final answers on verified observations. |
 | [`smolagents-code-agents`](smolagents-code-agents/SKILL.md) | `agent-design/smolagents-code-agents` | Use when building Hugging Face smolagents, code-executing agents, Python-action agents, Hub-shared tools, or lightweight agent prototypes that need sandboxing and provider flexibility. |
 | [`stateful-agent-security-monitoring`](stateful-agent-security-monitoring/SKILL.md) | `agent-design/stateful-agent-security-monitoring` | Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance ch... |
 | [`structured-autonomy-generate`](structured-autonomy-generate/SKILL.md) | `agent-design/structured-autonomy-generate` | Turns a structured-autonomy PR plan (plans/{feature}/plan.md) into copy-paste-ready implementation documentation with complete code for every step, saved as implementation.md. Use after a plan exists and before implementation, when each... |

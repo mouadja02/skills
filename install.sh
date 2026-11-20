@@ -432,19 +432,18 @@ stage_from_zips() {
 
 # Dies, before anything is installed, if the tarball lacks a planned skill.
 stage_from_tarball() {
-  local root="$1" tarball="$1/repo.tar.gz" extract_dir="$1/extract" topdir src
+  local root="$1" tarball="$1/repo.tar.gz" extract_dir="$1/extract" src
   require_cmd tar
   echo "==> Downloading ${REPO}@${BRANCH} tarball" >&2
   mkdir -p "$extract_dir"
   curl -fsSL "${TARBALL_BASE}/${BRANCH}" -o "$tarball" \
     || die "failed to download tarball"
-  tar -xzf "$tarball" -C "$extract_dir"
-  topdir="$extract_dir/$(basename "$REPO")-${BRANCH}"
-  [ -d "$topdir/skills" ] || die "unexpected tarball layout: $topdir/skills not found"
+  tar -xzf "$tarball" -C "$extract_dir" --strip-components=1
+  [ -d "$extract_dir/skills" ] || die "unexpected tarball layout: $extract_dir/skills not found"
 
   : > "$staged_file"
   while IFS=$'\t' read -r ip target; do
-    src="$topdir/skills/$ip"
+    src="$extract_dir/skills/$ip"
     [ -d "$src" ] || die "missing in tarball: skills/$ip (nothing was installed)"
     printf '%s\t%s\t%s\n' "$ip" "$src" "$target" >> "$staged_file"
   done < "$plan_file"

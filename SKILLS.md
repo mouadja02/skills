@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 803 skills across 36 categories.
+**Total:** 804 skills across 36 categories.
 
 ## Install one skill
 
@@ -30,7 +30,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 
 | Category | Skills |
 | --- | ---: |
-| [`agent-design`](#agent-design) | 55 |
+| [`agent-design`](#agent-design) | 56 |
 | [`agent-eval`](#agent-eval) | 26 |
 | [`api-backend`](#api-backend) | 12 |
 | [`business-strategy`](#business-strategy) | 39 |
@@ -119,6 +119,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`mcp-tool-routing`](./skills/agent-design/mcp-tool-routing/SKILL.md) | `agent-design/mcp-tool-routing` | Use when designing scalable MCP tool routing, dynamic tool retrieval, agent-tool graphs, tool inventory indexing, or routing policies for agents with many available tools. |
 | [`multi-agent-patterns`](./skills/agent-design/multi-agent-patterns/SKILL.md) | `agent-design/multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution. |
 | [`rich-agent-cli`](./skills/agent-design/rich-agent-cli/SKILL.md) | `agent-design/rich-agent-cli` | Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer. |
+| [`silent-api-result-invariant-enforcement`](./skills/agent-design/silent-api-result-invariant-enforcement/SKILL.md) | `agent-design/silent-api-result-invariant-enforcement` | Use when HTTP 200 tool results may silently violate the query—derive exact invariants, recheck, withhold invalid values, and gate final answers on verified observations. |
 | [`smolagents-code-agents`](./skills/agent-design/smolagents-code-agents/SKILL.md) | `agent-design/smolagents-code-agents` | Use when building Hugging Face smolagents, code-executing agents, Python-action agents, Hub-shared tools, or lightweight agent prototypes that need sandboxing and provider flexibility. |
 | [`stateful-agent-security-monitoring`](./skills/agent-design/stateful-agent-security-monitoring/SKILL.md) | `agent-design/stateful-agent-security-monitoring` | Use when designing defensive monitoring for agent systems whose risks accumulate across users, sessions, subagents, files, or tool calls. Adds online cross-context clustering with rare escalation, time-to-detect evaluation, provenance checks for control-like workspace content, and sanitized commits for persistent prompt-injection defense. |
 | [`structured-autonomy-generate`](./skills/agent-design/structured-autonomy-generate/SKILL.md) | `agent-design/structured-autonomy-generate` | Turns a structured-autonomy PR plan (plans/{feature}/plan.md) into copy-paste-ready implementation documentation with complete code for every step, saved as implementation.md. Use after a plan exists and before implementation, when each step needs fully specified changes. |
