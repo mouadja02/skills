@@ -83,7 +83,7 @@ test('catalog script starts when localStorage access throws', () => {
   const app = loadApp();
   vm.runInContext(source, app.context, { filename: 'docs/app.js' });
   // init() ran past the top-level state initializer and began loading the manifest.
-  assert.deepEqual(app.fetchCalls, ['./manifest.json']);
+  assert.deepEqual(app.fetchCalls, ['./search-index.json', './manifest.json']);
 });
 
 test('theme toggle still switches the theme when storage is blocked', () => {

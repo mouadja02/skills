@@ -1,0 +1,21 @@
+[
+  {"query":"test driven development","expected":["coding/test-driven-development","engineering-craft/superpowers-test-driven-development"]},
+  {"query":"write terraform tests","expected":["devops/terraform-test"]},
+  {"query":"build an mcp server","expected":["mcp/fastmcp","mcp/dotnet-mcp-builder","mcp/mcp-server-builder"]},
+  {"query":"rag evaluation","expected":["agent-eval/rag-evaluation-matrix"]},
+  {"query":"review sql queries","expected":["databases/sql-code-review","databases/postgresql-code-review"]},
+  {"query":"secure s3 bucket","expected":["cloud-aws/storage/securing-s3-buckets"]},
+  {"query":"lambda timeout","expected":["cloud-aws/serverless/debugging-lambda-timeouts"]},
+  {"query":"create a new skill","expected":["skills-management/skill-creator"]},
+  {"query":"find skills","expected":["skills-management/find-skills"]},
+  {"query":"slides presentation","expected":["diagrams-slides/html-slides-creator","finance/pptx-author"]},
+  {"query":"python unit tests","expected":["testing/pytest-coverage"]},
+  {"query":"k8s","expected":["devops/kubernetes-ssa-field-ownership-triage"]},
+  {"query":"speed up slow database queries","expected":["databases/postgresql-optimization","databases/supabase-postgres-best-practices","databases/database-designer"]},
+  {"query":"review pull request","expected":["code-quality/github-deep-review","code-quality/differential-review","code-quality/review-and-refactor","agent-design/bmm-skills/ship/bmad-code-review"]},
+  {"query":"trail of bits","expectedHeader":"attribution"},
+  {"query":"apache-2.0","expectedHeader":"license"},
+  {"query":"build a spreadsheet in excel","expected":["finance/excel-author"]},
+  {"query":"diagnose postgres replication slot failover","expected":["databases/postgres-logical-slot-failover-triage"]},
+  {"query":"dry run infrastructure changes","expected":["cloud-azure/azure-deployment-preflight"]}
+]

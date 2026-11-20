@@ -31,6 +31,7 @@ import {
 import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
 import { excludedReason, gitPublicationAllowlist } from "./lib/archive-policy.mjs";
+import "../docs/catalog-search.js";
 
 const SERVER_NAME = "repo-skills";
 const SERVER_VERSION = "0.3.0";
@@ -46,6 +47,8 @@ const MANIFEST_PATH = join(ROOT, "docs", "manifest.json");
 const execFileAsync = promisify(execFile);
 
 let manifestCache = null;
+let searchRankCache = null;
+const { createRanker } = globalThis.skillCatalogSearch;
 
 const cliArgs = new Set(process.argv.slice(2));
 const AUTO_REFRESH = readBooleanOption("SKILLS_MCP_AUTO_REFRESH", true) &&
@@ -118,7 +121,7 @@ const TOOLS = [
     name: "search_skills",
     title: "Search Skills",
     description:
-      "Search names, install paths, and descriptions across the repository. Use when the right category is unclear or the user gives a pattern such as testing, MCP, React, docs, security, or migration.",
+      "Rank skills by names, descriptions, usage, and selected YAML header fields. Use when the right category is unclear or the user describes a task.",
     inputSchema: {
       type: "object",
       additionalProperties: false,
@@ -127,6 +130,12 @@ const TOOLS = [
         query: {
           type: "string",
           description: "Search words or pattern.",
+        },
+        keywords: {
+          type: "array",
+          maxItems: 10,
+          items: { type: "string", maxLength: 80 },
+          description: "Optional synonyms and related terms for the task.",
         },
         category: {
           type: "string",
@@ -351,6 +360,7 @@ async function ensureAutoRefresh() {
       await runCommand("node", [join(ROOT, "scripts", "build-manifest.mjs")]);
     }
     manifestCache = null;
+    searchRankCache = null;
 
     refreshState.status = "ok";
     refreshState.message = (pull.stdout || "Repository already up to date.").trim();
@@ -404,29 +414,13 @@ function normalizeForSearch(value) {
   return String(value || "").toLowerCase();
 }
 
-function tokens(query) {
-  return normalizeForSearch(query)
-    .split(/[^a-z0-9_+#.-]+/i)
-    .map((x) => x.trim())
-    .filter(Boolean);
-}
-
-function skillSearchText(skill) {
-  return normalizeForSearch(
-    `${skill.name} ${skill.install_path} ${skill.category} ${skill.description}`
-  );
-}
-
-function scoreSkill(skill, queryTokens) {
-  const haystack = skillSearchText(skill);
-  let score = 0;
-  for (const token of queryTokens) {
-    if (skill.name.toLowerCase() === token) score += 25;
-    if (skill.install_path.toLowerCase().includes(token)) score += 8;
-    if (skill.name.toLowerCase().includes(token)) score += 6;
-    if (haystack.includes(token)) score += 2;
+async function loadSearchRanker(manifest) {
+  if (!searchRankCache) {
+    searchRankCache = readFile(join(ROOT, "docs", "search-index.json"), "utf8")
+      .then(JSON.parse).catch(() => null)
+      .then(index => createRanker(manifest.skills, index?.version === 1 ? index.skills : {}));
   }
-  return score;
+  return searchRankCache;
 }
 
 function toSkillSummary(skill) {
@@ -557,21 +551,14 @@ async function toolListCategories(args) {
 async function toolListSkills(args) {
   const manifest = await loadManifest();
   const category = await resolveCategory(args?.category);
-  const queryTokens = tokens(args?.query || "");
+  const query = normalizeForSearch(args?.query).trim();
   const limit = clampLimit(args?.limit, 50);
   const start = Math.max(0, Number.parseInt(args?.cursor || "0", 10) || 0);
 
   let skills = manifest.skills.filter((skill) => skill.category === category);
-  if (queryTokens.length) {
-    skills = skills
-      .map((skill) => ({ skill, score: scoreSkill(skill, queryTokens) }))
-      .filter((entry) => entry.score > 0)
-      .sort(
-        (a, b) =>
-          b.score - a.score ||
-          a.skill.install_path.localeCompare(b.skill.install_path)
-      )
-      .map((entry) => entry.skill);
+  if (query) {
+    const rank = await loadSearchRanker(manifest);
+    skills = rank(query, { filter: skill => skill.category === category }).map(({ skill }) => skill);
   }
 
   const page = skills.slice(start, start + limit).map(toSkillSummary);
@@ -589,20 +576,16 @@ async function toolListSkills(args) {
 
 async function toolSearchSkills(args) {
   const manifest = await loadManifest();
-  const queryTokens = tokens(args?.query);
-  if (!queryTokens.length) throw new Error("query is required");
+  if (typeof args?.query !== "string" || !args.query.trim()) throw new Error("query is required");
+  const keywords = args.keywords ?? [];
+  if (!Array.isArray(keywords) || keywords.length > 10 || keywords.some(word => typeof word !== "string" || word.length > 80)) {
+    throw new Error("keywords must contain up to 10 strings of at most 80 characters");
+  }
   const limit = clampLimit(args?.limit, 25);
   const category = args?.category ? await resolveCategory(args.category) : null;
 
-  const results = manifest.skills
-    .filter((skill) => !category || skill.category === category)
-    .map((skill) => ({ skill, score: scoreSkill(skill, queryTokens) }))
-    .filter((entry) => entry.score > 0)
-    .sort(
-      (a, b) =>
-        b.score - a.score ||
-        a.skill.install_path.localeCompare(b.skill.install_path)
-    )
+  const rank = await loadSearchRanker(manifest);
+  const results = rank(args.query, { keywords, filter: skill => !category || skill.category === category })
     .slice(0, limit)
     .map((entry) => ({ ...toSkillSummary(entry.skill), score: entry.score }));
 

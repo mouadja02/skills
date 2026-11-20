@@ -122,12 +122,13 @@ function loadStoredPicks() {
 
 const state = {
   manifest: null,
+  searchRank: null,
   zips: null,
   filterText: "",
   filterCategory: null,
   filterRoute: null,
   recommendedSkillNames: null,
-  sort: storage.get(SORT_KEY) || "name",
+  sort: storage.get(SORT_KEY) || "relevance",
   catColor: new Map(),
   selectedHarnesses: loadStoredHarnesses(),
   picks: loadStoredPicks(),
@@ -183,9 +184,13 @@ async function init() {
   showSkeletons();
 
   try {
+    const searchIndex = fetch("./search-index.json", { cache: "no-cache" })
+      .then(response => response.ok ? response.json() : null).catch(() => null);
     const res = await fetch("./manifest.json", { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     state.manifest = await res.json();
+    const index = await searchIndex;
+    state.searchRank = globalThis.skillCatalogSearch.createRanker(state.manifest.skills, index?.version === 1 ? index.skills : {});
     // Expose manifest globally so chat.js can reuse it without a second fetch
     window.skillsManifest = state.manifest;
   } catch (err) {
@@ -882,18 +887,19 @@ function currentFiltered() {
     ? new Set(routeCats(routeById(state.filterRoute)))
     : null;
 
-  let filtered = skills.filter((s) => {
+  const inScope = (s) => {
     if (state.recommendedSkillNames?.length && !state.recommendedSkillNames.includes(s.name)) return false;
     if (routeSet && !routeSet.has(s.category)) return false;
     if (state.filterCategory && s.category !== state.filterCategory) return false;
-    if (!state.filterText) return true;
-    const hay = `${s.name} ${s.install_path} ${s.description}`.toLowerCase();
-    return hay.includes(state.filterText);
-  });
+    return true;
+  };
+  const filtered = state.filterText
+    ? state.searchRank(state.filterText, { filter: inScope }).map(({ skill }) => skill)
+    : skills.filter(inScope);
 
   return state.recommendedSkillNames?.length
     ? sortRecommendedSkills(filtered)
-    : sortSkills(filtered, state.sort);
+    : state.filterText && state.sort === "relevance" ? filtered : sortSkills(filtered, state.sort);
 }
 
 function render() {

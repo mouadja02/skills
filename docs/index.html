@@ -158,6 +158,7 @@
             <label class="sort-label" for="sortBy">Sort</label>
             <div class="select-wrap">
               <select id="sortBy" aria-label="Sort skills">
+                <option value="relevance">Relevance</option>
                 <option value="name">Name (A&rarr;Z)</option>
                 <option value="name-desc">Name (Z&rarr;A)</option>
                 <option value="category">Category</option>
@@ -580,6 +581,7 @@ Install useful skills into this workspace's .claude/skills directory.</code></pr
       </div>
     </aside>
 
+    <script src="./catalog-search.js" defer></script>
     <script src="./app.js" defer></script>
     <script src="./chat-config.js" defer onerror="console.warn('[SkillBot] chat-config.js not found — AI chat disabled.')"></script>
     <script src="./chat.js" defer></script>

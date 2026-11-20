@@ -1,5 +1,5 @@
 // Stdio checks for the local MCP server's install route against a synthetic
-// Git checkout. Nothing is read from or written to the real catalog.
+// Git checkout, plus search parity checks against the built catalog.
 //
 //   node --test scripts/test-skills-mcp.mjs
 //
@@ -12,6 +12,8 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { loadApp } from './lib/app-vm.mjs';
+import '../docs/catalog-search.js';
 
 const root = process.env.SKILLS_TEST_ROOT || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const server = path.join(root, 'scripts', 'skills-mcp.mjs');
@@ -119,6 +121,39 @@ function callTools(repo, calls) {
     child.stdin.end();
   });
 }
+
+test('site and MCP rank paraphrases and YAML header matches consistently', async () => {
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, 'docs/manifest.json'), 'utf8'));
+  const index = JSON.parse(fs.readFileSync(path.join(root, 'docs/search-index.json'), 'utf8'));
+  const cases = [
+    ['python unit tests', ['testing/pytest-coverage']],
+    ['k8s', ['devops/kubernetes-ssa-field-ownership-triage']],
+    ['speed up slow database queries', ['databases/postgresql-optimization', 'databases/database-designer', 'databases/supabase-postgres-best-practices']],
+    ['trail of bits', manifest.skills.filter(skill => /trail of bits/i.test(skill.attribution || '')).map(skill => skill.install_path)],
+  ];
+  const { context, run } = loadApp();
+  context.testManifest = manifest;
+  context.testSearchRank = globalThis.skillCatalogSearch.createRanker(manifest.skills, index.skills);
+  run('state.manifest = testManifest; state.searchRank = testSearchRank; state.sort = "relevance";');
+  const results = await callTools(root, cases.map(([query]) => ['search_skills', { query, limit: 5 }]));
+  for (const [[query, expected], result] of cases.map((entry, i) => [entry, results[i]])) {
+    assert.equal(result.isError, false, result.text);
+    const paths = result.value.skills.map(skill => skill.install_path);
+    context.testQuery = query;
+    const sitePaths = run('state.filterText = testQuery; currentFiltered().slice(0, 5).map(skill => skill.install_path)');
+    assert.deepEqual(paths, [...sitePaths], query);
+    assert.ok(paths.some(path => expected.includes(path)), `${query}: ${paths.join(', ')}`);
+  }
+});
+
+test('MCP honors related keywords and category restriction', async () => {
+  const [match, filtered] = await callTools(root, [
+    ['search_skills', { query: 'coverage terminology mismatch', keywords: ['pytest'], category: 'testing' }],
+    ['search_skills', { query: 'k8s', category: 'finance' }],
+  ]);
+  assert.ok(match.value.skills.some(skill => skill.install_path === 'testing/pytest-coverage'));
+  assert.deepEqual(filtered.value.skills, []);
+});
 
 test('install_skill refuses a substring match and names the candidates', async (t) => {
   const repo = buildRepo(t);
