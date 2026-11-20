@@ -250,7 +250,7 @@ After delivering recommendations, offer an optional second pass:
 ### Misleading claims / regulated areas
 
 - Health/medical claims without proper framing
-- Financial advice without disclaimers (especially if personalized)
+- Financial advice missing relevant risk disclosures, especially personalized recommendations
 - Safety/emergency claims
 
 ---

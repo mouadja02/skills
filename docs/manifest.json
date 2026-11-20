@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-18T19:09:43.302Z",
+  "generated_at": "2026-11-20T04:25:52.171Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 803,
@@ -582,10 +582,10 @@
       "attribution": "muratcankoylan/Agent-Skills-for-Context-Engineering by Muratcan Koylan"
     },
     {
-      "name": "rich-claude-code-tui-clone",
+      "name": "rich-agent-cli",
       "category": "agent-design",
-      "install_path": "agent-design/rich-claude-code-tui-clone",
-      "path": "skills/agent-design/rich-claude-code-tui-clone",
+      "install_path": "agent-design/rich-agent-cli",
+      "path": "skills/agent-design/rich-agent-cli",
       "depth": 2,
       "description": "Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream, streaming Markdown, tools, diffs, prompt, footer, spinners, permissions, transcript mode, themes, accessibility, and tests. Separates Rich rendering from the input and widget responsibilities that require an application-owned event loop or an optional Textual layer.",
       "source": "https://rich.readthedocs.io/en/stable/; https://github.com/Textualize/rich; https://github.com/Textualize/textual; https://github.com/batrachianai/toad",
@@ -708,8 +708,8 @@
     {
       "name": "auto-memory-extract",
       "category": "agent-eval",
-      "install_path": "agent-eval/auto-memory-pro/skills/extract",
-      "path": "skills/agent-eval/auto-memory-pro/skills/extract",
+      "install_path": "agent-eval/auto-memory-pro/skills/auto-memory-extract",
+      "path": "skills/agent-eval/auto-memory-pro/skills/auto-memory-extract",
       "depth": 4,
       "description": "Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples. Use when the user runs /si:extract or asks to package a recurring solution from memory into a skill.",
       "license": "MIT",
@@ -719,8 +719,8 @@
     {
       "name": "auto-memory-promote",
       "category": "agent-eval",
-      "install_path": "agent-eval/auto-memory-pro/skills/promote",
-      "path": "skills/agent-eval/auto-memory-pro/skills/promote",
+      "install_path": "agent-eval/auto-memory-pro/skills/auto-memory-promote",
+      "path": "skills/agent-eval/auto-memory-pro/skills/auto-memory-promote",
       "depth": 4,
       "description": "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement. Use when the user runs /si:promote or asks to make a learned behavior permanent.",
       "license": "MIT",
@@ -730,8 +730,8 @@
     {
       "name": "auto-memory-remember",
       "category": "agent-eval",
-      "install_path": "agent-eval/auto-memory-pro/skills/remember",
-      "path": "skills/agent-eval/auto-memory-pro/skills/remember",
+      "install_path": "agent-eval/auto-memory-pro/skills/auto-memory-remember",
+      "path": "skills/agent-eval/auto-memory-pro/skills/auto-memory-remember",
       "depth": 4,
       "description": "Saves an important piece of knowledge to auto-memory with a timestamp and context. Use when the user runs /si:remember or says to remember something, or when a hard-won debugging insight, project convention, tool gotcha, or architecture decision should not depend on automatic capture.",
       "license": "MIT",
@@ -741,8 +741,8 @@
     {
       "name": "auto-memory-review",
       "category": "agent-eval",
-      "install_path": "agent-eval/auto-memory-pro/skills/review",
-      "path": "skills/agent-eval/auto-memory-pro/skills/review",
+      "install_path": "agent-eval/auto-memory-pro/skills/auto-memory-review",
+      "path": "skills/agent-eval/auto-memory-pro/skills/auto-memory-review",
       "depth": 4,
       "description": "Analyzes auto-memory (MEMORY.md and topic files) for promotion candidates, stale entries, consolidation opportunities, and health metrics. Use after a major feature or debugging session, when /si:status shows MEMORY.md over 150 lines, weekly during active development, or before a new project phase.",
       "license": "MIT",
@@ -752,8 +752,8 @@
     {
       "name": "auto-memory-status",
       "category": "agent-eval",
-      "install_path": "agent-eval/auto-memory-pro/skills/status",
-      "path": "skills/agent-eval/auto-memory-pro/skills/status",
+      "install_path": "agent-eval/auto-memory-pro/skills/auto-memory-status",
+      "path": "skills/agent-eval/auto-memory-pro/skills/auto-memory-status",
       "depth": 4,
       "description": "Shows a memory health dashboard: line counts, topic files, capacity, stale entries, and recommendations across all memory systems. Use when the user runs /si:status or asks how large or healthy the project's agent memory is.",
       "license": "MIT",
@@ -785,8 +785,8 @@
     {
       "name": "autoresearch-loop",
       "category": "agent-eval",
-      "install_path": "agent-eval/autoresearch-agent/skills/loop",
-      "path": "skills/agent-eval/autoresearch-agent/skills/loop",
+      "install_path": "agent-eval/autoresearch-agent/skills/autoresearch-loop",
+      "path": "skills/agent-eval/autoresearch-agent/skills/autoresearch-loop",
       "depth": 4,
       "description": "Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly). Uses CronCreate for scheduling. Use when the user runs /ar:loop or wants an experiment to keep iterating on a schedule.",
       "license": "MIT",
@@ -796,8 +796,8 @@
     {
       "name": "autoresearch-resume",
       "category": "agent-eval",
-      "install_path": "agent-eval/autoresearch-agent/skills/resume",
-      "path": "skills/agent-eval/autoresearch-agent/skills/resume",
+      "install_path": "agent-eval/autoresearch-agent/skills/autoresearch-resume",
+      "path": "skills/agent-eval/autoresearch-agent/skills/autoresearch-resume",
       "depth": 4,
       "description": "Resumes a paused or context-limited autoresearch experiment: checks out the experiment branch, reads the results history, and continues iterating. Use when the user runs /ar:resume or wants to pick up an experiment where it stopped.",
       "license": "MIT",
@@ -807,8 +807,8 @@
     {
       "name": "autoresearch-run",
       "category": "agent-eval",
-      "install_path": "agent-eval/autoresearch-agent/skills/run",
-      "path": "skills/agent-eval/autoresearch-agent/skills/run",
+      "install_path": "agent-eval/autoresearch-agent/skills/autoresearch-run",
+      "path": "skills/agent-eval/autoresearch-agent/skills/autoresearch-run",
       "depth": 4,
       "description": "Runs exactly one autoresearch experiment iteration: review history, choose a change, edit the target file, commit, evaluate, then keep or discard. Use when the user runs /ar:run or wants a single manual step instead of an autonomous loop.",
       "license": "MIT",
@@ -818,8 +818,8 @@
     {
       "name": "autoresearch-setup",
       "category": "agent-eval",
-      "install_path": "agent-eval/autoresearch-agent/skills/setup",
-      "path": "skills/agent-eval/autoresearch-agent/skills/setup",
+      "install_path": "agent-eval/autoresearch-agent/skills/autoresearch-setup",
+      "path": "skills/agent-eval/autoresearch-agent/skills/autoresearch-setup",
       "depth": 4,
       "description": "Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator. Use when the user runs /ar:setup or asks to start optimizing a file with the autoresearch loop.",
       "license": "MIT",
@@ -829,8 +829,8 @@
     {
       "name": "autoresearch-status",
       "category": "agent-eval",
-      "install_path": "agent-eval/autoresearch-agent/skills/status",
-      "path": "skills/agent-eval/autoresearch-agent/skills/status",
+      "install_path": "agent-eval/autoresearch-agent/skills/autoresearch-status",
+      "path": "skills/agent-eval/autoresearch-agent/skills/autoresearch-status",
       "depth": 4,
       "description": "Shows the autoresearch experiment dashboard: results, active loops, and progress across all experiments. Use when the user runs /ar:status or asks how running experiments or optimization loops are doing."
     },
@@ -1338,8 +1338,8 @@
     {
       "name": "executive-mentor-board-prep",
       "category": "business-strategy",
-      "install_path": "business-strategy/executive-mentor/skills/board-prep",
-      "path": "skills/business-strategy/executive-mentor/skills/board-prep",
+      "install_path": "business-strategy/executive-mentor/skills/executive-mentor-board-prep",
+      "path": "skills/business-strategy/executive-mentor/skills/executive-mentor-board-prep",
       "depth": 4,
       "description": "Use when preparing for a board meeting and the goal is to survive the adversarial version of it — anticipating every hard question, knowing which numbers must be cold, and shaping a narrative that acknowledges weakness without losing the room.",
       "license": "MIT",
@@ -1349,8 +1349,8 @@
     {
       "name": "executive-mentor-challenge",
       "category": "business-strategy",
-      "install_path": "business-strategy/executive-mentor/skills/challenge",
-      "path": "skills/business-strategy/executive-mentor/skills/challenge",
+      "install_path": "business-strategy/executive-mentor/skills/executive-mentor-challenge",
+      "path": "skills/business-strategy/executive-mentor/skills/executive-mentor-challenge",
       "depth": 4,
       "description": "Use when a plan needs a pre-mortem before it is committed to — systematically surfacing the weaknesses that would kill it, so it survives contact with reality rather than being abandoned.",
       "license": "MIT",
@@ -1360,8 +1360,8 @@
     {
       "name": "executive-mentor-hard-call",
       "category": "business-strategy",
-      "install_path": "business-strategy/executive-mentor/skills/hard-call",
-      "path": "skills/business-strategy/executive-mentor/skills/hard-call",
+      "install_path": "business-strategy/executive-mentor/skills/executive-mentor-hard-call",
+      "path": "skills/business-strategy/executive-mentor/skills/executive-mentor-hard-call",
       "depth": 4,
       "description": "/em:hard-call — Framework for decisions with no good options. Use when every option is painful and a structured 10/10/10 + regret-minimization pass is needed — e.g. choosing between a layoff and a down round, or killing a beloved product line.",
       "license": "MIT",
@@ -1371,8 +1371,8 @@
     {
       "name": "executive-mentor-postmortem",
       "category": "business-strategy",
-      "install_path": "business-strategy/executive-mentor/skills/postmortem",
-      "path": "skills/business-strategy/executive-mentor/skills/postmortem",
+      "install_path": "business-strategy/executive-mentor/skills/executive-mentor-postmortem",
+      "path": "skills/business-strategy/executive-mentor/skills/executive-mentor-postmortem",
       "depth": 4,
       "description": "Use after something went wrong — a failed deal, a missed quarter, a feature that flopped, a hire that did not work out. Produces an honest, blame-free account of what happened, why, and what changes as a result.",
       "license": "MIT",
@@ -1382,8 +1382,8 @@
     {
       "name": "executive-mentor-stress-test",
       "category": "business-strategy",
-      "install_path": "business-strategy/executive-mentor/skills/stress-test",
-      "path": "skills/business-strategy/executive-mentor/skills/stress-test",
+      "install_path": "business-strategy/executive-mentor/skills/executive-mentor-stress-test",
+      "path": "skills/business-strategy/executive-mentor/skills/executive-mentor-stress-test",
       "depth": 4,
       "description": "Use when a business assumption needs breaking before the market breaks it — revenue projections, market size, competitive moat, hiring velocity, or customer retention.",
       "license": "MIT",
@@ -3318,10 +3318,8 @@
       "install_path": "context-engineering/deep-research",
       "path": "skills/context-engineering/deep-research",
       "depth": 2,
-      "description": "Use when the user asks for deep or academic research — a literature review, PRISMA systematic review or meta-analysis, fact-check, evidence synthesis, APA 7 research report, or Socratic guidance to sharpen a vague research question. Runs a 13-agent pipeline with full, quick, review, lit-review, fact-check, socratic, and systematic-review modes.",
-      "license": "CC-BY-NC-4.0",
-      "source": "https://github.com/Imbad0202/academic-research-skills",
-      "attribution": "Imbad0202/academic-research-skills by Cheng-I Wu"
+      "description": "Use for deep research, literature reviews, and fact-checking. Investigate questions across sources, evaluate papers, refine research questions, or conduct systematic reviews. Supports full, quick, review, lit-review, fact-check, socratic, and systematic-review modes.",
+      "license": "MIT"
     },
     {
       "name": "filesystem-context",
@@ -5948,17 +5946,6 @@
       "attribution": "github/awesome-copilot by GitHub Community"
     },
     {
-      "name": "3-statement-model",
-      "category": "finance",
-      "install_path": "finance/3-statement-model",
-      "path": "skills/finance/3-statement-model",
-      "depth": 2,
-      "description": "Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author. Use when building or fixing a linked financial statement model in Excel.",
-      "license": "Apache-2.0",
-      "source": "https://github.com/NousResearch/hermes-agent",
-      "attribution": "NousResearch/hermes-agent by Nous Research"
-    },
-    {
       "name": "comps-analysis",
       "category": "finance",
       "install_path": "finance/comps-analysis",
@@ -6020,6 +6007,17 @@
       "path": "skills/finance/pptx-author",
       "depth": 2,
       "description": "Build PowerPoint decks headless with python-pptx. Pairs with excel-author for model-backed decks where every number traces to a workbook cell. Use for pitch decks, IC memos, earnings notes.",
+      "license": "Apache-2.0",
+      "source": "https://github.com/NousResearch/hermes-agent",
+      "attribution": "NousResearch/hermes-agent by Nous Research"
+    },
+    {
+      "name": "three-statement-model",
+      "category": "finance",
+      "install_path": "finance/three-statement-model",
+      "path": "skills/finance/three-statement-model",
+      "depth": 2,
+      "description": "Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author. Use when building or fixing a linked financial statement model in Excel.",
       "license": "Apache-2.0",
       "source": "https://github.com/NousResearch/hermes-agent",
       "attribution": "NousResearch/hermes-agent by Nous Research"
@@ -6510,8 +6508,8 @@
     {
       "name": "qdrant-monitoring-debugging",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-monitoring/debugging",
-      "path": "skills/llm-tooling/qdrant-monitoring/debugging",
+      "install_path": "llm-tooling/qdrant-monitoring/qdrant-monitoring-debugging",
+      "path": "skills/llm-tooling/qdrant-monitoring/qdrant-monitoring-debugging",
       "depth": 3,
       "description": "Use when a Qdrant deployment misbehaves — slow queries, memory pressure, stuck optimizers, unhealthy shards, or failed replicas. Covers the metrics and telemetry endpoints to inspect and how to read them.",
       "license": "Apache-2.0",
@@ -6521,8 +6519,8 @@
     {
       "name": "qdrant-monitoring-setup",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-monitoring/setup",
-      "path": "skills/llm-tooling/qdrant-monitoring/setup",
+      "install_path": "llm-tooling/qdrant-monitoring/qdrant-monitoring-setup",
+      "path": "skills/llm-tooling/qdrant-monitoring/qdrant-monitoring-setup",
       "depth": 3,
       "description": "Use when setting up observability for Qdrant — enabling the metrics endpoint, wiring Prometheus and Grafana, and choosing which collection, cluster, and resource metrics to watch.",
       "license": "Apache-2.0",
@@ -6587,8 +6585,8 @@
     {
       "name": "qdrant-minimize-latency",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/minimize-latency",
-      "path": "skills/llm-tooling/qdrant-scaling/minimize-latency",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-minimize-latency",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-minimize-latency",
       "depth": 3,
       "description": "Use when single-query Qdrant latency is too high and throughput is not the constraint. Covers segment count matched to CPU cores, keeping quantized vectors and HNSW in RAM, and trading recall for speed via hnsw_ef.",
       "license": "Apache-2.0",
@@ -6598,8 +6596,8 @@
     {
       "name": "qdrant-scaling-data-volume",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume",
-      "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-scaling-data-volume",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume",
       "depth": 3,
       "description": "Use when a Qdrant dataset outgrows a single node. Covers multi-tenant payload partitioning, sharding, vertical scaling, and sliding time windows for time-bounded data.",
       "license": "Apache-2.0",
@@ -6609,8 +6607,8 @@
     {
       "name": "horizontal-scaling",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling",
-      "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/horizontal-scaling",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/horizontal-scaling",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/horizontal-scaling",
       "depth": 4,
       "description": "Use when diagnosing Qdrant capacity limits or deciding between vertical and horizontal scaling, including node, shard, replication, resharding, tenant-isolation, and fault-tolerance tradeoffs.",
       "license": "Apache-2.0",
@@ -6620,8 +6618,8 @@
     {
       "name": "qdrant-sliding-time-window",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window",
-      "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/sliding-time-window",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-sliding-time-window",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-sliding-time-window",
       "depth": 4,
       "description": "Use when Qdrant holds time-series or recency-bounded data and old points should age out. Covers sliding time-window collection patterns so storage stays bounded.",
       "license": "Apache-2.0",
@@ -6629,21 +6627,10 @@
       "attribution": "qdrant/skills by Qdrant"
     },
     {
-      "name": "tenant-scaling",
-      "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling",
-      "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/tenant-scaling",
-      "depth": 4,
-      "description": "Use when scaling multi-tenant Qdrant workloads, choosing shared payload partitioning versus dedicated shards or collections, or diagnosing tenant isolation and performance limits.",
-      "license": "Apache-2.0",
-      "source": "https://github.com/qdrant/skills",
-      "attribution": "qdrant/skills by Qdrant"
-    },
-    {
       "name": "qdrant-vertical-scaling",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling",
-      "path": "skills/llm-tooling/qdrant-scaling/scaling-data-volume/vertical-scaling",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-vertical-scaling",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/qdrant-vertical-scaling",
       "depth": 4,
       "description": "Use when deciding whether to grow a Qdrant node's RAM, disk, or CPU before adding shards. Covers what each resource limits and when vertical growth stops paying off.",
       "license": "Apache-2.0",
@@ -6651,10 +6638,21 @@
       "attribution": "qdrant/skills by Qdrant"
     },
     {
+      "name": "tenant-scaling",
+      "category": "llm-tooling",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/tenant-scaling",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-scaling-data-volume/tenant-scaling",
+      "depth": 4,
+      "description": "Use when scaling multi-tenant Qdrant workloads, choosing shared payload partitioning versus dedicated shards or collections, or diagnosing tenant isolation and performance limits.",
+      "license": "Apache-2.0",
+      "source": "https://github.com/qdrant/skills",
+      "attribution": "qdrant/skills by Qdrant"
+    },
+    {
       "name": "qdrant-scaling-qps",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/scaling-qps",
-      "path": "skills/llm-tooling/qdrant-scaling/scaling-qps",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-scaling-qps",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-scaling-qps",
       "depth": 3,
       "description": "Use when Qdrant must handle more parallel queries per second and per-query latency is not the priority. Covers fewer, larger segments, quantization in RAM, and replication — the opposite tuning direction from latency.",
       "license": "Apache-2.0",
@@ -6664,8 +6662,8 @@
     {
       "name": "qdrant-scaling-query-volume",
       "category": "llm-tooling",
-      "install_path": "llm-tooling/qdrant-scaling/scaling-query-volume",
-      "path": "skills/llm-tooling/qdrant-scaling/scaling-query-volume",
+      "install_path": "llm-tooling/qdrant-scaling/qdrant-scaling-query-volume",
+      "path": "skills/llm-tooling/qdrant-scaling/qdrant-scaling-query-volume",
       "depth": 3,
       "description": "Use when Qdrant queries with large limits fan out across many shards and over-fetch — each shard returning the full limit. Applies Poisson-based per-shard limit reduction, valid when auto-sharding guarantees random distribution.",
       "license": "Apache-2.0",

@@ -310,7 +310,7 @@ def handle_request():
 import re
 from typing import Tuple
 
-def validate_password(password: str) -> Tuple[bool, str]:
+def validate_password(password: str, common_passwords: set[str]) -> Tuple[bool, str]:
     """
     Validate password against security requirements.
 
@@ -337,9 +337,8 @@ def validate_password(password: str) -> Tuple[bool, str]:
     if not re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
         return False, "Password must contain special character"
 
-    # Check against common passwords (use haveibeenpwned API in production)
-    common_passwords = {'password123', 'qwerty123456', 'admin123456'}
-    if password.lower() in common_passwords:
+    # Supply a vetted, case-folded password blocklist from application configuration.
+    if password.casefold() in common_passwords:
         return False, "Password is too common"
 
     return True, "Password meets requirements"

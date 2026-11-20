@@ -302,7 +302,7 @@ This enabler supports:
 | P1       | High   | Core functionality, user-facing | `priority-high`, `value-high`     |
 | P1       | Medium | Core functionality, internal    | `priority-high`, `value-medium`   |
 | P2       | Medium | Important but not blocking      | `priority-medium`, `value-medium` |
-| P3       | Low    | Nice to have, technical debt    | `priority-low`, `value-low`       |
+| P3       | Low    | Optional improvements or debt   | `priority-low`, `value-low`       |
 
 #### 5. Estimation Guidelines
 
@@ -405,29 +405,41 @@ on:
       feature_name:
         description: 'Feature name'
         required: true
+        type: string
       epic_issue:
         description: 'Epic issue number'
         required: true
+        type: number
 
 jobs:
   create-issues:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: Create Feature Issue
         uses: actions/github-script@v7
+        env:
+          EPIC_ISSUE: ${{ inputs.epic_issue }}
+          FEATURE_NAME: ${{ inputs.feature_name }}
         with:
           script: |
+            const epicNumber = Number(process.env.EPIC_ISSUE);
+            const featureName = process.env.FEATURE_NAME?.trim();
+            if (!Number.isSafeInteger(epicNumber) || epicNumber < 1 || !featureName) {
+              throw new Error('Provide a valid epic issue number and feature name.');
+            }
             const { data: epic } = await github.rest.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: ${{ github.event.inputs.epic_issue }}
+              issue_number: epicNumber
             });
 
             const featureIssue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `Feature: ${{ github.event.inputs.feature_name }}`,
-              body: `# Feature: ${{ github.event.inputs.feature_name }}\n\n...`,
+              title: 'Feature: ' + featureName,
+              body: '# Feature: ' + featureName + '\n\n...',
               labels: ['feature', 'priority-medium'],
               milestone: epic.data.milestone?.number
             });

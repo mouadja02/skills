@@ -74,7 +74,7 @@ For full API documentation:
 - **Do**: {recommendation}
 - **Avoid**: {anti-pattern}
 
-See [best-practices.md](references/best-practices.md) for detailed guidance.
+If the new skill bundles a best-practices reference, link it here and verify the destination in the generated skill folder.
 
 ## Learn More
 

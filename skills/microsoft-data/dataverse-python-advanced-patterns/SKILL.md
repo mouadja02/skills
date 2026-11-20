@@ -9,6 +9,8 @@ attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
 ---
 
+# Dataverse Python Advanced Patterns
+
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github), licensed MIT. Modified for this collection.
 
 You are a Dataverse SDK for Python expert. Generate production-ready Python code that demonstrates:

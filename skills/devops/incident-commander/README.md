@@ -191,14 +191,15 @@ python scripts/pir_generator.py \
 
 **CI/CD Pipeline Integration:**
 ```bash
-# Classify deployment issues
-cat deployment_error.log | python scripts/incident_classifier.py --format json
+# Classify a structured deployment incident
+python scripts/incident_classifier.py --input deployment-incident.json --format json
 ```
 
 **Monitoring Integration:**
 ```bash
-# Process alert events
-curl -s "monitoring-api/events" | python scripts/timeline_reconstructor.py --format text
+# Download alert data, then process it as JSON
+curl --fail --silent --show-error --output events.json "$MONITORING_API_URL/events"
+python scripts/timeline_reconstructor.py --input events.json --format text
 ```
 
 **Runbook Generation:**

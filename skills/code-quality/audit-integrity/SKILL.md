@@ -8,7 +8,7 @@ description: >-
   8/10) before delivery.
 compatibility: 'Cross-platform. Works with any language or framework analyzed by AppSec agents.'
 metadata:
-  version: '1.0'
+  version: "1.0.0"
 license: MIT
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"

@@ -12,12 +12,12 @@ Financial modeling, valuation, Excel authoring, investment analysis, and present
 
 | Skill | Install path | Description |
 | --- | --- | --- |
-| [`3-statement-model`](3-statement-model/SKILL.md) | `finance/3-statement-model` | Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author. Use when building or fixin... |
 | [`comps-analysis`](comps-analysis/SKILL.md) | `finance/comps-analysis` | Build comparable company analysis in Excel — operating metrics, valuation multiples, statistical benchmarking vs peer sets. Pairs with excel-author. Use for public-company valuation, IPO pricing, sector benchmarking, or outlier detection. |
 | [`dcf-model`](dcf-model/SKILL.md) | `finance/dcf-model` | Build institutional-quality DCF valuation models in Excel — revenue projections, FCF build, WACC, terminal value, Bear/Base/Bull scenarios, 5x5 sensitivity tables. Pairs with excel-author. Use for intrinsic-value equity analysis. |
 | [`excel-author`](excel-author/SKILL.md) | `finance/excel-author` | Build auditable Excel workbooks headless with openpyxl — blue/black/green cell conventions, formulas over hardcodes, named ranges, balance checks, sensitivity tables. Use for financial models, audit outputs, reconciliations. |
 | [`lbo-model`](lbo-model/SKILL.md) | `finance/lbo-model` | Build leveraged buyout models in Excel — sources & uses, debt schedule, cash sweep, exit multiple, IRR/MOIC sensitivity. Pairs with excel-author. Use for PE screening, sponsor-case valuation, or illustrative LBO in a pitch. |
 | [`merger-model`](merger-model/SKILL.md) | `finance/merger-model` | Build accretion/dilution (merger) models in Excel — pro-forma P&L, synergies, financing mix, EPS impact. Pairs with excel-author. Use for M&A pitches, board materials, or deal evaluation. |
 | [`pptx-author`](pptx-author/SKILL.md) | `finance/pptx-author` | Build PowerPoint decks headless with python-pptx. Pairs with excel-author for model-backed decks where every number traces to a workbook cell. Use for pitch decks, IC memos, earnings notes. |
+| [`three-statement-model`](three-statement-model/SKILL.md) | `finance/three-statement-model` | Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Pairs with excel-author. Use when building or fixin... |
 
 [Back to the category index](../README.md)

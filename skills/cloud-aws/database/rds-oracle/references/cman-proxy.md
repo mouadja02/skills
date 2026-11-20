@@ -178,9 +178,11 @@ Point clients at the CMAN EC2 / NLB, not RDS directly.
 ### Python
 
 ```python
+import os
 import oracledb
+
 dsn = "cman-ec2-private-ip:1521/ORCL"
-conn = oracledb.connect(user="dbadmin", password="<from-secrets-manager>", dsn=dsn)
+conn = oracledb.connect(user="dbadmin", password=os.environ["ORACLE_DB_PASSWORD"], dsn=dsn)
 ```
 
 ### Java

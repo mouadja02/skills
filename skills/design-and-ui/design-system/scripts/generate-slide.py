@@ -722,7 +722,7 @@ def main():
                 'headline': 'Ship campaigns while you sleep',
                 'subheadline': 'Early access available. Limited spots.',
                 'cta': 'Join the Waitlist',
-                'contact': 'hello@claudekit.ai',
+                'contact': 'contact@example.com',
                 'website': 'claudekit.ai'
             }
         ]

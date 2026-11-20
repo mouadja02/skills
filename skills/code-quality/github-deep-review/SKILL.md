@@ -44,7 +44,7 @@ rg "<key symbol/error/config/endpoint>"
 
 ## Review Contract
 
-Always answer these, explicitly:
+Address these review questions explicitly:
 
 - URL/ref: issue or PR number and affected surface.
 - What is the bug or behavior being fixed?

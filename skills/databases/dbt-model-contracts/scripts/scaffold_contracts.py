@@ -152,7 +152,11 @@ def load_properties(path: Path) -> dict:
     except OSError as exc:
         raise Refused(f"cannot read properties YAML at {path}: {exc.strerror or exc}") from exc
     try:
-        doc = yaml.load(raw, Loader=StrictLoader)  # noqa: S506 - StrictLoader subclasses SafeLoader
+        loader = StrictLoader(raw)
+        try:
+            doc = loader.get_single_data()
+        finally:
+            loader.dispose()
     except Refused:
         raise
     except yaml.YAMLError as exc:

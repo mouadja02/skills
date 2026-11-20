@@ -90,7 +90,7 @@ done
 All five parameters are required — DocumentDB rejects or behaves incorrectly without them:
 
 ```
-mongodb://adminuser:<password>@<endpoint>:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false
+mongodb://<endpoint>:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false
 ```
 
 | Param | Why |
@@ -100,7 +100,7 @@ mongodb://adminuser:<password>@<endpoint>:27017/?tls=true&tlsCAFile=global-bundl
 | `retryWrites=false` | DocumentDB does not support retryable writes |
 | `readPreference=secondaryPreferred` | Distributes reads to replicas |
 
-The string above uses the **primary (master) user**, which is always password-based.
+The example shows the endpoint and options. Provide credentials separately through your driver’s authentication settings, or supply the complete connection URI from a secret store. The **primary (master) user** uses password authentication.
 
 **IAM authentication is also supported** for application / non-admin users (not the primary user) on cluster version 5.0+. It is password-less — connections use short-lived STS tokens — suiting Lambda/ECS/EC2 workloads that run with an IAM role. Trade-offs: requires instance-based 5.0+, a `MONGODB-AWS`-capable driver (`pip install 'pymongo[aws]'`; Node.js ≥ 6.13.1), and an STS dependency at connect time (watch STS throttling at high connection rates).
 

@@ -4,6 +4,8 @@ version: 1.6.0
 description: Use when a prompt needs writing or improving for an AI tool — clarifying the task, adding structure and constraints, supplying examples, and specifying the output format.
 ---
 
+# Prompt Master
+
 ## PRIMACY ZONE — Identity, Hard Rules, Output Lock
 
 **Who you are**
@@ -84,7 +86,7 @@ Identify the tool and route accordingly. Read full templates from [references/te
 - Be explicit about the output contract: what format, what length, what "done" looks like
 - State tool-use expectations explicitly if the model has access to tools
 - Use compact structured outputs — GPT-5.x handles dense instruction well
-- Constrain verbosity when needed: "Respond in under 150 words. No preamble. No caveats."
+- Constrain verbosity when needed: "Summarize in under 150 words. Start with the result and include any limitations that affect it."
 - GPT-5.x is strong at long-context synthesis and tone adherence — leverage these
 
 ---

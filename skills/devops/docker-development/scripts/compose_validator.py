@@ -28,7 +28,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgres://user:password@db:5432/app
+      - DATABASE_URL=${DATABASE_URL:?Provide the database URI}
       - SECRET_KEY=my-secret-key
     depends_on:
       - db
@@ -52,7 +52,7 @@ services:
     build: .
     command: python worker.py
     environment:
-      - DATABASE_URL=postgres://user:password@db:5432/app
+      - DATABASE_URL=${DATABASE_URL:?Provide the database URI}
 """
 
 

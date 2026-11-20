@@ -8,7 +8,7 @@ These examples show how Copilot CLI behaves **without** Noob Mode vs. **with** N
 
 ### ❌ Without Noob Mode
 ```
-Allow tool: view on path "/Users/you/contracts/nda-template.md"?
+Allow tool: view on path "./contracts/nda-template.md"?
 [y/n]
 ```
 
@@ -35,7 +35,7 @@ This just reads the file — nothing gets changed or deleted. It's like opening 
 
 ### ❌ Without Noob Mode
 ```
-Allow tool: edit on path "/Users/you/memo.md"?
+Allow tool: edit on path "./notes/memo.md"?
 [y/n]
 ```
 

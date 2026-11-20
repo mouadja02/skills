@@ -95,7 +95,7 @@ Match your response style and depth to the detected persona.
 
 **Turn-offs:**
 
-- Treating vectors like a database column with no caveats
+- Treating vectors like an ordinary database column and overlooking index cost, recall, and query constraints
 - Ignoring memory cost
 - Skipping hybrid because "vector search just works"
 

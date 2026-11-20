@@ -1,5 +1,5 @@
 ---
-name: rich-claude-code-tui-clone
+name: rich-agent-cli
 description: >
   Use when building a Python terminal UI inspired by Claude Code with Rich. Translates a detailed
   TypeScript/Ink-style visual reference into a staged Python architecture for logo, message stream,
@@ -10,7 +10,7 @@ source: "https://rich.readthedocs.io/en/stable/; https://github.com/Textualize/r
 attribution: "Derived from official Rich documentation and repository examples, official Textual materials, the Toad repository as an architecture reference, and a user-supplied Claude Code TUI visual report"
 ---
 
-# Rich Claude Code TUI Clone
+# Rich Agent CLI
 
 Build a Python terminal interface that recreates the interaction grammar of a modern coding agent:
 conversation-first layout, streaming responses, compact tool summaries, permission gates, rich diffs,

@@ -91,7 +91,7 @@ Which approach would you prefer?
    - Check if role has AWSGlueServiceRole managed policy
    - Check if role has S3 read/write permissions
    - Check if role has S3 Tables inline policy
-   - See [iam-role-management.md](iam-role-management.md) for complete setup
+   - See [IAM and bucket access controls](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/storage/creating-data-lake-table/references/access-control.md) for complete setup.
 
 2. **S3 bucket access denied**:
    - Verify IAM role has s3:GetObject, s3:ListBucket on source bucket
@@ -106,7 +106,7 @@ Which approach would you prefer?
      - s3tables:GetTable
      - s3tables:UpdateTableMetadataLocation
    - Verify resource ARN matches table bucket structure
-   - See [iam-role-management.md](iam-role-management.md#s3-tables-inline-policy)
+   - See [S3 Tables bucket policy](https://github.com/mouadja02/skills/blob/main/skills/cloud-aws/storage/creating-data-lake-table/references/access-control.md#bucket-policy-s3tables-actions).
 
 4. **Athena query execution errors**:
    - Verify workgroup has output location configured

@@ -584,8 +584,8 @@ Include at end of Executive Summary:
 **Every entry in "Discovered from Codebase" MUST include a relative link to the source file or document from which the information was inferred.** Example:
 
 ```
-| Deployment Model | Air-gapped, single-admin workstation ([daemon.json](src/Container/Moby/daemon.json), [InstallAzureEdgeDiagnosticTool.ps1](src/Setup/InstallArtifacts/InstallAzureEdgeDiagnosticTool.ps1)) | All findings — no Tier 1 |
-| Network Exposure | All services bind to localhost:80 only ([KustoContainerHelper.psm1](src/Container/Kusto/KustoContainerHelper.psm1)) | FIND-01, FIND-03 |
+| Deployment Model | Air-gapped, single-admin workstation (`src/Container/Moby/daemon.json`, `src/Setup/InstallArtifacts/InstallAzureEdgeDiagnosticTool.ps1`) | All findings — no Tier 1 |
+| Network Exposure | All services bind to localhost:80 only (`src/Container/Kusto/KustoContainerHelper.psm1`) | FIND-01, FIND-03 |
 ```
 
 ### Needs Verification

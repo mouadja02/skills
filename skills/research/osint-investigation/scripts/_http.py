@@ -19,6 +19,30 @@ DEFAULT_UA = (
 )
 
 
+def require_https(url: str) -> None:
+    target = urllib.parse.urlsplit(url)
+    if target.scheme != "https" or not target.hostname or target.username is not None:
+        raise ValueError("Use an HTTPS URL with no embedded credentials")
+
+
+class HTTPSRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, request, response, code, message, headers, new_url):
+        require_https(new_url)
+        redirected = super().redirect_request(request, response, code, message, headers, new_url)
+        source = urllib.parse.urlsplit(request.full_url)
+        target = urllib.parse.urlsplit(new_url)
+        if redirected is not None and (source.hostname, source.port or 443) != (target.hostname, target.port or 443):
+            for name in ("Authorization", "Cookie", "X-api-key"):
+                redirected.remove_header(name)
+        return redirected
+
+
+def open_https(request: urllib.request.Request, *, timeout: float):
+    require_https(request.full_url)
+    opener = urllib.request.build_opener(HTTPSRedirectHandler())
+    return opener.open(request, timeout=timeout)
+
+
 def get(
     url: str,
     *,
@@ -46,7 +70,7 @@ def get(
     for attempt in range(max_retries + 1):
         req = urllib.request.Request(url, headers=h)
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            with open_https(req, timeout=timeout) as resp:
                 return resp.read()
         except urllib.error.HTTPError as e:
             if e.code == 429:

@@ -379,7 +379,7 @@ parameters.
       "operationId": "SendEmailV2"
     },
     "parameters": {
-      "emailMessage/To": "recipient@contoso.com",
+      "emailMessage/To": "recipient@example.com",
       "emailMessage/Subject": "Automated notification",
       "emailMessage/Body": "<p>@{outputs('Compose_Message')}</p>",
       "emailMessage/IsHtml": true
@@ -539,7 +539,7 @@ scope), split it into two actions: `CreateAnApproval` (fire-and-forget) then
     "parameters": {
       "approvalType": "CustomResponse/Result",
       "ApprovalCreationInput/title": "Review: @{variables('ItemTitle')}",
-      "ApprovalCreationInput/assignedTo": "approver@contoso.com",
+      "ApprovalCreationInput/assignedTo": "approver@example.com",
       "ApprovalCreationInput/details": "Please review and select an option.",
       "ApprovalCreationInput/responseOptions": ["Approve", "Reject", "Defer"],
       "ApprovalCreationInput/enableNotifications": true,

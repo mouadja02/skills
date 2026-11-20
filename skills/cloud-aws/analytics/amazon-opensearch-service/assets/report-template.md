@@ -190,7 +190,7 @@ Items that genuinely constrain the migration: no known fix, capacity-plan implic
 ### What I assumed (defaults applied for UNKNOWN inputs)
 
 - Pricing: not estimated — the customer plugs sizing into <https://calculator.aws> for an authoritative figure
-- Default replicas: 1 (per [`assumptions.md`](../references/assumptions.md))
+- Default replicas: 1 (see [topology defaults](../references/sizing.md#topology-defaults))
 - Default `refresh_interval`: 30s (not 1s — Skill IP: operational guidance for prod, verify against `bp.html` in [`knowledge-retrieval.md`](../references/assessment-knowledge-retrieval.md))
 - Engineering hours estimate: Skill IP, derive from readiness tier
 - Defaulted to managed Multi-AZ-with-Standby topology unless Serverless NextGen was clearly indicated

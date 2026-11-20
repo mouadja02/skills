@@ -237,7 +237,7 @@ services:
 ### .env.example (committed to repo)
 ```env
 # Database
-DATABASE_URL=postgres://user:password@db:5432/appname
+# Set DATABASE_URL from your secret store before starting the application.
 POSTGRES_USER=user
 POSTGRES_PASSWORD=changeme
 POSTGRES_DB=appname

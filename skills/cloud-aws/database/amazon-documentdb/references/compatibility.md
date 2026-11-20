@@ -28,9 +28,11 @@ Pick one input mode:
 
 **A — Live MongoDB URI (most accurate):**
 
+Set `SOURCE_MONGODB_URI` and `DOCDB_URI` from your approved secret store. Use the source URI to assess compatibility or export indexes, and the DocumentDB URI to test or restore indexes.
+
 ```bash
 python3 amazon-documentdb-tools/compat-tool/compat.py \
-  --uri "mongodb://<user>:<pass>@<host>:<port>/admin?directConnection=true" \
+  --uri "$SOURCE_MONGODB_URI" \
   --version 8.0
 ```
 
@@ -57,7 +59,7 @@ Capture the full output. If URI auth fails, retry with `--directory` or `--file`
 cd amazon-documentdb-tools/index-tool
 python3 migrationtools/documentdb_index_tool.py \
   --dump-indexes --dir ../index-export \
-  --uri "mongodb://<user>:<pass>@<host>:<port>"
+  --uri "$SOURCE_MONGODB_URI"
 
 python3 migrationtools/documentdb_index_tool.py \
   --show-issues --dir ../index-export
@@ -200,13 +202,13 @@ Check the [MongoDB API compatibility page](https://docs.aws.amazon.com/documentd
 python3 amazon-documentdb-tools/index-tool/migrationtools/documentdb_index_tool.py \
   --restore-indexes --skip-incompatible --dry-run \
   --dir amazon-documentdb-tools/index-export \
-  --uri "mongodb://admin:<pw>@<docdb-endpoint>:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&retryWrites=false"
+  --uri "$DOCDB_URI"
 
 # Actual restore
 python3 amazon-documentdb-tools/index-tool/migrationtools/documentdb_index_tool.py \
   --restore-indexes --skip-incompatible \
   --dir amazon-documentdb-tools/index-export \
-  --uri "mongodb://admin:<pw>@<docdb-endpoint>:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&retryWrites=false"
+  --uri "$DOCDB_URI"
 ```
 
 After restore, manually recreate the skipped indexes using the DocumentDB-supported equivalents above.

@@ -4,10 +4,10 @@ Use this table verbatim in section **6. Feature Gap Register** of [report-templa
 
 | # | Feature | Solr behavior | OpenSearch alternative | Severity | Lane | Effort | Owner action |
 |---|---------|---------------|------------------------|----------|------|--------|--------------|
-| 1 | _e.g. eDisMax `mm`_ | _Cross-field minimum-should-match expression_ | `multi_match` + `minimum_should_match` | LOW | migration-specific | S | Translate per [solr-query-behavior-edge-cases](../references/solr-query-behavior-edge-cases.md); validate parity. |
+| 1 | _e.g. eDisMax `mm`_ | _Cross-field minimum-should-match expression_ | `multi_match` + `minimum_should_match` | LOW | migration-specific | S | Follow the [Solr query translation recipes](../references/search-recipes.md) and validate parity. |
 | 2 | _e.g. Custom RequestHandler_ | _Java plugin invoked at query time_ | OpenSearch Search Pipeline (2.9+) or client logic | BLOCKING | risk-blocker | L | Rewrite as a search pipeline; smoke-test. |
 | 3 | _e.g. Cross-collection join_ | `{!join fromIndex=...}` | Denormalize at index time, or two-query application-side join | BLOCKING | risk-blocker | M | Decide denormalize vs join at app layer. |
-| 4 | _e.g. TrieIntField_ | Trie-indexed integer (deprecated since Solr 7+ in favor of `IntPointField`) | `integer` field type | MEDIUM | migration-specific | S | Recast values to native JSON numbers per [solr-transformation-rules](../references/solr-transformation-rules.md). |
+| 4 | _e.g. TrieIntField_ | Trie-indexed integer (deprecated since Solr 7+ in favor of `IntPointField`) | `integer` field type | MEDIUM | migration-specific | S | Recast values to native JSON numbers per the [schema conversion guide](../references/assessment-shape-schema-conversion.md). |
 | 5 | _e.g. Function query `recip()`_ | Score boost via Solr function query | `function_score` with `script_score` (Painless) | MEDIUM | risk-blocker | M | Translate; benchmark scoring deltas. |
 | 6 | _e.g. cursorMark_ | Solr deep-paging cursor | `search_after` with sort tiebreaker | MEDIUM | migration-specific | S | Update client; deprecate `cursorMark` strings. |
 | 7 | _e.g. Spatial `LatLonPointSpatialField`_ | `"lat,lon"` strings | `geo_point` objects | MEDIUM | migration-specific | S | Transform documents at index time. |

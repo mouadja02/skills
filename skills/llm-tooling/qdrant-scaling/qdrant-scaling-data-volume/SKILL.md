@@ -1,10 +1,7 @@
 ---
 name: qdrant-scaling-data-volume
 description: Use when a Qdrant dataset outgrows a single node. Covers multi-tenant payload partitioning, sharding, vertical scaling, and sliding time windows for time-bounded data.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
+allowed-tools: "Read Grep Glob"
 source: "https://github.com/qdrant/skills"
 attribution: "qdrant/skills by Qdrant"
 license: Apache-2.0
@@ -31,7 +28,7 @@ Learn more [Tenant Scaling](tenant-scaling/SKILL.md)
 Some use-cases are based on a sliding time window, where only the most recent data is relevant.
 For example an index for social media posts, where only the last 6 months of data require fast search.
 
-Learn more [Sliding Time Window](sliding-time-window/SKILL.md)
+Learn more [Sliding Time Window](qdrant-sliding-time-window/SKILL.md)
 
 ## Global Search
 
@@ -45,7 +42,7 @@ and then horizontal scaling when we reach the limits of vertical scaling.
 When data doesn't fit in a single node, the first approach is to scale the node itself — more RAM, better disk, quantization, mmap.
 Exhaust vertical options before going horizontal, as horizontal scaling adds permanent operational complexity.
 
-Learn more [Vertical Scaling](vertical-scaling/SKILL.md)
+Learn more [Vertical Scaling](qdrant-vertical-scaling/SKILL.md)
 
 ### Horizontal Scaling
 

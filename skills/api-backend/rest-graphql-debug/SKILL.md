@@ -64,7 +64,8 @@ curl -X POST https://api.example.com/users \
 curl -sI https://api.example.com/health
 
 # Pretty-print JSON
-curl -s https://api.example.com/users | python3 -m json.tool
+curl --fail --silent --show-error --output response.json https://api.example.com/users
+python3 -m json.tool response.json
 ```
 
 ### GraphQL via shell

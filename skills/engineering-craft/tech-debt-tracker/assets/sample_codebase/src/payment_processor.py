@@ -3,6 +3,7 @@ Payment processing module - contains various technical debt examples
 """
 
 import json
+import os
 import time
 import requests
 from decimal import Decimal
@@ -12,10 +13,10 @@ from typing import Dict, Any
 class PaymentProcessor:
     
     def __init__(self):
-        # TODO: These should come from environment or config
-        self.stripe_key = "sk_test_1234567890"
-        self.paypal_key = "paypal_secret_key_here"
-        self.square_key = "square_api_key"
+        # Provide test credentials through the environment when running the example.
+        self.stripe_key = os.environ.get("STRIPE_API_KEY", "")
+        self.paypal_key = os.environ.get("PAYPAL_API_KEY", "")
+        self.square_key = os.environ.get("SQUARE_API_KEY", "")
         
     def process_payment(self, amount, currency, payment_method, customer_data, billing_address, shipping_address, items, discount_code, tax_rate, processing_fee, metadata):
         """
@@ -88,6 +89,8 @@ class PaymentProcessor:
         if payment_method["type"] == "credit_card":
             # Credit card processing
             if payment_method["provider"] == "stripe":
+                if not self.stripe_key.startswith(("sk_test_", "rk_test_")):
+                    return {"success": False, "error": "Stripe test credentials are required"}
                 try:
                     # Stripe API call - no retry logic
                     response = requests.post(
@@ -131,9 +134,11 @@ class PaymentProcessor:
                     
             elif payment_method["provider"] == "square":
                 # Square processing - duplicate code structure
+                if not self.square_key:
+                    return {"success": False, "error": "Square sandbox credentials are required"}
                 try:
                     response = requests.post(
-                        "https://connect.squareup.com/v2/payments",
+                        "https://connect.squareupsandbox.com/v2/payments",
                         headers={"Authorization": f"Bearer {self.square_key}"},
                         json={
                             "source_id": payment_method["token"],
@@ -171,9 +176,11 @@ class PaymentProcessor:
                     
         elif payment_method["type"] == "paypal":
             # PayPal processing - more duplicate code
+            if not self.paypal_key:
+                return {"success": False, "error": "PayPal sandbox credentials are required"}
             try:
                 response = requests.post(
-                    "https://api.paypal.com/v2/checkout/orders",
+                    "https://api-m.sandbox.paypal.com/v2/checkout/orders",
                     headers={"Authorization": f"Bearer {self.paypal_key}"},
                     json={
                         "intent": "CAPTURE",

@@ -7,6 +7,8 @@ attribution: "mattpocock/skills by Matt Pocock"
 version: "1.0.0"
 ---
 
+# Writing For Agents
+
 > **Attribution:** Sourced from [mattpocock/skills](https://github.com/mattpocock/skills) by [Matt Pocock](https://github.com/mattpocock), licensed MIT. Modified for this collection.
 
 Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the same levers make each one predictable, since the agent takes the same _process_ every run rather than producing the same output.

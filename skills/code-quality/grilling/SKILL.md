@@ -7,6 +7,8 @@ attribution: "mattpocock/skills by Matt Pocock"
 version: "1.0.0"
 ---
 
+# Grilling
+
 > **Attribution:** Sourced from [mattpocock/skills](https://github.com/mattpocock/skills) by [Matt Pocock](https://github.com/mattpocock), licensed MIT. Modified for this collection.
 
 Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.

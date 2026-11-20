@@ -84,7 +84,7 @@ REM Run a Cygwin command from a batch file
 C:\cygwin64\bin\bash.exe -l -c "ls -la /home"
 
 REM Convert a Windows path to POSIX for Cygwin
-C:\cygwin64\bin\cygpath.exe -u "C:\Users\John Doe\Documents"
+C:\cygwin64\bin\cygpath.exe -u "C:\Example Workspace\Documents"
 
 REM Convert a POSIX path back to Windows
 C:\cygwin64\bin\cygpath.exe -w "/home/jdoe/project"

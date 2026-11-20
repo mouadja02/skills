@@ -36,7 +36,7 @@ Schema evolution and nested data: See [schema-evolution.md](schema-evolution.md)
 ### Phase 3: Set Up or Verify Target Table
 
 1. **Check if table exists** using MCP or CLI
-2. **Create table if needed**: Delegate to [creating-data-lake-table](../../creating-data-lake-table/SKILL.md) for all target types. Pass the target format (S3 Tables, standard Iceberg, or raw files) and schema. See [iceberg-catalog-config-and-usage.md](iceberg-catalog-config-and-usage.md) for target-specific catalog configuration used in the subsequent Glue job.
+2. **Create table if needed**: Delegate to [creating-data-lake-table](../../../storage/creating-data-lake-table/SKILL.md) for all target types. Pass the target format (S3 Tables, standard Iceberg, or raw files) and schema. See [iceberg-catalog-config-and-usage.md](iceberg-catalog-config-and-usage.md) for target-specific catalog configuration used in the subsequent Glue job.
 3. **Evolve schema if needed**: Compare schemas, generate ALTER TABLE ADD COLUMNS, execute via Athena
 
 ### Phase 3.5: Verify or Create IAM Role for Glue
@@ -45,7 +45,7 @@ Schema evolution and nested data: See [schema-evolution.md](schema-evolution.md)
 2. **Verify permissions**: AWSGlueServiceRole managed policy, S3 access, S3 Tables inline policy (if S3 Tables target)
 3. **Create role if needed**: Trust policy for `glue.amazonaws.com`, attach policies, capture role ARN
 
-Complete IAM setup: Handled by [creating-data-lake-table](../../creating-data-lake-table/SKILL.md).
+Complete IAM setup: Handled by [creating-data-lake-table](../../../storage/creating-data-lake-table/SKILL.md).
 
 ### Phase 4: Execute Data Load
 

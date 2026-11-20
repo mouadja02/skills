@@ -273,7 +273,7 @@ Accepted source formats:
 
 - **Local paths** — directories on the user's machine (e.g., `/home/user/my-project`)
 - **HTTPS git URLs** — public or private (e.g., `https://github.com/org/repo.git`)
-- **SSH git URLs** — e.g., `git@github.com:org/repo.git`
+- **SSH git URLs** — e.g., `ssh://git@<git-host>/org/repo.git`. Use the SSH URL shown by your repository host.
 - **S3 bucket path with zips** — e.g., `s3://my-bucket/repos/`
   containing zip files of repositories. Each zip becomes one transformation job.
 

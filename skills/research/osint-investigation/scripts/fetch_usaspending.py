@@ -13,6 +13,8 @@ import time
 import urllib.request
 from pathlib import Path
 
+from _http import open_https
+
 ENDPOINT = "https://api.usaspending.gov/api/v2/search/spending_by_award/"
 COLUMNS = [
     "award_id",
@@ -62,7 +64,7 @@ def _post(body: dict) -> dict:
         headers={"Content-Type": "application/json", "User-Agent": "hermes-agent osint-investigation"},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    with open_https(req, timeout=60) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 

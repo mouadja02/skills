@@ -19,12 +19,14 @@ If both are present in the user's message, use them and proceed directly to Step
 
 ### Step 1: Run the review
 
+For optional database checks, set `DOCDB_URI` from your approved secret store with the TLS options from [Connection](connection.md).
+
 ```bash
 python3 scripts/wa_review.py \
   --cluster-id <cluster-id> \
   --region <region> \
   --output artifacts/<cluster-id>/ \
-  [--uri "mongodb://admin:<pw>@<endpoint>:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&retryWrites=false"] \
+  [--uri "$DOCDB_URI"] \
   [--tls-ca-file global-bundle.pem]
 ```
 

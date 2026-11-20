@@ -53,7 +53,7 @@ Before referring to any listed errors, refer to the complete [DSQL troubleshooti
 - Set `sslmode=verify-full` and point `sslrootcert` at a CA bundle that includes Amazon Root CAs (`sslrootcert=system` works on most OSes; libpq otherwise looks at `~/.postgresql/root.crt`)
 - Use native TLS libraries (not OpenSSL 1.0.x)
 
-### `root certificate file "/Users/<you>/.postgresql/root.crt" does not exist`
+### `root certificate file "~/.postgresql/root.crt" does not exist`
 
 **Problem**: `psql` with `sslmode=verify-full` aborts because libpq is looking for a per-user CA bundle that doesn't exist. Common on a fresh macOS / Linux dev box that never had a personal CA bundle provisioned.
 

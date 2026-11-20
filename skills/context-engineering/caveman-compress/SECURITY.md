@@ -34,7 +34,7 @@ Files larger than 500KB are rejected before any API call is made.
 
 ### Snyk W007 ("insecure credential handling")
 
-W007 fires on the rule that code blocks, commands, and exact error strings stay verbatim. See [Scanner warnings](../../SECURITY.md#scanner-warnings) in the repository SECURITY.md.
+W007 fires on the rule that code blocks, commands, and exact error strings stay verbatim. The [upstream project](https://github.com/JuliusBrussee/caveman) documents this under **Scanner warnings** in its security policy.
 
 ### Reporting a vulnerability
 

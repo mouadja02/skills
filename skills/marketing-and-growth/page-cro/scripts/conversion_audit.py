@@ -14,6 +14,19 @@ import re
 import sys
 import urllib.request
 from html.parser import HTMLParser
+from urllib.parse import urlsplit
+
+
+def require_web_url(url):
+    parsed = urlsplit(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.hostname or parsed.username is not None:
+        raise ValueError("The page URL must be HTTP or HTTPS and contain no credentials")
+
+
+class WebRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, request, response, code, message, headers, new_url):
+        require_web_url(new_url)
+        return super().redirect_request(request, response, code, message, headers, new_url)
 
 
 # ---------------------------------------------------------------------------
@@ -362,8 +375,13 @@ def main():
         with open(args.file, "r", encoding="utf-8", errors="replace") as f:
             html = f.read()
     elif args.url:
-        with urllib.request.urlopen(args.url, timeout=10) as resp:
-            html = resp.read().decode("utf-8", errors="replace")
+        try:
+            require_web_url(args.url)
+            opener = urllib.request.build_opener(WebRedirectHandler())
+            with opener.open(args.url, timeout=10) as resp:
+                html = resp.read().decode("utf-8", errors="replace")
+        except ValueError as exc:
+            parser.error(str(exc))
     else:
         html = DEMO_HTML
         if not args.json:

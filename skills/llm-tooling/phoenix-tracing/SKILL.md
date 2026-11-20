@@ -7,7 +7,7 @@ description: >-
 license: Apache-2.0
 compatibility: Requires Phoenix server. Python skills need arize-phoenix-otel; TypeScript skills need @arizeai/phoenix-otel.
 metadata:
-  author: oss@arize.com
+  author: "Arize AI <oss@arize.com>"
   version: "1.0.1"
   languages: "Python, TypeScript"
 source: "https://github.com/Arize-ai/phoenix"

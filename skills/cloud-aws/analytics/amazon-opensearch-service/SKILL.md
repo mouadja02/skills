@@ -39,7 +39,7 @@ These rules apply to every response, regardless of capability. Capability-specif
 - **Pick one** for every A-vs-B decision. Name a primary recommendation in one line with a one-sentence reason. A *"go with B if..."* caveat is allowed AFTER the primary; never lead with conditional-only guidance.
 - **Source restatement.** The first 2–3 sentences must restate the source (engine + version + scale) when known, or restate the customer's question in concrete terms. The very first text the user sees must NOT be tool narration, meta-commentary, the report title, or simply restating the question verbatim.
 - **No marketing tone.** Do NOT use *"seamless"*, *"robust"*, *"best-in-class"*, *"production-hardened"*, *"enterprise-grade"*, *"world-class"*, *"cleanly"*, *"elegant"*. Do NOT stack 3+ vague hedges (*"typically"*, *"generally"*, *"usually"*, *"in most cases"*) in a single recommendation — be specific about when it does and does not apply.
-- **Cross-capability handoff.** When a user prompt spans capabilities (e.g., *"migrate from Solr AND set up RAG on the new domain"*), pick the dominant capability for the response, then close with a one-line handoff: *"For \<other capability\>, see [`references/<other-capability>-<entry>.md`](...)."*
+- **Cross-capability handoff.** When a prompt spans capabilities, handle the primary capability first and finish with a link to the relevant secondary guide. For a Solr migration followed by RAG setup, link to the [knowledge retrieval assessment](references/assessment-knowledge-retrieval.md).
 
 ## Cross-cutting references (used across multiple capabilities)
 

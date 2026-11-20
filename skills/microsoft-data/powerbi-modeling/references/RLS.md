@@ -69,8 +69,8 @@ Separate table mapping users to data:
 SecurityMapping table:
 | UserEmail | Region |
 |-----------|--------|
-| joe@co.com | West  |
-| sue@co.com | East  |
+| joe@example.com | West  |
+| sue@example.com | East  |
 ```
 
 ```dax

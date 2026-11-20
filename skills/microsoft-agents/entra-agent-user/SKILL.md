@@ -97,7 +97,7 @@ Authorization: Bearer <token>
   "accountEnabled": true,
   "displayName": "My Agent User",
   "mailNickname": "my-agent-user",
-  "userPrincipalName": "my-agent-user@yourtenant.onmicrosoft.com",
+  "userPrincipalName": "<agent-alias>@<tenant-verified-domain>",
   "identityParentId": "<agent-identity-object-id>"
 }
 ```
@@ -121,7 +121,7 @@ $body = @{
   accountEnabled    = $true
   displayName       = "My Agent User"
   mailNickname      = "my-agent-user"
-  userPrincipalName = "my-agent-user@yourtenant.onmicrosoft.com"
+  userPrincipalName = "<agent-alias>@<tenant-verified-domain>"
   identityParentId  = "<agent-identity-object-id>"
 } | ConvertTo-Json
 

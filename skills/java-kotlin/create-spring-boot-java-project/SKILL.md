@@ -103,7 +103,7 @@ springdoc.swagger-ui.tags-sorter=alpha
 # Redis configurations
 spring.data.redis.host=localhost
 spring.data.redis.port=6379
-spring.data.redis.password=rootroot
+spring.data.redis.password=${REDIS_PASSWORD}
 ```
 
 - Insert JPA configurations into `application.properties` file
@@ -111,9 +111,9 @@ spring.data.redis.password=rootroot
 ```properties
 # JPA configurations
 spring.datasource.driver-class-name=org.postgresql.Driver
-spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
-spring.datasource.username=postgres
-spring.datasource.password=rootroot
+spring.datasource.url=${DATABASE_URL}
+spring.datasource.username=${DATABASE_USERNAME}
+spring.datasource.password=${DATABASE_PASSWORD}
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true

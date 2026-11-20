@@ -148,7 +148,7 @@ Each of the three approaches introduced above is described below with its specif
 
 The TableMaintenance API (Iceberg 1.10+) runs maintenance as part of the Flink job topology, triggered by post-commit events. Requires IcebergSink (SinkV2).
 
-Store the JDBC lock-database credentials in AWS Secrets Manager and look them up at job startup. **Never hardcode credentials in application code, runtime properties, or `setup.sql`/JAR resources.** Connect to the lock database over TLS — the JDBC URL must include `ssl=true` so the connection is encrypted in transit. Certificate verification (`sslmode=verify-full`) on MSF requires a custom `SSLSocketFactory` that loads the CA bundle from the classpath, since MSF doesn't expose a stable filesystem path for `sslrootcert`; see [cdc-connector-guide.md](cdc-connector-guide.md#tls--ssl-to-the-database) for the constraints. See [cdc-connector-guide.md](cdc-connector-guide.md#database-credentials-and-secrets-management) for the full Secrets Manager pattern; the Iceberg lock-DB credentials should follow the same approach.
+Store the JDBC lock-database credentials in AWS Secrets Manager and look them up at job startup. Set `LOCK_DATABASE_JDBC_URL` to the TLS-enabled lock database URL in the job environment. **Never hardcode credentials in application code, runtime properties, or `setup.sql`/JAR resources.** Connect to the lock database over TLS — the JDBC URL must include `ssl=true` so the connection is encrypted in transit. Certificate verification (`sslmode=verify-full`) on MSF requires a custom `SSLSocketFactory` that loads the CA bundle from the classpath, since MSF doesn't expose a stable filesystem path for `sslrootcert`; see [cdc-connector-guide.md](cdc-connector-guide.md#tls--ssl-to-the-database) for the constraints. See [cdc-connector-guide.md](cdc-connector-guide.md#database-credentials-and-secrets-management) for the full Secrets Manager pattern; the Iceberg lock-DB credentials should follow the same approach.
 
 ```java
 // Resolve credentials from AWS Secrets Manager — see cdc-connector-guide.md for the
@@ -161,7 +161,7 @@ jdbcProps.put("jdbc.password", lockDbCreds.password);
 jdbcProps.put("flink-maintenance.lock.jdbc.init-lock-tables", "true");
 
 TriggerLockFactory lockFactory = new JdbcLockFactory(
-    "jdbc:postgresql://rds-endpoint:5432/iceberg_locks?ssl=true",
+    System.getenv("LOCK_DATABASE_JDBC_URL"),
     "catalog.database.table",  // Unique lock ID per table
     jdbcProps
 );
@@ -197,7 +197,7 @@ Map<String, String> flinkConf = new HashMap<>();
 flinkConf.put(FlinkWriteOptions.COMPACTION_ENABLE.key(), "true");
 flinkConf.put(LockConfig.LOCK_TYPE_OPTION.key(), LockConfig.JdbcLockConfig.JDBC);
 flinkConf.put(LockConfig.JdbcLockConfig.JDBC_URI_OPTION.key(),
-    "jdbc:postgresql://host:5432/iceberg?ssl=true");
+    System.getenv("LOCK_DATABASE_JDBC_URL"));
 flinkConf.put(LockConfig.LOCK_ID_OPTION.key(), "catalog.db.table");
 // Lock-DB user/password must be supplied via Secrets Manager — do not hardcode.
 // e.g.: flinkConf.put(LockConfig.JdbcLockConfig.JDBC_USER_OPTION.key(), lockDbCreds.username);
@@ -208,14 +208,14 @@ IcebergSink.forRowData(dataStream)
     .append();
 ```
 
-Or via SQL:
+Or via SQL, substituting the configured TLS-enabled lock database URL before submission:
 
 ```sql
 SET 'table.exec.iceberg.use-v2-sink' = 'true';
 SET 'compaction-enabled' = 'true';
 SET 'flink-maintenance.lock.type' = 'jdbc';
 SET 'flink-maintenance.lock.lock-id' = 'catalog.db.table';
-SET 'flink-maintenance.lock.jdbc.uri' = 'jdbc:postgresql://host:5432/iceberg?ssl=true';
+SET 'flink-maintenance.lock.jdbc.uri' = '<LOCK_DATABASE_JDBC_URL>';
 SET 'flink-maintenance.lock.jdbc.init-lock-tables' = 'true';
 -- jdbc.user / jdbc.password must come from a Secrets Manager lookup performed
 -- in main() and templated into the SET statement before submission. Do NOT

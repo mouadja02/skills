@@ -55,8 +55,10 @@ sql admin@localhost:1521/ORCL
 **Python**:
 
 ```python
+import os
 import oracledb
-conn = oracledb.connect(user="admin", password="<from-secrets-manager>", dsn="localhost:1521/ORCL")
+
+conn = oracledb.connect(user="admin", password=os.environ["ORACLE_DB_PASSWORD"], dsn="localhost:1521/ORCL")
 ```
 
 **Java**:

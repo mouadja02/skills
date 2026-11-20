@@ -86,7 +86,7 @@ Missing the RPC range is the top cause of intermittent failures after a working 
 On an AL2023 EC2 client in the same VPC, install `realmd`/`sssd`/`adcli`/`krb5-workstation`, join the realm, then install the Db2 Runtime Client (`db2-driver.sh`) and configure DSNs (`db2client-configure.sh` auto-detects the realm and writes both local-auth and Kerberos DSNs):
 
 ```bash
-kinit your.username@COMPANY.COM   # obtain a TGT
+kinit your.username@example.com   # obtain a TGT
 klist                              # confirm ticket present
 db2 "connect to RDSAKS"            # SSL + Kerberos DSN, no password
 ```

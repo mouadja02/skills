@@ -252,7 +252,7 @@ Direct array. Can be very large (1500+ items).
 [
   {
     "id": "<environmentId>.<connectionId>",
-    "displayName": "user@contoso.com",
+    "displayName": "user@example.com",
     "createdBy": "{\"id\":\"...\",\"displayName\":\"...\",\"email\":\"...\"}",
     "environmentName": "...",
     "statuses": "[{\"status\":\"Connected\"}]"
@@ -271,7 +271,7 @@ Direct array.
   {
     "id": "09dbe02f-...",
     "displayName": "Sample Maker",
-    "mail": "maker@contoso.com",
+    "mail": "maker@example.com",
     "deleted": false,
     "ownerFlowCount": 199,
     "ownerAppCount": 209,
@@ -338,7 +338,7 @@ Direct array.
 
 ```
 1. update_store_flow with monitor=true
-2. Optionally set rule_notify_onfail=true, rule_notify_email="user@domain.com"
+2. Optionally set rule_notify_onfail=true, rule_notify_email="user@example.com"
 3. Run data will appear after the next daily scan
 ```
 

@@ -65,9 +65,9 @@ Authentication and billing are foundational SaaS capabilities that affect every 
 **Implementation:**
 ```
 User -> Role -> Permissions
-john@acme.com -> Admin -> [create, read, update, delete, manage_users]
-jane@acme.com -> Editor -> [create, read, update]
-bob@acme.com -> Viewer -> [read]
+john@example.com -> Admin -> [create, read, update, delete, manage_users]
+jane@example.com -> Editor -> [create, read, update]
+bob@example.com -> Viewer -> [read]
 ```
 
 #### Attribute-Based Access Control (ABAC)

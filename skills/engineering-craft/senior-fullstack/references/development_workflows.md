@@ -35,7 +35,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgresql://user:pass@db:5432/app
+      - DATABASE_URL=${DATABASE_URL:?Provide the database URI}
       - REDIS_URL=redis://redis:6379
     depends_on:
       - db
@@ -97,13 +97,13 @@ CMD ["node", "dist/index.js"]
 
 ```bash
 # .env.local (development)
-DATABASE_URL="postgresql://user:pass@localhost:5432/app_dev"
+# Set DATABASE_URL to the database URI from your local secret store.
 REDIS_URL="redis://localhost:6379"
 JWT_SECRET="$(openssl rand -hex 32)"
 LOG_LEVEL="debug"
 
 # .env.test
-DATABASE_URL="postgresql://user:pass@localhost:5432/app_test"
+# Set DATABASE_URL to the test-only database URI from your secret store.
 LOG_LEVEL="error"
 
 # .env.production (via secrets management)
@@ -283,7 +283,7 @@ jobs:
       - run: npm run test:unit
       - run: npm run test:integration
         env:
-          DATABASE_URL: postgresql://test:test@localhost:5432/test
+          DATABASE_URL: ${{ secrets.CI_DATABASE_URL }}
       - uses: codecov/codecov-action@v3
 
   build:

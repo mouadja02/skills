@@ -41,11 +41,13 @@ Record totals for the migration plan.
 
 ### Step 2: Index migration
 
+Set `SOURCE_MONGODB_URI` and `DOCDB_URI` from your approved secret store before exporting and restoring indexes.
+
 ```bash
 # Export
 python3 amazon-documentdb-tools/index-tool/migrationtools/documentdb_index_tool.py \
   --dump-indexes --dir ./migration-index-export \
-  --uri "mongodb://<user>:<pass>@<mongo-host>:27017"
+  --uri "$SOURCE_MONGODB_URI"
 
 # Check compatibility
 python3 amazon-documentdb-tools/index-tool/migrationtools/documentdb_index_tool.py \
@@ -55,13 +57,13 @@ python3 amazon-documentdb-tools/index-tool/migrationtools/documentdb_index_tool.
 python3 amazon-documentdb-tools/index-tool/migrationtools/documentdb_index_tool.py \
   --restore-indexes --skip-incompatible --dry-run \
   --dir ./migration-index-export \
-  --uri "mongodb://admin:<pw>@<docdb-endpoint>:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&retryWrites=false"
+  --uri "$DOCDB_URI"
 
 # Actual restore
 python3 amazon-documentdb-tools/index-tool/migrationtools/documentdb_index_tool.py \
   --restore-indexes --skip-incompatible \
   --dir ./migration-index-export \
-  --uri "mongodb://admin:<pw>@<docdb-endpoint>:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&retryWrites=false"
+  --uri "$DOCDB_URI"
 ```
 
 Add `--shorten-index-name` for long names and `--support-2dsphere` for 2dsphere indexes. Record the count restored and any skipped.

@@ -36,7 +36,8 @@ Best practice: don't use the master user for applications. Create scoped logins:
 
 ```sql
 -- As master user, create app login
-CREATE LOGIN app_user WITH PASSWORD = 'strong-password-here';
+-- Bind APP_LOGIN_PASSWORD securely when invoking SQLCMD; keep the value out of scripts and logs.
+CREATE LOGIN app_user WITH PASSWORD = '$(APP_LOGIN_PASSWORD)';
 
 -- Create user in app database
 USE mydb;

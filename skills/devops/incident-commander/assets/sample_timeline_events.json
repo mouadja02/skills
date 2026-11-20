@@ -21,7 +21,7 @@
     "actor": "pagerduty-system",
     "metadata": {
       "incident_id": "PD-12345",
-      "responder": "sarah.chen@company.com"
+      "responder": "sarah.chen@example.com"
     }
   },
   {
@@ -70,7 +70,7 @@
     "severity": "high",
     "actor": "pagerduty-system",
     "metadata": {
-      "incident_commander": "mike.rodriguez@company.com",
+      "incident_commander": "mike.rodriguez@example.com",
       "role": "incident_commander"
     }
   },
@@ -95,7 +95,7 @@
     "actor": "pagerduty-system",
     "metadata": {
       "team": "database-team",
-      "responders": ["tom.wilson@company.com", "lisa.park@company.com"]
+      "responders": ["tom.wilson@example.com", "lisa.park@example.com"]
     }
   },
   {

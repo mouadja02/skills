@@ -139,7 +139,7 @@ Also check `.gitignore` — if a secret file pattern is NOT in .gitignore, flag 
 ```yaml
 # Hardcoded values in env: blocks (should use ${{ secrets.NAME }})
 env:
-  API_KEY: "actual-value-here"   # VULNERABLE
+  API_KEY: ${{ secrets.API_KEY }}  # CI injects the value at runtime
 
 # Printing secrets
 - run: echo ${{ secrets.MY_SECRET }}   # leaks to logs
@@ -158,7 +158,7 @@ ARG API_KEY=actual-value
 ```hcl
 # Hardcoded sensitive values (should use var or data source)
 password = "example-hardcoded-password"
-access_key = "AKIAIOSFODNN7EXAMPLE"
+# Use short-lived credentials from the provider credential chain.
 ```
 
 ---

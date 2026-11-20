@@ -34,8 +34,8 @@ Note: The target for catalog migration is always S3 Tables -- that is the purpos
 
 ### Phase 2: Prepare the Target
 
-1. **Ensure table bucket exists**: Check with `aws s3tables list-table-buckets`. If none, delegate to [creating-data-lake-table](../../creating-data-lake-table/SKILL.md) Phase 2.
-2. **Ensure analytics integration is enabled**: Verify `s3tablescatalog` exists. Delegate to [creating-data-lake-table](../../creating-data-lake-table/SKILL.md) Phase 2, step 4 if not set up.
+1. **Ensure table bucket exists**: Check with `aws s3tables list-table-buckets`. If none, delegate to [creating-data-lake-table](../../../storage/creating-data-lake-table/SKILL.md) Phase 2.
+2. **Ensure analytics integration is enabled**: Verify `s3tablescatalog` exists. Delegate to [creating-data-lake-table](../../../storage/creating-data-lake-table/SKILL.md) Phase 2, step 4 if not set up.
 3. **Create or select namespace**: Use existing or create new via `aws s3tables create-namespace`.
 4. **Plan partition strategy**: Iceberg supports hidden partition transforms (`day()`, `month()`, `year()`, `hour()`, `bucket()`). Recommend converting Hive-style explicit partition columns to Iceberg transforms where possible.
 

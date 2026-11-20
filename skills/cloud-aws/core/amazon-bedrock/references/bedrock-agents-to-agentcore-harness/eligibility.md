@@ -19,7 +19,7 @@ For an **inline agent**, evaluate these same conditions against the fields of th
 ### 3. Unreachable knowledge base
 **Signal:** an associated KB is in an account/region the credentials cannot reach — so `bedrock-agent-runtime:Retrieve` can't reproduce its retrieval.
 **Alternative:** grant cross-account/region access, then re-run.
-**Not the KB *type*:** every type (`VECTOR`/`MANAGED`/`KENDRA`/`SQL`) is reachable via `Retrieve` and eligible; type only picks the wiring (see [mapping.md](references/bedrock-agents-to-agentcore-harness/mapping.md)).
+**Not the KB *type*:** every type (`VECTOR`/`MANAGED`/`KENDRA`/`SQL`) is reachable via `Retrieve` and eligible; type only picks the wiring (see [mapping.md](mapping.md)).
 
 ### 4. Custom orchestration
 **Signal:** `orchestrationType` is `CUSTOM_ORCHESTRATION` (custom orchestration Lambda). The harness runs its own loop; that control flow has no equivalent and would be silently dropped.
@@ -27,9 +27,9 @@ For an **inline agent**, evaluate these same conditions against the fields of th
 
 ## Eligible — do not mistake these for blockers
 
-- **DRAFT-only agent** (no published version) — common; treat DRAFT as the source (see [discovery.md](references/bedrock-agents-to-agentcore-harness/discovery.md)).
+- **DRAFT-only agent** (no published version) — common; treat DRAFT as the source (see [discovery.md](discovery.md)).
 - **Mixed action-group schema styles** (`functionSchema` and OpenAPI in one agent).
-- **Managed KB with non-default retrieval config, code interpreter, session memory** — all have harness targets (see [mapping.md](references/bedrock-agents-to-agentcore-harness/mapping.md)).
+- **Managed KB with non-default retrieval config, code interpreter, session memory** — all have harness targets (see [mapping.md](mapping.md)).
 - **An agent with a guardrail** — eligible overall; the guardrail capability just can't be carried.
 
-(Eligible to migrate, but whose *capability* the harness can't reproduce — classify **cannot** and surface to the user: **Return-of-Control action groups** and the **guardrail**. See [mapping.md](references/bedrock-agents-to-agentcore-harness/mapping.md).)
+(Eligible to migrate, but whose *capability* the harness can't reproduce — classify **cannot** and surface to the user: **Return-of-Control action groups** and the **guardrail**. See [mapping.md](mapping.md).)

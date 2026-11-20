@@ -21,6 +21,9 @@ import time
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from defusedxml.common import DefusedXmlException
+from defusedxml.ElementTree import parse
+
 
 DEFAULT_STYLE = "rounded=1;whiteSpace=wrap;html=1;"
 
@@ -48,7 +51,7 @@ def _indent_xml(elem: ET.Element, level: int = 0) -> None:
 def _generate_id(label: str, x: int, y: int) -> str:
     """Generate a short deterministic-ish id based on label + position + time."""
     seed = f"{label}:{x}:{y}:{time.time_ns()}"
-    return "auto_" + hashlib.sha1(seed.encode()).hexdigest()[:8]
+    return "auto_" + hashlib.sha1(seed.encode(), usedforsecurity=False).hexdigest()[:8]
 
 
 def add_shape(
@@ -73,8 +76,8 @@ def add_shape(
     ET.register_namespace("", "")
 
     try:
-        tree = ET.parse(path)
-    except ET.ParseError as exc:
+        tree = parse(path, forbid_dtd=True)
+    except (ET.ParseError, DefusedXmlException) as exc:
         print(f"ERROR: XML parse error in '{path}': {exc}")
         return 1
 

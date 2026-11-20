@@ -73,7 +73,7 @@ DMARC ties SPF and DKIM together and tells receiving servers what to do when aut
 
 **Starter DMARC record (monitoring mode):**
 ```
-_dmarc.yourdomain.com  IN  TXT  "v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com"
+_dmarc.yourdomain.com  IN  TXT  "v=DMARC1; p=none; rua=mailto:dmarc@example.com"
 ```
 
 `p=none` means monitor but don't block — good to start with. Once you've confirmed SPF and DKIM are working cleanly, move to `p=quarantine` or `p=reject`.

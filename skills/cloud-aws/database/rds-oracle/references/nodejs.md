@@ -14,7 +14,7 @@ const oracledb = require('oracledb');
 async function run() {
   const conn = await oracledb.getConnection({
     user: 'dbadmin',
-    password: '<from-secrets-manager>',  // fetch at runtime; see connection-auth.md section (b) — via AWS Secrets Manager
+    password: process.env.ORACLE_DB_PASSWORD,  // Populate from Secrets Manager at runtime.
     connectString: 'mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL'
   });
   const result = await conn.execute('SELECT sysdate FROM dual');
@@ -58,7 +58,7 @@ const oracledb = require('oracledb');
 async function init() {
   await oracledb.createPool({
     user: 'dbadmin',
-    password: '<from-secrets-manager>',
+    password: process.env.ORACLE_DB_PASSWORD,
     connectString: 'mydb.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:1521/ORCL',
     poolMin: 2,
     poolMax: 10,

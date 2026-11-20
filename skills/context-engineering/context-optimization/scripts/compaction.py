@@ -310,7 +310,7 @@ class ObservationStore:
     def _generate_ref_id(self, content: str) -> str:
         """Generate unique reference ID."""
         hash_input = f"{content[:100]}{time.time()}"
-        return hashlib.md5(hash_input.encode()).hexdigest()[:8]
+        return hashlib.md5(hash_input.encode(), usedforsecurity=False).hexdigest()[:8]
 
     def _extract_key_point(self, content: str) -> str:
         """Extract key point from observation."""

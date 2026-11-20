@@ -5,17 +5,17 @@ Language-specific driver snippets. All require:
 - `global-bundle.pem` downloaded (`curl -s https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem -o global-bundle.pem`)
 - Five required connection params: `tls=true`, `tlsCAFile=global-bundle.pem`, `replicaSet=rs0`, `readPreference=secondaryPreferred`, `retryWrites=false`
 
-Replace `<endpoint>`, `<password>`, `<db-name>` with actual values. **Create the client once at module scope** and reuse across requests — per-request clients cause connection spikes and high CPU.
+Set `DOCDB_URI` from your secret store with the required TLS, replica-set, read preference, and retry options. Replace `<db-name>` with your database name. **Create the client once at module scope** and reuse across requests — per-request clients cause connection spikes and high CPU.
 
 ## Python (PyMongo)
 
 ```python
+import os
+
 import pymongo
 
 client = pymongo.MongoClient(
-    'mongodb://admin:<password>@<endpoint>:27017/<db-name>'
-    '?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0'
-    '&readPreference=secondaryPreferred&retryWrites=false'
+    os.environ["DOCDB_URI"]
 )
 db = client["<db-name>"]
 db.command("ping")
@@ -27,8 +27,7 @@ db.command("ping")
 const { MongoClient } = require("mongodb");
 
 const client = new MongoClient(
-  "mongodb://admin:<password>@<endpoint>:27017/<db-name>"
-    + "?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false",
+  process.env.DOCDB_URI,
   { tlsCAFile: "global-bundle.pem" }
 );
 
@@ -48,8 +47,7 @@ import com.mongodb.MongoClientSettings;
 
 MongoClientSettings settings = MongoClientSettings.builder()
     .applyConnectionString(new ConnectionString(
-        "mongodb://admin:<password>@<endpoint>:27017/<db-name>"
-        + "?ssl=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false"
+        System.getenv("DOCDB_URI")
     ))
     .applyToConnectionPoolSettings(b -> b.maxSize(10).maxWaitQueueSize(2))
     .build();
@@ -95,7 +93,7 @@ pool := x509.NewCertPool()
 pool.AppendCertsFromPEM(caCert)
 tlsConfig := &tls.Config{RootCAs: pool}
 
-uri := "mongodb://admin:<pw>@<endpoint>:27017/<db>?replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false"
+uri := os.Getenv("DOCDB_URI")
 opts := options.Client().ApplyURI(uri).SetTLSConfig(tlsConfig)
 client, err := mongo.Connect(context.TODO(), opts)
 ```
@@ -111,7 +109,8 @@ using MongoDB.Driver;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
-string uri = "mongodb://admin:<pw>@<endpoint>:27017/<db>?replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false";
+string uri = Environment.GetEnvironmentVariable("DOCDB_URI")
+    ?? throw new InvalidOperationException("Set DOCDB_URI before starting.");
 
 // Load the RDS bundle into a connection-scoped collection (no system store changes)
 var caCerts = new X509Certificate2Collection();
@@ -144,7 +143,7 @@ client = Mongo::Client.new('mongodb://<endpoint>:27017',
 ## mongosh (shell)
 
 ```bash
-mongosh "mongodb://admin:<pw>@<endpoint>:27017/<db>?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false"
+mongosh "$DOCDB_URI"
 ```
 
 When tunneling from a local machine, add `--tlsAllowInvalidHostnames`:

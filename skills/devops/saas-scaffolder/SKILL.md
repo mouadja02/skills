@@ -218,7 +218,7 @@ export const config = {
 ```bash
 # .env.example
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-DATABASE_URL=postgresql://user:pass@ep-xxx.us-east-1.aws.neon.tech/neondb?sslmode=require
+# Set DATABASE_URL to the full Neon connection URI from your secret store.
 NEXTAUTH_SECRET=generate-with-openssl-rand-base64-32
 NEXTAUTH_URL=http://localhost:3000
 GOOGLE_CLIENT_ID=

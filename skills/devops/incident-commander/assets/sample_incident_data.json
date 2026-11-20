@@ -200,9 +200,9 @@
     "ongoing_incidents": [],
     "maintenance_windows": [],
     "on_call": {
-      "primary": "alice@company.com",
-      "secondary": "bob@company.com",
-      "escalation_manager": "director-eng@company.com"
+      "primary": "alice@example.com",
+      "secondary": "bob@example.com",
+      "escalation_manager": "director-eng@example.com"
     }
   },
   "resolution": {
@@ -228,7 +228,7 @@
   "action_items": [
     {
       "title": "Add connection pool utilization alerting at 70% warning and 85% critical thresholds",
-      "owner": "alice@company.com",
+      "owner": "alice@example.com",
       "priority": "P1",
       "deadline": "2024-01-22",
       "type": "detection",
@@ -236,7 +236,7 @@
     },
     {
       "title": "Implement canary deployment pipeline for database configuration and ORM changes",
-      "owner": "bob@company.com",
+      "owner": "bob@example.com",
       "priority": "P1",
       "deadline": "2024-02-01",
       "type": "prevention",
@@ -244,7 +244,7 @@
     },
     {
       "title": "Load test ORM v3.2.0 with production-scale connection patterns before re-deployment",
-      "owner": "carol@company.com",
+      "owner": "carol@example.com",
       "priority": "P2",
       "deadline": "2024-01-29",
       "type": "prevention",
@@ -252,7 +252,7 @@
     },
     {
       "title": "Document connection pool sizing requirements for all services in runbook",
-      "owner": "alice@company.com",
+      "owner": "alice@example.com",
       "priority": "P2",
       "deadline": "2024-02-05",
       "type": "process",
@@ -260,7 +260,7 @@
     },
     {
       "title": "Add ORM connection behavior to integration test suite",
-      "owner": "carol@company.com",
+      "owner": "carol@example.com",
       "priority": "P3",
       "deadline": "2024-02-15",
       "type": "prevention",

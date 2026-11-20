@@ -106,7 +106,7 @@ If it hasn't appeared yet, wait 15 seconds and retry (up to 4 attempts). The
 output looks like:
 
 ```
-Conversation log: /Users/<user>/.aws/atx/custom/20260319_063712_e3479843/logs/2026-03-19T06-37-26-conversation.log
+Conversation log: ~/.aws/atx/custom/<run-id>/logs/<timestamp>-conversation.log
 ```
 
 Extract the full path from this line — this is the conversation log for THIS
@@ -129,7 +129,7 @@ CRITICAL rules:
    the conversation log line in stdout:
 
    ```
-   📝 Conversation log: /Users/<user>/.aws/atx/custom/<conversation-id>/logs/<timestamp>-conversation.log
+   📝 Conversation log: ~/.aws/atx/custom/<conversation-id>/logs/<timestamp>-conversation.log
    ```
 
    Extract the `<conversation-id>` (e.g., `20260311_233325_21bb5ef0`) and the full

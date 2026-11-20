@@ -15,6 +15,9 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from defusedxml.common import DefusedXmlException
+from defusedxml.ElementTree import parse
+
 
 def _error(msg: str, errors: list) -> None:
     errors.append(msg)
@@ -27,9 +30,10 @@ def validate_file(path: Path) -> list[str]:
 
     # --- XML well-formedness ---
     try:
-        tree = ET.parse(path)
-    except ET.ParseError as exc:
-        return [f"XML parse error: {exc}"]
+        tree = parse(path, forbid_dtd=True)
+    except (ET.ParseError, DefusedXmlException) as exc:
+        _error(f"XML parse error: {exc}", errors)
+        return errors
 
     root = tree.getroot()
     if root.tag != "mxfile":
