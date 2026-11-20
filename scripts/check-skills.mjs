@@ -12,8 +12,9 @@
 // Frontmatter is parsed with the `yaml` devDependency, the same way clients
 // parse it. Run with: node scripts/check-skills.mjs [--quiet]
 
-import { readdir, readFile, stat } from "node:fs/promises";
+import { open, readdir, readFile, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { join, dirname, resolve, relative, basename, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFrontmatter } from "./lib/frontmatter.mjs";
@@ -55,6 +56,36 @@ async function walk(dir, out = []) {
     else if (isFile && entry.name === "SKILL.md") out.push(full);
   }
   return out;
+}
+
+// Index entries for skills/, as { mode, file }. Empty outside a Git clone.
+function trackedSkillFiles() {
+  try {
+    const out = execFileSync("git", ["ls-files", "-s", "-z", "--", "skills"], { cwd: ROOT, encoding: "utf8" });
+    return out
+      .split("\0")
+      .filter(Boolean)
+      .map((entry) => {
+        const [meta, file] = entry.split("\t");
+        return { mode: meta.split(" ")[0], file };
+      });
+  } catch {
+    return [];
+  }
+}
+
+async function startsWithShebang(file) {
+  let handle;
+  try {
+    handle = await open(file, "r");
+    const buf = Buffer.alloc(2);
+    const { bytesRead } = await handle.read(buf, 0, 2, 0);
+    return bytesRead === 2 && buf[0] === 0x23 && buf[1] === 0x21;
+  } catch {
+    return false;
+  } finally {
+    await handle?.close();
+  }
 }
 
 function stripFences(markdown) {
@@ -224,6 +255,15 @@ async function main() {
   for (const file of [...gitPublicationAllowlist(ROOT).files].sort()) {
     const reason = excludedReason(file);
     if (reason) errors.push(`${file}: tracked but excluded from every package (${reason}); remove it from Git`);
+  }
+
+  // A shebang script that is not recorded as 100755 installs non-executable on
+  // macOS and Linux, so skills that run ./scripts/<name> fail with "Permission
+  // denied". Only checkable inside a Git clone; ZIPs carry no index.
+  for (const { mode, file } of trackedSkillFiles()) {
+    if (mode !== "100755" && (await startsWithShebang(join(ROOT, file)))) {
+      errors.push(`${file}: starts with #! but is mode ${mode} in the Git index; run git update-index --chmod=+x`);
+    }
   }
 
   for (const [name, paths] of byName) {

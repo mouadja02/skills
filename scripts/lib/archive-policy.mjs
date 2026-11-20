@@ -73,6 +73,24 @@ function gitPaths(root, args) {
   return output.toString("utf8").split("\0").filter(Boolean).map((path) => path.replaceAll("\\", "/"));
 }
 
+// Git index modes for tracked files under `pathspec`, as a Map of
+// repo-relative path to "100644" or "100755". Build hosts (Windows in
+// particular) may check out files without the executable bit, so archives
+// take their member modes from the index, not from the working tree.
+export function gitIndexModes(root, pathspec = "skills") {
+  const output = execFileSync("git", ["--literal-pathspecs", "ls-files", "-s", "-z", "--", pathspec], {
+    cwd: root,
+    encoding: "buffer",
+    maxBuffer: 64 * 1024 * 1024,
+  });
+  const modes = new Map();
+  for (const entry of output.toString("utf8").split("\0").filter(Boolean)) {
+    const [meta, path] = entry.split("\t");
+    modes.set(path.replaceAll("\\", "/"), meta.split(" ")[0]);
+  }
+  return modes;
+}
+
 // Reads the publication allowlist for `pathspec` (relative to `root`) from the
 // Git index: tracked files, every directory that contains one, and the
 // untracked files Git does not ignore. Throws when `root` is not a checkout.
