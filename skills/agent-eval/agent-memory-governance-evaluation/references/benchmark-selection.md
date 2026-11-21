@@ -1,13 +1,13 @@
 # Benchmark and License Selection
 
-Select only the dimensions needed by the frozen decision, but never infer untested governance properties from retrieval accuracy. This matrix reflects HEAMS 1.0.0 at commit `f53dc9f7da4d91f48ee5de37a5aa6567c22ec4d5`; reopen current documentation before execution.
+Select only the dimensions needed by the frozen decision, but never infer untested governance properties from retrieval accuracy. This matrix reflects HEAMS at commit `dec28740c6` (2026-11-19, the release that moved the code from MIT to Apache-2.0); reopen current documentation before execution.
 
 ## HEAMS mapping
 
 | Dimension | Candidate benchmark/evidence | What it supports | Important limitation |
 | --- | --- | --- | --- |
 | Performance | LoCoMo, BEAM, LongMemEval, Evo-Memory | recall, long-context memory, temporal question answering, evolving streams | model/judge and dataset terms vary |
-| Efficiency | run artifacts and `submetrics.csv` | latency/model-use observations tied to runs | does not by itself price infrastructure or all background work |
+| Efficiency | run artifacts and `submetrics.csv` (written by `heams generate-report --detailed`) | latency/model-use observations tied to runs | does not by itself price infrastructure or all background work |
 | Privacy | Contextual Integrity | disclosure/leakage and helpfulness under contextual norms | synthetic scenarios do not prove storage-layer isolation |
 | Security | MPBench plus synthetic poisoned-memory controls | resistance to primed memory poisoning | does not prove every tool or authorization boundary |
 | Correction | STALE and Erasability & Editability | stale-memory detection, update/cascade behavior | supplement with backend-specific current/historical readback |
@@ -17,7 +17,7 @@ Select only the dimensions needed by the frozen decision, but never infer untest
 
 ## Dataset terms at the pin
 
-Do not redistribute or use a benchmark merely because HEAMS code is MIT.
+Do not redistribute or use a benchmark merely because HEAMS code is Apache-2.0. The framework license covers the framework only: project datasets (`retention_policy/`, `transparency/seed.json`) are CC BY 4.0, upstream benchmark datasets are downloaded on first use and keep their own terms, and redistributing HEAMS code or a derivative requires carrying its `NOTICE`.
 
 | Benchmark/data | Terms recorded by HEAMS | Campaign action |
 | --- | --- | --- |
