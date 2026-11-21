@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-20T21:29:35.188Z",
+  "generated_at": "2026-11-21T11:12:10.532Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 804,
+  "count": 805,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -44,7 +44,7 @@
   ],
   "counts_by_category": {
     "agent-design": 56,
-    "agent-eval": 26,
+    "agent-eval": 27,
     "api-backend": 12,
     "business-strategy": 39,
     "cloud-aws": 83,
@@ -903,6 +903,17 @@
       "license": "MIT",
       "source": "https://github.com/github/awesome-copilot",
       "attribution": "github/awesome-copilot by GitHub Community"
+    },
+    {
+      "name": "ordinary-hazard-agent-intervention-evaluation",
+      "category": "agent-eval",
+      "install_path": "agent-eval/ordinary-hazard-agent-intervention-evaluation",
+      "path": "skills/agent-eval/ordinary-hazard-agent-intervention-evaluation",
+      "depth": 2,
+      "description": "Use when a non-adversarial AI agent incident must be reproduced offline and an intervention tested causally. Builds matched hazard/no-hazard worlds, state-based harm oracles, neutral and informative warning conditions, repeated trials, and a deployment decision packet.",
+      "license": "MIT",
+      "source": "https://arxiv.org/abs/2611.26553v1; https://arxiv.org/abs/2605.30777v3; https://arxiv.org/abs/2606.01317v2; https://arxiv.org/abs/2605.19149v2",
+      "attribution": "Original workflow derived from ROGUE-AI, SABER, operational coding-agent incident research, and Agent Meltdowns"
     },
     {
       "name": "rag-evaluation-matrix",

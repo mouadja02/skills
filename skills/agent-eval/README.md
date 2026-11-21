@@ -6,7 +6,7 @@
 
 Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.
 
-**Total:** 26 skills.
+**Total:** 27 skills.
 
 ## Skills In This Category
 
@@ -34,6 +34,7 @@ Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecy
 | [`mcp-agent-evaluation`](mcp-agent-evaluation/SKILL.md) | `agent-eval/mcp-agent-evaluation` | Use when evaluating MCP-enabled agents, tool-using LLM systems, multi-server workflows, tool-selection quality, trajectory quality, task completion, or MCP security regressions. |
 | [`memory-merger`](memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file. Syntax: `/memory-merger >domain [scope]` where scope is `global` (default), `user`, `workspace`, or `ws`. Use when a domain memory file has accumulated lessons th... |
 | [`nano-banana-pro-openrouter`](nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model. Use for prompt-only image generation, image edits, and multi-image compositing; supports 1K/2K/4K output. |
+| [`ordinary-hazard-agent-intervention-evaluation`](ordinary-hazard-agent-intervention-evaluation/SKILL.md) | `agent-eval/ordinary-hazard-agent-intervention-evaluation` | Use when a non-adversarial AI agent incident must be reproduced offline and an intervention tested causally. Builds matched hazard/no-hazard worlds, state-based harm oracles, neutral and informative warning conditions, repeated trials, a... |
 | [`rag-evaluation-matrix`](rag-evaluation-matrix/SKILL.md) | `agent-eval/rag-evaluation-matrix` | Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost. |
 | [`semantic-kernel`](semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python. Use when working on applications, plugins, or function-calling flows built on Semantic Ke... |
 | [`skill-lifecycle-optimization`](skill-lifecycle-optimization/SKILL.md) | `agent-eval/skill-lifecycle-optimization` | Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstracti... |
