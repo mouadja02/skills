@@ -415,7 +415,7 @@ NOTICE.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-748 of 804 skills declare an upstream `source`, across 60 sources. The remaining 56 declare no upstream source.
+749 of 805 skills declare an upstream `source`, across 61 sources. The remaining 56 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1461,6 +1461,16 @@ License: MIT
 | Install path | License |
 | --- | --- |
 | [`agent-eval/agent-memory-governance-evaluation`](../skills/agent-eval/agent-memory-governance-evaluation/SKILL.md) | MIT |
+
+### https://arxiv.org/abs/2611.26553v1
+
+Source: https://arxiv.org/abs/2611.26553v1
+Credit: Original workflow derived from ROGUE-AI, SABER, operational coding-agent incident research, and Agent Meltdowns
+License: MIT
+
+| Install path | License |
+| --- | --- |
+| [`agent-eval/ordinary-hazard-agent-intervention-evaluation`](../skills/agent-eval/ordinary-hazard-agent-intervention-evaluation/SKILL.md) | MIT |
 
 ### https://code.claude.com/docs/en/costs
 
