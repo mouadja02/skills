@@ -1455,7 +1455,7 @@ License: MIT
 ### https://arxiv.org/abs/2611.20144
 
 Source: https://arxiv.org/abs/2611.20144
-Credit: Original workflow informed by HEAMS by Goel et al. and recurring Mem0/LangGraph lifecycle failures
+Credit: Original workflow informed by HEAMS by Goel et al. (Apache-2.0, commit dec28740c6) and recurring Mem0/LangGraph lifecycle failures
 License: MIT
 
 | Install path | License |

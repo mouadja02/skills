@@ -2,18 +2,18 @@
 name: skillevaluator-operations
 description: >-
   Use when validating, comparing, or release-gating agent skills with NVIDIA SkillEvaluator — choose a static, overlap, harness, or live A/B tier; forecast dependencies and cost; run with explicit isolation and permission gates; and report exact evidence without overstating skipped tiers.
-version: "1.0.0"
+version: "1.1.0"
 license: Apache-2.0
-source: "https://github.com/NVIDIA/SkillEvaluator/tree/d99d30403f33aebe96b2c9ae75d80cce1cc05515/skills/skillevaluator"
+source: "https://github.com/NVIDIA/SkillEvaluator/tree/v1.0.1/skills/skillevaluator"
 attribution: "NVIDIA/SkillEvaluator by NVIDIA Corporation"
-compatibility: "Python 3.12-3.14; skillevaluator 0.9.0. Tier 3 additionally requires a supported agent, provider access, and an isolated runtime."
+compatibility: "Python 3.12-3.14; skillevaluator 1.0.1 (`harness-check` requires >=1.0.0). Tier 3 additionally requires a supported agent, provider access, and an isolated runtime."
 ---
 
-> **Attribution:** Adapted from [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator/tree/d99d30403f33aebe96b2c9ae75d80cce1cc05515/skills/skillevaluator) by NVIDIA Corporation, licensed Apache-2.0. Modified for this collection.
+> **Attribution:** Adapted from [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator/tree/v1.0.1/skills/skillevaluator) by NVIDIA Corporation, licensed Apache-2.0. Modified for this collection.
 
 # SkillEvaluator Operations
 
-Choose the smallest evaluation tier that proves the requested claim, run it only when its dependencies and side effects are understood, and distinguish measured evidence from missing coverage. This workflow targets SkillEvaluator `0.9.0`; check `skillevaluator <command> --help` before relying on a flag with another release.
+Choose the smallest evaluation tier that proves the requested claim, run it only when its dependencies and side effects are understood, and distinguish measured evidence from missing coverage. This workflow targets SkillEvaluator `1.0.1`; check `skillevaluator <command> --help` before relying on a flag with another release. `harness-check`, the Tier 3 `--backend` selector, and the CI bundle arrived in the 1.0 series, so `0.9.0` cannot run the harness step at all — upgrade instead of substituting a guessed command.
 
 ## When to Use
 
@@ -28,12 +28,12 @@ Do not activate for ordinary application-code review, generic LLM benchmarking, 
 ## Prerequisites
 
 1. Confirm the exact target path and requested claim.
-2. Require Python `>=3.12,<3.15` and pin the CLI for reproducibility:
+2. Require Python `>=3.12,<3.15` (the package declares the same bound) and pin the CLI for reproducibility:
    ```bash
-   uv tool install 'skillevaluator==0.9.0'
+   uv tool install 'skillevaluator==1.0.1'
    skillevaluator --version
    ```
-   Installation is a networked write: inspect the package/release and obtain approval when the environment requires it. The 0.9.0 PyPI wheel has no published provenance attestation; record that limitation.
+   Installation is a networked write: inspect the package/release and obtain approval when the environment requires it. The `1.0.1` PyPI wheel and sdist publish no provenance attestation (verified 2026-11-21); record that limitation. Do not assume a version-specific flag or subcommand exists — confirm it from the installed `--help` or the package's own command registry.
 3. Never print, echo, commit, or place provider keys in evaluation configuration. Keys stay in the host environment.
 4. Treat the target skill and its scripts as untrusted. Read scripts before any runtime evaluation; use synthetic inputs and no production credentials.
 5. Read [references/tier-selection.md](references/tier-selection.md) before selecting a tier. Read [references/reporting-and-ci.md](references/reporting-and-ci.md) before publishing a verdict or CI gate.
@@ -65,6 +65,8 @@ skillevaluator harness-check --help
 
 `health-check` and `doctor` can download pinned scanners or probe models depending on flags. Forecast those actions first and obtain approval for downloads, provider calls, Docker provisioning, or other writes.
 
+On a release below `1.0.0`, `harness-check --help` does not resolve a command and the Tier 1 report has no harness section. That is a version gap, not a usage error: upgrade the CLI rather than mapping the check onto `quality-check`.
+
 ### 3. Run the cheapest sufficient tier
 
 **Keyless quality only:**
@@ -79,9 +81,10 @@ This produces a deterministic quality score, not complete publication evidence.
 
 ```bash
 skillevaluator harness-check <skill-dir> --harness codex,hermes -v
+skillevaluator harness-check <skill-dir> --harness claude-code,codex,copilot-cli,hermes,openclaw,opencode --json
 ```
 
-This uses versioned harness profiles. It predicts loading/degradation; it does not prove live activation or task improvement.
+This uses the versioned profiles shipped with the wheel (Claude Code, Codex, Copilot CLI, Hermes, OpenClaw, OpenCode). It is static and advisory under the default policy: it predicts discovery-path, frontmatter, size, and invocation problems; it does not prove live activation or task improvement.
 
 **Full static Tier 1 without LLM checks:**
 
@@ -122,6 +125,8 @@ agent runs = cases × attempts × agents × 2
 
 The factor `2` is baseline plus with-skill. Add judge/provider calls separately. Obtain approval for the exact plan, provider use, and sandbox. Default to Docker; local mode is experimental and appropriate only for trusted skills under reviewed Bubblewrap/Seatbelt containment.
 
+Name the execution backend explicitly. `1.0.1` accepts `--backend harbor` (default) or `--backend nemo-gym` once NeMo Gym is configured; the backends differ in agent harness, grading, and sandbox, so record which one produced a run and never compare results collected under different backends.
+
 ### 6. Execute and preserve evidence
 
 Run one scenario at a time when containment is not independently proven. Verify child processes exited and fingerprint the project after each scenario. Example:
@@ -131,6 +136,8 @@ skillevaluator tier3 evaluate <skill-dir> \
   -a codex --env-mode docker --n-attempts 3 \
   --results-dir <results-dir> --harbor-keep-jobs
 ```
+
+Add `--backend nemo-gym` only when that backend is already installed and reviewed; keep the default `harbor` otherwise.
 
 Never use `--skip-baseline` for a lift claim. Use `--skip-with-skill` only for a clearly labelled calibration baseline.
 
