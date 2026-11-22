@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-21T11:12:10.532Z",
+  "generated_at": "2026-11-21T19:05:47.478Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 805,
@@ -680,7 +680,7 @@
       "description": "Use when comparing persistent agent memory backends or changing recall, retention, correction, deletion, or isolation policy. Designs a synthetic, license-aware governance campaign; holds the agent/model constant; verifies traces and lifecycle effects; and returns per-dimension release evidence instead of one score.",
       "license": "MIT",
       "source": "https://arxiv.org/abs/2611.20144; https://github.com/milatechtransfer/heams",
-      "attribution": "Original workflow informed by HEAMS by Goel et al. and recurring Mem0/LangGraph lifecycle failures"
+      "attribution": "Original workflow informed by HEAMS by Goel et al. (Apache-2.0, commit dec28740c6) and recurring Mem0/LangGraph lifecycle failures"
     },
     {
       "name": "agent-trajectory-diagnostics",
@@ -953,7 +953,7 @@
       "depth": 2,
       "description": "Use when validating, comparing, or release-gating agent skills with NVIDIA SkillEvaluator — choose a static, overlap, harness, or live A/B tier; forecast dependencies and cost; run with explicit isolation and permission gates; and report exact evidence without overstating skipped tiers.",
       "license": "Apache-2.0",
-      "source": "https://github.com/NVIDIA/SkillEvaluator/tree/d99d30403f33aebe96b2c9ae75d80cce1cc05515/skills/skillevaluator",
+      "source": "https://github.com/NVIDIA/SkillEvaluator/tree/v1.0.1/skills/skillevaluator",
       "attribution": "NVIDIA/SkillEvaluator by NVIDIA Corporation"
     },
     {

@@ -2,10 +2,10 @@
 name: agent-memory-governance-evaluation
 description: >-
   Use when comparing persistent agent memory backends or changing recall, retention, correction, deletion, or isolation policy. Designs a synthetic, license-aware governance campaign; holds the agent/model constant; verifies traces and lifecycle effects; and returns per-dimension release evidence instead of one score.
-version: "1.0.0"
+version: "1.1.0"
 license: MIT
 source: "https://arxiv.org/abs/2611.20144; https://github.com/milatechtransfer/heams"
-attribution: "Original workflow informed by HEAMS by Goel et al. and recurring Mem0/LangGraph lifecycle failures"
+attribution: "Original workflow informed by HEAMS by Goel et al. (Apache-2.0, commit dec28740c6) and recurring Mem0/LangGraph lifecycle failures"
 ---
 
 # Agent Memory Governance Evaluation
@@ -45,7 +45,7 @@ Define non-compensatory hard gates before running. Privacy, authorization, delet
 
 ### 2. Inventory dependencies and data terms
 
-For every benchmark or fixture, record the exact version/commit, code license, dataset license, access condition, intended use, and redistribution rule. Exclude any dataset whose terms do not fit the campaign. A framework license does not override benchmark dataset terms.
+For every benchmark or fixture, record the exact version/commit, code license, dataset license, access condition, intended use, and redistribution rule. Exclude any dataset whose terms do not fit the campaign. A framework license does not override benchmark dataset terms. As of commit `dec28740c6` (2026-11-19) HEAMS code is Apache-2.0 with a `NOTICE` file, its own datasets are CC BY 4.0, and every upstream benchmark dataset keeps its own terms — earlier HEAMS pins were MIT, so re-read the license at the commit you actually pin.
 
 Default to synthetic fixtures. Use random per-run canaries, fictional users, disposable namespaces, and no real credentials or personal data. Keep plaintext canaries in the assertion process only; reports contain opaque IDs and keyed digests.
 
@@ -58,6 +58,8 @@ Include at minimum:
 - **A2 candidate** — the backend or policy under review.
 
 Hold constant the agent instructions, model/version, evaluator, prompts, event stream, query order, retrieval budget, clock, concurrency, retries, and resource limits. Record unavoidable backend-specific settings instead of pretending they are equal.
+
+In HEAMS, an experiment pairs one agent config, one memory-system config, and one benchmark config, and experiments run serially. There is **no** CLI override for model, benchmark, memory backend, limits, or prompts, so each arm is a separate component YAML or experiment entry in the run config — never an extra flag on one run. Duplicate the experiment stanza per arm and diff the YAML to prove the intended single difference.
 
 ### 4. Select separate dimension scenarios
 
@@ -78,7 +80,14 @@ Required synthetic regression cases:
 
 Use disposable storage. Verify retain, recall, update, delete, tenant scoping, stable identifiers, and cleanup independently of the agent. Confirm plugin discovery and effective configuration. A successful API response is not verification: read state back through every relevant interface.
 
-If using HEAMS, pin the repository/release and memory plugin, then run its memory diagnostic before model-backed benchmarks. HEAMS is optional execution infrastructure; this workflow remains valid with another harness that emits equivalent artifacts.
+If using HEAMS, pin the repository commit and memory plugin, then run the two dependency-free plugin commands from `python_package/` before any model-backed work:
+
+```bash
+uv run heams memory list   # installed and built-in plugin type names
+uv run heams memory test   # constructs each plugin in a temporary runtime; reports pass, failure, or setup-required
+```
+
+`memory test` calls retain and recall with a sentinel value and needs no benchmark or live agent service, so a `setup-required` result isolates a wiring problem before you spend model budget. `make setup` installs the plugins. HEAMS is optional execution infrastructure; this workflow remains valid with another harness that emits equivalent artifacts.
 
 ### 6. Run a bounded synthetic smoke campaign
 
@@ -90,7 +99,20 @@ Only after smoke evidence passes may the full campaign run. Gated datasets, prov
 
 For each planned run, require exactly one terminal status. Verify input/config hashes, run-to-trace joins, evaluator outputs, retries, failures, and cost records. Missing or malformed evidence is `HOLD`, not a pass.
 
-For HEAMS, verify the resolved run and experiment configs, `runs.jsonl`, `execution_traces.jsonl`, `run_status.json`, generated `report.md`, and optional `submetrics.csv`. Treat traces as private because they can include prompts, recalled memory, and tool output.
+For HEAMS, the run writes evidence but not prose — verify the pieces in the order they are produced:
+
+| Artifact | Written by | Check |
+| --- | --- | --- |
+| `run_config.<run_id>.yaml` | `heams run` | resolved run config at the output-directory root |
+| `<experiment>/experiment_config.<run_id>.yaml` | `heams run` | resolved agent/memory/benchmark for that arm |
+| `<experiment>/runs.jsonl` | `heams run` | one `RunResult` per completed sample; no missing or duplicate terminal rows |
+| `<experiment>/execution_traces.jsonl` | `heams run` | one trace per result; join by `trace_id` |
+| `<experiment>/run_status.json` | `heams run` | `success` plus runnable/skipped counts and any error |
+| `<experiment>/report.md` | `heams generate-report --results-dir <out>` | summary and sample detail; absent until you generate it |
+| `<experiment>/submetrics.csv` | `heams generate-report --detailed` | one row per tagged sub-metric and efficiency metric |
+| `<experiment>/_rollup/<type>/report.md` | optional Python rollup helpers, not a CLI command | only if you asked for the per-benchmark rollup |
+
+`heams run` writes no Markdown report, so a missing `report.md` after a run is expected rather than a failed campaign; run `generate-report` before claiming a report exists. Treat traces as private because they can include prompts, recalled memory, and tool output.
 
 ### 8. Prove lifecycle behavior
 

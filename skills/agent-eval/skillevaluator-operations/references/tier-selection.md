@@ -1,18 +1,18 @@
 # Tier Selection and Live-Evaluation Safety
 
-This reference applies to SkillEvaluator `0.9.0`. Run `skillevaluator <command> --help` for the installed release.
+This reference applies to SkillEvaluator `1.0.1`. Run `skillevaluator <command> --help` for the installed release; `0.9.0` predates `harness-check` and the Tier 3 `--backend` selector.
 
 ## Select by claim
 
 | Claim | Smallest useful command | Extra dependencies | What it does not prove |
 | --- | --- | --- | --- |
 | Basic authoring quality | `quality-check PATH` | none beyond base CLI | complete static safety or behavioral lift |
-| Harness loader compatibility | `harness-check PATH` | none beyond base CLI | live activation or task success |
+| Harness loader compatibility | `harness-check PATH --harness codex,hermes` | none beyond base CLI; needs >=1.0.0 | live activation or task success |
 | Static publication gate | `tier1 PATH --no-llm` | scanners; may download them | overlap or behavioral lift |
 | LLM rubric/security review | `tier1 PATH` or `rubric-eval PATH` | provider key and `llm` extra | live agent benefit |
 | Intra-skill repetition | `tier2 PATH` | embeddings/provider | task improvement |
 | Catalog overlap | `similarity-check SKILLS` plus `tier2 --catalog` | embeddings/provider and pinned catalog | behavioral equivalence |
-| Baseline-versus-skill behavior | `tier3 evaluate PATH` | provider, agent, `tier3` extra, sandbox | other models/harnesses not sampled |
+| Baseline-versus-skill behavior | `tier3 evaluate PATH` | provider, agent, `tier3` extra, sandbox (`--backend harbor` default, or `nemo-gym`) | other models/harnesses not sampled |
 | Combined pipeline | `validate PATH` | every selected tier dependency | skipped/advisory tiers unless report says otherwise |
 
 ## Permission and readiness gates
