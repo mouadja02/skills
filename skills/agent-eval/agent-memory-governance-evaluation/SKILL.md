@@ -2,7 +2,7 @@
 name: agent-memory-governance-evaluation
 description: >-
   Use when comparing persistent agent memory backends or changing recall, retention, correction, deletion, or isolation policy. Designs a synthetic, license-aware governance campaign; holds the agent/model constant; verifies traces and lifecycle effects; and returns per-dimension release evidence instead of one score.
-version: "1.1.0"
+version: "1.1.1"
 license: MIT
 source: "https://arxiv.org/abs/2611.20144; https://github.com/milatechtransfer/heams"
 attribution: "Original workflow informed by HEAMS by Goel et al. (Apache-2.0, commit dec28740c6) and recurring Mem0/LangGraph lifecycle failures"

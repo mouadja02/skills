@@ -10,8 +10,9 @@ sources:
   execution_substrate:
     name: HEAMS
     version: "1.0.0"
-    commit: f53dc9f7da4d91f48ee5de37a5aa6567c22ec4d5
-    license: MIT
+    commit: dec28740c6342445f344125a95b9a9677db4cd3a
+    license: Apache-2.0
+    notice_file: NOTICE
   datasets:
     - name: replace-me
       revision: replace-me
