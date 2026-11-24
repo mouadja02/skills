@@ -1,0 +1,67 @@
+{
+  "incident_id": "",
+  "activation": {
+    "status": "insufficient_evidence",
+    "reason": "",
+    "missing_evidence": []
+  },
+  "scope": {
+    "run_ids": [],
+    "time_range": "unknown",
+    "pipeline_revision": "unknown",
+    "corpus_snapshot": "unknown",
+    "index_snapshot": "unknown",
+    "model_and_prompt_versions": {},
+    "settings": {},
+    "evidence_sources": [],
+    "redaction": "unknown"
+  },
+  "mapping_validation": {
+    "status": "insufficient",
+    "expected_stages": [],
+    "observed_stages": [],
+    "missing_or_optional_stages": [],
+    "retries_and_duplicates": [],
+    "ambiguous_mappings": [],
+    "limitations": []
+  },
+  "stage_evidence": [],
+  "earliest_supported_fault": null,
+  "alternatives": [],
+  "replay": {
+    "status": "not_executed",
+    "hypothesis": "",
+    "competing_hypothesis": "",
+    "frozen_variables": [],
+    "changed_variable": "",
+    "steps": [],
+    "decision_rule": "",
+    "environment": "disposable or read-only",
+    "authorization_required": [],
+    "result": "not_executed",
+    "artifacts": []
+  },
+  "safety": {
+    "recorded_file_analysis_default": true,
+    "live_traffic_interception_authorized": false,
+    "certificate_trust_change_authorized": false,
+    "paid_model_calls_authorized": false,
+    "live_fault_injection_authorized": false,
+    "sensitive_data_controls": []
+  },
+  "limitations": [],
+  "cost": {
+    "observed": "unknown",
+    "estimated_replay": "unknown",
+    "currency": "USD",
+    "notes": []
+  },
+  "outcome": {
+    "status": "inconclusive",
+    "next_action": "",
+    "owner": "unknown",
+    "expected_artifact": "",
+    "stop_condition": "",
+    "rollback": ""
+  }
+}

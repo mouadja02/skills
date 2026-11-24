@@ -6,7 +6,7 @@
 
 Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.
 
-**Total:** 27 skills.
+**Total:** 28 skills.
 
 ## Skills In This Category
 
@@ -36,6 +36,7 @@ Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecy
 | [`nano-banana-pro-openrouter`](nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model. Use for prompt-only image generation, image edits, and multi-image compositing; supports 1K/2K/4K output. |
 | [`ordinary-hazard-agent-intervention-evaluation`](ordinary-hazard-agent-intervention-evaluation/SKILL.md) | `agent-eval/ordinary-hazard-agent-intervention-evaluation` | Use when a non-adversarial AI agent incident must be reproduced offline and an intervention tested causally. Builds matched hazard/no-hazard worlds, state-based harm oracles, neutral and informative warning conditions, repeated trials, a... |
 | [`rag-evaluation-matrix`](rag-evaluation-matrix/SKILL.md) | `agent-eval/rag-evaluation-matrix` | Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost. |
+| [`rag-stage-fault-localization`](rag-stage-fault-localization/SKILL.md) | `agent-eval/rag-stage-fault-localization` | Localize the earliest supported fault in a RAG trace. |
 | [`semantic-kernel`](semantic-kernel/SKILL.md) | `agent-eval/semantic-kernel` | Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python. Use when working on applications, plugins, or function-calling flows built on Semantic Ke... |
 | [`skill-lifecycle-optimization`](skill-lifecycle-optimization/SKILL.md) | `agent-eval/skill-lifecycle-optimization` | Use when improving, evolving, benchmarking, or maintaining agent skills over time. Treats skills as long-lived structured artifacts: execute tasks, diagnose trajectory evidence, accumulate textual momentum, patch at the correct abstracti... |
 | [`skillevaluator-operations`](skillevaluator-operations/SKILL.md) | `agent-eval/skillevaluator-operations` | Use when validating, comparing, or release-gating agent skills with NVIDIA SkillEvaluator — choose a static, overlap, harness, or live A/B tier; forecast dependencies and cost; run with explicit isolation and permission gates; and report... |
