@@ -6,7 +6,7 @@
 
 Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecycle improvement.
 
-**Total:** 28 skills.
+**Total:** 29 skills.
 
 ## Skills In This Category
 
@@ -14,6 +14,7 @@ Agent evaluation, RAG evaluation, memory, autoresearch, benchmarking, and lifecy
 | --- | --- | --- |
 | [`agent-memory-governance-evaluation`](agent-memory-governance-evaluation/SKILL.md) | `agent-eval/agent-memory-governance-evaluation` | Use when comparing persistent agent memory backends or changing recall, retention, correction, deletion, or isolation policy. Designs a synthetic, license-aware governance campaign; holds the agent/model constant; verifies traces and lif... |
 | [`agent-trajectory-diagnostics`](agent-trajectory-diagnostics/SKILL.md) | `agent-eval/agent-trajectory-diagnostics` | Use when diagnosing agent benchmarks or runtime failures from trajectories instead of aggregate pass rates. Builds shared action-observation decision landscapes, identifies productive cores and trap regions, profiles Access/Trap/Repair b... |
+| [`agentic-benchmark-task-authoring`](agentic-benchmark-task-authoring/SKILL.md) | `agent-eval/agentic-benchmark-task-authoring` | Author isolated, verifier-hardened agent benchmark tasks. |
 | [`agentic-eval`](agentic-eval/SKILL.md) | `agent-eval/agentic-eval` | Patterns and techniques for evaluating and improving AI agent outputs. Use this skill when: - Implementing self-critique and reflection loops - Building evaluator-optimizer pipelines for quality-critical generation - Creating test-driven... |
 | [`auto-memory-pro`](auto-memory-pro/SKILL.md) | `agent-eval/auto-memory-pro` | Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Cla... |
 | [`auto-memory-extract`](auto-memory-pro/skills/auto-memory-extract/SKILL.md) | `agent-eval/auto-memory-pro/skills/auto-memory-extract` | Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples. Use when the user runs /si:extract or asks to package a recurring solution from memory into a skill. |

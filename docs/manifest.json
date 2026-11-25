@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-24T11:26:06.537Z",
+  "generated_at": "2026-11-25T11:12:09.271Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 806,
+  "count": 807,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -44,7 +44,7 @@
   ],
   "counts_by_category": {
     "agent-design": 56,
-    "agent-eval": 28,
+    "agent-eval": 29,
     "api-backend": 12,
     "business-strategy": 39,
     "cloud-aws": 83,
@@ -691,6 +691,15 @@
       "description": "Use when diagnosing agent benchmarks or runtime failures from trajectories instead of aggregate pass rates. Builds shared action-observation decision landscapes, identifies productive cores and trap regions, profiles Access/Trap/Repair behavior, and designs conservative trap-triggered recovery experiments.",
       "source": "https://arxiv.org/abs/2605.31308",
       "attribution": "Derived from TraceGraph: Shared Decision Landscapes for Diagnosing and Improving Agent Trajectories (arXiv:2605.31308)"
+    },
+    {
+      "name": "agentic-benchmark-task-authoring",
+      "category": "agent-eval",
+      "install_path": "agent-eval/agentic-benchmark-task-authoring",
+      "path": "skills/agent-eval/agentic-benchmark-task-authoring",
+      "depth": 2,
+      "description": "Author isolated, verifier-hardened agent benchmark tasks.",
+      "license": "MIT"
     },
     {
       "name": "agentic-eval",

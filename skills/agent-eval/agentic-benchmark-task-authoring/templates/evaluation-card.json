@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "task": {
+    "name": "org/task-name",
+    "claim": "The capability this task measures, in one sentence.",
+    "non_goals": ["What this task deliberately does not measure"],
+    "input_contract": ["/app/in/input-a", "/app/in/input-b"],
+    "output_contract": ["/app/out/report.json"]
+  },
+  "provenance": {
+    "upstream_workflow": "Where the recurring workflow comes from",
+    "fixture_origin": "synthetic | redistribution-cleared source",
+    "fixture_terms": "License or terms that apply to inputs and expected outputs",
+    "redistribution_allowed": true
+  },
+  "environment": {
+    "base_image": "ubuntu:24.04",
+    "pinned_dependencies": ["python3 == 3.12"],
+    "agent_network_mode": "no-network",
+    "build_timeout_sec": 900.0
+  },
+  "verifier": {
+    "environment_mode": "separate",
+    "network_mode": "no-network",
+    "reward_channel": "/logs/verifier/reward.txt",
+    "artifact_paths": ["/app/out/report.json"],
+    "assertion_classes": ["existence", "schema", "content"],
+    "grader_visible_to_agent": false
+  },
+  "controls": [
+    {"class": "oracle", "expected_reward": 1, "trials": [1, 1, 1]},
+    {"class": "no-op", "expected_reward": 0, "trials": [0, 0, 0]},
+    {"class": "near-miss", "expected_reward": 0, "trials": [0, 0, 0]},
+    {"class": "shortcut", "expected_reward": 0, "trials": [0, 0, 0]},
+    {"class": "alternative-valid", "expected_reward": 1, "trials": [1, 1, 1]}
+  ],
+  "rollouts": {
+    "runner": {"name": "harbor", "version": "0.25.x"},
+    "harness": {"sandbox": "docker", "cpus": 2, "memory_mb": 4096},
+    "model_backed": false,
+    "models": [],
+    "seeds": [0],
+    "budget_tokens_per_trial": null,
+    "trace_locations": ["traces/oracle", "traces/noop", "traces/nearmiss", "traces/shortcut", "traces/alternative"]
+  },
+  "verification": {
+    "validator_command": "python3 scripts/verify_task_package.py <task-dir> --rollouts <rollouts.json> --json",
+    "blocking_findings": 0,
+    "oracle_reward": 1,
+    "negative_control_rewards": {"no-op": 0, "near-miss": 0, "shortcut": 0},
+    "alternative_valid_reward": 1,
+    "flaky_classes": []
+  },
+  "limitations": [
+    "What the controls do not prove",
+    "Where the task may be gameable and how you would detect it",
+    "Which runtime or runner versions were exercised"
+  ],
+  "maintenance": {
+    "review_cadence": "quarterly",
+    "drift_signals": ["base image drift", "dependency drift", "runner schema change"],
+    "last_validated_at": "YYYY-MM-DD"
+  }
+}
