@@ -1,0 +1,35 @@
+# Task configuration template. Replace every placeholder before publishing.
+schema_version = "1.4"
+
+# Top-level artifacts, before any section header: every agent-produced path the
+# separate verifier reads. Undeclared outputs never reach the verifier.
+artifacts = ["/app/out/report.json"]
+
+[task]
+name = "org/task-name"
+authors = [{ name = "Author Name", email = "author@example.com" }]
+description = "One sentence describing the measurable workflow."
+keywords = ["workflow", "artifact"]
+
+[metadata]
+category = "data-engineering"
+difficulty_explanation = "Why this is hard: the transition that a shortcut cannot fake."
+license = "MIT"
+fixture_terms = "synthetic; no third-party data"
+
+[verifier]
+# Separate verifier is the trust boundary: the grader never runs in the agent container.
+environment_mode = "separate"
+timeout_sec = 300.0
+network_mode = "no-network"
+
+[agent]
+timeout_sec = 900.0
+network_mode = "no-network"
+
+[environment]
+build_timeout_sec = 900.0
+network_mode = "no-network"
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192
