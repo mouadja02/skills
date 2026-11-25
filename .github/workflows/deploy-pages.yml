@@ -24,6 +24,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.run_id) || 'pages' }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     name: Validate repository
@@ -96,22 +100,21 @@ jobs:
       - name: Audit ZIP artifacts
         run: npm run check:zips
 
-  build-and-deploy:
-    name: Build and deploy Pages
+  build-pages:
+    name: Build and upload Pages artifact
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pages: write
       id-token: write
-    concurrency:
-      group: pages
-      cancel-in-progress: true
     env:
       HAS_AWS_S3_UPLOAD: ${{ secrets.AWS_S3_BUCKET != '' && secrets.AWS_REGION != '' && secrets.AWS_ROLE_TO_ASSUME != '' }}
+      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_attempt }}
+    # Keep the environment for environment-scoped secrets and the AWS OIDC subject.
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
         with:
@@ -307,11 +310,26 @@ jobs:
             --content-type "application/json; charset=utf-8" \
             --cache-control "public, max-age=60, must-revalidate"
 
-      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
           path: docs
+
+  # Start deployment in a separate job so the artifact has time to become visible.
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: build-pages
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       - id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: ${{ needs.build-pages.outputs.artifact_name }}
