@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-21T19:05:47.478Z",
+  "generated_at": "2026-11-24T11:26:06.537Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 805,
+  "count": 806,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -44,7 +44,7 @@
   ],
   "counts_by_category": {
     "agent-design": 56,
-    "agent-eval": 27,
+    "agent-eval": 28,
     "api-backend": 12,
     "business-strategy": 39,
     "cloud-aws": 83,
@@ -923,6 +923,15 @@
       "depth": 2,
       "description": "Use when comparing basic, enhanced, GraphRAG, or agentic RAG designs, evaluating domain-specific RAG quality, tuning retrieval components, or deciding whether agentic RAG is worth its cost.",
       "source": "https://arxiv.org/abs/2601.07711"
+    },
+    {
+      "name": "rag-stage-fault-localization",
+      "category": "agent-eval",
+      "install_path": "agent-eval/rag-stage-fault-localization",
+      "path": "skills/agent-eval/rag-stage-fault-localization",
+      "depth": 2,
+      "description": "Localize the earliest supported fault in a RAG trace.",
+      "license": "MIT"
     },
     {
       "name": "semantic-kernel",
