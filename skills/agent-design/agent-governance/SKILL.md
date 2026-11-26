@@ -12,6 +12,7 @@ description: |
 source: "https://github.com/github/awesome-copilot"
 attribution: "github/awesome-copilot by GitHub Community"
 license: MIT
+version: "1.0.0"
 ---
 
 > **Attribution:** Sourced from [github/awesome-copilot](https://github.com/github/awesome-copilot) by [GitHub Community](https://github.com/github).
@@ -29,6 +30,66 @@ User Request → Intent Classification → Policy Check → Tool Execution → A
                      ↓                      ↓               ↓
               Threat Detection         Allow/Deny      Trust Update
 ```
+
+### Gateway boundary: discovery is not authorization
+
+When an agent reaches tools through an MCP or API gateway, model four controls
+separately. A gateway product may combine them, but one control never proves the
+others:
+
+| Control | Decision to record | Required evidence |
+|---------|--------------------|-------------------|
+| Discovery | Which tools does this caller see? | Endpoint/tool-kit inventory for the caller |
+| Identity | Whose credential will this call use? | Exactly one user, agent, profile, or workspace principal |
+| Authorization | May that principal invoke this exact tool? | Matching allow/deny/approval policy and precedence |
+| Observability | What can an investigator reconstruct? | Trace/audit fields actually retained, with omissions named |
+
+Do not treat a curated tool kit as an authorization boundary. Some gateways use
+kits only to shape discovery while tools remain allowed by default unless a
+policy matches. Prefer explicit allow rules where the platform supports them;
+otherwise enumerate deny coverage and fail closed when policy evaluation or
+principal resolution fails.
+
+For each call, build and validate a principal-to-credential record before tool
+execution:
+
+```json
+{
+  "caller_principal": "service-key:backend",
+  "acting_as_type": "user",
+  "acting_as_id": "idp:42",
+  "credential_owner": "user:idp:42",
+  "tool": "linear:create_issue",
+  "policy_decision": "require_approval"
+}
+```
+
+A call uses one identity. Reject calls that name more than one acting identity,
+such as both a user and a shared profile. Test user, autonomous-agent,
+shared-profile, and workspace credentials independently; possession of a
+gateway service key must not imply permission to use every stored upstream
+credential.
+
+Approval semantics also need an explicit boundary. If the present caller can
+approve its own request, approval is confirmation—not independent review. The
+caller is not a separate reviewer. Do not describe that as four-eyes
+authorization, and do not rely on an interactive approval rule for unattended
+agents unless the platform provides independent review and a durable pending
+state.
+
+Finally, audit the audit trail. Verify whether traces retain tool arguments and
+results or only metadata such as principal, server, tool, outcome, and matched
+policy. Redact secrets, but preserve a correlation ID and store enough approved
+evidence elsewhere to investigate effects that trace metadata cannot prove.
+
+Use these negative controls before rollout:
+
+1. A tool visible in a kit but denied by policy does not execute.
+2. A call naming both a user and profile is rejected before credential lookup.
+3. A deny rule wins when deny and approval rules both match.
+4. An unattended caller cannot silently satisfy an interactive approval rule.
+5. A trace without arguments/results is reported as metadata evidence, not a
+   complete replay record.
 
 ## When to Use
 
@@ -563,6 +624,10 @@ Match governance strictness to risk level:
 - [ ] Test rate limiting behavior
 - [ ] Verify audit trail captures all events
 - [ ] Test policy composition (most-restrictive-wins)
+- [ ] Test discovery separately from authorization
+- [ ] Reject calls that name multiple acting identities
+- [ ] Verify deny precedence over approval
+- [ ] Record trace omissions, including absent arguments or results
 ```
 
 ---
@@ -571,4 +636,6 @@ Match governance strictness to risk level:
 
 - [Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit) — Full governance framework
 - [AgentMesh Integrations](https://github.com/microsoft/agent-governance-toolkit/tree/main/agent-governance-python/agent-governance-toolkit-integrations) — Framework-specific packages
+- [LangSmith Tool Gateway model](https://docs.langchain.com/langsmith/tool-gateway-how-it-works) — Concrete identity, kit, policy, and approval boundaries
+- [LangSmith Tool Gateway traces](https://docs.langchain.com/langsmith/tool-gateway-traces) — Trace and audit metadata coverage
 - [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
