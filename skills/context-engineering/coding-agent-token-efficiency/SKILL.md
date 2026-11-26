@@ -5,7 +5,7 @@ description: >-
   sessions get slow or hit context limits, or the user asks to cut agent cost. Measures where the tokens
   go, then applies levers in order: session hygiene, always-loaded context (CLAUDE.md, skills, MCP),
   tool-output filtering, subagent delegation, output verbosity, and model/effort choice.
-version: "1.0.0"
+version: "1.1.0"
 license: MIT
 source: "https://code.claude.com/docs/en/costs"
 attribution: "Written for this collection from Anthropic's Claude Code cost guide and the RTK and caveman projects' published measurements"
@@ -83,8 +83,18 @@ Write the baseline down: always-loaded tokens, cache hit rate, and tokens for on
 
 Tool results are usually the largest input. In order of effort:
 
-1. **Delegate verbose work to a subagent** (test runs, log digs, doc fetches). The output stays in the
-   subagent's context and one summary returns. Give simple subagents a smaller model.
+1. **Delegate bounded legwork to a smaller-model subagent.** Good units are investigation (locate the
+   relevant code and explain it), reproduction (build and run the smallest reproducer), and verification
+   (run the reproducer and relevant tests). The lead agent keeps the final patch or decision; do not hand
+   off the whole task merely because the subagent is cheaper.
+   - Launch independent subtasks in the same turn or parallel call instead of serially paying for another
+     full-context lead-model step between them.
+   - Ask for a short report containing only decision-relevant facts, file paths, line numbers, and exact
+     error messages—not raw logs or a transcript of every tool call.
+   - Treat the report as compressed evidence, not truth. Recheck any fact or claim that the final fix,
+     patch, or decision depends on.
+   - Prefer work whose result is cheap to verify. Keep tightly coupled reasoning in the lead context when
+     summarization would hide constraints or when the verification cost approaches the delegated saving.
 2. **Filter with a hook.** A `PreToolUse` hook can rewrite `npm test` to keep only failures
    (`grep -A 5 -E '(FAIL|ERROR|error:)' | head -100`); Anthropic's cost guide has a complete example.
 3. **Use a filtering proxy.** [RTK](https://github.com/rtk-ai/rtk) rewrites common commands (`git`,
@@ -113,8 +123,11 @@ Tool results are usually the largest input. In order of effort:
 
 ### 6. Re-measure
 
-Repeat step 1 on comparable work. Keep a change only if tokens per completed task fell and the work did
-not get worse: more turns, more retries, or a missed requirement cost more than they save.
+Repeat step 1 as a matched comparison: run baseline and delegated candidates on the same representative
+tasks and completed-task checks. Record lead/frontier-model tokens and cost separately, but also report
+total delegated compute, wall-clock latency, retries, pass rate or completion quality, and any human
+rework. Keep a change only if cost per completed task fell without moving cost into slower local compute,
+extra retries, or missed requirements. A lower frontier-model bill alone is not an efficiency win.
 
 ## Gotchas
 
@@ -140,3 +153,6 @@ not get worse: more turns, more retries, or a missed requirement cost more than 
 - [rtk-ai/rtk](https://github.com/rtk-ai/rtk) README — mechanism, measurements, licensing.
 - [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) README — benchmark method and caveats.
 - [ccusage](https://github.com/ccusage/ccusage) — local Claude Code usage reports.
+- Gu & Lin, [Delegent: A Multi-Agent Harness That Reduces Cost without Sacrificing Performance](https://arxiv.org/abs/2611.33098v1)
+  and [castorini/delegent](https://github.com/castorini/delegent) — bounded smaller-model delegation and
+  matched task-level evaluation; results are workload- and hardware-specific, not universal savings.
