@@ -2,7 +2,7 @@
 
 Auto-generated from `SKILL.md` frontmatter by `scripts/build-manifest.mjs`. Do not edit by hand.
 
-**Total:** 807 skills across 36 categories.
+**Total:** 808 skills across 36 categories.
 
 ## Install one skill
 
@@ -31,7 +31,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | Category | Skills |
 | --- | ---: |
 | [`agent-design`](#agent-design) | 56 |
-| [`agent-eval`](#agent-eval) | 29 |
+| [`agent-eval`](#agent-eval) | 30 |
 | [`api-backend`](#api-backend) | 12 |
 | [`business-strategy`](#business-strategy) | 39 |
 | [`cloud-aws`](#cloud-aws) | 83 |
@@ -152,6 +152,7 @@ Where `<install_path>` is the value from the **Install path** column below (e.g.
 | [`eval-driven-dev`](./skills/agent-eval/eval-driven-dev/SKILL.md) | `agent-eval/eval-driven-dev` | Improve AI application with evaluation-driven development. Define eval criteria, instrument the application, build golden datasets, observe and evaluate application runs, analyze results, and produce a concrete action plan for improvements. ALWAYS USE THIS SKILL when the user asks to set up QA, add tests, add evals, evaluate, benchmark, fix wrong behaviors, improve quality, or do quality assurance for any Python project that calls an LLM model. |
 | [`harness-benchmarking`](./skills/agent-eval/harness-benchmarking/SKILL.md) | `agent-eval/harness-benchmarking` | Use when designing evaluation suites for agentic systems, choosing agent benchmarks, measuring multi-agent performance, or critiquing single-score evaluation of agents. Based on arXiv:2605.26112v1. Trigger phrases: "evaluate my agent", "benchmark agent", "measure agent reliability", "pass^k evaluation", "agent metrics beyond success rate", "trajectory quality", "memory hygiene metric", "longitudinal agent eval", "why my agent scores well on benchmarks but fails in production". |
 | [`local-ai-stack`](./skills/agent-eval/local-ai-stack/SKILL.md) | `agent-eval/local-ai-stack` | Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving. Use when running models locally for privacy, compliance, offline use, or cost, or setting up GPU-accelerated local inference and RAG. |
+| [`long-horizon-operational-policy-evaluation`](./skills/agent-eval/long-horizon-operational-policy-evaluation/SKILL.md) | `agent-eval/long-horizon-operational-policy-evaluation` | Use when comparing agents or policies in a persistent simulator where actions create future commitments, delayed outcomes, or shared-resource constraints. Freezes matched worlds, verifies resumable runs, separates censored seasons from completed scores, and produces an economic and trajectory decision report. |
 | [`mcp-agent-evaluation`](./skills/agent-eval/mcp-agent-evaluation/SKILL.md) | `agent-eval/mcp-agent-evaluation` | Use when evaluating MCP-enabled agents, tool-using LLM systems, multi-server workflows, tool-selection quality, trajectory quality, task completion, or MCP security regressions. |
 | [`memory-merger`](./skills/agent-eval/memory-merger/SKILL.md) | `agent-eval/memory-merger` | Merges mature lessons from a domain memory file into its instruction file. Syntax: `/memory-merger >domain [scope]` where scope is `global` (default), `user`, `workspace`, or `ws`. Use when a domain memory file has accumulated lessons that should become permanent instructions. |
 | [`nano-banana-pro-openrouter`](./skills/agent-eval/nano-banana-pro-openrouter/SKILL.md) | `agent-eval/nano-banana-pro-openrouter` | Generate or edit images via OpenRouter with the Gemini 3 Pro Image model. Use for prompt-only image generation, image edits, and multi-image compositing; supports 1K/2K/4K output. |

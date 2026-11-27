@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-25T11:12:09.271Z",
+  "generated_at": "2026-11-27T12:00:55.739Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 807,
+  "count": 808,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -44,7 +44,7 @@
   ],
   "counts_by_category": {
     "agent-design": 56,
-    "agent-eval": 29,
+    "agent-eval": 30,
     "api-backend": 12,
     "business-strategy": 39,
     "cloud-aws": 83,
@@ -880,6 +880,17 @@
       "path": "skills/agent-eval/local-ai-stack",
       "depth": 2,
       "description": "Set up and optimize a complete local AI infrastructure — Ollama, Open WebUI, local RAG pipelines, and private model serving. Use when running models locally for privacy, compliance, offline use, or cost, or setting up GPU-accelerated local inference and RAG."
+    },
+    {
+      "name": "long-horizon-operational-policy-evaluation",
+      "category": "agent-eval",
+      "install_path": "agent-eval/long-horizon-operational-policy-evaluation",
+      "path": "skills/agent-eval/long-horizon-operational-policy-evaluation",
+      "depth": 2,
+      "description": "Use when comparing agents or policies in a persistent simulator where actions create future commitments, delayed outcomes, or shared-resource constraints. Freezes matched worlds, verifies resumable runs, separates censored seasons from completed scores, and produces an economic and trajectory decision report.",
+      "license": "MIT",
+      "source": "https://arxiv.org/abs/2611.17933; https://arxiv.org/abs/2603.16453; https://arxiv.org/abs/2607.28956; https://arxiv.org/abs/2603.23638",
+      "attribution": "Original workflow informed by OutfitterBench, RetailBench, MerchantBench, and EnterpriseArena"
     },
     {
       "name": "mcp-agent-evaluation",

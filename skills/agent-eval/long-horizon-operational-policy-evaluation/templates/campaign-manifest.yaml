@@ -1,0 +1,76 @@
+schema_version: "1.0"
+campaign_id: replace-me
+decision:
+  question: "Which policy should be promoted?"
+  owner: replace-me
+  eligibility:
+    persistent_state: replace-me
+    future_coupling: replace-me
+    terminal_interpretation: replace-me
+identities:
+  simulator: {id: replace-me, sha256: replace-me}
+  dataset: {id: replace-me, sha256: replace-me, license: replace-me}
+  scenario: {id: replace-me, sha256: replace-me}
+  tools: {id: replace-me, sha256: replace-me}
+  harness: {id: replace-me, sha256: replace-me}
+  policies:
+    - id: deterministic-baseline
+      type: rule
+      sha256: replace-me
+    - id: candidate
+      type: agent
+      sha256: replace-me
+      model: replace-me
+worlds:
+  seeds: [42, 73]
+  decision_horizon: 30
+  settlement_horizon: 5
+  logical_clock: discrete-day
+information_boundary:
+  observations: []
+  actions: []
+  forbidden_future_fields: []
+  same_for_all_policies: true
+execution:
+  independent_run_directories: true
+  checkpoint_days: [10]
+  retries: 0
+  model_call_budget: replace-me
+  wall_clock_budget_seconds: replace-me
+  token_budget: replace-me
+  monetary_budget: replace-me
+  stop_rules: []
+resume_contract:
+  binds:
+    - simulator_identity
+    - dataset_identity
+    - policy_identity
+    - logical_time
+    - terminal_horizons
+    - state_digest
+    - event_sequence
+    - rng_state_or_event_cursor
+    - cumulative_commitments_resources_and_costs
+  uninterrupted_control_required: true
+scoring:
+  minimum_completed_matched_pairs: 2
+  final_score_requires_settlement: true
+  censored_runs_rankable: false
+  hard_gates: []
+  metrics:
+    feasibility: []
+    service: []
+    resources: []
+    economics: []
+    execution: [model_calls, tool_calls, retries, latency, tokens, monetary_cost]
+  uncertainty_method: replace-me
+counterfactual_replay:
+  enabled: false
+  source_identity: null
+  search_cap: null
+  cpu_budget: null
+  no_witness_interpretation: undetermined
+privacy:
+  synthetic_or_licensed_inputs: true
+  credentials_in_artifacts: false
+  raw_trace_publication: false
