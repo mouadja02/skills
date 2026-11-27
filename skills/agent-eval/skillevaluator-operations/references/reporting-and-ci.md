@@ -24,6 +24,8 @@ From `skillevaluator-output-<timestamp>.json` or a Tier 1 report, read rather th
 | `severity_counts` | critical/high/medium/low finding totals |
 | `finding_groups[]` | deduplicated findings with `finding_id` |
 | `tier3.run_id` | live-run identity |
+| `<agent>/statistics.json` paired lift fields | advisory paired-case estimate, 95% bootstrap interval, and precision; absent when arm attempt counts are unequal |
+| pass@k / pass^k | probability of at least one pass / probability every attempt passes; report both when `k > 1` |
 
 `overall_passed: true` can coexist with advisory or skipped coverage. Claim publishable only when the required policy is satisfied and `publication_status` is `pass`.
 
@@ -49,6 +51,8 @@ From `skillevaluator-output-<timestamp>.json` or a Tier 1 report, read rather th
 - Baseline: <reported value or not run>
 - With skill: <reported value or not run>
 - Lift: <reported value or not established>
+- Paired lift interval/precision: <reported values, inconclusive if interval crosses zero, or unavailable with reason>
+- pass@k / pass^k: <reported values or not run>
 
 ## Findings
 - <severity, finding ID, file, fix>

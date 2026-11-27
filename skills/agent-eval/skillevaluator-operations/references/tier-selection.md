@@ -1,6 +1,6 @@
 # Tier Selection and Live-Evaluation Safety
 
-This reference applies to SkillEvaluator `1.0.1`. Run `skillevaluator <command> --help` for the installed release; `0.9.0` predates `harness-check` and the Tier 3 `--backend` selector.
+This reference applies to SkillEvaluator `1.2.1`. Run `skillevaluator <command> --help` for the installed release; older releases may lack current harness, backend, dataset-validation, report, or CI semantics.
 
 ## Select by claim
 
@@ -68,6 +68,9 @@ A valid evaluation suite includes:
 - difficult or implicit cases that test the workflow rather than keywords;
 - negative cases that should not activate;
 - machine-checkable outcomes tied to the skill's claimed value;
+- top-level `skill_name` and an `evals` array whose cases use `prompt`;
+- `expected_skill` as a non-empty string for activation cases or `null` for negative cases;
+- `assertions` and `expected_behavior` as lists of strings when present;
 - no assertion that the baseline must read a skill it cannot access;
 - frozen prompts and assertions before the first measured baseline.
 
@@ -106,4 +109,4 @@ Local mode (`--env-mode local`) is experimental. Use it only for trusted skills 
 
 A one-case run such as `--max-cases 1` can prove the pipeline starts. It cannot establish representative lift. Label it `smoke only`; do not publish its score as a release verdict.
 
-For release evidence, record all selected cases and attempts, preserve failures and trajectories, and compare both arms under the same pinned configuration. Do not use `--skip-baseline` for a lift claim.
+For release evidence, record all selected cases and attempts, preserve failures and trajectories, and compare both arms under the same pinned configuration. Do not use `--skip-baseline` for a lift claim. With multiple attempts, report both pass@k and pass^k. Read the paired-case lift estimate, 95% bootstrap interval, and precision label from the generated statistics; do not fabricate an interval when `--stop-on-pass` leaves unequal attempt counts.
