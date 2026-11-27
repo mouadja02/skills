@@ -415,7 +415,7 @@ NOTICE.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-749 of 807 skills declare an upstream `source`, across 61 sources. The remaining 58 declare no upstream source.
+750 of 808 skills declare an upstream `source`, across 62 sources. The remaining 58 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1451,6 +1451,16 @@ License: MIT
 | Install path | License |
 | --- | --- |
 | [`skills-management/skill-smell-audit`](../skills/skills-management/skill-smell-audit/SKILL.md) | MIT |
+
+### https://arxiv.org/abs/2611.17933
+
+Source: https://arxiv.org/abs/2611.17933
+Credit: Original workflow informed by OutfitterBench, RetailBench, MerchantBench, and EnterpriseArena
+License: MIT
+
+| Install path | License |
+| --- | --- |
+| [`agent-eval/long-horizon-operational-policy-evaluation`](../skills/agent-eval/long-horizon-operational-policy-evaluation/SKILL.md) | MIT |
 
 ### https://arxiv.org/abs/2611.20144
 
