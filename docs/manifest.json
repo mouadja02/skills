@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-27T12:00:55.739Z",
+  "generated_at": "2026-11-27T19:12:49.090Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
   "count": 808,
@@ -982,7 +982,7 @@
       "depth": 2,
       "description": "Use when validating, comparing, or release-gating agent skills with NVIDIA SkillEvaluator — choose a static, overlap, harness, or live A/B tier; forecast dependencies and cost; run with explicit isolation and permission gates; and report exact evidence without overstating skipped tiers.",
       "license": "Apache-2.0",
-      "source": "https://github.com/NVIDIA/SkillEvaluator/tree/v1.0.1/skills/skillevaluator",
+      "source": "https://github.com/NVIDIA/SkillEvaluator/tree/v1.2.1/skills/skillevaluator",
       "attribution": "NVIDIA/SkillEvaluator by NVIDIA Corporation"
     },
     {
