@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-27T19:12:49.090Z",
+  "generated_at": "2026-11-28T11:17:37.898Z",
   "repo": "mouadja02/skills",
   "default_branch": "main",
-  "count": 808,
+  "count": 809,
   "categories": [
     "agent-design",
     "agent-eval",
@@ -54,7 +54,7 @@
     "communication": 1,
     "context-engineering": 21,
     "creative": 2,
-    "databases": 27,
+    "databases": 28,
     "design-and-ui": 34,
     "dev-workflow": 29,
     "devops": 44,
@@ -3594,6 +3594,17 @@
       "depth": 2,
       "description": "Use when adding or repairing dbt model contracts — generating data_type declarations from manifest.json and catalog.json, preserving existing column tests and docs, and validating a contract before it is enforced in CI.",
       "license": "MIT"
+    },
+    {
+      "name": "dbt-state-rollout-and-reuse-diagnostics",
+      "category": "databases",
+      "install_path": "databases/dbt-state-rollout-and-reuse-diagnostics",
+      "path": "skills/databases/dbt-state-rollout-and-reuse-diagnostics",
+      "depth": 2,
+      "description": "Use when assessing, enabling, canarying, or debugging managed dbt State; when skip, clone, build, freshness, lag_tolerance, hooks, volatile SQL, or DATT usage is unclear; or when dbt State is confused with --state and deferral.",
+      "license": "Apache-2.0",
+      "source": "https://github.com/dbt-labs/dbt-agent-skills/tree/b8facde20b7a92c40ce3e6b86b71c4b92aa44040/skills/dbt/skills/using-dbt-state",
+      "attribution": "dbt-labs/dbt-agent-skills by dbt Labs"
     },
     {
       "name": "dbt-unit-testing",

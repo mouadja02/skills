@@ -415,7 +415,7 @@ NOTICE.
 ## Attribution Index
 
 <!-- generated:attribution-index:start -->
-750 of 808 skills declare an upstream `source`, across 62 sources. The remaining 58 declare no upstream source.
+751 of 809 skills declare an upstream `source`, across 62 sources. The remaining 58 declare no upstream source.
 
 ### github/awesome-copilot
 
@@ -1310,6 +1310,16 @@ License: Apache-2.0
 | [`design-and-ui/theme-factory`](../skills/design-and-ui/theme-factory/SKILL.md) | Apache-2.0 |
 | [`skills-management/skill-creator`](../skills/skills-management/skill-creator/SKILL.md) | Apache-2.0 |
 
+### dbt-labs/dbt-agent-skills
+
+Source: https://github.com/dbt-labs/dbt-agent-skills
+License: Apache-2.0
+
+| Install path | License |
+| --- | --- |
+| [`databases/dbt-state-rollout-and-reuse-diagnostics`](../skills/databases/dbt-state-rollout-and-reuse-diagnostics/SKILL.md) | Apache-2.0 |
+| [`databases/dbt-unit-testing`](../skills/databases/dbt-unit-testing/SKILL.md) | Apache-2.0 |
+
 ### hashicorp/agent-skills
 
 Source: https://github.com/hashicorp/agent-skills
@@ -1501,16 +1511,6 @@ License: Apache-2.0
 | Install path | License |
 | --- | --- |
 | [`code-quality/quality-playbook`](../skills/code-quality/quality-playbook/SKILL.md) | Apache-2.0 |
-
-### dbt-labs/dbt-agent-skills
-
-Source: https://github.com/dbt-labs/dbt-agent-skills
-Credit: Adapted from dbt-labs/dbt-agent-skills, adding-dbt-unit-test, commit b8facde20b7a92c40ce3e6b86b71c4b92aa44040; see LICENSE.
-License: Apache-2.0
-
-| Install path | License |
-| --- | --- |
-| [`databases/dbt-unit-testing`](../skills/databases/dbt-unit-testing/SKILL.md) | Apache-2.0 |
 
 ### forrestchang/andrej-karpathy-skills
 
